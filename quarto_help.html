@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>MASTEMR - Quarto Help</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script><link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/CRESTEMR.css">
+</head>
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">MASTEMR</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./quarto_help.html" aria-current="page">
+ <span class="menu-text">Quarto Help</span></a>
+  </li>  
+</ul>
+<div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#an-example-chapter" id="toc-an-example-chapter" class="nav-link active" data-scroll-target="#an-example-chapter"><span class="toc-section-number">0.1</span>  An example chapter</a>
+  <ul class="collapse">
+<li><a href="#why-quarto" id="toc-why-quarto" class="nav-link" data-scroll-target="#why-quarto"><span class="toc-section-number">0.1.1</span>  Why <em>Quarto</em></a></li>
+  <li><a href="#basic-formatting" id="toc-basic-formatting" class="nav-link" data-scroll-target="#basic-formatting"><span class="toc-section-number">0.1.2</span>  Basic formatting</a></li>
+  <li><a href="#this-is-sub-header" id="toc-this-is-sub-header" class="nav-link" data-scroll-target="#this-is-sub-header"><span class="toc-section-number">0.1.3</span>  This is sub header</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="toc-section-number">0.1.4</span>  Lists</a></li>
+  <li><a href="#quotes-and-references" id="toc-quotes-and-references" class="nav-link" data-scroll-target="#quotes-and-references"><span class="toc-section-number">0.1.5</span>  Quotes and references</a></li>
+  <li><a href="#using-datasets-in-your-chapters" id="toc-using-datasets-in-your-chapters" class="nav-link" data-scroll-target="#using-datasets-in-your-chapters"><span class="toc-section-number">0.1.6</span>  Using datasets in your chapters</a></li>
+  <li><a href="#including-code" id="toc-including-code" class="nav-link" data-scroll-target="#including-code"><span class="toc-section-number">0.1.7</span>  Including code</a></li>
+  <li><a href="#including-graphs" id="toc-including-graphs" class="nav-link" data-scroll-target="#including-graphs"><span class="toc-section-number">0.1.8</span>  Including graphs</a></li>
+  <li><a href="#adding-tables" id="toc-adding-tables" class="nav-link" data-scroll-target="#adding-tables"><span class="toc-section-number">0.1.9</span>  Adding tables</a></li>
+  <li><a href="#creating-exercises-and-different-section-types" id="toc-creating-exercises-and-different-section-types" class="nav-link" data-scroll-target="#creating-exercises-and-different-section-types"><span class="toc-section-number">0.1.10</span>  Creating Exercises and different section types</a></li>
+  <li><a href="#your-task" id="toc-your-task" class="nav-link" data-scroll-target="#your-task"><span class="toc-section-number">0.1.11</span>  Your task</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Quarto Help</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header><section id="an-example-chapter" class="level2" data-number="0.1"><h2 data-number="0.1" class="anchored" data-anchor-id="an-example-chapter">
+<span class="header-section-number">0.1</span> An example chapter</h2>
+<section id="why-quarto" class="level3" data-number="0.1.1"><h3 data-number="0.1.1" class="anchored" data-anchor-id="why-quarto">
+<span class="header-section-number">0.1.1</span> Why <em>Quarto</em>
+</h3>
+<p>We are looking to create a course book to guide students focused on STEM education stats. This booklet will include theory, code examples, questions, answers and seminar tasks all in one location. There will be a clear thread of R tasks to exemplify the theory topics, running throughout, so students can get plenty of practice. We are hoping that students will use this booklet to build their own models for their assignments and it will support them in dealing with major, rather scary looking, datasets.</p>
+<p>Quarto is pretty new, so you might find that searching for help to do things in <em>rmarkdown</em> (the older version of Quarto), will give you the support that you need. The examples here will help you create a website for the MA STEM course, but quarto also allows you to create powerpoints, Word docs and pdfs for publication.</p>
+</section><section id="basic-formatting" class="level3" data-number="0.1.2"><h3 data-number="0.1.2" class="anchored" data-anchor-id="basic-formatting">
+<span class="header-section-number">0.1.2</span> Basic formatting</h3>
+<p>You can write a <code>.qmd</code> file much like you would write a plain text document, but it does also allow basic formatting using a language called markdown. Markdown lets you have text that is <strong><code>**bold**</code></strong>, <em><code>*italic*</code></em>and <u><code>&lt;u&gt;underlined&lt;/u&gt;</code></u>, it allows for linking actions, such as hyperlinks to <a href="https://en.wikipedia.org/wiki/Main_Page">webpages</a> through <code>[webpages](https://en.wikipedia.org/wiki/Main_Page)</code> and inserting images <code>![](images/brock.jpg)</code>:</p>
+<p><img src="images/brock.jpg" class="img-fluid"></p>
+<p>Make sure that your images are in the <code>images/</code> folder and that the address you use includes the image type, here it is <code>images/brock.jpg</code>. Try to give your images sensible names or place the images for your chapter in a subfolder of the images folder, e.g.&nbsp;<code>images/chpt4/amy.jpg</code>.</p>
+</section><section id="this-is-sub-header" class="level3" data-number="0.1.3"><h3 data-number="0.1.3" class="anchored" data-anchor-id="this-is-sub-header">
+<span class="header-section-number">0.1.3</span> This is sub header</h3>
+<p><code>### This is sub header</code></p>
+<p><code>#### This is an even smaller header</code></p>
+<p>For something that might be less important, you can have multiple levels of subheading by adding more <code>#</code>s, for example <code>#####</code> would be a level 5 heading, the more <code>#</code>s you have the smaller the heading.</p>
+</section><section id="lists" class="level3" data-number="0.1.4"><h3 data-number="0.1.4" class="anchored" data-anchor-id="lists">
+<span class="header-section-number">0.1.4</span> Lists</h3>
+<section id="you-can-create-a-list" class="level4" data-number="0.1.4.1"><h4 data-number="0.1.4.1" class="anchored" data-anchor-id="you-can-create-a-list">
+<span class="header-section-number">0.1.4.1</span> You can create a list:</h4>
+<pre><code>-   this is a list
+-   of bullet pointed
+-   created by
+-   items, which can be
+    -   indented with four spaces
+    -   before the hyphen `-`</code></pre>
+<ul>
+<li>this is a list</li>
+<li>of bullet pointed</li>
+<li>created by</li>
+<li>items, which can be
+<ul>
+<li>indented with four spaces</li>
+<li>before the hyphen <code>-</code>
+</li>
+</ul>
+</li>
+</ul></section><section id="you-can-also-have" class="level4" data-number="0.1.4.2"><h4 data-number="0.1.4.2" class="anchored" data-anchor-id="you-can-also-have">
+<span class="header-section-number">0.1.4.2</span> You can also have:</h4>
+<pre><code>1.  numbered lists
+2.  by using numbers followed by
+3.  bullet points
+4.  You can embed [links](https://stackoverflow.com/questions/73066792/how-to-create-lettered-lists-using-quarto) in lists</code></pre>
+<ol type="1">
+<li>numbered lists</li>
+<li>by using numbers followed by</li>
+<li>bullet points</li>
+<li>You can embed <a href="https://stackoverflow.com/questions/73066792/how-to-create-lettered-lists-using-quarto">links</a> in lists</li>
+</ol></section></section><section id="quotes-and-references" class="level3" data-number="0.1.5"><h3 data-number="0.1.5" class="anchored" data-anchor-id="quotes-and-references">
+<span class="header-section-number">0.1.5</span> Quotes and references</h3>
+<p>If someone has said something interesting, you can block quote them by using the right arrow <code>&gt;</code> quote goes here.</p>
+<blockquote class="blockquote">
+<p>Dirt glitters as long as the sun shines. – Goethe</p>
+</blockquote>
+<p>If you want to find out more about how to format your writing in quarto take a look at one of the <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">helpsheet</a> or the help <a href="https://quarto.org/docs/authoring/markdown-basics.html">website</a></p>
+<p>When writing you might want to add academic references to your quarto document. This is very straight forward using `bibtex` - a structured way of recording references. You can find bibtex entries for most academic references through the google scholar cite menu:</p>
+<p><img src=".\images/bibtex_google_scholar.gif" class="img-fluid" width="497"></p>
+<p>You can also <a href="https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX">hand-craft</a> your own references if you can’t find them online. Once you have your bibtex code, place it in the `references/mastemr.bib` file. The name of the reference is at the top of each entry, in the example below <code>kuhn1970structure</code>:</p>
+<pre><code>@book{kuhn1970structure,
+  title={The structure of scientific revolutions},
+  author={Kuhn, Thomas S},
+  volume={111},
+  year={1970},
+  publisher={Chicago University of Chicago Press}
+}</code></pre>
+<p>To add a reference to your writing use <code>[@kuhn1970structure]</code> to get <span class="citation" data-cites="kuhn1970structure">(<a href="#ref-kuhn1970structure" role="doc-biblioref">Kuhn 1970</a>)</span>. If you just require the year use <code>[-@kuhn1970structure]</code> - <span class="citation" data-cites="kuhn1970structure">(<a href="#ref-kuhn1970structure" role="doc-biblioref">1970</a>)</span>. If you want to include multiple references together, use the <code>;</code>, e.g.&nbsp;<code>[@kuhn1970structure; @stoet2018gender]</code> - <span class="citation" data-cites="kuhn1970structure stoet2018gender">(<a href="#ref-kuhn1970structure" role="doc-biblioref">Kuhn 1970</a>; <a href="#ref-stoet2018gender" role="doc-biblioref">Stoet and Geary 2018</a>)</span>.</p>
+<p>All your references will be included at the bottom of the website (go check them out!) and students can quickly access reference information by hovering over the references inline in the text. Depending on the fields you provide and the format, e.g.&nbsp;<code>@book</code> and <code>@article</code>, the references will display differently.</p>
+</section><section id="using-datasets-in-your-chapters" class="level3" data-number="0.1.6"><h3 data-number="0.1.6" class="anchored" data-anchor-id="using-datasets-in-your-chapters">
+<span class="header-section-number">0.1.6</span> Using datasets in your chapters</h3>
+<section id="loading-datasets" class="level4" data-number="0.1.6.1"><h4 data-number="0.1.6.1" class="anchored" data-anchor-id="loading-datasets">
+<span class="header-section-number">0.1.6.1</span> Loading datasets</h4>
+<p>For the creation of this book we are keeping the datasets in the <code>/data/</code> folder. I’ll create a separate chapter on loading data from web locations and local hard drives that students can refer to, so you can reference that in your chapters without having to repeat yourselves. To use the datasets you can load them from the data folder using the <code>readRDS(&lt;location&gt;)</code>, <code>.rds</code> files are standard format used in R, they are pretty small (think ~30Mb rather than 2Gb) and relatively fast to load.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># a small hack to set the correct working directory for chapters</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="cf">if</span>(<span class="fu">grepl</span>(<span class="st">"/chapters"</span>, <span class="fu">getwd</span>())){</span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">setwd</span>(<span class="fu">str_replace</span>(<span class="fu">getwd</span>(), <span class="st">"/chapters"</span>, <span class="st">""</span>))</span>
+<span id="cb4-6"><a href="#cb4-6"></a>}</span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a>teacher_df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">paste0</span>(<span class="fu">getwd</span>(),<span class="st">"/data/teacher2018.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The PISA datasets are huge, so please speak with me about which dataset you need, which year, which columns and which countries. I’ll then produce a much smaller .rds for you to use.</p>
+</section></section><section id="including-code" class="level3" data-number="0.1.7"><h3 data-number="0.1.7" class="anchored" data-anchor-id="including-code">
+<span class="header-section-number">0.1.7</span> Including code</h3>
+<p>One of the joys of using quarto is that it allows you to write R code directly into your <code>.qmd</code> file so the code you are talking about, the results of the code and the write up are all in one place. This has a few benefits:</p>
+<ul>
+<li>you don’t need to keep copy and pasting code and results from R to your support sheets</li>
+<li>if the underlying datasets change any changes automatically filter through</li>
+<li>it’s easy to include the code that you use so students can see exactly what you have done</li>
+<li>students can copy and adapt your code for their own projects.</li>
+</ul>
+<p>To add a code chunk we need to place it between <code>```{r}</code> and <code>```</code> lines, the results will be automatically displayed below the code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>As the datasets are so big, you might want to focus on a few countries. Once you have declared an object in one code block you can use it in subsequent code blocks:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>teacher_df <span class="ot">&lt;-</span> teacher_df <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3"></a>                <span class="fu">filter</span>(CNT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"USA"</span>, <span class="st">"KOR"</span>, <span class="st">"GBR"</span>))</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that there is no output from the above code, it applies a <code>filter</code> and stores <code>&lt;-</code> it, it doesn’t have any <code>print</code> or output commands. Now that we have data loaded we can peek at the top few rows using <code>head(&lt;rows&gt;)</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>teacher_df <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">select</span>(CNT,TC018Q10NA) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  CNT         TC018Q10NA     
+  &lt;chr+lbl&gt;   &lt;dbl+lbl&gt;      
+1 KOR [Korea] 0 [Not checked]
+2 KOR [Korea] 0 [Not checked]
+3 KOR [Korea] 0 [Not checked]</code></pre>
+</div>
+</div>
+<p>But maybe we want to show the students some code without actually running it. To do this we can pass variables to the code chunks through the use of <code>#| setting: value</code> that tell quarto how to handle each chunk. For example, by adding <code>#| eval: false</code> to the top of the code chunk. The code then displays, but doesn’t run (<em><strong>eval</strong>uate</em>):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="co">#| eval: false</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>teacher_df <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We might want to do the opposite, to run the code chunk but only display the output and not the code that produced the output. To do this we can add <code>#| echo: false</code> to top of the code chunk:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  CNT                      n median_age males females
+  &lt;chr+lbl&gt;            &lt;int&gt;      &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+1 GBR [United Kingdom]  2650         40   476     959
+2 KOR [Korea]           4068         44  1816    2156
+3 USA [United States]   3526         42  1019    1784</code></pre>
+</div>
+</div>
+<p>The above examples show how you can output tables and simple sums to the screen, you might also want to output calculated values and graphs. Imagine we want to add the number of male teachers to a report, in the middle of some text. First we need to calculate this value and store it in an object <code>male_num</code>. Note here that we use the <code>pull(&lt;column&gt;)</code> command, this returns the vector stored in the <code>males</code> column, rather than the column datatype.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="co"># get number of male teachers in total</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>male_num <span class="ot">&lt;-</span> teacher_df <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">summarise</span>(<span class="at">males =</span> <span class="fu">sum</span>(<span class="fu">ifelse</span>(TC001Q01NA <span class="sc">==</span> <span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">0</span>), </span>
+<span id="cb12-5"><a href="#cb12-5"></a>                        <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(males)</span>
+<span id="cb12-6"><a href="#cb12-6"></a></span>
+<span id="cb12-7"><a href="#cb12-7"></a>countries <span class="ot">&lt;-</span> teacher_df <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(CNT) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(CNT)</span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now that this has been calculated we can insert it into our text using the inline <code>&amp;#96r cntries&amp;#96 </code> and <code>&amp;#96r male_num&amp;#96</code> commands:</p>
+<p><code> &gt; The number of male teachers in the PISA dataset for &amp;#96r contries&amp;#96 is &amp;#96r male_num&amp;#96</code></p>
+<blockquote class="blockquote">
+<p>The number of male teachers in the PISA dataset for KOR, GBR, USA is 3311.</p>
+</blockquote>
+<p>The great thing about the above is that if the dataset changes, the names and the number will automatically update.</p>
+</section><section id="including-graphs" class="level3" data-number="0.1.8"><h3 data-number="0.1.8" class="anchored" data-anchor-id="including-graphs">
+<span class="header-section-number">0.1.8</span> Including graphs</h3>
+<p>To add graphs to your booklets use the {r} coding blocks as normal. Create your graph and it should display. You can add a caption to the graph using the <code>#| fig-cap: &lt;text&gt;</code> command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="co">#| fig-cap: median age of teacher by country</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="co">#| warning: false</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="co"># get number of male teachers in total</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>graph_data <span class="ot">&lt;-</span> teacher_df <span class="sc">%&gt;%</span> </span>
+<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">filter</span>(TC001Q01NA <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a>  <span class="fu">mutate</span>(<span class="at">gender =</span> <span class="fu">ifelse</span>(TC001Q01NA <span class="sc">==</span> <span class="dv">2</span>, <span class="st">"male"</span>,<span class="st">"female"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a>  <span class="fu">group_by</span>(CNT, gender) <span class="sc">%&gt;%</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a>  <span class="fu">summarise</span>(<span class="at">median_age =</span> <span class="fu">median</span>(TC002Q01NA))</span>
+<span id="cb13-10"><a href="#cb13-10"></a></span>
+<span id="cb13-11"><a href="#cb13-11"></a><span class="fu">ggplot</span>(<span class="at">data=</span>graph_data, </span>
+<span id="cb13-12"><a href="#cb13-12"></a>       <span class="fu">aes</span>(<span class="at">x=</span>CNT, <span class="at">y=</span>median_age, <span class="at">fill=</span>gender)) <span class="sc">+</span></span>
+<span id="cb13-13"><a href="#cb13-13"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>)</span>
+<span id="cb13-14"><a href="#cb13-14"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="quarto_help_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">median age of teacher by country</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that the above also includes <code>#| warning: false</code>, this stops <code>group_by</code> placing a warning message as output</p>
+</section><section id="adding-tables" class="level3" data-number="0.1.9"><h3 data-number="0.1.9" class="anchored" data-anchor-id="adding-tables">
+<span class="header-section-number">0.1.9</span> Adding tables</h3>
+<p>You can add tables to your pages, these can be a bit fiddlym check out the <a href="https://quarto.org/docs/authoring/tables.html">advice document</a></p>
+</section><section id="creating-exercises-and-different-section-types" class="level3" data-number="0.1.10"><h3 data-number="0.1.10" class="anchored" data-anchor-id="creating-exercises-and-different-section-types">
+<span class="header-section-number">0.1.10</span> Creating Exercises and different section types</h3>
+<p>There are several inbuilt section types that come with Quarto for common book sections such as “Note” or “Warning!”. You can access these by surrounding a section with <code>::: &lt;section-type&gt;</code>. For example:</p>
+<p><code>::: callout-note specifies things to note :::</code></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>specifies things to note</p>
+</div>
+</div>
+<p><code>:::callout-warning gives warning messages :::</code></p>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>gives warning messages</p>
+</div>
+</div>
+<p>There are also <code>callout-important</code></p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>highlights issues that might break your code</p>
+</div>
+</div>
+<p>and <code>callout-tip</code></p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>gives suggestions on how to do things in a better way</p>
+</div>
+</div>
+<p>To create your exercise section we do something similar but you might also want to add code:</p>
+<div class="question">
+<p>Activities and coding tasks look like this</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="co">#| eval: false</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>what <span class="ot">&lt;-</span> <span class="st">"does this"</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>code <span class="sc">==</span> <span class="st">"do"</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="question">
+<p>Activities and coding tasks look like this</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>what <span class="ot">&lt;-</span> <span class="st">"does this"</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>code <span class="sc">==</span> <span class="st">"do"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section><section id="your-task" class="level3" data-number="0.1.11">
+
+
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">
+0.1.11 Your task</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-kuhn1970structure" class="csl-entry" role="doc-biblioentry">
+Kuhn, Thomas S. 1970. <em>The Structure of Scientific Revolutions</em>. Vol. 111. Chicago University of Chicago Press.
+</div>
+<div id="ref-stoet2018gender" class="csl-entry" role="doc-biblioentry">
+Stoet, Gijsbert, and David C Geary. 2018. <span>“The Gender-Equality Paradox in Science, Technology, Engineering, and Mathematics Education.”</span> <em>Psychological Science</em> 29 (4): 581–93.
+</div>
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
