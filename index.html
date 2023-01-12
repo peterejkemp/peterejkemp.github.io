@@ -478,7 +478,7 @@ Tip
 <strong>Windows</strong> users visit: <a href="https://cran.r-project.org/bin/windows/base/">here</a>
 </li>
 <li>
-<strong>Mac</strong> users visit: <a href="hhttps://cran.r-project.org/bin/macosx/">here</a> and make sure you get the correct version of R for M1/2 Mac (~November 2020 onwards), or Intel Macs (~up to November 2020)</li>
+<strong>Mac</strong> users visit: <a href="hhttps://cran.r-project.org/bin/macosx/">here</a> and make sure you get the correct version of R for M1/2 Macs (~November 2020 onwards), or Intel Macs (~up to November 2020)</li>
 </ol>
 </li>
 <li><p>Install <strong>RStudio</strong>, visit <a href="https://rstudio.com/products/rstudio/download/#download">here</a> and it should present you with the version suitable for your operating system.</p></li>
@@ -510,7 +510,7 @@ Tip
 <p><img src="chapters/images/output_data_starwars.png" class="img-fluid"></p>
 </li>
 <li><p>Install the <code>arrow</code> package, repeat step 2, above.</p></li>
-<li><p>Download the <code>PISA_2018_student_subset.parquet</code> dataset from <a href="https://drive.google.com/file/d/18CZfkbix4e36lfY9b2V-_E4tDGBpeb0f/view?usp=share_link">here</a> and <strong>download</strong> it on your computer, make a note of <strong>full folder location</strong> where you have saved this!</p></li>
+<li><p>Download the <code>PISA_2018_student_subset.parquet</code> dataset from <a href="https://drive.google.com/file/d/18CZfkbix4e36lfY9b2V-_E4tDGBpeb0f/view?usp=share_link">here</a> and <strong>download</strong> it on your computer, make a note of the <strong>full folder location</strong> where you have saved this!</p></li>
 </ol>
 <p>If you need help with finding the full folder location of your file, often a hurdle for Mac users, go to <a href="#sec-loading-computer">Section&nbsp;2.8.3</a></p>
 <ol start="10" type="1">
@@ -529,7 +529,7 @@ Tip
 <span id="cb5-2"><a href="#cb5-2"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_2018_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="11" type="1">
-<li>Underneath the code you have already written, copy the code below (you don’t have to write it yourself), and run it . Try and figure out what each line does</li>
+<li>Underneath the code you have already written, copy the code below (you don’t have to write it yourself), and run it .Try and figure out what each line does</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>PISA_2018 <span class="sc">%&gt;%</span></span>
@@ -1233,7 +1233,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Try this out</strong></p>
-<p>The code above transforms data and converts it into a graph. It doesn’t have any comments, but you should hopefully be able to understand what a lot of the code does by just reading it. Can you guess what each line does? Try running the code by selecting parts of it and pressing <code>control</code> | <code>command</code> and <code>Enter</code></p>
+<p>The code above transforms data and converts it into a graph. It doesn’t have any comments, but you should hopefully be able to understand what a lot of the code does by just reading it. Can you guess what each line does? Try running the code by selecting parts of it and pressing <code>control</code> | <code>command ⌘</code> and <code>Enter</code></p>
 </div>
 </div>
 </section><section id="sec-loading" class="level2" data-number="2.8"><h2 data-number="2.8" class="anchored" data-anchor-id="sec-loading">
@@ -1415,9 +1415,9 @@ Tip
 <p>To find the location of a file in <strong><em>Mac OSX</em></strong> do the following:</p>
 <ol type="1">
 <li><p>Open <em>Finder</em></p></li>
-<li><p>Navigate to the folder where you saved the Excel file</p></li>
+<li><p>Navigate to the folder where you saved the file</p></li>
 <li>
-<p>Right click on the folder where the file is stored and click to open the menu. Then press the option button and select <code>Copy &lt;name of file&gt; as Pathname</code></p>
+<p>Right click on the name of the fil, then press the <strong>option</strong> <code>⌥</code> (or Alt) button and select <code>Copy &lt;name of file&gt; as Pathname</code></p>
 <p><img src="chapters/images/mac_pathnames.jpg" class="img-fluid"></p>
 </li>
 <li><p>Alternatively, follow <a href="https://support.apple.com/en-gb/guide/mac-help/mchlp1774/mac">this</a></p></li>
@@ -1484,7 +1484,7 @@ Tip
 </section></section><section id="exploring-data" class="level2" data-number="2.9"><h2 data-number="2.9" class="anchored" data-anchor-id="exploring-data">
 <span class="header-section-number">2.9</span> Exploring data</h2>
 <p>Now that we have loaded the <code>PISA_2018</code> dataset we can start to explore it.</p>
-<p>You can check that the tables have loaded correctly by typing the object name and ‘<em>running</em>’ the line (<code>control</code>|<code>command</code> and <code>Enter</code>)</p>
+<p>You can check that the tables have loaded correctly by typing the object name and ‘<em>running</em>’ the line (<code>control</code>|<code>command ⌘</code> and <code>Enter</code>)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a>PISA_2018</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1513,7 +1513,7 @@ Tip
 <p>We can see from this that the <code>tibble</code> (another word for <em>dataframe</em>, basically a spreadsheet table) is 612004 rows, with 204 columns <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. This is data for all the students from around the world that took part in PISA 2018. The actual PISA dataset has many more columns than this, but for the examples here we have selected 204 of the more interesting data variables. The column names might seem rather confusing and you might want to refer to the <a href="https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx">PISA 2018 code book</a> to find out what everything means.</p>
 <p>The data shown in the console window is only the top few rows and first few columns. To see the whole table click on the <code>Environment panel</code> and the table icon <img src="chapters/images/icon_table.png" class="img-fluid"> to explore the table:</p>
 <p><img src="chapters/images/environment_view_table.png" class="img-fluid"></p>
-<p>Alternatively, you can also hold down <code>command</code>|<code>control</code> and click on the table name in your R Script to view the table. You can also type <code>view(&lt;table_name&gt;)</code>.</p>
+<p>Alternatively, you can also hold down <code>command ⌘</code>|<code>control</code> and click on the table name in your R Script to view the table. You can also type <code>view(&lt;table_name&gt;)</code>.</p>
 <p>In the table view mode you can read the label attached to each column, this will give you more detail about what the column stores. If you hover over columns it will display the label:</p>
 <p><img src="chapters/images/environment_col_label.png" class="img-fluid"></p>
 <p>Alternatively, to read the full label of a column, the following code can be used:</p>
@@ -1524,19 +1524,8 @@ Tip
 <pre><code>[1] "How many books are there in your home?"</code></pre>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>To learn more about loading data from in other formats, e.g.&nbsp;SPSS and STATA, look at the tidyverse documentation for <a href="https://haven.tidyverse.org/">haven</a>.</p>
-</div>
-</div>
+<p>Each view only shows you 50 columns, to see more use the navigation panel:</p>
+<p><img src="chapters/images/navigation_panel.png" class="img-fluid"> ::: callout-note To learn more about loading data from in other formats, e.g.&nbsp;SPSS and STATA, look at the tidyverse documentation for <a href="https://haven.tidyverse.org/">haven</a>. :::</p>
 <p>The <code>PISA_2018</code> dataframe is made up of multiple columns, with each column acting like a <em>vector</em>, which means each column stores values of only one datatype. If we look at the first four columns of the schools table, you can see the <code>CNTSTUID</code>, <code>ESCS</code> and <code>PV1MATH</code> columns are <code>&lt;dbl&gt;</code> (<code>numeric</code>) and the other three columns are of <code>&lt;fctr&gt;</code> (<code>factor</code>), a special datatype in R that helps store categorical and ordinal variables, see <a href="#sec-factors">Section&nbsp;2.11.2</a> for more information on how factors work.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -3897,7 +3886,7 @@ EHCplan                         9  7506  7497 2.42    12.32  46.21
 <span class="header-section-number">4.1.4</span> Column graphs</h3>
 <p>Example - plot a graph of the the % of students on EHC plans by gender of school</p>
 <p>First, we want to pipe changes to a new <code>data.frame</code> we will use in the plot. I have called that <code>data.frame</code> <code>genderplot</code>. Then, I <code>group_by</code> <code>sex_of_school_description,</code> to get the schools grouped by whether they are single of mixed sex. Next I use the mutate function to create percentage columns, as we did before.</p>
-<p>The new element here is using ggplot, R’s graphing function (more details on how to use geom_bar are in the section above: <a href="#geom_bar">geom_bar</a>).</p>
+<p>The new element here is using ggplot, R’s graphing function (more details on how to use geom_bar are in the section above: [geom_bar]).</p>
 <p>First, you call ggplot and specify the data you want to use for the graph (in our case, the new <code>data.frame</code> we have created, <code>genderplot</code>). The next layer of ggplot is the aesthetics (<code>aes</code>), i.e., what our graph will look like. First, we tell ggplot what we want our x (sex_of_school_description) and y (percentageEHCplan) variables to be. Finally, we use <code>geom_col()</code> to plot a column graph.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb252"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb252-1"><a href="#cb252-1"></a><span class="co"># Presenting % on EHC by gender of school</span></span>
@@ -3962,7 +3951,7 @@ EHCplan                         9  7506  7497 2.42    12.32  46.21
 <p><img src="index_files/figure-html/unnamed-chunk-179-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>We can make things more pleasing by adding more features to the aesthetic variable. For example, I can add colour ('geom_point(colour="blue")') and rename the axes 'labs(x="Total number of pupils", y="Number of puupils on EHC plans")'. Note when adding to <code>ggplot</code>, the '+' should come at the end of the line before.</p>
+<p>We can make things more pleasing by adding more features to the aesthetic variable. For example, I can add colour (‘geom_point(colour=“blue”)’) and rename the axes ‘labs(x=“Total number of pupils”, y=“Number of puupils on EHC plans”)’. Note when adding to <code>ggplot</code>, the ‘+’ should come at the end of the line before.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb256"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb256-1"><a href="#cb256-1"></a><span class="co">#  Filter to create a dataframe of only London schools</span></span>
 <span id="cb256-2"><a href="#cb256-2"></a>plotdata<span class="ot">&lt;-</span>DfE_SEN_data <span class="sc">%&gt;%</span></span>
@@ -3976,7 +3965,7 @@ EHCplan                         9  7506  7497 2.42    12.32  46.21
 <p><img src="index_files/figure-html/unnamed-chunk-180-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>I can also add a line using (geom_smooth(method='lm')) - here 'lm' specifies a linear plot (i.e.&nbsp;a straight line).</p>
+<p>I can also add a line using (geom_smooth(method=‘lm’)) - here ‘lm’ specifies a linear plot (i.e.&nbsp;a straight line).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb257"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb257-1"><a href="#cb257-1"></a><span class="co"># Filtter to create a dataframe of only London schools</span></span>
 <span id="cb257-2"><a href="#cb257-2"></a>plotdata<span class="ot">&lt;-</span>DfE_SEN_data <span class="sc">%&gt;%</span></span>
@@ -3994,7 +3983,7 @@ EHCplan                         9  7506  7497 2.42    12.32  46.21
 <p><img src="index_files/figure-html/unnamed-chunk-181-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>I can also change the colour by another variable ('aes(colour=type_of_establishment)'). I can vary the size of points and make them slightly transparent using ('geom_point(alpha=0.4, size=0.3)')</p>
+<p>I can also change the colour by another variable (‘aes(colour=type_of_establishment)’). I can vary the size of points and make them slightly transparent using (‘geom_point(alpha=0.4, size=0.3)’)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb259"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb259-1"><a href="#cb259-1"></a><span class="co"># Filter to create a dataframe of only London schools</span></span>
 <span id="cb259-2"><a href="#cb259-2"></a>plotdata<span class="ot">&lt;-</span>DfE_SEN_data <span class="sc">%&gt;%</span></span>
@@ -4026,15 +4015,17 @@ EHCplan                         9  7506  7497 2.42    12.32  46.21
 </div>
 </section><section id="extension-task---binning-data" class="level4" data-number="4.1.5.2"><h4 data-number="4.1.5.2" class="anchored" data-anchor-id="extension-task---binning-data">
 <span class="header-section-number">4.1.5.2</span> Extension task - Binning data</h4>
-<p>If we want to plot a frequency plot, the kind of chart that often gives a normal distribution, we need to divide data into counts of ranges of data. For example, if we wanted to plot a frequency chart of heights, we might divide the counts into those between 1.5m-1.6m, 1.6m-1.7m etc. To do this we can use the <code>cut</code> function.</p>
+<p>If we want to plot a frequency plot, the kind of chart that often gives a normal distribution, we need to divide data into counts of ranges of data. For example, if we wanted to plot a frequency chart of heights, we might divide the counts into those between 1.5m-1.6m, 1.6m-1.7m etc. To do this we can use the <code>cut</code> function to <code>mutate</code> the dataframe.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb261"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb261-1"><a href="#cb261-1"></a>binnedsize <span class="ot">&lt;-</span> DfE_SEN_data <span class="sc">%&gt;%</span></span>
-<span id="cb261-2"><a href="#cb261-2"></a>  <span class="fu">mutate</span>(<span class="at">Total.pupils =</span> <span class="fu">cut</span>(Total.pupils, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1500</span>, <span class="dv">50</span>)))<span class="sc">%&gt;%</span></span>
-<span id="cb261-3"><a href="#cb261-3"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb261-4"><a href="#cb261-4"></a><span class="fu">ggplot</span>(binnedsize,</span>
-<span id="cb261-5"><a href="#cb261-5"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Total.pupils))<span class="sc">+</span></span>
-<span id="cb261-6"><a href="#cb261-6"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
-<span id="cb261-7"><a href="#cb261-7"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb261"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb261-1"><a href="#cb261-1"></a><span class="co"># Creates distribution of schools by size</span></span>
+<span id="cb261-2"><a href="#cb261-2"></a>binnedsize <span class="ot">&lt;-</span> DfE_SEN_data <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with </span></span>
+<span id="cb261-3"><a href="#cb261-3"></a>  <span class="fu">mutate</span>(<span class="at">Total.pupils =</span> <span class="fu">cut</span>(Total.pupils, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1500</span>, <span class="dv">25</span>)))<span class="sc">%&gt;%</span></span>
+<span id="cb261-4"><a href="#cb261-4"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb261-5"><a href="#cb261-5"></a><span class="fu">ggplot</span>(binnedsize,</span>
+<span id="cb261-6"><a href="#cb261-6"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Total.pupils))<span class="sc">+</span></span>
+<span id="cb261-7"><a href="#cb261-7"></a>  <span class="fu">geom_bar</span>(<span class="at">fill=</span><span class="st">"dark green"</span>)<span class="sc">+</span></span>
+<span id="cb261-8"><a href="#cb261-8"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb261-9"><a href="#cb261-9"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Number of schools"</span>, <span class="at">x=</span><span class="st">"Pupil range"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-184-1.png" class="img-fluid" width="672"></p>
 </div>
