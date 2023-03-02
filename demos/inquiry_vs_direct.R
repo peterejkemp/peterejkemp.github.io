@@ -7,6 +7,9 @@
 # [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO](https://creativecommons.org/licenses/by-nc-sa/3.0/igo/) (CC BY-NC-SA 3.0 IGO)
 # Copyright OECD"
 
+library(tidyverse)
+library(arrow)
+
 # Load PISA 2015
 PISA_2015 <- read_parquet(glue("{datafolder}/PISA_2015_student_subset.parquet"))
 
