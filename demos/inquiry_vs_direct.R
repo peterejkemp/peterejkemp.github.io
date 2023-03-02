@@ -9,6 +9,7 @@
 
 library(tidyverse)
 library(arrow)
+library(glue)
 
 # Load PISA 2015
 PISA_2015 <- read_parquet(glue("{datafolder}/PISA_2015_student_subset.parquet"))
