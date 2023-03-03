@@ -2,16 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.377">
+<meta name="generator" content="quarto-1.2.269">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>MASTEMR - Quantitative methods in the context of STEM education research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -50,7 +55,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -63,7 +68,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -95,12 +100,23 @@ div.csl-indent {
   margin-left: 2em;
 }
 </style>
-<script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><script src="site_libs/clipboard/clipboard.min.js"></script><meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -124,16 +140,21 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="./index.html">
-    <img src="./images/KCL_logo.png" alt=""><span class="navbar-title">MASTEMR</span>
-  </a>
+      <div class="navbar-brand-container">
+    <a href="https://keats.kcl.ac.uk/course/view.php?id=106595" class="navbar-brand navbar-brand-logo">
+    <img src="./images/KCL_logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="https://keats.kcl.ac.uk/course/view.php?id=106595">
+    <span class="navbar-title">MASTEMR</span>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
 <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
+    <a class="nav-link active" href="./index.html" aria-current="page">
+ <span class="menu-text">Home</span></a>
   </li>  
 </ul>
 <div id="quarto-search" class="" title="Search"></div>
@@ -143,280 +164,289 @@ div.csl-indent {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
 <li>
-<a href="#introduction-to-quantitative-methods" id="toc-introduction-to-quantitative-methods" class="nav-link active" data-scroll-target="#introduction-to-quantitative-methods"> <span class="header-section-number">1</span> Introduction to quantitative methods</a>
+<a href="#introduction-to-quantitative-methods" id="toc-introduction-to-quantitative-methods" class="nav-link active" data-scroll-target="#introduction-to-quantitative-methods"><span class="toc-section-number">1</span>  Introduction to quantitative methods</a>
   <ul class="collapse">
 <li>
-<a href="#seminar-tasks" id="toc-seminar-tasks" class="nav-link" data-scroll-target="#seminar-tasks"> <span class="header-section-number">1.1</span> Seminar tasks</a>
+<a href="#seminar-tasks" id="toc-seminar-tasks" class="nav-link" data-scroll-target="#seminar-tasks"><span class="toc-section-number">1.1</span>  Seminar tasks</a>
   <ul class="collapse">
-<li><a href="#activity-1-the-mismeasure-of-man" id="toc-activity-1-the-mismeasure-of-man" class="nav-link" data-scroll-target="#activity-1-the-mismeasure-of-man"> <span class="header-section-number">1.1.1</span> Activity 1: The mismeasure of man?</a></li>
-  <li><a href="#activity-2-an-example-of-quantification" id="toc-activity-2-an-example-of-quantification" class="nav-link" data-scroll-target="#activity-2-an-example-of-quantification"> <span class="header-section-number">1.1.2</span> Activity 2: An example of quantification</a></li>
-  <li><a href="#activity-3-a-false-dualism" id="toc-activity-3-a-false-dualism" class="nav-link" data-scroll-target="#activity-3-a-false-dualism"> <span class="header-section-number">1.1.3</span> Activity 3: A false dualism?</a></li>
-  <li><a href="#task-4-another-critique-of-quantification" id="toc-task-4-another-critique-of-quantification" class="nav-link" data-scroll-target="#task-4-another-critique-of-quantification"> <span class="header-section-number">1.1.4</span> Task 4: Another critique of quantification</a></li>
+<li><a href="#activity-1-the-mismeasure-of-man" id="toc-activity-1-the-mismeasure-of-man" class="nav-link" data-scroll-target="#activity-1-the-mismeasure-of-man"><span class="toc-section-number">1.1.1</span>  Activity 1: The mismeasure of man?</a></li>
+  <li><a href="#activity-2-an-example-of-quantification" id="toc-activity-2-an-example-of-quantification" class="nav-link" data-scroll-target="#activity-2-an-example-of-quantification"><span class="toc-section-number">1.1.2</span>  Activity 2: An example of quantification</a></li>
+  <li><a href="#activity-3-a-false-dualism" id="toc-activity-3-a-false-dualism" class="nav-link" data-scroll-target="#activity-3-a-false-dualism"><span class="toc-section-number">1.1.3</span>  Activity 3: A false dualism?</a></li>
+  <li><a href="#task-4-another-critique-of-quantification" id="toc-task-4-another-critique-of-quantification" class="nav-link" data-scroll-target="#task-4-another-critique-of-quantification"><span class="toc-section-number">1.1.4</span>  Task 4: Another critique of quantification</a></li>
   </ul>
 </li>
   </ul>
 </li>
   <li>
-<a href="#introduction-to-r" id="toc-introduction-to-r" class="nav-link" data-scroll-target="#introduction-to-r"> <span class="header-section-number">2</span> Introduction to R</a>
+<a href="#introduction-to-r" id="toc-introduction-to-r" class="nav-link" data-scroll-target="#introduction-to-r"><span class="toc-section-number">2</span>  Introduction to R</a>
   <ul class="collapse">
-<li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"> <span class="header-section-number">2.1</span> Introduction</a></li>
+<li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="toc-section-number">2.1</span>  Introduction</a></li>
   <li>
-<a href="#getting-set-up" id="toc-getting-set-up" class="nav-link" data-scroll-target="#getting-set-up"> <span class="header-section-number">2.2</span> Getting set up</a>
+<a href="#getting-set-up" id="toc-getting-set-up" class="nav-link" data-scroll-target="#getting-set-up"><span class="toc-section-number">2.2</span>  Getting set up</a>
   <ul class="collapse">
-<li><a href="#installation-on-your-own-machine" id="toc-installation-on-your-own-machine" class="nav-link" data-scroll-target="#installation-on-your-own-machine"> <span class="header-section-number">2.2.1</span> Installation (on your own machine)</a></li>
-  <li><a href="#sec-packages" id="toc-sec-packages" class="nav-link" data-scroll-target="#sec-packages"> <span class="header-section-number">2.2.2</span> Setting up RStudio and the tidyverse</a></li>
+<li><a href="#installation-on-your-own-machine" id="toc-installation-on-your-own-machine" class="nav-link" data-scroll-target="#installation-on-your-own-machine"><span class="toc-section-number">2.2.1</span>  Installation (on your own machine)</a></li>
+  <li><a href="#sec-packages" id="toc-sec-packages" class="nav-link" data-scroll-target="#sec-packages"><span class="toc-section-number">2.2.2</span>  Setting up RStudio and the tidyverse</a></li>
   </ul>
 </li>
-  <li><a href="#starting-to-code" id="toc-starting-to-code" class="nav-link" data-scroll-target="#starting-to-code"> <span class="header-section-number">2.3</span> Starting to code</a></li>
+  <li><a href="#starting-to-code" id="toc-starting-to-code" class="nav-link" data-scroll-target="#starting-to-code"><span class="toc-section-number">2.3</span>  Starting to code</a></li>
   <li>
-<a href="#your-first-program" id="toc-your-first-program" class="nav-link" data-scroll-target="#your-first-program"> <span class="header-section-number">2.4</span> Your first program</a>
+<a href="#your-first-program" id="toc-your-first-program" class="nav-link" data-scroll-target="#your-first-program"><span class="toc-section-number">2.4</span>  Your first program</a>
   <ul class="collapse">
-<li><a href="#objects-and-instructions" id="toc-objects-and-instructions" class="nav-link" data-scroll-target="#objects-and-instructions"> <span class="header-section-number">2.4.1</span> Objects and instructions</a></li>
-  <li><a href="#naming-objects" id="toc-naming-objects" class="nav-link" data-scroll-target="#naming-objects"> <span class="header-section-number">2.4.2</span> Naming objects</a></li>
-  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"> <span class="header-section-number">2.4.3</span> Comments</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#sec-datatypes" id="toc-sec-datatypes" class="nav-link" data-scroll-target="#sec-datatypes"> <span class="header-section-number">2.5</span> Datatypes</a>
-  <ul class="collapse">
-<li><a href="#sec-vectors" id="toc-sec-vectors" class="nav-link" data-scroll-target="#sec-vectors"> <span class="header-section-number">2.5.1</span> Vectors</a></li>
-  <li><a href="#questions-3" id="toc-questions-3" class="nav-link" data-scroll-target="#questions-3"> <span class="header-section-number">2.5.2</span> Questions</a></li>
-  <li><a href="#summary-questions" id="toc-summary-questions" class="nav-link" data-scroll-target="#summary-questions"> <span class="header-section-number">2.5.3</span> Summary questions</a></li>
+<li><a href="#objects-and-instructions" id="toc-objects-and-instructions" class="nav-link" data-scroll-target="#objects-and-instructions"><span class="toc-section-number">2.4.1</span>  Objects and instructions</a></li>
+  <li><a href="#naming-objects" id="toc-naming-objects" class="nav-link" data-scroll-target="#naming-objects"><span class="toc-section-number">2.4.2</span>  Naming objects</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"><span class="toc-section-number">2.4.3</span>  Comments</a></li>
   </ul>
 </li>
   <li>
-<a href="#packages-and-libraries" id="toc-packages-and-libraries" class="nav-link" data-scroll-target="#packages-and-libraries"> <span class="header-section-number">2.6</span> Packages and libraries</a>
+<a href="#sec-datatypes" id="toc-sec-datatypes" class="nav-link" data-scroll-target="#sec-datatypes"><span class="toc-section-number">2.5</span>  Datatypes</a>
   <ul class="collapse">
-<li><a href="#sec-load-run-pckges" id="toc-sec-load-run-pckges" class="nav-link" data-scroll-target="#sec-load-run-pckges"> <span class="header-section-number">2.6.1</span> Installing and loading packages</a></li>
-  </ul>
-</li>
-  <li><a href="#the-tidyverse" id="toc-the-tidyverse" class="nav-link" data-scroll-target="#the-tidyverse"> <span class="header-section-number">2.7</span> The tidyverse</a></li>
-  <li>
-<a href="#sec-loading" id="toc-sec-loading" class="nav-link" data-scroll-target="#sec-loading"> <span class="header-section-number">2.8</span> Loading data</a>
-  <ul class="collapse">
-<li><a href="#dataframes" id="toc-dataframes" class="nav-link" data-scroll-target="#dataframes"> <span class="header-section-number">2.8.1</span> Dataframes</a></li>
-  <li><a href="#loading-data-from-the-web" id="toc-loading-data-from-the-web" class="nav-link" data-scroll-target="#loading-data-from-the-web"> <span class="header-section-number">2.8.2</span> Loading data from the web</a></li>
-  <li><a href="#sec-loading-computer" id="toc-sec-loading-computer" class="nav-link" data-scroll-target="#sec-loading-computer"> <span class="header-section-number">2.8.3</span> Loading data from your computer</a></li>
-  <li><a href="#setting-working-directories" id="toc-setting-working-directories" class="nav-link" data-scroll-target="#setting-working-directories"> <span class="header-section-number">2.8.4</span> Setting working directories</a></li>
-  <li><a href="#proper-addresses" id="toc-proper-addresses" class="nav-link" data-scroll-target="#proper-addresses"> <span class="header-section-number">2.8.5</span> Proper addresses</a></li>
-  <li><a href="#sec-parquet" id="toc-sec-parquet" class="nav-link" data-scroll-target="#sec-parquet"> <span class="header-section-number">2.8.6</span> .parquet files</a></li>
-  <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files"> <span class="header-section-number">2.8.7</span> .csv files</a></li>
+<li><a href="#sec-vectors" id="toc-sec-vectors" class="nav-link" data-scroll-target="#sec-vectors"><span class="toc-section-number">2.5.1</span>  Vectors</a></li>
+  <li><a href="#questions-3" id="toc-questions-3" class="nav-link" data-scroll-target="#questions-3"><span class="toc-section-number">2.5.2</span>  Questions</a></li>
+  <li><a href="#summary-questions" id="toc-summary-questions" class="nav-link" data-scroll-target="#summary-questions"><span class="toc-section-number">2.5.3</span>  Summary questions</a></li>
   </ul>
 </li>
   <li>
-<a href="#exploring-data" id="toc-exploring-data" class="nav-link" data-scroll-target="#exploring-data"> <span class="header-section-number">2.9</span> Exploring data</a>
+<a href="#packages-and-libraries" id="toc-packages-and-libraries" class="nav-link" data-scroll-target="#packages-and-libraries"><span class="toc-section-number">2.6</span>  Packages and libraries</a>
   <ul class="collapse">
-<li><a href="#questions-4" id="toc-questions-4" class="nav-link" data-scroll-target="#questions-4"> <span class="header-section-number">2.9.1</span> Questions</a></li>
+<li><a href="#sec-load-run-pckges" id="toc-sec-load-run-pckges" class="nav-link" data-scroll-target="#sec-load-run-pckges"><span class="toc-section-number">2.6.1</span>  Installing and loading packages</a></li>
+  </ul>
+</li>
+  <li><a href="#the-tidyverse" id="toc-the-tidyverse" class="nav-link" data-scroll-target="#the-tidyverse"><span class="toc-section-number">2.7</span>  The tidyverse</a></li>
+  <li>
+<a href="#sec-loading" id="toc-sec-loading" class="nav-link" data-scroll-target="#sec-loading"><span class="toc-section-number">2.8</span>  Loading data</a>
+  <ul class="collapse">
+<li><a href="#dataframes" id="toc-dataframes" class="nav-link" data-scroll-target="#dataframes"><span class="toc-section-number">2.8.1</span>  Dataframes</a></li>
+  <li><a href="#loading-data-from-the-web" id="toc-loading-data-from-the-web" class="nav-link" data-scroll-target="#loading-data-from-the-web"><span class="toc-section-number">2.8.2</span>  Loading data from the web</a></li>
+  <li><a href="#sec-loading-computer" id="toc-sec-loading-computer" class="nav-link" data-scroll-target="#sec-loading-computer"><span class="toc-section-number">2.8.3</span>  Loading data from your computer</a></li>
+  <li><a href="#setting-working-directories" id="toc-setting-working-directories" class="nav-link" data-scroll-target="#setting-working-directories"><span class="toc-section-number">2.8.4</span>  Setting working directories</a></li>
+  <li><a href="#proper-addresses" id="toc-proper-addresses" class="nav-link" data-scroll-target="#proper-addresses"><span class="toc-section-number">2.8.5</span>  Proper addresses</a></li>
+  <li><a href="#sec-parquet" id="toc-sec-parquet" class="nav-link" data-scroll-target="#sec-parquet"><span class="toc-section-number">2.8.6</span>  .parquet files</a></li>
+  <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files"><span class="toc-section-number">2.8.7</span>  .csv files</a></li>
   </ul>
 </li>
   <li>
-<a href="#piping-and-dplyr" id="toc-piping-and-dplyr" class="nav-link" data-scroll-target="#piping-and-dplyr"> <span class="header-section-number">2.10</span> Piping and dplyr</a>
+<a href="#exploring-data" id="toc-exploring-data" class="nav-link" data-scroll-target="#exploring-data"><span class="toc-section-number">2.9</span>  Exploring data</a>
   <ul class="collapse">
-<li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"> <span class="header-section-number">2.10.1</span> select</a></li>
-  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"> <span class="header-section-number">2.10.2</span> filter</a></li>
-  <li><a href="#sec-renaming" id="toc-sec-renaming" class="nav-link" data-scroll-target="#sec-renaming"> <span class="header-section-number">2.10.3</span> renaming columns</a></li>
-  <li><a href="#group_by-and-summarise" id="toc-group_by-and-summarise" class="nav-link" data-scroll-target="#group_by-and-summarise"> <span class="header-section-number">2.10.4</span> group_by and summarise</a></li>
-  <li><a href="#sec-mutate" id="toc-sec-mutate" class="nav-link" data-scroll-target="#sec-mutate"> <span class="header-section-number">2.10.5</span> mutate</a></li>
-  <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange"> <span class="header-section-number">2.10.6</span> arrange</a></li>
-  <li><a href="#bring-everyting-together" id="toc-bring-everyting-together" class="nav-link" data-scroll-target="#bring-everyting-together"> <span class="header-section-number">2.10.7</span> Bring everyting together</a></li>
+<li><a href="#questions-4" id="toc-questions-4" class="nav-link" data-scroll-target="#questions-4"><span class="toc-section-number">2.9.1</span>  Questions</a></li>
   </ul>
 </li>
   <li>
-<a href="#advanced-topics" id="toc-advanced-topics" class="nav-link" data-scroll-target="#advanced-topics"> <span class="header-section-number">2.11</span> Advanced topics</a>
+<a href="#piping-and-dplyr" id="toc-piping-and-dplyr" class="nav-link" data-scroll-target="#piping-and-dplyr"><span class="toc-section-number">2.10</span>  Piping and dplyr</a>
   <ul class="collapse">
-<li><a href="#sec-ifelse" id="toc-sec-ifelse" class="nav-link" data-scroll-target="#sec-ifelse"> <span class="header-section-number">2.11.1</span> Recoding data (ifelse)</a></li>
-  <li><a href="#sec-factors" id="toc-sec-factors" class="nav-link" data-scroll-target="#sec-factors"> <span class="header-section-number">2.11.2</span> Factors and statistical data types</a></li>
+<li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="toc-section-number">2.10.1</span>  select</a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="toc-section-number">2.10.2</span>  filter</a></li>
+  <li><a href="#sec-renaming" id="toc-sec-renaming" class="nav-link" data-scroll-target="#sec-renaming"><span class="toc-section-number">2.10.3</span>  renaming columns</a></li>
+  <li><a href="#group_by-and-summarise" id="toc-group_by-and-summarise" class="nav-link" data-scroll-target="#group_by-and-summarise"><span class="toc-section-number">2.10.4</span>  group_by and summarise</a></li>
+  <li><a href="#sec-mutate" id="toc-sec-mutate" class="nav-link" data-scroll-target="#sec-mutate"><span class="toc-section-number">2.10.5</span>  mutate</a></li>
+  <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange"><span class="toc-section-number">2.10.6</span>  arrange</a></li>
+  <li><a href="#bring-everyting-together" id="toc-bring-everyting-together" class="nav-link" data-scroll-target="#bring-everyting-together"><span class="toc-section-number">2.10.7</span>  Bring everyting together</a></li>
   </ul>
 </li>
   <li>
-<a href="#seminar-tasks-1" id="toc-seminar-tasks-1" class="nav-link" data-scroll-target="#seminar-tasks-1"> <span class="header-section-number">2.12</span> Seminar tasks</a>
+<a href="#advanced-topics" id="toc-advanced-topics" class="nav-link" data-scroll-target="#advanced-topics"><span class="toc-section-number">2.11</span>  Advanced topics</a>
   <ul class="collapse">
-<li><a href="#student-dataset" id="toc-student-dataset" class="nav-link" data-scroll-target="#student-dataset"> <span class="header-section-number">2.12.1</span> Student dataset</a></li>
-  <li><a href="#teacher-dataset" id="toc-teacher-dataset" class="nav-link" data-scroll-target="#teacher-dataset"> <span class="header-section-number">2.12.2</span> Teacher dataset</a></li>
+<li><a href="#sec-ifelse" id="toc-sec-ifelse" class="nav-link" data-scroll-target="#sec-ifelse"><span class="toc-section-number">2.11.1</span>  Recoding data (ifelse)</a></li>
+  <li><a href="#sec-factors" id="toc-sec-factors" class="nav-link" data-scroll-target="#sec-factors"><span class="toc-section-number">2.11.2</span>  Factors and statistical data types</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#seminar-tasks-1" id="toc-seminar-tasks-1" class="nav-link" data-scroll-target="#seminar-tasks-1"><span class="toc-section-number">2.12</span>  Seminar tasks</a>
+  <ul class="collapse">
+<li><a href="#student-dataset" id="toc-student-dataset" class="nav-link" data-scroll-target="#student-dataset"><span class="toc-section-number">2.12.1</span>  Student dataset</a></li>
+  <li><a href="#teacher-dataset" id="toc-teacher-dataset" class="nav-link" data-scroll-target="#teacher-dataset"><span class="toc-section-number">2.12.2</span>  Teacher dataset</a></li>
   </ul>
 </li>
   </ul>
 </li>
   <li>
-<a href="#introduction-to-graphs" id="toc-introduction-to-graphs" class="nav-link" data-scroll-target="#introduction-to-graphs"> <span class="header-section-number">3</span> Introduction to graphs</a>
+<a href="#introduction-to-graphs" id="toc-introduction-to-graphs" class="nav-link" data-scroll-target="#introduction-to-graphs"><span class="toc-section-number">3</span>  Introduction to graphs</a>
   <ul class="collapse">
-<li><a href="#sec-graphing" id="toc-sec-graphing" class="nav-link" data-scroll-target="#sec-graphing"> <span class="header-section-number">3.1</span> Introduction to graphing in R</a></li>
+<li><a href="#sec-graphing" id="toc-sec-graphing" class="nav-link" data-scroll-target="#sec-graphing"><span class="toc-section-number">3.1</span>  Introduction to graphing in R</a></li>
   <li>
-<a href="#geoms" id="toc-geoms" class="nav-link" data-scroll-target="#geoms"> <span class="header-section-number">3.2</span> Geoms</a>
+<a href="#geoms" id="toc-geoms" class="nav-link" data-scroll-target="#geoms"><span class="toc-section-number">3.2</span>  Geoms</a>
   <ul class="collapse">
-<li><a href="#sec-geom_point" id="toc-sec-geom_point" class="nav-link" data-scroll-target="#sec-geom_point"> <span class="header-section-number">3.2.1</span> geom_point</a></li>
-  <li><a href="#questions-8" id="toc-questions-8" class="nav-link" data-scroll-target="#questions-8"> <span class="header-section-number">3.2.2</span> Questions</a></li>
-  <li><a href="#sec-geom_bar" id="toc-sec-geom_bar" class="nav-link" data-scroll-target="#sec-geom_bar"> <span class="header-section-number">3.2.3</span> geom_bar</a></li>
-  <li><a href="#questions-9" id="toc-questions-9" class="nav-link" data-scroll-target="#questions-9"> <span class="header-section-number">3.2.4</span> Questions</a></li>
-  <li><a href="#geom_text" id="toc-geom_text" class="nav-link" data-scroll-target="#geom_text"> <span class="header-section-number">3.2.5</span> geom_text</a></li>
+<li><a href="#sec-geom_point" id="toc-sec-geom_point" class="nav-link" data-scroll-target="#sec-geom_point"><span class="toc-section-number">3.2.1</span>  geom_point</a></li>
+  <li><a href="#questions-8" id="toc-questions-8" class="nav-link" data-scroll-target="#questions-8"><span class="toc-section-number">3.2.2</span>  Questions</a></li>
+  <li><a href="#sec-geom_bar" id="toc-sec-geom_bar" class="nav-link" data-scroll-target="#sec-geom_bar"><span class="toc-section-number">3.2.3</span>  geom_bar</a></li>
+  <li><a href="#questions-9" id="toc-questions-9" class="nav-link" data-scroll-target="#questions-9"><span class="toc-section-number">3.2.4</span>  Questions</a></li>
+  <li><a href="#geom_text" id="toc-geom_text" class="nav-link" data-scroll-target="#geom_text"><span class="toc-section-number">3.2.5</span>  geom_text</a></li>
   </ul>
 </li>
-  <li><a href="#faceting" id="toc-faceting" class="nav-link" data-scroll-target="#faceting"> <span class="header-section-number">3.3</span> Faceting</a></li>
-  <li><a href="#exporting-plots" id="toc-exporting-plots" class="nav-link" data-scroll-target="#exporting-plots"> <span class="header-section-number">3.4</span> Exporting plots</a></li>
-  <li><a href="#additional-support-on-graphing" id="toc-additional-support-on-graphing" class="nav-link" data-scroll-target="#additional-support-on-graphing"> <span class="header-section-number">3.5</span> Additional support on graphing</a></li>
-  <li><a href="#using-r-to-do-descriptive-statistics-and-plot-graphs" id="toc-using-r-to-do-descriptive-statistics-and-plot-graphs" class="nav-link" data-scroll-target="#using-r-to-do-descriptive-statistics-and-plot-graphs"> <span class="header-section-number">3.6</span> Using R to do descriptive statistics and plot graphs</a></li>
+  <li><a href="#faceting" id="toc-faceting" class="nav-link" data-scroll-target="#faceting"><span class="toc-section-number">3.3</span>  Faceting</a></li>
+  <li><a href="#exporting-plots" id="toc-exporting-plots" class="nav-link" data-scroll-target="#exporting-plots"><span class="toc-section-number">3.4</span>  Exporting plots</a></li>
+  <li><a href="#additional-support-on-graphing" id="toc-additional-support-on-graphing" class="nav-link" data-scroll-target="#additional-support-on-graphing"><span class="toc-section-number">3.5</span>  Additional support on graphing</a></li>
+  <li><a href="#using-r-to-do-descriptive-statistics-and-plot-graphs" id="toc-using-r-to-do-descriptive-statistics-and-plot-graphs" class="nav-link" data-scroll-target="#using-r-to-do-descriptive-statistics-and-plot-graphs"><span class="toc-section-number">3.6</span>  Using R to do descriptive statistics and plot graphs</a></li>
   </ul>
 </li>
   <li>
-<a href="#group-performance-in-stem" id="toc-group-performance-in-stem" class="nav-link" data-scroll-target="#group-performance-in-stem"> <span class="header-section-number">4</span> Group performance in STEM</a>
+<a href="#group-performance-in-stem" id="toc-group-performance-in-stem" class="nav-link" data-scroll-target="#group-performance-in-stem"><span class="toc-section-number">4</span>  Group performance in STEM</a>
   <ul class="collapse">
 <li>
-<a href="#seminar-activities" id="toc-seminar-activities" class="nav-link" data-scroll-target="#seminar-activities"> <span class="header-section-number">4.1</span> Seminar activities</a>
+<a href="#seminar-activities" id="toc-seminar-activities" class="nav-link" data-scroll-target="#seminar-activities"><span class="toc-section-number">4.1</span>  Seminar activities</a>
   <ul class="collapse">
-<li><a href="#discussion-activity" id="toc-discussion-activity" class="nav-link" data-scroll-target="#discussion-activity"> <span class="header-section-number">4.1.1</span> Discussion activity</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"> <span class="header-section-number">4.1.2</span> Tasks</a></li>
-  <li><a href="#graphing" id="toc-graphing" class="nav-link" data-scroll-target="#graphing"> <span class="header-section-number">4.1.3</span> Graphing</a></li>
-  <li><a href="#column-graphs" id="toc-column-graphs" class="nav-link" data-scroll-target="#column-graphs"> <span class="header-section-number">4.1.4</span> Column graphs</a></li>
-  <li><a href="#scatter-graphs" id="toc-scatter-graphs" class="nav-link" data-scroll-target="#scatter-graphs"> <span class="header-section-number">4.1.5</span> Scatter Graphs</a></li>
+<li><a href="#discussion-activity" id="toc-discussion-activity" class="nav-link" data-scroll-target="#discussion-activity"><span class="toc-section-number">4.1.1</span>  Discussion activity</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="toc-section-number">4.1.2</span>  Tasks</a></li>
+  <li><a href="#graphing" id="toc-graphing" class="nav-link" data-scroll-target="#graphing"><span class="toc-section-number">4.1.3</span>  Graphing</a></li>
+  <li><a href="#column-graphs" id="toc-column-graphs" class="nav-link" data-scroll-target="#column-graphs"><span class="toc-section-number">4.1.4</span>  Column graphs</a></li>
+  <li><a href="#scatter-graphs" id="toc-scatter-graphs" class="nav-link" data-scroll-target="#scatter-graphs"><span class="toc-section-number">4.1.5</span>  Scatter Graphs</a></li>
   </ul>
 </li>
   </ul>
 </li>
-  <li><a href="#presentations" id="toc-presentations" class="nav-link" data-scroll-target="#presentations"> <span class="header-section-number">5</span> Presentations</a></li>
+  <li><a href="#presentations" id="toc-presentations" class="nav-link" data-scroll-target="#presentations"><span class="toc-section-number">5</span>  Presentations</a></li>
   <li>
-<a href="#gender-differences" id="toc-gender-differences" class="nav-link" data-scroll-target="#gender-differences"> <span class="header-section-number">6</span> Gender differences</a>
+<a href="#gender-differences" id="toc-gender-differences" class="nav-link" data-scroll-target="#gender-differences"><span class="toc-section-number">6</span>  Gender differences</a>
   <ul class="collapse">
-<li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis"> <span class="header-section-number">6.1</span> Statistical analysis</a></li>
+<li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis"><span class="toc-section-number">6.1</span>  Statistical analysis</a></li>
   <li>
-<a href="#t-tests" id="toc-t-tests" class="nav-link" data-scroll-target="#t-tests"> <span class="header-section-number">6.2</span> T-tests</a>
+<a href="#t-tests" id="toc-t-tests" class="nav-link" data-scroll-target="#t-tests"><span class="toc-section-number">6.2</span>  T-tests</a>
   <ul class="collapse">
-<li><a href="#task-1-1" id="toc-task-1-1" class="nav-link" data-scroll-target="#task-1-1"> <span class="header-section-number">6.2.1</span> Task 1</a></li>
-  <li><a href="#task-2-1" id="toc-task-2-1" class="nav-link" data-scroll-target="#task-2-1"> <span class="header-section-number">6.2.2</span> Task 2</a></li>
-  <li><a href="#task-3-1" id="toc-task-3-1" class="nav-link" data-scroll-target="#task-3-1"> <span class="header-section-number">6.2.3</span> Task 3</a></li>
-  <li><a href="#task-4-1" id="toc-task-4-1" class="nav-link" data-scroll-target="#task-4-1"> <span class="header-section-number">6.2.4</span> Task 4</a></li>
+<li><a href="#task-1-1" id="toc-task-1-1" class="nav-link" data-scroll-target="#task-1-1"><span class="toc-section-number">6.2.1</span>  Task 1</a></li>
+  <li><a href="#task-2-1" id="toc-task-2-1" class="nav-link" data-scroll-target="#task-2-1"><span class="toc-section-number">6.2.2</span>  Task 2</a></li>
+  <li><a href="#task-3-1" id="toc-task-3-1" class="nav-link" data-scroll-target="#task-3-1"><span class="toc-section-number">6.2.3</span>  Task 3</a></li>
+  <li><a href="#task-4-1" id="toc-task-4-1" class="nav-link" data-scroll-target="#task-4-1"><span class="toc-section-number">6.2.4</span>  Task 4</a></li>
   </ul>
 </li>
-  <li><a href="#doing-t-tests-in-r" id="toc-doing-t-tests-in-r" class="nav-link" data-scroll-target="#doing-t-tests-in-r"> <span class="header-section-number">6.3</span> Doing t-tests in R</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#maths-anxiety" id="toc-maths-anxiety" class="nav-link" data-scroll-target="#maths-anxiety"> <span class="header-section-number">7</span> Maths anxiety</a>
-  <ul class="collapse">
-<li><a href="#chi-square-tests" id="toc-chi-square-tests" class="nav-link" data-scroll-target="#chi-square-tests"> <span class="header-section-number">7.1</span> Chi-square tests</a></li>
-  <li><a href="#an-example-are-schools-with-more-students-from-socio-economically-deprived-backgrounds-scored-in-the-same-as-schools-with-more-affluent-students-by-ofsted" id="toc-an-example-are-schools-with-more-students-from-socio-economically-deprived-backgrounds-scored-in-the-same-as-schools-with-more-affluent-students-by-ofsted" class="nav-link" data-scroll-target="#an-example-are-schools-with-more-students-from-socio-economically-deprived-backgrounds-scored-in-the-same-as-schools-with-more-affluent-students-by-ofsted"> <span class="header-section-number">7.2</span> An example: Are schools with more students from socio-economically deprived backgrounds scored in the same as schools with more affluent students by Ofsted?</a></li>
-  <li><a href="#loading-the-data" id="toc-loading-the-data" class="nav-link" data-scroll-target="#loading-the-data"> <span class="header-section-number">7.3</span> Loading the data</a></li>
-  <li><a href="#categorising-the-data" id="toc-categorising-the-data" class="nav-link" data-scroll-target="#categorising-the-data"> <span class="header-section-number">7.4</span> Categorising the data</a></li>
-  <li><a href="#contingency-tables" id="toc-contingency-tables" class="nav-link" data-scroll-target="#contingency-tables"> <span class="header-section-number">7.5</span> Contingency tables</a></li>
-  <li><a href="#plotting-the-chi-square-relationships" id="toc-plotting-the-chi-square-relationships" class="nav-link" data-scroll-target="#plotting-the-chi-square-relationships"> <span class="header-section-number">7.6</span> Plotting the chi-square relationships</a></li>
-  <li><a href="#running-chi-square-tests" id="toc-running-chi-square-tests" class="nav-link" data-scroll-target="#running-chi-square-tests"> <span class="header-section-number">7.7</span> Running Chi square tests</a></li>
-  <li>
-<a href="#seminar-tasks-2" id="toc-seminar-tasks-2" class="nav-link" data-scroll-target="#seminar-tasks-2"> <span class="header-section-number">7.8</span> Seminar Tasks</a>
-  <ul class="collapse">
-<li><a href="#activity-1---uptake-of-single-science-in-a-school" id="toc-activity-1---uptake-of-single-science-in-a-school" class="nav-link" data-scroll-target="#activity-1---uptake-of-single-science-in-a-school"> <span class="header-section-number">7.8.1</span> Activity 1 - Uptake of single science in a school</a></li>
-  <li><a href="#activity-2---vocational-schools-and-gender-in-the-pisa-dataset" id="toc-activity-2---vocational-schools-and-gender-in-the-pisa-dataset" class="nav-link" data-scroll-target="#activity-2---vocational-schools-and-gender-in-the-pisa-dataset"> <span class="header-section-number">7.8.2</span> Activity 2 - Vocational schools and gender in the PISA dataset</a></li>
-  <li><a href="#activity-3---are-the-number-of-students-in-vocational-and-general-schools-in-germany-proportionate-to-the-whole-pisa-2018-data-set" id="toc-activity-3---are-the-number-of-students-in-vocational-and-general-schools-in-germany-proportionate-to-the-whole-pisa-2018-data-set" class="nav-link" data-scroll-target="#activity-3---are-the-number-of-students-in-vocational-and-general-schools-in-germany-proportionate-to-the-whole-pisa-2018-data-set"> <span class="header-section-number">7.8.3</span> Activity 3 - Are the number of students in vocational and general schools in Germany proportionate to the whole PISA 2018 data set?</a></li>
-  <li><a href="#activity-4---create-your-own-question-that-uses-the-chi-square-test-from-the-pisa-dataset" id="toc-activity-4---create-your-own-question-that-uses-the-chi-square-test-from-the-pisa-dataset" class="nav-link" data-scroll-target="#activity-4---create-your-own-question-that-uses-the-chi-square-test-from-the-pisa-dataset"> <span class="header-section-number">7.8.4</span> Activity 4 - Create your own question that uses the chi-square test from the PISA Dataset</a></li>
-  <li><a href="#activity-5---determine-if-admissions-type-in-las-are-proportionate-to-national-averages" id="toc-activity-5---determine-if-admissions-type-in-las-are-proportionate-to-national-averages" class="nav-link" data-scroll-target="#activity-5---determine-if-admissions-type-in-las-are-proportionate-to-national-averages"> <span class="header-section-number">7.8.5</span> Activity 5 - Determine if admissions type in LAs are proportionate to national averages</a></li>
-  <li><a href="#activity-6---determine-if-ofsted-rating-and-gender-of-school-are-independent" id="toc-activity-6---determine-if-ofsted-rating-and-gender-of-school-are-independent" class="nav-link" data-scroll-target="#activity-6---determine-if-ofsted-rating-and-gender-of-school-are-independent"> <span class="header-section-number">7.8.6</span> Activity 6 - Determine if Ofsted rating and gender of school are independent</a></li>
-  <li><a href="#activity-7---create-your-own-problem" id="toc-activity-7---create-your-own-problem" class="nav-link" data-scroll-target="#activity-7---create-your-own-problem"> <span class="header-section-number">7.8.7</span> Activity 7 - Create your own problem</a></li>
-  <li><a href="#activity-8---checking-chi-square-test-in-a-research-paper" id="toc-activity-8---checking-chi-square-test-in-a-research-paper" class="nav-link" data-scroll-target="#activity-8---checking-chi-square-test-in-a-research-paper"> <span class="header-section-number">7.8.8</span> Activity 8 - Checking chi-square test in a research paper</a></li>
-  <li><a href="#doing-chi-square-tests-in-r" id="toc-doing-chi-square-tests-in-r" class="nav-link" data-scroll-target="#doing-chi-square-tests-in-r"> <span class="header-section-number">7.8.9</span> Doing Chi-Square tests in R</a></li>
-  </ul>
-</li>
+  <li><a href="#doing-t-tests-in-r" id="toc-doing-t-tests-in-r" class="nav-link" data-scroll-target="#doing-t-tests-in-r"><span class="toc-section-number">6.3</span>  Doing t-tests in R</a></li>
   </ul>
 </li>
   <li>
-<a href="#inquiry-learning-in-science" id="toc-inquiry-learning-in-science" class="nav-link" data-scroll-target="#inquiry-learning-in-science"> <span class="header-section-number">8</span> Inquiry learning in science</a>
+<a href="#maths-anxiety" id="toc-maths-anxiety" class="nav-link" data-scroll-target="#maths-anxiety"><span class="toc-section-number">7</span>  Maths anxiety</a>
   <ul class="collapse">
-<li><a href="#analysis-of-variation-anova" id="toc-analysis-of-variation-anova" class="nav-link" data-scroll-target="#analysis-of-variation-anova"> <span class="header-section-number">8.1</span> Analysis of Variation (Anova)</a></li>
-  <li><a href="#eta-squared" id="toc-eta-squared" class="nav-link" data-scroll-target="#eta-squared"> <span class="header-section-number">8.2</span> Eta-squared</a></li>
-  <li><a href="#pre-seminar-tasks---please-complete-the-two-tasks-below-before-the-seminar" id="toc-pre-seminar-tasks---please-complete-the-two-tasks-below-before-the-seminar" class="nav-link" data-scroll-target="#pre-seminar-tasks---please-complete-the-two-tasks-below-before-the-seminar"> <span class="header-section-number">8.3</span> Pre-seminar tasks - please complete the two tasks below before the seminar</a></li>
-  <li><a href="#pre-seminar-task-1" id="toc-pre-seminar-task-1" class="nav-link" data-scroll-target="#pre-seminar-task-1"> <span class="header-section-number">8.4</span> Pre-seminar task 1</a></li>
-  <li><a href="#pre-seminar-task-2" id="toc-pre-seminar-task-2" class="nav-link" data-scroll-target="#pre-seminar-task-2"> <span class="header-section-number">8.5</span> Pre-seminar task 2</a></li>
-  <li><a href="#seminar-tasks---please-leave-these-to-complete-in-the-seminar" id="toc-seminar-tasks---please-leave-these-to-complete-in-the-seminar" class="nav-link" data-scroll-target="#seminar-tasks---please-leave-these-to-complete-in-the-seminar"> <span class="header-section-number">8.6</span> Seminar Tasks - please leave these to complete in the seminar</a></li>
-  <li><a href="#task-1-2" id="toc-task-1-2" class="nav-link" data-scroll-target="#task-1-2"> <span class="header-section-number">8.7</span> Task 1</a></li>
-  <li><a href="#task-2-2" id="toc-task-2-2" class="nav-link" data-scroll-target="#task-2-2"> <span class="header-section-number">8.8</span> Task 2</a></li>
-  <li><a href="#task-3-2" id="toc-task-3-2" class="nav-link" data-scroll-target="#task-3-2"> <span class="header-section-number">8.9</span> Task 3</a></li>
-  <li><a href="#tukeys-hsd" id="toc-tukeys-hsd" class="nav-link" data-scroll-target="#tukeys-hsd"> <span class="header-section-number">8.10</span> Tukey’s HSD</a></li>
-  <li><a href="#task-4-2" id="toc-task-4-2" class="nav-link" data-scroll-target="#task-4-2"> <span class="header-section-number">8.11</span> Task 4</a></li>
-  <li><a href="#task-5-1" id="toc-task-5-1" class="nav-link" data-scroll-target="#task-5-1"> <span class="header-section-number">8.12</span> Task 5</a></li>
+<li><a href="#chi-square-tests" id="toc-chi-square-tests" class="nav-link" data-scroll-target="#chi-square-tests"><span class="toc-section-number">7.1</span>  Chi-square tests</a></li>
+  <li><a href="#an-example-are-schools-with-more-students-from-socio-economically-deprived-backgrounds-scored-in-the-same-as-schools-with-more-affluent-students-by-ofsted" id="toc-an-example-are-schools-with-more-students-from-socio-economically-deprived-backgrounds-scored-in-the-same-as-schools-with-more-affluent-students-by-ofsted" class="nav-link" data-scroll-target="#an-example-are-schools-with-more-students-from-socio-economically-deprived-backgrounds-scored-in-the-same-as-schools-with-more-affluent-students-by-ofsted"><span class="toc-section-number">7.2</span>  An example: Are schools with more students from socio-economically deprived backgrounds scored in the same as schools with more affluent students by Ofsted?</a></li>
+  <li><a href="#loading-the-data" id="toc-loading-the-data" class="nav-link" data-scroll-target="#loading-the-data"><span class="toc-section-number">7.3</span>  Loading the data</a></li>
+  <li><a href="#categorising-the-data" id="toc-categorising-the-data" class="nav-link" data-scroll-target="#categorising-the-data"><span class="toc-section-number">7.4</span>  Categorising the data</a></li>
+  <li><a href="#contingency-tables" id="toc-contingency-tables" class="nav-link" data-scroll-target="#contingency-tables"><span class="toc-section-number">7.5</span>  Contingency tables</a></li>
+  <li><a href="#plotting-the-chi-square-relationships" id="toc-plotting-the-chi-square-relationships" class="nav-link" data-scroll-target="#plotting-the-chi-square-relationships"><span class="toc-section-number">7.6</span>  Plotting the chi-square relationships</a></li>
+  <li><a href="#running-chi-square-tests" id="toc-running-chi-square-tests" class="nav-link" data-scroll-target="#running-chi-square-tests"><span class="toc-section-number">7.7</span>  Running Chi square tests</a></li>
   <li>
-<a href="#repeating-research" id="toc-repeating-research" class="nav-link" data-scroll-target="#repeating-research"> <span class="header-section-number">8.13</span> Repeating research</a>
+<a href="#seminar-tasks-2" id="toc-seminar-tasks-2" class="nav-link" data-scroll-target="#seminar-tasks-2"><span class="toc-section-number">7.8</span>  Seminar Tasks</a>
   <ul class="collapse">
-<li><a href="#exploring-the-data" id="toc-exploring-the-data" class="nav-link" data-scroll-target="#exploring-the-data"> <span class="header-section-number">8.13.1</span> Exploring the data</a></li>
-  <li><a href="#a-simple-attempt-to-recreate-the-sweet-spot-analysis" id="toc-a-simple-attempt-to-recreate-the-sweet-spot-analysis" class="nav-link" data-scroll-target="#a-simple-attempt-to-recreate-the-sweet-spot-analysis"> <span class="header-section-number">8.13.2</span> A simple attempt to recreate the sweet spot analysis</a></li>
-  <li><a href="#sec-sweet_density" id="toc-sec-sweet_density" class="nav-link" data-scroll-target="#sec-sweet_density"> <span class="header-section-number">8.13.3</span> A fuller attempt - Step 1, Wrangling the data</a></li>
-  <li><a href="#searching-for-the-sweet-spots" id="toc-searching-for-the-sweet-spots" class="nav-link" data-scroll-target="#searching-for-the-sweet-spots"> <span class="header-section-number">8.13.4</span> Searching for the sweet spot(s)</a></li>
+<li><a href="#activity-1---uptake-of-single-science-in-a-school" id="toc-activity-1---uptake-of-single-science-in-a-school" class="nav-link" data-scroll-target="#activity-1---uptake-of-single-science-in-a-school"><span class="toc-section-number">7.8.1</span>  Activity 1 - Uptake of single science in a school</a></li>
+  <li><a href="#activity-2---vocational-schools-and-gender-in-the-pisa-dataset" id="toc-activity-2---vocational-schools-and-gender-in-the-pisa-dataset" class="nav-link" data-scroll-target="#activity-2---vocational-schools-and-gender-in-the-pisa-dataset"><span class="toc-section-number">7.8.2</span>  Activity 2 - Vocational schools and gender in the PISA dataset</a></li>
+  <li><a href="#activity-3---are-the-number-of-students-in-vocational-and-general-schools-in-germany-proportionate-to-the-whole-pisa-2018-data-set" id="toc-activity-3---are-the-number-of-students-in-vocational-and-general-schools-in-germany-proportionate-to-the-whole-pisa-2018-data-set" class="nav-link" data-scroll-target="#activity-3---are-the-number-of-students-in-vocational-and-general-schools-in-germany-proportionate-to-the-whole-pisa-2018-data-set"><span class="toc-section-number">7.8.3</span>  Activity 3 - Are the number of students in vocational and general schools in Germany proportionate to the whole PISA 2018 data set?</a></li>
+  <li><a href="#activity-4---create-your-own-question-that-uses-the-chi-square-test-from-the-pisa-dataset" id="toc-activity-4---create-your-own-question-that-uses-the-chi-square-test-from-the-pisa-dataset" class="nav-link" data-scroll-target="#activity-4---create-your-own-question-that-uses-the-chi-square-test-from-the-pisa-dataset"><span class="toc-section-number">7.8.4</span>  Activity 4 - Create your own question that uses the chi-square test from the PISA Dataset</a></li>
+  <li><a href="#activity-5---determine-if-admissions-type-in-las-are-proportionate-to-national-averages" id="toc-activity-5---determine-if-admissions-type-in-las-are-proportionate-to-national-averages" class="nav-link" data-scroll-target="#activity-5---determine-if-admissions-type-in-las-are-proportionate-to-national-averages"><span class="toc-section-number">7.8.5</span>  Activity 5 - Determine if admissions type in LAs are proportionate to national averages</a></li>
+  <li><a href="#activity-6---determine-if-ofsted-rating-and-gender-of-school-are-independent" id="toc-activity-6---determine-if-ofsted-rating-and-gender-of-school-are-independent" class="nav-link" data-scroll-target="#activity-6---determine-if-ofsted-rating-and-gender-of-school-are-independent"><span class="toc-section-number">7.8.6</span>  Activity 6 - Determine if Ofsted rating and gender of school are independent</a></li>
+  <li><a href="#activity-7---create-your-own-problem" id="toc-activity-7---create-your-own-problem" class="nav-link" data-scroll-target="#activity-7---create-your-own-problem"><span class="toc-section-number">7.8.7</span>  Activity 7 - Create your own problem</a></li>
+  <li><a href="#activity-8---checking-chi-square-test-in-a-research-paper" id="toc-activity-8---checking-chi-square-test-in-a-research-paper" class="nav-link" data-scroll-target="#activity-8---checking-chi-square-test-in-a-research-paper"><span class="toc-section-number">7.8.8</span>  Activity 8 - Checking chi-square test in a research paper</a></li>
+  <li><a href="#doing-chi-square-tests-in-r" id="toc-doing-chi-square-tests-in-r" class="nav-link" data-scroll-target="#doing-chi-square-tests-in-r"><span class="toc-section-number">7.8.9</span>  Doing Chi-Square tests in R</a></li>
   </ul>
 </li>
   </ul>
 </li>
   <li>
-<a href="#practice-tasks" id="toc-practice-tasks" class="nav-link" data-scroll-target="#practice-tasks"> <span class="header-section-number">9</span> Practice tasks</a>
+<a href="#inquiry-learning-in-science" id="toc-inquiry-learning-in-science" class="nav-link" data-scroll-target="#inquiry-learning-in-science"><span class="toc-section-number">8</span>  Inquiry learning in science</a>
   <ul class="collapse">
-<li><a href="#self-study-tasks" id="toc-self-study-tasks" class="nav-link" data-scroll-target="#self-study-tasks"> <span class="header-section-number">9.1</span> Self study tasks</a></li>
-  <li><a href="#task-1-practice-creating-a-summary-table-1" id="toc-task-1-practice-creating-a-summary-table-1" class="nav-link" data-scroll-target="#task-1-practice-creating-a-summary-table-1"> <span class="header-section-number">9.2</span> Task 1 Practice creating a summary table #1</a></li>
-  <li><a href="#task-2-practice-creating-a-summary-table-including-percentages-2" id="toc-task-2-practice-creating-a-summary-table-including-percentages-2" class="nav-link" data-scroll-target="#task-2-practice-creating-a-summary-table-including-percentages-2"> <span class="header-section-number">9.3</span> Task 2 Practice creating a summary table (including percentages) #2</a></li>
-  <li><a href="#task-3-practice-pivoting-a-table" id="toc-task-3-practice-pivoting-a-table" class="nav-link" data-scroll-target="#task-3-practice-pivoting-a-table"> <span class="header-section-number">9.4</span> Task 3 Practice pivoting a table</a></li>
-  <li><a href="#task-4-graphing-practice-1-a-bar-chart" id="toc-task-4-graphing-practice-1-a-bar-chart" class="nav-link" data-scroll-target="#task-4-graphing-practice-1-a-bar-chart"> <span class="header-section-number">9.5</span> Task 4 Graphing Practice #1 A Bar Chart</a></li>
-  <li><a href="#task-5-graphing-practice-2-a-bar-chart-with-two-series" id="toc-task-5-graphing-practice-2-a-bar-chart-with-two-series" class="nav-link" data-scroll-target="#task-5-graphing-practice-2-a-bar-chart-with-two-series"> <span class="header-section-number">9.6</span> Task 5 Graphing Practice #2 A Bar Chart with two series</a></li>
-  <li><a href="#task-6-graphing-practice-3-a-scatter-plot" id="toc-task-6-graphing-practice-3-a-scatter-plot" class="nav-link" data-scroll-target="#task-6-graphing-practice-3-a-scatter-plot"> <span class="header-section-number">9.7</span> Task 6 Graphing Practice #3 A scatter plot</a></li>
-  <li><a href="#task-7-graphing-practice-4-a-scatter-plot-with-multiple-series" id="toc-task-7-graphing-practice-4-a-scatter-plot-with-multiple-series" class="nav-link" data-scroll-target="#task-7-graphing-practice-4-a-scatter-plot-with-multiple-series"> <span class="header-section-number">9.8</span> Task 7 Graphing Practice #4 A scatter plot with multiple series</a></li>
-  <li><a href="#task-8-graphing-practice-4-a-scatter-plot-with-varying-size-points" id="toc-task-8-graphing-practice-4-a-scatter-plot-with-varying-size-points" class="nav-link" data-scroll-target="#task-8-graphing-practice-4-a-scatter-plot-with-varying-size-points"> <span class="header-section-number">9.9</span> Task 8 Graphing Practice #4 A scatter plot with varying size points</a></li>
-  <li><a href="#task-9-graphing-practice-5-a-mosaic-plot" id="toc-task-9-graphing-practice-5-a-mosaic-plot" class="nav-link" data-scroll-target="#task-9-graphing-practice-5-a-mosaic-plot"> <span class="header-section-number">9.10</span> Task 9 Graphing Practice #5 A mosaic plot</a></li>
-  <li><a href="#task-10-t-test-practice-1" id="toc-task-10-t-test-practice-1" class="nav-link" data-scroll-target="#task-10-t-test-practice-1"> <span class="header-section-number">9.11</span> Task 10 T-test practice #1</a></li>
-  <li><a href="#task-11-t-test-practice-2" id="toc-task-11-t-test-practice-2" class="nav-link" data-scroll-target="#task-11-t-test-practice-2"> <span class="header-section-number">9.12</span> Task 11 T-test practice #2</a></li>
-  <li><a href="#task-12-t-test-practice-3" id="toc-task-12-t-test-practice-3" class="nav-link" data-scroll-target="#task-12-t-test-practice-3"> <span class="header-section-number">9.13</span> Task 12 T-test practice #3</a></li>
-  <li><a href="#task-13-t-test-practice-3" id="toc-task-13-t-test-practice-3" class="nav-link" data-scroll-target="#task-13-t-test-practice-3"> <span class="header-section-number">9.14</span> Task 13 T-test practice #3</a></li>
-  <li><a href="#task-14-chi-square-practice-1" id="toc-task-14-chi-square-practice-1" class="nav-link" data-scroll-target="#task-14-chi-square-practice-1"> <span class="header-section-number">9.15</span> Task 14 Chi-square practice #1</a></li>
-  <li><a href="#task-15-chi-square-practice-2" id="toc-task-15-chi-square-practice-2" class="nav-link" data-scroll-target="#task-15-chi-square-practice-2"> <span class="header-section-number">9.16</span> Task 15 Chi-square practice #2</a></li>
-  <li><a href="#task-16-chi-square-practice-3" id="toc-task-16-chi-square-practice-3" class="nav-link" data-scroll-target="#task-16-chi-square-practice-3"> <span class="header-section-number">9.17</span> Task 16 Chi-square practice #3</a></li>
-  <li><a href="#task-18-anova-practice-1" id="toc-task-18-anova-practice-1" class="nav-link" data-scroll-target="#task-18-anova-practice-1"> <span class="header-section-number">9.18</span> Task 18 Anova practice #1</a></li>
-  <li><a href="#task-19-anova-practice-2" id="toc-task-19-anova-practice-2" class="nav-link" data-scroll-target="#task-19-anova-practice-2"> <span class="header-section-number">9.19</span> Task 19 Anova practice #2</a></li>
-  <li><a href="#task-18-anova-practice-3" id="toc-task-18-anova-practice-3" class="nav-link" data-scroll-target="#task-18-anova-practice-3"> <span class="header-section-number">9.20</span> Task 18 Anova practice #3</a></li>
+<li><a href="#analysis-of-variation-anova" id="toc-analysis-of-variation-anova" class="nav-link" data-scroll-target="#analysis-of-variation-anova"><span class="toc-section-number">8.1</span>  Analysis of Variation (Anova)</a></li>
+  <li><a href="#eta-squared" id="toc-eta-squared" class="nav-link" data-scroll-target="#eta-squared"><span class="toc-section-number">8.2</span>  Eta-squared</a></li>
+  <li><a href="#pre-seminar-tasks---please-complete-the-two-tasks-below-before-the-seminar" id="toc-pre-seminar-tasks---please-complete-the-two-tasks-below-before-the-seminar" class="nav-link" data-scroll-target="#pre-seminar-tasks---please-complete-the-two-tasks-below-before-the-seminar"><span class="toc-section-number">8.3</span>  Pre-seminar tasks - please complete the two tasks below before the seminar</a></li>
+  <li><a href="#pre-seminar-task-1" id="toc-pre-seminar-task-1" class="nav-link" data-scroll-target="#pre-seminar-task-1"><span class="toc-section-number">8.4</span>  Pre-seminar task 1</a></li>
+  <li><a href="#pre-seminar-task-2" id="toc-pre-seminar-task-2" class="nav-link" data-scroll-target="#pre-seminar-task-2"><span class="toc-section-number">8.5</span>  Pre-seminar task 2</a></li>
+  <li><a href="#seminar-tasks---please-leave-these-to-complete-in-the-seminar" id="toc-seminar-tasks---please-leave-these-to-complete-in-the-seminar" class="nav-link" data-scroll-target="#seminar-tasks---please-leave-these-to-complete-in-the-seminar"><span class="toc-section-number">8.6</span>  Seminar Tasks - please leave these to complete in the seminar</a></li>
+  <li><a href="#task-1-2" id="toc-task-1-2" class="nav-link" data-scroll-target="#task-1-2"><span class="toc-section-number">8.7</span>  Task 1</a></li>
+  <li><a href="#task-2-2" id="toc-task-2-2" class="nav-link" data-scroll-target="#task-2-2"><span class="toc-section-number">8.8</span>  Task 2</a></li>
+  <li><a href="#task-3-2" id="toc-task-3-2" class="nav-link" data-scroll-target="#task-3-2"><span class="toc-section-number">8.9</span>  Task 3</a></li>
+  <li><a href="#tukeys-hsd" id="toc-tukeys-hsd" class="nav-link" data-scroll-target="#tukeys-hsd"><span class="toc-section-number">8.10</span>  Tukey’s HSD</a></li>
+  <li><a href="#task-4-2" id="toc-task-4-2" class="nav-link" data-scroll-target="#task-4-2"><span class="toc-section-number">8.11</span>  Task 4</a></li>
+  <li><a href="#task-5-1" id="toc-task-5-1" class="nav-link" data-scroll-target="#task-5-1"><span class="toc-section-number">8.12</span>  Task 5</a></li>
+  <li>
+<a href="#repeating-research" id="toc-repeating-research" class="nav-link" data-scroll-target="#repeating-research"><span class="toc-section-number">8.13</span>  Repeating research</a>
+  <ul class="collapse">
+<li><a href="#exploring-the-data" id="toc-exploring-the-data" class="nav-link" data-scroll-target="#exploring-the-data"><span class="toc-section-number">8.13.1</span>  Exploring the data</a></li>
+  <li><a href="#a-simple-attempt-to-recreate-the-sweet-spot-analysis" id="toc-a-simple-attempt-to-recreate-the-sweet-spot-analysis" class="nav-link" data-scroll-target="#a-simple-attempt-to-recreate-the-sweet-spot-analysis"><span class="toc-section-number">8.13.2</span>  A simple attempt to recreate the sweet spot analysis</a></li>
+  <li><a href="#sec-sweet_density" id="toc-sec-sweet_density" class="nav-link" data-scroll-target="#sec-sweet_density"><span class="toc-section-number">8.13.3</span>  A fuller attempt - Step 1, Wrangling the data</a></li>
+  <li><a href="#searching-for-the-sweet-spots" id="toc-searching-for-the-sweet-spots" class="nav-link" data-scroll-target="#searching-for-the-sweet-spots"><span class="toc-section-number">8.13.4</span>  Searching for the sweet spot(s)</a></li>
+  </ul>
+</li>
   </ul>
 </li>
   <li>
-<a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"> <span class="header-section-number">10</span> Datasets</a>
+<a href="#writing-a-quantitative-report" id="toc-writing-a-quantitative-report" class="nav-link" data-scroll-target="#writing-a-quantitative-report"><span class="toc-section-number">9</span>  Writing a Quantitative Report</a>
+  <ul class="collapse">
+<li><a href="#activity-1-proposing-a-question" id="toc-activity-1-proposing-a-question" class="nav-link" data-scroll-target="#activity-1-proposing-a-question"><span class="toc-section-number">9.1</span>  Activity 1: Proposing a question</a></li>
+  <li><a href="#activity-2-find-a-data-set-and-check-its-applicability" id="toc-activity-2-find-a-data-set-and-check-its-applicability" class="nav-link" data-scroll-target="#activity-2-find-a-data-set-and-check-its-applicability"><span class="toc-section-number">9.2</span>  Activity 2: Find a data set and check its applicability</a></li>
+  <li><a href="#activity-3-decide-on-approaches-to-analysis" id="toc-activity-3-decide-on-approaches-to-analysis" class="nav-link" data-scroll-target="#activity-3-decide-on-approaches-to-analysis"><span class="toc-section-number">9.3</span>  Activity 3: Decide on approaches to analysis</a></li>
+  <li><a href="#activity-4-sketch-a-research-plan" id="toc-activity-4-sketch-a-research-plan" class="nav-link" data-scroll-target="#activity-4-sketch-a-research-plan"><span class="toc-section-number">9.4</span>  Activity 4: Sketch a research plan</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#practice-tasks" id="toc-practice-tasks" class="nav-link" data-scroll-target="#practice-tasks"><span class="toc-section-number">10</span>  Practice tasks</a>
+  <ul class="collapse">
+<li><a href="#self-study-tasks" id="toc-self-study-tasks" class="nav-link" data-scroll-target="#self-study-tasks"><span class="toc-section-number">10.1</span>  Self study tasks</a></li>
+  <li><a href="#task-1-practice-creating-a-summary-table-1" id="toc-task-1-practice-creating-a-summary-table-1" class="nav-link" data-scroll-target="#task-1-practice-creating-a-summary-table-1"><span class="toc-section-number">10.2</span>  Task 1 Practice creating a summary table #1</a></li>
+  <li><a href="#task-2-practice-creating-a-summary-table-including-percentages-2" id="toc-task-2-practice-creating-a-summary-table-including-percentages-2" class="nav-link" data-scroll-target="#task-2-practice-creating-a-summary-table-including-percentages-2"><span class="toc-section-number">10.3</span>  Task 2 Practice creating a summary table (including percentages) #2</a></li>
+  <li><a href="#task-3-practice-pivoting-a-table" id="toc-task-3-practice-pivoting-a-table" class="nav-link" data-scroll-target="#task-3-practice-pivoting-a-table"><span class="toc-section-number">10.4</span>  Task 3 Practice pivoting a table</a></li>
+  <li><a href="#task-4-graphing-practice-1-a-bar-chart" id="toc-task-4-graphing-practice-1-a-bar-chart" class="nav-link" data-scroll-target="#task-4-graphing-practice-1-a-bar-chart"><span class="toc-section-number">10.5</span>  Task 4 Graphing Practice #1 A Bar Chart</a></li>
+  <li><a href="#task-5-graphing-practice-2-a-bar-chart-with-two-series" id="toc-task-5-graphing-practice-2-a-bar-chart-with-two-series" class="nav-link" data-scroll-target="#task-5-graphing-practice-2-a-bar-chart-with-two-series"><span class="toc-section-number">10.6</span>  Task 5 Graphing Practice #2 A Bar Chart with two series</a></li>
+  <li><a href="#task-6-graphing-practice-3-a-scatter-plot" id="toc-task-6-graphing-practice-3-a-scatter-plot" class="nav-link" data-scroll-target="#task-6-graphing-practice-3-a-scatter-plot"><span class="toc-section-number">10.7</span>  Task 6 Graphing Practice #3 A scatter plot</a></li>
+  <li><a href="#task-7-graphing-practice-4-a-scatter-plot-with-multiple-series" id="toc-task-7-graphing-practice-4-a-scatter-plot-with-multiple-series" class="nav-link" data-scroll-target="#task-7-graphing-practice-4-a-scatter-plot-with-multiple-series"><span class="toc-section-number">10.8</span>  Task 7 Graphing Practice #4 A scatter plot with multiple series</a></li>
+  <li><a href="#task-8-graphing-practice-4-a-scatter-plot-with-varying-size-points" id="toc-task-8-graphing-practice-4-a-scatter-plot-with-varying-size-points" class="nav-link" data-scroll-target="#task-8-graphing-practice-4-a-scatter-plot-with-varying-size-points"><span class="toc-section-number">10.9</span>  Task 8 Graphing Practice #4 A scatter plot with varying size points</a></li>
+  <li><a href="#task-9-graphing-practice-5-a-mosaic-plot" id="toc-task-9-graphing-practice-5-a-mosaic-plot" class="nav-link" data-scroll-target="#task-9-graphing-practice-5-a-mosaic-plot"><span class="toc-section-number">10.10</span>  Task 9 Graphing Practice #5 A mosaic plot</a></li>
+  <li><a href="#task-10-t-test-practice-1" id="toc-task-10-t-test-practice-1" class="nav-link" data-scroll-target="#task-10-t-test-practice-1"><span class="toc-section-number">10.11</span>  Task 10 T-test practice #1</a></li>
+  <li><a href="#task-11-t-test-practice-2" id="toc-task-11-t-test-practice-2" class="nav-link" data-scroll-target="#task-11-t-test-practice-2"><span class="toc-section-number">10.12</span>  Task 11 T-test practice #2</a></li>
+  <li><a href="#task-12-t-test-practice-3" id="toc-task-12-t-test-practice-3" class="nav-link" data-scroll-target="#task-12-t-test-practice-3"><span class="toc-section-number">10.13</span>  Task 12 T-test practice #3</a></li>
+  <li><a href="#task-13-t-test-practice-3" id="toc-task-13-t-test-practice-3" class="nav-link" data-scroll-target="#task-13-t-test-practice-3"><span class="toc-section-number">10.14</span>  Task 13 T-test practice #3</a></li>
+  <li><a href="#task-14-chi-square-practice-1" id="toc-task-14-chi-square-practice-1" class="nav-link" data-scroll-target="#task-14-chi-square-practice-1"><span class="toc-section-number">10.15</span>  Task 14 Chi-square practice #1</a></li>
+  <li><a href="#task-15-chi-square-practice-2" id="toc-task-15-chi-square-practice-2" class="nav-link" data-scroll-target="#task-15-chi-square-practice-2"><span class="toc-section-number">10.16</span>  Task 15 Chi-square practice #2</a></li>
+  <li><a href="#task-16-chi-square-practice-3" id="toc-task-16-chi-square-practice-3" class="nav-link" data-scroll-target="#task-16-chi-square-practice-3"><span class="toc-section-number">10.17</span>  Task 16 Chi-square practice #3</a></li>
+  <li><a href="#task-18-anova-practice-1" id="toc-task-18-anova-practice-1" class="nav-link" data-scroll-target="#task-18-anova-practice-1"><span class="toc-section-number">10.18</span>  Task 18 Anova practice #1</a></li>
+  <li><a href="#task-19-anova-practice-2" id="toc-task-19-anova-practice-2" class="nav-link" data-scroll-target="#task-19-anova-practice-2"><span class="toc-section-number">10.19</span>  Task 19 Anova practice #2</a></li>
+  <li><a href="#task-18-anova-practice-3" id="toc-task-18-anova-practice-3" class="nav-link" data-scroll-target="#task-18-anova-practice-3"><span class="toc-section-number">10.20</span>  Task 18 Anova practice #3</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><span class="toc-section-number">11</span>  Datasets</a>
   <ul class="collapse">
 <li>
-<a href="#pisa" id="toc-pisa" class="nav-link" data-scroll-target="#pisa"> <span class="header-section-number">10.1</span> PISA</a>
+<a href="#pisa" id="toc-pisa" class="nav-link" data-scroll-target="#pisa"><span class="toc-section-number">11.1</span>  PISA</a>
   <ul class="collapse">
-<li><a href="#what-is-pisa" id="toc-what-is-pisa" class="nav-link" data-scroll-target="#what-is-pisa"> <span class="header-section-number">10.1.1</span> What is PISA</a></li>
-  <li><a href="#how-to-use-it" id="toc-how-to-use-it" class="nav-link" data-scroll-target="#how-to-use-it"> <span class="header-section-number">10.1.2</span> How to use it</a></li>
-  <li><a href="#common-issues" id="toc-common-issues" class="nav-link" data-scroll-target="#common-issues"> <span class="header-section-number">10.1.3</span> Common issues</a></li>
-  <li><a href="#questions-10" id="toc-questions-10" class="nav-link" data-scroll-target="#questions-10"> <span class="header-section-number">10.1.4</span> Questions</a></li>
-  <li><a href="#interesting-papers-and-reading-on-pisa" id="toc-interesting-papers-and-reading-on-pisa" class="nav-link" data-scroll-target="#interesting-papers-and-reading-on-pisa"> <span class="header-section-number">10.1.5</span> Interesting papers and reading on PISA</a></li>
-  <li><a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright"> <span class="header-section-number">10.1.6</span> Copyright</a></li>
-  <li><a href="#fields-to-drop" id="toc-fields-to-drop" class="nav-link" data-scroll-target="#fields-to-drop"> <span class="header-section-number">10.1.7</span> fields to drop:</a></li>
+<li><a href="#what-is-pisa" id="toc-what-is-pisa" class="nav-link" data-scroll-target="#what-is-pisa"><span class="toc-section-number">11.1.1</span>  What is PISA</a></li>
+  <li><a href="#how-to-use-it" id="toc-how-to-use-it" class="nav-link" data-scroll-target="#how-to-use-it"><span class="toc-section-number">11.1.2</span>  How to use it</a></li>
+  <li><a href="#common-issues" id="toc-common-issues" class="nav-link" data-scroll-target="#common-issues"><span class="toc-section-number">11.1.3</span>  Common issues</a></li>
+  <li><a href="#questions-10" id="toc-questions-10" class="nav-link" data-scroll-target="#questions-10"><span class="toc-section-number">11.1.4</span>  Questions</a></li>
+  <li><a href="#interesting-papers-and-reading-on-pisa" id="toc-interesting-papers-and-reading-on-pisa" class="nav-link" data-scroll-target="#interesting-papers-and-reading-on-pisa"><span class="toc-section-number">11.1.5</span>  Interesting papers and reading on PISA</a></li>
+  <li><a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright"><span class="toc-section-number">11.1.6</span>  Copyright</a></li>
+  <li><a href="#fields-to-drop" id="toc-fields-to-drop" class="nav-link" data-scroll-target="#fields-to-drop"><span class="toc-section-number">11.1.7</span>  fields to drop:</a></li>
   </ul>
 </li>
   <li>
-<a href="#english-department-for-education" id="toc-english-department-for-education" class="nav-link" data-scroll-target="#english-department-for-education"> <span class="header-section-number">10.2</span> English Department for Education</a>
+<a href="#english-department-for-education" id="toc-english-department-for-education" class="nav-link" data-scroll-target="#english-department-for-education"><span class="toc-section-number">11.2</span>  English Department for Education</a>
   <ul class="collapse">
-<li><a href="#students" id="toc-students" class="nav-link" data-scroll-target="#students"> <span class="header-section-number">10.2.1</span> Students</a></li>
-  <li><a href="#schools" id="toc-schools" class="nav-link" data-scroll-target="#schools"> <span class="header-section-number">10.2.2</span> Schools</a></li>
-  <li><a href="#school-workforce" id="toc-school-workforce" class="nav-link" data-scroll-target="#school-workforce"> <span class="header-section-number">10.2.3</span> School workforce</a></li>
-  <li><a href="#school-recruitment" id="toc-school-recruitment" class="nav-link" data-scroll-target="#school-recruitment"> <span class="header-section-number">10.2.4</span> School recruitment</a></li>
-  <li><a href="#restricted-datasets" id="toc-restricted-datasets" class="nav-link" data-scroll-target="#restricted-datasets"> <span class="header-section-number">10.2.5</span> Restricted datasets</a></li>
+<li><a href="#students" id="toc-students" class="nav-link" data-scroll-target="#students"><span class="toc-section-number">11.2.1</span>  Students</a></li>
+  <li><a href="#schools" id="toc-schools" class="nav-link" data-scroll-target="#schools"><span class="toc-section-number">11.2.2</span>  Schools</a></li>
+  <li><a href="#school-workforce" id="toc-school-workforce" class="nav-link" data-scroll-target="#school-workforce"><span class="toc-section-number">11.2.3</span>  School workforce</a></li>
+  <li><a href="#school-recruitment" id="toc-school-recruitment" class="nav-link" data-scroll-target="#school-recruitment"><span class="toc-section-number">11.2.4</span>  School recruitment</a></li>
+  <li><a href="#restricted-datasets" id="toc-restricted-datasets" class="nav-link" data-scroll-target="#restricted-datasets"><span class="toc-section-number">11.2.5</span>  Restricted datasets</a></li>
   </ul>
 </li>
   <li>
-<a href="#timss" id="toc-timss" class="nav-link" data-scroll-target="#timss"> <span class="header-section-number">10.3</span> TIMSS</a>
+<a href="#timss" id="toc-timss" class="nav-link" data-scroll-target="#timss"><span class="toc-section-number">11.3</span>  TIMSS</a>
   <ul class="collapse">
-<li><a href="#what-is-timss" id="toc-what-is-timss" class="nav-link" data-scroll-target="#what-is-timss"> <span class="header-section-number">10.3.1</span> What is TIMSS</a></li>
+<li><a href="#what-is-timss" id="toc-what-is-timss" class="nav-link" data-scroll-target="#what-is-timss"><span class="toc-section-number">11.3.1</span>  What is TIMSS</a></li>
   </ul>
 </li>
   <li>
-<a href="#other-datasets" id="toc-other-datasets" class="nav-link" data-scroll-target="#other-datasets"> <span class="header-section-number">10.4</span> Other datasets</a>
+<a href="#other-datasets" id="toc-other-datasets" class="nav-link" data-scroll-target="#other-datasets"><span class="toc-section-number">11.4</span>  Other datasets</a>
   <ul class="collapse">
-<li><a href="#what-other-datasets-are-there" id="toc-what-other-datasets-are-there" class="nav-link" data-scroll-target="#what-other-datasets-are-there"> <span class="header-section-number">10.4.1</span> What other datasets are there?</a></li>
+<li><a href="#what-other-datasets-are-there" id="toc-what-other-datasets-are-there" class="nav-link" data-scroll-target="#what-other-datasets-are-there"><span class="toc-section-number">11.4.1</span>  What other datasets are there?</a></li>
   </ul>
 </li>
   </ul>
 </li>
   <li>
-<a href="#questions-and-answers" id="toc-questions-and-answers" class="nav-link" data-scroll-target="#questions-and-answers"> <span class="header-section-number">11</span> Questions and answers</a>
+<a href="#questions-and-answers" id="toc-questions-and-answers" class="nav-link" data-scroll-target="#questions-and-answers"><span class="toc-section-number">12</span>  Questions and answers</a>
   <ul class="collapse">
-<li><a href="#sec-QANDA" id="toc-sec-QANDA" class="nav-link" data-scroll-target="#sec-QANDA"> <span class="header-section-number">11.1</span> Questions about R</a></li>
-  <li><a href="#about-the-coursework" id="toc-about-the-coursework" class="nav-link" data-scroll-target="#about-the-coursework"> <span class="header-section-number">11.2</span> About the coursework</a></li>
+<li><a href="#sec-QANDA" id="toc-sec-QANDA" class="nav-link" data-scroll-target="#sec-QANDA"><span class="toc-section-number">12.1</span>  Questions about R</a></li>
+  <li><a href="#about-the-coursework" id="toc-about-the-coursework" class="nav-link" data-scroll-target="#about-the-coursework"><span class="toc-section-number">12.2</span>  About the coursework</a></li>
   </ul>
 </li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">12</span> References</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">13</span>  References</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -427,11 +457,10 @@ div.csl-indent {
 
 
 
-
-
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -468,7 +497,7 @@ div.csl-indent {
 <li>What other critiques of the study can you propose?</li>
 </ul>
 <div class="quarto-figure quarto-figure-left">
-<figure class="figure"><p><img src="chapters/images/Intro%20Pasha%20Tool.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="images/Intro Pasha Tool.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </section><section id="activity-3-a-false-dualism" class="level3" data-number="1.1.3"><h3 data-number="1.1.3" class="anchored" data-anchor-id="activity-3-a-false-dualism">
@@ -487,12 +516,12 @@ div.csl-indent {
 <p>For the purpose of discussion, teacher efficacy has been defined as “the extent to which the teacher believes he or she has the capacity to affect student performance” <span class="citation" data-cites="berman1977">(<a href="#ref-berman1977" role="doc-biblioref">Berman et al. 1977, 137</a>)</span></p>
 <p><strong>Tool</strong></p>
 <div class="quarto-figure quarto-figure-left">
-<figure class="figure"><p><img src="chapters/images/01%20Gibson%20Dembo%20Tool.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="images/01 Gibson Dembo Tool.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <p><span class="citation" data-cites="gibson1984">(<a href="#ref-gibson1984" role="doc-biblioref">Gibson and Dembo 1984, 573</a>)</span></p>
 <p><strong>Findings</strong></p>
-<p><img src="chapters/images/01%20Intro%20Gibson%20Findings.png" class="img-fluid"></p>
+<p><img src="images/01 Intro Gibson Findings.png" class="img-fluid"></p>
 <p><span class="citation" data-cites="gibson1984">(<a href="#ref-gibson1984" role="doc-biblioref">Gibson and Dembo 1984, 577</a>)</span></p>
 <p><strong>To discuss</strong></p>
 <ul>
@@ -616,24 +645,24 @@ Tip
 <li><p>Open RStudio</p></li>
 <li>
 <p>On the bottom right-hand side, select <strong>Packages</strong>, then select <strong>Install</strong>, then type <strong>“tidyverse”</strong> into the Packages field of the new window:</p>
-<p><img src="chapters/images/tidyverse_install.png" class="img-fluid"></p>
+<p><img src="images/tidyverse_install.png" class="img-fluid"></p>
 </li>
 <li><p>Click Install and you should see things happening in the console (bottom left). Wait for the console activity to finish (it’ll be downloading and checking packages). If it asks any questions, type <code>N</code> for no and press enter.</p></li>
 <li>
-<p>Add a new R Script using the <img src="chapters/images/RStudio_new_button.png" class="img-fluid"> button</p>
-<p><img src="chapters/images/RStudio_new_button_RScript.png" width="210" height="74"></p>
+<p>Add a new R Script using the <img src="images/RStudio_new_button.png" class="img-fluid"> button</p>
+<p><img src="images/RStudio_new_button_RScript.png" width="210" height="74"></p>
 </li>
 <li>
 <p>In the new R script, write the following:</p>
-<p><img src="chapters/images/code_starwars.png" class="img-fluid" width="514"></p>
+<p><img src="images/code_starwars.png" class="img-fluid" width="514"></p>
 </li>
 <li>
-<p>Select all the lines and press <code>Control</code> or <code>Command ⌘</code> and <code>Enter</code> on your keyboard at the same time. Alternatively, press the <img src="chapters/images/RStudio-run.png" class="img-fluid" width="36"> button</p>
-<p><img src="chapters/images/code_starwars_select.png" class="img-fluid" width="585"></p>
+<p>Select all the lines and press <code>Control</code> or <code>Command ⌘</code> and <code>Enter</code> on your keyboard at the same time. Alternatively, press the <img src="images/RStudio-run.png" class="img-fluid" width="36"> button</p>
+<p><img src="images/code_starwars_select.png" class="img-fluid" width="585"></p>
 </li>
 <li>
 <p>Check that you have the following in the console window (depending on your screen size you might have fewer columns):</p>
-<p><img src="chapters/images/output_data_starwars.png" class="img-fluid"></p>
+<p><img src="images/output_data_starwars.png" class="img-fluid"></p>
 </li>
 <li><p>Install the <code>arrow</code> package, repeat step 2, above.</p></li>
 <li><p>Download the <code>PISA_2018_student_subset.parquet</code> dataset from <a href="https://drive.google.com/file/d/17Owl5F5fmuOWiAXQomVfQMr_9CYDHoBC/view?usp=share_link">here</a> and <strong>download</strong> it on your computer, make a note of the <strong>full folder location</strong> where you have saved this!</p></li>
@@ -674,11 +703,11 @@ Tip
 </div>
 <ol start="12" type="1">
 <li><p>That’s it, you should be set up!</p></li>
-<li><p>Any issues, please drop a message on the Teams group, or mail <a href="chapters/mailto:peter.kemp@kcl.ac.uk">peter.kemp@kcl.ac.uk</a> and <a href="chapters/mailto:richard.brock@kcl.ac.uk">richard.brock@kcl.ac.uk</a></p></li>
+<li><p>Any issues, please drop a message on the Teams group, or mail <a href="mailto:peter.kemp@kcl.ac.uk">peter.kemp@kcl.ac.uk</a> and <a href="mailto:richard.brock@kcl.ac.uk">richard.brock@kcl.ac.uk</a></p></li>
 </ol></section></section><section id="starting-to-code" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="starting-to-code">
 <span class="header-section-number">2.3</span> Starting to code</h2>
-<p>After adding a new R Script using the button <img src="chapters/images/RStudio_new_button.png" width="27" height="29">, there are four parts to R Studio’s interface. For the moment we are most interested in the Script file section, top left.</p>
-<p><img src="chapters/images/RStudio_interface.png" class="img-fluid" width="600"></p>
+<p>After adding a new R Script using the button <img src="images/RStudio_new_button.png" width="27" height="29">, there are four parts to R Studio’s interface. For the moment we are most interested in the Script file section, top left.</p>
+<p><img src="images/RStudio_interface.png" class="img-fluid" width="600"></p>
 </section><section id="your-first-program" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="your-first-program">
 <span class="header-section-number">2.4</span> Your first program</h2>
 <section id="objects-and-instructions" class="level3" data-number="2.4.1"><h3 data-number="2.4.1" class="anchored" data-anchor-id="objects-and-instructions">
@@ -1305,15 +1334,15 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Some packages might use the same function names as other packages, for example <code>select</code> might do different things depending on which package you loaded last. As a rule of thumb, when you start RStudio afresh, make sure that you load the <code>tidyverse</code> package after you have loaded all your other packages. To read more about this problem see <a href="#sec-QANDA">Section&nbsp;11.1</a></p>
+<p>Some packages might use the same function names as other packages, for example <code>select</code> might do different things depending on which package you loaded last. As a rule of thumb, when you start RStudio afresh, make sure that you load the <code>tidyverse</code> package after you have loaded all your other packages. To read more about this problem see <a href="#sec-QANDA">Section&nbsp;12.1</a></p>
 </div>
 </div>
 </section></section><section id="the-tidyverse" class="level2" data-number="2.7"><h2 data-number="2.7" class="anchored" data-anchor-id="the-tidyverse">
 <span class="header-section-number">2.7</span> The tidyverse</h2>
 <p>This course focuses on using the <em>tidyverse</em>; a free collection of programming <em>packages</em> that will allow you to write code that imports data, tidys it, transforms it into useful datasets, visualises findings, creates statistical models and communicates findings to others data using a standardised set of commands.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="chapters/images/data-science-workflow.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Data science workflow - RStudio</figcaption><p></p>
+<figure class="figure"><p><img src="images/data-science-workflow.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Data science workflow - RStudio</figcaption><p></p>
 </figure>
 </div>
 <p>For many people the tidyverse is the main reason that they use R. The tidyverse is used widely in government, academia, NGOs and industry, notable examples include the <a href="https://johnburnmurdoch.github.io/slides/r-ggplot/#/">Financial Times</a> and the <a href="https://bbc.github.io/rcookbook/">BBC</a>. Code in the tidyverse can be (relatively) easily understood by others and <em>you</em>, when you come back to a project after several months.</p>
@@ -1522,11 +1551,11 @@ Tip
 <ol type="1">
 <li>
 <p>Navigate to the location of the file in <em>Windows Explorer</em>:</p>
-<p><img src="chapters/images/navigate_file_location.png" class="img-fluid"></p>
+<p><img src="images/navigate_file_location.png" class="img-fluid"></p>
 </li>
 <li>
 <p>Click on the address bar</p>
-<p><img src="chapters/images/select_file_location.png" class="img-fluid"></p>
+<p><img src="images/select_file_location.png" class="img-fluid"></p>
 </li>
 <li><p>Copy the location</p></li>
 </ol>
@@ -1538,7 +1567,7 @@ Tip
 <li><p>Navigate to the folder where you saved the file</p></li>
 <li>
 <p>Right click on the name of the file, then press the <strong>option</strong> <code>⌥</code> (or <code>Alt</code>) button and select <code>Copy &lt;name of file&gt; as Pathname</code></p>
-<p><img src="chapters/images/mac_pathnames.jpg" class="img-fluid"></p>
+<p><img src="images/mac_pathnames.jpg" class="img-fluid"></p>
 </li>
 <li><p>Alternatively, follow <a href="https://support.apple.com/en-gb/guide/mac-help/mchlp1774/mac">this</a></p></li>
 </ol>
@@ -1631,11 +1660,11 @@ Tip
 </div>
 </div>
 <p>We can see from this that the <code>tibble</code> (another word for <em>dataframe</em>, basically a spreadsheet table) is 612004 rows, with 205 columns <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. This is data for all the students from around the world that took part in PISA 2018. The actual PISA dataset has many more columns than this, but for the examples here we have selected 205 of the more interesting data variables. The column names might seem rather confusing and you might want to refer to the <a href="https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx">PISA 2018 code book</a> to find out what everything means.</p>
-<p>The data shown in the console window is only the top few rows and first few columns. To see the whole table click on the <code>Environment panel</code> and the table icon <img src="chapters/images/icon_table.png" class="img-fluid"> to explore the table:</p>
-<p><img src="chapters/images/environment_view_table.png" class="img-fluid"></p>
+<p>The data shown in the console window is only the top few rows and first few columns. To see the whole table click on the <code>Environment panel</code> and the table icon <img src="images/icon_table.png" class="img-fluid"> to explore the table:</p>
+<p><img src="images/environment_view_table.png" class="img-fluid"></p>
 <p>Alternatively, you can also hold down <code>command ⌘</code>|<code>control</code> and click on the table name in your R Script to view the table. You can also type <code>View(&lt;table_name&gt;)</code>. <strong>Note:</strong> this has a capital “V”</p>
 <p>In the table view mode you can read the label attached to each column, this will give you more detail about what the column stores. If you hover over columns it will display the label:</p>
-<p><img src="chapters/images/environment_col_label.png" class="img-fluid"></p>
+<p><img src="images/environment_col_label.png" class="img-fluid"></p>
 <p>Alternatively, to read the full label of a column, the following code can be used:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1"></a><span class="co"># You might also want to read the label of a field</span></span>
@@ -1645,7 +1674,7 @@ Tip
 </div>
 </div>
 <p>Each view only shows you 50 columns, to see more use the navigation panel:</p>
-<p><img src="chapters/images/navigation_panel.png" class="img-fluid"></p>
+<p><img src="images/navigation_panel.png" class="img-fluid"></p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1712,7 +1741,7 @@ Note
 </div>
 </div>
 <p>As mentioned, the columns in the tables are very much like a collection of <em>vectors</em>, to access these columns we can put a <code>$</code> [dollar sign] after the name of a table. This allows us to see all the columns that table has, using the up and down arrows to select, press the <code>Tab</code> key to complete:</p>
-<p><img src="chapters/images/dollar_fields.png" class="img-fluid"></p>
+<p><img src="images/dollar_fields.png" class="img-fluid"></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1"></a>PISA_2018<span class="sc">$</span>ST004D01T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1935,8 +1964,8 @@ Tip
 <p>Piping allows us to break down complex tasks into manageable chunks that can be written and tested one after another. There are several powerful commands in the tidyverse as part of the <em>dplyr</em> package that can help us <code>group</code>, <code>filter</code>, <code>select</code>, <code>mutate</code> and <code>summarise</code> datasets. With this small set of commands we can use piping to convert massive datasets into simple and useful results.</p>
 <p>Using the pipe <code>%&gt;%</code> command, we can feed the results from one command into the next command making for reusable and easy to read code.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="chapters/images/pipe_drawing.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">how piping works</figcaption><p></p>
+<figure class="figure"><p><img src="images/pipe_drawing.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">how piping works</figcaption><p></p>
 </figure>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -1989,7 +2018,7 @@ Note
 <li>line 7 filters out any gender <code>ST004D01T</code> that is <code>NA</code>. First is finds all the students that have <code>NA</code> as their gender by using <code>is.na(ST004D01T)</code>, then is <em>NOTs</em>/flips the result using the exclamation mark <code>!</code>, giving those students who don’t have their gender set to <code>NA</code>. The filtered data is then piped to the next line</li>
 <li>line 8, finally we <code>arrange</code> / sort the results in <code>desc</code>ending order by the <code>mean_maths</code> column. The default for arrange is <em>ascending</em> order, leave out the <code>desc(  )</code> for the numbers to be ordered in the opposite way.</li>
 </ul>
-<p>Males get a slightly better maths score than Females for this <code>PV1MATH</code> score, other scores are available, please read <a href="#sec-PV">Section&nbsp;10.1.4.1</a> to find out more about the limitations of using this value.</p>
+<p>Males get a slightly better maths score than Females for this <code>PV1MATH</code> score, other scores are available, please read <a href="#sec-PV">Section&nbsp;11.1.4.1</a> to find out more about the limitations of using this value.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -3314,9 +3343,9 @@ Tip
 <section id="sec-graphing" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="sec-graphing">
 <span class="header-section-number">3.1</span> Introduction to graphing in R</h2>
 <p>The tidyverse includes the incredibly powerful <code>ggplot2</code> package. This package is pretty much the industry standard for making graphs for publication. <code>ggplot2</code> is built on the <em>grammar of graphics</em> where you build graphs by specifying underlying attributes and layering geometric objects on top of each other. In the diagram below you can see how a graph is built from <em>geometric objects</em> (the things that are plotted such as points and bars) a <em>scale</em>, and <em>plot annotations</em> (e.g.&nbsp;a key, title etc). You can then apply <em>faceting</em> to the graph to automatically split one graph into multiple plots, allowing you to easily compare different groupings. Publications, such as the Financial Times, make daily use of <code>ggplot2</code>.</p>
-<div id="fig-anonymous-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="http://vita.had.co.nz/papers/layered-grammar.pdf"><img src="chapters/images/grammarofgraphics.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Adapted from A Layered Grammar of Graphics, Wickham, 2010</figcaption><p></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="http://vita.had.co.nz/papers/layered-grammar.pdf"><img src="images/grammarofgraphics.svg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Adapted from A Layered Grammar of Graphics, Wickham, 2010</figcaption><p></p>
 </figure>
 </div>
 <p>The basic structure of <code>ggplot</code> code is to combine different graphing elements through the use of the <code>+</code> operator. To demonstrate this, let’s look at the relationship between a poverty indicator <code>ESCS</code> and the performance in Maths <code>PV1MATH</code>, by gender <code>ST004D01T</code> and country <code>CNT</code>:</p>
@@ -3988,7 +4017,7 @@ Tip
 <section id="discussion-activity" class="level3" data-number="4.1.1"><h3 data-number="4.1.1" class="anchored" data-anchor-id="discussion-activity">
 <span class="header-section-number">4.1.1</span> Discussion activity</h3>
 <p>Based on <span class="citation" data-cites="davis2013introduction">Davis (<a href="#ref-davis2013introduction" role="doc-biblioref">2013</a>)</span> <a href="https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15">Link to chapter</a></p>
-<p><img src="chapters/images/03%20Normal%20Curve-01.jpg" class="img-fluid"></p>
+<p><img src="images/03 Normal Curve-01.jpg" class="img-fluid"></p>
 <p>Consider how and why we think of things as being ‘normal’ (or not). Some suggested questions are:</p>
 <ul>
 <li>What were your immediate thoughts on reading this paper?</li>
@@ -6126,12 +6155,12 @@ Tip
 <div class="sourceCode cell-code" id="cb347"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb347-1"><a href="#cb347-1"></a>anx3_table_out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="uhearcgsva" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="gkajqkbofh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#uhearcgsva .gt_table {
+:where(#gkajqkbofh) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -6156,7 +6185,7 @@ Tip
   border-left-color: #D3D3D3;
 }
 
-#uhearcgsva .gt_heading {
+:where(#gkajqkbofh) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6168,12 +6197,12 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#uhearcgsva .gt_caption {
+:where(#gkajqkbofh) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uhearcgsva .gt_title {
+:where(#gkajqkbofh) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -6185,7 +6214,7 @@ Tip
   border-bottom-width: 0;
 }
 
-#uhearcgsva .gt_subtitle {
+:where(#gkajqkbofh) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6197,13 +6226,13 @@ Tip
   border-top-width: 0;
 }
 
-#uhearcgsva .gt_bottom_border {
+:where(#gkajqkbofh) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uhearcgsva .gt_col_headings {
+:where(#gkajqkbofh) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6218,7 +6247,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#uhearcgsva .gt_col_heading {
+:where(#gkajqkbofh) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6238,7 +6267,7 @@ Tip
   overflow-x: hidden;
 }
 
-#uhearcgsva .gt_column_spanner_outer {
+:where(#gkajqkbofh) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6250,15 +6279,15 @@ Tip
   padding-right: 4px;
 }
 
-#uhearcgsva .gt_column_spanner_outer:first-child {
+:where(#gkajqkbofh) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uhearcgsva .gt_column_spanner_outer:last-child {
+:where(#gkajqkbofh) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uhearcgsva .gt_column_spanner {
+:where(#gkajqkbofh) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6270,7 +6299,7 @@ Tip
   width: 100%;
 }
 
-#uhearcgsva .gt_group_heading {
+:where(#gkajqkbofh) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6296,7 +6325,7 @@ Tip
   text-align: left;
 }
 
-#uhearcgsva .gt_empty_group_heading {
+:where(#gkajqkbofh) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6311,15 +6340,15 @@ Tip
   vertical-align: middle;
 }
 
-#uhearcgsva .gt_from_md > :first-child {
+:where(#gkajqkbofh) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uhearcgsva .gt_from_md > :last-child {
+:where(#gkajqkbofh) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uhearcgsva .gt_row {
+:where(#gkajqkbofh) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6338,7 +6367,7 @@ Tip
   overflow-x: hidden;
 }
 
-#uhearcgsva .gt_stub {
+:where(#gkajqkbofh) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6351,7 +6380,7 @@ Tip
   padding-right: 5px;
 }
 
-#uhearcgsva .gt_stub_row_group {
+:where(#gkajqkbofh) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6365,11 +6394,11 @@ Tip
   vertical-align: top;
 }
 
-#uhearcgsva .gt_row_group_first td {
+:where(#gkajqkbofh) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uhearcgsva .gt_summary_row {
+:where(#gkajqkbofh) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6379,16 +6408,16 @@ Tip
   padding-right: 5px;
 }
 
-#uhearcgsva .gt_first_summary_row {
+:where(#gkajqkbofh) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uhearcgsva .gt_first_summary_row.thick {
+:where(#gkajqkbofh) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uhearcgsva .gt_last_summary_row {
+:where(#gkajqkbofh) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6398,7 +6427,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-#uhearcgsva .gt_grand_summary_row {
+:where(#gkajqkbofh) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6408,7 +6437,7 @@ Tip
   padding-right: 5px;
 }
 
-#uhearcgsva .gt_first_grand_summary_row {
+:where(#gkajqkbofh) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6418,11 +6447,11 @@ Tip
   border-top-color: #D3D3D3;
 }
 
-#uhearcgsva .gt_striped {
+:where(#gkajqkbofh) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uhearcgsva .gt_table_body {
+:where(#gkajqkbofh) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6431,7 +6460,7 @@ Tip
   border-bottom-color: #D3D3D3;
 }
 
-#uhearcgsva .gt_footnotes {
+:where(#gkajqkbofh) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6445,7 +6474,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#uhearcgsva .gt_footnote {
+:where(#gkajqkbofh) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -6454,7 +6483,7 @@ Tip
   padding-right: 5px;
 }
 
-#uhearcgsva .gt_sourcenotes {
+:where(#gkajqkbofh) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6468,7 +6497,7 @@ Tip
   border-right-color: #D3D3D3;
 }
 
-#uhearcgsva .gt_sourcenote {
+:where(#gkajqkbofh) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6476,64 +6505,64 @@ Tip
   padding-right: 5px;
 }
 
-#uhearcgsva .gt_left {
+:where(#gkajqkbofh) .gt_left {
   text-align: left;
 }
 
-#uhearcgsva .gt_center {
+:where(#gkajqkbofh) .gt_center {
   text-align: center;
 }
 
-#uhearcgsva .gt_right {
+:where(#gkajqkbofh) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uhearcgsva .gt_font_normal {
+:where(#gkajqkbofh) .gt_font_normal {
   font-weight: normal;
 }
 
-#uhearcgsva .gt_font_bold {
+:where(#gkajqkbofh) .gt_font_bold {
   font-weight: bold;
 }
 
-#uhearcgsva .gt_font_italic {
+:where(#gkajqkbofh) .gt_font_italic {
   font-style: italic;
 }
 
-#uhearcgsva .gt_super {
+:where(#gkajqkbofh) .gt_super {
   font-size: 65%;
 }
 
-#uhearcgsva .gt_footnote_marks {
+:where(#gkajqkbofh) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#uhearcgsva .gt_asterisk {
+:where(#gkajqkbofh) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uhearcgsva .gt_indent_1 {
+:where(#gkajqkbofh) .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uhearcgsva .gt_indent_2 {
+:where(#gkajqkbofh) .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uhearcgsva .gt_indent_3 {
+:where(#gkajqkbofh) .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uhearcgsva .gt_indent_4 {
+:where(#gkajqkbofh) .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uhearcgsva .gt_indent_5 {
+:where(#gkajqkbofh) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -7327,8 +7356,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 <p>teacher-directed instruction in most to all classes and inquiry-based learning in some</p>
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="chapters/images/mckinsey.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">the sweet spot for teacher-directed instruction and inquiry-based learning <span class="citation" data-cites="mourshed2017improve">(<a href="#ref-mourshed2017improve" role="doc-biblioref">Mourshed, Krawitz, and Dorn 2017</a>)</span></figcaption><p></p>
+<figure class="figure"><p><img src="images/mckinsey.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">the sweet spot for teacher-directed instruction and inquiry-based learning <span class="citation" data-cites="mourshed2017improve">(<a href="#ref-mourshed2017improve" role="doc-biblioref">Mourshed, Krawitz, and Dorn 2017</a>)</span></figcaption><p></p>
 </figure>
 </div>
 <p>Unfortunately <span class="citation" data-cites="mourshed2017improve">Mourshed, Krawitz, and Dorn (<a href="#ref-mourshed2017improve" role="doc-biblioref">2017</a>)</span> never published the code behind their study and it’s not actually clear how we can recreate their findings. Others have tried, but failed <span class="citation" data-cites="bokhove2021mckinsey">(<a href="#ref-bokhove2021mckinsey" role="doc-biblioref">Bokhove 2021</a>)</span>. Now it’s our turn!</p>
@@ -7565,41 +7594,85 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 <span id="cb409-41"><a href="#cb409-41"></a>            <span class="at">n=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
 <span id="cb409-42"><a href="#cb409-42"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb409-43"><a href="#cb409-43"></a>  <span class="fu">mutate</span>(<span class="at">IBTEACH =</span> <span class="fu">factor</span>(IBTEACH, <span class="at">levels=</span><span class="fu">c</span>(<span class="st">"Low"</span>, <span class="st">"Medium"</span>, <span class="st">"High"</span>)),</span>
-<span id="cb409-44"><a href="#cb409-44"></a>         <span class="at">TDTEACH =</span> <span class="fu">factor</span>(TDTEACH, <span class="at">levels=</span><span class="fu">c</span>(<span class="st">"Low"</span>, <span class="st">"Medium"</span>, <span class="st">"High"</span>)))</span>
-<span id="cb409-45"><a href="#cb409-45"></a></span>
-<span id="cb409-46"><a href="#cb409-46"></a>plt_sweetspot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(plot_data <span class="sc">%&gt;%</span> </span>
-<span id="cb409-47"><a href="#cb409-47"></a>         <span class="fu">select</span>(IBTEACH, TDTEACH, mean_diff, mean_col) <span class="sc">%&gt;%</span></span>
-<span id="cb409-48"><a href="#cb409-48"></a>         <span class="fu">mutate</span>(<span class="at">mean_diff =</span> <span class="fu">signif</span>(mean_diff,<span class="dv">2</span>),</span>
-<span id="cb409-49"><a href="#cb409-49"></a>                <span class="at">mean_diff_txt =</span> <span class="fu">ifelse</span>(<span class="fu">sign</span>(mean_diff)<span class="sc">==</span><span class="dv">1</span>, </span>
-<span id="cb409-50"><a href="#cb409-50"></a>                                   <span class="fu">paste0</span>(<span class="st">"+"</span>,mean_diff),</span>
-<span id="cb409-51"><a href="#cb409-51"></a>                                   <span class="fu">paste0</span>(mean_diff))), </span>
-<span id="cb409-52"><a href="#cb409-52"></a>       <span class="fu">aes</span>(<span class="at">x =</span>IBTEACH, <span class="at">y =</span> TDTEACH)) <span class="sc">+</span></span>
-<span id="cb409-53"><a href="#cb409-53"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size=</span><span class="fu">abs</span>(mean_diff), <span class="at">colour=</span>mean_col)) <span class="sc">+</span></span>
-<span id="cb409-54"><a href="#cb409-54"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">40</span>)) <span class="sc">+</span></span>
-<span id="cb409-55"><a href="#cb409-55"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>mean_diff_txt, </span>
-<span id="cb409-56"><a href="#cb409-56"></a>                <span class="at">colour=</span><span class="fu">ifelse</span>(<span class="fu">abs</span>(mean_diff) <span class="sc">&gt;</span> <span class="dv">8</span>, <span class="st">"big"</span>,</span>
-<span id="cb409-57"><a href="#cb409-57"></a>                              <span class="fu">ifelse</span>(mean_diff <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">"positive"</span>, <span class="st">"negative"</span>)))) <span class="sc">+</span></span>
-<span id="cb409-58"><a href="#cb409-58"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"big"</span> <span class="ot">=</span> <span class="st">"white"</span>, <span class="st">"positive"</span> <span class="ot">=</span> <span class="st">"#6592a5"</span>, </span>
-<span id="cb409-59"><a href="#cb409-59"></a>                                <span class="st">"negative"</span> <span class="ot">=</span> <span class="st">"#c37d7f"</span>,</span>
-<span id="cb409-60"><a href="#cb409-60"></a>                                <span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"#6592a5"</span>, <span class="st">"FALSE"</span><span class="ot">=</span> <span class="st">"#c37d7f"</span>)) <span class="sc">+</span></span>
-<span id="cb409-61"><a href="#cb409-61"></a>  <span class="fu">theme</span>(<span class="at">panel.background=</span><span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#dce1e5"</span>),</span>
-<span id="cb409-62"><a href="#cb409-62"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb409-63"><a href="#cb409-63"></a>  <span class="fu">ggtitle</span>(<span class="st">"Point change in PISA science scores relative to mean"</span>) <span class="sc">+</span> </span>
-<span id="cb409-64"><a href="#cb409-64"></a>  <span class="fu">xlab</span>(<span class="st">"Inquiry-based science teaching"</span>) <span class="sc">+</span></span>
-<span id="cb409-65"><a href="#cb409-65"></a>  <span class="fu">ylab</span>(<span class="st">"Teacher-directed science instruction"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb409-44"><a href="#cb409-44"></a>         <span class="at">TDTEACH =</span> <span class="fu">factor</span>(TDTEACH, <span class="at">levels=</span><span class="fu">c</span>(<span class="st">"Low"</span>, <span class="st">"Medium"</span>, <span class="st">"High"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb409-45"><a href="#cb409-45"></a>         <span class="fu">select</span>(IBTEACH, TDTEACH, mean_diff, mean_col, n) <span class="sc">%&gt;%</span></span>
+<span id="cb409-46"><a href="#cb409-46"></a>  <span class="fu">mutate</span>(<span class="at">mean_diff =</span> <span class="fu">signif</span>(mean_diff,<span class="dv">2</span>),</span>
+<span id="cb409-47"><a href="#cb409-47"></a>                <span class="at">mean_diff_txt =</span> <span class="fu">ifelse</span>(<span class="fu">sign</span>(mean_diff)<span class="sc">==</span><span class="dv">1</span>, </span>
+<span id="cb409-48"><a href="#cb409-48"></a>                                   <span class="fu">paste0</span>(<span class="st">"+"</span>,mean_diff),</span>
+<span id="cb409-49"><a href="#cb409-49"></a>                                   <span class="fu">paste0</span>(mean_diff)),</span>
+<span id="cb409-50"><a href="#cb409-50"></a>                <span class="at">per =</span> <span class="fu">signif</span>(<span class="dv">100</span> <span class="sc">*</span> (n <span class="sc">/</span> <span class="fu">sum</span>(n)),<span class="dv">3</span>))</span>
+<span id="cb409-51"><a href="#cb409-51"></a></span>
+<span id="cb409-52"><a href="#cb409-52"></a>plt_sweetspot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(plot_data, </span>
+<span id="cb409-53"><a href="#cb409-53"></a>       <span class="fu">aes</span>(<span class="at">x =</span>IBTEACH, <span class="at">y =</span> TDTEACH)) <span class="sc">+</span></span>
+<span id="cb409-54"><a href="#cb409-54"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size=</span><span class="fu">abs</span>(mean_diff), <span class="at">colour=</span>mean_col)) <span class="sc">+</span></span>
+<span id="cb409-55"><a href="#cb409-55"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">40</span>)) <span class="sc">+</span></span>
+<span id="cb409-56"><a href="#cb409-56"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">paste</span>(per, <span class="st">"%"</span>), <span class="at">vjust=</span><span class="fl">3.5</span>)) <span class="sc">+</span></span>
+<span id="cb409-57"><a href="#cb409-57"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>mean_diff_txt, </span>
+<span id="cb409-58"><a href="#cb409-58"></a>                <span class="at">colour=</span><span class="fu">ifelse</span>(<span class="fu">abs</span>(mean_diff) <span class="sc">&gt;</span> <span class="dv">8</span>, <span class="st">"big"</span>,</span>
+<span id="cb409-59"><a href="#cb409-59"></a>                              <span class="fu">ifelse</span>(mean_diff <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">"positive"</span>, <span class="st">"negative"</span>)))) <span class="sc">+</span></span>
+<span id="cb409-60"><a href="#cb409-60"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"big"</span> <span class="ot">=</span> <span class="st">"white"</span>, <span class="st">"positive"</span> <span class="ot">=</span> <span class="st">"#6592a5"</span>, </span>
+<span id="cb409-61"><a href="#cb409-61"></a>                                <span class="st">"negative"</span> <span class="ot">=</span> <span class="st">"#c37d7f"</span>,</span>
+<span id="cb409-62"><a href="#cb409-62"></a>                                <span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"#6592a5"</span>, <span class="st">"FALSE"</span><span class="ot">=</span> <span class="st">"#c37d7f"</span>)) <span class="sc">+</span></span>
+<span id="cb409-63"><a href="#cb409-63"></a>  <span class="fu">theme</span>(<span class="at">panel.background=</span><span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#dce1e5"</span>),</span>
+<span id="cb409-64"><a href="#cb409-64"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb409-65"><a href="#cb409-65"></a>  <span class="fu">ggtitle</span>(<span class="st">"Point change in PISA science scores relative to mean (UK only)"</span>) <span class="sc">+</span> </span>
+<span id="cb409-66"><a href="#cb409-66"></a>  <span class="fu">xlab</span>(<span class="st">"Inquiry-based science teaching"</span>) <span class="sc">+</span></span>
+<span id="cb409-67"><a href="#cb409-67"></a>  <span class="fu">ylab</span>(<span class="st">"Teacher-directed science instruction"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
 <div class="cell">
 
 </div>
+</section></section></section><section id="writing-a-quantitative-report" class="level1" data-number="9"><h1 data-number="9">
+<span class="header-section-number">9</span> Writing a Quantitative Report</h1>
+<p>In the lecture you looked at <span class="citation" data-cites="du2019science">Du and Wong (<a href="#ref-du2019science" role="doc-biblioref">2019</a>)</span> as an example of a quantitative report. This session will help you structure your writing for your own quantitative report in assignment 3.</p>
+<section id="activity-1-proposing-a-question" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="activity-1-proposing-a-question">
+<span class="header-section-number">9.1</span> Activity 1: Proposing a question</h2>
+<ol type="a">
+<li><p>Spend 10 minutes researching a problem (this can’t be extensive but find something that is flagged as requiring more research). Alternatively, you make already have a problem, in which case move onto the next step</p></li>
+<li>
+<p>State a rough research problem:</p>
+<p>e.g., There is an imbalance in the number of students studying a-level biology (i.e., too few boys)</p>
+</li>
+<li>
+<p>Turn the problem into a question:</p>
+<p>e.g., What school features correlate with higher and lower level of male uptake of a-level biology?</p>
+</li>
+<li>
+<p>Increase the specificity of the question:</p>
+<p>e.g., In DfE school census data for the period 2017-2022 what school variables (including number of biology teachers, uptake of GCSE triple science, % of FSM students etc.) correlate with higher and lower level of male uptake of a-level biology?</p>
+</li>
+</ol></section><section id="activity-2-find-a-data-set-and-check-its-applicability" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="activity-2-find-a-data-set-and-check-its-applicability">
+<span class="header-section-number">9.2</span> Activity 2: Find a data set and check its applicability</h2>
+<ul>
+<li>Use the list of open data sets to choose an appropriate data set</li>
+<li>Does it include all the data to answer your question? Which items will you use in your analysis? What form is the data you will use in?</li>
+<li>What form of cleaning will the data require?</li>
+<li>Will you need to draw on multiple data sets?</li>
+</ul></section><section id="activity-3-decide-on-approaches-to-analysis" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="activity-3-decide-on-approaches-to-analysis">
+<span class="header-section-number">9.3</span> Activity 3: Decide on approaches to analysis</h2>
+<ul>
+<li>What types of data are relevant to your questions (continuous, discontinuous?)</li>
+<li>What types of test will you need to run?</li>
+<li>What kind of descriptive statistics will be useful?</li>
+</ul></section><section id="activity-4-sketch-a-research-plan" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="activity-4-sketch-a-research-plan">
+<span class="header-section-number">9.4</span> Activity 4: Sketch a research plan</h2>
+<ul>
+<li>When will you finalize your question?</li>
+<li>When will you carry out your data analysis?</li>
+<li>When will you write up?</li>
+<li>What help will you need?</li>
+<li>How can you collaborate with peers?</li>
+<li>What R/SPSS/Excel skills do you need to acquire?</li>
+</ul>
 <div class="cell">
 
 </div>
-</section></section></section><section id="practice-tasks" class="level1" data-number="9"><h1 data-number="9">
-<span class="header-section-number">9</span> Practice tasks</h1>
-<section id="self-study-tasks" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="self-study-tasks">
-<span class="header-section-number">9.1</span> Self study tasks</h2>
+</section></section><section id="practice-tasks" class="level1" data-number="10"><h1 data-number="10">
+<span class="header-section-number">10</span> Practice tasks</h1>
+<section id="self-study-tasks" class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" data-anchor-id="self-study-tasks">
+<span class="header-section-number">10.1</span> Self study tasks</h2>
 <p>The pages below set out a series of graded challenges that you can use to test your R and statistical skills. Sample code that solves each problem is included so you can compare your solution with ours. Don’t worry if you solve something in a different way, there will be multiple solutions to the same task. The tasks are all set on the PISA_2018 data set: <a href="https://drive.google.com/open?id=1_DSRbsdE8h-a4vKeQLfdk6rjciOvw1Wf&amp;authuser=richardandrewbrock%40gmail.com&amp;usp=drive_fs">PISA_2018</a></p>
 <p>To load the data, use the code below:</p>
 <div class="cell">
@@ -7608,8 +7681,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 <span id="cb410-3"><a href="#cb410-3"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb410-4"><a href="#cb410-4"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">"&lt;location of the downloaded PISA_2018.parquet file&gt;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="task-1-practice-creating-a-summary-table-1" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="task-1-practice-creating-a-summary-table-1">
-<span class="header-section-number">9.2</span> Task 1 Practice creating a summary table #1</h2>
+</section><section id="task-1-practice-creating-a-summary-table-1" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="task-1-practice-creating-a-summary-table-1">
+<span class="header-section-number">10.2</span> Task 1 Practice creating a summary table #1</h2>
 <div class="question">
 <p>Create a table that summarises the mean PISA science scores by country. You will need to use the <code>group_by</code>, <code>summarise</code> and <code>mean</code> functions.</p>
 <div class="cell">
@@ -7622,8 +7695,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </div>
 <p><strong>Extension</strong>: use the <code>signif</code> function to give the responses to three significant figures</p>
 </div>
-</section><section id="task-2-practice-creating-a-summary-table-including-percentages-2" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="task-2-practice-creating-a-summary-table-including-percentages-2">
-<span class="header-section-number">9.3</span> Task 2 Practice creating a summary table (including percentages) #2</h2>
+</section><section id="task-2-practice-creating-a-summary-table-including-percentages-2" class="level2" data-number="10.3"><h2 data-number="10.3" class="anchored" data-anchor-id="task-2-practice-creating-a-summary-table-including-percentages-2">
+<span class="header-section-number">10.3</span> Task 2 Practice creating a summary table (including percentages) #2</h2>
 <div class="question">
 <p>Use the table function to create a summary of numbers of types of school ISCEDO recorded in the data frame for the UK. Use the mutate function to turn these into percentages (you will need to calculate a total)</p>
 <div class="cell">
@@ -7642,8 +7715,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-3-practice-pivoting-a-table" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="task-3-practice-pivoting-a-table">
-<span class="header-section-number">9.4</span> Task 3 Practice pivoting a table</h2>
+</section><section id="task-3-practice-pivoting-a-table" class="level2" data-number="10.4"><h2 data-number="10.4" class="anchored" data-anchor-id="task-3-practice-pivoting-a-table">
+<span class="header-section-number">10.4</span> Task 3 Practice pivoting a table</h2>
 <div class="question">
 <p>Convert a table of UK Science, Maths and Reading scores, extracted from the main data set, into the long format R prefers. In the long format, each score becomes a single so each student will have three entries.</p>
 <div class="cell">
@@ -7661,8 +7734,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-4-graphing-practice-1-a-bar-chart" class="level2" data-number="9.5"><h2 data-number="9.5" class="anchored" data-anchor-id="task-4-graphing-practice-1-a-bar-chart">
-<span class="header-section-number">9.5</span> Task 4 Graphing Practice #1 A Bar Chart</h2>
+</section><section id="task-4-graphing-practice-1-a-bar-chart" class="level2" data-number="10.5"><h2 data-number="10.5" class="anchored" data-anchor-id="task-4-graphing-practice-1-a-bar-chart">
+<span class="header-section-number">10.5</span> Task 4 Graphing Practice #1 A Bar Chart</h2>
 <div class="question">
 <p>Draw a bar chart of the mean mathematics scores for Germany, the UK, the US and China</p>
 <div class="cell">
@@ -7678,8 +7751,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-5-graphing-practice-2-a-bar-chart-with-two-series" class="level2" data-number="9.6"><h2 data-number="9.6" class="anchored" data-anchor-id="task-5-graphing-practice-2-a-bar-chart-with-two-series">
-<span class="header-section-number">9.6</span> Task 5 Graphing Practice #2 A Bar Chart with two series</h2>
+</section><section id="task-5-graphing-practice-2-a-bar-chart-with-two-series" class="level2" data-number="10.6"><h2 data-number="10.6" class="anchored" data-anchor-id="task-5-graphing-practice-2-a-bar-chart-with-two-series">
+<span class="header-section-number">10.6</span> Task 5 Graphing Practice #2 A Bar Chart with two series</h2>
 <div class="question">
 <p>Draw a bar chart of the mean mathematics scores for Germany, the UK, the US and China for boys and girls</p>
 <div class="cell">
@@ -7697,8 +7770,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-6-graphing-practice-3-a-scatter-plot" class="level2" data-number="9.7"><h2 data-number="9.7" class="anchored" data-anchor-id="task-6-graphing-practice-3-a-scatter-plot">
-<span class="header-section-number">9.7</span> Task 6 Graphing Practice #3 A scatter plot</h2>
+</section><section id="task-6-graphing-practice-3-a-scatter-plot" class="level2" data-number="10.7"><h2 data-number="10.7" class="anchored" data-anchor-id="task-6-graphing-practice-3-a-scatter-plot">
+<span class="header-section-number">10.7</span> Task 6 Graphing Practice #3 A scatter plot</h2>
 <div class="question">
 <p>Plot a graph of science scores against mathematics scores for students in the UK</p>
 <div class="cell">
@@ -7715,8 +7788,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-7-graphing-practice-4-a-scatter-plot-with-multiple-series" class="level2" data-number="9.8"><h2 data-number="9.8" class="anchored" data-anchor-id="task-7-graphing-practice-4-a-scatter-plot-with-multiple-series">
-<span class="header-section-number">9.8</span> Task 7 Graphing Practice #4 A scatter plot with multiple series</h2>
+</section><section id="task-7-graphing-practice-4-a-scatter-plot-with-multiple-series" class="level2" data-number="10.8"><h2 data-number="10.8" class="anchored" data-anchor-id="task-7-graphing-practice-4-a-scatter-plot-with-multiple-series">
+<span class="header-section-number">10.8</span> Task 7 Graphing Practice #4 A scatter plot with multiple series</h2>
 <div class="question">
 <p>Plot a graph of science scores against mathematics scores for students in the UK, with data split into two series for boys and girls</p>
 <div class="cell">
@@ -7732,8 +7805,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-8-graphing-practice-4-a-scatter-plot-with-varying-size-points" class="level2" data-number="9.9"><h2 data-number="9.9" class="anchored" data-anchor-id="task-8-graphing-practice-4-a-scatter-plot-with-varying-size-points">
-<span class="header-section-number">9.9</span> Task 8 Graphing Practice #4 A scatter plot with varying size points</h2>
+</section><section id="task-8-graphing-practice-4-a-scatter-plot-with-varying-size-points" class="level2" data-number="10.9"><h2 data-number="10.9" class="anchored" data-anchor-id="task-8-graphing-practice-4-a-scatter-plot-with-varying-size-points">
+<span class="header-section-number">10.9</span> Task 8 Graphing Practice #4 A scatter plot with varying size points</h2>
 <div class="question">
 <p>Plot a graph of mean science scores against mean mathematics scores for all the countries in the data set. Vary the point size by the number of students per country.</p>
 <div class="cell">
@@ -7752,8 +7825,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-9-graphing-practice-5-a-mosaic-plot" class="level2" data-number="9.10"><h2 data-number="9.10" class="anchored" data-anchor-id="task-9-graphing-practice-5-a-mosaic-plot">
-<span class="header-section-number">9.10</span> Task 9 Graphing Practice #5 A mosaic plot</h2>
+</section><section id="task-9-graphing-practice-5-a-mosaic-plot" class="level2" data-number="10.10"><h2 data-number="10.10" class="anchored" data-anchor-id="task-9-graphing-practice-5-a-mosaic-plot">
+<span class="header-section-number">10.10</span> Task 9 Graphing Practice #5 A mosaic plot</h2>
 <div class="question">
 <p>Plot a mosaic plot of the number of students in general or vocational schools</p>
 <div class="cell">
@@ -7770,8 +7843,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-10-t-test-practice-1" class="level2" data-number="9.11"><h2 data-number="9.11" class="anchored" data-anchor-id="task-10-t-test-practice-1">
-<span class="header-section-number">9.11</span> Task 10 T-test practice #1</h2>
+</section><section id="task-10-t-test-practice-1" class="level2" data-number="10.11"><h2 data-number="10.11" class="anchored" data-anchor-id="task-10-t-test-practice-1">
+<span class="header-section-number">10.11</span> Task 10 T-test practice #1</h2>
 <div class="question">
 <p>Using the PISA 2018 data set, determine if there are statistically significant differences between the science, reading and mathematics scores of the UK and the US.</p>
 <div class="cell">
@@ -7792,8 +7865,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-11-t-test-practice-2" class="level2" data-number="9.12"><h2 data-number="9.12" class="anchored" data-anchor-id="task-11-t-test-practice-2">
-<span class="header-section-number">9.12</span> Task 11 T-test practice #2</h2>
+</section><section id="task-11-t-test-practice-2" class="level2" data-number="10.12"><h2 data-number="10.12" class="anchored" data-anchor-id="task-11-t-test-practice-2">
+<span class="header-section-number">10.12</span> Task 11 T-test practice #2</h2>
 <div class="question">
 <p>Divide the UK population into two groups, those that have internet access at home and those who do not. Are there statistically significant differences in the means of their reading, science and mathematics scores?</p>
 <div class="cell">
@@ -7818,8 +7891,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-12-t-test-practice-3" class="level2" data-number="9.13"><h2 data-number="9.13" class="anchored" data-anchor-id="task-12-t-test-practice-3">
-<span class="header-section-number">9.13</span> Task 12 T-test practice #3</h2>
+</section><section id="task-12-t-test-practice-3" class="level2" data-number="10.13"><h2 data-number="10.13" class="anchored" data-anchor-id="task-12-t-test-practice-3">
+<span class="header-section-number">10.13</span> Task 12 T-test practice #3</h2>
 <div class="question">
 <p>Using the PISA 2018 data set, are the mean mathematics scores of US boys and girls different to a statistically significant degree?</p>
 <div class="cell">
@@ -7837,8 +7910,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-13-t-test-practice-3" class="level2" data-number="9.14"><h2 data-number="9.14" class="anchored" data-anchor-id="task-13-t-test-practice-3">
-<span class="header-section-number">9.14</span> Task 13 T-test practice #3</h2>
+</section><section id="task-13-t-test-practice-3" class="level2" data-number="10.14"><h2 data-number="10.14" class="anchored" data-anchor-id="task-13-t-test-practice-3">
+<span class="header-section-number">10.14</span> Task 13 T-test practice #3</h2>
 <div class="question">
 <p>Are the mean science scores of all students in the US and the UK different to a statistically significant degree?</p>
 <div class="cell">
@@ -7856,8 +7929,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-14-chi-square-practice-1" class="level2" data-number="9.15"><h2 data-number="9.15" class="anchored" data-anchor-id="task-14-chi-square-practice-1">
-<span class="header-section-number">9.15</span> Task 14 Chi-square practice #1</h2>
+</section><section id="task-14-chi-square-practice-1" class="level2" data-number="10.15"><h2 data-number="10.15" class="anchored" data-anchor-id="task-14-chi-square-practice-1">
+<span class="header-section-number">10.15</span> Task 14 Chi-square practice #1</h2>
 <div class="question">
 <p>Are statiscally significant differences in the proportion of boys and girls and the number of books in the home for the whole dataset?</p>
 <div class="cell">
@@ -7879,8 +7952,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-15-chi-square-practice-2" class="level2" data-number="9.16"><h2 data-number="9.16" class="anchored" data-anchor-id="task-15-chi-square-practice-2">
-<span class="header-section-number">9.16</span> Task 15 Chi-square practice #2</h2>
+</section><section id="task-15-chi-square-practice-2" class="level2" data-number="10.16"><h2 data-number="10.16" class="anchored" data-anchor-id="task-15-chi-square-practice-2">
+<span class="header-section-number">10.16</span> Task 15 Chi-square practice #2</h2>
 <div class="question">
 <p>Are there statistically significant differences, in the whole data set, between boys and girls use of the internet at school to browse for homework (IC011Q03TA)?</p>
 <div class="cell">
@@ -7906,8 +7979,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-16-chi-square-practice-3" class="level2" data-number="9.17"><h2 data-number="9.17" class="anchored" data-anchor-id="task-16-chi-square-practice-3">
-<span class="header-section-number">9.17</span> Task 16 Chi-square practice #3</h2>
+</section><section id="task-16-chi-square-practice-3" class="level2" data-number="10.17"><h2 data-number="10.17" class="anchored" data-anchor-id="task-16-chi-square-practice-3">
+<span class="header-section-number">10.17</span> Task 16 Chi-square practice #3</h2>
 <div class="question">
 <p>Are there statistically significant differences between the availability of laptops (<code>IC009Q02TA</code>) in school in the US and the UK?</p>
 <div class="cell">
@@ -7933,8 +8006,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-18-anova-practice-1" class="level2" data-number="9.18"><h2 data-number="9.18" class="anchored" data-anchor-id="task-18-anova-practice-1">
-<span class="header-section-number">9.18</span> Task 18 Anova practice #1</h2>
+</section><section id="task-18-anova-practice-1" class="level2" data-number="10.18"><h2 data-number="10.18" class="anchored" data-anchor-id="task-18-anova-practice-1">
+<span class="header-section-number">10.18</span> Task 18 Anova practice #1</h2>
 <div class="question">
 <p>Are there statistically significant differences in mathematics scores of France, Germany, Spain, the UK and Italy? Find between which pairs of countries statistically significant differences in mathematics scores exist.</p>
 <div class="cell">
@@ -7953,8 +8026,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-19-anova-practice-2" class="level2" data-number="9.19"><h2 data-number="9.19" class="anchored" data-anchor-id="task-19-anova-practice-2">
-<span class="header-section-number">9.19</span> Task 19 Anova practice #2</h2>
+</section><section id="task-19-anova-practice-2" class="level2" data-number="10.19"><h2 data-number="10.19" class="anchored" data-anchor-id="task-19-anova-practice-2">
+<span class="header-section-number">10.19</span> Task 19 Anova practice #2</h2>
 <div class="question">
 <p>For the UK PISA 2018 data set, which variable out of <code>WEALTH</code>, <code>ST004D01T</code>, <code>OCOD1</code> (Mother’s occupation), <code>OCOD2</code> (Father’s occupation), <code>ST011Q06TA</code> (having a link to the internet), and highest level of parental education (<code>HISCED</code>) accounts for the most variation in science score? What percentage of variance is explained by each variable?</p>
 <p>! This is a big calculation so will take some time to compute!</p>
@@ -7972,18 +8045,18 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </details>
 </div>
 </div>
-</section><section id="task-18-anova-practice-3" class="level2" data-number="9.20"><h2 data-number="9.20" class="anchored" data-anchor-id="task-18-anova-practice-3">
-<span class="header-section-number">9.20</span> Task 18 Anova practice #3</h2>
+</section><section id="task-18-anova-practice-3" class="level2" data-number="10.20"><h2 data-number="10.20" class="anchored" data-anchor-id="task-18-anova-practice-3">
+<span class="header-section-number">10.20</span> Task 18 Anova practice #3</h2>
 <div class="cell">
 
 </div>
-</section></section><section id="datasets" class="level1" data-number="10"><h1 data-number="10">
-<span class="header-section-number">10</span> Datasets</h1>
+</section></section><section id="datasets" class="level1" data-number="11"><h1 data-number="11">
+<span class="header-section-number">11</span> Datasets</h1>
 <p>The examples shown in this booklet use a range of freely available datasets. We would like to encourage you to use one of these datasets in your own analysis, but you are welcome to use other datasets if agreed with your supervisor. This section will take you through the process of downloading, understanding and using these datasets.</p>
-<section id="pisa" class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" data-anchor-id="pisa">
-<span class="header-section-number">10.1</span> PISA</h2>
-<section id="what-is-pisa" class="level3" data-number="10.1.1"><h3 data-number="10.1.1" class="anchored" data-anchor-id="what-is-pisa">
-<span class="header-section-number">10.1.1</span> What is PISA</h3>
+<section id="pisa" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="pisa">
+<span class="header-section-number">11.1</span> PISA</h2>
+<section id="what-is-pisa" class="level3" data-number="11.1.1"><h3 data-number="11.1.1" class="anchored" data-anchor-id="what-is-pisa">
+<span class="header-section-number">11.1.1</span> What is PISA</h3>
 <p>The Programme for International Student Assessment (PISA) is an OECD initiative that looks at the reading, mathematics and science abilities of students aged 15 years old. Data is collected from ~38 OECD countries and other partner countries every three years.</p>
 <table class="table">
 <thead><tr class="header">
@@ -8004,7 +8077,7 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 <td style="text-align: center;">x</td>
 <td style="text-align: center;">x</td>
 <td style="text-align: center;"><a href="https://drive.google.com/file/d/1-41Ynn4hzEL1vO2L-wIqdRotXDtDdjYh/view?usp=share_link">x</a></td>
-<td style="text-align: center;"><a href="https://drive.google.com/file/d/1sO-W2fPKNK51cpeMpxYaJ_6hOjrFAdqc/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/18NpQO1DGY5dnjnlR2b3IF9Zv8xtpc1Fk/view">x</a></td>
 <td style="text-align: center;"><a href="https://drive.google.com/file/d/171x7ghqLfQhVdyWXdXNPOxDlS788Ui6Y/view?usp=share_link">x</a></td>
 </tr>
 <tr class="even">
@@ -8050,8 +8123,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 </tbody>
 </table>
 <p>PISA datasets above can be found on the <a href="https://www.oecd.org/pisa/data/">OECD website</a>. The links in the table above will allow you to download .rds versions of these files which we have created, though they might need additional editing, e.g.&nbsp;reducing the number of columns or changing the types of each column. If you want to find out more about what each field stores, take a look at the corresponding codebook, for example from <a href="https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx">2018</a>.</p>
-</section><section id="how-to-use-it" class="level3" data-number="10.1.2"><h3 data-number="10.1.2" class="anchored" data-anchor-id="how-to-use-it">
-<span class="header-section-number">10.1.2</span> How to use it</h3>
+</section><section id="how-to-use-it" class="level3" data-number="11.1.2"><h3 data-number="11.1.2" class="anchored" data-anchor-id="how-to-use-it">
+<span class="header-section-number">11.1.2</span> How to use it</h3>
 <p>The PISA datasets come in <em>SPSS</em> or <em>SAS</em> formats. The data used in this course comes directly from downloading the SPSS <code>.sav</code> files and using the <code>haven</code> package to clean it into a native R format suitable for analysis, in most cases <code>.parquet</code> files (see: <a href="#sec-parquet">Section&nbsp;2.8.6</a>). There are a few quirks that you need to be aware of:</p>
 <ul>
 <li><p>R uses levels (factors) instead of labelled data</p></li>
@@ -8085,19 +8158,19 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 <ul>
 <li>As the fields are now using R’s native factor format you might find that the data doesn’t quite match the format of the table labels. For example, <code>CNT</code> is labelled “Country code 3-character”, but the data is now instead the full country name.</li>
 <li>the examples shown in the book use cut down PISA datasets, where only a limited number of columns are included. The full datasets are linked in the table above.</li>
-</ul></section><section id="common-issues" class="level3" data-number="10.1.3"><h3 data-number="10.1.3" class="anchored" data-anchor-id="common-issues">
-<span class="header-section-number">10.1.3</span> Common issues</h3>
+</ul></section><section id="common-issues" class="level3" data-number="11.1.3"><h3 data-number="11.1.3" class="anchored" data-anchor-id="common-issues">
+<span class="header-section-number">11.1.3</span> Common issues</h3>
 <p>The PISA datasets can be absolutely huge and might bring your computer to its knees; if you are using a computer with less than 16GB of RAM you might not be able to load some tables at all. Tables such as the <em>Cognitive</em> dataset have hundreds of thousands of rows and thousands of columns, loading them directly might lead to an error similar to this: <code>Error: cannot allocate vector of size 2.1 Gb</code>. This means that R can’t find enough RAM to load the dataset and has given up. You can see a rough estimate of how much RAM R is currently using the top Environment panel:</p>
-<p><img src="./images/environment-RAM.png" class="img-fluid"></p>
+<p><img src=".\images/environment-RAM.png" class="img-fluid"></p>
 <p>To get around this issues you can try to clean your current R environment using the brush tool:</p>
-<p><img src="./images/environment-brush.png" class="img-fluid"></p>
+<p><img src=".\images/environment-brush.png" class="img-fluid"></p>
 <p>This will drop all the current dataframes, objects, functions and packages that you have loaded meaning you will have to reload packages such as <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> and <code><a href="https://haven.tidyverse.org">library(haven)</a></code> before you can attempt to reload the PISA tables.</p>
 <p>A lack of RAM might also be the result of lots of other programs running concurrently on your computer. Try to close anything that you don’t need, web browsers can be particularly RAM hungry, so close them or as many tabs as you can.</p>
 <p>If none of the above works, then please get in touch with the team, letting them know which table you need from which year, with which fields and for which countries. We will be able to provide you with a cutdown dataset.</p>
-</section><section id="questions-10" class="level3" data-number="10.1.4"><h3 data-number="10.1.4" class="anchored" data-anchor-id="questions-10">
-<span class="header-section-number">10.1.4</span> Questions</h3>
-<section id="sec-PV" class="level4" data-number="10.1.4.1"><h4 data-number="10.1.4.1" class="anchored" data-anchor-id="sec-PV">
-<span class="header-section-number">10.1.4.1</span> What are Plausible Values?</h4>
+</section><section id="questions-10" class="level3" data-number="11.1.4"><h3 data-number="11.1.4" class="anchored" data-anchor-id="questions-10">
+<span class="header-section-number">11.1.4</span> Questions</h3>
+<section id="sec-PV" class="level4" data-number="11.1.4.1"><h4 data-number="11.1.4.1" class="anchored" data-anchor-id="sec-PV">
+<span class="header-section-number">11.1.4.1</span> What are Plausible Values?</h4>
 <p>In the PISA dataset, the outcomes of student tests are reported as plausible values, for example, in the variables of the science test (<code>PV1SCIE</code>, <code>PV2SCIE</code>, <code>PV3SCIE</code>, <code>PV3SCIE</code>, and <code>PV5SCIE</code>). It might seem counter intuitive that there are five values for a score on a test.</p>
 <p>Plausible values (PVs) are a way of expressing the error in a measurement. The number of questions in the full PISA survey is very large, so students are randomly allocated to take a subset of questions (and even then, the test still takes two hours!). As no student completes the full set of questions, estimating how a student would have performed on the full question set involves some error. Plausible values are a way of expressing the uncertainty in the estimation of student scores.</p>
 <p>One way of thinking of the PV scores is that they represent five different estimates of students’ abilities based on the questions they have answered. To decrease measurement error, five different approaches are applied to create five different estimates, the PV scores.</p>
@@ -8110,8 +8183,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 <ul>
 <li>What are PV Values - exclude non-OECD? as mean too low</li>
 <li>difference between TA and NA for field names</li>
-</ul></section><section id="why-are-some-countries-oecd-countries-and-others-arent" class="level4" data-number="10.1.4.2"><h4 data-number="10.1.4.2" class="anchored" data-anchor-id="why-are-some-countries-oecd-countries-and-others-arent">
-<span class="header-section-number">10.1.4.2</span> Why are some countries OECD countries and others aren’t?</h4>
+</ul></section><section id="why-are-some-countries-oecd-countries-and-others-arent" class="level4" data-number="11.1.4.2"><h4 data-number="11.1.4.2" class="anchored" data-anchor-id="why-are-some-countries-oecd-countries-and-others-arent">
+<span class="header-section-number">11.1.4.2</span> Why are some countries OECD countries and others aren’t?</h4>
 <p>The Organisation for Economic Co-operation and Development (OECD) has 38 member states. PISA is run by the OECD and its member states normally take part in each PISA cycle, but other countries are allowed to take part as <em>Partners</em>. You can find more details on participation <a href="https://www.oecd.org/pisa/aboutpisa/pisa-participants.htm">here</a>.</p>
 <p>Results for OECD members are generally higher than for Partner countries:</p>
 <div class="cell">
@@ -8129,8 +8202,8 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 2 Yes          37      490.    93.8     294527</code></pre>
 </div>
 </div>
-</section><section id="why-are-the-pv-grades-pivoting-around-the-500-mark" class="level4" data-number="10.1.4.3"><h4 data-number="10.1.4.3" class="anchored" data-anchor-id="why-are-the-pv-grades-pivoting-around-the-500-mark">
-<span class="header-section-number">10.1.4.3</span> Why are the PV grades pivoting around the ~500 mark?</h4>
+</section><section id="why-are-the-pv-grades-pivoting-around-the-500-mark" class="level4" data-number="11.1.4.3"><h4 data-number="11.1.4.3" class="anchored" data-anchor-id="why-are-the-pv-grades-pivoting-around-the-500-mark">
+<span class="header-section-number">11.1.4.3</span> Why are the PV grades pivoting around the ~500 mark?</h4>
 <p>The scores for students in mathematics, reading and science are scaled so that the mean of students in OECD countries is roughly 500 points with a standard deviation of 100 points. To see this, run the following code:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb431"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb431-1"><a href="#cb431-1"></a>PISA_2018 <span class="sc">%&gt;%</span> </span>
@@ -8148,10 +8221,10 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 1      490.    93.8      490.    96.0      488.    101.</code></pre>
 </div>
 </div>
-</section><section id="why-are-the-letters-ta-and-na-used-in-some-field-names" class="level4" data-number="10.1.4.4"><h4 data-number="10.1.4.4" class="anchored" data-anchor-id="why-are-the-letters-ta-and-na-used-in-some-field-names">
-<span class="header-section-number">10.1.4.4</span> Why are the letters TA and NA used in some field names?</h4>
-</section><section id="how-are-students-selected-to-take-part-in-pisa" class="level4" data-number="10.1.4.5"><h4 data-number="10.1.4.5" class="anchored" data-anchor-id="how-are-students-selected-to-take-part-in-pisa">
-<span class="header-section-number">10.1.4.5</span> How are students selected to take part in PISA?</h4>
+</section><section id="why-are-the-letters-ta-and-na-used-in-some-field-names" class="level4" data-number="11.1.4.4"><h4 data-number="11.1.4.4" class="anchored" data-anchor-id="why-are-the-letters-ta-and-na-used-in-some-field-names">
+<span class="header-section-number">11.1.4.4</span> Why are the letters TA and NA used in some field names?</h4>
+</section><section id="how-are-students-selected-to-take-part-in-pisa" class="level4" data-number="11.1.4.5"><h4 data-number="11.1.4.5" class="anchored" data-anchor-id="how-are-students-selected-to-take-part-in-pisa">
+<span class="header-section-number">11.1.4.5</span> How are students selected to take part in PISA?</h4>
 <p>Students are selected by … <span class="citation" data-cites="ref">(<a href="#ref-ref" role="doc-biblioref"><strong>ref?</strong></a>)</span></p>
 <p>Add Christian Bokhove papers https://bokhove.net/r-materials/</p>
 <p>From the data, you can see that 50% of schools entered fewer than 30 students into PISA.</p>
@@ -8181,50 +8254,50 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-304-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section></section><section id="interesting-papers-and-reading-on-pisa" class="level3" data-number="10.1.5"><h3 data-number="10.1.5" class="anchored" data-anchor-id="interesting-papers-and-reading-on-pisa">
-<span class="header-section-number">10.1.5</span> Interesting papers and reading on PISA</h3>
+</section></section><section id="interesting-papers-and-reading-on-pisa" class="level3" data-number="11.1.5"><h3 data-number="11.1.5" class="anchored" data-anchor-id="interesting-papers-and-reading-on-pisa">
+<span class="header-section-number">11.1.5</span> Interesting papers and reading on PISA</h3>
 <p>Jerrim <span class="citation" data-cites="jiang2015effects">Jiang and McComas (<a href="#ref-jiang2015effects" role="doc-biblioref">2015</a>)</span> <span class="citation" data-cites="monseur2009pisa">Monseur et al. (<a href="#ref-monseur2009pisa" role="doc-biblioref">2009</a>)</span></p>
-</section><section id="copyright" class="level3" data-number="10.1.6"><h3 data-number="10.1.6" class="anchored" data-anchor-id="copyright">
-<span class="header-section-number">10.1.6</span> Copyright</h3>
+</section><section id="copyright" class="level3" data-number="11.1.6"><h3 data-number="11.1.6" class="anchored" data-anchor-id="copyright">
+<span class="header-section-number">11.1.6</span> Copyright</h3>
 <blockquote class="blockquote">
 <p>All PISA products are published under the <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO</a> (CC BY-NC-SA 3.0 IGO)</p>
 </blockquote>
 <p>This includes the <code>.rds</code> and <code>.parquet</code> formatted datasets linked above.</p>
-</section><section id="fields-to-drop" class="level3" data-number="10.1.7"><h3 data-number="10.1.7" class="anchored" data-anchor-id="fields-to-drop">
-<span class="header-section-number">10.1.7</span> fields to drop:</h3>
+</section><section id="fields-to-drop" class="level3" data-number="11.1.7"><h3 data-number="11.1.7" class="anchored" data-anchor-id="fields-to-drop">
+<span class="header-section-number">11.1.7</span> fields to drop:</h3>
 <p>CNTRYID, NatCen</p>
-</section></section><section id="english-department-for-education" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="english-department-for-education">
-<span class="header-section-number">10.2</span> English Department for Education</h2>
-<section id="students" class="level3" data-number="10.2.1"><h3 data-number="10.2.1" class="anchored" data-anchor-id="students">
-<span class="header-section-number">10.2.1</span> Students</h3>
-</section><section id="schools" class="level3" data-number="10.2.2"><h3 data-number="10.2.2" class="anchored" data-anchor-id="schools">
-<span class="header-section-number">10.2.2</span> Schools</h3>
-</section><section id="school-workforce" class="level3" data-number="10.2.3"><h3 data-number="10.2.3" class="anchored" data-anchor-id="school-workforce">
-<span class="header-section-number">10.2.3</span> School workforce</h3>
-</section><section id="school-recruitment" class="level3" data-number="10.2.4"><h3 data-number="10.2.4" class="anchored" data-anchor-id="school-recruitment">
-<span class="header-section-number">10.2.4</span> School recruitment</h3>
-</section><section id="restricted-datasets" class="level3" data-number="10.2.5"><h3 data-number="10.2.5" class="anchored" data-anchor-id="restricted-datasets">
-<span class="header-section-number">10.2.5</span> Restricted datasets</h3>
+</section></section><section id="english-department-for-education" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="english-department-for-education">
+<span class="header-section-number">11.2</span> English Department for Education</h2>
+<section id="students" class="level3" data-number="11.2.1"><h3 data-number="11.2.1" class="anchored" data-anchor-id="students">
+<span class="header-section-number">11.2.1</span> Students</h3>
+</section><section id="schools" class="level3" data-number="11.2.2"><h3 data-number="11.2.2" class="anchored" data-anchor-id="schools">
+<span class="header-section-number">11.2.2</span> Schools</h3>
+</section><section id="school-workforce" class="level3" data-number="11.2.3"><h3 data-number="11.2.3" class="anchored" data-anchor-id="school-workforce">
+<span class="header-section-number">11.2.3</span> School workforce</h3>
+</section><section id="school-recruitment" class="level3" data-number="11.2.4"><h3 data-number="11.2.4" class="anchored" data-anchor-id="school-recruitment">
+<span class="header-section-number">11.2.4</span> School recruitment</h3>
+</section><section id="restricted-datasets" class="level3" data-number="11.2.5"><h3 data-number="11.2.5" class="anchored" data-anchor-id="restricted-datasets">
+<span class="header-section-number">11.2.5</span> Restricted datasets</h3>
 <p>Education provider details https://www.get-information-schools.service.gov.uk/Downloads</p>
 <p>Results</p>
-</section></section><section id="timss" class="level2" data-number="10.3"><h2 data-number="10.3" class="anchored" data-anchor-id="timss">
-<span class="header-section-number">10.3</span> TIMSS</h2>
-<section id="what-is-timss" class="level3" data-number="10.3.1"><h3 data-number="10.3.1" class="anchored" data-anchor-id="what-is-timss">
-<span class="header-section-number">10.3.1</span> What is TIMSS</h3>
-</section></section><section id="other-datasets" class="level2" data-number="10.4"><h2 data-number="10.4" class="anchored" data-anchor-id="other-datasets">
-<span class="header-section-number">10.4</span> Other datasets</h2>
-<section id="what-other-datasets-are-there" class="level3" data-number="10.4.1"><h3 data-number="10.4.1" class="anchored" data-anchor-id="what-other-datasets-are-there">
-<span class="header-section-number">10.4.1</span> What other datasets are there?</h3>
-<section id="gender-equality-indices" class="level4" data-number="10.4.1.1"><h4 data-number="10.4.1.1" class="anchored" data-anchor-id="gender-equality-indices">
-<span class="header-section-number">10.4.1.1</span> Gender equality indices</h4>
+</section></section><section id="timss" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="timss">
+<span class="header-section-number">11.3</span> TIMSS</h2>
+<section id="what-is-timss" class="level3" data-number="11.3.1"><h3 data-number="11.3.1" class="anchored" data-anchor-id="what-is-timss">
+<span class="header-section-number">11.3.1</span> What is TIMSS</h3>
+</section></section><section id="other-datasets" class="level2" data-number="11.4"><h2 data-number="11.4" class="anchored" data-anchor-id="other-datasets">
+<span class="header-section-number">11.4</span> Other datasets</h2>
+<section id="what-other-datasets-are-there" class="level3" data-number="11.4.1"><h3 data-number="11.4.1" class="anchored" data-anchor-id="what-other-datasets-are-there">
+<span class="header-section-number">11.4.1</span> What other datasets are there?</h3>
+<section id="gender-equality-indices" class="level4" data-number="11.4.1.1"><h4 data-number="11.4.1.1" class="anchored" data-anchor-id="gender-equality-indices">
+<span class="header-section-number">11.4.1.1</span> Gender equality indices</h4>
 <p>There are several international datasets for studying gender equality. These have been used by researchers to look at the impact of gender equality on student attitudes and outcomes. For example <span class="citation" data-cites="stoet2018gender">Stoet and Geary (<a href="#ref-stoet2018gender" role="doc-biblioref">2018</a>)</span> use the Global Gender Gap Index (GGGI) too look at PISA science self-efficacy and science outcomes for females.</p>
-<section id="global-gender-gap-index-gggi" class="level5" data-number="10.4.1.1.1"><h5 data-number="10.4.1.1.1" class="anchored" data-anchor-id="global-gender-gap-index-gggi">
-<span class="header-section-number">10.4.1.1.1</span> Global Gender Gap Index (GGGI)</h5>
+<section id="global-gender-gap-index-gggi" class="level5" data-number="11.4.1.1.1"><h5 data-number="11.4.1.1.1" class="anchored" data-anchor-id="global-gender-gap-index-gggi">
+<span class="header-section-number">11.4.1.1.1</span> Global Gender Gap Index (GGGI)</h5>
 <p>The world economic forum produces the Global Gender Gap Index (GGGI), this index combines female and male outcomes on Economic participation and opportunity, educational attainment, health and survival, and political empowerment.</p>
 <p>Reports for: <a href="https://www.weforum.org/reports/global-gender-gap-report-2022/">2022</a>, <a href="https://www.weforum.org/reports/global-gender-gap-report-2021">2021</a>, <a href="https://www.weforum.org/reports/gender-gap-2020-report-100-years-pay-equality">2020</a>,<a href="https://www.weforum.org/reports/the-global-gender-gap-report-2018">2018</a>,<a href="https://www.weforum.org/reports/the-global-gender-gap-report-2017">2017</a>,<a href="https://www.weforum.org/reports/the-global-gender-gap-report-2016">2016</a>, <a href="https://www.weforum.org/reports/global-gender-gap-report-2015/">2015</a></p>
 <p>It has proven difficult to find the 2015 dataset used by Stoet &amp; Geary, 2013 dataset is <a href="https://data.humdata.org/dataset/29f2f52f-a9c2-4ff9-a99e-42b894dc18e9/resource/a8fe8c72-1359-4ce3-b8cc-03d9e5e85875/download/table-3b-detailed-rankings-2013.csv">here</a></p>
-</section><section id="united-nations" class="level5" data-number="10.4.1.1.2"><h5 data-number="10.4.1.1.2" class="anchored" data-anchor-id="united-nations">
-<span class="header-section-number">10.4.1.1.2</span> United Nations</h5>
+</section><section id="united-nations" class="level5" data-number="11.4.1.1.2"><h5 data-number="11.4.1.1.2" class="anchored" data-anchor-id="united-nations">
+<span class="header-section-number">11.4.1.1.2</span> United Nations</h5>
 <p>The UN reports on two gender specific indexes:</p>
 <p><strong>Gender Inequality Index (GII)</strong></p>
 <p>The <a href="https://hdr.undp.org/data-center/thematic-composite-indices/gender-inequality-index#/indicies/GII">Gender Inequality Index</a> is a index incorporating data on reproductive health, empowerment and the labour market. Values range from 0 - full equality for men and women, to 0, full inequality.</p>
@@ -8238,27 +8311,27 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 <span id="cb436-4"><a href="#cb436-4"></a><span class="co"># c(364, 411, 344) - mean(scores)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section></section><section id="unesco" class="level4" data-number="10.4.1.2"><h4 data-number="10.4.1.2" class="anchored" data-anchor-id="unesco">
-<span class="header-section-number">10.4.1.2</span> UNESCO</h4>
+</section></section><section id="unesco" class="level4" data-number="11.4.1.2"><h4 data-number="11.4.1.2" class="anchored" data-anchor-id="unesco">
+<span class="header-section-number">11.4.1.2</span> UNESCO</h4>
 <p>http://data.uis.unesco.org “Distribution of tertiary graduates” STEM degree entry by country</p>
-</section><section id="ons" class="level4" data-number="10.4.1.3"><h4 data-number="10.4.1.3" class="anchored" data-anchor-id="ons">
-<span class="header-section-number">10.4.1.3</span> ONS</h4>
+</section><section id="ons" class="level4" data-number="11.4.1.3"><h4 data-number="11.4.1.3" class="anchored" data-anchor-id="ons">
+<span class="header-section-number">11.4.1.3</span> ONS</h4>
 <p>https://data.oecd.org/api/sdmx-json-documentation/#d.en.330346</p>
 <p>https://www.ons.gov.uk/census/2011census/2011censusdata</p>
 <p>https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationandhouseholdestimatesenglandandwalescensus2021</p>
-</section><section id="oecd" class="level4" data-number="10.4.1.4"><h4 data-number="10.4.1.4" class="anchored" data-anchor-id="oecd">
-<span class="header-section-number">10.4.1.4</span> OECD</h4>
+</section><section id="oecd" class="level4" data-number="11.4.1.4"><h4 data-number="11.4.1.4" class="anchored" data-anchor-id="oecd">
+<span class="header-section-number">11.4.1.4</span> OECD</h4>
 <p>https://stats.oecd.org/</p>
 <div class="cell">
 
 </div>
-</section><section id="ofsted" class="level4" data-number="10.4.1.5"><h4 data-number="10.4.1.5" class="anchored" data-anchor-id="ofsted">
-<span class="header-section-number">10.4.1.5</span> Ofsted</h4>
+</section><section id="ofsted" class="level4" data-number="11.4.1.5"><h4 data-number="11.4.1.5" class="anchored" data-anchor-id="ofsted">
+<span class="header-section-number">11.4.1.5</span> Ofsted</h4>
 <p>https://public.tableau.com/app/profile/ofsted/viz/Dataview/DataViewsurvey</p>
-</section></section></section></section><section id="questions-and-answers" class="level1" data-number="11"><h1 data-number="11">
-<span class="header-section-number">11</span> Questions and answers</h1>
-<section id="sec-QANDA" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="sec-QANDA">
-<span class="header-section-number">11.1</span> Questions about R</h2>
+</section></section></section></section><section id="questions-and-answers" class="level1" data-number="12"><h1 data-number="12">
+<span class="header-section-number">12</span> Questions and answers</h1>
+<section id="sec-QANDA" class="level2" data-number="12.1"><h2 data-number="12.1" class="anchored" data-anchor-id="sec-QANDA">
+<span class="header-section-number">12.1</span> Questions about R</h2>
 <p><strong>Why doesn’t my <code>select</code>/<code>filter</code> statement work?</strong></p>
 <p>When you are loading packages, sometimes different packages have the same function names in them, and the functions themselves will do very different things. For example, there is a <code>select</code> function in the <code>tidyverse</code>, but also <em>another</em> <code>select</code> function in the package <code>MASS</code> that does something very different. If we load the tidyverse before loading MASS, then the MASS version of select is the one that will be used?!</p>
 <div class="cell">
@@ -8342,11 +8415,11 @@ Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
 <span id="cb445-3"><a href="#cb445-3"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(x, y)) <span class="sc">+</span>           <span class="co"># Fixed error by moving bracket</span></span>
 <span id="cb445-4"><a href="#cb445-4"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="about-the-coursework" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="about-the-coursework">
-<span class="header-section-number">11.2</span> About the coursework</h2>
+</section><section id="about-the-coursework" class="level2" data-number="12.2"><h2 data-number="12.2" class="anchored" data-anchor-id="about-the-coursework">
+<span class="header-section-number">12.2</span> About the coursework</h2>
 <p>?filter</p>
-</section></section><section id="references" class="level1" data-number="12"><h1 data-number="12">
-<span class="header-section-number">12</span> References</h1>
+</section></section><section id="references" class="level1" data-number="13"><h1 data-number="13">
+<span class="header-section-number">13</span> References</h1>
 <div class="cell">
 
 </div>
@@ -8368,6 +8441,9 @@ Davis, Lennard J. 2013. <span>“Introduction: Normality, Power, and Culture.”
 </div>
 <div id="ref-dfe2023progress8" class="csl-entry" role="doc-biblioentry">
 DfE. 2023. <span>“Secondary Accountability Measures - Guide for Maintained Secondary Schools, Academies and Free Schools.”</span> <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1133384/Secondary_accountability_measures_2022_guidance_Feb_23_update.pdf">https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1133384/Secondary_accountability_measures_2022_guidance_Feb_23_update.pdf</a>.
+</div>
+<div id="ref-du2019science" class="csl-entry" role="doc-biblioentry">
+Du, Xin, and Billy Wong. 2019. <span>“Science Career Aspiration and Science Capital in China and <span>UK</span>: A Comparative Study Using PISA Data.”</span> <em>International Journal of Science Education</em> 41 (15): 2136–55.
 </div>
 <div id="ref-gibson1984" class="csl-entry" role="doc-biblioentry">
 Gibson, Sherri, and Myron H. Dembo. 1984. <span>“Teacher Efficacy: A Construct Validation.”</span> <em>Journal of Educational Psychology</em> 76 (4): 569–82. <a href="https://doi.org/10.1037/0022-0663.76.4.569">https://doi.org/10.1037/0022-0663.76.4.569</a>.
@@ -8405,15 +8481,33 @@ Taylor, Chris. 2018. <span>“The Reliability of Free School Meal Eligibility as
 <div id="ref-wilkinson2018assessing" class="csl-entry" role="doc-biblioentry">
 Wilkinson, David, Alex Bryson, and Lucy Stokes. 2018. <span>“Assessing the Variance in Pupil Attainment: How Important Is the School Attended?”</span> <em>National Institute Economic Review</em> 243 (1): R4–16. <a href="https://docs.iza.org/dp11372.pdf">https://docs.iza.org/dp11372.pdf</a>.
 </div>
-</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 <ol>
-<li id="fn1" role="doc-endnote"><p>As of November 2022, <a href="https://www.tiobe.com/tiobe-index/">Tiobe</a> has R as the 12th most popular programming language. Many other, contradictory, ranking systems exist.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p><code>camelCase</code> has a capital letter in the front or front and middle forming the camel’s hump(s), there are multiple <a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)">naming conventions</a>, it doesn’t matter which you pick, just stick to one of them.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>R was created to allow for <a href="https://en.wikipedia.org/wiki/Array_programming"><em>vector programming</em></a>, that is a programming language where you can apply operations to entire sets of values (vectors) at the same time, rather than having to cycle through them individually. Vector languages work in a way that is close to how mathematical notation works, making them well suited for performing mathematical functions.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>You’ll sometimes see the words package and library used interchangeably, technically the <em>library</em> is the place where the <em>packages</em> are stored.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>Even in this cut down format the PISA data might take a few minutes to load. You can find the full dataset <a href="https://drive.google.com/file/d/1lQs5mMgG5u7T3qu-9Sei5as8viiw2hAL/view?usp=share_link">here</a>, but be warned, it might crash you machine when trying to load it! Plug your laptop into a power supply, and having 16GB of RAM highly recommended! You might also need to wrangle some of the fields to make them work for your purposes, you might enjoy the challenge!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>As of November 2022, <a href="https://www.tiobe.com/tiobe-index/">Tiobe</a> has R as the 12th most popular programming language. Many other, contradictory, ranking systems exist.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><code>camelCase</code> has a capital letter in the front or front and middle forming the camel’s hump(s), there are multiple <a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)">naming conventions</a>, it doesn’t matter which you pick, just stick to one of them.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>R was created to allow for <a href="https://en.wikipedia.org/wiki/Array_programming"><em>vector programming</em></a>, that is a programming language where you can apply operations to entire sets of values (vectors) at the same time, rather than having to cycle through them individually. Vector languages work in a way that is close to how mathematical notation works, making them well suited for performing mathematical functions.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>You’ll sometimes see the words package and library used interchangeably, technically the <em>library</em> is the place where the <em>packages</em> are stored.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Even in this cut down format the PISA data might take a few minutes to load. You can find the full dataset <a href="https://drive.google.com/file/d/1lQs5mMgG5u7T3qu-9Sei5as8viiw2hAL/view?usp=share_link">here</a>, but be warned, it might crash you machine when trying to load it! Plug your laptop into a power supply, and having 16GB of RAM highly recommended! You might also need to wrangle some of the fields to make them work for your purposes, you might enjoy the challenge!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -8435,7 +8529,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -8463,31 +8574,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
