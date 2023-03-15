@@ -99,7 +99,13 @@ cor.test(pisa_gggi_diff$gggi,
                     pisa_gggi_diff$difference, 
                     method="spearman")
 
-# Better model?
+# by pearson better as data n > 30 a shapiro test p>0.05
+shapiro.test(pisa_gggi_diff$gggi) 
+#> p-value = 0.1226
+shapiro.test(pisa_gggi_diff$difference)
+#> p-value = 0.4078
+
+# Better model, closer to the original findings
 cor.test(pisa_gggi_diff$gggi, 
                     pisa_gggi_diff$difference, 
                     method="pearson")
