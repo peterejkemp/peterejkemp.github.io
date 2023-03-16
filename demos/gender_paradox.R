@@ -20,7 +20,8 @@
 
 library(arrow)
 library(tidyverse)
-library(glue)
+library(ggrepel)
+
 
 PISA_2015 <- read_parquet("location/file.parquet")
 GGGI <- read.csv("<folder>table-3b-detailed-rankings-2013.csv")
@@ -87,7 +88,6 @@ ggplot(pisa_gggi_diff,
        aes(x=difference, y=gggi)) + 
   geom_point(colour="red") +
   geom_smooth(method="lm") +
-  # coord_flip() +
   geom_text_repel(aes(label=CNT),
             box.padding = 0.2,
             max.overlaps = Inf,
