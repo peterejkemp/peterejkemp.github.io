@@ -1,1 +1,1545 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.377">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Peter EJ Kemp">
+<title>Quarto help</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script><script src="index_files/libs/quarto-html/quarto.js"></script><script src="index_files/libs/quarto-html/popper.min.js"></script><script src="index_files/libs/quarto-html/tippy.umd.min.js"></script><script src="index_files/libs/quarto-html/anchor.min.js"></script><link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script><link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/mastemr.css">
+</head>
+<body>
 
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#why-quarto" id="toc-why-quarto" class="nav-link active" data-scroll-target="#why-quarto"> <span class="header-section-number">1</span> Why Quarto</a></li>
+  <li>
+<a href="#starting-a-quarto-page" id="toc-starting-a-quarto-page" class="nav-link" data-scroll-target="#starting-a-quarto-page"> <span class="header-section-number">2</span> Starting a quarto page</a>
+  <ul class="collapse">
+<li><a href="#formatting-text" id="toc-formatting-text" class="nav-link" data-scroll-target="#formatting-text"> <span class="header-section-number">2.1</span> Formatting text</a></li>
+  <li><a href="#structuring-your-page" id="toc-structuring-your-page" class="nav-link" data-scroll-target="#structuring-your-page"> <span class="header-section-number">2.2</span> Structuring your page</a></li>
+  <li><a href="#quotes-and-references" id="toc-quotes-and-references" class="nav-link" data-scroll-target="#quotes-and-references"> <span class="header-section-number">2.3</span> Quotes and references</a></li>
+  <li><a href="#rendering-your-page" id="toc-rendering-your-page" class="nav-link" data-scroll-target="#rendering-your-page"> <span class="header-section-number">2.4</span> Rendering your page</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#embedding-code" id="toc-embedding-code" class="nav-link" data-scroll-target="#embedding-code"> <span class="header-section-number">3</span> Embedding code</a>
+  <ul class="collapse">
+<li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code"> <span class="header-section-number">3.1</span> Inline code</a></li>
+  <li><a href="#loading-datasets" id="toc-loading-datasets" class="nav-link" data-scroll-target="#loading-datasets"> <span class="header-section-number">3.2</span> Loading datasets</a></li>
+  <li><a href="#showing-tables" id="toc-showing-tables" class="nav-link" data-scroll-target="#showing-tables"> <span class="header-section-number">3.3</span> Showing tables</a></li>
+  <li><a href="#showing-graphs" id="toc-showing-graphs" class="nav-link" data-scroll-target="#showing-graphs"> <span class="header-section-number">3.4</span> Showing graphs</a></li>
+  </ul>
+</li>
+  </ul></nav>
+</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Quarto help</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    Peter EJ Kemp 
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            King’s College London
+          </p>
+      </div>
+    </div>
+
+
+
+<div class="quarto-title-meta">
+
+      
+    
+  </div>
+  
+
+</header><div class="cell">
+
+</div>
+<section id="why-quarto" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Why Quarto</h1>
+<p>It can be rather annoying having to use multiple programs to create a single journal article, for example you might get your statistics from one program and your graphs from another. If some of your data changes you then have to copy and tables and graphs which can be time consuming and require a lot of fiddling to get things looking just right. By using <em>Quarto</em> files, RStudio allows you to write everything in the same place, bringing together code, graphics and writing, so any changes to any part of your work will be automatically merged together. You can even combine LaTeX with your writing.</p>
+<p>Quarto is pretty new, so you might find that searching for help to do things in <em>rmarkdown</em> (the older version of Quarto), will give you the support that you need. The examples here will help you create a simple website that can also be exported as a pdf. Quarto also allows you to create Powerpoints and Word docs.</p>
+</section><section id="starting-a-quarto-page" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> Starting a quarto page</h1>
+<p>Open RStudio and select <code>File</code> &gt; <code>New project ...</code></p>
+<p><img src="images/rstudio_2023-07-03_21-15-06.png" class="img-fluid"></p>
+<p>Select <code>New Directory</code></p>
+<p><img src="images/rstudio_2023-07-03_21-13-07.png" class="img-fluid"></p>
+<p>Give your project a name and select where you want to store the files using <code>Browse</code>, then click <code>Create Project</code></p>
+<p><img src="images/rstudio_2023-07-03_21-13-47.png" class="img-fluid"></p>
+<p>Select a <code>Quarto Project</code> (we’ll be making pdfs and websites inside this project)</p>
+<p><img src="images/rstudio_2023-07-03_21-13-20.png" class="img-fluid"></p>
+<p>Once the project has loaded, Open the <code>.qmd</code> file in the Files panel in the bottom right of RStudio. In my case the file is called <code>first_quarto.qmd</code> after the name of my project</p>
+<p><img src="images/rstudio_2023-07-03_21-14-17.png" class="img-fluid"></p>
+<p>You will see a visual editor, you can use this like a very simple version of MS Word, but we are going to look at using the source editor as this allows for more precise editing of the page</p>
+<p><img src="images/rstudio_2023-06-30_20-47-31.png" class="img-fluid"></p>
+<p>Click <code>Source</code> to switch to the plain text editor</p>
+<p><img src="images/2023-06-30_20-52-11.png" class="img-fluid"></p>
+<p>The area between the <code>---</code> symbols is <code>YAML</code> code that defines how your page will be displayed, add a sensible title and an author. The area <em>below</em> the second <code>---</code> is where we will do our writing:</p>
+<div class="question">
+<p>Create your own webpage, press <code>&gt; Render</code> to launch your website</p>
+</div>
+<section id="formatting-text" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="formatting-text">
+<span class="header-section-number">2.1</span> Formatting text</h2>
+<p>You can write a <code>.qmd</code> file much like you would write a plain text document by using the toolbar in the visual editor:</p>
+<p><img src="images/rstudio_2023-06-30_21-07-50.png" class="img-fluid"></p>
+<p>But quarto also allows basic formatting using a language called <em>markdown</em>. Markdown lets you have basic text formatting of the sort you would have in a journal article, including text that is <strong><code>**bold**</code></strong>, <em><code>*italic*</code></em>and <u><code>&lt;u&gt;underlined&lt;/u&gt;</code></u>, it allows for linking actions, such as hyperlinks to <a href="https://en.wikipedia.org/wiki/Main_Page">webpages</a> through <code>[webpages](https://en.wikipedia.org/wiki/Main_Page)</code> and inserting images <code>![](images/brock.jpg)</code></p>
+<p><img src="images/brock.jpg" class="img-fluid"></p>
+<p>Make sure that your images are all saved in an <code>images/</code> folder in your project folder, and that the address you use includes the image type, here it is <code>images/brock.jpg</code>. Try to give your images sensible names or place the images for your chapter in a subfolder of the images folder, e.g.&nbsp;<code>images/chpt4/amy.jpg</code>.</p>
+<div class="question">
+<ul>
+<li>Add some text to your webpage with <strong>bold</strong> and <em>italic</em> text.</li>
+<li>Include some hyperlinks</li>
+<li>Create a folder for you images and add an image</li>
+<li>Insert the image into the page (with a caption and make it centred!)</li>
+</ul>
+</div>
+</section><section id="structuring-your-page" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="structuring-your-page">
+<span class="header-section-number">2.2</span> Structuring your page</h2>
+<p>When writing larger documents you will need to break your page into sections using headers and use features such as lists.</p>
+<p><code># This is top level header</code></p>
+<p><code>## This is a sub header</code></p>
+<p><code>## This is an even smaller sub header</code></p>
+<p>For something that might be less important, you can have multiple levels of subheading by adding more <code>#</code>s, for example <code>#####</code> would be a level 5 heading, the more <code>#</code>s you have the smaller the heading.</p>
+<pre><code>-   this is a list 
+-   of bullet pointed 
+-   created by 
+-   items, which can be     
+    -   indented with four spaces     
+    -   before the hyphen `-`</code></pre>
+<ul>
+<li>this is a list</li>
+<li>of bullet pointed</li>
+<li>created by</li>
+<li>items, which can be
+<ul>
+<li>indented with four spaces</li>
+<li>before the hyphen <code>-</code>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>1.  numbered lists
+2.  by using numbers followed by
+3.  bullet points
+4.  You can embed [links](https://stackoverflow.com/questions/73066792/how-to-create-lettered-lists-using-quarto) in lists</code></pre>
+<ol type="1">
+<li>numbered lists</li>
+<li>by using numbers followed by</li>
+<li>bullet points</li>
+<li>You can embed <a href="https://stackoverflow.com/questions/73066792/how-to-create-lettered-lists-using-quarto">links</a> in lists</li>
+</ol>
+<div class="question">
+<ul>
+<li><p>Add a top and sub level heading</p></li>
+<li><p>Add a list</p></li>
+</ul>
+</div>
+</section><section id="quotes-and-references" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="quotes-and-references">
+<span class="header-section-number">2.3</span> Quotes and references</h2>
+<p>If someone has said something interesting, you can block quote them by using the right arrow:</p>
+<p><code>&gt; quote goes here.</code></p>
+<blockquote class="blockquote">
+<p>Dirt glitters as long as the sun shines. – Goethe</p>
+</blockquote>
+<p>If you want to find out more about how to format your writing in quarto take a look at one of the <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">helpsheet</a> or the <a href="https://quarto.org/docs/authoring/markdown-basics.html">help website</a></p>
+<p>When writing you might want to add academic references to your quarto document. This is very straight forward using <code>bibtex</code> - a structured way of recording references. You can find bibtex entries for most academic references through the Google scholar <em>cite</em> menu:</p>
+<p><img src="images/bibtex_google_scholar.gif" class="img-fluid"></p>
+<p>You can also <a href="https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX">hand-craft</a> your own references if you can’t find them online.</p>
+<p>Once you have your bibtex code, place it in a file called <code>references.bib</code> (or similar). Make sure that you know where your <code>.bib</code> file is. In the code below we are placing this file in the same folder as our <code>.qmd</code> file. Go and edit the YAML at the top of your quarto page and point the <code>bibliography:</code> variable at the <code>.bib</code> file you have made</p>
+<pre><code>---
+title: "Article about things"
+author: "Peter Kemp"
+format: html
+bibliography: references.bib
+---</code></pre>
+<p>To add references to your work you need to <code>@</code> the name of the reference, this name is at the top of each bibtex entry, in the example below <code>@kuhn1970structure</code>:</p>
+<pre><code>@book{kuhn1970structure,
+  title={The structure of scientific revolutions},
+  author={Kuhn, Thomas S},
+  volume={111},
+  year={1970},
+  publisher={Chicago University of Chicago Press}
+}</code></pre>
+<p>To add this reference to your writing use <code>@kuhn1970structure</code> to get <span class="citation" data-cites="kuhn1970structure">Kuhn (<a href="#ref-kuhn1970structure" role="doc-biblioref">1970</a>)</span>, use <code>[@kuhn1970structure]</code> to get <span class="citation" data-cites="kuhn1970structure">(<a href="#ref-kuhn1970structure" role="doc-biblioref">Kuhn 1970</a>)</span>. If you just require the year use <code>[-@kuhn1970structure]</code>: <span class="citation" data-cites="kuhn1970structure">(<a href="#ref-kuhn1970structure" role="doc-biblioref">1970</a>)</span>. If you want to include multiple references together, use the <code>;</code> inside the square brackets <code>[e.g. @kuhn1970structure; @stoet2018gender]</code>: <span class="citation" data-cites="kuhn1970structure stoet2018gender">(e.g. <a href="#ref-kuhn1970structure" role="doc-biblioref">Kuhn 1970</a>; <a href="#ref-stoet2018gender" role="doc-biblioref">Stoet and Geary 2018</a>)</span>. To refer to a particular page number use <code>[@kuhn1970structure pp.70]</code> to get <span class="citation" data-cites="kuhn1970structure">(<a href="#ref-kuhn1970structure" role="doc-biblioref">Kuhn 1970, 111:70</a>)</span>.</p>
+<p>All your references will be automatically included at the bottom of the website (go check them out!) and students can quickly access reference information by hovering over the references inline in the text. Depending on the fields you provide and the format, e.g.&nbsp;@book @website and @article, the references will display differently.</p>
+<div class="question">
+<ul>
+<li>Save three references to a bibtex <code>.bib</code> file</li>
+<li>Add the bibliography reference to your YAML</li>
+<li>Include the references in your writing</li>
+</ul>
+</div>
+</section><section id="rendering-your-page" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="rendering-your-page">
+<span class="header-section-number">2.4</span> Rendering your page</h2>
+<p>Now you have fleshed out your first page you are going to <em>render</em> it. To do this, click on the <code>Render</code> button:</p>
+<p><img src="images/2023-06-30_21-42-14.png" class="img-fluid"></p>
+<p>This should then output a webpage with all your work on it. You are probably more used to outputting pdfs or Word Docs. We can change the output of the project by editing the YAML in <code>Source</code> mode, changing format from <code>html</code> to <code>pdf</code> will then allow you to output a pdf when you click render:</p>
+<pre><code>---
+title: "Quarto help"
+author: "Peter Kemp"
+format: pdf
+bibliography: references.bib
+---</code></pre>
+<div class="question">
+<p>Render your project as <code>html</code>, <code>pdf</code> and <code>docx</code></p>
+</div>
+</section></section><section id="embedding-code" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> Embedding code</h1>
+<p>So far you have seen how to edit a simple looking page and you’re probably thinking that this is no way as good as your word processor of choice. Where quarto comes into its own is allowing you to combine R code outputs and writing. This has a few benefits:</p>
+<ul>
+<li>You don’t need to keep copy and pasting code and results from R to a Word doc</li>
+<li>If the underlying datasets change any changes automatically filter through</li>
+<li>It’s easy to include the code that you use so reviewers can see exactly what you have done</li>
+<li>Other researchers can copy and adapt your code for their own projects.</li>
+</ul>
+<p>To add a code chunk we need to place it in a <code>code chunk</code> which is the space between the <code>{r} and</code> lines, the results will be automatically displayed below the code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>Data objects can be created, shared and rewritten, starting at the top and moving down in your document:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>bees_per_hive <span class="ot">&lt;-</span> <span class="dv">35000</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>num_hives <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>ml_per_bee <span class="ot">&lt;-</span> <span class="fl">0.41</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co"># I create a variable here</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>honey <span class="ot">&lt;-</span> (bees_per_hive <span class="sc">*</span> num_hives <span class="sc">*</span> ml_per_bee) <span class="sc">/</span> <span class="dv">1000</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And now I decide to print it in another code chunk:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"my hives will make "</span>, honey, <span class="st">"L of honey"</span>))</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "my hives will make  57.4 L of honey"</code></pre>
+</div>
+</div>
+<p>Code blocks have <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">settings</a> that change how they function, you might want to hide all your code and only output the results, you might want to show your code, but not run it. To do this we can pass variables to the code chunks through the use of <code>#| setting: value</code> that tell quarto how to handle each chunk. For example, by adding <code>#| eval: false</code> to the top of the code chunk. The code then displays, but doesn’t run (evaluate):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="co">#| eval: false</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Alternatively, we might use <code>#| eval: true</code> to display the results. If you want to run the code and output the results, but also hide code, just add <code>#| echo: false</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="co">#| eval: true</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 14
+  name      height  mass hair_color skin_color eye_color birth_year sex   gender
+  &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+1 Luke Sky…    172    77 blond      fair       blue            19   male  mascu…
+2 C-3PO        167    75 &lt;NA&gt;       gold       yellow         112   none  mascu…
+3 R2-D2         96    32 &lt;NA&gt;       white, bl… red             33   none  mascu…
+4 Darth Va…    202   136 none       white      yellow          41.9 male  mascu…
+5 Leia Org…    150    49 brown      light      brown           19   fema… femin…
+# ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+#   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+</div>
+</div>
+<p>Other code chunk variables include:</p>
+<ul>
+<li>
+<code>warning:</code> # suppress or show warning messages attached to a piece of code</li>
+<li>
+<code>echo:</code> # include the code in the output</li>
+<li>
+<code>error:</code> # show code even if there is an error in it</li>
+<li>
+<code>eval:</code> # run the code and display the output</li>
+</ul>
+<section id="inline-code" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="inline-code">
+<span class="header-section-number">3.1</span> Inline code</h2>
+<p>Often when we are writing papers we want to <em>inline</em> the results, i.e.&nbsp;putting the results into paragraphs of text. To do this we can use the <code>`r CODE GOES HERE `</code> command. You could use a code chunk to calculate the mean of a value and store it in an object <code>mean_score</code>, to get this into your paragraph you would write <code>`r mean_score `</code></p>
+</section><section id="loading-datasets" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="loading-datasets">
+<span class="header-section-number">3.2</span> Loading datasets</h2>
+<p>You can have code chunks in any section of your <code>.qmd</code> file after the <code>YAML</code>. To keep things neat you might consider loading and manipulating your datasets right after the YAML, you can then access them inline or in other code chunks throughout your document</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>---</p>
+<p>title: “Quarto help” <br> author: “Peter Kemp” <br> format: pdf <br> bibliography: references.bib</p>
+<p>---</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="co">#| warning: false</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="co"># load libraries and datasets here</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="co"># they can then be used in any subsequent code chunk</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="fu">library</span>(gt)</span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="fu">library</span>(glue)</span>
+<span id="cb14-9"><a href="#cb14-9"></a></span>
+<span id="cb14-10"><a href="#cb14-10"></a>datafolder <span class="ot">&lt;-</span> r<span class="st">"(C:\Users\Peter\Google Drive\Kings\Code\PISR\Data\PISA\)"</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="fu">glue</span>(<span class="st">"{datafolder}subset/PISA_2018_student_subset.parquet"</span>))</span>
+<span id="cb14-12"><a href="#cb14-12"></a>num_students <span class="ot">&lt;-</span> <span class="fu">nrow</span>(PISA_2018)</span>
+<span id="cb14-13"><a href="#cb14-13"></a>mean_maths <span class="ot">&lt;-</span> <span class="fu">mean</span>(PISA_2018<span class="sc">$</span>PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb14-14"><a href="#cb14-14"></a>UK_students <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb14-15"><a href="#cb14-15"></a>                <span class="fu">select</span>(CNT, PV1READ, ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb14-16"><a href="#cb14-16"></a>                <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-17"><a href="#cb14-17"></a>                <span class="fu">group_by</span>(ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb14-18"><a href="#cb14-18"></a>                <span class="fu">summarise</span>(<span class="at">mean_read =</span> <span class="fu">mean</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
+<span id="cb14-19"><a href="#cb14-19"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This report looks at <code>`r nrow(PISA_2018)`</code> students who got a mean maths score of <code>`r mean_maths`</code>. If you want to see how UK students did in their reading test, see the table below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>UK_students <span class="sc">%&gt;%</span> </span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="fu">gt</span>()</span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="olcmkznfos" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#olcmkznfos table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#olcmkznfos thead, #olcmkznfos tbody, #olcmkznfos tfoot, #olcmkznfos tr, #olcmkznfos td, #olcmkznfos th {
+  border-style: none;
+}
+
+#olcmkznfos p {
+  margin: 0;
+  padding: 0;
+}
+
+#olcmkznfos .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#olcmkznfos .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#olcmkznfos .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#olcmkznfos .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#olcmkznfos .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#olcmkznfos .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#olcmkznfos .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#olcmkznfos .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#olcmkznfos .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#olcmkznfos .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#olcmkznfos .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#olcmkznfos .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#olcmkznfos .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#olcmkznfos .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#olcmkznfos .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#olcmkznfos .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#olcmkznfos .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#olcmkznfos .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#olcmkznfos .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#olcmkznfos .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#olcmkznfos .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#olcmkznfos .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#olcmkznfos .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#olcmkznfos .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#olcmkznfos .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#olcmkznfos .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#olcmkznfos .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#olcmkznfos .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#olcmkznfos .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#olcmkznfos .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#olcmkznfos .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#olcmkznfos .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#olcmkznfos .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#olcmkznfos .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#olcmkznfos .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#olcmkznfos .gt_left {
+  text-align: left;
+}
+
+#olcmkznfos .gt_center {
+  text-align: center;
+}
+
+#olcmkznfos .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#olcmkznfos .gt_font_normal {
+  font-weight: normal;
+}
+
+#olcmkznfos .gt_font_bold {
+  font-weight: bold;
+}
+
+#olcmkznfos .gt_font_italic {
+  font-style: italic;
+}
+
+#olcmkznfos .gt_super {
+  font-size: 65%;
+}
+
+#olcmkznfos .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#olcmkznfos .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#olcmkznfos .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#olcmkznfos .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#olcmkznfos .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#olcmkznfos .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#olcmkznfos .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Student (Standardized) Gender">Student (Standardized) Gender</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="mean_read">mean_read</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="ST004D01T" class="gt_row gt_center">Female</td>
+<td headers="mean_read" class="gt_row gt_right">511.8412</td>
+</tr>
+<tr>
+<td headers="ST004D01T" class="gt_row gt_center">Male</td>
+<td headers="mean_read" class="gt_row gt_right">488.8647</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="showing-tables" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="showing-tables">
+<span class="header-section-number">3.3</span> Showing tables</h2>
+<p>Manually making tables can be rather <a href="https://quarto.org/docs/authoring/tables.html">fiddly</a> in quarto, and you might find it easier to use the WYSIWYG feature of the visual editor. If you want to print a dataframe into your report, the library <code>gt</code> does an excellent job, allowing you to adjust rows, format values, change headings, add captions, etc (click <a href="https://gt.rstudio.com/articles/intro-creating-gt-tables.html">here</a> for an intro). To get <code>gt</code> to work, you need to pipe your dataframe to the <code>gt()</code> function. We also use the code chunk variable <code>#| tbl-cap:</code> this allows you to add a caption to the table, which will appear in any table listings.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="co">#| eval: true</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="co">#| warning: false</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="co">#| tbl-cap: "Some Star Wars data"</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="fu">library</span>(gt)</span>
+<span id="cb16-6"><a href="#cb16-6"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb16-7"><a href="#cb16-7"></a>  <span class="fu">head</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a>  <span class="fu">select</span>(name, height, mass, hair_color, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">data_color</span>(<span class="at">columns =</span> sex,</span>
+<span id="cb16-11"><a href="#cb16-11"></a>             <span class="at">palette=</span><span class="fu">c</span>(<span class="st">"darkgreen"</span>, <span class="st">"darkblue"</span>, <span class="st">"Gray"</span>, <span class="st">"White"</span>),</span>
+<span id="cb16-12"><a href="#cb16-12"></a>             <span class="at">levels=</span><span class="fu">c</span>(<span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"none"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-13"><a href="#cb16-13"></a>  <span class="fu">data_color</span>(</span>
+<span id="cb16-14"><a href="#cb16-14"></a>    <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"height"</span>, <span class="st">"mass"</span>),</span>
+<span id="cb16-15"><a href="#cb16-15"></a>    <span class="at">method =</span> <span class="st">"numeric"</span>,</span>
+<span id="cb16-16"><a href="#cb16-16"></a>    <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"darkgreen"</span>, <span class="st">"green"</span>)</span>
+<span id="cb16-17"><a href="#cb16-17"></a>  )</span>
+<span id="cb16-18"><a href="#cb16-18"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="sblxosfadj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sblxosfadj table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#sblxosfadj thead, #sblxosfadj tbody, #sblxosfadj tfoot, #sblxosfadj tr, #sblxosfadj td, #sblxosfadj th {
+  border-style: none;
+}
+
+#sblxosfadj p {
+  margin: 0;
+  padding: 0;
+}
+
+#sblxosfadj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#sblxosfadj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#sblxosfadj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#sblxosfadj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#sblxosfadj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sblxosfadj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sblxosfadj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sblxosfadj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#sblxosfadj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#sblxosfadj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#sblxosfadj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#sblxosfadj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#sblxosfadj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#sblxosfadj .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#sblxosfadj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#sblxosfadj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#sblxosfadj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#sblxosfadj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#sblxosfadj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sblxosfadj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#sblxosfadj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#sblxosfadj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#sblxosfadj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sblxosfadj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#sblxosfadj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#sblxosfadj .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sblxosfadj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sblxosfadj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#sblxosfadj .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sblxosfadj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#sblxosfadj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sblxosfadj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sblxosfadj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sblxosfadj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sblxosfadj .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sblxosfadj .gt_left {
+  text-align: left;
+}
+
+#sblxosfadj .gt_center {
+  text-align: center;
+}
+
+#sblxosfadj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#sblxosfadj .gt_font_normal {
+  font-weight: normal;
+}
+
+#sblxosfadj .gt_font_bold {
+  font-weight: bold;
+}
+
+#sblxosfadj .gt_font_italic {
+  font-style: italic;
+}
+
+#sblxosfadj .gt_super {
+  font-size: 65%;
+}
+
+#sblxosfadj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#sblxosfadj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#sblxosfadj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#sblxosfadj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#sblxosfadj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#sblxosfadj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#sblxosfadj .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Some Star Wars data</caption>
+  <thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="name">name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="height">height</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="mass">mass</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="hair_color">hair_color</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="sex">sex</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="name" class="gt_row gt_left">Luke Skywalker</td>
+<td headers="height" class="gt_row gt_right" style="background-color: #00D100; color: #000000;">172</td>
+<td headers="mass" class="gt_row gt_right" style="background-color: #00A400; color: #FFFFFF;">77</td>
+<td headers="hair_color" class="gt_row gt_left">blond</td>
+<td headers="sex" class="gt_row gt_left" style="background-color: #00008B; color: #FFFFFF;">male</td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">C-3PO</td>
+<td headers="height" class="gt_row gt_right" style="background-color: #00C900; color: #000000;">167</td>
+<td headers="mass" class="gt_row gt_right" style="background-color: #00A100; color: #FFFFFF;">75</td>
+<td headers="hair_color" class="gt_row gt_left">NA</td>
+<td headers="sex" class="gt_row gt_left" style="background-color: #BEBEBE; color: #000000;">none</td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">R2-D2</td>
+<td headers="height" class="gt_row gt_right" style="background-color: #006400; color: #FFFFFF;">96</td>
+<td headers="mass" class="gt_row gt_right" style="background-color: #006400; color: #FFFFFF;">32</td>
+<td headers="hair_color" class="gt_row gt_left">NA</td>
+<td headers="sex" class="gt_row gt_left" style="background-color: #BEBEBE; color: #000000;">none</td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">Darth Vader</td>
+<td headers="height" class="gt_row gt_right" style="background-color: #00FF00; color: #000000;">202</td>
+<td headers="mass" class="gt_row gt_right" style="background-color: #00FF00; color: #000000;">136</td>
+<td headers="hair_color" class="gt_row gt_left">none</td>
+<td headers="sex" class="gt_row gt_left" style="background-color: #00008B; color: #FFFFFF;">male</td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">Leia Organa</td>
+<td headers="height" class="gt_row gt_right" style="background-color: #00B000; color: #FFFFFF;">150</td>
+<td headers="mass" class="gt_row gt_right" style="background-color: #007B00; color: #FFFFFF;">49</td>
+<td headers="hair_color" class="gt_row gt_left">brown</td>
+<td headers="sex" class="gt_row gt_left" style="background-color: #006400; color: #FFFFFF;">female</td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">Owen Lars</td>
+<td headers="height" class="gt_row gt_right" style="background-color: #00DA00; color: #000000;">178</td>
+<td headers="mass" class="gt_row gt_right" style="background-color: #00E600; color: #000000;">120</td>
+<td headers="hair_color" class="gt_row gt_left">brown, grey</td>
+<td headers="sex" class="gt_row gt_left" style="background-color: #00008B; color: #FFFFFF;">male</td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">Beru Whitesun lars</td>
+<td headers="height" class="gt_row gt_right" style="background-color: #00C600; color: #000000;">165</td>
+<td headers="mass" class="gt_row gt_right" style="background-color: #00A100; color: #FFFFFF;">75</td>
+<td headers="hair_color" class="gt_row gt_left">brown</td>
+<td headers="sex" class="gt_row gt_left" style="background-color: #006400; color: #FFFFFF;">female</td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">R5-D4</td>
+<td headers="height" class="gt_row gt_right" style="background-color: #006500; color: #FFFFFF;">97</td>
+<td headers="mass" class="gt_row gt_right" style="background-color: #006400; color: #FFFFFF;">32</td>
+<td headers="hair_color" class="gt_row gt_left">NA</td>
+<td headers="sex" class="gt_row gt_left" style="background-color: #BEBEBE; color: #000000;">none</td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">Biggs Darklighter</td>
+<td headers="height" class="gt_row gt_right" style="background-color: #00E100; color: #000000;">183</td>
+<td headers="mass" class="gt_row gt_right" style="background-color: #00AE00; color: #FFFFFF;">84</td>
+<td headers="hair_color" class="gt_row gt_left">black</td>
+<td headers="sex" class="gt_row gt_left" style="background-color: #00008B; color: #FFFFFF;">male</td>
+</tr>
+<tr>
+<td headers="name" class="gt_row gt_left">Obi-Wan Kenobi</td>
+<td headers="height" class="gt_row gt_right" style="background-color: #00E000; color: #000000;">182</td>
+<td headers="mass" class="gt_row gt_right" style="background-color: #00A400; color: #FFFFFF;">77</td>
+<td headers="hair_color" class="gt_row gt_left">auburn, white</td>
+<td headers="sex" class="gt_row gt_left" style="background-color: #00008B; color: #FFFFFF;">male</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section><section id="showing-graphs" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="showing-graphs">
+<span class="header-section-number">3.4</span> Showing graphs</h2>
+<p><code>ggplot</code> allows for some great graphs and often copy and pasting them from R into a word document can be fiddly and mess up aspect ratios. A much neater way is to output your graphs directly into your reports. We use the code chunk variable <code>#| fig-cap:</code> to add a caption to the figure, which will appear in any figure listings.<code>#| fig-width:</code> allows you to manually set the figure width, leaving this out will let R automatically set the width for you.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="co">#| eval: true</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co">#| warning: false</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="co">#| fig-cap: "age and height"</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="co">#| fig-width: 6</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb17-7"><a href="#cb17-7"></a></span>
+<span id="cb17-8"><a href="#cb17-8"></a><span class="fu">ggplot</span>(<span class="at">data=</span>starwars, <span class="fu">aes</span>(<span class="at">x=</span>height, <span class="at">y=</span>birth_year, <span class="at">colour=</span>sex)) <span class="sc">+</span> </span>
+<span id="cb17-9"><a href="#cb17-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb17-10"><a href="#cb17-10"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>name))</span>
+<span id="cb17-11"><a href="#cb17-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="576"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">age and height</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="question">
+<p>Using <code>PISA_2018</code> add a <code>gt()</code> table and a <code>ggplot</code> graph to your report. Make sure you specify captions.</p>
+</div>
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-kuhn1970structure" class="csl-entry" role="doc-biblioentry">
+Kuhn, Thomas S. 1970. <em>The Structure of Scientific Revolutions</em>. Vol. 111. Chicago University of Chicago Press.
+</div>
+<div id="ref-stoet2018gender" class="csl-entry" role="doc-biblioentry">
+Stoet, Gijsbert, and David C Geary. 2018. <span>“The Gender-Equality Paradox in Science, Technology, Engineering, and Mathematics Education.”</span> <em>Psychological Science</em> 29 (4): 581–93.
+</div>
+</div></section></div></main><!-- /main column --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
