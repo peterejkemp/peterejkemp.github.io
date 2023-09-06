@@ -1,0 +1,283 @@
+---
+title: "RAAC in English schools - 2023-08-30"
+format: 
+  html:
+    toc: true
+author:
+  - name: Peter EJ Kemp
+    email: peter.kemp@kcl.ac.uk
+    affiliations:
+    - name: King's College London
+number-sections: true
+editor: visual
+tbl-cap-location: top
+---
+
+```{r}
+#| warning: false
+#| echo: false
+node <- Sys.info()
+
+if(node["nodename"] == "KCL8KWNXY2"){
+  # basefolder <- r"(C:\Users\w1926273\OneDrive - King's College London\Code\SCARI\)"
+  basefolder <- r"(C:/Users/w1926273/Google Drive/Kings/Code/PISR/)"
+}else if(node["nodename"] == "PETES_PC"){
+  basefolder <- r"(C:/Users/Peter/Google Drive/Kings/Code/PISR/)"
+  old_proj_folder <- r"(C:/Users/Peter/Google Drive/Kings/Code/OpenAnalysis/)"
+}else if(node["nodename"] == "KCL3Y7NKR3"){ # new laptop
+  basefolder <- r"(G:\My Drive\Kings\Code\PISR\)"
+  old_proj_folder <- r"(C:/Users/Peter/Google Drive/Kings/Code/OpenAnalysis/)"
+}
+
+library(tidyverse)
+library(readODS)
+library(gt)
+library(glue)
+
+data_folder <- r"[C:\Users\Peter\Google Drive\Kings\Code\PISR\Data\]"
+data_folder <- r"[D:\Data\EdR\]"
+
+source(paste0(basefolder, "_reports/TRACER/TRACER-setup.R"))
+source(paste0(codefolder, 'OpenAnalysis_load.R'))
+
+# load the dataset (with crazy skip)
+raac_raw <- read_ods(glue(basefolder, "_reports/RAAC/RAAC.ods"), skip=19) %>% 
+  filter(`Setting Name` != "Not applicable") %>%
+  mutate(URN = as.numeric(URN)) %>%
+  dplyr::rename("Setting mitigation" = "Setting mitigation at w/c 04/09/2023")
+
+raac <- left_join(raac_raw, 
+          schools %>% 
+            group_by(URN) %>% 
+            filter(year == max(year)))
+
+raac <- raac %>% 
+  mutate(lbl = paste("<p>",as.character(`Setting Name`), "</p><p>", `Setting Phase`, "</p>", `Setting mitigation`, "</p>"),
+         details = paste("<p><b>",`Setting Name`, "</b></p>",
+                              " <a href='https://www.get-information-schools.service.gov.uk/Establishments/Establishment/Details/",
+                             URN,"'>",URN,
+                         "</a></br> <a href='https://", `Setting Website`, "'>website</a>",
+                         "<table>",
+                         "<tr><td>phase:</td><td>", `Setting Phase`, "</td></tr>",
+                         "<tr><td>size:</td><td>", stu_total, "</td></tr>",
+                         "<tr><td>mitigation:</td><td>", `Setting mitigation`, "</td></tr>",
+                         "<tr><td>LA:</td><td>", LA, "</td></tr>",
+                         "<tr><td>Region:</td><td>", Region, "</td></tr>",
+                         "</table>")) %>%
+  mutate(clr = case_when(
+    `Setting Phase` == "Primary" ~ "#97EFE9",
+    `Setting Phase` == "Secondary" ~ "#4A001F",
+    `Setting Phase` == "16 plus" ~ "Red",
+    `Setting Phase` == "Not applicable" ~ "#000000",
+    `Setting Phase` == "All-through" ~ "#A7C4C2" 
+  ))
+                         
+
+                         # "<div><span style='width: 50%;'>phase:</span>", `Setting Phase`, "</div>",
+                         # "<div><span style='width: 50%;'>size:</span>", stu_total, "</div>",
+                         # "<div><span style='width: 50%;'>mitigation:</span>", `Setting mitigation`, "</div>",
+                         # "<div><span style='width: 50%;'>la:</span>", LA, "</div>"))
+
+### leaflet
+library(leaflet)
+library(sf)
+library(scales)
+library(htmltools)
+
+# set colour scale
+pal <- colorNumeric(c("black", "green"), 
+                    domain=c(min(raac$stu_total, na.rm = TRUE):max(raac$stu_total, na.rm = TRUE)))
+
+map_raac_provision <- leaflet(data=raac) %>%
+  addProviderTiles("Stamen.Toner") %>%
+  addCircleMarkers(~lon, ~lat, 
+                   fillColor = ~clr, # ~pal(stu_total), 
+                   #fillColor = "black", 
+                   color = "black", 
+                   weight =1, opacity = 1, fillOpacity = 1,
+                   popup = ~details, 
+                   radius = ~rescale(stu_total, c(1,10)) + 3.5,
+                   label = ~map(lbl, htmltools::HTML))
+  # addLegend("bottomright", 
+  #           pal = pal, 
+  #           values = ~Geography,
+  #           title = "% taking Geography",
+  #           opacity = 1)
+
+```
+
+# Introduction
+
+A very quick lunchtime report on school providers with RAAC and their mitigation plans. Data from [here](https://www.gov.uk/government/publications/reinforced-autoclaved-aerated-concrete-raac-management-information) and up to date as of 2023-09-06, using the DfE dataset that states: "List of education settings with confirmed RAAC as of __30 August 2023__". Data likely to change fast, mistakes highly likely mine, please drop me an email if you have any suggestions / questions.
+
+- summary tables are for state schools and state school students
+- Total student figures come from the 2021/22 DfE dataset
+- it's possible schools using new URNs as of 2022/23 or 2023/24 will not be included in this list (e.g. academy converters)
+
+# Map of providers with RAAC
+
+- Size of dots: number of students in provider
+- Colours
+   - Man City Blue: Primary;
+   - Wine: Secondary;
+   - Grey: All through;
+   - Red: 16 plus;
+   - Black: Not applicable;
+
+```{r}
+#| warning: false
+#| echo: false
+map_raac_provision
+```
+
+```{r}
+#| echo: false
+#| warning: false
+raac_all <- schools %>% 
+            group_by(URN) %>% 
+            filter(year == 2022,
+                   schType %in% c("Comprehensive", "Special", "Grammar")) %>%
+            mutate(raac = URN %in% raac$URN)
+
+# find missing URNs
+# raac$URN
+# final_URN <- raac_all %>% filter(raac) %>% pull(URN)
+# setdiff(raac$URN, final_URN)
+# 
+# # Missing URNS
+# # because they weren't entering GCSEs in 2022? Or new schools
+# https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/139218
+# https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/149972
+
+
+overall_stu <- raac_all %>% 
+  group_by(raac) %>% 
+  dplyr::summarise(students = sum(stu_total, na.rm=TRUE)) %>%
+  pivot_wider(names_from = raac, values_from = students) %>%
+  dplyr::rename(student_no = `FALSE`,
+         student_yes = `TRUE`) %>%
+  mutate(`student_%` = 1*(student_yes / (student_no + student_yes)))
+
+overall_prov <- raac_all %>% 
+  group_by(raac) %>% 
+  dplyr::summarise(providers = n()) %>%
+  pivot_wider(names_from = raac, values_from = providers) %>%
+  dplyr::rename(provider_no = `FALSE`,
+         provider_yes = `TRUE`) %>%
+  mutate(`provider_%` = 1*(provider_yes / (provider_no + provider_yes)))
+
+overall_all <- cbind(overall_stu, overall_prov)
+
+# LA
+
+la_stu <- raac_all %>% 
+  group_by(LA, raac) %>% 
+  dplyr::summarise(students = sum(stu_total, na.rm=TRUE)) %>%
+  pivot_wider(names_from = raac, values_from = students) %>%
+  dplyr::rename(student_no = `FALSE`,
+         student_yes = `TRUE`) %>%
+  mutate(`student_%` = 1*(student_yes / (student_no + student_yes)))
+
+la_prov <- raac_all %>% 
+  group_by(LA, raac) %>% 
+  dplyr::summarise(providers = n()) %>%
+  pivot_wider(names_from = raac, values_from = providers) %>%
+  dplyr::rename(provider_no = `FALSE`,
+         provider_yes = `TRUE`) %>%
+  mutate(`provider_%` = 1*(provider_yes / (provider_no + provider_yes)))
+  
+la_all <- left_join(la_stu, la_prov)
+
+# number of children in each la in raac schools
+# percentage of children in each La in raac schools
+# number of providers in each la with raac
+# percentage of providers in each la with raac
+
+##### REGION
+
+region_stu <- raac_all %>% 
+  group_by(Region, raac) %>% 
+  dplyr::summarise(students = sum(stu_total, na.rm=TRUE)) %>%
+  pivot_wider(names_from = raac, values_from = students) %>%
+  dplyr::rename(student_no = `FALSE`,
+         student_yes = `TRUE`) %>%
+  mutate(`student_%` = 1*(student_yes / (student_no + student_yes)))
+
+region_prov <- raac_all %>% 
+  group_by(Region, raac) %>% 
+  dplyr::summarise(providers = n()) %>%
+  pivot_wider(names_from = raac, values_from = providers) %>%
+  dplyr::rename(provider_no = `FALSE`,
+         provider_yes = `TRUE`) %>%
+  mutate(`provider_%` = 1*(provider_yes / (provider_no + provider_yes)))
+  
+region_all <- left_join(region_stu, region_prov)
+
+```
+
+# Current distribution of providers and students
+
+```{r overall}
+#| warning: false
+#| echo: false
+overall_all %>% ungroup() %>% gt() %>% 
+  sub_missing(missing_text = 0) %>%
+  fmt_percent(columns = c("student_%", "provider_%"),
+              decimals = 2) %>%
+  cols_label(
+    student_no = "Total students",
+    student_yes = "Students in RAAC",
+    `student_%`	= "% Students in RAAC",
+    provider_no = "Total providers",
+    provider_yes = "Providers with RAAC",
+    `provider_%` = "% Providers with RAAC")
+  
+```
+
+```{r overall_by_school_type}
+#| warning: false
+#| echo: false
+
+
+
+# get info on total % of primary and secondary schools closed
+
+```
+
+# Current distribution of providers by Region
+
+```{r region}
+#| warning: false
+#| echo: false
+region_all %>% ungroup() %>% gt() %>% 
+  sub_missing(missing_text = 0) %>%
+  fmt_percent(columns = c("student_%", "provider_%"),
+              decimals = 2) %>%
+  data_color(
+    columns = c("student_%", "provider_%"),
+    method="numeric",
+    palette = c("red", "green")) %>%
+    tab_spanner_delim(
+    delim = "_"
+  )
+```
+
+# Current distribution of providers by Local Authority
+
+```{r LA}
+#| warning: false
+#| echo: false
+la_all %>% ungroup() %>% gt() %>% 
+  sub_missing(missing_text = 0) %>%
+  fmt_percent(columns = c("student_%", "provider_%"),
+              decimals = 2) %>%
+  data_color(
+    columns = c("student_%", "provider_%"),
+    method="numeric",
+    palette = c("red", "green")) %>%
+    tab_spanner_delim(
+    delim = "_"
+  ) # %>% opt_interactive()
+  
+  
+```
