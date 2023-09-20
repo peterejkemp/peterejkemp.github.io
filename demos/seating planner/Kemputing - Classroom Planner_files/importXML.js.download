@@ -1,0 +1,112 @@
+
+function initExtXML()
+{
+	// Check for the various File API support.
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+	  // Great success! All the File APIs are supported.
+	} else {
+	  alert('Warning dragging and dropping classes might be buggy.');
+	}
+	
+	//add listeners to class drop
+	var dropZone = document.getElementById('dropclass');
+	dropZone.addEventListener('dragover', handleDragOver, false);
+	dropZone.addEventListener('drop', dropExtClass, false);
+	
+	//add event listener to the SVG map
+	var dropZone = document.getElementById('SVGMap');
+	dropZone.addEventListener('dragover', handleDragOver, false);
+	dropZone.addEventListener('drop', dropExtClass, false);
+	
+	//add listeners to room drop
+	var dropZone = document.getElementById('droproom');
+	dropZone.addEventListener('dragover', handleDragOver, false);
+	dropZone.addEventListener('drop', dropExtRoom, false);
+}
+
+function handleDragOver(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+}
+
+//load the class from the xml dropped on the screen 
+function dropExtClass(evt)
+{
+	//alert("hello");
+    evt.stopPropagation();
+    evt.preventDefault();
+	
+	var reader = new FileReader();
+	
+	//fr.onload = receivedText;
+    reader.readAsText(evt.dataTransfer.files[0]);
+	reader.onload = function(){
+		var text = reader.result;
+		//console.debug(reader);
+		//console.debug(reader.result);
+		try
+		{
+			//case it is XML
+			var tmp = StringtoXML(text);
+			tmp = tmp.documentElement;
+			//load the new xml students
+			loadStudents(tmp);
+			//
+			loadChairs(false);
+		}
+		catch(e)
+		{	//case it is a CSV
+			importCSV(text);
+		}
+		
+		customClass = true;
+	}
+	reader.onerror = function(e){
+		//console.log("Error",e);
+	};
+}
+
+//load the room from the xml dropped on the screen 
+function dropExtRoom(evt)
+{
+	//alert("hello");
+    evt.stopPropagation();
+    evt.preventDefault();
+	
+	var reader = new FileReader();
+	
+	//fr.onload = receivedText;
+    reader.readAsText(evt.dataTransfer.files[0]);
+	reader.onload = function(){
+		var text = reader.result;
+		//var out = document.getElementById("list");
+		//out.innerHTL = "";
+		//out.appendChild(document.createTextNode(text));
+		text = StringtoXML(text);
+		text = text.documentElement;
+		
+		var selSVG = document.getElementById('SVGMap');
+			//clear any current map
+		while (selSVG.hasChildNodes()) {
+			selSVG.removeChild(selSVG.lastChild);
+		}
+		//add the new svg
+		selSVG.appendChild(text);
+	}
+	reader.onerror = function(e){
+		//console.log("Error",e);
+	};
+}
+
+//function : 
+function StringtoXML(text){
+	if (window.ActiveXObject){
+	  var doc=new ActiveXObject('Microsoft.XMLDOM');
+	  doc.async='false';
+	  doc.loadXML(text);
+	} else {
+	  var parser=new DOMParser();
+	  var doc=parser.parseFromString(text,'text/xml');
+	}
+	return doc;
+}

@@ -1,0 +1,59 @@
+//dirty hack to get IE9.0 working with xml imports into the page
+
+function cloneToDoc(node,doc){
+	if (!doc) doc=document;
+	var clone = doc.createElementNS(node.namespaceURI,node.nodeName);
+	for (var i=0,len=node.attributes.length;i<len;++i){
+		var a = node.attributes[i];
+		if (/^xmlns\b/.test(a.nodeName)) continue;
+		clone.setAttributeNS(a.namespaceURI,a.nodeName,a.nodeValue);
+	}
+	for (var i=0,len=node.childNodes.length;i<len;++i){
+		var c = node.childNodes[i];
+		clone.insertBefore(
+		c.nodeType==1 ? cloneToDoc(c,doc) : doc.createTextNode(c.nodeValue),
+		null
+		)
+	}
+	return clone;
+}
+
+// hack to get XML appends to work
+function appendXML(node, xml)
+{
+
+	try{
+		//add the new svg
+		node.appendChild(xml);
+	}
+	catch(ex)
+	{
+		try{ //IE dirty work around
+			var svg = cloneToDoc(xml);
+			node.appendChild(svg);
+		}
+		catch(ex)
+		{
+			alert("That XML is not working, check the svg is savvy");
+			//console.debug(xml);
+			//console.debug(node);
+		}
+	}
+}
+
+//hack to allow addition of new select options
+function addSelection(elOptNew,elSel)
+{
+	try {
+	  elSel.add(elOptNew, elOptNew);
+	}
+	catch(ex) {
+		try{
+			elSel.add(elOptNew, elSel.selectedIndex); // IE only
+		}
+		catch(ex){
+			elSel.appendChild(elOptNew, elSel.selectedIndex);//firefox
+		}
+	}
+
+}

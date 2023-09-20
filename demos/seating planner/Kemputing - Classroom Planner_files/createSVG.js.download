@@ -1,0 +1,457 @@
+//////////SVG exam seating creator///////////
+
+
+function createSVG(r,c,m,d,t,p) {
+	var temp;
+					//	(y,x,order,start,max)
+	temp = createSeating(r,c,m,d,t,p);
+	//temp = StringtoXML(temp);
+	//temp = temp.documentElement;
+	var selSVG = document.getElementById('SVGMap');
+
+	//clear any current map
+	while (selSVG.hasChildNodes()) {
+		selSVG.removeChild(selSVG.lastChild);
+	}
+	
+	appendXML(selSVG, temp);
+}
+
+function createSeating(rows, columns, desks, dir, top, plants)
+{
+	var seats = new Array();
+	var count = 1;
+	var temp;
+	var offset = 0;
+	//create header
+	temp = writeHeader(rows, columns);
+	
+	//fill up columns first
+	if(dir == "column") 
+	{
+		//start counting from the top
+		if(top == "top")
+		{
+			offset = 100;
+			for (x=1; x <= columns && count <= desks; x++)
+			{
+				for (y=1; y <= rows && count <= desks; y++)
+				{
+					seats[count] = writeChairs(count, x, y, dir, offset);
+					count = count + 1;
+					//alert(count);
+				}
+			}
+		}
+		else
+		{//start counting from the bottom up
+			for (x = columns; x > 0 && count <= desks; x--)
+			{
+				for (y = rows; y > 0 && count <= desks; y--)
+				{
+					seats[count] = writeChairs(count, x, y, dir, offset);
+					count = count + 1;
+					//alert(count);
+				}
+			}
+		}
+		
+		
+	}
+	else //fill up using rows
+	{
+		//start counting from the top
+		if(top == "top")
+		{
+			offset = 100;
+			for (y=1; y <= rows  && count <= desks; y++)
+			{
+				for (x=1; x <= columns && count <= desks; x++)
+				{
+					//alert(count+","+x+","+y)
+					seats[count] = writeChairs(count, x, y, dir, offset);
+					count = count + 1;
+				}
+			}
+		}
+		else
+		{//start counting from the bottom up
+			for (y = rows; y > 0 && count <= desks; y--)
+			{
+				for (x = columns; x > 0 && count <= desks; x--)
+				{
+					seats[count] = writeChairs(count, x, y, dir, offset);
+					count = count + 1;
+					//alert(count);
+				}
+			}
+		}
+	}
+	
+	for (i=1; i <= seats.length-1; i++)
+	{
+		temp.appendChild(seats[i]);
+		//temp = temp + seats[i];
+	}
+	
+	
+	// temp = temp + writeBoard(rows, columns);
+	// temp = temp + writeTeacher(rows, columns);
+	// temp = temp + writePlants(rows, columns, plants);
+	//temp = temp + writeFooter();
+
+	temp.appendChild(writeBoard(rows, columns, dir, top));
+	temp.appendChild(writeTeacher(rows, columns, dir, top));
+	
+	while (plants > 0)
+	{
+		temp.appendChild(writePlants(rows, columns, plants));
+		plants--;
+	}
+	return temp;	
+}
+
+function writeChairs(num,x,y, dir, offset)
+{
+
+	var xShift, yShift;
+	if (dir == "row")
+	{
+		xShift = 100;
+		yShift = 70;
+	}
+	else
+	{
+		xShift = 150;
+		yShift = 50;
+	}
+	xShift = (((x - 1) * xShift) + 10)
+	yShift = (((y-1) * yShift)  + offset)
+	
+	var svgns = "http://www.w3.org/2000/svg";
+	
+	var newEl = document.createElementNS(svgns,"g");
+	newEl.setAttributeNS(null,"transform","translate(" + xShift + ',' + yShift + ")");
+	newEl.setAttributeNS(null,"onclick","highlightchair(evt)");
+	newEl.setAttributeNS(null,"id","g"+num);
+	newEl.setAttributeNS(null,"class","");
+	
+	var innerEl = document.createElementNS(svgns,"rect");
+	innerEl.setAttributeNS(null,"id","d"+num);
+	innerEl.setAttributeNS(null,"y",0);
+	innerEl.setAttributeNS(null,"x",0);
+	innerEl.setAttributeNS(null,"height",50);
+	innerEl.setAttributeNS(null,"width",100);
+	newEl.appendChild(innerEl);
+	
+	var innerEl = document.createElementNS(svgns,"text");
+	innerEl.setAttributeNS(null,"id","n"+num);
+	innerEl.setAttributeNS(null,"y",40);
+	innerEl.setAttributeNS(null,"x",5);
+	innerEl.setAttributeNS(null,"class","name noselect");
+	newEl.appendChild(innerEl);
+	
+	var innerEl = document.createElementNS(svgns,"text");
+	innerEl.setAttributeNS(null,"id","i"+num);
+	innerEl.setAttributeNS(null,"y",15);
+	innerEl.setAttributeNS(null,"x",5);
+	innerEl.setAttributeNS(null,"class","identity noselect");
+	innerEl.textContent = num;
+	newEl.appendChild(innerEl);
+	
+	return newEl;
+		
+	// temp = '<g transform="translate(' + (((x - 1) * 150) + 10) + ',' + (((y-1) * 50) + 10) + ')" onclick="highlightchair(evt)" id="g' + num + '" class="">\n';
+	// temp = temp + '<rect y="0" x="0" height="50" width="100" id="d' + num + '" />\n';
+	// temp = temp + '<text y="40" x="5" class="name noselect" id="n' + num + '" />\n';
+	// temp = temp + '<text y="15" x="5" class="identity noselect" id="i' + num + '">' + num + '</text>\n';
+	// temp = temp + '</g>\n'
+	// return temp;
+}
+
+function writeHeader(rows, columns)
+{
+	var svgns = "http://www.w3.org/2000/svg";
+	var xmlns = "http://www.w3.org/2000/xmlns/";
+
+	var newEl = document.createElementNS(svgns,"svg");
+	newEl.setAttributeNS('http://www.w3.org/2000/xmlns/', 'xmlns', svgns);
+	
+	newEl.setAttributeNS('http://www.w3.org/2000/xmlns/',"xmlns:xlink","http://www.w3.org/1999/xlink");
+	//newEl.setAttributeNS(xmlns,"xlink","http://www.w3.org/1999/xlink");
+	newEl.setAttributeNS(svgns,"dc","http://purl.org/dc/elements/1.1/");
+	newEl.setAttributeNS(svgns,"cc","http://creativecommons.org/ns#");
+	newEl.setAttributeNS(svgns,"rdf","http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+	//newEl.setAttributeNS(svgns,"svg","http://www.w3.org/2000/svg");
+	newEl.setAttributeNS(svgns,"sodipodi","http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd");
+	newEl.setAttributeNS(svgns,"inkscape","http://www.inkscape.org/namespaces/inkscape");
+
+	newEl.setAttributeNS(null,"version","1.1");
+	newEl.setAttributeNS(null,"onmousedown","grab(evt)");
+	newEl.setAttributeNS(null,"onmousemove","drag(evt)");
+	newEl.setAttributeNS(null,"onmouseup","drop(evt)");
+	newEl.setAttributeNS(null,"onload","initSVG()");
+	newEl.setAttributeNS(null,"id","svgRoom");
+	newEl.setAttributeNS(null,"width",(columns * 150) + 150);
+	newEl.setAttributeNS(null,"height",(rows * 50)+250);
+	return newEl;
+	
+	// var temp;
+	// temp = '<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet type="text/css" href="../style/rooms.css" ?>\n<svg xmlns="http://www.w3.org/2000/svg"\n 	xmlns:dc="http://purl.org/dc/elements/1.1/"\n xmlns:cc="http://creativecommons.org/ns#"\n xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n xmlns:svg="http://www.w3.org/2000/svg"\n 	xmlns:xlink="http://www.w3.org/1999/xlink"\n xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"\n xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"	version="1.1" onload="initSVG()" onmousedown="grab(evt)" onmousemove="drag(evt)" onmouseup="drop(evt)" id="svgRoom"';
+	// temp = temp + ' width="' + ((columns * 150) + 150) + '" height="' + ((rows * 50)+250) + '">\n';
+	
+	// temp = StringtoXML(temp);
+	// return temp;
+}
+
+
+function writeBoard(rows, columns, dir, top)
+{
+	var xShift, yShift;
+	if (dir == "row")
+	{
+		xShift = 100;
+		yShift = 70;
+	}
+	else
+	{
+		xShift = 150;
+		yShift = 50;
+	}
+	if (top == "top")
+	{
+		yShift = 5;
+	}
+	else
+	{
+		yShift = (((rows) * yShift)+60);	
+	}
+	
+	xShift = ((Math.round(columns/2)  * xShift) - 100);	
+
+	var svgns = "http://www.w3.org/2000/svg";
+	var newEl = document.createElementNS(svgns,"g");
+	newEl.setAttributeNS(null,"transform","translate(" + xShift + "," + yShift + ") rotate(00,0,0)");
+	newEl.setAttributeNS(null,"id","gw");
+
+	var innerEl = document.createElementNS(svgns,"rect");
+	innerEl.setAttributeNS(null,"id","whiteboard");
+	innerEl.setAttributeNS(null,"height",10);
+	innerEl.setAttributeNS(null,"width",200);
+	newEl.appendChild(innerEl);
+	
+	return newEl;
+	
+	// var temp;
+	// temp = '<g transform="translate(' + ((Math.round(columns/2)  * 150) - 100) + ',' + (((rows) * 50)+60) + ') rotate(00,0,0)" id="gw">\n<rect id="whiteboard" width="200" height="10"/>\n</g>\n';
+	// return temp;
+}
+
+function writeTeacher(rows, columns, dir, top)
+{
+	var xShift, yShift;
+	if (dir == "row")
+	{
+		xShift = 100;
+		yShift = 70;
+	}
+	else
+	{
+		xShift = 150;
+		yShift = 50;
+	}
+	
+	if (top == "top")
+	{
+		yShift = 40;
+	}
+	else
+	{
+		yShift = (((rows-1) * yShift) + 70);	
+	}
+	
+	xShift = ((Math.round(columns/2) * xShift) + 110);	
+		
+
+	var svgns = "http://www.w3.org/2000/svg";
+	var newEl = document.createElementNS(svgns,"g");
+	newEl.setAttributeNS(null,"transform","translate(" + xShift + "," + yShift + ") rotate(00,0,0)");
+	newEl.setAttributeNS(null,"id","gt");
+
+	var innerEl = document.createElementNS(svgns,"rect");
+	innerEl.setAttributeNS(null,"id","teacher");
+	innerEl.setAttributeNS(null,"height",50);
+	innerEl.setAttributeNS(null,"width",150);
+	newEl.appendChild(innerEl);
+	
+	var innerEl = document.createElementNS(svgns,"text");
+	innerEl.setAttributeNS(null,"id","iteach");
+	innerEl.setAttributeNS(null,"x",10);
+	innerEl.setAttributeNS(null,"y",40);
+	innerEl.setAttributeNS(null,"class","noselect");
+	newEl.appendChild(innerEl);
+	
+	return newEl;
+
+	// var temp;
+	// temp = '<g transform="translate(' + ((Math.round(columns/2) * 150) + 110) + ',' + (((rows-1) * 50) + 70) + ') rotate(00,0,0)" id="gt">\n<rect id="teacher"	width="150"	height="50"/><text id="iteach"  class="noselect" x="10" y="40"></text>\n</g>\n';
+	// return temp;
+}
+
+function writePlants(rows, columns, plant)
+{
+	var svgns = "http://www.w3.org/2000/svg";
+	var newEl = document.createElementNS(svgns,"g");
+	newEl.setAttributeNS(null,"transform","translate(" + ((Math.round(columns - 1) * 150) + 160) + "," +(((plant - 1) * 50) + 10) + ") rotate(0,0,0)");
+	newEl.setAttributeNS(null,"id","plant"+plant);
+	newEl.setAttributeNS(null,"class","plants");
+
+	var innerEl = document.createElementNS(svgns,"image");
+	innerEl.setAttributeNS(null,"id","teacher");
+	innerEl.setAttributeNS(null,"x",0);
+	innerEl.setAttributeNS(null,"y",0);
+	innerEl.setAttributeNS(null,"height",80);
+	innerEl.setAttributeNS(null,"width",40);
+	innerEl.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href","roomlayouts/items/cactus.svg");
+	newEl.appendChild(innerEl);
+	
+	return newEl;
+	
+	// var temp = "";
+		// temp += '<g transform="translate(' + ((Math.round(columns - 1) * 150) + 160) + ','+(((plants - 1) * 50) + 10) + ')" id="plant' + plants + '" class="plants">\
+		// <image x="0" y="0" width="40" height="80"\
+		 // xlink:href="roomlayouts/items/cactus.svg" />\n\
+		// </g>';
+	// return temp;
+}
+
+function writeFooter()
+{
+	var temp;
+	temp = '</svg>';
+	return temp;
+}
+
+//function : 
+function StringtoXML(text){
+	if (window.ActiveXObject){
+	  var doc=new ActiveXObject('Microsoft.XMLDOM');
+	  doc.async='false';
+	  doc.loadXML(text);
+	} else {
+	  var parser=new DOMParser();
+	  var doc=parser.parseFromString(text,'text/xml');
+	}
+	return doc;
+}
+
+
+//delete plants
+function arrDelPlant()
+{
+	//get number of plants
+	var count = document.getElementsByClassName("plant").length;
+	
+	if (count>0)
+	{
+		var svgDoc = document.getElementsByTagName("svg")[0];
+		var plant = document.getElementById("p" + count);
+		//document.getElementById("selResponse").innerHTML = "Deleted chair : " + count;
+		svgDoc.removeChild(plant);
+	}
+	else
+	{	
+		document.getElementById("selResponse").innerHTML = "Error: no plants to delete!";
+	}	
+}
+
+//create a new plant
+function arrAddPlant()
+{
+	var svgDoc = document.getElementsByTagName("svg")[0];
+
+	var svgns = "http://www.w3.org/2000/svg";
+	var xlinkNS = svgDoc.getAttributeNS('http://www.w3.org/2000/svg', 'xlink');
+
+	//get number of plants
+	var count = document.getElementsByClassName("plant").length;
+			
+	newEl = document.createElementNS(svgns,"g");
+	newEl.setAttributeNS(null,"transform", "translate(" + (100 + (count * 5)) + ","+ (100 + (count * 5)) + ") rotate(0,0,0)");	
+	newEl.setAttributeNS(null,"id", "p" + (count + 1));
+	newEl.setAttributeNS(null,"class", "plant");
+
+	var temp = document.createElementNS(svgns,"image");
+	temp.setAttributeNS(null,"x","0");
+	temp.setAttributeNS(null,"y","0");
+	temp.setAttributeNS(null,"height","80");
+	temp.setAttributeNS(null,"width","40");
+	//temp.setAttributeNS('http://www.w3.org/2000/svg',"xlink","http://www.w3.org/1999/xlink");
+	temp.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href","roomlayouts/items/cactus.svg");
+	
+	//alert("hello");
+	newEl.appendChild(temp);
+	svgDoc.appendChild(newEl);
+}
+
+//create a new plant
+function arrAddChair()
+{
+	//get number of chairs
+	var count = document.getElementsByClassName("name").length;
+	var svgDoc = document.getElementsByTagName("svg")[0];
+	var svgns = "http://www.w3.org/2000/svg";
+	
+	var newEl = document.createElementNS(svgns,"g");
+	newEl.setAttributeNS(null,"transform", "translate(" + (100 + (count * 4)) + ","+ (100 + (count * 4)) + ")");	
+	newEl.setAttributeNS(null,"id", "g" + (count + 1));
+	newEl.setAttributeNS(null,"onclick", "highlightchairs(evt)");
+	newEl.setAttributeNS(null,"class", "zemptyz");
+	
+	var temp = document.createElementNS(svgns,"rect");
+	temp.setAttributeNS(null,"y","0");
+	temp.setAttributeNS(null,"x","0");
+	temp.setAttributeNS(null,"height","50");
+	temp.setAttributeNS(null,"width","100");
+	temp.setAttribute("stroke","black")
+	temp.setAttribute("stroke-width",1)
+	temp.setAttributeNS(null,"id","d" + (count + 1));
+	newEl.appendChild(temp);
+	
+	temp = document.createElementNS(svgns,"text");
+	temp.setAttributeNS(null,"y","40");
+	temp.setAttributeNS(null,"x","5");
+	temp.setAttributeNS(null,"class","name noselect");
+	temp.setAttributeNS(null,"id","n" + (count + 1));
+	//temp.innerHTML = "";
+	newEl.appendChild(temp);
+	
+	temp = document.createElementNS(svgns,"text");
+	temp.setAttributeNS(null,"y","15");
+	temp.setAttributeNS(null,"x","5");
+	temp.setAttributeNS(null,"class","identity noselect");
+	temp.setAttributeNS(null,"id","i" + (count + 1));
+	temp.textContent = count + 1;
+	newEl.appendChild(temp);
+	
+	svgDoc.appendChild(newEl);
+}
+
+//create a new plant
+function arrDelChair()
+{
+	//get number of chairs
+	var count = document.getElementsByClassName("name").length;
+	
+	if (count>0)
+	{
+		var svgDoc = document.getElementsByTagName("svg")[0];
+		var chair = document.getElementById("g" + count);
+		//document.getElementById("selResponse").innerHTML = "Deleted chair : " + count;
+		svgDoc.removeChild(chair);
+	}
+	else
+	{	
+		document.getElementById("selResponse").innerHTML = "Error: no chairs to delete!";
+	}	
+}

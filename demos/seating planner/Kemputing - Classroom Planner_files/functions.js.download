@@ -1,0 +1,670 @@
+//student global vars
+var studentarray = new Array();
+var teacher;
+
+//timer global vars
+var rounds;
+var timerID = null;
+var timerRunning = false;
+var delay;
+var ran =1;
+
+//keeps track of whether a classes has been customised
+var customClass = false;
+
+function load()
+{
+	checkVersion();
+	//console.log("loading");
+	//load the drop down lists
+	loadClasses("classlists/manifest.xml");
+	//console.log("loading.");
+	loadRooms("roomlayouts/manifest.xml");
+	//console.log("loading..");
+	
+	//load the chairs with the default values
+	loadChairs(false);
+	
+	//set up listeners for inputting external documents
+	initExtXML();
+}
+
+function highlightchair(evt) {
+	var temp = evt.target.parentNode;
+	if (temp.getAttributeNS(null,"class") == "highlight")
+	{
+		//return to original colours
+		id = temp.getAttribute("id").slice(1);
+		temp = document.getElementById("g"+id);
+		temp.setAttributeNS(null,"class",studentarray[id][2].toLowerCase());
+		//console.log(studentarray[id][2]);
+	}
+	else
+	{	
+		if (document.classoptions.mode[1].checked) //tempxy != null
+			temp.setAttributeNS(null,"class","highlight");
+	}
+	//alert("here");
+	//console.log(studentarray[id][2]);
+}
+
+function pickStudent(r)
+{
+    // Set the length of the timer, in seconds
+    rounds = r;
+	delay = 10;
+    StopTheClock();
+    StartTheTimer();
+}
+
+function StopTheClock()
+{
+    if(timerRunning)
+        clearTimeout(timerID);
+    timerRunning = false;
+}
+
+function StartTheTimer()
+{
+    if (rounds==0)
+    {
+        StopTheClock();
+        showChosenStudent(studentarray[ran][0]);
+    }
+    else
+    {
+		try
+		{
+			self.status = rounds;
+			timerRunning = true;
+			var ranold = ran;
+		
+			ran = Math.floor((Math.random()*(studentarray.length-1)) + 1);
+			temp = document.getElementById("g"+ran);
+			
+			if (temp.getAttribute("class") == "zemptyz")
+			{
+				//if the seat is empty, try again immediately
+				ran = ranold; //the new chair is rubbish, go back to the old
+				timerID = self.setTimeout("StartTheTimer()", 0);
+			}
+			else
+			{
+				//reset previous pick to default style
+				tempold = document.getElementById("g"+ranold);
+				tempold.setAttributeNS(null,"class",studentarray[ranold][2].toLowerCase());
+				
+				temp.setAttributeNS(null,"class","highlight");
+				rounds = rounds - 1;
+				delay = delay + 4;
+				timerID = self.setTimeout("StartTheTimer()", delay);
+			}
+		}
+		catch(err)
+		{
+			alert("failed on :" + ran + " item: " + studentarray.length +  " previous item : " + studentarray[ran-1][0]);
+		}
+    }
+}
+
+function loadClasses(man)
+{
+	popClasses(loadXML(man));
+}
+
+function loadRooms(man)
+{
+	popRooms(loadXML(man));
+}
+
+function loadXML(url)
+{
+	var xmlhttp = new window.XMLHttpRequest();
+	xmlhttp.open("GET", url + "?rand=" + Math.floor(Math.random()*2000), false);
+	//stops the annoying caching!
+	xmlhttp.setRequestHeader("Cache-Control", "no-cache"); 
+	//as it says above
+	xmlhttp.send(null);
+	return xmlhttp.responseXML.documentElement;
+}
+
+//populate the class list dropdowns
+function popClasses(req)
+{
+	var classlist = req.getElementsByTagName("class");
+	var elSel = document.getElementById("selectclass");
+	var temp;
+	
+	for(var i = 0; i < classlist.length; i++) {
+		var elOptNew = document.createElement('option');
+		var c = classlist[i];
+		var stext = c.getElementsByTagName("classname")[0].firstChild.data;
+		var svalue = c.getElementsByTagName("filename")[0].firstChild.data;
+		elOptNew.text = stext;
+		elOptNew.value = svalue;
+		
+		addSelection(elOptNew,elSel);
+		
+		//if URL Get class attribute is present in manifest, select it 
+		if (stext == getUrlVars()["class"])
+			temp = i;
+
+
+	}
+
+	//populate the studentarray and the drop down menu
+	//if they passed a value
+	if (temp >= 0){
+		//find the selected value
+		for (var i = 0; i < elSel.length; i++)
+		{
+			//use this because IE (1+) and Chrome (0+) use different base indexing
+			if(elSel.options[i].value == (getUrlVars()["class"] + ".xml"))
+			{	
+				//console.log("selected value " + i + " - " + elSel.options[i].value);
+				try
+				{
+					loadStudents(loadXML("classlists/" + elSel.options[i].value));
+
+
+					elSel.selectedIndex = i;
+				}
+				catch(e)
+				{
+					//console.log("Can't find: " + elSel.options[elSel.selectedIndex].value);
+
+				}
+			}
+			//console.log(i + " - " + elSel.options[i].value);
+
+
+
+
+
+		}
+
+
+
+
+
+
+	}else{
+		loadStudents(loadXML("classlists/"+elSel.options[0].value));
+		//loadStudents(loadXML("http://vle.ctksfc.ac.uk/ctk/course_list_xml.php?ref=L-LBUS1"));
+	}
+}
+
+//populate room list dropdowns
+function popRooms(req)
+{
+	var roomlist = req.getElementsByTagName("room");
+	var elSel = document.getElementById("selectroom");
+	
+	for(var i = 0; i < roomlist.length; i++) {
+		var elOptNew = document.createElement('option');
+		var c = roomlist[i];
+		var stext = c.getElementsByTagName("roomname")[0].firstChild.data;
+		var svalue = c.getElementsByTagName("filename")[0].firstChild.data;
+		elOptNew.text = stext;
+		elOptNew.value = svalue;
+		
+		//console.log(stext + " - " + svalue);
+		
+
+
+
+
+
+		addSelection(elOptNew,elSel);
+		
+
+
+
+
+
+		//if URL GET room attribute is present in manifest, select it and load the map 
+		if (stext == getUrlVars()["room"])
+		{
+			elSel.options[i].selected = true;
+		}
+	}
+	loadSVGMap();
+}
+
+//put the students in the seats
+//exteral: get class from webserver
+//custom: class customised, don't reload
+function loadStudentList(custom)
+{
+	var external;
+	if (getUrlVars()["intra"] == "yes")
+		external = true;
+	else
+		external = false;
+		
+	//which class
+	var selObj = document.getElementById('selectclass');
+	var selected = selObj.selectedIndex;
+	var SlctClass = selObj.options[selected];
+	//which room
+	selObj = document.getElementById('selectroom');
+	selected = selObj.selectedIndex;
+	//console.log(selObj.selectedIndex);
+	var SelectedRoomAddress = selObj.options[selected].value;
+	
+	//check to load files from a webserver
+	if (external && !custom)
+	{
+		studentarray.length = 0;
+		loadStudents(loadXML("http://on-site/course_list_xml.php?ref="+SlctClass.text));
+		//console.log(SlctClass.text);
+		customClass = false;
+	}
+	else
+	{
+		if(!custom)
+		{
+			studentarray.length = 0;
+			//console.log("normal class list loading");
+			loadStudents(loadXML("classlists/"+SlctClass.value));
+			customClass = false;
+		}
+	}
+}
+
+//load students to the drop down list
+function loadStudents(req)
+{
+	document.getElementById("studentlist").options.length = 0; //clear the selection
+	studentarray.length = 0; //clear the array
+	
+	//Load teacher name
+	teacher = req.getElementsByTagName("teacher")[0].firstChild.data;
+	
+	var studentlist = req.getElementsByTagName("student");
+	var elSel = document.getElementById("studentlist"); //where is it going
+	var elOptNew, c, sfirstname, ssurname, sgender, sability;
+	
+	for(var i = 0; i < studentlist.length; i++) {
+		elOptNew = document.createElement('option');
+		c = studentlist[i];
+		sfirstname = c.getElementsByTagName("firstname")[0].firstChild.data;
+		ssurname = c.getElementsByTagName("surname")[0].firstChild.data;
+		sgender = c.getElementsByTagName("gender")[0].firstChild.data;
+		sability = c.getElementsByTagName("ability")[0].firstChild.data;
+		studentarray[i+1] = new Array();
+		
+		//trim spaces
+		sfirstname = sfirstname.trim();
+		ssurname = ssurname.trim();
+		sgender = sgender.trim().toLowerCase();
+
+		if (sgender == "m")
+			sgender = "male";
+		if (sgender == "f")
+			sgender = "female";
+		
+		//strip middle names
+		sfirstname = sfirstname.split(" ",1)[0];
+		
+		//check that names are unique and add initials
+		for (var x=1; x <= i; x++)
+		{
+			if(sfirstname == studentarray[x][0])
+			{
+				sfirstname = sfirstname + " " + ssurname.slice(0,1);
+				studentarray[x][0] = studentarray[x][0] + " " + studentarray[x][1].slice(0,1);
+			}
+		}
+				
+		studentarray[i+1][0] = sfirstname;
+		studentarray[i+1][1] = ssurname;
+		studentarray[i+1][2] = sgender;
+		studentarray[i+1][3] = sability;
+		
+		elOptNew.text = sfirstname;
+		elOptNew.value = sfirstname;
+
+
+		addSelection(elOptNew,elSel);
+	}
+
+
+
+}
+
+function loadSVGMap()
+{
+	//clear any current save warnings
+	deleteSaveWarning();
+	
+	//fetch the selected room
+	var selObj = document.getElementById('selectroom');
+	selected = selObj.selectedIndex;
+	var SelectedRoomAddress = selObj.options[selected].value;
+	//alert(SelectedRoomAddress);
+	
+	var selSVG = document.getElementById('SVGMap');
+	
+	//clear any current map
+	while (selSVG.hasChildNodes()) {
+		selSVG.removeChild(selSVG.lastChild);
+	}
+	
+
+
+	appendXML(selSVG, loadXML("roomlayouts/"+SelectedRoomAddress));
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	//set up variables for drag and drop
+	initSVG();
+}
+//put students in the chairs
+function loadChairs(sortit)
+{
+	//alert(i + " = " + "zemptyz");
+	var selSVG = document.getElementById('SVGMap');
+	
+	//check class layout and students are loaded
+	if ((studentarray.length == 0) || !selSVG.hasChildNodes())
+	{
+		alert("Can't sit down, lacking tables or children.");
+	}
+	else
+	{
+		//hack to handle swapping room once you have moved a class
+		if (studentarray.length  > 0 && sortit)
+		{
+			loadStudentList(customClass);
+		}
+		//console.log("sorting: " + studentarray[1][0]);
+		var tempNode;
+		//check there are enough chairs for students
+		if (studentarray.length - 1 > selSVG.getElementsByClassName("identity").length)
+		{
+			alert("You have " + (studentarray.length - 1) + " students but only " + selSVG.getElementsByClassName("name").length + " chairs!");
+			return false;
+		}
+		else
+		{	
+			//Add empty elements to end of array to cope with empty seats
+			var numSeats = document.getElementsByClassName("name").length;
+			for (i = studentarray.length; i <= numSeats; i++)
+			{
+				studentarray[i] = new Array();
+				studentarray[i][0] = "";
+				studentarray[i][1] = "";
+				studentarray[i][2] = "zemptyz";
+				studentarray[i][3] = "";
+				
+			}
+			
+			//sort the students before seating them
+			if (sortit)
+			{
+				sortOrder();
+			}
+			
+			//set teacher
+			tempNode = document.getElementById("iteach");
+			tempNode.textContent = teacher;
+			
+			//for each student
+			for (var i = 1; i < studentarray.length; i++)
+			{
+				//set gender class
+				tempNode = document.getElementById("g"+i);
+				tempNode.setAttribute("class",studentarray[i][2].toLowerCase());
+
+				//set name text
+				tempNode = document.getElementById("n"+i);
+
+				tempNode.textContent = studentarray[i][0];
+			}
+			return true;			
+		}
+	}
+}
+
+function sortOrder()
+{
+	var dirg, diro;
+	//determine the sorting order for gender:
+	dirg = document.getElementById("revChkGender");
+	if (dirg.checked)
+		dirg = "gt";
+	else
+		dirg = "lt";
+	//determine the sorting order for other:
+	diro = document.getElementById("revChkOrder");
+	if (diro.checked)
+		diro = "lt";
+	else
+		diro = "gt";
+	
+	var size = studentarray.length;
+	sort(1,"lt", size);
+	
+	size = sizeClass();
+	//console.log(studentarray[1][0]);
+	
+	//get sort choice	
+	var orderval;
+	for( i = 0; i < document.orderselect.order.length; i++ )
+	{
+		if(  document.orderselect.order[i].checked == true )
+		{
+			orderval =  document.orderselect.order[i].value;
+			break;
+		}
+	}
+	
+	//get sort choice	
+	var genderval;
+	for( i = 0; i < document.genderselect.gender.length; i++ )
+	{
+		if(  document.genderselect.gender[i].checked == true )
+		{
+			genderval =  document.genderselect.gender[i].value;
+			break;
+		}
+	}
+
+	switch(orderval)
+	{
+		case "alphasur":
+			sort(1,diro, size);
+			break;
+		case "alphafor":
+			sort(0,diro, size);
+			break;
+		case "ability":
+			sort(3,diro, size);
+			break;
+		case "abilitymix":
+			mix(3, size);
+			break;
+		case "random":
+			shuffle(size);	  
+			break;
+		case "xml":
+		    loadChairs(false); //error on loading chairs, blank chairs won't move
+		    break;
+		default:
+			alert("something has gone wrong with the sort");
+		  //this shouldn't happen
+	}
+	
+	switch(genderval)
+	{
+		case "girlboy":
+			mix(2, size);
+			break;
+		case "block":
+			sort(2,dirg, size);
+			break;
+		case "none":
+			break;
+		default:
+		//change nothing
+	}
+}
+
+function sizeClass()
+{	
+	//var selSVG = document.getElementById('SVGMap');
+	//return document.getElementsByClassName("name").length;
+	var x;
+	for(x = 1; x < studentarray.length && studentarray[x][2] != "zemptyz"; x++)
+	{
+		//counting number of students in a classroom
+	}
+	return x;
+}
+
+//code to save changed room to the server
+function saveRoom()
+{	
+	if (confirm("Are you sure you want to save the changes made to " +  document.getElementById('selectroom').options[selected].text +"?"))
+	{	
+		var xmlhttp=new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function()
+		{
+			if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+				var temp = xmlhttp.responseText;
+				document.getElementById("saveResponse").innerHTML=temp;
+				document.getElementById("selResponse").innerHTML=temp;
+			}
+		}
+		document.getElementById("saveResponse").innerHTML="Save in progress...";
+		xmlhttp.open("POST","php/saveRoom.php",true);
+		xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		xmlhttp.send("svgFile="+printFullSVG()+"&svgName="+document.getElementById('selectroom').options[selected].text);
+		
+		//clear warning message
+		deleteSaveWarning();
+	}
+}
+
+function downloadRoom()
+{	
+	saveRoom();//save roomlayout, then download the file
+	var xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			document.getElementById("downloadResponse").innerHTML="Download in progress...File available";
+			//document.getElementById("downloadResponse").innerHTML=xmlhttp.responseText;
+		}
+	}
+	document.getElementById("downloadResponse").innerHTML="File available...";
+	// xmlhttp.open("POST","php/downloadRoom.php",true);
+	// xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	// xmlhttp.send("svgName="+document.getElementById('selectroom').options[selected].text);
+	
+	window.open('php/downloadRoom.php?svgName=' + document.getElementById('selectroom').options[selected].text);
+}
+
+function roomMode(type)
+{
+	switch(type)
+	{
+	case "swap":
+		closeRearrange();
+		break;
+	case "highlight":
+		closeRearrange();
+		break;
+	case "moveSeats":
+		closeRearrange();
+		loadRearrange();
+		break;
+	}
+}
+
+function closeRearrange()
+{
+	var movPanel = document.getElementById("movTools");
+	while (movPanel.hasChildNodes()) {
+		movPanel.removeChild(movPanel.lastChild);
+	}
+	movPanel.setAttribute("class","");
+}
+
+function loadRearrange()
+{
+	var movPanel = document.getElementById("movTools");
+	movPanel.setAttribute("class","rearrange");
+	movPanel.innerHTML = "Chairs: ";
+	
+	// var newEl = document.createElement("img");
+	// newEl.setAttribute("src", "images/add.png");
+	// newEl.setAttribute("id", "AddChair");
+	// newEl.setAttribute("alt", "click to add a new chair");
+	// newEl.setAttribute("onclick", "arrAddChair();");
+	// movPanel.appendChild(newEl);
+	
+	var newEl = document.createElement("button");
+	newEl.setAttribute("type", "button");
+	newEl.setAttribute("value", "+");
+	newEl.setAttribute("name", "+");
+	newEl.innerHTML = "<img src='images/add.png'>";
+	newEl.setAttribute("id", "AddChair");
+	newEl.setAttribute("onclick", "arrAddChair(); addSaveWarning();");
+	movPanel.appendChild(newEl);
+	// newEl = document.createElement("img");
+	// newEl.setAttribute("src", "images/delete.png");
+	// newEl.setAttribute("id", "DelChair");
+	// newEl.setAttribute("onclick", "arrDelChair();");
+	// movPanel.appendChild(newEl);
+	
+	newEl = document.createElement("button");
+	newEl.setAttribute("type", "button");
+	newEl.setAttribute("value", "-");
+	newEl.setAttribute("name", "-");
+	newEl.innerHTML = "<img src='images/delete.png'>";
+	newEl.setAttribute("id", "DelChair");
+	newEl.setAttribute("onclick", "arrDelChair(); addSaveWarning();");
+	movPanel.appendChild(newEl);
+	
+	movPanel.innerHTML += "<br />Plants:   ";
+	
+	newEl = document.createElement("button");
+	newEl.setAttribute("type", "button");
+	newEl.setAttribute("value", "+");
+	newEl.setAttribute("name", "+");
+	newEl.innerHTML = "<img src='images/add.png'>";
+	newEl.setAttribute("id", "AddPlant");
+	newEl.setAttribute("onclick", "arrAddPlant(); addSaveWarning();");
+	movPanel.appendChild(newEl);
+	
+	newEl = document.createElement("button");
+	newEl.setAttribute("type", "button");
+	newEl.setAttribute("value", "-");
+	newEl.setAttribute("name", "-");
+	newEl.innerHTML = "<img src='images/delete.png'>";
+	newEl.setAttribute("id", "DelPlant");
+	newEl.setAttribute("onclick", "arrDelPlant(); addSaveWarning();");
+	movPanel.appendChild(newEl);
+	
+	// newEl = document.createElement("button");
+	// newEl.setAttribute("type", "button");
+	// newEl.setAttribute("class", "button");
+	// newEl.innerHTML = '<img src="images/table_save.png"/> Save Changes';
+	// newEl.setAttribute("id", "save2");
+	// newEl.setAttribute("onclick", "saveRoom();");
+	// movPanel.appendChild(newEl);
+}

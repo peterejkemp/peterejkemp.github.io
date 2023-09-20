@@ -1,0 +1,281 @@
+//////////clock code///////////
+var totalTime = 0;
+var c=0;
+var t;
+var timer_is_on=0;
+
+//sound variables
+var alarmSnd;
+var tickSnd;
+
+var clockType;
+
+function clockInit() {
+	//cache the sounds
+	alarmSnd = new Audio("../classroom/sounds/padsynth2.ogg");
+	tickSnd = new Audio("../classroom/sounds/tick.ogg");
+	
+	
+	
+	//get selected clock
+	//if (clockType == "digitalClock")
+	initDigClock();
+	
+}
+
+function loadClock(){
+	clockType = document.getElementById('slClock').value;
+	//console.log(clockType);
+	//check map exists
+	var selSVG = document.getElementById('SVGClock');
+	while (selSVG.hasChildNodes())
+		selSVG.removeChild(selSVG.lastChild);
+	
+	appendXML(selSVG, loadXML("roomlayouts/" + clockType + ".svg"));
+	clockInit();
+}
+
+function start() {
+	if (totalTime > 0)
+	{
+		timer_is_on=1;
+		timerTick();
+	}
+}
+
+function timerTick() {	
+	if(timer_is_on)
+	{
+		clockChange(-1);
+		t=setTimeout("timerTick()",1000);
+	}
+}
+
+function clockStop() {
+	timer_is_on = 0;
+}
+
+function reset() {
+	totalTime = 0;
+	updateClocks();
+}
+
+function alarm() {
+	alarmSnd.play();
+
+	//pick a student
+	if (document.getElementById('c_autopick').checked)
+	{
+		pickStudent(50);
+		hidePopups();
+		//exit;
+		
+		// // // Code to hide tabs with
+		// //hide the clock tab and show the seating plan
+		// document.getElementById('tabs-5').classList.add("ui-tabs-hide");
+		// document.getElementById('tabs-4').classList.remove("ui-tabs-hide");	
+		// //update the tabs at the top
+		// document.getElementById('litabs-5').classList.remove("ui-tabs-selected");
+		// document.getElementById('litabs-5').classList.remove("ui-state-active");
+		// document.getElementById('litabs-4').classList.add("ui-tabs-selected");
+		// document.getElementById('litabs-4').classList.add("ui-state-active");
+	}
+}
+
+//the function called from the SVG file's arrows
+function clockChange(x) {
+	if (totalTime + x >= 0)
+	{
+		totalTime = totalTime + x;
+		if (document.getElementById('c_sound').checked)
+			tickSnd.play();
+	}
+	else
+	{
+		totalTime = 0;
+		if(timer_is_on)
+		{
+			timer_is_on = 0;
+			alarm();
+		}
+	}
+	updateClocks();
+}
+
+function updateClocks() {	
+	var h,m,s;
+	h = hours(totalTime);
+	m = minutes(totalTime);
+	s = seconds(totalTime);
+	
+	if (clockType == "binaryClock")
+		updatePanel(h, m, s);
+}
+
+function hours(time) {
+	var h;
+	h = Math.floor(time / 3600);
+	if (clockType == "binaryClock")
+		binHours(h);
+	else
+		digHours(h);
+	return h;
+}
+
+function minutes(time) {
+	var m;
+	m = Math.floor((time % 3600) / 60);
+	if (clockType == "binaryClock")
+		binMinutes(m);
+	else
+		digMinutes(m);
+	return m;
+}
+
+function seconds(time) {
+	var s;
+	s = Math.floor(time % 60);
+	
+	if (clockType == "binaryClock")
+		binSeconds(s);
+	else
+		digSeconds(s);
+	return s;
+}
+
+function updatePanel(h,m,s) {
+	var ttd;
+	if (h<10)
+		ttd = "0"+h;
+	else
+		ttd = h;
+	
+	if (m<10)
+		ttd = ttd + ":0"+m;
+	else
+		ttd = ttd + ":"+m;
+		
+	if (s<10)
+		ttd = ttd + ":0"+s;
+	else
+		ttd = ttd + ":"+s;
+	
+	document.getElementById("timeDisplay").textContent = ttd;
+}
+
+/////code for binary clock/////
+function binSeconds(x) {
+	//tens
+	var t = Math.floor(x/10);
+	t = updateBinLight("st", 4, t)
+	t = updateBinLight("st", 2, t)
+	updateBinLight("st", 1, t)
+	//units
+	var u = x % 10
+	u = updateBinLight("su", 8, u)	
+	u = updateBinLight("su", 4, u)
+	u = updateBinLight("su", 2, u)
+	updateBinLight("su", 1, u)
+}
+
+function binMinutes(x) {
+	//tens
+	var t = Math.floor(x/10);
+	t = updateBinLight("mt", 4, t)
+	t = updateBinLight("mt", 2, t)
+	updateBinLight("mt", 1, t)
+	//units
+	var u = x % 10
+	u = updateBinLight("mu", 8, u)	
+	u = updateBinLight("mu", 4, u)
+	u = updateBinLight("mu", 2, u)
+	updateBinLight("mu", 1, u)
+}
+
+function binHours(x) {
+	//tens
+	var t = Math.floor(x/10);
+	t = updateBinLight("ht", 2, t)
+	updateBinLight("ht", 1, t)
+	//units
+	var u = x % 10
+	u = updateBinLight("hu", 8, u)	
+	u = updateBinLight("hu", 4, u)
+	u = updateBinLight("hu", 2, u)
+	updateBinLight("hu", 1, u)
+}
+
+//update the binary lights
+function updateBinLight(type, target, value) {
+	var temp = document.getElementById(type + target);
+	if (value % target >= 0 && value >= target)
+	{
+		temp.setAttribute("class","c_on");
+		//console.log(type+target+" - actual = "+value);
+		return value - target;
+	}
+	else
+		temp.setAttribute("class","");
+	
+	return value;
+}
+
+///////Digital Clock ///////
+var digArr = new Array();
+
+function initDigClock() {
+	digArr[0] = new Array(1,1,1,0,1,1,1);
+	digArr[1] = new Array(0,0,1,0,0,1,0);
+	digArr[2] = new Array(1,0,1,1,1,0,1);
+	digArr[3] = new Array(1,0,1,1,0,1,1);
+	digArr[4] = new Array(0,1,1,1,0,1,0);
+	digArr[5] = new Array(1,1,0,1,0,1,1);
+	digArr[6] = new Array(1,1,0,1,1,1,1);
+	digArr[7] = new Array(1,0,1,0,0,1,0);
+	digArr[8] = new Array(1,1,1,1,1,1,1);
+	digArr[9] = new Array(1,1,1,1,0,1,0);
+}
+
+function digSeconds(x) {
+	//tens
+	var t = Math.floor(x/10);
+	updateDigLight("st", t);
+	//units
+	var u = x % 10;
+	updateDigLight("su", u);
+}
+
+function digMinutes(x) {
+	//tens
+	var t = Math.floor(x/10);
+	updateDigLight("mt", t);
+	//units
+	var u = x % 10;
+	updateDigLight("mu", u);
+}
+
+function digHours(x) {
+	//tens
+	var t = Math.floor(x/10);
+	updateDigLight("ht", t);
+	//units
+	var u = x % 10;
+	updateDigLight("hu", u);
+}
+
+function updateDigLight(type, value) {
+	var temp;
+	//console.log(type + "|" + value)
+
+	for(var y = 0; y <= 6; y++)
+	{
+		//console.log(type + "|" + y);
+		//console.debug(temp);
+		temp = document.getElementById(type + y);
+		//console.debug(temp);
+		if(digArr[value][y] == 1)
+			temp.setAttribute("class","digOn");
+		else
+			temp.setAttribute("class","digOff");
+	}
+}

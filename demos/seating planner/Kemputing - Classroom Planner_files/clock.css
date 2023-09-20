@@ -1,0 +1,62 @@
+#c_hours rect{fill: #abcdef; }
+#c_minutes rect{	fill: #dfecba;
+				cursor:default;}
+#c_seconds rect{	fill: #cdebaf;
+				cursor:default;}
+#c_time rect {	fill: #000000;
+				cursor:default;}
+
+#c_time text {	fill: #ffffff;
+			font-size:260%;
+}
+.c_arrow{		fill: #383838;
+			stroke:#000000;
+			stroke-width:2;
+}
+
+g circle{	fill:white;
+		stroke:#000000;
+		stroke-width:3;
+}
+
+.c_on {fill:red} /*fill the binary circle*/
+.digOn{fill:red;stroke:#FF0000;stroke-width:0.5;}
+.digOff{fill:#151515;stroke:#000000;stroke-width:2;}
+
+
+
+polygon:hover{ 
+		fill:#808080;
+		cursor:pointer;
+}
+
+.c_noselect{
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.c_button rect{
+		fill:#D0D0D0;
+		stroke:#000000;
+		stroke-width:2;
+		cursor:pointer;
+}
+.c_button text{
+		fill:black;
+		stroke:none;
+		cursor:pointer;
+}
+.c_button rect:hover{	fill:#B8B8B8;}
+
+.c_button text:hover{	
+		fill:#606060;
+		stroke:1;}
+#c_stop:hover{fill:#606060;}
+
+.c_name{
+	font-family:"Verdana", Arial, sans-serif;
+	font-size:120%;
+}

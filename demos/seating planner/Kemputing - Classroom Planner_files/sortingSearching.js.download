@@ -1,0 +1,55 @@
+//girl boy girl boy or mix abilities
+function mix(x, size)
+{
+	sort(x,"gt",size);
+	//for i = 0, j, tmp; i < student.length DIV 2; ++i) Math.floor(students.length/2)
+	//for: 12345678
+	//make: 15372648
+	for (var i = 1, tmp; i < (size / 2); i = i + 2) {
+		try{
+			tmp = studentarray[i].slice(0,4);
+			studentarray[i] = studentarray[Math.floor(size/2) + i].slice(0,4);
+			studentarray[Math.floor(size/2) + i] = tmp.slice(0,4);
+		}
+		catch(err)
+		{
+		 alert("mix breaks on :" + i);
+		}
+	}
+}
+
+//insertion sort
+function sort(x, dir, size)
+{
+	//alert("sort order = " + dir + " on " + x);
+	for (var i = 1, j, tmp; i < size; ++i) {
+      tmp = studentarray[i].slice(0,4);
+	  	  
+	  if (dir == "gt")
+	  {
+		for (j = i - 1; j > 0 && studentarray[j][x] > tmp[x]; --j)
+			studentarray[j + 1] = studentarray[j].slice(0,4);
+		studentarray[j + 1] = tmp.slice(0,4);
+	  }
+	  else
+	  {
+		for (j = i - 1; j > 0 && studentarray[j][x] < tmp[x]; --j)
+			studentarray[j + 1] = studentarray[j].slice(0,4);
+		studentarray[j + 1] = tmp.slice(0,4);
+	  }
+	  //alert(studentarray[i][x]);
+   }
+}
+
+//randomise the list
+function shuffle(size)
+{
+	var randomnumber;
+	var temp;
+	for(var i = 1; i < (size - 1); i++) {
+		randomnumber=Math.floor(Math.random()*(size-1) + 1);
+		temp = studentarray[randomnumber].slice(0,4);
+		studentarray[randomnumber] = studentarray[i].slice(0,4);
+		studentarray[i] = temp.slice(0,4);
+	}
+}

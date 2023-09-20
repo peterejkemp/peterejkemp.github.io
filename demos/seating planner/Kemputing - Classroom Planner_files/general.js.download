@@ -1,0 +1,86 @@
+//give string the ability to strip blanks from the front and rear
+String.prototype.trim = function() {
+	return this.replace(/^\s+|\s+$/g,"");
+}
+String.prototype.ltrim = function() {
+	return this.replace(/^\s+/,"");
+}
+String.prototype.rtrim = function() {
+	return this.replace(/\s+$/,"");
+}
+
+//get the post variables from the URL
+function getUrlVars() {
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		vars[key] = value;
+	});
+	return vars;
+}
+
+//get the height of the viewport
+function getDocHeight() {
+    var D = document;
+    return Math.max(
+        Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+        Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+        Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+    );
+}
+//get the width of the viewport
+function getDocWidth() {
+    var D = document;
+    return Math.max(
+        Math.max(D.body.scrollWidth, D.documentElement.scrollWidth),
+        Math.max(D.body.offsetWidth, D.documentElement.offsetWidth),
+        Math.max(D.body.clientWidth, D.documentElement.clientWidth)
+    );
+}
+
+function compSVG()
+{
+	var node = document.getElementById("SVGClock");
+  var styles = {};
+  var rules = node.ownerDocument.defaultView.getMatchedCSSRules(node, '');
+
+  var i = rules.length;
+  while (i--) {
+    merge(styles, rules[i].style)
+  }
+  merge(styles, node.style);
+
+  function merge(obj, style) {
+    var i = style.length;
+    while(i--) {
+      var name = style[i];
+      obj[name] = style.getPropertyCSSValue(name);
+    }
+  }
+}
+
+
+function getInternetExplorerVersion() {
+    var rv = -1; // Return value assumes failure.
+    if (navigator.appName == 'Microsoft Internet Explorer') {
+        var ua = navigator.userAgent;
+        var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+        if (re.exec(ua) != null)
+            rv = parseFloat(RegExp.$1);
+    }
+    return rv;
+}
+function checkVersion() {
+    var msg = "You're not using Windows Internet Explorer.";
+    var ver = getInternetExplorerVersion();
+	//alert(ver);
+    if (ver > -1) {
+        if (ver >= 9.0)
+            msg = "You're using a recent copy of Windows Internet Explorer.";
+        else
+		{		
+            msg = "You need to upgrade your copy of Windows Internet Explorer or download Chrome/Firefox/Safari to use this HTML5 website.";
+			badBrowser(msg);
+		}
+    }
+    //alert(msg);
+}

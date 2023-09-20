@@ -1,0 +1,223 @@
+//svg global vars
+//http://svg-whiz.com/svg/DragAndDrop.svg
+var SVGDocument = null;
+var SVGRoot = null;
+var TrueCoords = null;
+var GrabPoint = null;
+var BackDrop = null;
+var DragTarget = null;
+var tempxy;
+
+//Set up variables for drag and drop
+function initSVG()
+{
+	SVGRoot = document.getElementsByTagName("svg")[0];
+	TrueCoords = SVGRoot.createSVGPoint();
+	GrabPoint = SVGRoot.createSVGPoint();
+	// this will serve as the canvas over which items are dragged.
+	//    having the drag events occur on the mousemove over a backdrop
+	//    (instead of the dragged element) prevents the dragged element
+	//    from being inadvertantly dropped when the mouse is moved rapidly
+}
+
+function grab(evt)
+{
+	if (!document.classoptions.mode[1].checked)
+	{
+		// find out which element we moused down on
+		var targetElement = evt.target;
+		// you cannot drag the background itself, so ignore any attempts to mouse down on it
+		var temp = targetElement.parentNode.getAttribute("class");
+		
+		if ( temp == "zemptyz" || temp == "male" || temp == "female" || temp == "highlight" || document.classoptions.mode[2].checked)
+		{
+		
+			//if you've clicked off the map, avoid the bug of moving the seats
+			if (tempxy == null){
+				//set the item moused down on as the element to be dragged
+				DragTarget = targetElement.parentNode;
+				// move this element to the "top" of the display, so it is (almost)
+				//    always over other elements (exception: in this case, elements that are
+				//    "in the folder" (children of the folder group) with only maintain
+				//    hierarchy within that group
+				DragTarget.parentNode.appendChild( DragTarget );
+				// turn off all pointer events to the dragged element, this does 2 things:
+				//    1) allows us to drag text elements without selecting the text
+				//    2) allows us to find out where the dragged element is dropped (see Drop)
+				DragTarget.setAttributeNS(null, 'pointer-events', 'none');
+				
+				//record original position of group if it doesn't change
+				tempxy = DragTarget.getAttribute("transform");
+				
+				// we need to find the current position and translation of the grabbed element,
+				//    so that we only apply the differential between the current location
+				//    and the new location
+				var transMatrix = DragTarget.getCTM();
+				GrabPoint.x = TrueCoords.x - Number(transMatrix.e);
+				GrabPoint.y = TrueCoords.y - Number(transMatrix.f);
+			}
+		}
+	}
+}
+function drag(evt)
+{
+	//console.log("hello");
+	if (!document.classoptions.mode[1].checked )
+	{
+		// account for zooming and panning
+		getTrueCoords(evt);
+		// if we don't currently have an element in tow, don't do anything
+		if (DragTarget)
+		{
+			// account for the offset between the element's origin and the
+			// exact place we grabbed it... this way, the drag will look more natural
+			var newX = TrueCoords.x - GrabPoint.x;
+			var newY = TrueCoords.y - GrabPoint.y;
+			//apply rounding functions when moving chairs
+			if(document.classoptions.mode[2].checked)
+			{
+				newX = 10 * Math.round(newX/10);
+				newY = 10 * Math.round(newY/10);
+				//resize the room
+				adjustEdges();
+			}
+			// apply a new tranform translation to the dragged element, to display
+			// it in its new location
+			DragTarget.setAttributeNS(null, 'transform', 'translate(' + newX + ',' + newY + ')');
+		}
+	}
+}
+
+function drop(evt)
+{
+	if (!document.classoptions.mode[1].checked)
+	{
+		// if we aren't currently dragging an element, don't do anything
+		if ( DragTarget )
+		{
+			// since the element currently being dragged has its pointer-events turned off,
+			//    we are afforded the opportunity to find out the element it's being dropped on
+			var targetElement = evt.target;
+			// turn the pointer-events back on, so we can grab this item later
+			DragTarget.setAttributeNS(null, 'pointer-events', 'all');
+			
+			if(!document.classoptions.mode[2].checked)
+			{
+				var temp = targetElement.parentNode.getAttribute("class");
+				
+				//then we have dropped it on a seat
+				if ( temp == "zemptyz" || temp == "male" || temp == "female" || temp == "highlight")
+				{
+					var targetid = targetElement.parentNode.getAttribute("id").slice(1);
+					var dragid = DragTarget.getAttribute("id").slice(1);
+					
+					temp = studentarray[targetid].slice(0,4);
+					studentarray[targetid] = studentarray[dragid].slice(0,4);
+					studentarray[dragid] = temp.slice(0,4);
+
+					loadChairs(false);
+				}
+				else
+				{
+					//You haven't dropped the name on a chair, reset
+					//alert("you missed!");
+
+				}
+				DragTarget.setAttributeNS(null,"transform",tempxy);	
+			}
+			else
+			{
+				//room edited, display warning
+				addSaveWarning();
+			}
+			
+
+			tempxy = null;
+			// set the global variable to null, so nothing will be dragged until we
+			// grab the next element
+			DragTarget = null;
+		}
+	}
+}
+
+function getTrueCoords(evt)
+{
+	// find the current zoom level and pan setting, and adjust the reported
+	//    mouse position accordingly
+	var newScale = SVGRoot.currentScale;
+	var translation = SVGRoot.currentTranslate;
+	TrueCoords.x = (evt.clientX - translation.x)/newScale;
+	TrueCoords.y = (evt.clientY - translation.y)/newScale;
+}
+
+function adjustEdges(){
+
+	//auto update height and width of the map
+	var maxW = 0;
+	var maxH = 0;
+	var locTStart = 0;
+	var locTStart = 0;
+	var w = 0;
+	var h = 0;
+	var inMaxW = 0;
+	var inMaxH = 0;
+	
+	var elems = document.getElementsByTagName("g");
+	//console.log(elems.length);
+	for (x = 0; x < elems.length; x++)
+	{
+		var loc = elems[x].getAttribute("transform");
+		locTStart = loc.search("translate"); //start the the translate string
+		locTEnd = loc.substring(locTStart).indexOf(')');
+		loc = loc.substring(locTStart,locTStart + locTEnd + 1);
+		//console.log(loc);
+		
+		locTStart = parseInt(loc.indexOf('('));
+		locTEnd = parseInt(loc.indexOf(','));
+		
+		//console.log("start of x: " + locTStart + " start of y: " + locTEnd);
+		// to catch IE rendering translate without a comma in between
+		if (locTEnd == -1)
+			locTEnd = parseInt(loc.indexOf(' '));
+			
+		w = parseInt(loc.substring(locTStart + 1, locTEnd));
+		
+		locTStart = parseInt(loc.indexOf(','));
+		locTEnd = parseInt(loc.indexOf(')'));
+		if (locTStart  == -1)
+			locTStart = parseInt(loc.indexOf(' '));
+		//console.log(locTStart + " | " + locTEnd);
+		
+		h = parseInt(loc.substring(locTStart + 1, locTEnd));
+
+		//get the height and width of objects contained within groups
+		var innerEls = elems[x].childNodes;
+
+		for (y = 0; y < innerEls.length; y++)
+		{
+			//if overall height and width is greater than svg attributes, adjust them			
+			try{
+				inMaxW = parseInt(innerEls[y].getAttribute("width"));
+				if ((w + inMaxW + 5) > maxW)
+					maxW = w + inMaxW + 5;
+			}
+			catch (e)
+			{}
+
+			try{
+				inMaxH = parseInt(innerEls[y].getAttribute("height"));
+				if ((h + inMaxH + 5) > maxH)
+				   maxH = h + inMaxH + 5;
+			}
+			catch (e)
+			{}
+		}
+		//console.log(x + "locX = " + w + " locY = " + h);
+	}
+	
+	//update the svg attributes
+	temp = document.getElementsByTagName("svg")[0];
+	temp.setAttributeNS(null, "height", maxH);
+	temp.setAttributeNS(null, "width", maxW);
+	//console.log("X:" + maxH + " w:" + maxW);
+}

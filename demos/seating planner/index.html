@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0032)http://kemputing.com/classroom/# -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <title>Kemputing - Classroom Planner</title>
+
+  <script type="text/javascript" async="" src="./Kemputing - Classroom Planner_files/ga.js.download"></script><script type="text/javascript" src="./Kemputing - Classroom Planner_files/jquery-1.6.2.min.js.download"></script>
+  <script type="text/javascript" src="./Kemputing - Classroom Planner_files/jquery-ui-1.8.16.custom.min.js.download"></script>
+  
+  <script type="text/javascript" src="./Kemputing - Classroom Planner_files/general.js.download"></script>
+  <script type="text/javascript" src="./Kemputing - Classroom Planner_files/dragging.js.download"></script> 
+  <script type="text/javascript" src="./Kemputing - Classroom Planner_files/functions.js.download"></script>
+  <script type="text/javascript" src="./Kemputing - Classroom Planner_files/exportXML.js.download"></script>
+  <script type="text/javascript" src="./Kemputing - Classroom Planner_files/importXML.js.download"></script>  
+  <script type="text/javascript" src="./Kemputing - Classroom Planner_files/createSVG.js.download"></script>
+  <script type="text/javascript" src="./Kemputing - Classroom Planner_files/IEhacks.js.download"></script>
+  <script type="text/javascript" src="./Kemputing - Classroom Planner_files/sortingSearching.js.download"></script>
+  <script type="text/javascript" src="./Kemputing - Classroom Planner_files/popup.js.download"></script>
+ 
+  <script type="text/javascript" src="./Kemputing - Classroom Planner_files/clock.js.download"></script>
+  
+  
+  <link href="./Kemputing - Classroom Planner_files/rooms.css" rel="stylesheet" type="text/css">
+  <link href="./Kemputing - Classroom Planner_files/clock.css" rel="stylesheet" type="text/css">
+  <link href="./Kemputing - Classroom Planner_files/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css">
+  
+  <script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-27986118-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body onload="load()">
+  <script>
+	$(function() {
+		$( "#tabs" ).tabs();
+	});
+	$(function() {
+		$( "#laytabs" ).tabs();
+	});
+	</script>
+<div id="title"><a href="http://www.kemputing.com/"><img src="./Kemputing - Classroom Planner_files/house.png"> - back to Kemputing</a> | <a href="http://www.youtube.com/user/kemputing"><img src="./Kemputing - Classroom Planner_files/television.png"> - help videos</a> | <a href="https://twitter.com/#!/peterejkemp"><img src="./Kemputing - Classroom Planner_files/email.png"> - contact</a></div>
+<div id="page">
+	<div id="left">
+		<div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+			<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+				<li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="http://kemputing.com/classroom/#tabs-1">Select</a></li>
+				<li class="ui-state-default ui-corner-top"><a href="http://kemputing.com/classroom/#tabs-2">Sort</a></li>
+				<li class="ui-state-default ui-corner-top"><a href="http://kemputing.com/classroom/#tabs-3">Load/Save</a></li>
+			</ul>
+			<div id="tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+				<div class="optbox opttop" id="classlists">
+					Classroom options:
+					<select id="selectroom" onchange="loadSVGMap();loadChairs(true)">
+					<option value="room2.svg">room2</option><option value="room3.svg">room3</option><option value="room4.svg">room4</option><option value="room5.svg">room5</option><option value="room6.svg">room6</option><option value="room7.svg">room7</option><option value="room8.svg">room8</option><option value="room9.svg">room9</option><option value="S110.svg">S110</option><option value="S111.svg">S111</option><option value="S204.svg">S204</option><option value="S108.svg">S108</option><option value="N225.svg">N225</option><option value="test.svg">test</option><option value="room1.svg">room1</option></select>
+					<select id="selectclass" onchange="loadStudentList(false);loadChairs(true)">
+					<option value="form2.xml">form2</option><option value="form3.xml">form3</option><option value="phpclass.xml">phpclass</option><option value="form1.xml">form1</option></select>
+					
+					<select id="studentlist">
+					</select>
+					
+					<button class="button" id="editClass" type="submit" onclick="showEditClass()"><img src="./Kemputing - Classroom Planner_files/vcard_edit.png"> Edit Class</button>
+				</div>
+				<div id="selResponse">&nbsp;</div>
+				<div class="optbox optmid" id="roomlists">
+					Mode:
+					<form name="classoptions">
+						<input type="radio" name="mode" value="swap" id="mode1" onclick="roomMode(&#39;swap&#39;)" checked="">
+						<label for="mode1">Seating plan</label><br>
+						<input type="radio" name="mode" value="highlight" onclick="roomMode(&#39;highlight&#39;)" id="mode2">
+						<label for="mode2">Highlight</label><br>
+						<input type="radio" name="mode" value="moveseats" onclick="roomMode(&#39;moveSeats&#39;)" id="mode3">
+						<label for="mode3">Edit room</label>
+						<div id="movTools" class="rearrange">Chairs: <button type="button" value="+" name="+" id="AddChair" onclick="arrAddChair(); addSaveWarning();"><img src="./Kemputing - Classroom Planner_files/add.png"></button><button type="button" value="-" name="-" id="DelChair" onclick="arrDelChair(); addSaveWarning();"><img src="./Kemputing - Classroom Planner_files/delete.png"></button><br>Plants:   <button type="button" value="+" name="+" id="AddPlant" onclick="arrAddPlant(); addSaveWarning();"><img src="./Kemputing - Classroom Planner_files/add.png"></button><button type="button" value="-" name="-" id="DelPlant" onclick="arrDelPlant(); addSaveWarning();"><img src="./Kemputing - Classroom Planner_files/delete.png"></button></div>
+					</form>
+				</div>
+			</div>
+			<div id="tabs-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+				<div class="optbox opttop" id="seatorder">
+					<form name="orderselect">
+						Seating order:<br>
+						<input type="radio" name="order" value="xml" id="sor1" onclick="loadChairs(true)">
+						<label for="sor1">File order</label><br>
+						<input type="radio" name="order" value="alphasur" id="sor2" checked="" onclick="loadChairs(true)">
+						<label for="sor2">Alphabetical (Sur)</label><br>
+						<input type="radio" name="order" value="alphafor" id="sor3" onclick="loadChairs(true)">
+						<label for="sor3">Alphabetical (For)</label><br>
+						<input type="radio" name="order" value="ability" id="sor4" onclick="loadChairs(true)">
+						<label for="sor4">Ability</label><br>
+						<input type="radio" name="order" value="abilitymix" id="sor5" onclick="loadChairs(true)">
+						<label for="sor5">Mixed Ability</label><br>
+						<input type="radio" name="order" value="random" id="sor6" onclick="loadChairs(true)">
+						<label for="sor6">Random</label><br>
+						<input type="checkbox" name="reverse" value="reverse" id="revChkOrder" onclick="loadChairs(true)">
+						<label for="revChkOrder">reverse order</label>
+					</form>
+				</div>
+				<div>&nbsp;</div>
+				<div class="optbox optmid" id="genderorder">
+					<form name="genderselect">
+						Gender order:<br>
+						<input type="radio" name="gender" value="none" id="gor1" checked="" onclick="loadChairs(true)">
+						<label for="gor1">None</label> <br>
+						<input type="radio" name="gender" value="girlboy" id="gor2" onclick="loadChairs(true)">
+						<label for="gor2">Girl Boy Girl Boy</label><br>
+						<input type="radio" name="gender" value="block" id="gor3" onclick="loadChairs(true)">
+						<label for="gor3">Gender Blocks</label><br>
+						<input type="checkbox" name="reverse" value="reverse" id="revChkGender" onclick="loadChairs(true)">
+						<label for="revChkGender">reverse order</label>
+					</form>
+				</div>
+				<br>
+				<div>
+					
+				</div>
+			</div>
+			<div id="tabs-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+				<div class="optbox opttop">
+					Room functions:
+					<button class="button" id="createSVG" type="submit" onclick="showOptions()"><img src="./Kemputing - Classroom Planner_files/add.png"> New Room</button>
+					<br>
+					<button class="button" id="saveSVG" type="submit" onclick="saveRoom()"><img src="./Kemputing - Classroom Planner_files/table_save.png"> Save Changes</button>
+					<br>
+					<button class="button" id="dumpDOM" type="submit" onclick="showExportOptions()"><img src="./Kemputing - Classroom Planner_files/lorry.png"> Export Room</button>	
+				</div>
+				<div id="saveResponse">Save in progress...</div>
+				<div class="optbox optmid" id="droparea">
+					Drop files below to load:
+					<div id="dropclass" class="noselect">Class List</div>
+					<div id="droproom" class="noselect">Room Layout</div>
+					<output id="list"></output>
+				</div>
+
+			</div>
+		</div>
+		<div class="optbox optbot" id="buttons">
+			<button class="button" id="seatStudents" type="submit" onclick="showClock()"><img src="./Kemputing - Classroom Planner_files/clock.png"> Clock</button>
+
+			<button class="button" id="pickStudents" type="submit" onclick="pickStudent(30)"><img src="./Kemputing - Classroom Planner_files/user.png"> Pick Student</button>
+		</div>
+		<div id="copyright">Copyright PKemp 2012 | Icons from famfamfam.com</div>
+	</div>
+	<div id="laytabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+		<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+			<li id="litabs-4" class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="http://kemputing.com/classroom/#tabs-4">Classroom</a></li>
+			<!--<li id="litabs-5"><a href="#tabs-5">Timer</a></li>-->
+		</ul>
+		<div id="tabs-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+			
+			<div id="SVGMap"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" dc="http://purl.org/dc/elements/1.1/" cc="http://creativecommons.org/ns#" rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" onmousedown="grab(evt)" onmousemove="drag(evt)" onmouseup="drop(evt)" onload="initSVG()" id="svgRoom" width="415" height="605"><g transform="translate(50,5) rotate(00,0,0)" id="gw"><rect id="whiteboard" height="10" width="200"></rect></g><g transform="translate(260,40) rotate(00,0,0)" id="gt"><rect id="teacher" height="50" width="150"></rect><text id="iteach" x="10" y="40" class="noselect">Teacher</text></g><g transform="translate(310,100)" onclick="highlightchair(evt)" id="g11" class="male" pointer-events="all"><rect id="d11" y="0" x="0" height="50" width="100"></rect><text id="n11" y="40" x="5" class="name noselect">Michael S</text><text id="i11" y="15" x="5" class="identity noselect">11</text></g><g transform="translate(310,150)" onclick="highlightchair(evt)" id="g12" class="female" pointer-events="all"><rect id="d12" y="0" x="0" height="50" width="100"></rect><text id="n12" y="40" x="5" class="name noselect">Sharon</text><text id="i12" y="15" x="5" class="identity noselect">12</text></g><g transform="translate(310,200)" onclick="highlightchair(evt)" id="g13" class="female" pointer-events="all"><rect id="d13" y="0" x="0" height="50" width="100"></rect><text id="n13" y="40" x="5" class="name noselect">Denise</text><text id="i13" y="15" x="5" class="identity noselect">13</text></g><g transform="translate(310,250)" onclick="highlightchair(evt)" id="g14" class="female" pointer-events="all"><rect id="d14" y="0" x="0" height="50" width="100"></rect><text id="n14" y="40" x="5" class="name noselect">Elizabeth</text><text id="i14" y="15" x="5" class="identity noselect">14</text></g><g transform="translate(310,300)" onclick="highlightchair(evt)" id="g15" class="male" pointer-events="all"><rect id="d15" y="0" x="0" height="50" width="100"></rect><text id="n15" y="40" x="5" class="name noselect">Dennis W</text><text id="i15" y="15" x="5" class="identity noselect">15</text></g><g transform="translate(310,350)" onclick="highlightchair(evt)" id="g16" class="zemptyz" pointer-events="all"><rect id="d16" y="0" x="0" height="50" width="100"></rect><text id="n16" y="40" x="5" class="name noselect"></text><text id="i16" y="15" x="5" class="identity noselect">16</text></g><g transform="translate(310,400)" onclick="highlightchair(evt)" id="g17" class="zemptyz" pointer-events="all"><rect id="d17" y="0" x="0" height="50" width="100"></rect><text id="n17" y="40" x="5" class="name noselect"></text><text id="i17" y="15" x="5" class="identity noselect">17</text></g><g transform="translate(310,450)" onclick="highlightchair(evt)" id="g18" class="zemptyz" pointer-events="all"><rect id="d18" y="0" x="0" height="50" width="100"></rect><text id="n18" y="40" x="5" class="name noselect"></text><text id="i18" y="15" x="5" class="identity noselect">18</text></g><g transform="translate(310,500)" onclick="highlightchair(evt)" id="g19" class="zemptyz" pointer-events="all"><rect id="d19" y="0" x="0" height="50" width="100"></rect><text id="n19" y="40" x="5" class="name noselect"></text><text id="i19" y="15" x="5" class="identity noselect">19</text></g><g transform="translate(310,550)" onclick="highlightchair(evt)" id="g20" class="zemptyz" pointer-events="all"><rect id="d20" y="0" x="0" height="50" width="100"></rect><text id="n20" y="40" x="5" class="name noselect"></text><text id="i20" y="15" x="5" class="identity noselect">20</text></g><g transform="translate(10,40)" onclick="highlightchair(evt)" id="g1" class="male" pointer-events="all"><rect id="d1" y="0" x="0" height="50" width="100"></rect><text id="n1" y="40" x="5" class="name noselect">Henry</text><text id="i1" y="15" x="5" class="identity noselect">1</text></g><g transform="translate(10,90)" onclick="highlightchair(evt)" id="g2" class="female" pointer-events="all"><rect id="d2" y="0" x="0" height="50" width="100"></rect><text id="n2" y="40" x="5" class="name noselect">Philippa</text><text id="i2" y="15" x="5" class="identity noselect">2</text></g><g transform="translate(10,140)" onclick="highlightchair(evt)" id="g3" class="male" pointer-events="all"><rect id="d3" y="0" x="0" height="50" width="100"></rect><text id="n3" y="40" x="5" class="name noselect">Kermit</text><text id="i3" y="15" x="5" class="identity noselect">3</text></g><g transform="translate(10,190)" onclick="highlightchair(evt)" id="g4" class="male" pointer-events="all"><rect id="d4" y="0" x="0" height="50" width="100"></rect><text id="n4" y="40" x="5" class="name noselect">Tony</text><text id="i4" y="15" x="5" class="identity noselect">4</text></g><g transform="translate(10,240)" onclick="highlightchair(evt)" id="g5" class="male" pointer-events="all"><rect id="d5" y="0" x="0" height="50" width="100"></rect><text id="n5" y="40" x="5" class="name noselect">Dennis I</text><text id="i5" y="15" x="5" class="identity noselect">5</text></g><g transform="translate(10,290)" onclick="highlightchair(evt)" id="g6" class="male" pointer-events="all"><rect id="d6" y="0" x="0" height="50" width="100"></rect><text id="n6" y="40" x="5" class="name noselect">Barry</text><text id="i6" y="15" x="5" class="identity noselect">6</text></g><g transform="translate(10,340)" onclick="highlightchair(evt)" id="g7" class="female" pointer-events="all"><rect id="d7" y="0" x="0" height="50" width="100"></rect><text id="n7" y="40" x="5" class="name noselect">Kate</text><text id="i7" y="15" x="5" class="identity noselect">7</text></g><g transform="translate(10,390)" onclick="highlightchair(evt)" id="g8" class="female" pointer-events="all"><rect id="d8" y="0" x="0" height="50" width="100"></rect><text id="n8" y="40" x="5" class="name noselect">Pippa</text><text id="i8" y="15" x="5" class="identity noselect">8</text></g><g transform="translate(10,440)" onclick="highlightchair(evt)" id="g9" class="male" pointer-events="all"><rect id="d9" y="0" x="0" height="50" width="100"></rect><text id="n9" y="40" x="5" class="name noselect">Michael P</text><text id="i9" y="15" x="5" class="identity noselect">9</text></g><g transform="translate(10,490)" onclick="highlightchair(evt)" id="g10" class="male" pointer-events="all"><rect id="d10" y="0" x="0" height="50" width="100"></rect><text id="n10" y="40" x="5" class="name noselect">Wayne</text><text id="i10" y="15" x="5" class="identity noselect">10</text></g><g transform="translate(160,290)" id="g21" onclick="highlightchairs(evt)" class="zemptyz" pointer-events="all"><rect y="0" x="0" height="50" width="100" stroke="black" stroke-width="1" id="d21"></rect><text y="40" x="5" class="name noselect" id="n21"></text><text y="15" x="5" class="identity noselect" id="i21">21</text></g><g transform="translate(160,340)" id="g22" onclick="highlightchairs(evt)" class="zemptyz" pointer-events="all"><rect y="0" x="0" height="50" width="100" stroke="black" stroke-width="1" id="d22"></rect><text y="40" x="5" class="name noselect" id="n22"></text><text y="15" x="5" class="identity noselect" id="i22">22</text></g></svg></div>
+		</div>
+		<div id="tabs-5">
+			
+		</div>
+	</div>
+</div>
+
+<div id="mouseloc">0,0</div>
+<div id="popup"></div>
+<!--GPL3.0 icons from http://www.famfamfam.com/lab/icons/silk/ see license there-->
+
+
+</body></html>

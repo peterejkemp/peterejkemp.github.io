@@ -1,0 +1,382 @@
+
+//initialise div to be the size of the page
+function showDimmerDiv()
+{
+	//delete any current to handle page resize
+	hidePopups();
+	
+	var newDiv = document.createElement("div");
+	newDiv.className += "dimmer";
+	newDiv.id = "dimmer";
+	// newDiv.style.width = window.screen.width + "px";
+	// newDiv.style.height = window.screen.height + "px";
+	newDiv.style.width = getDocWidth() + "px";
+	newDiv.style.height = getDocHeight() + "px";
+    document.body.appendChild(newDiv);
+	
+}
+
+function hidePopups()
+{
+	var ele = document.getElementById("dimmer");
+	if (ele && ele.parentNode && ele.parentNode.removeChild) {
+		ele.parentNode.removeChild(ele);
+	}
+	
+	ele = document.getElementById("puRoomOptions");
+	if (ele && ele.parentNode && ele.parentNode.removeChild) {
+		ele.parentNode.removeChild(ele);
+	}
+	
+	ele = document.getElementById("puEditClass");
+	if (ele && ele.parentNode && ele.parentNode.removeChild) {
+		ele.parentNode.removeChild(ele);
+	}
+	
+	ele = document.getElementById("puPicker");
+	if (ele && ele.parentNode && ele.parentNode.removeChild) {
+		ele.parentNode.removeChild(ele);
+	}
+	
+	ele = document.getElementById("puExportOptions");
+	if (ele && ele.parentNode && ele.parentNode.removeChild) {
+		ele.parentNode.removeChild(ele);
+	}
+	
+	ele = document.getElementById("puClock");
+	if (ele && ele.parentNode && ele.parentNode.removeChild) {
+		ele.parentNode.removeChild(ele);
+	}
+	
+	ele = document.getElementById("puBrowser");
+	if (ele && ele.parentNode && ele.parentNode.removeChild) {
+		ele.parentNode.removeChild(ele);
+	}
+	
+	//console.log("deleted the popups");
+}
+
+function showEditClass()
+{
+	showDimmerDiv();
+	var w = 400;
+	var h = 400;
+	var newDiv = document.createElement("div");
+	newDiv.className += "popup";
+	newDiv.id = "puEditClass";
+	newDiv.style.width = "auto";//w + "px";
+	newDiv.style.height = "auto";//h + "px";
+	newDiv.style.left = ((getDocWidth() - w) / 2) + "px";
+	newDiv.style.top = "20px";//((window.screen.height - h) / 6) + "px";
+	newDiv.innerHTML = '<h1>Edit Class</h1>\
+			Enter each student on a new line as follows:<br/>\
+			<pre>firstname,surname,gender,ability</pre>\
+			<div id="puClassList"><textarea rows="20" cols="50" id="puClassCSV">' + loadCSVClass() + '</textarea></div>\
+			<div id="puright"></div>\
+			<button class="button" id="puSaveChanges" type="submit" onclick="saveCSVClass()"><img src="images/vcard_edit.png"/> Save Changes</button>\
+			<button class="button" id="puCancel" type="submit" onclick="hidePopups()"><img src="images/cancel.png"/> Cancel</button>';
+    document.body.appendChild(newDiv);
+}
+
+function showChosenStudent(name)
+{
+	showDimmerDiv();
+	var w = 200;
+	var h = 180;
+	var newDiv = document.createElement("div");
+	newDiv.className += "popup";
+	newDiv.id = "puPicker";
+	newDiv.style.width = "auto";//w + "px";
+	newDiv.style.height = "auto";//h + "px";
+	newDiv.style.left = ((getDocWidth() - w) / 2) + "px";
+	newDiv.style.top = ((getDocHeight() - h) / 4) + "px";
+	newDiv.innerHTML = '<center><img src="images/star.png"/></c><div class="chosen">'+name+'</div>\
+			<center><p>you have been chosen</p></center>\
+			<button class="button" id="puCancel" type="submit" onclick="hidePopups()"><img src="images/cancel.png"/> Close</button>';
+    document.body.appendChild(newDiv);
+	document.getElementById("puCancel").focus();
+}
+
+
+function showOptions()
+{	
+	showDimmerDiv();
+	
+	var w = 260;
+	var h = 280;
+	var newDiv = document.createElement("div");
+	newDiv.className += "popup";
+	newDiv.id = "puRoomOptions";
+	newDiv.style.width = w + "px";
+	newDiv.style.height = h + "px";
+	newDiv.style.left = ((getDocWidth() - w) / 2) + "px";
+	newDiv.style.top = ((getDocHeight() - h) / 4) + "px";
+	newDiv.innerHTML = '<div class="warning">Warning: This may irreversably replace the room you have been working on!</div>\
+			<input type="number" id="puRows" class="puNum" value="5" min="1" onchange="maxChairs()" oninput="maxChairs()"/> number of rows<br />\
+			<input type="number" id="puCols" class="puNum" value="5" min="1" onchange="maxChairs()" oninput="maxChairs()"/> number of columns<br />\
+			<input type="number" id="puChairs" class="puNum" value="25" min="1"/> max number of chairs<br />\
+			<select id="puPlan">\
+				<option value="row">rows</option>\
+				<option value="column">columns</option>\
+			</select> chair plan<br />\
+			<select id="puDir">\
+				<option value="top">top</option>\
+				<option value="bottom">bottom</option>\
+			</select> teacher location<br />\
+			<hr/>\
+			<input type="number" id="puPlants" class="puNum" value="0" min="0"/> number of plants<br />\
+			<hr/>\
+			<button class="button" id="pucreateSVG" type="submit" onclick="conCreateSVG()"><img src="images/add.png"/> New Room</button>\
+			<button class="button" id="seatExit" type="submit" onclick="hidePopups()"><img src="images/cancel.png"/> Cancel</button>';
+    document.body.appendChild(newDiv);
+}
+
+function showExportOptions()
+{	
+	showDimmerDiv();
+	
+	var w = 400;
+	var h = 280;
+	var newDiv = document.createElement("div");
+	newDiv.className += "popup";
+	newDiv.id = "puExportOptions";
+	newDiv.style.width = w + "px";
+	newDiv.style.height = "auto";//h + "px";
+	newDiv.style.left = ((getDocWidth() - w) / 2) + "px";
+	newDiv.style.top = ((getDocHeight() - h) / 6) + "px";
+	//width="1000px" height="600px"
+	newDiv.innerHTML = 'Full SVG text: <br/><div class="puTop"><textarea rows="10" cols="50" id="puClassCSV">' + printFullSVG() + '</textarea></div>\
+	<button class="button" id="pusavePNG" type="submit" onclick="exportSVGCSS()" disabled><img src="images/image.png"/> Save as PNG</button>\
+	<button class="button" id="seatExit" type="submit" onclick="downloadRoom()"><img src="images/table_save.png"/> Download SVG file </button></span>\
+	<button class="button" id="puCancel" type="submit" onclick="hidePopups()"><img src="images/cancel.png"/> Cancel</button>\
+	<div id="downloadResponse">&nbsp;</div>';
+    document.body.appendChild(newDiv);
+	//<canvas id="canvasRoom" height="1px" ></canvas>\
+	
+	var svgDoc = document.getElementById('SVGMap');
+	var serializer = new XMLSerializer();
+	var xmlString = serializer.serializeToString(svgDoc);
+	//console.log("follows:" + xmlString);
+	
+	//canvg('canvasRoom', "roomlayouts/S110.svg", { ignoreMouse: true, ignoreAnimation: true }) 
+	//printFullSVG();
+}
+
+function showClock()
+{	
+	showDimmerDiv();
+	
+	var newDiv = document.createElement("div");
+	newDiv.className += "popup";
+	newDiv.id = "puClock";
+	newDiv.style.width = "auto";
+	newDiv.style.height = "auto";
+	newDiv.style.left = ((getDocWidth() - 900) / 2) + "px";
+	newDiv.style.top = 50 + "px";
+	newDiv.innerHTML = '<div id="SVGClock">hello</div>\
+	<input type="checkbox" id="c_autopick" name="c_autopick" value="autopick" checked /><label for="c_autopick"> Pick student after timer complete</label><br />\
+	<input type="checkbox" id="c_sound" name="c_sound" value="sound" checked /><label for="c_sound"> Enable ticking</label><br />\
+	<select class="" id="slClock" onchange="loadClock();clockStop()">\
+	<option value="digitalClock" selected>Digital</option>\
+	<option value="binaryClock">Binary</option>\
+	<option value="analogueClock">Analogue</option>\
+	</select>\
+	<button class="button" id="puCancel" type="submit" onclick="hidePopups();clockStop()"><img src="images/cancel.png"/> Close</button>';
+    document.body.appendChild(newDiv);
+	//<canvas id="canvasRoom" height="1px" ></canvas>\
+	loadClock();
+}
+
+
+function badBrowser(msg)
+{	
+	showDimmerDiv();
+	
+	var newDiv = document.createElement("div");
+	newDiv.className += "popup";
+	newDiv.id = "puBrowser";
+	newDiv.style.width = "auto";
+	newDiv.style.height = "auto";
+	newDiv.style.left = ((getDocWidth() - 900) / 2) + "px";
+	newDiv.style.top = 50 + "px";
+	newDiv.innerHTML = '<h2>Are you ready to HTML5?</h2><p>';
+	newDiv.innerHTML += msg;	
+	newDiv.innerHTML += ' Make sure you are using the latest browser:\
+			<ul>\
+				<li><a href="http://www.google.co.uk/chrome">Chrome</a> - <a href="http://portableapps.com/apps/internet/google_chrome_portable">portable</a></li>\
+				<li><a href="http://portableapps.com/apps/internet/firefox_portable">Firefox </a> - <a href="http://portableapps.com/apps/internet/google_chrome_portable">portable</a></li>\
+				<li><a href="http://windows.microsoft.com/en-GB/internet-explorer/products/ie/home">IE 9.0+</a></li>\
+				<li><a href="http://www.apple.com/safari/">Safari</a></li>\
+			</ul>\
+			</><p>Check out what you are missing: <a href="http://www.youtube.com/watch?feature=player_embedded&v=-Hx8vybc-bE">Intro video</>\
+			</p>\
+	<button class="button" id="puCancel" type="submit" onclick="hidePopups()"><img src="images/cancel.png"/> Close</button>';
+    document.body.appendChild(newDiv);
+	//<canvas id="canvasRoom" height="1px" ></canvas>\
+	loadClock();
+}
+
+
+
+//
+
+//For the create room popup adjust the max chairs depending on the rows and columns
+function maxChairs()
+{
+
+	document.getElementById("puChairs").value = parseInt(document.getElementById("puRows").value) * parseInt(document.getElementById("puCols").value);
+}
+
+//function to construct the createSVG call
+function conCreateSVG()
+{
+	var cols, rows, chairs, plants, row, dir;
+	cols = parseInt(document.getElementById("puCols").value);
+	rows = parseInt(document.getElementById("puRows").value);
+	chairs = parseInt(document.getElementById("puChairs").value);
+	plants = parseInt(document.getElementById("puPlants").value);
+	row = document.getElementById("puPlan").value;
+	dir = document.getElementById("puDir").value;
+	
+	createSVG(rows, cols, chairs, row, dir, plants);
+	loadChairs(true);
+	adjustEdges();
+	hidePopups();
+	addSaveWarning();
+}
+
+//loads the class in csv format
+function loadCSVClass()
+{
+	//extract list from the studentarray
+	var temp = "";
+	var count = 1;
+	while (count < studentarray.length)
+	{	
+		temp += studentarray[count][0] + ",";
+		temp += studentarray[count][1] + ",";
+		temp += studentarray[count][2] + ",";
+		temp += studentarray[count][3];
+		if ((count+1) != studentarray.length)
+			temp += "\n";
+		//console.log(count);
+		count++;
+	}
+	return temp;
+}
+
+//save student list if changed
+function saveCSVClass()
+{	
+	var temp, people, count, warning;
+	temp = document.getElementById("puClassCSV").value;
+	
+	importCSV(temp);
+	
+}
+
+
+function importCSV(temp)
+{
+	temp = String(temp);
+	//console.debug(temp);
+	people = temp.split("\n");
+	count = 0;
+	warning = "";
+	
+	
+	//console.debug(temp);
+	//clear previous class list
+	studentarray.length = 0;
+	
+	//console.log(people.length);
+	while (count < people.length)
+	{
+		temp = people[count].split(",");
+		//console.log(temp.length);
+		try{
+			if(temp.length > 1)
+			{
+				studentarray[count+1] = new Array();
+				studentarray[count+1][0] = temp[0].trim();
+				studentarray[count+1][1] = temp[1].trim();
+				studentarray[count+1][2] = temp[2].trim();
+				studentarray[count+1][3] = temp[3].trim();
+			}
+			else
+			{
+				//this is a blank line, ignore it.
+			}
+		}
+		catch(e)
+		{
+			if (warning == "")
+				warning += "ERROR:"
+			warning += " line " + (count + 1) + " /";
+		}
+		customClass = true;
+		//console.log(count + ":" + temp[0] + "|" + temp[1] + "|" + temp[2] + "|" + temp[3]);
+		count++;
+	}
+	
+	//were there any errors in parsing the text?
+	if (warning == "")
+	{//see if they can reload correctly
+		if (loadChairs(false))
+			hidePopups();
+	}
+	else
+	{
+		warning += " Do you have 3 commas?";
+		alert(warning);
+	}
+}
+
+function addSaveWarning()
+{
+	if (document.getElementById("warning") == null)
+	{
+		//alert("hello");
+		var svgNode = document.getElementById("SVGMap");
+		var parentNode = document.getElementById("tabs-4");
+		var temp = document.createElement("div");
+		
+		var temp = document.createElement("span");
+		temp.className += "warning";
+		temp.id = "warning";
+		var innerEl = document.createElement("input");
+		innerEl.setAttributeNS(null,"type","button");
+		innerEl.setAttributeNS(null,"value","here");
+		innerEl.setAttributeNS(null,"onlclick","saveSVG()");
+		
+		temp.appendChild(innerEl);
+		temp.innerHTML = temp.innerHTML + " to save";
+		parentNode.insertBefore(temp,svgNode);
+		
+		
+		temp.innerHTML = "<strong>" + document.getElementById('selectroom').options[selected].text + "</strong> - layout changed, <a href='#' onclick='saveRoom()'>click to save</a>";
+	}
+}
+
+function deleteSaveWarning()
+{
+	//clear warning message
+	var parentNode = document.getElementById("tabs-4");
+	var temp = document.getElementById("warning");
+	try
+	{
+	parentNode.removeChild(temp);
+	}
+	catch(e)
+	{}
+}
+
+
+function exportSVG()
+{
+	var selObj = document.getElementById('selectroom');
+	selected = selObj.selectedIndex;
+	var SelectedRoomAddress = selObj.options[selected].value;
+	var url="roomlayouts/" + SelectedRoomAddress + "?type=application/octet-stream"; //trying to force a download
+    window.open(url,'Download');
+}

@@ -1,0 +1,156 @@
+var d1;
+var temp;
+var chairBool;
+var chairID;
+
+/* Dump the DOM into a new window. */
+function printSVG()
+{
+	temp = "";
+	dump_dom(document.getElementsByTagName('SVG')[0]);
+	return temp;
+
+	//return StringtoXML(temp);
+	//uriContent = "data:application/octet-stream," + encodeURIComponent(temp);
+	//newWindow=window.open(uriContent, 'class.xml');
+	
+	//return printFullSVG();
+}
+
+function printFullSVG()
+{
+	//var svgDoc = document.getElementsByTagName('svg')[0];
+
+	var svgDoc = document.getElementById('SVGMap');
+	//console.debug(svgDoc);
+	var serializer = new XMLSerializer();
+	var xmlString = serializer.serializeToString(svgDoc.firstChild);
+	//console.log("follows:" + xmlString);
+	return xmlString;
+}
+
+
+function dump_dom (tree)
+{
+    if (typeof(tree) == "undefined") {
+        printFullSVG(tree);
+		// alert ("Sorry, this script doesn't work with Internet Explorer.");
+        return;
+    }
+    traverse_nodes (tree);
+	
+    //var w1 = window.open ("", 'DOM_output');
+    //d1 = w1.document; 
+    //d1.open(); 
+    //d1.writeln ('<h1>Tree of nodes</h1>\n<ol>');
+    //d1.close();	
+	//console.log(temp)
+}
+
+/* Possible types of nodes. */
+var node_types = new Array (
+    "FAKE NODE", // fix array offset
+    "ELEMENT NODE",
+    "ATTRIBUTE NODE",
+    "TEXT NODE",
+    "CDATA SECTION NODE",
+    "ENTITY REFERENCE NODE",
+    "ENTITY NODE",
+    "PROCESSING INSTRUCTION NODE",
+    "COMMENT NODE",
+    "DOCUMENT NODE",
+    "DOCUMENT TYPE NODE",
+    "DOCUMENT FRAGMENT NODE",
+    "NOTATION NODE"
+);
+
+/* Write out a value in a certain colour, if the value exists,
+   otherwise do nothing. */
+
+// function writeDetails(name, value)
+// {
+	// if (value != null && value != "null" && value != "" && value != "undefined" && value != "[object SVGAnimatedString]")
+	// {
+		// temp = temp + " " + name + "=\"" + value + "\"";
+	// }
+// }
+
+/* Traverse the sub-nodes of 'node' */
+
+function traverse_nodes (node) 
+{
+    // if (typeof(node) == "undefined") {
+       
+    // }
+	//console.log(typeof(node));
+	
+    if (node.nodeType == Node.ELEMENT_NODE)
+	{
+		temp = temp + '\n<' + node.nodeName + '';
+	}
+    else
+	{
+		if (node.nodeName != "#text")
+		{
+			temp = temp + '\n ' + node.nodeName + '';	
+			temp = temp + " = \"" + node.nodeValue + "\"";//value
+			//dirty hack to get chair text IDs
+			if (node.nodeName == "class" && node.nodeValue == "identity noselect")
+			{
+				chairBool = true;
+			}
+			if (node.nodeName == "id")
+			{
+				chairID = node.nodeValue;
+			}
+		}
+	}
+    // Write the node's ID, class name, and value if they exist.
+	//writeDetails("id", node.id);
+	//writeDetails("class", node.className);
+	
+    // If the node is not a text node or an element node, print its
+    // type.
+    if (node.nodeType != Node.TEXT_NODE &&
+        node.nodeType != Node.ELEMENT_NODE) {
+        var node_type = node_types[node.nodeType].toLowerCase ();
+    }
+	
+    if (node.attributes && node.attributes.length) { 
+        // Write the node's attributes, numbered A, B, C.
+        for (var i = 0; i < node.attributes.length; ++i)
+            traverse_nodes (node.attributes.item(i),i);
+		
+		//simple single tag close
+		if (node.childNodes.length == 0)
+		{
+			temp = temp + '/>';
+		}
+		else
+		{
+			//add the trailing bracket
+			if (node.nodeType == Node.ELEMENT_NODE)
+			{
+				temp = temp + '>';
+			}
+		}
+    }
+    if (node.childNodes && node.childNodes.length) { 
+        // Write the node's child nodes, numbered 1, 2, 3.
+        for (var i = 0; i < node.childNodes.length; ++i)
+            traverse_nodes (node.childNodes.item(i), i);
+
+		//add the closing tag		
+		if (node.nodeType == Node.ELEMENT_NODE)
+		{
+			//dirty hack to keep text IDs
+			if(chairBool)
+			{
+				temp = temp + chairID.substring(1);;
+				chairBool = false;
+				chairID = "";
+			}
+			temp = temp + '\n</' + node.nodeName + '>';
+		}
+    }
+}
