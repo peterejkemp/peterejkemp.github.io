@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>MASTEMR - 07 Inquiry learning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="../css/mastemr.css">
+</head>
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="index.qmd" class="navbar-brand navbar-brand-logo">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="index.qmd">
+    <span class="navbar-title">MASTEMR</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools ms-auto">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/07-Inquiry_learning_in_science_RB_version.html">07 Inquiry learning</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Sessions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">02 Intro to R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Introduction to R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-2-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Loading packages and exploring data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-3-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Piping and dplyr</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Intro to graphs</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-Differing_performance_in_STEM_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Descriptive Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Presentations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Introduction to PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 Maths anxiety</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-Inquiry_learning_in_science_RB_version.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">07 Inquiry learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-Science_capital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08 Science capital</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09 Assignment 3 tutorials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-teachers_relationships_and_STEM_achievement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 Correlation and regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 Selecting statistical tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-effective_international_STEM_ed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 Effective international STEM education</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Data sets</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A2-DfE_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DfE England</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A3-TIMSS_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TIMSS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A4-Other_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other datasets</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#eta-squared" id="toc-eta-squared" class="nav-link active" data-scroll-target="#eta-squared"><span class="header-section-number">1</span> Eta-squared</a></li>
+  <li>
+<a href="#pre-seminar-tasks---please-complete-the-two-tasks-below-before-the-seminar" id="toc-pre-seminar-tasks---please-complete-the-two-tasks-below-before-the-seminar" class="nav-link" data-scroll-target="#pre-seminar-tasks---please-complete-the-two-tasks-below-before-the-seminar"><span class="header-section-number">2</span> Pre-seminar tasks - please complete the two tasks below before the seminar</a>
+  <ul class="collapse">
+<li><a href="#pre-seminar-task-1" id="toc-pre-seminar-task-1" class="nav-link" data-scroll-target="#pre-seminar-task-1"><span class="header-section-number">2.1</span> Pre-seminar task 1</a></li>
+  <li><a href="#pre-seminar-task-2" id="toc-pre-seminar-task-2" class="nav-link" data-scroll-target="#pre-seminar-task-2"><span class="header-section-number">2.2</span> Pre-seminar task 2</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#seminar-tasks---please-leave-these-to-complete-in-the-seminar" id="toc-seminar-tasks---please-leave-these-to-complete-in-the-seminar" class="nav-link" data-scroll-target="#seminar-tasks---please-leave-these-to-complete-in-the-seminar"><span class="header-section-number">3</span> Seminar Tasks - please leave these to complete in the seminar</a>
+  <ul class="collapse">
+<li><a href="#task-1" id="toc-task-1" class="nav-link" data-scroll-target="#task-1"><span class="header-section-number">3.1</span> Task 1</a></li>
+  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2"><span class="header-section-number">3.2</span> Task 2</a></li>
+  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3"><span class="header-section-number">3.3</span> Task 3</a></li>
+  <li><a href="#tukeys-hsd" id="toc-tukeys-hsd" class="nav-link" data-scroll-target="#tukeys-hsd"><span class="header-section-number">3.4</span> Tukey’s HSD</a></li>
+  <li><a href="#task-4" id="toc-task-4" class="nav-link" data-scroll-target="#task-4"><span class="header-section-number">3.5</span> Task 4</a></li>
+  <li><a href="#task-5" id="toc-task-5" class="nav-link" data-scroll-target="#task-5"><span class="header-section-number">3.6</span> Task 5</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#repeating-research" id="toc-repeating-research" class="nav-link" data-scroll-target="#repeating-research"><span class="header-section-number">4</span> Repeating research</a>
+  <ul class="collapse">
+<li><a href="#exploring-the-data" id="toc-exploring-the-data" class="nav-link" data-scroll-target="#exploring-the-data"><span class="header-section-number">4.1</span> Exploring the data</a></li>
+  <li><a href="#a-simple-attempt-to-recreate-the-sweet-spot-analysis" id="toc-a-simple-attempt-to-recreate-the-sweet-spot-analysis" class="nav-link" data-scroll-target="#a-simple-attempt-to-recreate-the-sweet-spot-analysis"><span class="header-section-number">4.2</span> A simple attempt to recreate the sweet spot analysis</a></li>
+  <li><a href="#sec-sweet_density" id="toc-sec-sweet_density" class="nav-link" data-scroll-target="#sec-sweet_density"><span class="header-section-number">4.3</span> A fuller attempt - Step 1, Wrangling the data</a></li>
+  <li><a href="#searching-for-the-sweet-spots" id="toc-searching-for-the-sweet-spots" class="nav-link" data-scroll-target="#searching-for-the-sweet-spots"><span class="header-section-number">4.4</span> Searching for the sweet spot(s)</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">07 Inquiry learning</h1>
+<p class="subtitle lead">Anova</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header><!--https://www.r-bloggers.com/2022/01/how-to-perform-eta-squared-in-r/--><p>You have now learned how to find if the means of two groups are different to a statistically significant degree - you use a t-test. However, t-tests are used to compare two groups. When more than two groups are compared, a different test is required, an <em>analysis of variation</em> or <em><em>anova</em></em> test.</p>
+<p>Anova refers to a collection of tests that can be used to analyse the varriance in means between groups (hence analysis of variation, or anova for short). For example, consider the data below, which show students scores on a test, their age in years and socio-economic class (categorised as high or low):</p>
+<table class="table">
+<thead><tr class="header">
+<th>Socio</th>
+<th>Age</th>
+<th>Score</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>High</td>
+<td>15</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>High</td>
+<td>16</td>
+<td>98</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>11</td>
+<td>89</td>
+</tr>
+<tr class="even">
+<td>High</td>
+<td>15</td>
+<td>98</td>
+</tr>
+<tr class="odd">
+<td>Low</td>
+<td>11</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td>High</td>
+<td>14</td>
+<td>31</td>
+</tr>
+<tr class="odd">
+<td>Low</td>
+<td>12</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<td>High</td>
+<td>16</td>
+<td>92</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>12</td>
+<td>99</td>
+</tr>
+<tr class="even">
+<td>Low</td>
+<td>15</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that an assumption of an anova test is that the variables are normally distributed, and have equal variance. This is not the case with the small data set in this example. It is a teaching illustration.</p>
+</div>
+</div>
+<div class="question">
+<p>Which variable, age or socio-economic class, seems to explain the variation in test scores?</p>
+</div>
+<p>We can use anova to determine, first, if there is statistically significant differences in the variation of scores by class and age. Second an additional anova analysis (a post-hoc analysis, so-called because it comes after the first test) can determine how much variation each variable (class and age) accounts for.</p>
+<p>You can get a sense of this difference graphically by plotting graphs of the distribution of scores by socio-economic class:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="07-Inquiry_learning_in_science_RB_version_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>It looks like there might be a difference in the variation of scores by those in different classes (notice that the normal distribution seems more spread out for the high socio-economic students’ group, i.e.&nbsp;there is a larger variance than for low socio-economic group students’ scores).</p>
+<p>To simply the analysis of variation with age, we can categorise ages into two groups, under 15, and 15 and over:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="07-Inquiry_learning_in_science_RB_version_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The difference is less clear for age than class, but, visually, there appears to be some difference in variance between the two groups.</p>
+<p>To determine if there is a statistically significant difference between groups we run an anova calculation, using the <code>aov</code> function in R. The dependent variable is the one we are interested in explaining, the independent variables are the factors we think might explain the variance.</p>
+<p><code>aov(data, dependent_var ~ independent_var + independent_var + ...)</code></p>
+<p>We pass the function the data we wish to focus on (Testscores) and then indicate we wish to look for variation in the <code>score</code>, by <code>Age</code> and <code>socio</code> (social class) - <code>aov(data=Testscores, score ~ Age + socio)</code>. We then summarise the result to get a table.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value  Pr(&gt;F)   
+Age          1   2074    2074   4.707 0.06667 . 
+socio        1   7638    7638  17.338 0.00422 **
+Residuals    7   3084     441                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>The resulting table has three rows: <code>Age</code> and <code>socio</code> (the two vectors we input to examine) and a third, residuals. The <code>aov</code> function looks to determine if there is a difference in the variance of groups of different ages (under fifteen and over) and class (high and low). After determining any variation from those two variables, any remaining variation is associated with residuals - you can think of this as the unexplained variation that isn’t associated with the vectors we specified (age and class).</p>
+<p>First, look at the <code>Pr(&gt;F)</code> column. This is a test of significance and reports if the groups in that row show statistically significant variation. For example, Age returns <code>Pr(&gt;F) 0.07</code> - which is over <code>0.05</code> therefore there is no significant difference in variance between the two age groups. However, for class, <code>Pr(&gt;F) is 0.00422**</code> suggesting there is a significant difference by class.</p>
+<section id="eta-squared" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Eta-squared</h1>
+<p>Now knowing that there are significant differences between the two class groups, we can next determine how much variation in the test score is explained by class. To do this we calculate a variable called eta-squared.</p>
+<p>Eta-squared gives the proportion of variance explained by each variable. The eta squared function is in the package <code>lsr</code> so we will install <code>lsr</code>, and then use the result of our anova (<code>resaov</code>) to calculate the eta squared variable using the function <code>etaSquared</code>. To report the value of eta as a percentage we need to multiply the output of eta by 100.</p>
+<p>Eta squared tells us the proportion of the total variance that is explained by a variable (you can also think of it as an effect size). An eta squared value of 1 indicates all the variance of a sample is explain by some variable and 0 means the variable is not responsible for any of the observed variance. We can multiply the eta-squared score by 100 to get a value for the percentage of variance explained.</p>
+<p>The percentage of variance explained is a useful figure. For example, it has been reported that schools only account for 14% of the variance in progress 8 scores, whilst family explains 43% (<span class="citation" data-cites="wilkinson2018assessing">Wilkinson, Bryson, and Stokes (<a href="#ref-wilkinson2018assessing" role="doc-biblioref">2018</a>)</span>).</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>         eta.sq eta.sq.part
+Age    5.028982    17.26414
+socio 59.694279    71.23853</code></pre>
+</div>
+</div>
+<p>The important column here is the <code>eta.sq</code> column - it tells us that age only explains 5% of the variance in test scores, but socioeconomic class, explains 60%. (The second column contains information about partial eta-squared, which we won’t go into, but are used when the results of each measure are <em>not independent</em> i.e.&nbsp;one result influences another).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As a rule of thumb, a percentage variance explained of 1% is considered small, 6% medium and 14% and more large</p>
+</div>
+</div>
+<p>We can now apply anova to the <code>PISA_2018</code>. Let us focus on science scores (<code>PV1SCIE</code>).</p>
+<p>First, load the PISA data and create a <code>data.frame</code> containing the UK results for the vectors of science scores (<code>PV1SCIE</code>), parental wealth (<code>WEALTH</code>), gender (<code>ST004D01T</code>) and age (<code>AGE</code>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Two assumptions of anova tests are a) the normality of the groups and b) that the groups have equal variance. We can do those checks using the quantile-quantile plot of normality we have seen earlier, and the <code>var</code> function to find the variance.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="07-Inquiry_learning_in_science_RB_version_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="07-Inquiry_learning_in_science_RB_version_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.176446</code></pre>
+</div>
+</div>
+<p>Both plots come out as straight lines indicating normality. The ratio of variance is 1.2, close enough to equal variance to suggest the conditions for anova tests are met. The rule of thumb for equal variances is taken as anything less than 3:1.</p>
+</div>
+</div>
+<p>Currently, the wealth scores are a numeric measure of family wealth, normalised around 0 (being the mean) and in the range of -0.935 to 1.20. To make the calculation simpler, we will categorise the scores into two groups, high wealth (over 0) and low wealth (0 or under). We will drop any NA values.</p>
+<p>To visualise the difference in means, here are graphs of the science scores for the two wealth groups:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="07-Inquiry_learning_in_science_RB_version_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Visually, there appear to be some differences, the high wealth group seems to have a higher mean, but to determine if they are statistically significant, we need to run an anova test.</p>
+<p>Below is code to run the anova, just like in the example with test scores. We use <code>aov</code> and specify the data set as <code>PISAUK.</code> Then we state we wish to compare the variance in science scores <code>PV1SCIE</code>, against gender (<code>ST004D01T</code>), wealth and age: <code>PV1SCIE ~ ST004D01T + WEALTH + AGE</code>.</p>
+<p>We then summarise and print the table:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>               Df    Sum Sq Mean Sq F value   Pr(&gt;F)    
+ST004D01T       1      6200    6200   0.695    0.405    
+WEALTH          1   1038412 1038412 116.371  &lt; 2e-16 ***
+AGE            13    610655   46973   5.264 1.66e-09 ***
+Residuals   13351 119134784    8923                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Note that the p value for gender (<code>ST004D01T</code>) is <code>0.405</code>, which is over <code>0.05</code>, so there are no significant differences by gender. By contrast, for <code>WEALTH</code> and <code>AGE</code>, the p values are below the <code>0.05</code> cut off, so the two wealth groups and 14 different age groups are statistically significantly different.</p>
+<p>Note that, in the anova table, the <code>df</code> (degrees of freedom column), tells you how many groups there are. <code>df</code> is the number of groups minus one. So, for <code>WEALTH</code> groups, <code>df</code> is 1, because there are two groups (high and low, which we created) and so df=2-1=1. For age, which gives participants’ birth month, there are df=13-1=12 groups, i.e.&nbsp;the number of months of the year.</p>
+<p>Finally, we are interested in finding how much of the variance is explained by age and wealth, so we can run an eta-squared test, and multiply by 100 to get percentage variance explained</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>              eta.sq eta.sq.part
+ST004D01T 0.01017853  0.01031889
+WEALTH    0.85001629  0.85446249
+AGE       0.50555112  0.50996135</code></pre>
+</div>
+</div>
+<p><code>WEALTH</code> and <code>AGE</code> only explain a small amount of the variation, 0.85% and 0.5% respectively.</p>
+</section><section id="pre-seminar-tasks---please-complete-the-two-tasks-below-before-the-seminar" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> Pre-seminar tasks - please complete the two tasks below before the seminar</h1>
+<section id="pre-seminar-task-1" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="pre-seminar-task-1">
+<span class="header-section-number">2.1</span> Pre-seminar task 1</h2>
+<div class="question">
+<p>Determine if there is significant variation in UK PISA science scores by gender, and having a quiet place to study (ST011Q03TA). Then find the proportion of variance explained by each variable.</p>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>               Df    Sum Sq Mean Sq F value   Pr(&gt;F)    
+ST004D01T       1      1007    1007   0.113    0.737    
+ST011Q03TA      1    530338  530338  59.502 1.31e-14 ***
+Residuals   13201 117659885    8913                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                eta.sq eta.sq.part
+ST004D01T  0.002130537 0.002140113
+ST011Q03TA 0.448711871 0.448715693</code></pre>
+</div>
+</div>
+</section><section id="pre-seminar-task-2" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="pre-seminar-task-2">
+<span class="header-section-number">2.2</span> Pre-seminar task 2</h2>
+<div class="question">
+<p>Determine if there is significant variation in UK PISA mathematics scores by gender, and having an internet link in the home (<code>ST011Q06TA</code>). Then find the proportion of variance explained by each variable.</p>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>               Df    Sum Sq Mean Sq F value   Pr(&gt;F)    
+ST004D01T       1    317167  317167   39.84 2.84e-10 ***
+ST011Q06TA      1   1635601 1635601  205.45  &lt; 2e-16 ***
+Residuals   13259 105553812    7961                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             eta.sq eta.sq.part
+ST004D01T  0.321931   0.3268152
+ST011Q06TA 1.521397   1.5258983</code></pre>
+</div>
+</div>
+</section></section><section id="seminar-tasks---please-leave-these-to-complete-in-the-seminar" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> Seminar Tasks - please leave these to complete in the seminar</h1>
+<section id="task-1" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="task-1">
+<span class="header-section-number">3.1</span> Task 1</h2>
+<p>Discussion points:</p>
+<p>Recall the presentation slide on validity. As you are already aware, it is important that we keep in mind what the data we are analysing are based on, so:</p>
+<ol type="a">
+<li><p>What threats are there to the validity of PISA for its intended interpretations (e.g.&nbsp;scientific literacy) and uses (i.e.&nbsp;informing education policy)?</p></li>
+<li><p>To what extent does the content of the PISA items used in the recommended reading reflect what you consider to be “inquiry-based teaching” and “teacher-directed teaching”?</p></li>
+</ol>
+<p><strong><em>Inquiry based science teaching (IBTEACH) items:</em></strong></p>
+<ul>
+<li>Students spend time in the laboratory doing practical experiments</li>
+<li>Students do experiments by following the instructions of the teacher</li>
+<li>Students are asked to draw conclusions from an experiment they have conducted</li>
+<li>Students are required to design how a school science question could be investigated in the laboratory</li>
+<li>Students are allowed to design their own experiments</li>
+<li>Students are given the chance to choose their own investigations</li>
+<li>Students are asked to do an investigation to test out their own ideas</li>
+</ul>
+<p><strong>Teacher-directed science teaching (TDTEACH) items</strong></p>
+<ul>
+<li>The teacher explains scientific ideas</li>
+<li>A whole class discussion takes place with the teacher.</li>
+<li>The teacher discusses our questions.</li>
+<li>The teacher demonstrates an idea.</li>
+</ul>
+<ol start="3" type="a">
+<li>What are the assumptions of a one-way anova test? How might it be misapplied to some variables in the PISA dataset?</li>
+</ol></section><section id="task-2" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="task-2">
+<span class="header-section-number">3.2</span> Task 2</h2>
+<div class="question">
+<p>Determine if there is significant variation in UK PISA mathematics scores by gender, wealth, and having a computer in the home (<code>ST011Q04TA</code>). Then find the proportion of variance explained by each variable.</p>
+<p>Hint, wealth is a normalised score which you can sort into two categories, high and low. We can consider a score above 0, high wealth, and scores below 0, low wealth.</p>
+<p>To do this you can use the <code>mutate</code> (see <strong>?@sec-mutate</strong>) function to change a column, combined with the <code>ifelse</code> function (see <strong>?@sec-ifelse</strong>).</p>
+<p>This line mutates the <code>WEALTH</code> column, writing “High” when the value is over 0 and, if else, “Low”</p>
+<p><code>mutate(WEALTH = ifelse(WEALTH &gt; 0, "High", "Low"))</code></p>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>               Df    Sum Sq Mean Sq F value   Pr(&gt;F)    
+ST004D01T       1    324200  324200   41.54 1.19e-10 ***
+WEALTH          1   1318840 1318840  169.00  &lt; 2e-16 ***
+ST011Q04TA      1   2176070 2176070  278.84  &lt; 2e-16 ***
+Residuals   13244 103356592    7804                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              eta.sq eta.sq.part
+ST004D01T  0.2978265   0.3078806
+WEALTH     0.5907302   0.6088288
+ST011Q04TA 2.0303766   2.0619876</code></pre>
+</div>
+</div>
+</section><section id="task-3" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="task-3">
+<span class="header-section-number">3.3</span> Task 3</h2>
+<div class="question">
+<p>Try the same task again, determine if there is significant variation in UK mathematics scores by gender, Wealth, and having a computer in the home. This time, divide the wealth variable into four levels.</p>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>               Df    Sum Sq Mean Sq F value   Pr(&gt;F)    
+ST004D01T       1    324200  324200   41.65 1.13e-10 ***
+WEALTH          3   1830726  610242   78.40  &lt; 2e-16 ***
+ST011Q04TA      1   1946438 1946438  250.06  &lt; 2e-16 ***
+Residuals   13242 103074339    7784                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              eta.sq eta.sq.part
+ST004D01T  0.2874810   0.2980291
+WEALTH     0.8540855   0.8802526
+ST011Q04TA 1.8161186   1.8533837</code></pre>
+</div>
+</div>
+</section><section id="tukeys-hsd" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="tukeys-hsd">
+<span class="header-section-number">3.4</span> Tukey’s HSD</h2>
+<p>When an anova test reports that are some statistically significant differences between groups, it does not imply there are statistically significant differences between all subgroups. For example, if the anova reports statistically significant differences by age, statistically significant differences might exist between 11, 12 and 13-year old students, but not between 13 and 14-year olds.</p>
+<p>We can use an additional anova test, <strong>Tukey’s Honest Significant Difference</strong> test (or Tukey’s HSD for short), to find out which pairs of subgroups have statistically significant differences in means.</p>
+<p>Consider the question: Are there statistically significant differences in the variance of science scores of the UK, US, France and Germany? To determine if such differences exist, we create a new subset for those countries’ science scores, and then run an anova test by country, reporting the eta squared value.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="07-Inquiry_learning_in_science_RB_version_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Df    Sum Sq Mean Sq F value Pr(&gt;F)    
+CNT             3   1071227  357076   37.36 &lt;2e-16 ***
+Residuals   30411 290638789    9557                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       eta.sq eta.sq.part
+CNT 0.3672231   0.3672231</code></pre>
+</div>
+</div>
+<p>The anova results tell us there are significant differences between the countries, which account for 0.4% of variance in scores. We can then run a Tukey HSD test to determine which countries have significant differences between mean scores.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = PV1SCIE ~ CNT, data = PISAMULTI)
+
+$CNT
+                                   diff        lwr        upr     p adj
+France-Germany               -18.844787 -23.489214 -14.200359 0.0000000
+United Kingdom-Germany        -9.056104 -13.073086  -5.039123 0.0000000
+United States-Germany         -7.024614 -11.985354  -2.063874 0.0015665
+United Kingdom-France          9.788682   5.972393  13.604971 0.0000000
+United States-France          11.820172   7.020499  16.619845 0.0000000
+United States-United Kingdom   2.031490  -2.164019   6.226999 0.5987930</code></pre>
+</div>
+</div>
+<p>From that we get a table with p values (p adj) for different pairs of countries. Note that these are below 0.005 for all pairs of countries, except the US and the UK. So we can conclude there are significant differences in science scores between all countries except the UK and the US.</p>
+</section><section id="task-4" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="task-4">
+<span class="header-section-number">3.5</span> Task 4</h2>
+<div class="question">
+<p>For the China, Thailand, Japan and Korea, determine if there are statistically significant differences in variation in mathematics scores.</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="07-Inquiry_learning_in_science_RB_version_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Df    Sum Sq  Mean Sq F value Pr(&gt;F)    
+CNT             3 114287180 38095727    4596 &lt;2e-16 ***
+Residuals   33446 277230531     8289                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      eta.sq eta.sq.part
+CNT 29.19081    29.19081</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = PV1SCIE ~ CNT, data = PISAMULTI)
+
+$CNT
+                                diff        lwr         upr p adj
+Korea-Japan                -8.504429  -12.64948   -4.359374 8e-07
+B-S-J-Z (China)-Japan      64.662840   60.98971   68.335975 0e+00
+Thailand-Japan            -85.694331  -89.60481  -81.783850 0e+00
+B-S-J-Z (China)-Korea      73.167270   69.59468   76.739859 0e+00
+Thailand-Korea            -77.189902  -81.00610  -73.373707 0e+00
+Thailand-B-S-J-Z (China) -150.357171 -153.65471 -147.059631 0e+00</code></pre>
+</div>
+</div>
+</section><section id="task-5" class="level2" data-number="3.6"><h2 data-number="3.6" class="anchored" data-anchor-id="task-5">
+<span class="header-section-number">3.6</span> Task 5</h2>
+<p>Finally, a significant open question is the extent to which <em>discovery learning</em> impacts students’ results. The PISA 2015 data contains a couple of variables related to whether students report their teachers use <em>direct instruction</em> (teacher-led activities) or not, and whether they experience <em>inquiry based teaching</em> (student-led activities), or not. In 2015, the two composite variables related to students’ reports of their teachers’ teaching styles in science are:</p>
+<ul>
+<li>
+<code>IBTEACH</code> quantifies teachers’ use of inquiry based teaching. It is based on responses to nine questions: frequency with which they experienced specific activities:
+<ol type="1">
+<li>students are given opportunities to explain their ideas;</li>
+<li>students spend time in the laboratory doing practical experiments;</li>
+<li>students are required to argue about science questions;</li>
+<li>students are asked to draw conclusions from an experiment they have conducted;</li>
+<li>the teacher explains how a science idea can be applied to different phenomena;</li>
+<li>students are allowed to design their own experiments;</li>
+<li>there is a class debate about investigations;</li>
+<li>the teacher clearly explains the relevance of science concepts; and,</li>
+<li>students are asked to do an investigation to test ideas</li>
+</ol>
+</li>
+<li>
+<code>TDTEACH</code> scores teachers use of teacher-directed approaches. It is based on 4 items on the survey asking the frequency of:
+<ol type="1">
+<li>The teacher explains scientific ideas;</li>
+<li>A whole class discussion takes place with the teacher;</li>
+<li>The teacher discusses our questions;</li>
+<li>and the teacher demonstrates an idea.</li>
+</ol>
+</li>
+</ul>
+<p>First, download the PISA 2015 dataset: <a href="https://drive.google.com/file/d/18NpQO1DGY5dnjnlR2b3IF9Zv8xtpc1Fk/view?usp=share_link">PISA_2015</a> and load the data using this code:</p>
+<div class="question">
+<p>Task: For science, determine the amount of variation in scores explained by <code>IBTEACH</code> and <code>TDTEACH</code> for the whole data set. What is true in the context of students in the UK, China and the US? Are the patterns different for mathematics?</p>
+</div>
+</section></section><section id="repeating-research" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> Repeating research</h1>
+<p>The direct instruction vs inquiry learning debate is a current one with impact upon national policy and classroom practice <span class="citation" data-cites="gove2013michael">(<a href="#ref-gove2013michael" role="doc-biblioref">Gove 2013</a>)</span>. A piece of research by <span class="citation" data-cites="mourshed2017improve">Mourshed, Krawitz, and Dorn (<a href="#ref-mourshed2017improve" role="doc-biblioref">2017</a>)</span> suggested that there was a <em>“sweet spot”</em> which in practice is:</p>
+<blockquote class="blockquote">
+<p>teacher-directed instruction in most to all classes and inquiry-based learning in some</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/mckinsey.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">the sweet spot for teacher-directed instruction and inquiry-based learning <span class="citation" data-cites="mourshed2017improve">(<a href="#ref-mourshed2017improve" role="doc-biblioref">Mourshed, Krawitz, and Dorn 2017</a>)</span></figcaption></figure>
+</div>
+<p>Unfortunately <span class="citation" data-cites="mourshed2017improve">Mourshed, Krawitz, and Dorn (<a href="#ref-mourshed2017improve" role="doc-biblioref">2017</a>)</span> never published the code behind their study and it’s not actually clear how we can recreate their findings. Others have tried, but failed <span class="citation" data-cites="bokhove2021mckinsey">(<a href="#ref-bokhove2021mckinsey" role="doc-biblioref">Bokhove 2021</a>)</span>. Now it’s our turn!</p>
+<section id="exploring-the-data" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="exploring-the-data">
+<span class="header-section-number">4.1</span> Exploring the data</h2>
+<p>First, let’s make sure that we have a dataset without any missing values for <code>IBTEACH</code> and <code>TDTEACH</code></p>
+</section><section id="a-simple-attempt-to-recreate-the-sweet-spot-analysis" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="a-simple-attempt-to-recreate-the-sweet-spot-analysis">
+<span class="header-section-number">4.2</span> A simple attempt to recreate the sweet spot analysis</h2>
+<p>To recreate the sweet spot analysis: a) divide <code>IBTEACH</code> and <code>TDTEACH</code> intro three categories, using <code>ifelse,</code> as we have done above. b) Use <code>group_by</code> with <code>IBTEACH</code> and <code>TDTEACH</code> and <code>summarise</code> the mean to create a summary table c) use <code>ggplot</code>, with <code>geom_point</code>, and change the point size by the mean to create a similar plot to the McKinsey graph.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="07-Inquiry_learning_in_science_RB_version_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="sec-sweet_density" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="sec-sweet_density">
+<span class="header-section-number">4.3</span> A fuller attempt - Step 1, Wrangling the data</h2>
+<p>Now we have a statistical grasp of the data we can try to recreate the study. First, we need to categorise <code>IBTEACH</code> and <code>TDTEACH</code> into three levels, <em>high</em>, <em>medium</em> and <em>low</em>, we will use these instead of the “None to few lessons”, “Some to many lessons” and “Many to all lessons”. We can use the <code>quantile</code> function to do this. The function tells us the value of <code>IBTEACH</code> and <code>TDTEACH</code> which contain 1/3 and 2/3 of this responses. We can use these values to divide the data into 3 parts with equal numbers of students in each by using the <code>mutate</code> function with <code>ifelse</code> (as above) to replace the values with the categories, <code>High</code>, <code>Medium</code> and <code>Low</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="07-Inquiry_learning_in_science_RB_version_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This graph shows the peak of High <code>IBTEACH</code> (in red) having a smaller <code>PV1SCIE</code> grade than the other categories. This suggests we should avoid high levels of <code>IBTEACH</code></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="07-Inquiry_learning_in_science_RB_version_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This graph shows the peak of Low <code>TDTEACH</code> (in green) having a smaller <code>PV1SCIE</code> grade than the other categories. This suggests we should avoid low levels of <code>TDTEACH</code></p>
+</section><section id="searching-for-the-sweet-spots" class="level2" data-number="4.4"><h2 data-number="4.4" class="anchored" data-anchor-id="searching-for-the-sweet-spots">
+<span class="header-section-number">4.4</span> Searching for the sweet spot(s)</h2>
+<p>The “sweet spot” chart by <span class="citation" data-cites="mourshed2017improve">Mourshed, Krawitz, and Dorn (<a href="#ref-mourshed2017improve" role="doc-biblioref">2017</a>)</span> looks at the average point increase in PISA scores given different teaching methods. We need to calculate this average difference.</p>
+<p>Here the mean score for <code>PV1SCIE</code> are calculated and then compared to the means for the groups by the levels of <code>TDTEACH</code> and <code>IBTEACH.</code></p>
+<ul>
+<li>line 4 and 5 creates an overall mean and median score for <code>PV1SCIE</code>
+</li>
+<li>line 6 we want to find out the difference in average score for each combination of <code>IBTEACH</code> and <code>TDTEACH</code>, e.g.&nbsp;<code>IBTEACH-Low</code> and <code>TDTEACH-Low</code>, <code>IBTEACH-Low</code> and <code>TDTEACH-Medium</code>, etc. So we need to group these, and group the <code>mean_sci</code>, <code>median_sci</code> values so we don’t lose them when summarising.</li>
+<li>line 7 and 8 - creates a mean and median <code>PV1SCIE</code> score for each grouping</li>
+<li>line 9 and 10 - calculates the differences from the overall mean and median <code>PV1SCIE</code> score for each grouping</li>
+<li>line 11 and 12 - calculates whether this difference is positive (or negative) and stores this as <code>True</code> or <code>False</code>
+</li>
+<li>line 13 stores the number of students in each grouping</li>
+<li>line 15 and 16 uses <code>factor</code> to set the order of <code>IBTEACH</code> and <code>TDTEACH</code>, we want them running <code>"Low", "Medium", "High"</code> on our graph</li>
+</ul>
+<p>Now we can try and build our graph using <code>geom_point</code></p>
+<ul>
+<li>line 1 to 6 - we pass the <code>plot_data</code> dataframe specified above to <code>ggplot</code>, we also make a few changes to this dataframe, using <code>signif</code> to reduce the number of signficant digits in <code>mean_diff</code> and we create <code>mean_diff_txt</code> which is <code>mean_diff</code> but with the sign <code>+/-</code> on the front.</li>
+<li>line 7 - we pass the <code>IBTEACH</code> and <code>TDTEACH</code> to x and y, this means we’ll plot a point for each combination, Low/Low, Low/Medium, Low/High, etc.</li>
+<li>line 8 - <code>geom_point</code> takes the x and y from line 7 and adjusts the size of the points based on the <code>abs</code> (the number without a sign) value of <code>mean_diff</code>, and set the colour <code>mean_col</code>, whether the point is positive or negative.</li>
+<li>line 9 - this increases the overall size of the points to range from 0, the smallest, to 40 the biggest</li>
+<li>line 10 to 12 - add a text label to each point with the value of the difference and added sign <code>mean_diff_txt</code>. Change the colour of the text, if <code>abs(mean_diff) &gt; 8</code> then the text will go on top of the points and will need to be <code>white</code>, otherwise the colour of the text should be a colour to reflect positive or negative.</li>
+<li>line 13 to 15 - manually set the colours of the text and the points.</li>
+<li>line 16 to 17 - change the background colour, and get rid of the legend</li>
+<li>line 18 to 20 - add a title and new labels</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="07-Inquiry_learning_in_science_RB_version_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We can see that our graph is very different to theirs?! We have <em>two</em> “sweet spots”, Low Inquiry and Medium Directed at <code>+29</code> and Medium inquiry and High Directed at <code>+25</code>. Going back to our exploration above, this matches what we saw in the density charts (<a href="#sec-sweet_density">Section&nbsp;4.3</a>), where High Inquiry and Low Directed gave the worst results.</p>
+<p>But why is ours different? It’s very hard to tell and without seeing the original code or a well written methodology; we might never know. Is our model better than theirs? Maybe! It’s just hard to tell. People have taken the McKinsey report very seriously and it does seem unlikely that national centres of education will be reading this subsection of session 7 of an MA STEM Quantitative methods course at KCL to shape their policy making decisions. Maybe you could explore this further in your dissertation and try to come up with a stronger conclusion.</p>
+<div class="question">
+<p>How does the sweet spot change for the UK? Repeat the analysis above only looking at student results for the “United Kingdom”</p>
+</div>
+
+
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-bokhove2021mckinsey" class="csl-entry" role="listitem">
+Bokhove, Christian. 2021. <span>“The McKinsey Diagram Has Been Doing the Rounds Again. It’s Always Been Unclear How This Diagram Ever Could Have Been Made with the Available Data.”</span> Twitter. 2021. <a href="https://twitter.com/cbokhove/status/1427314916747251715">https://twitter.com/cbokhove/status/1427314916747251715</a>.
+</div>
+<div id="ref-gove2013michael" class="csl-entry" role="listitem">
+Gove, Michael. 2013. <span>“Michael Gove Speaks about the Importance of Teaching.”</span> <em>Speech Delivered on 5th September</em>. <a href="https://www.gov.uk/government/speeches/michael-gove-speaks-about-the-importance-of-teaching">https://www.gov.uk/government/speeches/michael-gove-speaks-about-the-importance-of-teaching</a>.
+</div>
+<div id="ref-mourshed2017improve" class="csl-entry" role="listitem">
+Mourshed, Mona, Marc Krawitz, and Emma Dorn. 2017. <span>“How to Improve Student Educational Outcomes: New Insights from Data Analytics.”</span> <em>McKinsey &amp; Company. September</em>. <a href="https://www.mckinsey.com/~/media/McKinsey/Industries/Social%20Sector/Our%20Insights/How%20to%20improve%20student%20educational%20outcomes/How-to-improve-student-educational-outcomes-New-insights-from-data-analytics.pdf">https://www.mckinsey.com/~/media/McKinsey/Industries/Social%20Sector/Our%20Insights/How%20to%20improve%20student%20educational%20outcomes/How-to-improve-student-educational-outcomes-New-insights-from-data-analytics.pdf</a>.
+</div>
+<div id="ref-wilkinson2018assessing" class="csl-entry" role="listitem">
+Wilkinson, David, Alex Bryson, and Lucy Stokes. 2018. <span>“Assessing the Variance in Pupil Attainment: How Important Is the School Attended?”</span> <em>National Institute Economic Review</em> 243 (1): R4–16. <a href="https://docs.iza.org/dp11372.pdf">https://docs.iza.org/dp11372.pdf</a>.
+</div>
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

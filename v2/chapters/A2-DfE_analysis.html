@@ -1,0 +1,3282 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>MASTEMR - DfE England</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="../css/mastemr.css">
+</head>
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="index.qmd" class="navbar-brand navbar-brand-logo">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="index.qmd">
+    <span class="navbar-title">MASTEMR</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools ms-auto">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/A1-PISA_analysis.html">Data sets</a></li><li class="breadcrumb-item"><a href="../chapters/A2-DfE_analysis.html">DfE England</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Sessions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">02 Intro to R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Introduction to R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-2-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Loading packages and exploring data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-3-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Piping and dplyr</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Intro to graphs</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-Differing_performance_in_STEM_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Descriptive Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Presentations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Introduction to PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 Maths anxiety</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-Inquiry_learning_in_science_RB_version.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07 Inquiry learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-Science_capital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08 Science capital</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09 Assignment 3 tutorials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-teachers_relationships_and_STEM_achievement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 Correlation and regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 Selecting statistical tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-effective_international_STEM_ed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 Effective international STEM education</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Data sets</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A2-DfE_analysis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">DfE England</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A3-TIMSS_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TIMSS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A4-Other_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other datasets</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#students" id="toc-students" class="nav-link active" data-scroll-target="#students"><span class="header-section-number">1</span> Students</a></li>
+  <li><a href="#schools" id="toc-schools" class="nav-link" data-scroll-target="#schools"><span class="header-section-number">2</span> Schools</a></li>
+  <li>
+<a href="#school-workforce" id="toc-school-workforce" class="nav-link" data-scroll-target="#school-workforce"><span class="header-section-number">3</span> School workforce</a>
+  <ul class="collapse">
+<li><a href="#teachers" id="toc-teachers" class="nav-link" data-scroll-target="#teachers"><span class="header-section-number">3.1</span> Teachers</a></li>
+  <li><a href="#vacancies" id="toc-vacancies" class="nav-link" data-scroll-target="#vacancies"><span class="header-section-number">3.2</span> Vacancies</a></li>
+  <li><a href="#timetabling" id="toc-timetabling" class="nav-link" data-scroll-target="#timetabling"><span class="header-section-number">3.3</span> Timetabling</a></li>
+  </ul>
+</li>
+  <li><a href="#restricted-datasets" id="toc-restricted-datasets" class="nav-link" data-scroll-target="#restricted-datasets"><span class="header-section-number">4</span> Restricted datasets</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">DfE England</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header><p>There are four main data sources that you can use to gain information about education in England:</p>
+<ul>
+<li>
+<a href="https://www.gov.uk/school-performance-tables">School performance tables</a> - yearly snapshots of school results and descriptors, used for performance tables and summary websites</li>
+<li>
+<a href="https://www.gov.uk/government/collections/statistics-school-workforce">School workforce census</a> - the DfE takes a census of timetabling and staffing each year during one week in November. About 70-80% of state schools respond to this census. It provides information on taught hours of subject, staffing levels and democgraphics and school vacancies.</li>
+<li>
+<a href="https://www.get-information-schools.service.gov.uk">get-information-schools</a> school provider information</li>
+<li>ONS SRS restricted datasets, see below.</li>
+</ul>
+<section id="students" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Students</h1>
+</section><section id="schools" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> Schools</h1>
+<p>Education provider details, also known as <em>edubase</em> can be found <a href="https://www.get-information-schools.service.gov.uk/Downloads">here</a>. This dataset includes a live snapshot about all ~40,000 providers, current and historic, including name, school type, headteacher details, geographic location etc. Current Ofsted results.</p>
+<p>To get a yearly snapshot of providers including their Oftsed grade, Progress 8 score, EAL %, Pupil Premium % etc. you can use the <a href="https://www.gov.uk/school-performance-tables">School performance tables</a>, in particular the <a href="https://www.find-school-performance-data.service.gov.uk/download-data">download data</a> area. You can select a year and then choose the data to suit your needs. The options you are presented with might appear a little overlapping, it’s worth downloading a few files to see which best suit your needs, for example:</p>
+<ul>
+<li>
+<em>School information</em> high level data on the name, location and type of school.</li>
+<li>
+<em>Key stage 4 results (final)</em> school level results and demographic details, e.g.&nbsp;pupil premium %, EBACC and Progress 8.</li>
+<li>
+<em>Key stage 4 qualification and subject data (final)</em> subject level data for schools, including number of entries and results for each subject in each school.</li>
+</ul>
+<p>When downloading the data, you will be faced by a wall of acronyms some might make sense: <code>AGELOW</code>, <code>AGEHIGH</code>, others might be a little more confusing: <code>TPUP</code>, <code>TPRIORHI</code>. You can download an <em>Explanation of terminology used in the data files</em> alongside the data you choose. The table below might also help when interpreting the <em>Key stage 4 results (final)</em> (taken from the explanation file):</p>
+<details><summary>
+schools description
+</summary><table class="table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 16%">
+<col style="width: 80%">
+</colgroup>
+<thead><tr class="header">
+<th>Column</th>
+<th>Metafile heading</th>
+<th>Metafile description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>RECTYPE</td>
+<td>Record type (1=mainstream school; 2=special school; 4=local authority; 5=National (all schools); 7=National (maintained schools))</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>LEA</td>
+<td>Local authority code (see separate list of local authorities and their codes)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>ESTAB</td>
+<td>Establishment number</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>URN</td>
+<td>School Unique Reference Number</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>SCHNAME</td>
+<td>School name</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>SCHNAME_AC</td>
+<td>School now known as (used if the school has converted to an academy on or after 12 Sept 2018)</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>ADDRESS1</td>
+<td>School address (1)</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>ADDRESS2</td>
+<td>School address (2)</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>ADDRESS3</td>
+<td>School address (3)</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>TOWN</td>
+<td>School town</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>PCODE</td>
+<td>School postcode</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>TELNUM</td>
+<td>School telephone number</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>PCON_CODE</td>
+<td>Parliamentary constituency code</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>PCON_NAME</td>
+<td>Parliamentary constituency name</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>CONTFLAG</td>
+<td>Contingency flag - school results ‘significantly affected’. This field is zero for all schools.</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>ICLOSE</td>
+<td>Closed school flag (0=open; 1=closed)</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>NFTYPE</td>
+<td>School type (see separate list of abbreviations used in the tables)</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>RELDENOM</td>
+<td>School religious character</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td>ADMPOL</td>
+<td>School admissions policy (self-declared by schools on Edubase)</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>ADMPOL_PT</td>
+<td>School admissions policy - new definition from 2019</td>
+</tr>
+<tr class="odd">
+<td>21</td>
+<td>EGENDER</td>
+<td>School gender of entry</td>
+</tr>
+<tr class="even">
+<td>22</td>
+<td>FEEDER</td>
+<td>Indicates whether school is a feeder school for sixth form centre/consortia (0=No; 1=Yes)</td>
+</tr>
+<tr class="odd">
+<td>23</td>
+<td>TABKS2</td>
+<td>Indicates whether school is published in the primary school (key stage 2) performance tables (0=No; 1=Yes)</td>
+</tr>
+<tr class="even">
+<td>24</td>
+<td>TAB1618</td>
+<td>Indicates whether school is published in the school and college (16-18) performance tables (0=No; 1=Yes)</td>
+</tr>
+<tr class="odd">
+<td>25</td>
+<td>AGERANGE</td>
+<td>Age range</td>
+</tr>
+<tr class="even">
+<td>26</td>
+<td>TOTPUPS</td>
+<td>Number of pupils on roll (all ages)</td>
+</tr>
+<tr class="odd">
+<td>27</td>
+<td>NUMBOYS</td>
+<td>Total boys on roll (including part-time pupils)</td>
+</tr>
+<tr class="even">
+<td>28</td>
+<td>NUMGIRLS</td>
+<td>Total girls on roll (including part-time pupils)</td>
+</tr>
+<tr class="odd">
+<td>29</td>
+<td>TPUP</td>
+<td>Number of pupils at the end of key stage 4</td>
+</tr>
+<tr class="even">
+<td>30</td>
+<td>BPUP</td>
+<td>Number of boys at the end of key stage 4</td>
+</tr>
+<tr class="odd">
+<td>31</td>
+<td>PBPUP</td>
+<td>% of pupils at the end of key stage 4 who are boys</td>
+</tr>
+<tr class="even">
+<td>32</td>
+<td>GPUP</td>
+<td>Number of girls at the end of key stage 4</td>
+</tr>
+<tr class="odd">
+<td>33</td>
+<td>PGPUP</td>
+<td>% of pupils at the end key stage 4 who are girls</td>
+</tr>
+<tr class="even">
+<td>34</td>
+<td>KS2ASS</td>
+<td>KS4 cohort average KS2 Scaled Score (average of English reading and maths)</td>
+</tr>
+<tr class="odd">
+<td>35</td>
+<td>TPRIORLO</td>
+<td>Number of pupils at the end of key stage 4 with low prior attainment at the end of key stage 2</td>
+</tr>
+<tr class="even">
+<td>36</td>
+<td>PTPRIORLO</td>
+<td>% of pupils at the end of key stage 4 with low prior attainment at the end of key stage 2</td>
+</tr>
+<tr class="odd">
+<td>37</td>
+<td>TPRIORAV</td>
+<td>Number of pupils at the end of key stage 4 with middle prior attainment at the end of key stage 2</td>
+</tr>
+<tr class="even">
+<td>38</td>
+<td>PTPRIORAV</td>
+<td>% of pupils at the end of key stage 4 with middle prior attainment at the end of key stage 2</td>
+</tr>
+<tr class="odd">
+<td>39</td>
+<td>TPRIORHI</td>
+<td>Number of pupils at the end of key stage 4 with high prior attainment at the end of key stage 2</td>
+</tr>
+<tr class="even">
+<td>40</td>
+<td>PTPRIORHI</td>
+<td>% of pupils at the end of key stage 4 with high prior attainment at the end of key stage 2</td>
+</tr>
+<tr class="odd">
+<td>41</td>
+<td>TFSM6CLA1A</td>
+<td>Number of disadvantaged pupils at the end of key stage 4</td>
+</tr>
+<tr class="even">
+<td>42</td>
+<td>PTFSM6CLA1A</td>
+<td>% of pupils at the end of key stage 4 who are disadvantaged</td>
+</tr>
+<tr class="odd">
+<td>43</td>
+<td>TNOTFSM6CLA1A</td>
+<td>Number of non-disadvantaged pupils at the end of key stage 4</td>
+</tr>
+<tr class="even">
+<td>44</td>
+<td>PTNOTFSM6CLA1A</td>
+<td>% of pupils at the end of key stage 4 who are not disadvantaged</td>
+</tr>
+<tr class="odd">
+<td>45</td>
+<td>TEALGRP2</td>
+<td>Number of pupils at the end of key stage 4 with English as additional language (EAL)</td>
+</tr>
+<tr class="even">
+<td>46</td>
+<td>PTEALGRP2</td>
+<td>% of pupils at the end of key stage 4 with English as additional language (EAL)</td>
+</tr>
+<tr class="odd">
+<td>47</td>
+<td>TEALGRP1</td>
+<td>Number of pupils at the end of key stage 4 with English as their first language</td>
+</tr>
+<tr class="even">
+<td>48</td>
+<td>PTEALGRP1</td>
+<td>% of pupils at the end of key stage 4 with English as their first language</td>
+</tr>
+<tr class="odd">
+<td>49</td>
+<td>TEALGRP3</td>
+<td>Number of pupils at the end of key stage 4 whose first language is unclassified</td>
+</tr>
+<tr class="even">
+<td>50</td>
+<td>PTEALGRP3</td>
+<td>% of pupils at the end of key stage 4 whose first language is unclassified</td>
+</tr>
+<tr class="odd">
+<td>51</td>
+<td>TNMOB</td>
+<td>Number of pupils at the end of key stage 4 who are non-mobile</td>
+</tr>
+<tr class="even">
+<td>52</td>
+<td>PTNMOB</td>
+<td>% of pupils at the end of key stage 4 who are non-mobile</td>
+</tr>
+<tr class="odd">
+<td>53</td>
+<td>SENE4</td>
+<td>Number of pupils at the end of key stage 4 with special educational needs (SEN) with an Education, health and care (EHC) plan</td>
+</tr>
+<tr class="even">
+<td>54</td>
+<td>PSENE4</td>
+<td>% of pupils at the end of key stage 4 with special educational needs (SEN) with an Education, health and care (EHC) plan</td>
+</tr>
+<tr class="odd">
+<td>55</td>
+<td>SEN_ALL4</td>
+<td>Number of pupils at the end of key stage 4 with special educational needs (SEN) including those with or without an Education, health and care (EHC) plan</td>
+</tr>
+<tr class="even">
+<td>56</td>
+<td>PSEN_ALL4</td>
+<td>% of pupils at the end of key stage 4 with special educational needs (SEN) including those with or without an Education, health and care (EHC) plan</td>
+</tr>
+<tr class="odd">
+<td>57</td>
+<td>SENK4</td>
+<td>Number of pupils at the end of key stage 4 with special educational needs (SEN) without an Education, health and care (EHC) plan</td>
+</tr>
+<tr class="even">
+<td>58</td>
+<td>PSENK4</td>
+<td>% of pupils at the end of key stage 4 with special educational needs (SEN) without an Education, health and care (EHC) plan</td>
+</tr>
+<tr class="odd">
+<td>59</td>
+<td>TOTATT8</td>
+<td>Total sum of Attainment 8 scores</td>
+</tr>
+<tr class="even">
+<td>60</td>
+<td>ATT8SCR</td>
+<td>Average Attainment 8 score per pupil</td>
+</tr>
+<tr class="odd">
+<td>61</td>
+<td>TOTATT8ENG</td>
+<td>Total sum of Attainment 8 scores for English element</td>
+</tr>
+<tr class="even">
+<td>62</td>
+<td>ATT8SCRENG</td>
+<td>Average Attainment 8 score per pupil for English element</td>
+</tr>
+<tr class="odd">
+<td>63</td>
+<td>TOTATT8MAT</td>
+<td>Total sum of Attainment 8 scores for mathematics element</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>ATT8SCRMAT</td>
+<td>Average Attainment 8 score per pupil for mathematics element</td>
+</tr>
+<tr class="odd">
+<td>65</td>
+<td>TOTATT8EBAC</td>
+<td>Total sum of Attainment 8 scores for EBacc element</td>
+</tr>
+<tr class="even">
+<td>66</td>
+<td>ATT8SCREBAC</td>
+<td>Average Attainment 8 score per pupil for EBacc element</td>
+</tr>
+<tr class="odd">
+<td>67</td>
+<td>TOTATT8OPEN</td>
+<td>Total sum of Attainment 8 scores for open element</td>
+</tr>
+<tr class="even">
+<td>68</td>
+<td>ATT8SCROPEN</td>
+<td>Average Attainment 8 score per pupil for open element</td>
+</tr>
+<tr class="odd">
+<td>69</td>
+<td>TOTATT8OPENG</td>
+<td>Total sum of Attainment 8 scores for open element - GCSE only</td>
+</tr>
+<tr class="even">
+<td>70</td>
+<td>ATT8SCROPENG</td>
+<td>Average Attainment 8 score per pupil for open element - GCSE only</td>
+</tr>
+<tr class="odd">
+<td>71</td>
+<td>TOTATT8OPENNG</td>
+<td>Total sum of Attainment 8 scores for open element - non-GCSE only</td>
+</tr>
+<tr class="even">
+<td>72</td>
+<td>ATT8SCROPENNG</td>
+<td>Average Attainment 8 score per pupil for open element - non-GCSE only</td>
+</tr>
+<tr class="odd">
+<td>73</td>
+<td>AVGEBACFILL</td>
+<td>Average number of EBacc slots filled in Attainment 8 per pupil</td>
+</tr>
+<tr class="even">
+<td>74</td>
+<td>AVGOPENFILL</td>
+<td>Average number of Open slots filled in Attainment 8 per pupil</td>
+</tr>
+<tr class="odd">
+<td>75</td>
+<td>P8PUP</td>
+<td>Number of pupils included in Progress 8 measure</td>
+</tr>
+<tr class="even">
+<td>76</td>
+<td>TP8ADJ</td>
+<td>Number of pupils who have had P8 score adjusted in average</td>
+</tr>
+<tr class="odd">
+<td>77</td>
+<td>P8MEACOV</td>
+<td>% of pupils at the end of key stage 4 included in Progress 8 measure</td>
+</tr>
+<tr class="even">
+<td>78</td>
+<td>P8MEA</td>
+<td>Progress 8 measure after adjustment for extreme scores</td>
+</tr>
+<tr class="odd">
+<td>79</td>
+<td>P8CILOW</td>
+<td>Progress 8 lower 95% confidence interval for adjusted average</td>
+</tr>
+<tr class="even">
+<td>80</td>
+<td>P8CIUPP</td>
+<td>Progress 8 upper 95% confidence interval for adjusted average</td>
+</tr>
+<tr class="odd">
+<td>81</td>
+<td>P8MEA_ORIG</td>
+<td>Progress 8 measure based on unadjusted pupil scores</td>
+</tr>
+<tr class="even">
+<td>82</td>
+<td>P8CILOW_ORIG</td>
+<td>Progress 8 lower 95% confidence interval for unadjusted average</td>
+</tr>
+<tr class="odd">
+<td>83</td>
+<td>P8CIUPP_ORIG</td>
+<td>Progress 8 upper 95% confidence interval for unadjusted average</td>
+</tr>
+<tr class="even">
+<td>84</td>
+<td>P8MEAENG</td>
+<td>Progress 8 measure for English element</td>
+</tr>
+<tr class="odd">
+<td>85</td>
+<td>P8MEAENG_CILOW</td>
+<td>Lower 95% confidence interval for Progress 8 English element</td>
+</tr>
+<tr class="even">
+<td>86</td>
+<td>P8MEAENG_CIUPP</td>
+<td>Upper 95% confidence interval for Progress 8 English element</td>
+</tr>
+<tr class="odd">
+<td>87</td>
+<td>P8MEAMAT</td>
+<td>Progress 8 measure for mathematics element</td>
+</tr>
+<tr class="even">
+<td>88</td>
+<td>P8MEAMAT_CILOW</td>
+<td>Lower 95% confidence interval for Progress 8 maths element</td>
+</tr>
+<tr class="odd">
+<td>89</td>
+<td>P8MEAMAT_CIUPP</td>
+<td>Upper 95% confidence interval for Progress 8 maths element</td>
+</tr>
+<tr class="even">
+<td>90</td>
+<td>P8MEAEBAC</td>
+<td>Progress 8 measure for EBacc element</td>
+</tr>
+<tr class="odd">
+<td>91</td>
+<td>P8MEAEBAC_CILOW</td>
+<td>Lower 95% confidence interval for Progress 8 EBacc element</td>
+</tr>
+<tr class="even">
+<td>92</td>
+<td>P8MEAEBAC_CIUPP</td>
+<td>Upper 95% confidence interval for Progress 8 EBacc element</td>
+</tr>
+<tr class="odd">
+<td>93</td>
+<td>P8MEAOPEN</td>
+<td>Progress 8 measure for open element</td>
+</tr>
+<tr class="even">
+<td>94</td>
+<td>P8MEAOPEN_CILOW</td>
+<td>Lower 95% confidence interval for Progress 8 open element</td>
+</tr>
+<tr class="odd">
+<td>95</td>
+<td>P8MEAOPEN_CIUPP</td>
+<td>Upper 95% confidence interval for Progress 8 open element</td>
+</tr>
+<tr class="even">
+<td>96</td>
+<td>PTL2BASICS_94</td>
+<td>% of pupils achieving standard 9-4 passes in both English and mathematics GCSEs</td>
+</tr>
+<tr class="odd">
+<td>97</td>
+<td>PTL2BASICS_95</td>
+<td>% of pupils achieving strong 9-5 passes in both English and mathematics GCSEs</td>
+</tr>
+<tr class="even">
+<td>98</td>
+<td>TOTEBACCAPS</td>
+<td>Total EBacc APS score per pupil</td>
+</tr>
+<tr class="odd">
+<td>99</td>
+<td>EBACCAPS</td>
+<td>Average EBacc APS score per pupil</td>
+</tr>
+<tr class="even">
+<td>100</td>
+<td>EBACCAPS_FSM6CLA1A</td>
+<td>Average EBacc APS score per disadvantaged pupil</td>
+</tr>
+<tr class="odd">
+<td>101</td>
+<td>EBACCAPS_NFSM6CLA1A</td>
+<td>Average EBacc APS score per non-disadvantaged pupil</td>
+</tr>
+<tr class="even">
+<td>102</td>
+<td>EBACCAPS_LO</td>
+<td>Average EBacc APS score per pupil with low prior attainment</td>
+</tr>
+<tr class="odd">
+<td>103</td>
+<td>EBACCAPS_MID</td>
+<td>Average EBacc APS score per pupil with middle prior attainment</td>
+</tr>
+<tr class="even">
+<td>104</td>
+<td>EBACCAPS_HI</td>
+<td>Average EBacc APS score per pupil with high prior attainment</td>
+</tr>
+<tr class="odd">
+<td>105</td>
+<td>EBACCAPS_EAL</td>
+<td>Average EBacc APS score per pupil for whom English is an additional language</td>
+</tr>
+<tr class="even">
+<td>106</td>
+<td>EBACCAPS_GIRLS</td>
+<td>Average EBacc APS score per girl</td>
+</tr>
+<tr class="odd">
+<td>107</td>
+<td>EBACCAPS_BOYS</td>
+<td>Average EBacc APS score per boy</td>
+</tr>
+<tr class="even">
+<td>108</td>
+<td>EBACCAPS_NMOB</td>
+<td>Average EBacc APS score per non-mobile pupil</td>
+</tr>
+<tr class="odd">
+<td>109</td>
+<td>EBACCAPS_20</td>
+<td>Average EBacc APS score per pupil in 2020</td>
+</tr>
+<tr class="even">
+<td>110</td>
+<td>EBACCAPS_FSM6CLA1A_20</td>
+<td>Average EBacc APS score per disadvantaged pupil in 2020</td>
+</tr>
+<tr class="odd">
+<td>111</td>
+<td>EBACCAPS_NFSM6CLA1A_20</td>
+<td>Average EBacc APS score per non-disadvantaged pupil in 2020</td>
+</tr>
+<tr class="even">
+<td>112</td>
+<td>EBACCAPS_21</td>
+<td>Average EBacc APS score per pupil in 2021</td>
+</tr>
+<tr class="odd">
+<td>113</td>
+<td>EBACCAPS_FSM6CLA1A_21</td>
+<td>Average EBacc APS score per disadvantaged pupil in 2021</td>
+</tr>
+<tr class="even">
+<td>114</td>
+<td>EBACCAPS_NFSM6CLA1A_21</td>
+<td>Average EBacc APS score per non-disadvantaged pupil in 2021</td>
+</tr>
+<tr class="odd">
+<td>115</td>
+<td>TEBACC_E_PTQ_EE</td>
+<td>Number of key stage 4 pupils with entries in all English Baccalaureate subject areas</td>
+</tr>
+<tr class="even">
+<td>116</td>
+<td>PTEBACC_E_PTQ_EE</td>
+<td>% of key stage 4 pupils with entries in all English Baccalaureate subject areas</td>
+</tr>
+<tr class="odd">
+<td>117</td>
+<td>PTEBACC_94</td>
+<td>% of pupils achieving the English Baccalaureate with 9-4 passes</td>
+</tr>
+<tr class="even">
+<td>118</td>
+<td>PTEBACC_95</td>
+<td>% of pupils achieving the English Baccalaureate with 9-5 passes</td>
+</tr>
+<tr class="odd">
+<td>119</td>
+<td>TEBACENG_E_PTQ_EE</td>
+<td>Number of pupils entering the English Baccalaureate English subject area</td>
+</tr>
+<tr class="even">
+<td>120</td>
+<td>PTEBACENG_E_PTQ_EE</td>
+<td>% of pupils entering the English Baccalaureate English subject area</td>
+</tr>
+<tr class="odd">
+<td>121</td>
+<td>TEBACMAT_E_PTQ_EE</td>
+<td>Number of pupils entering the English Baccalaureate Maths subject area</td>
+</tr>
+<tr class="even">
+<td>122</td>
+<td>PTEBACMAT_E_PTQ_EE</td>
+<td>% of pupils entering the English Baccalaureate Maths subject area</td>
+</tr>
+<tr class="odd">
+<td>123</td>
+<td>TEBAC2SCI_E_PTQ_EE</td>
+<td>Number of pupils entering the English Baccalaureate Science subject area</td>
+</tr>
+<tr class="even">
+<td>124</td>
+<td>PTEBAC2SCI_E_PTQ_EE</td>
+<td>% of pupils entering the English Baccalaureate Science subject area</td>
+</tr>
+<tr class="odd">
+<td>125</td>
+<td>TEBACHUM_E_PTQ_EE</td>
+<td>Number of pupils entering the English Baccalaureate Humanities subject area</td>
+</tr>
+<tr class="even">
+<td>126</td>
+<td>PTEBACHUM_E_PTQ_EE</td>
+<td>% of pupils entering the English Baccalaureate Humanities subject area</td>
+</tr>
+<tr class="odd">
+<td>127</td>
+<td>TEBACLAN_E_PTQ_EE</td>
+<td>Number of pupils entering the English Baccalaureate Language subject area</td>
+</tr>
+<tr class="even">
+<td>128</td>
+<td>PTEBACLAN_E_PTQ_EE</td>
+<td>% of pupils entering the English Baccalaureate Language subject area</td>
+</tr>
+<tr class="odd">
+<td>129</td>
+<td>PTEBACENG_94</td>
+<td>% of pupils achieving the EBacc English subject area with a standard 9-4 pass</td>
+</tr>
+<tr class="even">
+<td>130</td>
+<td>PTEBACENG_95</td>
+<td>% of pupils achieving the EBacc English subject area with a strong 9-5 pass</td>
+</tr>
+<tr class="odd">
+<td>131</td>
+<td>PTEBACMAT_94</td>
+<td>% of pupils achieving the EBacc Maths subject area with a standard 9-4 pass</td>
+</tr>
+<tr class="even">
+<td>132</td>
+<td>PTEBACMAT_95</td>
+<td>% of pupils achieving the EBacc Maths subject area with a strong 9-5 pass</td>
+</tr>
+<tr class="odd">
+<td>133</td>
+<td>PTEBAC2SCI_94</td>
+<td>% of entered pupils achieving the EBacc Science subject area with a 9-4 pass</td>
+</tr>
+<tr class="even">
+<td>134</td>
+<td>PTEBAC2SCI_95</td>
+<td>% of entered pupils achieving the EBacc Science subject area with a 9-5 pass</td>
+</tr>
+<tr class="odd">
+<td>135</td>
+<td>PTEBACHUM_94</td>
+<td>% of entered pupils achieving the EBacc Humanities subject area with a 9-4 pass</td>
+</tr>
+<tr class="even">
+<td>136</td>
+<td>PTEBACHUM_95</td>
+<td>% of entered pupils achieving the EBacc Humanities subject area with a 9-5 pass</td>
+</tr>
+<tr class="odd">
+<td>137</td>
+<td>PTEBACLAN_94</td>
+<td>% of entered pupils achieving the EBacc Language subject area with a 9-4 pass</td>
+</tr>
+<tr class="even">
+<td>138</td>
+<td>PTEBACLAN_95</td>
+<td>% of entered pupils achieving the EBacc Language subject area with a 9-5 pass</td>
+</tr>
+<tr class="odd">
+<td>139</td>
+<td>SCIVAPUP_PTQ_EE</td>
+<td>Number of pupils included in English Baccalaureate Science Value Added measure</td>
+</tr>
+<tr class="even">
+<td>140</td>
+<td>SCIVACOV_PTQ_EE</td>
+<td>Coverage of the English Baccalaureate Science Value Added indicators of those who entered for science</td>
+</tr>
+<tr class="odd">
+<td>141</td>
+<td>HUMVAPUP_PTQ_EE</td>
+<td>Number of pupils included in English Baccalaureate Humanities Value Added measure</td>
+</tr>
+<tr class="even">
+<td>142</td>
+<td>HUMVACOV_PTQ_EE</td>
+<td>Coverage of the English Baccalaureate Humanities Value Added indicators of those who entered for humanities</td>
+</tr>
+<tr class="odd">
+<td>143</td>
+<td>LANVAPUP_PTQ_EE</td>
+<td>Number of pupils included in English Baccalaureate Language Value Added measure</td>
+</tr>
+<tr class="even">
+<td>144</td>
+<td>LANVACOV_PTQ_EE</td>
+<td>Coverage of the English Baccalaureate Language Value Added indicators of those who entered for languages</td>
+</tr>
+<tr class="odd">
+<td>145</td>
+<td>SCIVAMEA_PTQ_EE</td>
+<td>English Baccalaureate Science Value Added measure</td>
+</tr>
+<tr class="even">
+<td>146</td>
+<td>SCIVALOW_PTQ_EE</td>
+<td>English Baccalaureate Science Value Added lower 95% confidence limit</td>
+</tr>
+<tr class="odd">
+<td>147</td>
+<td>SCIVAUPP_PTQ_EE</td>
+<td>English Baccalaureate Science Value Added upper 95% confidence limit</td>
+</tr>
+<tr class="even">
+<td>148</td>
+<td>HUMVAMEA_PTQ_EE</td>
+<td>EBacc Humanities VA measure</td>
+</tr>
+<tr class="odd">
+<td>149</td>
+<td>HUMVALOW_PTQ_EE</td>
+<td>English Baccalaureate Humanities Value Added lower 95% confidence limit</td>
+</tr>
+<tr class="even">
+<td>150</td>
+<td>HUMVAUPP_PTQ_EE</td>
+<td>English Baccalaureate Humanities Value Added upper 95% confidence limit</td>
+</tr>
+<tr class="odd">
+<td>151</td>
+<td>LANVAMEA_PTQ_EE</td>
+<td>English Baccalaureate Languages Value Added measure</td>
+</tr>
+<tr class="even">
+<td>152</td>
+<td>LANVALOW_PTQ_EE</td>
+<td>English Baccalaureate Languages Value Added lower 95% confidence limit</td>
+</tr>
+<tr class="odd">
+<td>153</td>
+<td>LANVAUPP_PTQ_EE</td>
+<td>English Baccalaureate Languages Value Added upper 95% confidence limit</td>
+</tr>
+<tr class="even">
+<td>154</td>
+<td>TEBACENG_94</td>
+<td>Number of pupils achieving EBacc English subject area with a standard 9-4 pass</td>
+</tr>
+<tr class="odd">
+<td>155</td>
+<td>TEBACENG_95</td>
+<td>Number of pupils achieving EBacc English subject area with a strong 9-5 pass</td>
+</tr>
+<tr class="even">
+<td>156</td>
+<td>TEBACMAT_94</td>
+<td>Number of pupils achieving EBacc Maths subject area with a standard 9-4 pass</td>
+</tr>
+<tr class="odd">
+<td>157</td>
+<td>TEBACMAT_95</td>
+<td>Number of pupils achieving EBacc Maths subject area with a strong 9-5 pass</td>
+</tr>
+<tr class="even">
+<td>158</td>
+<td>TEBAC2SCI_94</td>
+<td>Number of pupils achieving EBacc Science subject area with a 9-4 pass</td>
+</tr>
+<tr class="odd">
+<td>159</td>
+<td>TEBAC2SCI_95</td>
+<td>Number of pupils achieving EBacc Science subject area with a 9-5 pass</td>
+</tr>
+<tr class="even">
+<td>160</td>
+<td>TEBACHUM_94</td>
+<td>Number of pupils achieving EBacc Humanities subject area with a 9-4 pass</td>
+</tr>
+<tr class="odd">
+<td>161</td>
+<td>TEBACHUM_95</td>
+<td>Number of pupils achieving EBacc Humanities subject area with a 9-5 pass</td>
+</tr>
+<tr class="even">
+<td>162</td>
+<td>TEBACLAN_94</td>
+<td>Number of pupils achieving EBacc Language subject area with a 9-4 pass</td>
+</tr>
+<tr class="odd">
+<td>163</td>
+<td>TEBACLAN_95</td>
+<td>Number of pupils achieving EBacc Language subject area with a 9-5 pass</td>
+</tr>
+<tr class="even">
+<td>164</td>
+<td>TEBACC91</td>
+<td>Number of pupils achieving the English Baccalaureate at grades 9-1</td>
+</tr>
+<tr class="odd">
+<td>165</td>
+<td>PTEBACC91</td>
+<td>% of pupils achieving the English Baccalaureate at grades 9-1</td>
+</tr>
+<tr class="even">
+<td>166</td>
+<td>TEBACENG91</td>
+<td>Number of pupils achieving EBacc English subject area at grade 9-1</td>
+</tr>
+<tr class="odd">
+<td>167</td>
+<td>PTEBACENG91</td>
+<td>% of pupils achieving the EBacc English subject area at grade 9-1</td>
+</tr>
+<tr class="even">
+<td>168</td>
+<td>TEBACMAT91</td>
+<td>Number of pupils achieving EBacc Maths subject area at grade 9-1</td>
+</tr>
+<tr class="odd">
+<td>169</td>
+<td>PTEBACMAT91</td>
+<td>% of pupils achieving the EBacc Maths subject area at grade 9-1</td>
+</tr>
+<tr class="even">
+<td>170</td>
+<td>TEBAC2SCI91</td>
+<td>Number of pupils achieving EBacc Science subject area with grades 9-1</td>
+</tr>
+<tr class="odd">
+<td>171</td>
+<td>PTEBAC2SCI91</td>
+<td>% entered pupils achieving the EBacc Science subject area with grades 9-1</td>
+</tr>
+<tr class="even">
+<td>172</td>
+<td>TEBACHUM91</td>
+<td>Number of pupils achieving EBacc Humanities subject area with grades 9-1</td>
+</tr>
+<tr class="odd">
+<td>173</td>
+<td>PTEBACHUM91</td>
+<td>% entered pupils achieving the EBacc Humanities subject area with grades 9-1</td>
+</tr>
+<tr class="even">
+<td>174</td>
+<td>TEBACLAN91</td>
+<td>Number of pupils achieving EBacc Language subject area with grades 9-1</td>
+</tr>
+<tr class="odd">
+<td>175</td>
+<td>PTEBACLAN91</td>
+<td>% of entered pupils achieving the EBacc Language subject area with grades 9-1</td>
+</tr>
+<tr class="even">
+<td>176</td>
+<td>ATT8SCR_FSM6CLA1A</td>
+<td>Average Attainment 8 score per disadvantaged pupil</td>
+</tr>
+<tr class="odd">
+<td>177</td>
+<td>P8PUP_FSM6CLA1A</td>
+<td>Number of disadvantaged pupils in Progress 8 measure</td>
+</tr>
+<tr class="even">
+<td>178</td>
+<td>TP8ADJ_FSM6CLA1A</td>
+<td>Number of disadvantaged pupils in progress measure with adjusted scores</td>
+</tr>
+<tr class="odd">
+<td>179</td>
+<td>P8MEA_FSM6CLA1A</td>
+<td>Adjusted Progress 8 measure - disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>180</td>
+<td>P8CILOW_FSM6CLA1A</td>
+<td>Adjusted Progress 8 lower 95% confidence interval - disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>181</td>
+<td>P8CIUPP_FSM6CLA1A</td>
+<td>Adjusted Progress 8 upper 95% confidence interval - disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>182</td>
+<td>P8MEA_FSM6CLA1A_ORIG</td>
+<td>Unadjusted Progress 8 measure - disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>183</td>
+<td>P8CILOW_FSM6CLA1A_ORIG</td>
+<td>Unadjusted Progress 8 lower 95% confidence interval - disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>184</td>
+<td>P8CIUPP_FSM6CLA1A_ORIG</td>
+<td>Unadjusted Progress 8 upper 95% confidence interval - disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>185</td>
+<td>ATT8SCR_NFSM6CLA1A</td>
+<td>Average Attainment 8 score per non-disadvantaged pupil</td>
+</tr>
+<tr class="even">
+<td>186</td>
+<td>P8PUP_NFSM6CLA1A</td>
+<td>Number of non-disadvantaged pupils in Progress 8 measure</td>
+</tr>
+<tr class="odd">
+<td>187</td>
+<td>TP8ADJ_NFSM6CLA1A</td>
+<td>Number of non-disadvantaged pupils in progress measure with adjusted scores</td>
+</tr>
+<tr class="even">
+<td>188</td>
+<td>P8MEA_NFSM6CLA1A</td>
+<td>Adjusted Progress 8 measure - non-disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>189</td>
+<td>P8CILOW_NFSM6CLA1A</td>
+<td>Progress 8 lower 95% confidence interval - non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>190</td>
+<td>P8CIUPP_NFSM6CLA1A</td>
+<td>Progress 8 upper 95% confidence interval - non-disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>191</td>
+<td>P8MEA_NFSM6CLA1A_ORIG</td>
+<td>Unadjusted Progress 8 measure - non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>192</td>
+<td>P8CILOW_NFSM6CLA1A_ORIG</td>
+<td>Unadjusted Progress 8 lower 95% confidence interval - non-disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>193</td>
+<td>P8CIUPP_NFSM6CLA1A_ORIG</td>
+<td>Unadjusted Progress 8 upper 95% confidence interval - non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>194</td>
+<td>ATT8SCRENG_FSM6CLA1A</td>
+<td>Average Attainment 8 score per disadvantaged pupil for English element</td>
+</tr>
+<tr class="odd">
+<td>195</td>
+<td>P8MEAENG_FSM6CLA1A</td>
+<td>Progress 8 measure for English element - disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>196</td>
+<td>P8MEAENG_CILOW_FSM6CLA1A</td>
+<td>Lower 95% confidence interval for Progress 8 English element for disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>197</td>
+<td>P8MEAENG_CIUPP_FSM6CLA1A</td>
+<td>Upper 95% confidence interval for Progress 8 English element for disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>198</td>
+<td>ATT8SCRMAT_FSM6CLA1A</td>
+<td>Average Attainment 8 score per disadvantaged pupil for mathematics element</td>
+</tr>
+<tr class="odd">
+<td>199</td>
+<td>P8MEAMAT_FSM6CLA1A</td>
+<td>Progress 8 measure for maths element - disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>200</td>
+<td>P8MEAMAT_CILOW_FSM6CLA1A</td>
+<td>Lower 95% confidence interval for Progress 8 maths element for disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>201</td>
+<td>P8MEAMAT_CIUPP_FSM6CLA1A</td>
+<td>Upper 95% confidence interval for Progress 8 maths element for disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>202</td>
+<td>ATT8SCREBAC_FSM6CLA1A</td>
+<td>Average Attainment 8 score per disadvantaged pupil for EBacc element</td>
+</tr>
+<tr class="odd">
+<td>203</td>
+<td>P8MEAEBAC_FSM6CLA1A</td>
+<td>Progress 8 measure for EBacc element - disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>204</td>
+<td>P8MEAEBAC_CILOW_FSM6CLA1A</td>
+<td>Lower 95% confidence interval for Progress 8 EBacc element for disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>205</td>
+<td>P8MEAEBAC_CIUPP_FSM6CLA1A</td>
+<td>Upper 95% confidence interval for Progress 8 EBacc element for disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>206</td>
+<td>ATT8SCROPEN_FSM6CLA1A</td>
+<td>Average Attainment 8 score per disadvantaged pupil for open element</td>
+</tr>
+<tr class="odd">
+<td>207</td>
+<td>P8MEAOPEN_FSM6CLA1A</td>
+<td>Progress 8 measure for open element - disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>208</td>
+<td>P8MEAOPEN_CILOW_FSM6CLA1A</td>
+<td>Lower 95% confidence interval for Progress 8 open element for disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>209</td>
+<td>P8MEAOPEN_CIUPP_FSM6CLA1A</td>
+<td>Upper 95% confidence interval for Progress 8 open element for disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>210</td>
+<td>ATT8SCRENG_NFSM6CLA1A</td>
+<td>Average Attainment 8 score per non-disadvantaged pupil for English element</td>
+</tr>
+<tr class="odd">
+<td>211</td>
+<td>P8MEAENG_NFSM6CLA1A</td>
+<td>Progress 8 measure for English element - non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>212</td>
+<td>P8MEAENG_CILOW_NFSM6CLA1A</td>
+<td>Lower 95% confidence interval for Progress 8 English element for non-disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>213</td>
+<td>P8MEAENG_CIUPP_NFSM6CLA1A</td>
+<td>Upper 95% confidence interval for Progress 8 English element for non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>214</td>
+<td>ATT8SCRMAT_NFSM6CLA1A</td>
+<td>Average Attainment 8 score per non-disadvantaged pupil for mathematics element</td>
+</tr>
+<tr class="odd">
+<td>215</td>
+<td>P8MEAMAT_NFSM6CLA1A</td>
+<td>Progress 8 measure for maths element - non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>216</td>
+<td>P8MEAMAT_CILOW_NFSM6CLA1A</td>
+<td>Lower 95% confidence interval for Progress 8 maths element for non-disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>217</td>
+<td>P8MEAMAT_CIUPP_NFSM6CLA1A</td>
+<td>Upper 95% confidence interval for Progress 8 maths element for non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>218</td>
+<td>ATT8SCREBAC_NFSM6CLA1A</td>
+<td>Average Attainment 8 score per non-disadvantaged pupil for EBacc element</td>
+</tr>
+<tr class="odd">
+<td>219</td>
+<td>P8MEAEBAC_NFSM6CLA1A</td>
+<td>Progress 8 measure for EBacc element - non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>220</td>
+<td>P8MEAEBAC_CILOW_NFSM6CLA1A</td>
+<td>Lower 95% confidence interval for Progress 8 EBacc element for non-disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>221</td>
+<td>P8MEAEBAC_CIUPP_NFSM6CLA1A</td>
+<td>Upper 95% confidence interval for Progress 8 EBacc element for non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>222</td>
+<td>ATT8SCROPEN_NFSM6CLA1A</td>
+<td>Average Attainment 8 score per non-disadvantaged pupil for open element</td>
+</tr>
+<tr class="odd">
+<td>223</td>
+<td>P8MEAOPEN_NFSM6CLA1A</td>
+<td>Progress 8 measure for open element - non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>224</td>
+<td>P8MEAOPEN_CILOW_NFSM6CLA1A</td>
+<td>Lower 95% confidence interval for Progress 8 open element for non-disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>225</td>
+<td>P8MEAOPEN_CIUPP_NFSM6CLA1A</td>
+<td>Upper 95% confidence interval for Progress 8 open element for non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>226</td>
+<td>ATT8SCROPENG_FSM6CLA1A</td>
+<td>Average Attainment 8 score per disadvantaged pupil for open element - GCSE only</td>
+</tr>
+<tr class="odd">
+<td>227</td>
+<td>ATT8SCROPENNG_FSM6CLA1A</td>
+<td>Average Attainment 8 score per disadvantaged pupil for open element - non-GCSE only</td>
+</tr>
+<tr class="even">
+<td>228</td>
+<td>ATT8SCROPENG_NFSM6CLA1A</td>
+<td>Average Attainment 8 score per non-disadvantaged pupil for open element - GCSE only</td>
+</tr>
+<tr class="odd">
+<td>229</td>
+<td>ATT8SCROPENNG_NFSM6CLA1A</td>
+<td>Average Attainment 8 score per non-disadvantaged pupil for open element - non-GCSE only</td>
+</tr>
+<tr class="even">
+<td>230</td>
+<td>DIFFN_ATT8</td>
+<td>Difference between Attainment 8 for disadvantaged pupils in school/LA and non-disadvantaged pupils nationally</td>
+</tr>
+<tr class="odd">
+<td>231</td>
+<td>DIFFN_P8MEA</td>
+<td>Difference between Progress 8 measure for disadvantaged pupils in school/LA and non-disadvantaged pupils nationally</td>
+</tr>
+<tr class="even">
+<td>232</td>
+<td>ATT8SCR_LO</td>
+<td>Average Attainment 8 score per pupil with low prior attainment</td>
+</tr>
+<tr class="odd">
+<td>233</td>
+<td>P8PUP_LO</td>
+<td>Number of pupils with low prior attainment included in Progress 8 measure</td>
+</tr>
+<tr class="even">
+<td>234</td>
+<td>TP8ADJ_LO</td>
+<td>Number of pupils with low prior attainments in progress measure with adjusted scores</td>
+</tr>
+<tr class="odd">
+<td>235</td>
+<td>P8MEA_LO</td>
+<td>Adjusted Progress 8 measure - pupils with low prior attainments</td>
+</tr>
+<tr class="even">
+<td>236</td>
+<td>P8CILOW_LO</td>
+<td>Adjusted Progress 8 lower 95% confidence interval - pupils with low prior attainments</td>
+</tr>
+<tr class="odd">
+<td>237</td>
+<td>P8CIUPP_LO</td>
+<td>Adjusted Progress 8 upper 95% confidence interval - pupils with low prior attainments</td>
+</tr>
+<tr class="even">
+<td>238</td>
+<td>P8MEA_LO_ORIG</td>
+<td>Unadjusted Progress 8 measure - pupils with low prior attainments</td>
+</tr>
+<tr class="odd">
+<td>239</td>
+<td>P8CILOW_LO_ORIG</td>
+<td>Unadjusted Progress 8 lower 95% confidence interval - pupils with low prior attainments</td>
+</tr>
+<tr class="even">
+<td>240</td>
+<td>P8CIUPP_LO_ORIG</td>
+<td>Unadjusted Progress 8 upper 95% confidence interval - pupils with low prior attainments</td>
+</tr>
+<tr class="odd">
+<td>241</td>
+<td>ATT8SCR_MID</td>
+<td>Average Attainment 8 score per pupil with middle prior attainment</td>
+</tr>
+<tr class="even">
+<td>242</td>
+<td>P8PUP_MID</td>
+<td>Number of pupils with middle prior attainment included in Progress 8 measure</td>
+</tr>
+<tr class="odd">
+<td>243</td>
+<td>TP8ADJ_MID</td>
+<td>Number of pupils with middle prior attainments in progress measure with adjusted scores</td>
+</tr>
+<tr class="even">
+<td>244</td>
+<td>P8MEA_MID</td>
+<td>Adjusted Progress 8 measure - pupils with middle prior attainment</td>
+</tr>
+<tr class="odd">
+<td>245</td>
+<td>P8CILOW_MID</td>
+<td>Progress 8 lower 95% confidence interval - pupils with middle prior attainment</td>
+</tr>
+<tr class="even">
+<td>246</td>
+<td>P8CIUPP_MID</td>
+<td>Progress 8 upper 95% confidence interval - pupils with middle prior attainment</td>
+</tr>
+<tr class="odd">
+<td>247</td>
+<td>P8MEA_MID_ORIG</td>
+<td>Unadjusted Progress 8 measure - pupils with middle prior attainments</td>
+</tr>
+<tr class="even">
+<td>248</td>
+<td>P8CILOW_MID_ORIG</td>
+<td>Unadjusted Progress 8 lower 95% confidence interval - pupils with middle prior attainments</td>
+</tr>
+<tr class="odd">
+<td>249</td>
+<td>P8CIUPP_MID_ORIG</td>
+<td>Unadjusted Progress 8 upper 95% confidence interval - pupils with middle prior attainments</td>
+</tr>
+<tr class="even">
+<td>250</td>
+<td>ATT8SCR_HI</td>
+<td>Average Attainment 8 score per pupil with high prior attainment</td>
+</tr>
+<tr class="odd">
+<td>251</td>
+<td>P8PUP_HI</td>
+<td>Number of pupils with high prior attainment included in Progress 8 measure</td>
+</tr>
+<tr class="even">
+<td>252</td>
+<td>TP8ADJ_HI</td>
+<td>Number of pupils with high prior attainments in progress measure with adjusted scores</td>
+</tr>
+<tr class="odd">
+<td>253</td>
+<td>P8MEA_HI</td>
+<td>Adjusted Progress 8 measure - pupils with high prior attainment</td>
+</tr>
+<tr class="even">
+<td>254</td>
+<td>P8CILOW_HI</td>
+<td>Progress 8 lower 95% confidence interval - pupils with high prior attainment</td>
+</tr>
+<tr class="odd">
+<td>255</td>
+<td>P8CIUPP_HI</td>
+<td>Progress 8 upper 95% confidence interval - pupils with high prior attainment</td>
+</tr>
+<tr class="even">
+<td>256</td>
+<td>P8MEA_HI_ORIG</td>
+<td>Unadjusted Progress 8 measure - pupils with high prior attainments</td>
+</tr>
+<tr class="odd">
+<td>257</td>
+<td>P8CILOW_HI_ORIG</td>
+<td>Unadjusted Progress 8 lower 95% confidence interval - pupils with high prior attainments</td>
+</tr>
+<tr class="even">
+<td>258</td>
+<td>P8CIUPP_HI_ORIG</td>
+<td>Unadjusted Progress 8 upper 95% confidence interval - pupils with high prior attainments</td>
+</tr>
+<tr class="odd">
+<td>259</td>
+<td>ATT8SCR_EAL</td>
+<td>Average Attainment 8 score per pupil for whom English is an additional language</td>
+</tr>
+<tr class="even">
+<td>260</td>
+<td>ATT8SCRENG_EAL</td>
+<td>Average Attainment 8 score per pupil for whom English is an additional language for English element</td>
+</tr>
+<tr class="odd">
+<td>261</td>
+<td>ATT8SCRMAT_EAL</td>
+<td>Average Attainment 8 score per pupil for whom English is an additional language for mathematics element</td>
+</tr>
+<tr class="even">
+<td>262</td>
+<td>ATT8SCREBAC_EAL</td>
+<td>Average Attainment 8 score per pupil for whom English is an additional language for EBacc element</td>
+</tr>
+<tr class="odd">
+<td>263</td>
+<td>ATT8SCROPEN_EAL</td>
+<td>Average Attainment 8 score per pupil for whom English is an additional language for open element</td>
+</tr>
+<tr class="even">
+<td>264</td>
+<td>ATT8SCROPENG_EAL</td>
+<td>Average Attainment 8 score per pupil for whom English is an additional language - GCSE only</td>
+</tr>
+<tr class="odd">
+<td>265</td>
+<td>ATT8SCROPENNG_EAL</td>
+<td>Average Attainment 8 score per pupil for whom English is an additional language - non-GCSE only</td>
+</tr>
+<tr class="even">
+<td>266</td>
+<td>P8PUP_EAL</td>
+<td>Number of pupils for whom English is an additional language included in Progress 8 measure</td>
+</tr>
+<tr class="odd">
+<td>267</td>
+<td>TP8ADJ_EAL</td>
+<td>Number of pupils for whom English is an additional language in progress measure with adjusted scores</td>
+</tr>
+<tr class="even">
+<td>268</td>
+<td>P8MEA_EAL</td>
+<td>Adjusted Progress 8 measure - pupils for whom English is an additional language</td>
+</tr>
+<tr class="odd">
+<td>269</td>
+<td>P8CILOW_EAL</td>
+<td>Adjusted Progress 8 lower 95% confidence interval - pupils for whom English is an additional language</td>
+</tr>
+<tr class="even">
+<td>270</td>
+<td>P8CIUPP_EAL</td>
+<td>Adjusted Progress 8 upper 95% confidence interval - pupils for whom English is an additional language</td>
+</tr>
+<tr class="odd">
+<td>271</td>
+<td>P8MEA_EAL_ORIG</td>
+<td>Unadjusted Progress 8 measure - pupils for whom English is an additional language</td>
+</tr>
+<tr class="even">
+<td>272</td>
+<td>P8CILOW_EAL_ORIG</td>
+<td>Unadjusted Progress 8 lower 95% confidence interval - pupils for whom English is an additional language</td>
+</tr>
+<tr class="odd">
+<td>273</td>
+<td>P8CIUPP_EAL_ORIG</td>
+<td>Unadjusted Progress 8 upper 95% confidence interval - pupils for whom English is an additional language</td>
+</tr>
+<tr class="even">
+<td>274</td>
+<td>ATT8SCR_GIRLS</td>
+<td>Average Attainment 8 score per girl</td>
+</tr>
+<tr class="odd">
+<td>275</td>
+<td>ATT8SCRENG_GIRLS</td>
+<td>Average Attainment 8 score per girl for English element</td>
+</tr>
+<tr class="even">
+<td>276</td>
+<td>ATT8SCRMAT_GIRLS</td>
+<td>Average Attainment 8 score per girl for mathematics element</td>
+</tr>
+<tr class="odd">
+<td>277</td>
+<td>ATT8SCREBAC_GIRLS</td>
+<td>Average Attainment 8 score per girl for EBacc element</td>
+</tr>
+<tr class="even">
+<td>278</td>
+<td>ATT8SCROPEN_GIRLS</td>
+<td>Average Attainment 8 score per girl for open element</td>
+</tr>
+<tr class="odd">
+<td>279</td>
+<td>ATT8SCROPENG_GIRLS</td>
+<td>Average Attainment 8 score per girl - GCSE only</td>
+</tr>
+<tr class="even">
+<td>280</td>
+<td>ATT8SCROPENNG_GIRLS</td>
+<td>Average Attainment 8 score per girl - non-GCSE only</td>
+</tr>
+<tr class="odd">
+<td>281</td>
+<td>P8PUP_GIRLS</td>
+<td>Number of girls included in Progress 8 measure</td>
+</tr>
+<tr class="even">
+<td>282</td>
+<td>TP8ADJ_GIRLS</td>
+<td>Number of girls in progress measure with adjusted scores</td>
+</tr>
+<tr class="odd">
+<td>283</td>
+<td>P8MEA_GIRLS</td>
+<td>Adjusted Progress 8 measure - girls</td>
+</tr>
+<tr class="even">
+<td>284</td>
+<td>P8CILOW_GIRLS</td>
+<td>Adjusted Progress 8 lower 95% confidence interval - girls</td>
+</tr>
+<tr class="odd">
+<td>285</td>
+<td>P8CIUPP_GIRLS</td>
+<td>Adjusted Progress 8 upper 95% confidence interval - girls</td>
+</tr>
+<tr class="even">
+<td>286</td>
+<td>P8MEA_GIRLS_ORIG</td>
+<td>Unadjusted Progress 8 measure - girls</td>
+</tr>
+<tr class="odd">
+<td>287</td>
+<td>P8CILOW_GIRLS_ORIG</td>
+<td>Unadjusted Progress 8 lower 95% confidence interval - girls</td>
+</tr>
+<tr class="even">
+<td>288</td>
+<td>P8CIUPP_GIRLS_ORIG</td>
+<td>Unadjusted Progress 8 upper 95% confidence interval - girls</td>
+</tr>
+<tr class="odd">
+<td>289</td>
+<td>ATT8SCR_BOYS</td>
+<td>Average Attainment 8 score per boy</td>
+</tr>
+<tr class="even">
+<td>290</td>
+<td>ATT8SCRENG_BOYS</td>
+<td>Average Attainment 8 score per boy for English element</td>
+</tr>
+<tr class="odd">
+<td>291</td>
+<td>ATT8SCRMAT_BOYS</td>
+<td>Average Attainment 8 score per boy for mathematics element</td>
+</tr>
+<tr class="even">
+<td>292</td>
+<td>ATT8SCREBAC_BOYS</td>
+<td>Average Attainment 8 score per boy for EBacc element</td>
+</tr>
+<tr class="odd">
+<td>293</td>
+<td>ATT8SCROPEN_BOYS</td>
+<td>Average Attainment 8 score per boy for open element</td>
+</tr>
+<tr class="even">
+<td>294</td>
+<td>ATT8SCROPENG_BOYS</td>
+<td>Average Attainment 8 score per boy - GCSE only</td>
+</tr>
+<tr class="odd">
+<td>295</td>
+<td>ATT8SCROPENNG_BOYS</td>
+<td>Average Attainment 8 score per boy - non-GCSE only</td>
+</tr>
+<tr class="even">
+<td>296</td>
+<td>P8PUP_BOYS</td>
+<td>Number of boys included in Progress 8 measure</td>
+</tr>
+<tr class="odd">
+<td>297</td>
+<td>TP8ADJ_BOYS</td>
+<td>Number of boys in progress measure with adjusted scores</td>
+</tr>
+<tr class="even">
+<td>298</td>
+<td>P8MEA_BOYS</td>
+<td>Adjusted Progress 8 measure - boys</td>
+</tr>
+<tr class="odd">
+<td>299</td>
+<td>P8CILOW_BOYS</td>
+<td>Adjusted Progress 8 lower 95% confidence interval - boys</td>
+</tr>
+<tr class="even">
+<td>300</td>
+<td>P8CIUPP_BOYS</td>
+<td>Adjusted Progress 8 upper 95% confidence interval - boys</td>
+</tr>
+<tr class="odd">
+<td>301</td>
+<td>P8MEA_BOYS_ORIG</td>
+<td>Unadjusted Progress 8 measure - boys</td>
+</tr>
+<tr class="even">
+<td>302</td>
+<td>P8CILOW_BOYS_ORIG</td>
+<td>Unadjusted Progress 8 lower 95% confidence interval - boys</td>
+</tr>
+<tr class="odd">
+<td>303</td>
+<td>P8CIUPP_BOYS_ORIG</td>
+<td>Unadjusted Progress 8 upper 95% confidence interval - boys</td>
+</tr>
+<tr class="even">
+<td>304</td>
+<td>ATT8SCR_NMOB</td>
+<td>Average Attainment 8 score per non-mobile pupil</td>
+</tr>
+<tr class="odd">
+<td>305</td>
+<td>ATT8SCRENG_NMOB</td>
+<td>Average Attainment 8 score per non-mobile pupil for English element</td>
+</tr>
+<tr class="even">
+<td>306</td>
+<td>ATT8SCRMAT_NMOB</td>
+<td>Average Attainment 8 score per non-mobile pupil for mathematics element</td>
+</tr>
+<tr class="odd">
+<td>307</td>
+<td>ATT8SCREBAC_NMOB</td>
+<td>Average Attainment 8 score per non-mobile pupil for EBacc element</td>
+</tr>
+<tr class="even">
+<td>308</td>
+<td>ATT8SCROPEN_NMOB</td>
+<td>Average Attainment 8 score per non-mobile pupil for open element</td>
+</tr>
+<tr class="odd">
+<td>309</td>
+<td>ATT8SCROPENG_NMOB</td>
+<td>Average Attainment 8 score per non-mobile pupil - GCSE only</td>
+</tr>
+<tr class="even">
+<td>310</td>
+<td>ATT8SCROPENNG_NMOB</td>
+<td>Average Attainment 8 score per non-mobile pupil - non-GCSE only</td>
+</tr>
+<tr class="odd">
+<td>311</td>
+<td>P8PUP_NMOB</td>
+<td>Number of non-mobile pupils included in Progress 8 measure</td>
+</tr>
+<tr class="even">
+<td>312</td>
+<td>TP8ADJ_NMOB</td>
+<td>Number of non-mobile pupils in progress measure with adjusted scores</td>
+</tr>
+<tr class="odd">
+<td>313</td>
+<td>P8MEA_NMOB</td>
+<td>Adjusted Progress 8 measure - non-mobile pupils</td>
+</tr>
+<tr class="even">
+<td>314</td>
+<td>P8CILOW_NMOB</td>
+<td>Adjusted Progress 8 lower 95% confidence interval - non-mobile pupils</td>
+</tr>
+<tr class="odd">
+<td>315</td>
+<td>P8CIUPP_NMOB</td>
+<td>Adjusted Progress 8 upper 95% confidence interval - non-mobile pupils</td>
+</tr>
+<tr class="even">
+<td>316</td>
+<td>P8MEA_NMOB_ORIG</td>
+<td>Unadjusted Progress 8 measure - non-mobile pupils</td>
+</tr>
+<tr class="odd">
+<td>317</td>
+<td>P8CILOW_NMOB_ORIG</td>
+<td>Unadjusted Progress 8 lower 95% confidence interval - non-mobile pupils</td>
+</tr>
+<tr class="even">
+<td>318</td>
+<td>P8CIUPP_NMOB_ORIG</td>
+<td>Unadjusted Progress 8 upper 95% confidence interval - non-mobile pupils</td>
+</tr>
+<tr class="odd">
+<td>319</td>
+<td>ATT8SCR_20</td>
+<td>Average Attainment 8 score per pupil - 2020</td>
+</tr>
+<tr class="even">
+<td>320</td>
+<td>P8PUP_20</td>
+<td>Number of pupils in progress measure - 2020</td>
+</tr>
+<tr class="odd">
+<td>321</td>
+<td>P8MEA_20</td>
+<td>Progress 8 measure - 2020</td>
+</tr>
+<tr class="even">
+<td>322</td>
+<td>P8CILOW_20</td>
+<td>Progress 8 lower 95% confidence interval - 2020</td>
+</tr>
+<tr class="odd">
+<td>323</td>
+<td>P8CIUPP_20</td>
+<td>Progress 8 upper 95% confidence interval - 2020</td>
+</tr>
+<tr class="even">
+<td>324</td>
+<td>ATT8SCR_FSM6CLA1A_20</td>
+<td>Average Attainment 8 score per disadvantaged pupil - 2020</td>
+</tr>
+<tr class="odd">
+<td>325</td>
+<td>P8PUP_FSM6CLA1A_20</td>
+<td>Number of disadvantaged pupils in progress measure - 2020</td>
+</tr>
+<tr class="even">
+<td>326</td>
+<td>P8MEA_FSM6CLA1A_20</td>
+<td>Progress 8 measure - disadvantaged pupils - 2020</td>
+</tr>
+<tr class="odd">
+<td>327</td>
+<td>P8CILOW_FSM6CLA1A_20</td>
+<td>Progress 8 lower 95% confidence interval - disadvantaged pupils - 2020</td>
+</tr>
+<tr class="even">
+<td>328</td>
+<td>P8CIUPP_FSM6CLA1A_20</td>
+<td>Progress 8 upper 95% confidence interval - disadvantaged pupils - 2020</td>
+</tr>
+<tr class="odd">
+<td>329</td>
+<td>ATT8SCR_NFSM6CLA1A_20</td>
+<td>Average Attainment 8 score per non-disadvantaged pupil - 2020</td>
+</tr>
+<tr class="even">
+<td>330</td>
+<td>P8PUP_NFSM6CLA1A_20</td>
+<td>Number of non-disadvantaged pupils in progress measure - 2020</td>
+</tr>
+<tr class="odd">
+<td>331</td>
+<td>P8MEA_NFSM6CLA1A_20</td>
+<td>Progress 8 measure - non-disadvantaged pupils - 2020</td>
+</tr>
+<tr class="even">
+<td>332</td>
+<td>P8CILOW_NFSM6CLA1A_20</td>
+<td>Progress 8 lower 95% confidence interval - non-disadvantaged pupils - 2020</td>
+</tr>
+<tr class="odd">
+<td>333</td>
+<td>P8CIUPP_NFSM6CLA1A_20</td>
+<td>Progress 8 upper 95% confidence interval - non-disadvantaged pupils - 2020</td>
+</tr>
+<tr class="even">
+<td>334</td>
+<td>ATT8SCR_21</td>
+<td>Average Attainment 8 score per pupil - 2021</td>
+</tr>
+<tr class="odd">
+<td>335</td>
+<td>P8PUP_21</td>
+<td>Number of pupils in progress measure - 2021</td>
+</tr>
+<tr class="even">
+<td>336</td>
+<td>P8MEA_21</td>
+<td>Progress 8 measure - 2021</td>
+</tr>
+<tr class="odd">
+<td>337</td>
+<td>P8CILOW_21</td>
+<td>Progress 8 lower 95% confidence interval - 2021</td>
+</tr>
+<tr class="even">
+<td>338</td>
+<td>P8CIUPP_21</td>
+<td>Progress 8 upper 95% confidence interva - 2021</td>
+</tr>
+<tr class="odd">
+<td>339</td>
+<td>ATT8SCR_FSM6CLA1A_21</td>
+<td>Average Attainment 8 score per disadvantaged pupil - 2021</td>
+</tr>
+<tr class="even">
+<td>340</td>
+<td>P8PUP_FSM6CLA1A_21</td>
+<td>Number of disadvantaged pupils in progress measure - 2021</td>
+</tr>
+<tr class="odd">
+<td>341</td>
+<td>P8MEA_FSM6CLA1A_21</td>
+<td>Progress 8 measure - disadvantaged pupils - 2021</td>
+</tr>
+<tr class="even">
+<td>342</td>
+<td>P8CILOW_FSM6CLA1A_21</td>
+<td>Progress 8 lower 95% confidence interval - disadvantaged pupils - 2021</td>
+</tr>
+<tr class="odd">
+<td>343</td>
+<td>P8CIUPP_FSM6CLA1A_21</td>
+<td>Progress 8 upper 95% confidence interval - disadvantaged pupils - 2021</td>
+</tr>
+<tr class="even">
+<td>344</td>
+<td>ATT8SCR_NFSM6CLA1A_21</td>
+<td>Average Attainment 8 score per non-disadvantaged pupil - 2021</td>
+</tr>
+<tr class="odd">
+<td>345</td>
+<td>P8PUP_NFSM6CLA1A_21</td>
+<td>Number of non-disadvantaged pupils in progress measure - 2021</td>
+</tr>
+<tr class="even">
+<td>346</td>
+<td>P8MEA_NFSM6CLA1A_21</td>
+<td>Progress 8 measure - non-disadvantaged pupils - 2021</td>
+</tr>
+<tr class="odd">
+<td>347</td>
+<td>P8CILOW_NFSM6CLA1A_21</td>
+<td>Progress 8 lower 95% confidence interval - non-disadvantaged pupils - 2021</td>
+</tr>
+<tr class="even">
+<td>348</td>
+<td>P8CIUPP_NFSM6CLA1A_21</td>
+<td>Progress 8 upper 95% confidence interval - non-disadvantaged pupils - 2021</td>
+</tr>
+<tr class="odd">
+<td>349</td>
+<td>TEBACC_ELO_PTQ_EE</td>
+<td>Number of pupils in low prior attainment band with entries in all EBacc subject areas</td>
+</tr>
+<tr class="even">
+<td>350</td>
+<td>PTEBACC_ELO_PTQ_EE</td>
+<td>EBacc entered % by low prior attainment</td>
+</tr>
+<tr class="odd">
+<td>351</td>
+<td>PTEBACCLO_94</td>
+<td>EBacc achieved % by low prior attainment - with standard 9-4 passes in English and maths</td>
+</tr>
+<tr class="even">
+<td>352</td>
+<td>PTEBACCLO_95</td>
+<td>EBacc achieved % by low prior attainment - with 9-5 passes</td>
+</tr>
+<tr class="odd">
+<td>353</td>
+<td>TEBACC_EAV_PTQ_EE</td>
+<td>Number of pupils in middle prior attainment band with entries in all EBacc subject areas</td>
+</tr>
+<tr class="even">
+<td>354</td>
+<td>PTEBACC_EAV_PTQ_EE</td>
+<td>EBacc entered % by middle prior attainment</td>
+</tr>
+<tr class="odd">
+<td>355</td>
+<td>PTEBACCAV_94</td>
+<td>EBacc achieved % by middle prior attainment - with 9-4 passes</td>
+</tr>
+<tr class="even">
+<td>356</td>
+<td>PTEBACCAV_95</td>
+<td>EBacc achieved % by middle prior attainment - with 9-5 passes</td>
+</tr>
+<tr class="odd">
+<td>357</td>
+<td>TEBACC_EHI_PTQ_EE</td>
+<td>Number of pupils in high prior attainment band with entries in all EBacc subject areas</td>
+</tr>
+<tr class="even">
+<td>358</td>
+<td>PTEBACC_EHI_PTQ_EE</td>
+<td>EBacc entered % by high prior attainment</td>
+</tr>
+<tr class="odd">
+<td>359</td>
+<td>PTEBACCHI_94</td>
+<td>EBacc achieved % by high prior attainment - with 9-4 passes</td>
+</tr>
+<tr class="even">
+<td>360</td>
+<td>PTEBACCHI_95</td>
+<td>EBacc achieved % by high prior attainment - with 9-5 passes</td>
+</tr>
+<tr class="odd">
+<td>361</td>
+<td>PTEBACC_EFSM6CLA1A_PTQ_EE</td>
+<td>% of disadvantaged pupils entering all English Baccalaureate subject areas</td>
+</tr>
+<tr class="even">
+<td>362</td>
+<td>PTEBACC_ENFSM6CLA1A_PTQ_EE</td>
+<td>% of non-disadvantaged pupils entering all English Baccalaureate subject areas</td>
+</tr>
+<tr class="odd">
+<td>363</td>
+<td>PTEBACC_94_FSM6CLA1A</td>
+<td>% of disadvantaged pupils achieving the English Baccalaureate - with 9-4 passes</td>
+</tr>
+<tr class="even">
+<td>364</td>
+<td>PTEBACC_95_FSM6CLA1A</td>
+<td>% of disadvantaged pupils achieving the English Baccalaureate - with 9-5 passes</td>
+</tr>
+<tr class="odd">
+<td>365</td>
+<td>PTEBACC_94_NFSM6CLA1A</td>
+<td>% of non-disadvantaged pupils achieving the English Baccalaureate - with 9-4 passes</td>
+</tr>
+<tr class="even">
+<td>366</td>
+<td>PTEBACC_95_NFSM6CLA1A</td>
+<td>% of non-disadvantaged pupils achieving the English Baccalaureate - with 9-5 passes</td>
+</tr>
+<tr class="odd">
+<td>367</td>
+<td>SCIVAMEA_LO_PTQ_EE</td>
+<td>English Baccalaureate Science Value Added measure for pupils with low prior attainment</td>
+</tr>
+<tr class="even">
+<td>368</td>
+<td>SCIVAMEA_MID_PTQ_EE</td>
+<td>English Baccalaureate Science Value Added measure for pupils with middle prior attainment</td>
+</tr>
+<tr class="odd">
+<td>369</td>
+<td>SCIVAMEA_HI_PTQ_EE</td>
+<td>English Baccalaureate Science Value Added measure for pupils with high prior attainment</td>
+</tr>
+<tr class="even">
+<td>370</td>
+<td>SCIVAMEA_FSM6CLA1A_PTQ_EE</td>
+<td>English Baccalaureate Science Value Added measure for disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>371</td>
+<td>SCIVAMEA_NFSM6CLA1A_PTQ_EE</td>
+<td>English Baccalaureate Science Value Added measure for non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>372</td>
+<td>HUMVAMEA_LO_PTQ_EE</td>
+<td>English Baccalaureate Humanities Value Added measure for pupils with low prior attainment</td>
+</tr>
+<tr class="odd">
+<td>373</td>
+<td>HUMVAMEA_MID_PTQ_EE</td>
+<td>English Baccalaureate Humanities Value Added measure for pupils with middle prior attainment</td>
+</tr>
+<tr class="even">
+<td>374</td>
+<td>HUMVAMEA_HI_PTQ_EE</td>
+<td>English Baccalaureate Humanities Value Added measure for pupils with high prior attainment</td>
+</tr>
+<tr class="odd">
+<td>375</td>
+<td>HUMVAMEA_FSM6CLA1A_PTQ_EE</td>
+<td>English Baccalaureate Humanities Value Added measure for disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>376</td>
+<td>HUMVAMEA_NFSM6CLA1A_PTQ_EE</td>
+<td>English Baccalaureate Humanities Value Added measure for non-disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>377</td>
+<td>LANVAMEA_LO_PTQ_EE</td>
+<td>English Baccalaureate Languages Value Added measure for pupils with low prior attainment</td>
+</tr>
+<tr class="even">
+<td>378</td>
+<td>LANVAMEA_MID_PTQ_EE</td>
+<td>English Baccalaureate Languages Value Added measure for pupils with middle prior attainment</td>
+</tr>
+<tr class="odd">
+<td>379</td>
+<td>LANVAMEA_HI_PTQ_EE</td>
+<td>English Baccalaureate Languages Value Added measure for pupils with high prior attainment</td>
+</tr>
+<tr class="even">
+<td>380</td>
+<td>LANVAMEA_FSM6CLA1A_PTQ_EE</td>
+<td>English Baccalaureate Languages Value Added measure for disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>381</td>
+<td>LANVAMEA_NFSM6CLA1A_PTQ_EE</td>
+<td>English Baccalaureate Languages Value Added measure for non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>382</td>
+<td>SCIVAUPP_FSM6CLA1A_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Science Value Added measure for disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>383</td>
+<td>SCIVALOW_FSM6CLA1A_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Science Value Added measure for disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>384</td>
+<td>SCIVAUPP_NFSM6CLA1A_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Science Value Added measure for non-disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>385</td>
+<td>SCIVALOW_NFSM6CLA1A_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Science Value Added measure for non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>386</td>
+<td>SCIVAUPP_LO_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Science Value Added measure for pupils with low prior attainment</td>
+</tr>
+<tr class="odd">
+<td>387</td>
+<td>SCIVALOW_LO_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Science Value Added measure for pupils with low prior attainment</td>
+</tr>
+<tr class="even">
+<td>388</td>
+<td>SCIVAUPP_MID_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Science Value Added measure for pupils with middle prior attainment</td>
+</tr>
+<tr class="odd">
+<td>389</td>
+<td>SCIVALOW_MID_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Science Value Added measure for pupils with middle prior attainment</td>
+</tr>
+<tr class="even">
+<td>390</td>
+<td>SCIVAUPP_HI_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Science Value Added measure for pupils with high prior attainment</td>
+</tr>
+<tr class="odd">
+<td>391</td>
+<td>SCIVALOW_HI_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Science Value Added measure for pupils with high prior attainment</td>
+</tr>
+<tr class="even">
+<td>392</td>
+<td>HUMVAUPP_FSM6CLA1A_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Humanities Value Added measure for disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>393</td>
+<td>HUMVALOW_FSM6CLA1A_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Humanities Value Added measure for disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>394</td>
+<td>HUMVAUPP_NFSM6CLA1A_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Humanities Value Added measure for non-disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>395</td>
+<td>HUMVALOW_NFSM6CLA1A_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Humanities Value Added measure for non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>396</td>
+<td>HUMVAUPP_LO_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Humanities Value Added measure for pupils with low prior attainment</td>
+</tr>
+<tr class="odd">
+<td>397</td>
+<td>HUMVALOW_LO_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Humanities Value Added measure for pupils with low prior attainment</td>
+</tr>
+<tr class="even">
+<td>398</td>
+<td>HUMVAUPP_MID_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Humanities Value Added measure for pupils with middle prior attainment</td>
+</tr>
+<tr class="odd">
+<td>399</td>
+<td>HUMVALOW_MID_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Humanities Value Added measure for pupils with middle prior attainment</td>
+</tr>
+<tr class="even">
+<td>400</td>
+<td>HUMVAUPP_HI_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Humanities Value Added measure for pupils with high prior attainment</td>
+</tr>
+<tr class="odd">
+<td>401</td>
+<td>HUMVALOW_HI_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Humanities Value Added measure for pupils with high prior attainment</td>
+</tr>
+<tr class="even">
+<td>402</td>
+<td>LANVAUPP_FSM6CLA1A_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Languages Value Added measure for disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>403</td>
+<td>LANVALOW_FSM6CLA1A_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Languages Value Added measure for disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>404</td>
+<td>LANVAUPP_NFSM6CLA1A_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Languages Value Added measure for non-disadvantaged pupils</td>
+</tr>
+<tr class="odd">
+<td>405</td>
+<td>LANVALOW_NFSM6CLA1A_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Languages Value Added measure for non-disadvantaged pupils</td>
+</tr>
+<tr class="even">
+<td>406</td>
+<td>LANVAUPP_LO_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Languages Value Added measure for pupils with low prior attainment</td>
+</tr>
+<tr class="odd">
+<td>407</td>
+<td>LANVALOW_LO_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Languages Value Added measure for pupils with low prior attainment</td>
+</tr>
+<tr class="even">
+<td>408</td>
+<td>LANVAUPP_MID_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Languages Value Added measure for pupils with middle prior attainment</td>
+</tr>
+<tr class="odd">
+<td>409</td>
+<td>LANVALOW_MID_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Languages Value Added measure for pupils with middle prior attainment</td>
+</tr>
+<tr class="even">
+<td>410</td>
+<td>LANVAUPP_HI_PTQ_EE</td>
+<td>Upper 95% confidence limit for English Baccalaureate Languages Value Added measure for pupils with high prior attainment</td>
+</tr>
+<tr class="odd">
+<td>411</td>
+<td>LANVALOW_HI_PTQ_EE</td>
+<td>Lower 95% confidence limit for English Baccalaureate Languages Value Added measure for pupils with high prior attainment</td>
+</tr>
+<tr class="even">
+<td>412</td>
+<td>PTEBACC_E_20_PTQ_EE</td>
+<td>% of pupils entering all English Baccalaureate subject areas in 2020</td>
+</tr>
+<tr class="odd">
+<td>413</td>
+<td>PTEBACC_94_20</td>
+<td>% of KS4 pupils achieving the Ebacc - with standard 9-4 passes in English and maths in 2020</td>
+</tr>
+<tr class="even">
+<td>414</td>
+<td>PTEBACC_95_20</td>
+<td>% of KS4 pupils achieving the Ebacc - with strong 9-5 passes in English and maths in 2020</td>
+</tr>
+<tr class="odd">
+<td>415</td>
+<td>PTEBACC_E_21_PTQ_EE</td>
+<td>% of pupils entering all English Baccalaureate subject areas in 2021</td>
+</tr>
+<tr class="even">
+<td>416</td>
+<td>PTEBACC_94_21</td>
+<td>% of KS4 pupils achieving the Ebacc - with standard 9-4 passes in English and maths in 2021</td>
+</tr>
+<tr class="odd">
+<td>417</td>
+<td>PTEBACC_95_21</td>
+<td>% of KS4 pupils achieving the Ebacc - with strong 9-5 passes in English and maths in 2021</td>
+</tr>
+<tr class="even">
+<td>418</td>
+<td>PBEBACC_E_PTQ_EE</td>
+<td>% of boys with entries in all English Baccalaureate subject areas</td>
+</tr>
+<tr class="odd">
+<td>419</td>
+<td>PBEBACC_94</td>
+<td>% of KS4 boys achieving the Ebacc - with 9-4 passes</td>
+</tr>
+<tr class="even">
+<td>420</td>
+<td>PBEBACC_95</td>
+<td>% of KS4 boys achieving the Ebacc - with 9-5 passes</td>
+</tr>
+<tr class="odd">
+<td>421</td>
+<td>PGEBACC_E_PTQ_EE</td>
+<td>% of girls with entries in all English Baccalaureate subject areas</td>
+</tr>
+<tr class="even">
+<td>422</td>
+<td>PGEBACC_94</td>
+<td>% of KS4 girls achieving the Ebacc - with 9-4 passes</td>
+</tr>
+<tr class="odd">
+<td>423</td>
+<td>PGEBACC_95</td>
+<td>% of KS4 girls achieving the Ebacc - with 9-5 passes</td>
+</tr>
+<tr class="even">
+<td>424</td>
+<td>PTEBACC_ENMOB_PTQ_EE</td>
+<td>% of non-mobile pupils with entries in all English Baccalaureate subject areas</td>
+</tr>
+<tr class="odd">
+<td>425</td>
+<td>PTEBACCNMOB_94</td>
+<td>% of non-mobile pupils achieving the English Baccalaureate with 9-4 passes</td>
+</tr>
+<tr class="even">
+<td>426</td>
+<td>PTEBACCNMOB_95</td>
+<td>% of non-mobile pupils achieving the English Baccalaureate with 9-5 passes</td>
+</tr>
+<tr class="odd">
+<td>427</td>
+<td>PTEBACC_EEAL_PTQ_EE</td>
+<td>% of pupils for whom English is an additional language with entries in all English Baccalaureate subject areas</td>
+</tr>
+<tr class="even">
+<td>428</td>
+<td>PTEBACCEAL_94</td>
+<td>% of pupils for whom English as an additional language achieving the English Baccalaureate with 9-4 passes</td>
+</tr>
+<tr class="odd">
+<td>429</td>
+<td>PTEBACCEAL_95</td>
+<td>% of pupils for whom English as an additional language achieving the English Baccalaureate with 9-5 passes</td>
+</tr>
+<tr class="even">
+<td>430</td>
+<td>PTEBACC_EFSM6CLA1A_20</td>
+<td>% of disadvantaged pupils entering all English Baccalaureate subject areas in 2020</td>
+</tr>
+<tr class="odd">
+<td>431</td>
+<td>PTEBACC_94_FSM6CLA1A_20</td>
+<td>% of disadvantaged pupils achieving the English Baccalaureate at grades 9-4 in 2020</td>
+</tr>
+<tr class="even">
+<td>432</td>
+<td>PTEBACC_95_FSM6CLA1A_20</td>
+<td>% of disadvantaged pupils achieving the English Baccalaureate at grades 9-5 in 2020</td>
+</tr>
+<tr class="odd">
+<td>433</td>
+<td>PTEBACC_ENFSM6CLA1A_20</td>
+<td>% of non-disadvantaged pupils entering all English Baccalaureate subject areas in 2020</td>
+</tr>
+<tr class="even">
+<td>434</td>
+<td>PTEBACC_94_NFSM6CLA1A_20</td>
+<td>% of non-disadvantaged pupils achieving the English Baccalaureate at grade 9-4 in 2020</td>
+</tr>
+<tr class="odd">
+<td>435</td>
+<td>PTEBACC_95_NFSM6CLA1A_20</td>
+<td>% of non-disadvantaged pupils achieving the English Baccalaureate at grade 9-5 in 2020</td>
+</tr>
+<tr class="even">
+<td>436</td>
+<td>PTEBACC_EFSM6CLA1A_21</td>
+<td>% of disadvantaged pupils entering all English Baccalaureate subject areas in 2021</td>
+</tr>
+<tr class="odd">
+<td>437</td>
+<td>PTEBACC_94_FSM6CLA1A_21</td>
+<td>% of disadvantaged pupils achieving the English Baccalaureate including 9-4 passes in English and maths in 2021</td>
+</tr>
+<tr class="even">
+<td>438</td>
+<td>PTEBACC_95_FSM6CLA1A_21</td>
+<td>% of disadvantaged pupils achieving the English Baccalaureate including 9-5 passes in English and maths in 2021</td>
+</tr>
+<tr class="odd">
+<td>439</td>
+<td>PTEBACC_ENFSM6CLA1A_21</td>
+<td>% of non-disadvantaged pupils entering all English Baccalaureate subject areas in 2021</td>
+</tr>
+<tr class="even">
+<td>440</td>
+<td>PTEBACC_94_NFSM6CLA1A_21</td>
+<td>% of non-disadvantaged pupils achieving the English Baccalaureate including 9-4 passes in English and maths in 2021</td>
+</tr>
+<tr class="odd">
+<td>441</td>
+<td>PTEBACC_95_NFSM6CLA1A_21</td>
+<td>% of non-disadvantaged pupils achieving the English Baccalaureate including 9-5 passes in English and maths in 2021</td>
+</tr>
+<tr class="even">
+<td>442</td>
+<td>PT5EM_94</td>
+<td>% of pupils achieving Level 2 threshold including standard passes 9-4 in both English and Maths GCSEs</td>
+</tr>
+<tr class="odd">
+<td>443</td>
+<td>PT5EM_94_20</td>
+<td>% of pupils achieving Level 2 threshold including standard passes 9-4 in both English and Maths GCSEs in 2020</td>
+</tr>
+<tr class="even">
+<td>444</td>
+<td>PT5EM_94_21</td>
+<td>% of pupils achieving Level 2 threshold including standard passes 9-4 in both English and Maths GCSEs in 2021</td>
+</tr>
+<tr class="odd">
+<td>445</td>
+<td>PTANYQ_PTQ_EE</td>
+<td>% of pupils achieving any qualifications</td>
+</tr>
+<tr class="even">
+<td>446</td>
+<td>PTL2BASICS_94_20</td>
+<td>% of pupils achieving 9-4 passes in GCSE English and maths in 2020</td>
+</tr>
+<tr class="odd">
+<td>447</td>
+<td>PTL2BASICS_95_20</td>
+<td>% of pupils achieving 9-5 passes in GCSE English and maths in 2020</td>
+</tr>
+<tr class="even">
+<td>448</td>
+<td>PTL2BASICS_94_21</td>
+<td>% of pupils achieving 9-4 passes in GCSE English and maths in 2021</td>
+</tr>
+<tr class="odd">
+<td>449</td>
+<td>PTL2BASICS_95_21</td>
+<td>% of pupils achieving 9-5 passes in GCSE English and maths in 2021</td>
+</tr>
+<tr class="even">
+<td>450</td>
+<td>PTFSM6CLA1ABASICS_94</td>
+<td>% of disadvantaged pupils achieving standard 9-4 passes in GCSE English and maths</td>
+</tr>
+<tr class="odd">
+<td>451</td>
+<td>PTNOTFSM6CLA1ABASICS_94</td>
+<td>% of non-disadvantaged pupils achieving standard 9-4 passes in GCSE English and maths</td>
+</tr>
+<tr class="even">
+<td>452</td>
+<td>TBASICSLO_94</td>
+<td>Number of pupils in low prior attainment band who achieved standard 9-4 passes in English and maths</td>
+</tr>
+<tr class="odd">
+<td>453</td>
+<td>PTBASICSLO_94</td>
+<td>% of pupils in low prior attainment band who achieved standard 9-4 passes in English and maths</td>
+</tr>
+<tr class="even">
+<td>454</td>
+<td>TBASICSAV_94</td>
+<td>Number of pupils in middle prior attainment band who achieved standard 9-4 passes in English and maths</td>
+</tr>
+<tr class="odd">
+<td>455</td>
+<td>PTBASICSAV_94</td>
+<td>% pupils in middle prior attainment band who achieved standard 9-4 passes in English and maths</td>
+</tr>
+<tr class="even">
+<td>456</td>
+<td>TBASICSHI_94</td>
+<td>Number of pupils in high prior attainment band who achieved standard 9-4 passes in English and maths</td>
+</tr>
+<tr class="odd">
+<td>457</td>
+<td>PTBASICSHI_94</td>
+<td>% pupils in high prior attainment band who achieved standard 9-4 passes in English and maths</td>
+</tr>
+<tr class="even">
+<td>458</td>
+<td>PBL2BASICS_94</td>
+<td>% of boys achieving standard 9-4 passes in both English and mathematics GCSEs</td>
+</tr>
+<tr class="odd">
+<td>459</td>
+<td>PGL2BASICS_94</td>
+<td>% of girls achieving standard 9-4 passes in both English and mathematics GCSEs</td>
+</tr>
+<tr class="even">
+<td>460</td>
+<td>PTL2BASICSEAL_94</td>
+<td>% of pupils achieving standard 9-4 passes in both English and mathematics GCSEs and for whom English is an additional language</td>
+</tr>
+<tr class="odd">
+<td>461</td>
+<td>PTL2BASICSNMOB_94</td>
+<td>% of non-mobile pupils achieving standard 9-4 passes in both English and mathematics GCSEs</td>
+</tr>
+<tr class="even">
+<td>462</td>
+<td>PTFSM6CLA1ABASICS_95</td>
+<td>% of disadvantaged pupils achieving strong 9-5 passes in GCSE English and maths</td>
+</tr>
+<tr class="odd">
+<td>463</td>
+<td>PTNOTFSM6CLA1ABASICS_95</td>
+<td>% of non-disadvantaged pupils achieving strong 9-5 passes in GCSE English and maths</td>
+</tr>
+<tr class="even">
+<td>464</td>
+<td>TBASICSLO_95</td>
+<td>Number of pupils in low prior attainment band who achieved strong 9-5 passes in English and maths</td>
+</tr>
+<tr class="odd">
+<td>465</td>
+<td>PTBASICSLO_95</td>
+<td>% of pupils in low prior attainment band who achieved strong 9-5 passes in English and maths</td>
+</tr>
+<tr class="even">
+<td>466</td>
+<td>TBASICSAV_95</td>
+<td>Number of pupils in middle prior attainment band who achieved strong 9-5 passes in English and maths</td>
+</tr>
+<tr class="odd">
+<td>467</td>
+<td>PTBASICSAV_95</td>
+<td>% pupils in middle prior attainment band who achieved strong 9-5 passes in English and maths</td>
+</tr>
+<tr class="even">
+<td>468</td>
+<td>TBASICSHI_95</td>
+<td>Number of pupils in high prior attainment band who achieved strong 9-5 passes in English and maths</td>
+</tr>
+<tr class="odd">
+<td>469</td>
+<td>PTBASICSHI_95</td>
+<td>% pupils in high prior attainment band who achieved strong 9-5 passes in English and maths</td>
+</tr>
+<tr class="even">
+<td>470</td>
+<td>PBL2BASICS_95</td>
+<td>% of boys achieving strong 9-5 passes in both English and mathematics GCSEs</td>
+</tr>
+<tr class="odd">
+<td>471</td>
+<td>PGL2BASICS_95</td>
+<td>% of girls achieving strong 9-5 passes in both English and mathematics GCSEs</td>
+</tr>
+<tr class="even">
+<td>472</td>
+<td>PTL2BASICSEAL_95</td>
+<td>% of pupils achieving strong 9-5 passes in both English and mathematics GCSEs and for whom English is an additional language</td>
+</tr>
+<tr class="odd">
+<td>473</td>
+<td>PTL2BASICSNMOB_95</td>
+<td>% of non-mobile pupils achieving strong 9-5 passes in both English and mathematics GCSEs</td>
+</tr>
+<tr class="even">
+<td>474</td>
+<td>PTFSM6CLA1ABASICS_94_20</td>
+<td>% of disadvantaged pupils achieving 9-4 in GCSE English and maths in 2020</td>
+</tr>
+<tr class="odd">
+<td>475</td>
+<td>PTFSM6CLA1ABASICS_95_20</td>
+<td>% of disadvantaged pupils achieving 9-4 passes in GCSE English and maths in 2020</td>
+</tr>
+<tr class="even">
+<td>476</td>
+<td>PTNOTFSMBASICS_94_20</td>
+<td>% of non-disadvantaged pupils achieving 9-4 passes in GCSE English and maths in 2020</td>
+</tr>
+<tr class="odd">
+<td>477</td>
+<td>PTNOTFSM6CLA1ABASICS_95_20</td>
+<td>% of non-disadvantaged pupils achieving 9-5 passes in GCSE English and maths in 2020</td>
+</tr>
+<tr class="even">
+<td>478</td>
+<td>PTFSM6CLA1ABASICS_94_21</td>
+<td>% of disadvantaged pupils achieving 9-4 passes in GCSE English and maths in 2021</td>
+</tr>
+<tr class="odd">
+<td>479</td>
+<td>PTFSM6CLA1ABASICS_95_21</td>
+<td>% of disadvantaged pupils achieving 9-5 passes in GCSE English and maths in 2021</td>
+</tr>
+<tr class="even">
+<td>480</td>
+<td>PTNOTFSM6CLA1ABASICS_94_21</td>
+<td>% of non-disadvantaged pupils achieving 9-4 passes in GCSE English and maths in 2021</td>
+</tr>
+<tr class="odd">
+<td>481</td>
+<td>PTNOTFSM6CLA1ABASICS_95_21</td>
+<td>% of non-disadvantaged pupils achieving 9-5 passes in GCSE English and maths in 2021</td>
+</tr>
+<tr class="even">
+<td>482</td>
+<td>PTmultiLan_E</td>
+<td>% of pupils entering more than one language</td>
+</tr>
+<tr class="odd">
+<td>483</td>
+<td>PTtripleSci_E</td>
+<td>% of pupils entering biology, chemistry and physics</td>
+</tr>
+<tr class="even">
+<td>484</td>
+<td>TFSM6CLA1A_20</td>
+<td>Number of disadvantaged pupils at the end of key stage 4 in 2020</td>
+</tr>
+<tr class="odd">
+<td>485</td>
+<td>PTFSM6CLA1A_20</td>
+<td>% of pupils at the end of key stage 4 who were disadvantaged in 2020</td>
+</tr>
+<tr class="even">
+<td>486</td>
+<td>TNOTFSM6CLA1A_20</td>
+<td>Number of non-disadvantaged pupils at the end of key stage 4 in 2020</td>
+</tr>
+<tr class="odd">
+<td>487</td>
+<td>PTNOTFSM6CLA1A_20</td>
+<td>% of pupils at the end of key stage 4 who were not disadvantaged in 2020</td>
+</tr>
+<tr class="even">
+<td>488</td>
+<td>TFSM6CLA1A_21</td>
+<td>Number of disadvantaged pupils in 2021</td>
+</tr>
+<tr class="odd">
+<td>489</td>
+<td>PTFSM6CLA1A_21</td>
+<td>% of pupils who were disadvantaged in 2021</td>
+</tr>
+<tr class="even">
+<td>490</td>
+<td>TNOTFSM6CLA1A_21</td>
+<td>Number of non-disadvantaged pupils in 2021</td>
+</tr>
+<tr class="odd">
+<td>491</td>
+<td>PTNOTFSM6CLA1A_21</td>
+<td>% of pupils who were not disadvantaged in 2021</td>
+</tr>
+<tr class="even">
+<td>492</td>
+<td>TAVENT_E_3NG_PTQ_EE</td>
+<td>Average number of KS4 entries per pupil</td>
+</tr>
+<tr class="odd">
+<td>493</td>
+<td>TAVENT_E_3NG_LO_PTQ_EE</td>
+<td>Average number of KS4 entries per pupil with low prior attainment</td>
+</tr>
+<tr class="even">
+<td>494</td>
+<td>TAVENT_E_3NG_MID_PTQ_EE</td>
+<td>Average number of KS4 entries per pupil with middle prior attainment</td>
+</tr>
+<tr class="odd">
+<td>495</td>
+<td>TAVENT_E_3NG_HI_PTQ_EE</td>
+<td>Average number of KS4 entries per pupil with high prior attainment</td>
+</tr>
+<tr class="even">
+<td>496</td>
+<td>TAVENT_E_3NG_FSM6CLA1A_PTQ_EE</td>
+<td>Average number of KS4 entries per disadvantaged pupil</td>
+</tr>
+<tr class="odd">
+<td>497</td>
+<td>TAVENT_E_3NG_NFSM6CLA1A_PTQ_EE</td>
+<td>Average number of KS4 entries per non-disadvantaged pupil</td>
+</tr>
+<tr class="even">
+<td>498</td>
+<td>TAVENT_EFSM6CLA1A_20_PTQ_EE</td>
+<td>Average number of KS4 entries per disadvantaged pupil in 2020</td>
+</tr>
+<tr class="odd">
+<td>499</td>
+<td>TAVENT_ENFSM6CLA1A_20_PTQ_EE</td>
+<td>Average number of KS4 entries per non-disadvantaged pupil in 2020</td>
+</tr>
+<tr class="even">
+<td>500</td>
+<td>TAVENT_EFSM6CLA1A_21_PTQ_EE</td>
+<td>Average number of KS4 entries per disadvantaged pupil in 2021</td>
+</tr>
+<tr class="odd">
+<td>501</td>
+<td>TAVENT_ENFSM6CLA1A_21_PTQ_EE</td>
+<td>Average number of KS4 entries per non-disadvantaged pupil in 2021</td>
+</tr>
+<tr class="even">
+<td>502</td>
+<td>TAVENT_G_PTQ_EE</td>
+<td>Average number of GCSE entries per pupil</td>
+</tr>
+<tr class="odd">
+<td>503</td>
+<td>TAVENT_GLO_PTQ_EE</td>
+<td>Average number of GCSE entries per pupil with low prior attainment</td>
+</tr>
+<tr class="even">
+<td>504</td>
+<td>TAVENT_GAV_PTQ_EE</td>
+<td>Average number of GCSE entries per pupil with middle prior attainment</td>
+</tr>
+<tr class="odd">
+<td>505</td>
+<td>TAVENT_GHI_PTQ_EE</td>
+<td>Average number of GCSE entries per pupil with high prior attainment</td>
+</tr>
+<tr class="even">
+<td>506</td>
+<td>TAVENT_GFSM6CLA1A_PTQ_EE</td>
+<td>Average number of GCSE entries per disadvantaged pupil</td>
+</tr>
+<tr class="odd">
+<td>507</td>
+<td>TAVENT_GNFSM6CLA1A_PTQ_EE</td>
+<td>Average number of GCSE entries per non-disadvantaged pupil</td>
+</tr>
+<tr class="even">
+<td>508</td>
+<td>TAVENT_GFSM6CLA1A_20_PTQ_EE</td>
+<td>Average number of GCSE entries per disadvantaged pupil in 2020</td>
+</tr>
+<tr class="odd">
+<td>509</td>
+<td>TAVENT_GNFSM6CLA1A_20_PTQ_EE</td>
+<td>Average number of GCSE entries per non-disadvantaged pupil in 2020</td>
+</tr>
+<tr class="even">
+<td>510</td>
+<td>TAVENT_GFSM6CLA1A_21_PTQ_EE</td>
+<td>Average number of GCSE entries per disadvantaged pupil in 2021</td>
+</tr>
+<tr class="odd">
+<td>511</td>
+<td>TAVENT_GNFSM6CLA1A_21_PTQ_EE</td>
+<td>Average number of GCSE entries per non-disadvantaged pupil in 2021</td>
+</tr>
+<tr class="even">
+<td>512</td>
+<td>TTOTENT_E_TOTAL_PTQ_EE</td>
+<td>Total volume of entries without discounting</td>
+</tr>
+<tr class="odd">
+<td>513</td>
+<td>TTOTENT_E_COVID_IMPACTED_PTQ_EE</td>
+<td>Total volume of covid-impacted entries without discounting</td>
+</tr>
+<tr class="even">
+<td>514</td>
+<td>PTOTENT_E_COVID_IMPACTED_PTQ_EE</td>
+<td>% of covid-impacted entries out of total number of entries</td>
+</tr>
+</tbody>
+</table></details><details><summary>
+census description
+</summary><table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<thead><tr class="header">
+<th>Variable</th>
+<th>Label</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>URN</td>
+<td>Unique Reference Number</td>
+</tr>
+<tr class="even">
+<td>LAESTAB</td>
+<td>DfE Number</td>
+</tr>
+<tr class="odd">
+<td>TOTPUPSENDN</td>
+<td>Total number of pupils on roll (all ages)</td>
+</tr>
+<tr class="even">
+<td>NORG</td>
+<td>Number of girls on roll</td>
+</tr>
+<tr class="odd">
+<td>NORB</td>
+<td>Number of boys on roll</td>
+</tr>
+<tr class="even">
+<td>PNORG</td>
+<td>Percentage of girls on roll</td>
+</tr>
+<tr class="odd">
+<td>PNORB</td>
+<td>Percentage of boys on roll</td>
+</tr>
+<tr class="even">
+<td>TSENSAP</td>
+<td>Number of pupils SEN statement or on School Action Plus</td>
+</tr>
+<tr class="odd">
+<td>TSENA</td>
+<td>Number of pupils on roll with SEN on School Action</td>
+</tr>
+<tr class="even">
+<td>TOTSENST</td>
+<td>Total pupils with SEN statement</td>
+</tr>
+<tr class="odd">
+<td>TOTSENAP</td>
+<td>Total pupils at School Action Plus</td>
+</tr>
+<tr class="even">
+<td>PSENSAP</td>
+<td>Percentage of pupils with SEN statement or on School Action Plus</td>
+</tr>
+<tr class="odd">
+<td>PSENA</td>
+<td>Percentage of pupils on roll with SEN on School Action</td>
+</tr>
+<tr class="even">
+<td>PTOTSENST</td>
+<td>Percentage pupils with SEN statement</td>
+</tr>
+<tr class="odd">
+<td>PTOTSENAP</td>
+<td>Percentage pupils at School Action Plus</td>
+</tr>
+<tr class="even">
+<td>NUMEAL</td>
+<td>Number of pupils with English not as first language</td>
+</tr>
+<tr class="odd">
+<td>NUMENGFL</td>
+<td>Number of pupils with English first language</td>
+</tr>
+<tr class="even">
+<td>NUMUNCFL</td>
+<td>Number of pupils where first language is unclassified</td>
+</tr>
+<tr class="odd">
+<td>PNUMEAL</td>
+<td>Percentage of pupils with English not as first language</td>
+</tr>
+<tr class="even">
+<td>PNUMENGFL</td>
+<td>Percentage pupils with English first language</td>
+</tr>
+<tr class="odd">
+<td>PNUMUNCFL</td>
+<td>Percentage of pupils where first language is unclassified</td>
+</tr>
+<tr class="even">
+<td>TOTPUPFSMDN</td>
+<td>Number of pupils used in FSM calculation</td>
+</tr>
+<tr class="odd">
+<td>NUMFSM</td>
+<td>Total pupils eligible for free school meals</td>
+</tr>
+<tr class="even">
+<td>NUMNOFSM</td>
+<td>Total pupils not eligible for free school meals</td>
+</tr>
+<tr class="odd">
+<td>PNUMFSM</td>
+<td>Percentage of pupils eligible for free school meals</td>
+</tr>
+<tr class="even">
+<td>PNUMNOFSM</td>
+<td>Percentage pupils not eligible for free school meals</td>
+</tr>
+<tr class="odd">
+<td>NUMFSMEVER</td>
+<td>Number of pupils eligible for FSM at any time during the past 6 years</td>
+</tr>
+<tr class="even">
+<td>PNUMFSMEVER</td>
+<td>Percentage of pupils eligible for FSM at any time during the past 6 years</td>
+</tr>
+</tbody>
+</table></details></section><section id="school-workforce" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> School workforce</h1>
+<p>The DfE published a yearly snapshot on the workforce in schools. This data is taken from <a href="https://www.gov.uk/government/collections/statistics-school-workforce">school workforce</a></p>
+<section id="teachers" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="teachers">
+<span class="header-section-number">3.1</span> Teachers</h2>
+</section><section id="vacancies" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="vacancies">
+<span class="header-section-number">3.2</span> Vacancies</h2>
+</section><section id="timetabling" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="timetabling">
+<span class="header-section-number">3.3</span> Timetabling</h2>
+</section></section><section id="restricted-datasets" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> Restricted datasets</h1>
+<p>The DfE maintains several restricted datasets that concerns sensitive data about students and teachers. The two main datasets are the <a href="https://find-npd-data.education.gov.ukOffice%20of%20National%20Statistics%20through%20their%20Secure%20Research%20System">National Pupil Database</a> and the <a href="https://www.gov.uk/guidance/apply-for-department-for-education-dfe-personal-data">School Workforce Census</a> datasets. These datasets contain data including demographic indicators, results, degree qualifications and pay. To gain access to these datasets you need to complete a rather onerous process to justify your need for the data and your ability to work safely with it. Data is hosted by the Office of National Statistics through their <a href="https://www.ons.gov.uk/aboutus/whatwedo/statistics/requestingstatistics/secureresearchservice">Secure Research Service (SRS)</a>, an online platform where you can safely analyse data using R, Stata, Python, SPSS etc. To gain access to this system researchers will need to get <a href="https://www.ons.gov.uk/aboutus/whatwedo/statistics/requestingstatistics/secureresearchservice/becomeanaccreditedresearcher">ONS accreditation</a>, this process is free, but can take some time to arrange. The SRS offers several routes to access the data:</p>
+<ul>
+<li>
+<em>safe rooms</em>, dedicated research sites hosted by the ONS or other provider, e.g.&nbsp;a university (you won’t be allowed to bring mobile phones or laptop into this sites, nor will you be able to remove any notes you take while undertaking research)</li>
+<li>
+<em>secure rooms</em>, rooms within your institution that have been cleared to access the SRS. You’ll need to justify that this room is safe, e.g.&nbsp;single use room, no one overlooking you whilst working, locked door to the room, dedicated IP address linked to a networked physical socket not a WiFi connection.</li>
+</ul>
+<p>More recently, due to the pandemic, VPN access has been allowed to the SRS. Requests for VPN access need to be made to the DfE and the ONS.</p>
+<p>Additionally, the DfE have been working on the <a href="https://www.gov.uk/guidance/apply-to-access-the-longitudinal-education-outcomes-leo-dataset">LEO dataset</a>, a longitudinal dataset matching student outcomes to national insurance data on earnings. LEO is also accessed through the SRS.</p>
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>MASTEMR - 03 Descriptive Statistics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="../css/mastemr.css">
+</head>
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="index.qmd" class="navbar-brand navbar-brand-logo">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="index.qmd">
+    <span class="navbar-title">MASTEMR</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools ms-auto">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/03-Differing_performance_in_STEM_PISA.html">03 Descriptive Statistics</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Sessions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">02 Intro to R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Introduction to R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-2-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Loading packages and exploring data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-3-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Piping and dplyr</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Intro to graphs</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-Differing_performance_in_STEM_PISA.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">03 Descriptive Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Presentations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Introduction to PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 Maths anxiety</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-Inquiry_learning_in_science_RB_version.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07 Inquiry learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-Science_capital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08 Science capital</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09 Assignment 3 tutorials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-teachers_relationships_and_STEM_achievement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 Correlation and regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 Selecting statistical tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-effective_international_STEM_ed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 Effective international STEM education</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Data sets</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A2-DfE_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DfE England</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A3-TIMSS_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TIMSS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A4-Other_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other datasets</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#seminar-activities" id="toc-seminar-activities" class="nav-link active" data-scroll-target="#seminar-activities"><span class="header-section-number">1</span> Seminar activities</a>
+  <ul class="collapse">
+<li><a href="#discussion-activity" id="toc-discussion-activity" class="nav-link" data-scroll-target="#discussion-activity"><span class="header-section-number">1.1</span> Discussion activity</a></li>
+  <li>
+<a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">1.2</span> Tasks</a>
+  <ul class="collapse">
+<li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">1.2.1</span> Descriptive statistics</a></li>
+  <li><a href="#task-1" id="toc-task-1" class="nav-link" data-scroll-target="#task-1"><span class="header-section-number">1.2.2</span> Task 1</a></li>
+  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2"><span class="header-section-number">1.2.3</span> Task 2</a></li>
+  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3"><span class="header-section-number">1.2.4</span> Task 3</a></li>
+  <li><a href="#creating-summary-tables-and-manipulating-them" id="toc-creating-summary-tables-and-manipulating-them" class="nav-link" data-scroll-target="#creating-summary-tables-and-manipulating-them"><span class="header-section-number">1.2.5</span> Creating summary tables and manipulating them</a></li>
+  <li><a href="#task-4" id="toc-task-4" class="nav-link" data-scroll-target="#task-4"><span class="header-section-number">1.2.6</span> Task 4</a></li>
+  <li><a href="#graphing" id="toc-graphing" class="nav-link" data-scroll-target="#graphing"><span class="header-section-number">1.2.7</span> Graphing</a></li>
+  <li><a href="#task-5" id="toc-task-5" class="nav-link" data-scroll-target="#task-5"><span class="header-section-number">1.2.8</span> Task 5</a></li>
+  <li><a href="#scatter-graphs" id="toc-scatter-graphs" class="nav-link" data-scroll-target="#scatter-graphs"><span class="header-section-number">1.2.9</span> Scatter Graphs</a></li>
+  <li><a href="#task-6" id="toc-task-6" class="nav-link" data-scroll-target="#task-6"><span class="header-section-number">1.2.10</span> Task 6</a></li>
+  <li><a href="#extension-task---binning-data" id="toc-extension-task---binning-data" class="nav-link" data-scroll-target="#extension-task---binning-data"><span class="header-section-number">1.2.11</span> Extension task - Binning data</a></li>
+  </ul>
+</li>
+  <li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources"><span class="header-section-number">1.3</span> Useful resources</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">03 Descriptive Statistics</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header><section id="seminar-activities" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Seminar activities</h1>
+<section id="discussion-activity" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="discussion-activity">
+<span class="header-section-number">1.1</span> Discussion activity</h2>
+<p>Based on <span class="citation" data-cites="davis2013introduction">Davis (<a href="#ref-davis2013introduction" role="doc-biblioref">2013</a>)</span> <a href="https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15">Link to chapter</a></p>
+<p><img src="images/03 Normal Curve-01.jpg" class="img-fluid"></p>
+<p>Consider how and why we think of things as being ‘normal’ (or not). Some suggested questions are:</p>
+<ul>
+<li>What were your immediate thoughts on reading this paper?</li>
+<li>In what ways have you yourself been aware of being compared to norms or ideals?</li>
+<li>How do you feel about that? As an education professional, have you made comparisons between individual students and expected norms or averages? Between groups of students?</li>
+<li>When and how was this useful?</li>
+<li>When and how was this problematic?</li>
+</ul></section><section id="tasks" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="tasks">
+<span class="header-section-number">1.2</span> Tasks</h2>
+<p><strong>Getting set up</strong></p>
+<p>Ensure you have the PISA 2018 data set loaded. If you can see the PISA_2018 data frame in your environment window (at the top right of your screen), there is no need to reload.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We are going to focus on the following variables in the PISA_2018 dataset:</p>
+<ul>
+<li><p><strong><em>CNT</em></strong> the country of the student.</p></li>
+<li><p><strong><em>ISCEDO</em></strong> refers to the type of school the student attends. It’s values can be: General, Pre-Vocational, Vocational, Modular, or NA</p></li>
+<li><p><strong><em>WEALTH</em></strong> is a self-reported measure of student’s wealth. It is a numeric variable, with a mean of -0.4, minimum of -7.5 and a maximum of 4.75.</p></li>
+<li><p><strong><em>ESCS</em></strong> is the index of economic, social and cultural status. It might be thought of a relating to a measure of economic and social status (with some cultural capital measures included). It is a numeric variable, with a mean of 0, minium of -8.2 and a maximum of 4.3.</p></li>
+<li><p><strong><em>PV1MATH, PV1SCIE, PV1READ</em></strong> are the plausible value scores for achievement tests in mathematics, science and reading, respectively. The full achievement tests are long, so each student only completes a subset of items (which still takes 2 hours). Statistical models are then used to calculate an overall score, based on the response to the subset, as if students had answered all the questions. Ten different approaches to calculating a representative scores, plausible values are used, leading to ten different plausible values. We will just use the first plausible value (PV1). This differs from the PISA recommendation for using the scores, but simplifies things for teaching. For more on plausible values see: <a href="https://peterejkemp.github.io/#sec-PV">What are plausible values?</a></p></li>
+<li><p><strong><em>ST004D01T</em></strong> is the gender variable and is either ‘Male’, ‘Female’ or NA.</p></li>
+</ul>
+</div>
+</div>
+<section id="descriptive-statistics" class="level3" data-number="1.2.1"><h3 data-number="1.2.1" class="anchored" data-anchor-id="descriptive-statistics">
+<span class="header-section-number">1.2.1</span> Descriptive statistics</h3>
+<p>For further reading on descriptive statistics and see <a href="https://learningstatisticswithr.com/book/descriptives.html">chapter 5</a> and of Navaro’s Learning Statistics with R.</p>
+<p>The simplest way to find information about a dataframe is to use the console. You type commands to find out about a dataframe directly into the console. To preform an action on a particular column (also called a vector), we use the <code>$</code> symbol. For example, to refer to country data (which is in the vector <code>CNT</code>) we would use <code>PISA_2018$CNT</code></p>
+<p>In the command line, if you want to find the mean of all the science scores you can type the following:</p>
+<blockquote class="blockquote">
+<p>mean(PISA_2018$PV1SCIE)</p>
+</blockquote>
+<p>Notice that you get this response: [1] NA. An NA in the dataframe can occur for a number of reasons but may indicate a response is missing or incomplete. To tell R to ignore such entries, we add <code>na.rm = TRUE</code> to a function:</p>
+<blockquote class="blockquote">
+<p>mean(PISA_2018$PV1SCIE, na.rm = TRUE)</p>
+</blockquote>
+<p>You can use the command line with a number of functions to find useful information about a dataframe:</p>
+<p>R has a number of standard functions that might be useful for descriptive statistics: <code>mean</code> - finds the arithmetic mean <code>median</code> - finds the median value <code>min</code> - finds the minimum value <code>max</code> - finds the maximum value <code>sd</code> - finds the standard deviation <code>range</code> finds the range of values <code>nrow</code> finds the number of rows <code>ncol</code> finds the number of colums <code>unique</code> finds the unique values of a variable</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Surprisingly, there is no function to calculate the mode in tidyverse. However, you can get one by loading the <code>modeest</code> package and using the most frequent value (<code>nfv</code>) function.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 455.767</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="task-1" class="level3" data-number="1.2.2"><h3 data-number="1.2.2" class="anchored" data-anchor-id="task-1">
+<span class="header-section-number">1.2.2</span> Task 1</h3>
+<div class="question">
+<ul>
+<li>Using the command line find out:</li>
+</ul>
+<ol type="a">
+<li>The number of students (i.e.&nbsp;the number of rows) in the PISA 2018 dataset</li>
+<li>The number of items in our dataset (i.e.&nbsp;the number of columns)</li>
+<li>The mean, maximum and minimum science score (don’t forget to use <code>$</code>)</li>
+<li>The unique values of <code>ST003D02T</code> - what information do you think this column holds?</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can read a complete list of what the items in PISA mean here: <a href="https://drive.google.com/open?id=1sogAg0ql4KaAPqx7cTOVe1neblGp-tv8&amp;usp=drive_fs">PISA 2018 student survey item descriptors</a></p>
+</div>
+</div>
+<p>A useful way to get a quick summary of what is in a <code>data.frame</code> is, the <code>summary</code> command. This command outputs the minimum, median, mean, maximum (and 1st and 3rd quartile, i.e.&nbsp;the values at 25% and 75% of the range). For example, to get a sense of the science score variable (<code>PV1SCIE</code>) we can use:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  58.74  385.60  458.20  460.69  533.44  886.08    5377 </code></pre>
+</div>
+</div>
+</section><section id="task-2" class="level3" data-number="1.2.3"><h3 data-number="1.2.3" class="anchored" data-anchor-id="task-2">
+<span class="header-section-number">1.2.3</span> Task 2</h3>
+<div class="question">
+<ul>
+<li>Using <code>summary</code> find:</li>
+</ul>
+<ol type="a">
+<li>The maximum and minimum of the WEALTH variable</li>
+<li>The mean reading score</li>
+<li>The minimum science score in the data set</li>
+<li>Comment on the difference in distribution of the reading and science scores</li>
+</ol>
+</div>
+<p>We will now learn how to calculate means of subgroups of schools using the <code>filter</code> and <code>summarise</code> functions. We can use <code>filter</code> to focus on only a subset of our <code>data.frame</code>. For example, below, we choose to focus on responses from UK students.</p>
+<p>In line 3 below, we focus on UK responses. Note that, in <code>filter</code> we use <code>==</code>. Then we use <code>summarise</code> to calculate the means of the variables we are interested in, students getting science (<code>PV1SCIE</code>), mathematics (<code>PV1MATH</code>) and reading scores. We can also find the total number of students entered in the UK, using (<code>n</code>).</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  MeanSci MeanMath Total
+    &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
+1    495.     497. 13818</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to filter by a different vector (that is, a different column in the table), don’t forget to change the name of the vector in the filter command, for example, to find the mean mathematics and reading scores, and total number of pupils in vocational schools. Don’t forget to use the <code>%&gt;%</code> and the <code>==</code> in <code>filter</code>!</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  MeanSci MeanMath Total
+    &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
+1    424.     428. 76506</code></pre>
+</div>
+</div>
+<p>You can add multiple filters by using the <code>&amp;</code> operator which means AND. Later on we will also meet <code>|</code>, which means OR. So if you want to find the scores of female students in the UK you would use:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  MeanSci MeanMath Total
+    &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
+1    494.     501.  6822</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>Often we are interested in summary data across multiple subgroups. We can then tell R to <code>group_by</code>, for example, <code>group_by(CNT)</code>, to get a summary of data for subgroups.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 80 × 4
+   CNT                    MeanSci MeanMath Total
+   &lt;fct&gt;                    &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
+ 1 Albania                   417.     438.  6359
+ 2 United Arab Emirates      425.     430. 19277
+ 3 Argentina                 418.     392. 11975
+ 4 Australia                 502.     492. 14273
+ 5 Austria                   493.     503.  6802
+ 6 Belgium                   502.     511.  8475
+ 7 Bulgaria                  426.     440.  5294
+ 8 Bosnia and Herzegovina    398.     407.  6480
+ 9 Belarus                   474.     473.  5803
+10 Brazil                    407.     384. 10691
+# ℹ 70 more rows</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the console, R will truncate tables, so you might only see the first 10 countries of 80 in the dataset using the code above. One solution to this is to put the results of the summarising into a new dataframe (e.g.&nbsp;<code>summarydata</code>) which you can then view from the environment window (and use for future processing). To do this you use the asign operator <code>&lt;-</code></p>
+</div>
+</div>
+</section><section id="task-3" class="level3" data-number="1.2.4"><h3 data-number="1.2.4" class="anchored" data-anchor-id="task-3">
+<span class="header-section-number">1.2.4</span> Task 3</h3>
+<div class="question">
+<ul>
+<li><p>Find the total number of students who responded in the United States, their mean science, mathematics and reading scores. Compare that to the responses in China (Note the country name for China is: B-S-J-Z (China), indicating the data are drawn from the four participating municipalities, Beijing, Shanghai, Jiangsu and Zhejiang).Don’t forget to pipe (<code>%&gt;%</code>) each step!</p></li>
+<li><p>Filter the dataset for the UK and <code>group_by</code> gender (which is <code>ST004D01T</code>). Use summarise to find the maximum, minimum and mean scores for boys and girls in mathematics.</p></li>
+<li><p>Filter the dataset for the UK, the US and China, and <code>group_by</code> gender (which is <code>ST004D01T</code>) and country. Use summarise to compare mathematics and science achievement.</p></li>
+</ul>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure you have spelled the name of the variables PV1MATH, etc. correctly. They are case sensitive. You can use the function <code>colnames(PISA_2018)</code> to get a list of names and copy and paste them</p>
+</div>
+</div>
+</section><section id="creating-summary-tables-and-manipulating-them" class="level3" data-number="1.2.5"><h3 data-number="1.2.5" class="anchored" data-anchor-id="creating-summary-tables-and-manipulating-them">
+<span class="header-section-number">1.2.5</span> Creating summary tables and manipulating them</h3>
+<p>The PISA data set is large (!) so it can often be helpful to create interim summary tables.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When using <code>summarise</code>, be careful to add a comma after each function, and check you have closed as many brackets as you open!</p>
+</div>
+</div>
+<p>A useful function is <code>table</code> which creates a summary table of the counts of unique entries in a dataframe. For example, we might want to know how many schools of different types (General, Pre-Vocational, Vocational, Modular) there are in the PISA dataset for the UK.</p>
+<p>We have met the <code>filter</code> function which subsets a table by rows. In the example below, we will use <code>select</code> which creates a subset of a table by columns. For example, if I want to create the table of school type by country, we need only include two columns from the PISA_2018 dataset, country (<code>CNT</code>) and schooltype (<code>ISCEDO</code>). We use the command <code>select</code> to focus on those two: <code>select(CNT, ISCEDO)</code>.</p>
+<p>To create a summary table, intuitively, we use the <code>table</code> function. There are two additional actions we need to do. First, because we piped the whole <code>PISA_2018</code> dataset, if we apply <code>table</code>, even though we have filtered by the UK, the dataset retains levels for all the other countries. If we don’t remove these levels, we will get a large dataset with many zero entries for the countries we have filtered out. The function <code><a href="https://rdrr.io/r/base/droplevels.html">droplevels()</a></code> removes the levels for other countries. Finally, the output of <code>table</code> is a datatype called (appropriately) a table. Dataframes are more easily maniuplated so we convert the table into a dataframe using <code>as.data.frame(table(SchoolType))</code></p>
+<p>You can open the <code>SchoolTypeSummary</code> dataframe and see the summary data. <code>Table</code> has created a new column <code>Freq</code> which stores the results of the counts.</p>
+<p>It might now be intersting to now what percentage the counts of school types represent. To achieve that, first we create a variable that is the total number of schools (to calculate the percentage) -this variable is <code>total</code> and we perform a simple sum on the count column - <code>SchoolTypeSummary$Freq</code>.</p>
+<p>We then use the <code>mutate</code> function. <code>mutate</code> allows you to add a new column to a table. You pipe the dataframe to <code>mutate</code>, and begin by giving the name of the new column you want, in this case the percentage of schools of each type, I will call this PerSch <code>mutate(PerSch=</code>. Then I set the value of that column to the percentage calculation: <code>Freq*100/total)</code>. The Frequency count for each column will be multiplied by 100 and divided by the total.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>             CNT         ISCEDO  Freq      PerSch
+1 United Kingdom        General 13762 99.59473151
+2 United Kingdom Pre-Vocational    10  0.07236937
+3 United Kingdom     Vocational    46  0.33289912</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can use the <code>round`` function to display a given number of decimal places. Here, I have used</code>round( ,2)` to limit the percentage calculation to two significant figures</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>             CNT         ISCEDO  Freq PerSch
+1 United Kingdom        General 13762  99.59
+2 United Kingdom Pre-Vocational    10   0.07
+3 United Kingdom     Vocational    46   0.33</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="task-4" class="level3" data-number="1.2.6"><h3 data-number="1.2.6" class="anchored" data-anchor-id="task-4">
+<span class="header-section-number">1.2.6</span> Task 4</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Don’t forget to use the pipe operator <code>%&gt;%</code> between each function</p>
+</div>
+</div>
+<div class="question">
+<p><code>ST205Q02HA</code> asks participants if they feel students in their school are competing with each other. For students in the UK, find out the percentage of students who responded: Not at all true, Slightly true, Very true, Extremely true, and NA. (Hint: don’t forget to <code><a href="https://rdrr.io/r/base/droplevels.html">droplevels()</a></code>)</p>
+<p><code>ST012Q09NA</code> asks students if they have a musical instrument in their home. What percentage of students in the UK have no instruments in their home? What is the percentage in China?</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Don’t forget to use the pipe operator <code>%&gt;%</code> between each function</p>
+</div>
+</div>
+</section><section id="graphing" class="level3" data-number="1.2.7"><h3 data-number="1.2.7" class="anchored" data-anchor-id="graphing">
+<span class="header-section-number">1.2.7</span> Graphing</h3>
+<p>For more details on graphing with the <code>PISA_2018</code> dataset, see <strong>?@sec-graphing</strong></p>
+<section id="column-graphs" class="level4" data-number="1.2.7.1"><h4 data-number="1.2.7.1" class="anchored" data-anchor-id="column-graphs">
+<span class="header-section-number">1.2.7.1</span> Column graphs</h4>
+<p>Imagine we want to plot a graph of whether students report having an interactive whiteboard (IWB) in their school <code>IC009Q11NA</code> in the UK</p>
+<p>When plotting graphs, it makes things easier to have a data.frame of the data you will pass to ggplot - a bit like the final table of data you will actually plot when drawing a graph in real life.</p>
+<p>To complete our take we are going to create a new <code>data.frame</code> we will use in the plot. I have called that <code>data.frame</code> <code>IWBplot</code>. Then, I take the main data.frame and select <code>IC009Q11NA</code> and <code>CNT</code> and filter for the UK.</p>
+<p>The new element here is using ggplot, R’s graphing function (more details on how to use geom_bar are in the section above: <a href="https://peterejkemp.github.io/#geoms">Geom_bar)</a>.</p>
+<p>To plot a graph, you call ggplot and specify the data you want to use for the graph (in our case, the new <code>data.frame</code> we have created, <code>IWBplot</code>).</p>
+<p>The next layer of ggplot is the aesthetics (<code>aes</code>), i.e., what our graph will look like. First, we tell ggplot what we want our <code>y</code> (<code>IC009Q11NA</code>). Finally, we specify we want a bar graph using <code>geom_bar()</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="03-Differing_performance_in_STEM_PISA_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section></section><section id="task-5" class="level3" data-number="1.2.8"><h3 data-number="1.2.8" class="anchored" data-anchor-id="task-5">
+<span class="header-section-number">1.2.8</span> Task 5</h3>
+<div class="question">
+<ul>
+<li>Plot a bar graph of <code>ST221Q03HA</code> - I learn about other cultures at school? First for the UK, then for France.</li>
+</ul>
+<ul>
+<li>Plot a bar graph of <code>ST013Q01TA</code> - How many books are there in your home? for students in the UK. Then plot a graph splitting the data by gender (<code>ST004D01T</code>)</li>
+</ul>
+<ul>
+<li>Plot a bar graph of the mean mathematics scores of the countries in the PISA dataset (Hint, you will need to use <code>group_by</code> and <code>summarise</code> and <code>geom_bar(stat="identity")</code> is used when you want geom_bar to plot the actually values (because you have already summarised) rather than counting the values. Second hint: you can reorder the x-axis with the <code>reorder</code> function. Rather than a simple <code>x=CNT</code> you can put <code>x=reorder(CNT, -SciMean)</code> which will reorder the x axis in descending order (because of the <code>-</code> sign) of <code>SciMean</code>.</li>
+</ul>
+</div>
+</section><section id="scatter-graphs" class="level3" data-number="1.2.9"><h3 data-number="1.2.9" class="anchored" data-anchor-id="scatter-graphs">
+<span class="header-section-number">1.2.9</span> Scatter Graphs</h3>
+<p>To plot a scatter graph we use the <code>geom_point</code> (see also: <a href="https://peterejkemp.github.io/#sec-geom_point">Geom_Point section</a>), which works in a similar way to <code>geom_col</code>.</p>
+<p><strong>Example</strong></p>
+<p>Imagine I want to plot a graph of mathematics scores <code>PV1MATH</code> (on the x-axis) against science scores <code>PV1SCIE</code> (y-axis) for students in the UK.</p>
+<p>A above, I first want to create a <code>data.frame</code> to plot - in this case I have called it <code>plotdata</code>. I <code>select</code> only the columns I need (<code>PV1MATH</code>, <code>PV1SCIE</code>, and <code>CNT</code> to <code>filter</code> for the UK), and then filter for the UK.</p>
+<p>Then I pass ggplot <code>plotdata</code>. As with <code>geom_col</code>, I use <code>ggplot</code> and first specify the data I want to plot (<code>ggplot(data=plotdata,</code>). Next, I set the <code>aes</code>thetic variables, to keep things simple,only the <code>x</code> and <code>y</code> variables. Then I call <code>geom_point</code> to plot the points as a scatter graph.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="03-Differing_performance_in_STEM_PISA_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We can make things more pleasing by adding more features to the aesthetic variable. For example, I can add colour (<code>geom_point(colour="blue")</code>) and rename the axes <code>labs(x="Mathematics score", y="Science score")</code>. Note when adding to <code>ggplot</code>, the <code>+</code> should come at the end of the line before the new addition to avoid an error.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="03-Differing_performance_in_STEM_PISA_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>I can also add a line using (<code>geom_smooth(method='lm')</code>) - here ‘lm’ specifies a linear plot (i.e.&nbsp;a straight line).</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="03-Differing_performance_in_STEM_PISA_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>I can also change the colour of the points by a variable in the dataframe - for example by gender (<code>aes(colour=ST004D01T</code>) - NB I have to select that collumn in my intial selection. I can vary the size of points and make them slightly transparent (their alpha level): <code>geom_point(alpha=0.4, size=0.6)</code>, and I can move the legend to the bottom (<code>theme(legend.position = "bottom")</code>)</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="03-Differing_performance_in_STEM_PISA_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a summary of all the elements of a graph you can change in <code>ggplot</code> - see this <a href="https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf">help sheet</a></p>
+</div>
+</div>
+</section><section id="task-6" class="level3" data-number="1.2.10"><h3 data-number="1.2.10" class="anchored" data-anchor-id="task-6">
+<span class="header-section-number">1.2.10</span> Task 6</h3>
+<div class="question">
+<ul>
+<li>For students in the UK and Brazil, plot science scores (<code>PV1SCIE</code>) by the index of economic, social and cultural status (<code>ESCS</code>) - a little like social class. The try varying the colour of points by country, adding a line.</li>
+</ul>
+<ul>
+<li>For students in the UK, plot a graph of science scores (<code>PV1SCIE</code>) against reading scores (<code>PV1READ</code>). Add a straight line and vary the colour of points by students’ gender</li>
+</ul>
+<ul>
+<li>Challenging task (!): Plot a graph of mean Maths score (<code>PV1MATH</code>) by economic, social and cultural status (<code>ESCS</code>) and highlight countries with maths scores above 800. An outline of how to acheive this:</li>
+</ul>
+<ol type="a">
+<li>create a dataframe of mean <code>PV1MATH</code> and <code>ESCS</code> by country using <code>group_by</code> and <code>summarise</code>. (Don’t forget to use na.RM=TRUE)</li>
+<li>use <code>mutate</code> and <code>ifelse</code> to add a new variable, called <code>text</code> which contains the names of countires with mathematics scores over 500.</li>
+<li>use <code>geom_label</code> to add these data points to the x and y coordinates of the countries e.g.&nbsp;<code>geom_label(PV1MATHmean, ESCSmean, label)</code>
+</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="03-Differing_performance_in_STEM_PISA_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</section><section id="extension-task---binning-data" class="level3" data-number="1.2.11"><h3 data-number="1.2.11" class="anchored" data-anchor-id="extension-task---binning-data">
+<span class="header-section-number">1.2.11</span> Extension task - Binning data</h3>
+<p>If we want to plot a frequency plot, the kind of chart that often gives a normal distribution, we need to divide data into counts of ranges of data.</p>
+<p>For example, to produce a frequency plot of science scores in the UK, I can first run a <code>summary</code> command on <code>PV1SCIE</code> to find the minimum and maximum score:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  58.74  385.60  458.20  460.69  533.44  886.08    5377 </code></pre>
+</div>
+</div>
+<p>If we wanted to plot a frequency chart of heights, we might divide the range of scores (from 58.74-886.08) into bins of 20 points. To do this we can use the <code>cut(&lt;field&gt;,&lt;breaks&gt;)</code> function within the <code>mutate</code> command on a ‘data.frame’. The <code>&lt;field&gt;</code> specifies the range (i.e.&nbsp;from around 50-900) and <code>&lt;breaks&gt;</code> the size of bins.</p>
+<p>In the example below, I use <code>cut(PV1SCIE, breaks=seq(50,900,20))</code> to create a new vector (column in the table) with the total number of pupils divided up into bins. The specification <code>breaks=seq(50,900,20))</code> sets how the data are broken up - into bins (i.e.&nbsp;groups of respondents) of scores starting at 50 and rising to 900 in steps of 20.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="03-Differing_performance_in_STEM_PISA_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="question">
+<p>Create a graph of the binned counts of mathematics scores in Malta. Don’t forget to run a summary command first to get a sense of the range in values.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To find out a range of a vector, you can use the <code>range</code> function in the console - for example, to get a sense of the range of numbers of students on SEN support. I can type: <code>range(DfE_SEN_data$SEN.support)</code></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To find out a range of a vector, you can use the <code>range</code> function in the console - for example, to get a sense of the range of numbers of students on SEN support. I can type: <code>range(DfE_SEN_data$SEN.support)</code></p>
+</div>
+</div>
+<p>Plot a binned <code>geom_bar</code> graph of the wealth scores in the UK and Belarus on the same axes.</p>
+</div>
+</section></section><section id="useful-resources" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="useful-resources">
+<span class="header-section-number">1.3</span> Useful resources</h2>
+<ul>
+<li>The ’<a href="https://www.data-to-viz.com">From Data to Viz’</a> blog has a helpful flowchart for choosing an appropriate type of graph for different forms of data.</li>
+<li>The Royal Statistical Society has produced a useful guide to making visual representations, <a href="https://royal-statistical-society.github.io/datavisguide/">Best Practice for Data Representations</a>, that shows you how to make readable, accessible data visualisations.</li>
+</ul>
+
+
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-davis2013introduction" class="csl-entry" role="listitem">
+Davis, Lennard J. 2013. <span>“Introduction: Normality, Power, and Culture.”</span> <em>The Disability Studies Reader</em> 4: 1–14. <a href="https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15">https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15</a>.
+</div>
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

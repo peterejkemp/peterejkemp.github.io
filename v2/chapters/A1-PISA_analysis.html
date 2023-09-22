@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>MASTEMR - PISA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="../css/mastemr.css">
+</head>
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="index.qmd" class="navbar-brand navbar-brand-logo">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="index.qmd">
+    <span class="navbar-title">MASTEMR</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools ms-auto">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/A1-PISA_analysis.html">Data sets</a></li><li class="breadcrumb-item"><a href="../chapters/A1-PISA_analysis.html">PISA</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Sessions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">02 Intro to R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Introduction to R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-2-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Loading packages and exploring data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-3-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Piping and dplyr</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Intro to graphs</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-Differing_performance_in_STEM_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Descriptive Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Presentations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Introduction to PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 Maths anxiety</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-Inquiry_learning_in_science_RB_version.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07 Inquiry learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-Science_capital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08 Science capital</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09 Assignment 3 tutorials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-teachers_relationships_and_STEM_achievement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 Correlation and regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 Selecting statistical tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-effective_international_STEM_ed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 Effective international STEM education</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Data sets</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A2-DfE_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DfE England</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A3-TIMSS_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TIMSS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A4-Other_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other datasets</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#what-is-pisa" id="toc-what-is-pisa" class="nav-link active" data-scroll-target="#what-is-pisa"><span class="header-section-number">1</span> What is PISA</a></li>
+  <li><a href="#how-to-use-it" id="toc-how-to-use-it" class="nav-link" data-scroll-target="#how-to-use-it"><span class="header-section-number">2</span> How to use it</a></li>
+  <li><a href="#common-issues" id="toc-common-issues" class="nav-link" data-scroll-target="#common-issues"><span class="header-section-number">3</span> Common issues</a></li>
+  <li>
+<a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">4</span> Questions</a>
+  <ul class="collapse">
+<li><a href="#sec-PV" id="toc-sec-PV" class="nav-link" data-scroll-target="#sec-PV"><span class="header-section-number">4.1</span> What are Plausible Values?</a></li>
+  <li><a href="#why-are-some-countries-oecd-countries-and-others-arent" id="toc-why-are-some-countries-oecd-countries-and-others-arent" class="nav-link" data-scroll-target="#why-are-some-countries-oecd-countries-and-others-arent"><span class="header-section-number">4.2</span> Why are some countries OECD countries and others aren’t?</a></li>
+  <li><a href="#why-are-the-pv-grades-pivoting-around-the-500-mark" id="toc-why-are-the-pv-grades-pivoting-around-the-500-mark" class="nav-link" data-scroll-target="#why-are-the-pv-grades-pivoting-around-the-500-mark"><span class="header-section-number">4.3</span> Why are the PV grades pivoting around the ~500 mark?</a></li>
+  <li><a href="#why-are-the-letters-ta-and-na-used-in-some-field-names" id="toc-why-are-the-letters-ta-and-na-used-in-some-field-names" class="nav-link" data-scroll-target="#why-are-the-letters-ta-and-na-used-in-some-field-names"><span class="header-section-number">4.4</span> Why are the letters TA and NA used in some field names?</a></li>
+  <li><a href="#how-do-i-find-fields-that-are-numeric" id="toc-how-do-i-find-fields-that-are-numeric" class="nav-link" data-scroll-target="#how-do-i-find-fields-that-are-numeric"><span class="header-section-number">4.5</span> How do I find fields that are numeric?</a></li>
+  <li><a href="#how-are-students-selected-to-take-part-in-pisa" id="toc-how-are-students-selected-to-take-part-in-pisa" class="nav-link" data-scroll-target="#how-are-students-selected-to-take-part-in-pisa"><span class="header-section-number">4.6</span> How are students selected to take part in PISA?</a></li>
+  <li><a href="#interesting-papers-and-reading-on-pisa" id="toc-interesting-papers-and-reading-on-pisa" class="nav-link" data-scroll-target="#interesting-papers-and-reading-on-pisa"><span class="header-section-number">4.7</span> Interesting papers and reading on PISA</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright"><span class="header-section-number">5</span> Copyright</a>
+  <ul class="collapse">
+<li><a href="#fields-to-drop" id="toc-fields-to-drop" class="nav-link" data-scroll-target="#fields-to-drop"><span class="header-section-number">5.1</span> fields to drop:</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">PISA</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header><section id="what-is-pisa" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> What is PISA</h1>
+<p>The Programme for International Student Assessment (PISA) is an OECD initiative that looks at the reading, mathematics and science abilities of students aged 15 years old. Data is collected from ~38 OECD countries and other partner countries every three years.</p>
+<table class="table">
+<thead><tr class="header">
+<th>Dataset</th>
+<th>Description</th>
+<th style="text-align: center;">03</th>
+<th style="text-align: center;">06</th>
+<th style="text-align: center;">09</th>
+<th style="text-align: center;">12</th>
+<th style="text-align: center;">15</th>
+<th style="text-align: center;">18</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Student</td>
+<td>demographic data on student participants</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1-41Ynn4hzEL1vO2L-wIqdRotXDtDdjYh/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1No_3a2zZsjxPurfDKIhzA3xpHD3iHECJ/view?usp=drive_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/171x7ghqLfQhVdyWXdXNPOxDlS788Ui6Y/view?usp=share_link">x</a></td>
+</tr>
+<tr class="even">
+<td>School</td>
+<td>descriptive data about schools</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1wWfsZcGW2nGFloS0CUOX1DlX7KdptxQr/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1sIrtiz035J4OT3-eHUhECIwtzfdDTCEa/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1ZJkiIGkVfBdRupTVxbaRQ1fwOZr_RV8O/view?usp=share_link">x</a></td>
+</tr>
+<tr class="odd">
+<td>Parent</td>
+<td>a survey for student’s parents including information about home environments and parental education</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>Teacher</td>
+<td>demographic, teaching, qualification and training data</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1UpU_r8czkaIQdcSFbpRMqQ_lcOJg-voP/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1UumvsA71ncvqrWGwqNqKsGn1ctja5no6/view?usp=share_link">x</a></td>
+</tr>
+<tr class="odd">
+<td>Cognitive</td>
+<td></td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/19GLw1-YA1aJGWoCWXfZGtUWnQi4pcjik/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1sTpe3TJSnByhZdxzezkmXjH2uTH9TOUP/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1nhwySp0A-LHfN-oO8HES9PQOIDZNmOzT/view?usp=share_link">x</a></td>
+</tr>
+</tbody>
+</table>
+<p>PISA datasets above can be found on the <a href="https://www.oecd.org/pisa/data/">OECD website</a>. The links in the table above will allow you to download .rds versions of these files which we have created, though they might need additional editing, e.g.&nbsp;reducing the number of columns or changing the types of each column. If you want to find out more about what each field stores, take a look at the corresponding codebook, <a href="https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx">2018</a>, <a href="https://webfs.oecd.org/pisa/Codebook_CMB.xlsx">2015</a>.</p>
+</section><section id="how-to-use-it" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> How to use it</h1>
+<p>The PISA datasets come in <em>SPSS</em> or <em>SAS</em> formats. The data used in this course comes directly from downloading the SPSS <code>.sav</code> files and using the <code>haven</code> package to clean it into a native R format suitable for analysis, in most cases <code>.parquet</code> files (see: <strong>?@sec-parquet</strong>). There are a few quirks that you need to be aware of:</p>
+<ul>
+<li><p>R uses levels (factors) instead of labelled data</p></li>
+<li><p>All SPSS fields are <em>labelled</em>, and auto conversion into the native R dataframe format would make numeric fields, factors(!?). To avoid this confusion we have stripped out the no-response data for numeric fields and replaced it with <code>NA</code> values. This means that you won’t be able to tell the reason that a field is missing, and the following labels have all been set to <code>NA</code>:</p></li>
+</ul>
+<table class="table">
+<caption>Labels set to NA in .rds and .parquet files</caption>
+<thead><tr class="header">
+<th>value</th>
+<th>label</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>95</td>
+<td>Valid Skip</td>
+</tr>
+<tr class="even">
+<td>97</td>
+<td>Not Applicable</td>
+</tr>
+<tr class="odd">
+<td>98</td>
+<td>Invalid</td>
+</tr>
+<tr class="even">
+<td>99</td>
+<td>No Response</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>As the fields are now using R’s native factor format you might find that the data doesn’t quite match the format of the table labels. For example, <code>CNT</code> is labelled “Country code 3-character”, but the data is now instead the full country name.</li>
+<li>the examples shown in the book use cut down PISA datasets, where only a limited number of columns are included. The full datasets are linked in the table above.</li>
+</ul></section><section id="common-issues" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> Common issues</h1>
+<p>The PISA datasets can be absolutely huge and might bring your computer to its knees; if you are using a computer with less than 16GB of RAM you might not be able to load some tables at all. Tables such as the <em>Cognitive</em> dataset have hundreds of thousands of rows and thousands of columns, loading them directly might lead to an error similar to this: <code>Error: cannot allocate vector of size 2.1 Gb</code>. This means that R can’t find enough RAM to load the dataset and has given up. You can see a rough estimate of how much RAM R is currently using the top Environment panel:</p>
+<p><img src="..\images/environment-RAM.png" class="img-fluid"></p>
+<p>To get around this issues you can try to clean your current R environment using the brush tool:</p>
+<p><img src="..\images/environment-brush.png" class="img-fluid"></p>
+<p>This will drop all the current dataframes, objects, functions and packages that you have loaded meaning you will have to reload packages such as <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> and <code><a href="https://haven.tidyverse.org">library(haven)</a></code> before you can attempt to reload the PISA tables.</p>
+<p>A lack of RAM might also be the result of lots of other programs running concurrently on your computer. Try to close anything that you don’t need, web browsers can be particularly RAM hungry, so close them or as many tabs as you can.</p>
+<p>If none of the above works, then please get in touch with the team, letting them know which table you need from which year, with which fields and for which countries. We will be able to provide you with a cutdown dataset.</p>
+</section><section id="questions" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> Questions</h1>
+<section id="sec-PV" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="sec-PV">
+<span class="header-section-number">4.1</span> What are Plausible Values?</h2>
+<p>In the PISA dataset, the outcomes of student tests are reported as plausible values, for example, in the variables of the science test (<code>PV1SCIE</code>, <code>PV2SCIE</code>, <code>PV3SCIE</code>, <code>PV3SCIE</code>, and <code>PV5SCIE</code>). It might seem counter intuitive that there are five values for a score on a test.</p>
+<p>Plausible values (PVs) are a way of expressing the error in a measurement. The number of questions in the full PISA survey is very large, so students are randomly allocated to take a subset of questions (and even then, the test still takes two hours!). As no student completes the full set of questions, estimating how a student would have performed on the full question set involves some error. Plausible values are a way of expressing the uncertainty in the estimation of student scores.</p>
+<p>One way of thinking of the PV scores is that they represent five different estimates of students’ abilities based on the questions they have answered. To decrease measurement error, five different approaches are applied to create five different estimates, the PV scores.</p>
+<p>The PISA Data Analysis Manual suggests:</p>
+<blockquote class="blockquote">
+<p>Population statistics should be estimated using each plausible value separately. The reported population statistic is then the average of each plausible value statistic. For instance, if one is interested in the correlation coefficient between the social index and the reading performance in PISA, then five correlation coefficients should be computed and then averaged</p>
+<p>Plausible values should never be averaged at the student level, i.e.&nbsp;by computing in the dataset the mean of the five plausible values at the student level and then computing the statistic of interest once using that average PV value. Doing so would be equivalent to an EAP estimate, with a bias as described in the previous section.</p>
+<p>(p.&nbsp;100) <span class="citation" data-cites="monseur2009pisa">Monseur et al. (<a href="#ref-monseur2009pisa" role="doc-biblioref">2009</a>)</span></p>
+</blockquote>
+</section><section id="why-are-some-countries-oecd-countries-and-others-arent" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="why-are-some-countries-oecd-countries-and-others-arent">
+<span class="header-section-number">4.2</span> Why are some countries OECD countries and others aren’t?</h2>
+<p>The Organisation for Economic Co-operation and Development (OECD) has 38 member states. PISA is run by the OECD and its member states normally take part in each PISA cycle, but other countries are allowed to take part as <em>Partners</em>. You can find more details on participation <a href="https://www.oecd.org/pisa/aboutpisa/pisa-participants.htm">here</a>.</p>
+<p>Results for OECD members are generally higher than for Partner countries:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  OECD  country_n math_mean math_sd students_n
+  &lt;fct&gt;     &lt;int&gt;     &lt;dbl&gt;   &lt;dbl&gt;      &lt;int&gt;
+1 No           43      434.   106.      317477
+2 Yes          37      490.    93.8     294527</code></pre>
+</div>
+</div>
+</section><section id="why-are-the-pv-grades-pivoting-around-the-500-mark" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="why-are-the-pv-grades-pivoting-around-the-500-mark">
+<span class="header-section-number">4.3</span> Why are the PV grades pivoting around the ~500 mark?</h2>
+<p>The scores for students in mathematics, reading and science are scaled so that the mean of students in OECD countries is roughly 500 points with a standard deviation of 100 points. To see this, run the following code:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 6
+  math_mean math_sd scie_mean scie_sd read_mean read_sd
+      &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1      490.    93.8      490.    96.0      488.    101.</code></pre>
+</div>
+</div>
+</section><section id="why-are-the-letters-ta-and-na-used-in-some-field-names" class="level2" data-number="4.4"><h2 data-number="4.4" class="anchored" data-anchor-id="why-are-the-letters-ta-and-na-used-in-some-field-names">
+<span class="header-section-number">4.4</span> Why are the letters TA and NA used in some field names?</h2>
+</section><section id="how-do-i-find-fields-that-are-numeric" class="level2" data-number="4.5"><h2 data-number="4.5" class="anchored" data-anchor-id="how-do-i-find-fields-that-are-numeric">
+<span class="header-section-number">4.5</span> How do I find fields that are numeric?</h2>
+</section><section id="how-are-students-selected-to-take-part-in-pisa" class="level2" data-number="4.6"><h2 data-number="4.6" class="anchored" data-anchor-id="how-are-students-selected-to-take-part-in-pisa">
+<span class="header-section-number">4.6</span> How are students selected to take part in PISA?</h2>
+<p>Students are selected by … <span class="citation" data-cites="ref">(<a href="#ref-ref" role="doc-biblioref"><strong>ref?</strong></a>)</span></p>
+<p>Add Christian Bokhove papers https://bokhove.net/r-materials/</p>
+<p>From the data, you can see that 50% of schools entered fewer than 30 students into PISA.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+  quartile  Qmax Qmedian Qmean
+     &lt;int&gt; &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt;
+1        1    19       9  9.53
+2        2    29      25 24.6 
+3        3    35      33 32.8 
+4        4   491      40 44.9 </code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="A1-PISA_analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="interesting-papers-and-reading-on-pisa" class="level2" data-number="4.7"><h2 data-number="4.7" class="anchored" data-anchor-id="interesting-papers-and-reading-on-pisa">
+<span class="header-section-number">4.7</span> Interesting papers and reading on PISA</h2>
+<p>Jerrim <span class="citation" data-cites="jiang2015effects">Jiang and McComas (<a href="#ref-jiang2015effects" role="doc-biblioref">2015</a>)</span> <span class="citation" data-cites="monseur2009pisa">Monseur et al. (<a href="#ref-monseur2009pisa" role="doc-biblioref">2009</a>)</span></p>
+</section></section><section id="copyright" class="level1" data-number="5"><h1 data-number="5">
+<span class="header-section-number">5</span> Copyright</h1>
+<blockquote class="blockquote">
+<p>All PISA products are published under the <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO</a> (CC BY-NC-SA 3.0 IGO)</p>
+</blockquote>
+<p>This includes the <code>.rds</code> and <code>.parquet</code> formatted datasets linked above.</p>
+<section id="fields-to-drop" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="fields-to-drop">
+<span class="header-section-number">5.1</span> fields to drop:</h2>
+<p>CNTRYID, NatCen</p>
+
+
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-jiang2015effects" class="csl-entry" role="listitem">
+Jiang, Feng, and William F McComas. 2015. <span>“The Effects of Inquiry Teaching on Student Science Achievement and Attitudes: Evidence from Propensity Score Analysis of PISA Data.”</span> <em>International Journal of Science Education</em> 37 (3): 554–76. <a href="https://www.tandfonline.com/doi/full/10.1080/09500693.2014.1000426?casa_token=fgGJdfxGtpgAAAAA%3APlZg4i0qZhJEnDine0zKSVoWS8ylQ8eddQBr18Gid9xADlIWaDWh_tZLy8ozpMmJ5zl0Jo3c5TcmTw">https://www.tandfonline.com/doi/full/10.1080/09500693.2014.1000426?casa_token=fgGJdfxGtpgAAAAA%3APlZg4i0qZhJEnDine0zKSVoWS8ylQ8eddQBr18Gid9xADlIWaDWh_tZLy8ozpMmJ5zl0Jo3c5TcmTw</a>.
+</div>
+<div id="ref-monseur2009pisa" class="csl-entry" role="listitem">
+Monseur, Christian et al. 2009. <span>“PISA Data Analysis Manual: <span>SPSS</span> Second Edition.”</span> <a href="https://www.oecd-ilibrary.org/docserver/9789264056275-en.pdf?expires=1672909117&amp;id=id&amp;accname=guest&amp;checksum=3AD95B021546E6CB9B93D8895B011056">https://www.oecd-ilibrary.org/docserver/9789264056275-en.pdf?expires=1672909117&amp;id=id&amp;accname=guest&amp;checksum=3AD95B021546E6CB9B93D8895B011056</a>.
+</div>
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
