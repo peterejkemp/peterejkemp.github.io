@@ -1199,10 +1199,10 @@ Upper-mid-Top       -12.116762 -18.0484159 -6.185109 0.0000009</code></pre>
 <li>work out the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> maths score <code>PV1MATH</code> for each country <code>CNT</code> and gender <code>ST004D01T</code> grouping, call this <code>meanmath</code> and create a new dataframe to store this</li>
 <li>from this dataframe, create two new dataframes, one for males only and one for females only</li>
 <li>
-<code>rename()</code> (see <strong>?@sec-renaming</strong>) the <code>meanmath</code> score in each dataframe to <code>male_mean</code> and <code>female_mean</code>
+<code>rename()</code> (see <a href="../chapters/02-3-Intro_to_analysis_software.html#sec-renaming">§renaming columns</a>)) the <code>meanmath</code> score in each dataframe to <code>male_mean</code> and <code>female_mean</code>
 </li>
 <li>bind the dataframes together using using column bind function <code>cbind(&lt;male_df&gt;, &lt;female_df&gt;)</code> and store this in a new dataframe called <code>Mathgendergap</code>. <strong>NOTE:</strong> cbind only accepts tables with different names, so you’ll need to select <code>select(CNT, male_mean)</code> from the male dataframe and <code>select(female_mean)</code> from the female dataframe.</li>
-<li>use <code>mutate</code> (see <strong>?@sec-mutate</strong>) to calculate the difference in male and female mean maths scores for each country</li>
+<li>use <code>mutate</code> (see <a href="../chapters/02-3-Intro_to_analysis_software.html#sec-mutate">§mutate</a>)) to calculate the difference in male and female mean maths scores for each country</li>
 <li>plot the results for each country</li>
 </ul>
 <div class="cell">

@@ -403,7 +403,7 @@ Note
 </section><section id="dataframes" class="level1" data-number="2"><h1 data-number="2">
 <span class="header-section-number">2</span> Dataframes</h1>
 <p>Loading datasets into R will normally store them as <em>dataframes</em> (also known as <em>tibbles</em> when using the tidyverse). Dataframes are the equivalent of tables in a spreadsheet, with rows, columns and datatypes.</p>
-<p>The table above has 4 columns, each column has a datatype, <code>CNT</code> is a character vector, PV1MATH is a double (numeric) vector, ESCS is a double (numeric) vector and <code>ST211Q01HA</code> is a factor. For more about datatypes, see <strong>?@sec-datatypes</strong></p>
+<p>The table above has 4 columns, each column has a datatype, <code>CNT</code> is a character vector, PV1MATH is a double (numeric) vector, ESCS is a double (numeric) vector and <code>ST211Q01HA</code> is a factor. For more about datatypes, see <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-datatypes">§Datatypes</a>)</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -471,7 +471,7 @@ Tip
 <p>First we need to get some data into R so we can start analysing them. We can load large datatables into R by either providing the online web address, or by loading it from a local file directory on your hard drive. Both methods are covered below:</p>
 </section><section id="loading-data-from-the-web" class="level1" data-number="3"><h1 data-number="3">
 <span class="header-section-number">3</span> Loading data from the web</h1>
-<p>To download files from the web you’ll need to find the exact location of the file you are using. For example below we will need another package, <code>openxlsx</code>, which you need to <em>install</em> before you load it (see: <strong>?@sec-packages</strong>, or use line 1 below). The code shown will download the files from an online Google drive directly into objects in R using <code>read.xlsx(&lt;file_web_address&gt;, &lt;sheet_name&gt;)</code>:</p>
+<p>To download files from the web you’ll need to find the exact location of the file you are using. For example below we will need another package, <code>openxlsx</code>, which you need to <em>install</em> before you load it (see: <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-packages">§Setting up RStudio and the tidyverse</a>), or use line 1 below). The code shown will download the files from an online Google drive directly into objects in R using <code>read.xlsx(&lt;file_web_address&gt;, &lt;sheet_name&gt;)</code>:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -556,7 +556,7 @@ Tip
 </li>
 </ul></section></section><section id="sec-parquet" class="level1" data-number="6"><h1 data-number="6">
 <span class="header-section-number">6</span> .parquet files</h1>
-<p>For the majority of this workbook you will be using a cutdown version of the <code>PISA_2018</code> student table. This dataset is huge and we have loaded it into R, selected fields we think are useful, converted column types to work with R and saved in the <code>.parquet</code> format. <code>.parquet</code> files are quick to load and small in size. To load an <code>.parquet</code> file you can use the <code>read_parquet(&lt;location&gt;)</code> command from the <code>arrow</code> package.</p>
+<p>For the majority of this workbook you will be using a cutdown version of the <code>PISA_2018</code> student table. This dataset is huge and we have loaded it into R, selected fields we think are useful, converted column types to work with R and saved in the <code>.parquet</code> format. <code>.parquet</code> files are quick to load and small in size. To load a <code>.parquet</code> file you can use the <code>read_parquet(&lt;location&gt;)</code> command from the <code>arrow</code> package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(arrow)</span>
 <span id="cb4-2"><a href="#cb4-2"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">"&lt;yourfolder&gt;/PISA_2018_student_subset.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -564,8 +564,7 @@ Tip
 <p>If you want to save out any of your findings, you can use <code>write_parquet(&lt;object&gt;, &lt;location&gt;)</code>, where <code>object</code> is the table you are working on and <code>location</code> is where you want to save it.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">write_rds</span>(PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"France"</span>),</span>
-<span id="cb5-3"><a href="#cb5-3"></a>                      <span class="st">"&lt;yourfolder&gt;/pisa_france_2018.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">write_rds</span>(PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"France"</span>), <span class="st">"&lt;yourfolder&gt;/pisa_france_2018.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="csv-files" class="level1" data-number="7"><h1 data-number="7">
 <span class="header-section-number">7</span> .csv files</h1>
@@ -642,7 +641,7 @@ Note
 <p>To learn more about loading data from in other formats, e.g.&nbsp;SPSS and STATA, look at the tidyverse documentation for <a href="https://haven.tidyverse.org/">haven</a>.</p>
 </div>
 </div>
-<p>The <code>PISA_2018</code> dataframe is made up of multiple columns, with each column acting like a <em>vector</em>, which means each column stores values of only one datatype. If we look at the first four columns of the schools table, you can see the <code>CNTSTUID</code>, <code>ESCS</code> and <code>PV1MATH</code> columns are <code>&lt;dbl&gt;</code> (<code>numeric</code>) and the other three columns are of <code>&lt;fctr&gt;</code> (<code>factor</code>), a special datatype in R that helps store categorical and ordinal variables, see <strong>?@sec-factors</strong> for more information on how factors work.</p>
+<p>The <code>PISA_2018</code> dataframe is made up of multiple columns, with each column acting like a <em>vector</em>, which means each column stores values of only one datatype. If we look at the first four columns of the schools table, you can see the <code>CNTSTUID</code>, <code>ESCS</code> and <code>PV1MATH</code> columns are <code>&lt;dbl&gt;</code> (<code>numeric</code>) and the other three columns are of <code>&lt;fctr&gt;</code> (<code>factor</code>), a special datatype in R that helps store categorical and ordinal variables, see <a href="../chapters/02-3-Intro_to_analysis_software.html#sec-factors">§Factors and statistical data types</a>) for more information on how factors work.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
@@ -665,7 +664,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Vectors are data structures that bring together one or more data elements of the same datatype. E.g. we might have a numeric vector recording the grades of a class, or a character vector storing the gender of a set of students. To define a vector we use <code>c(item, item, ...)</code>, where <code>c</code> stands for combine. Vectors are very important to R, even declaring a single object, <code>x &lt;- 6</code>, is creating a vector of size one. To find out more about vectors see: <strong>?@sec-vectors</strong></p>
+<p>Vectors are data structures that bring together one or more data elements of the same datatype. E.g. we might have a numeric vector recording the grades of a class, or a character vector storing the gender of a set of students. To define a vector we use <code>c(item, item, ...)</code>, where <code>c</code> stands for combine. Vectors are very important to R, even declaring a single object, <code>x &lt;- 6</code>, is creating a vector of size one. To find out more about vectors see: <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-vectors">§Vectors</a>)</p>
 </div>
 </div>
 <p>We can find out some general information about the table we have loaded. <code>nrow</code> and <code>ncol</code> tell you about the dimensions of the table</p>
@@ -21950,7 +21949,7 @@ Tip
  - attr(*, "label")= chr "Learning time (minutes per week) - &lt;test language&gt;"</code></pre>
 </div>
 </div>
-<p>So we need to change the type of the column to make it work with the <code>mean</code> command, changing it to <code>as.numeric(&lt;column&gt;)</code> for the calculation, for more details on datatypes, see <strong>?@sec-datatypes</strong>.</p>
+<p>So we need to change the type of the column to make it work with the <code>mean</code> command, changing it to <code>as.numeric(&lt;column&gt;)</code> for the calculation, for more details on datatypes, see <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-datatypes">§Datatypes</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># this isn't ideal for proper analysis as you will need to remove all the "No Response" data</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a><span class="fu">mean</span>(<span class="fu">as.numeric</span>(PISA_2018<span class="sc">$</span>LMINS), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

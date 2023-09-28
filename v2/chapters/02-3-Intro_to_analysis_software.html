@@ -399,7 +399,7 @@ Note
 <li>line 7 filters out any gender <code>ST004D01T</code> that is <code>NA</code>. First is finds all the students that have <code>NA</code> as their gender by using <code>is.na(ST004D01T)</code>, then is <em>NOTs</em>/flips the result using the exclamation mark <code>!</code>, giving those students who don’t have their gender set to <code>NA</code>. The filtered data is then piped to the next line</li>
 <li>line 8, finally we <code>arrange</code> / sort the results in <code>desc</code>ending order by the <code>mean_maths</code> column. The default for arrange is <em>ascending</em> order, leave out the <code>desc(  )</code> for the numbers to be ordered in the opposite way.</li>
 </ul>
-<p>Males get a slightly better maths score than Females for this <code>PV1MATH</code> score, other scores are available, please read <strong>?@sec-PV</strong> to find out more about the limitations of using this value.</p>
+<p>Males get a slightly better maths score than Females for this <code>PV1MATH</code> score, other scores are available, please read <a href="../chapters/A1-PISA_analysis.html#sec-PV">§What are Plausible Values?</a>) to find out more about the limitations of using this value.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1077,7 +1077,7 @@ Important
 </div>
 </div>
 <ul>
-<li>line 2 <code>mutate</code> creates a new field called <code>PV1_total</code> made up by adding together the columns for maths, science and reading. Each column acts like a vector and adding them together is the equivalent of adding each students individual grades together, row by row. See <strong>?@sec-vectors</strong> for more details on vector addition.</li>
+<li>line 2 <code>mutate</code> creates a new field called <code>PV1_total</code> made up by adding together the columns for maths, science and reading. Each column acts like a vector and adding them together is the equivalent of adding each students individual grades together, row by row. See <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-vectors">§Vectors</a>) for more details on vector addition.</li>
 <li>line 3 inside the same <code>mutate</code> statement, we take the <code>PV1_total</code> calculated on line 2 and divide it by 3, to give us a mean value, this is then assigned to a new column, <code>PV1_mean</code>.</li>
 <li>line 4 this line <code>select</code>s only the fields that we are interested in, dropping the others</li>
 </ul>

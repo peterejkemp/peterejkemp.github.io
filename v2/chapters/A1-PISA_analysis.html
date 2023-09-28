@@ -17,6 +17,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -383,7 +417,7 @@ div.csl-indent {
 <p>PISA datasets above can be found on the <a href="https://www.oecd.org/pisa/data/">OECD website</a>. The links in the table above will allow you to download .rds versions of these files which we have created, though they might need additional editing, e.g.&nbsp;reducing the number of columns or changing the types of each column. If you want to find out more about what each field stores, take a look at the corresponding codebook, <a href="https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx">2018</a>, <a href="https://webfs.oecd.org/pisa/Codebook_CMB.xlsx">2015</a>.</p>
 </section><section id="how-to-use-it" class="level1" data-number="2"><h1 data-number="2">
 <span class="header-section-number">2</span> How to use it</h1>
-<p>The PISA datasets come in <em>SPSS</em> or <em>SAS</em> formats. The data used in this course comes directly from downloading the SPSS <code>.sav</code> files and using the <code>haven</code> package to clean it into a native R format suitable for analysis, in most cases <code>.parquet</code> files (see: <strong>?@sec-parquet</strong>). There are a few quirks that you need to be aware of:</p>
+<p>The PISA datasets come in <em>SPSS</em> or <em>SAS</em> formats. The data used in this course comes directly from downloading the SPSS <code>.sav</code> files and using the <code>haven</code> package to clean it into a native R format suitable for analysis, in most cases <code>.parquet</code> files (see: <a href="../chapters/02-2-Intro_to_analysis_software.html#sec-parquet">§.parquet files</a>)). There are a few quirks that you need to be aware of:</p>
 <ul>
 <li><p>R uses levels (factors) instead of labelled data</p></li>
 <li><p>All SPSS fields are <em>labelled</em>, and auto conversion into the native R dataframe format would make numeric fields, factors(!?). To avoid this confusion we have stripped out the no-response data for numeric fields and replaced it with <code>NA</code> values. This means that you won’t be able to tell the reason that a field is missing, and the following labels have all been set to <code>NA</code>:</p></li>
@@ -443,6 +477,12 @@ div.csl-indent {
 <p>The Organisation for Economic Co-operation and Development (OECD) has 38 member states. PISA is run by the OECD and its member states normally take part in each PISA cycle, but other countries are allowed to take part as <em>Partners</em>. You can find more details on participation <a href="https://www.oecd.org/pisa/aboutpisa/pisa-participants.htm">here</a>.</p>
 <p>Results for OECD members are generally higher than for Partner countries:</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">group_by</span>(OECD) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">summarise</span>(<span class="at">country_n =</span> <span class="fu">length</span>(<span class="fu">unique</span>(CNT)),</span>
+<span id="cb1-4"><a href="#cb1-4"></a>            <span class="at">math_mean =</span> <span class="fu">mean</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb1-5"><a href="#cb1-5"></a>            <span class="at">math_sd =</span> <span class="fu">sd</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb1-6"><a href="#cb1-6"></a>            <span class="at">students_n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
   OECD  country_n math_mean math_sd students_n
@@ -455,6 +495,14 @@ div.csl-indent {
 <span class="header-section-number">4.3</span> Why are the PV grades pivoting around the ~500 mark?</h2>
 <p>The scores for students in mathematics, reading and science are scaled so that the mean of students in OECD countries is roughly 500 points with a standard deviation of 100 points. To see this, run the following code:</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">filter</span>(OECD<span class="sc">==</span><span class="st">"Yes"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">summarise</span>(<span class="at">math_mean =</span> <span class="fu">mean</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb3-4"><a href="#cb3-4"></a>            <span class="at">math_sd =</span> <span class="fu">sd</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb3-5"><a href="#cb3-5"></a>            <span class="at">scie_mean =</span> <span class="fu">mean</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb3-6"><a href="#cb3-6"></a>            <span class="at">scie_sd =</span> <span class="fu">sd</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb3-7"><a href="#cb3-7"></a>            <span class="at">read_mean =</span> <span class="fu">mean</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb3-8"><a href="#cb3-8"></a>            <span class="at">read_sd =</span> <span class="fu">sd</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 6
   math_mean math_sd scie_mean scie_sd read_mean read_sd
@@ -466,12 +514,33 @@ div.csl-indent {
 <span class="header-section-number">4.4</span> Why are the letters TA and NA used in some field names?</h2>
 </section><section id="how-do-i-find-fields-that-are-numeric" class="level2" data-number="4.5"><h2 data-number="4.5" class="anchored" data-anchor-id="how-do-i-find-fields-that-are-numeric">
 <span class="header-section-number">4.5</span> How do I find fields that are numeric?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># using the following code!</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>nms <span class="ot">&lt;-</span> PISA_2018_school <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> <span class="fu">names</span>()</span>
+<span id="cb5-4"><a href="#cb5-4"></a>lbls <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(nms,<span class="sc">~</span>{</span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">message</span>(.x)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>  lbl <span class="ot">&lt;-</span> <span class="fu">attr</span>(PISA_2018_school[[.x]], <span class="st">"label"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7"></a>  nme <span class="ot">&lt;-</span> .x</span>
+<span id="cb5-8"><a href="#cb5-8"></a>  row <span class="ot">&lt;-</span> <span class="fu">c</span>(nme, lbl)</span>
+<span id="cb5-9"><a href="#cb5-9"></a>  <span class="fu">names</span>(row) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"label"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10"></a>  <span class="fu">return</span>(row)</span>
+<span id="cb5-11"><a href="#cb5-11"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section><section id="how-are-students-selected-to-take-part-in-pisa" class="level2" data-number="4.6"><h2 data-number="4.6" class="anchored" data-anchor-id="how-are-students-selected-to-take-part-in-pisa">
 <span class="header-section-number">4.6</span> How are students selected to take part in PISA?</h2>
 <p>Students are selected by … <span class="citation" data-cites="ref">(<a href="#ref-ref" role="doc-biblioref"><strong>ref?</strong></a>)</span></p>
 <p>Add Christian Bokhove papers https://bokhove.net/r-materials/</p>
 <p>From the data, you can see that 50% of schools entered fewer than 30 students into PISA.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">summarise</span>(<span class="at">size =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">mutate</span>(<span class="at">quartile =</span> <span class="fu">ntile</span>(size, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">group_by</span>(quartile) <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">summarise</span>(<span class="at">Qmax =</span> <span class="fu">max</span>(size),</span>
+<span id="cb6-7"><a href="#cb6-7"></a>            <span class="at">Qmedian =</span> <span class="fu">median</span>(size),</span>
+<span id="cb6-8"><a href="#cb6-8"></a>            <span class="at">Qmean =</span> <span class="fu">mean</span>(size))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 4
   quartile  Qmax Qmedian Qmean
@@ -481,6 +550,10 @@ div.csl-indent {
 3        3    35      33 32.8 
 4        4   491      40 44.9 </code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">summarise</span>(<span class="at">size =</span> <span class="fu">n</span>()), <span class="fu">aes</span>(<span class="at">x=</span>size)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A1-PISA_analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>

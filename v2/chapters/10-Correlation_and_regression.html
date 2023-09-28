@@ -1493,7 +1493,7 @@ MATHEFF 2012 MATINTFC 2012 SCIEEFF 2015-->
 </div>
 <ul>
 <li>line 1, assigns <code>&lt;-</code> the result of the <code>left_join</code> to a new object, <code>PISA_2015_GGGI</code>,</li>
-<li>line 2, specifies <code>&lt;table_1&gt;</code> to be <code>PISA_2015</code> with the selected fields, note we have chosen to use <code>PV1</code> grades here, it’s unclear what the original paper uses (See <strong>?@sec-PV</strong> for a discussion on the use of <code>PV</code> grades)</li>
+<li>line 2, specifies <code>&lt;table_1&gt;</code> to be <code>PISA_2015</code> with the selected fields, note we have chosen to use <code>PV1</code> grades here, it’s unclear what the original paper uses (See <a href="../chapters/A1-PISA_analysis.html#sec-PV">§What are Plausible Values?</a>) for a discussion on the use of <code>PV</code> grades)</li>
 <li>line 3, specifies <code>&lt;table_2&gt;</code> to be <code>GGGI</code> with just the country and <code>Overall.Score</code> fields</li>
 <li>line 4, specifies the <code>&lt;matching_field&gt;</code> to be <code>CNT</code>from <code>PISA_2015</code> and <code>Country</code> from <code>GGGI</code>, this means that the data in <code>&lt;table_2&gt;</code> will be added to <code>&lt;table_1&gt;</code> where <code>CNT</code> and <code>Country</code> are the same. For example for every entry of <code>Finland</code> in <code>PISA_2015</code>, the <code>Overall.Score</code> of <code>0.8421</code> will be added. Where it can’t find a matching country, e.g.&nbsp;Albania doesn’t have a GGGI entry, <code>NA</code> will be added.</li>
 </ul>
