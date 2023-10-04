@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.450">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>MASTEMR - 03 Descriptive Statistics</title>
 <style>
@@ -103,7 +103,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><link rel="stylesheet" href="../css/mastemr.css">
 </head>
@@ -129,7 +130,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/03-Descriptive.html">03 Descriptive Statistics</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -166,7 +167,7 @@ div.csl-indent {
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">02 Intro to R</span></a>
+ <span class="menu-text">02 Introduction to R</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -193,7 +194,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to graphs</span></a>
+ <span class="menu-text">Making graphs</span></a>
   </div>
 </li>
       </ul>
@@ -255,7 +256,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/12-value_of_quant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 Effective international STEM education</span></a>
+ <span class="menu-text">12 The value of quantitative methods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -299,6 +300,12 @@ div.csl-indent {
  <span class="menu-text">Other datasets</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A5-Self_Study_Tasks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix Self Study Tasks</span></a>
+  </div>
+</li>
       </ul>
 </li>
     </ul>
@@ -309,41 +316,41 @@ div.csl-indent {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#pre-reading-and-pre-seminar-task" id="toc-pre-reading-and-pre-seminar-task" class="nav-link active" data-scroll-target="#pre-reading-and-pre-seminar-task"><span class="header-section-number">0.1</span> Pre-reading and pre-seminar task</a></li>
+<li><a href="#pre-reading-and-pre-seminar-task" id="toc-pre-reading-and-pre-seminar-task" class="nav-link active" data-scroll-target="#pre-reading-and-pre-seminar-task"><span class="header-section-number">1</span> Pre-reading and pre-seminar task</a></li>
   <li>
-<a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">1</span> Descriptive statistics</a>
+<a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">2</span> Descriptive statistics</a>
   <ul class="collapse">
-<li><a href="#using-the-command-line-for-descriptive-statistics" id="toc-using-the-command-line-for-descriptive-statistics" class="nav-link" data-scroll-target="#using-the-command-line-for-descriptive-statistics"><span class="header-section-number">1.1</span> Using the command line for descriptive statistics</a></li>
+<li><a href="#using-the-command-line-for-descriptive-statistics" id="toc-using-the-command-line-for-descriptive-statistics" class="nav-link" data-scroll-target="#using-the-command-line-for-descriptive-statistics"><span class="header-section-number">2.1</span> Using the command line for descriptive statistics</a></li>
   </ul>
 </li>
-  <li><a href="#filtering-data-frames" id="toc-filtering-data-frames" class="nav-link" data-scroll-target="#filtering-data-frames"><span class="header-section-number">2</span> Filtering Data frames</a></li>
-  <li><a href="#creating-summary-tables-and-manipulating-them" id="toc-creating-summary-tables-and-manipulating-them" class="nav-link" data-scroll-target="#creating-summary-tables-and-manipulating-them"><span class="header-section-number">3</span> Creating summary tables and manipulating them</a></li>
+  <li><a href="#filtering-data-frames" id="toc-filtering-data-frames" class="nav-link" data-scroll-target="#filtering-data-frames"><span class="header-section-number">3</span> Filtering Data frames</a></li>
+  <li><a href="#creating-summary-tables-and-manipulating-them" id="toc-creating-summary-tables-and-manipulating-them" class="nav-link" data-scroll-target="#creating-summary-tables-and-manipulating-them"><span class="header-section-number">4</span> Creating summary tables and manipulating them</a></li>
   <li>
-<a href="#graphing" id="toc-graphing" class="nav-link" data-scroll-target="#graphing"><span class="header-section-number">4</span> Graphing</a>
+<a href="#graphing" id="toc-graphing" class="nav-link" data-scroll-target="#graphing"><span class="header-section-number">5</span> Graphing</a>
   <ul class="collapse">
-<li><a href="#bar-graphs" id="toc-bar-graphs" class="nav-link" data-scroll-target="#bar-graphs"><span class="header-section-number">4.1</span> Bar graphs</a></li>
-  <li><a href="#scatter-graphs" id="toc-scatter-graphs" class="nav-link" data-scroll-target="#scatter-graphs"><span class="header-section-number">4.2</span> Scatter graphs</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#seminar-activities" id="toc-seminar-activities" class="nav-link" data-scroll-target="#seminar-activities"><span class="header-section-number">5</span> Seminar activities</a>
-  <ul class="collapse">
-<li><a href="#task-1---discussion" id="toc-task-1---discussion" class="nav-link" data-scroll-target="#task-1---discussion"><span class="header-section-number">5.1</span> Task 1 - discussion</a></li>
-  <li><a href="#task-2---using-the-command-line" id="toc-task-2---using-the-command-line" class="nav-link" data-scroll-target="#task-2---using-the-command-line"><span class="header-section-number">5.2</span> Task 2 - Using the command line</a></li>
-  <li><a href="#task-3---using-the-summary-function" id="toc-task-3---using-the-summary-function" class="nav-link" data-scroll-target="#task-3---using-the-summary-function"><span class="header-section-number">5.3</span> Task 3 - Using the <code>summary</code> function</a></li>
-  <li><a href="#task-4---creating-summary-tables" id="toc-task-4---creating-summary-tables" class="nav-link" data-scroll-target="#task-4---creating-summary-tables"><span class="header-section-number">5.4</span> Task 4 - Creating summary tables</a></li>
-  <li><a href="#task-5-bar-graphs" id="toc-task-5-bar-graphs" class="nav-link" data-scroll-target="#task-5-bar-graphs"><span class="header-section-number">5.5</span> Task 5 Bar graphs</a></li>
-  <li><a href="#task-6-scatter-graphs" id="toc-task-6-scatter-graphs" class="nav-link" data-scroll-target="#task-6-scatter-graphs"><span class="header-section-number">5.6</span> Task 6 Scatter graphs</a></li>
+<li><a href="#bar-graphs" id="toc-bar-graphs" class="nav-link" data-scroll-target="#bar-graphs"><span class="header-section-number">5.1</span> Bar graphs</a></li>
+  <li><a href="#scatter-graphs" id="toc-scatter-graphs" class="nav-link" data-scroll-target="#scatter-graphs"><span class="header-section-number">5.2</span> Scatter graphs</a></li>
   </ul>
 </li>
   <li>
-<a href="#extension-task" id="toc-extension-task" class="nav-link" data-scroll-target="#extension-task"><span class="header-section-number">6</span> Extension task</a>
+<a href="#seminar-activities" id="toc-seminar-activities" class="nav-link" data-scroll-target="#seminar-activities"><span class="header-section-number">6</span> Seminar activities</a>
   <ul class="collapse">
-<li><a href="#task-1-binning-data" id="toc-task-1-binning-data" class="nav-link" data-scroll-target="#task-1-binning-data"><span class="header-section-number">6.1</span> Task 1 Binning data</a></li>
-  <li><a href="#task-2-plotting-data-on-maps" id="toc-task-2-plotting-data-on-maps" class="nav-link" data-scroll-target="#task-2-plotting-data-on-maps"><span class="header-section-number">6.2</span> Task 2 Plotting data on maps</a></li>
+<li><a href="#task-1---discussion" id="toc-task-1---discussion" class="nav-link" data-scroll-target="#task-1---discussion"><span class="header-section-number">6.1</span> Task 1 - discussion</a></li>
+  <li><a href="#task-2---using-the-command-line" id="toc-task-2---using-the-command-line" class="nav-link" data-scroll-target="#task-2---using-the-command-line"><span class="header-section-number">6.2</span> Task 2 - Using the command line</a></li>
+  <li><a href="#task-3---using-the-summary-function" id="toc-task-3---using-the-summary-function" class="nav-link" data-scroll-target="#task-3---using-the-summary-function"><span class="header-section-number">6.3</span> Task 3 - Using the <code>summary</code> function</a></li>
+  <li><a href="#task-4---creating-summary-tables" id="toc-task-4---creating-summary-tables" class="nav-link" data-scroll-target="#task-4---creating-summary-tables"><span class="header-section-number">6.4</span> Task 4 - Creating summary tables</a></li>
+  <li><a href="#task-5---bar-graphs" id="toc-task-5---bar-graphs" class="nav-link" data-scroll-target="#task-5---bar-graphs"><span class="header-section-number">6.5</span> Task 5 - Bar graphs</a></li>
+  <li><a href="#task-6---scatter-graphs" id="toc-task-6---scatter-graphs" class="nav-link" data-scroll-target="#task-6---scatter-graphs"><span class="header-section-number">6.6</span> Task 6 - Scatter graphs</a></li>
   </ul>
 </li>
-  <li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources"><span class="header-section-number">7</span> Useful resources</a></li>
+  <li>
+<a href="#extension-task" id="toc-extension-task" class="nav-link" data-scroll-target="#extension-task"><span class="header-section-number">7</span> Extension task</a>
+  <ul class="collapse">
+<li><a href="#task-1-binning-data" id="toc-task-1-binning-data" class="nav-link" data-scroll-target="#task-1-binning-data"><span class="header-section-number">7.1</span> Task 1 Binning data</a></li>
+  <li><a href="#task-2-plotting-data-on-maps" id="toc-task-2-plotting-data-on-maps" class="nav-link" data-scroll-target="#task-2-plotting-data-on-maps"><span class="header-section-number">7.2</span> Task 2 Plotting data on maps</a></li>
+  </ul>
+</li>
+  <li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources"><span class="header-section-number">8</span> Useful resources</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -361,11 +368,11 @@ div.csl-indent {
   </div>
   
 
-</header><section id="pre-reading-and-pre-seminar-task" class="level2" data-number="0.1"><h2 data-number="0.1" class="anchored" data-anchor-id="pre-reading-and-pre-seminar-task">
-<span class="header-section-number">0.1</span> Pre-reading and pre-seminar task</h2>
+</header><section id="pre-reading-and-pre-seminar-task" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Pre-reading and pre-seminar task</h1>
 <p>Before the session, please read: <span class="citation" data-cites="davis2013introduction">Davis (<a href="#ref-davis2013introduction" role="doc-biblioref">2013</a>)</span> <a href="https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15">Link to chapter</a></p>
 <p><strong>Getting set up</strong></p>
-<p>Ensure you have the PISA 2018 data set loaded. If you can see the PISA_2018 data frame in your environment window (at the top right of your screen), there is no need to reload.</p>
+<p>Ensure you have the PISA 2018 data set loaded. If you can see the <code>PISA_2018</code> data frame in your environment window (at the top right of your screen), there is no need to reload.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load the PISA data set.</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
@@ -374,10 +381,10 @@ div.csl-indent {
 <span id="cb1-5"><a href="#cb1-5"></a></span>
 <span id="cb1-6"><a href="#cb1-6"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_2018_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="descriptive-statistics" class="level1" data-number="1"><h1 data-number="1">
-<span class="header-section-number">1</span> Descriptive statistics</h1>
-<section id="using-the-command-line-for-descriptive-statistics" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="using-the-command-line-for-descriptive-statistics">
-<span class="header-section-number">1.1</span> Using the command line for descriptive statistics</h2>
+</section><section id="descriptive-statistics" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> Descriptive statistics</h1>
+<section id="using-the-command-line-for-descriptive-statistics" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="using-the-command-line-for-descriptive-statistics">
+<span class="header-section-number">2.1</span> Using the command line for descriptive statistics</h2>
 <p>For further reading on descriptive statistics and see <a href="https://learningstatisticswithr.com/book/descriptives.html">chapter 5</a> and of Navaro’s Learning Statistics with R.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -409,8 +416,34 @@ Tip
 <blockquote class="blockquote">
 <p>mean(PISA_2018$PV1SCIE, na.rm = TRUE)</p>
 </blockquote>
-<p>You can use the command line with a number of functions to find useful information about a dataframe:</p>
-<p>R has a number of standard functions that might be useful for descriptive statistics: <code>mean</code> - finds the arithmetic mean <code>median</code> - finds the median value <code>min</code> - finds the minimum value <code>max</code> - finds the maximum value <code>sd</code> - finds the standard deviation <code>range</code> finds the range of values <code>nrow</code> finds the number of rows <code>ncol</code> finds the number of colums <code>unique</code> finds the unique values of a variable</p>
+<p>You can use the command line with a number of functions to find useful information about a dataframe. R has a number of standard functions that might be useful for descriptive statistics. To find out details about dataframes, e.g.&nbsp;<code>nrow(PISA_2018)</code>, you can use:</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/nrow.html">nrow()</a></code> finds the number of rows</li>
+<li>
+<code><a href="https://rdrr.io/r/base/nrow.html">ncol()</a></code> finds the number of columns</li>
+<li>
+<code><a href="https://rdrr.io/r/base/names.html">names()</a></code> finds the names of all the columns</li>
+</ul>
+<p>If you are working on individual columns, e.g.&nbsp;<code>max(PISA_2018$PV1SCIE)</code>, you can use:</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> - finds the arithmetic mean</li>
+<li>
+<code><a href="https://rdrr.io/r/stats/median.html">median()</a></code> - finds the median value</li>
+<li>
+<code><a href="https://rdrr.io/r/base/Extremes.html">min()</a></code> - finds the minimum value</li>
+<li>
+<code><a href="https://rdrr.io/r/base/Extremes.html">max()</a></code> - finds the maximum value</li>
+<li>
+<code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code> - finds the standard deviation</li>
+<li>
+<code><a href="https://rdrr.io/r/base/range.html">range()</a></code> finds the range of values</li>
+<li>
+<code><a href="https://rdrr.io/r/base/length.html">length()</a></code> finds the number of items</li>
+<li>
+<code><a href="https://rdrr.io/r/base/unique.html">unique()</a></code> finds the unique items</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -421,7 +454,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Surprisingly, there is no function to calculate the mode in tidyverse. However, you can get one by loading the <code>modeest</code> package and using the most frequent value (<code>nfv</code>) function.</p>
+<p>Maybe surprisingly, there is no function to calculate the <em>mode</em> in tidyverse. However, you can get one by loading the <code>modeest</code> package and using the most frequent value (<code>nfv</code>) function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Install the modeest package to calculate a mode</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
@@ -460,18 +493,18 @@ Tip
   58.74  385.60  458.20  460.69  533.44  886.08    5377 </code></pre>
 </div>
 </div>
-</section></section><section id="filtering-data-frames" class="level1" data-number="2"><h1 data-number="2">
-<span class="header-section-number">2</span> Filtering Data frames</h1>
+</section></section><section id="filtering-data-frames" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> Filtering Data frames</h1>
 <p>We will now learn how to calculate means of subgroups of schools using the <code>filter</code> and <code>summarise</code> functions. We can use <code>filter</code> to focus on only a subset of our <code>data.frame</code>. For example, below, we choose to focus on responses from UK students.</p>
-<p>In line 3 below, we focus on UK responses. Note that, in <code>filter</code> we use <code>==</code>. Then we use <code>summarise</code> to calculate the means of the variables we are interested in, students getting science (<code>PV1SCIE</code>), mathematics (<code>PV1MATH</code>) and reading scores. We can also find the total number of students entered in the UK, using (<code>n</code>).</p>
+<p>In line 3 below, we focus on UK responses. Note that, in <code>filter</code> we use <code>==</code>. Then we use <code>summarise</code> to calculate the means of the variables we are interested in, students getting science (<code>PV1SCIE</code>), mathematics (<code>PV1MATH</code>) and reading scores. We can also find the total number of students entered in the UK, using <code>n()</code>, which counts the number of rows.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Selecting only UK responses and finding the mean of various variables</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
 <span id="cb6-3"><a href="#cb6-3"></a>PISA_2018 <span class="sc">%&gt;%</span> </span>
 <span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span> <span class="co"># Filter to only include UK entries (note the ==)</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci=</span><span class="fu">mean</span>(PV1SCIE), </span>
-<span id="cb6-6"><a href="#cb6-6"></a>            <span class="at">MeanMath=</span><span class="fu">mean</span>(PV1MATH), </span>
-<span id="cb6-7"><a href="#cb6-7"></a>            <span class="at">Total=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci =</span> <span class="fu">mean</span>(PV1SCIE), </span>
+<span id="cb6-6"><a href="#cb6-6"></a>            <span class="at">MeanMath =</span> <span class="fu">mean</span>(PV1MATH), </span>
+<span id="cb6-7"><a href="#cb6-7"></a>            <span class="at">Total =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   MeanSci MeanMath Total
@@ -565,8 +598,8 @@ Tip
 </div>
 </div>
 </div>
-</section><section id="creating-summary-tables-and-manipulating-them" class="level1" data-number="3"><h1 data-number="3">
-<span class="header-section-number">3</span> Creating summary tables and manipulating them</h1>
+</section><section id="creating-summary-tables-and-manipulating-them" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> Creating summary tables and manipulating them</h1>
 <p>The PISA data set is large (!) so it can often be helpful to create interim summary tables.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -633,11 +666,11 @@ Tip
 </div>
 </div>
 </div>
-</section><section id="graphing" class="level1" data-number="4"><h1 data-number="4">
-<span class="header-section-number">4</span> Graphing</h1>
-<p>For more details on graphing with the <code>PISA_2018</code> dataset, see <a href="../chapters/02-4-Intro_to_graphs.html#sec-graphing">§ggplot</a>)</p>
-<section id="bar-graphs" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="bar-graphs">
-<span class="header-section-number">4.1</span> Bar graphs</h2>
+</section><section id="graphing" class="level1" data-number="5"><h1 data-number="5">
+<span class="header-section-number">5</span> Graphing</h1>
+<p>For more details on graphing with the <code>PISA_2018</code> dataset, see <strong>?@sec-graphing</strong></p>
+<section id="bar-graphs" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="bar-graphs">
+<span class="header-section-number">5.1</span> Bar graphs</h2>
 <p>Imagine we want to plot a graph of whether students report having an interactive whiteboard (IWB) in their school <code>IC009Q11NA</code> in the UK</p>
 <p>When plotting graphs, it makes things easier to have a data.frame of the data you will pass to ggplot - a bit like the final table of data you will actually plot when drawing a graph in real life.</p>
 <p>To complete our take we are going to create a new <code>data.frame</code> we will use in the plot. I have called that <code>data.frame</code> <code>IWBplot</code>. Then, I take the main data.frame and select <code>IC009Q11NA</code> and <code>CNT</code> and filter for the UK.</p>
@@ -658,71 +691,157 @@ Tip
 <p><img src="03-Descriptive_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section><section id="scatter-graphs" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="scatter-graphs">
-<span class="header-section-number">4.2</span> Scatter graphs</h2>
+<p>You can modify the graph by adding axis labels and titles using <code>xlab("label")</code>, <code>xlab("label")</code>, and <code>ggtitle("title")</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># use IWBplot data to create a graph</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="co"># Adding axis labels and a title</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="fu">ggplot</span>(<span class="at">data=</span>IWBplot,</span>
+<span id="cb21-4"><a href="#cb21-4"></a>       <span class="fu">aes</span>(<span class="at">x=</span>IC009Q11NA)) <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a>  <span class="fu">xlab</span>(<span class="st">"Do you have an interactive whiteboard?"</span>)<span class="sc">+</span></span>
+<span id="cb21-7"><a href="#cb21-7"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of interacitve whiteboards in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>You can add colour, by specifying the fill of the bars should be by the value of <code>IC009Q11NA</code> in the aesthetics: <code>aes(x=IC009Q11NA, fill=IC009Q11NA)</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># use IWBplot data to create a graph</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="co"># Adding axis labels and a title</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="co"># And adding colour</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="fu">ggplot</span>(<span class="at">data=</span>IWBplot,</span>
+<span id="cb22-5"><a href="#cb22-5"></a>       <span class="fu">aes</span>(<span class="at">x=</span>IC009Q11NA, <span class="at">fill=</span>IC009Q11NA)) <span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
+<span id="cb22-7"><a href="#cb22-7"></a>  <span class="fu">xlab</span>(<span class="st">"Do you have an interactive whiteboard?"</span>)<span class="sc">+</span></span>
+<span id="cb22-8"><a href="#cb22-8"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
+<span id="cb22-9"><a href="#cb22-9"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of interacitve whiteboards in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>You make wish to plot multiple series, for examples, the interactive whiteboard data for boys and girls. In that case, we need to include the gender vector <code>ST004D01T</code> in the <code>dataframe</code> to plot <code>IWBplot</code>. To highlight the difference between boys and girls, in the aesthetics, we set the fill colour by the gender variable: <code>fill=ST004D01T</code>. Finally, we need to tell ggplot to plot the bars side-by-side, rather than stacking them - you do this by specifying <code>position = position_dodge2()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Graphing the number of students who have an interactive whiteboard by gender</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>IWBplot <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">select</span>(CNT, IC009Q11NA, ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb23-5"><a href="#cb23-5"></a></span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="co"># Plotting two series - in this case, by gender</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="fu">ggplot</span>(<span class="at">data=</span>IWBplot,</span>
+<span id="cb23-8"><a href="#cb23-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span>IC009Q11NA, <span class="at">fill=</span>ST004D01T)) <span class="sc">+</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge2</span>())<span class="sc">+</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a>  <span class="fu">xlab</span>(<span class="st">"Do you have an interactive whiteboard?"</span>)<span class="sc">+</span></span>
+<span id="cb23-11"><a href="#cb23-11"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of interacitve whiteboards in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>If you take `<code>position = position_dodge2()</code> out, ggplot will default to stacking the bars.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Graphing the number of students who have an interactive whiteboard by gender</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>IWBplot <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">select</span>(CNT, IC009Q11NA, ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb24-5"><a href="#cb24-5"></a></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="co"># Plotting two series - in this case, by gender</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a><span class="fu">ggplot</span>(<span class="at">data=</span>IWBplot,</span>
+<span id="cb24-8"><a href="#cb24-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span>IC009Q11NA, <span class="at">fill=</span>ST004D01T)) <span class="sc">+</span></span>
+<span id="cb24-9"><a href="#cb24-9"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a>  <span class="fu">xlab</span>(<span class="st">"Do you have an interactive whiteboard?"</span>)<span class="sc">+</span></span>
+<span id="cb24-11"><a href="#cb24-11"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
+<span id="cb24-12"><a href="#cb24-12"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of interacitve whiteboards in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>You can add text, for example the counts, to the graphs, using <code>geom_text</code>. We set the <code>label</code> to <code>..count..</code> and <code>stat=count</code>. Because the bars have been position using <code>position_dodge</code> you need to do the same for the labels. <code>vjust=-0.5</code> sets the height of the label over the bar.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Graphing the number of students who have an interactive whiteboard by gender</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>IWBplot <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">select</span>(CNT, IC009Q11NA, ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb25-5"><a href="#cb25-5"></a></span>
+<span id="cb25-6"><a href="#cb25-6"></a><span class="co"># Plotting two series - in this case, by gender with text</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a><span class="fu">ggplot</span>(<span class="at">data=</span>IWBplot,</span>
+<span id="cb25-8"><a href="#cb25-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span>IC009Q11NA, <span class="at">fill=</span>ST004D01T)) <span class="sc">+</span></span>
+<span id="cb25-9"><a href="#cb25-9"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge2</span>())<span class="sc">+</span></span>
+<span id="cb25-10"><a href="#cb25-10"></a>  <span class="fu">xlab</span>(<span class="st">"Do you have an interactive whiteboard?"</span>)<span class="sc">+</span></span>
+<span id="cb25-11"><a href="#cb25-11"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
+<span id="cb25-12"><a href="#cb25-12"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of interacitve whiteboards in the UK"</span>)<span class="sc">+</span></span>
+<span id="cb25-13"><a href="#cb25-13"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>..count..), <span class="at">stat=</span><span class="st">"count"</span>, </span>
+<span id="cb25-14"><a href="#cb25-14"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width=</span><span class="fl">0.9</span>), <span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="scatter-graphs" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="scatter-graphs">
+<span class="header-section-number">5.2</span> Scatter graphs</h2>
 <p>To plot a scatter graph we use the <code>geom_point</code> (see also: <a href="https://peterejkemp.github.io/#sec-geom_point">Geom_Point section</a>), which works in a similar way to <code>geom_col</code>.</p>
 <p><strong>Example</strong></p>
 <p>Imagine I want to plot a graph of mathematics scores <code>PV1MATH</code> (on the x-axis) against science scores <code>PV1SCIE</code> (y-axis) for students in the UK.</p>
 <p>A above, I first want to create a <code>data.frame</code> to plot - in this case I have called it <code>plotdata</code>. I <code>select</code> only the columns I need (<code>PV1MATH</code>, <code>PV1SCIE</code>, and <code>CNT</code> to <code>filter</code> for the UK), and then filter for the UK.</p>
 <p>Then I pass ggplot <code>plotdata</code>. As with <code>geom_col</code>, I use <code>ggplot</code> and first specify the data I want to plot (<code>ggplot(data=plotdata,</code>). Next, I set the <code>aes</code>thetic variables, to keep things simple,only the <code>x</code> and <code>y</code> variables. Then I call <code>geom_point</code> to plot the points as a scatter graph.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Filter to create a dataframe of UK scores in science and mathematics</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
-<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb21-5"><a href="#cb21-5"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
-<span id="cb21-6"><a href="#cb21-6"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
-<span id="cb21-7"><a href="#cb21-7"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH,<span class="at">y=</span>PV1SCIE)) <span class="sc">+</span></span>
-<span id="cb21-8"><a href="#cb21-8"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Filter to create a dataframe of UK scores in science and mathematics</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
+<span id="cb26-7"><a href="#cb26-7"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH,<span class="at">y=</span>PV1SCIE)) <span class="sc">+</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We can make things more pleasing by adding more features to the aesthetic variable. For example, I can add colour (<code>geom_point(colour="blue")</code>) and rename the axes <code>labs(x="Mathematics score", y="Science score")</code>. Note when adding to <code>ggplot</code>, the <code>+</code> should come at the end of the line before the new addition to avoid an error.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Filter to create a dataframe of UK scores in science and mathematics</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
-<span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb22-5"><a href="#cb22-5"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
-<span id="cb22-6"><a href="#cb22-6"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
-<span id="cb22-7"><a href="#cb22-7"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH,<span class="at">y=</span>PV1SCIE)) <span class="sc">+</span></span>
-<span id="cb22-8"><a href="#cb22-8"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"blue"</span>)<span class="sc">+</span></span>
-<span id="cb22-9"><a href="#cb22-9"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Mathematics Score"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Filter to create a dataframe of UK scores in science and mathematics</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
+<span id="cb27-7"><a href="#cb27-7"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH,<span class="at">y=</span>PV1SCIE)) <span class="sc">+</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"blue"</span>)<span class="sc">+</span></span>
+<span id="cb27-9"><a href="#cb27-9"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Mathematics Score"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>I can also add a line using (<code>geom_smooth(method='lm')</code>) - here ‘lm’ specifies a linear plot (i.e.&nbsp;a straight line).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Filter to create a dataframe of UK scores in science and mathematics</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
-<span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb23-5"><a href="#cb23-5"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
-<span id="cb23-7"><a href="#cb23-7"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH,<span class="at">y=</span>PV1SCIE)) <span class="sc">+</span></span>
-<span id="cb23-8"><a href="#cb23-8"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"blue"</span>)<span class="sc">+</span></span>
-<span id="cb23-9"><a href="#cb23-9"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Mathematics Score"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>)<span class="sc">+</span></span>
-<span id="cb23-10"><a href="#cb23-10"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># Filter to create a dataframe of UK scores in science and mathematics</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
+<span id="cb28-7"><a href="#cb28-7"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH,<span class="at">y=</span>PV1SCIE)) <span class="sc">+</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"blue"</span>)<span class="sc">+</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Mathematics Score"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>)<span class="sc">+</span></span>
+<span id="cb28-10"><a href="#cb28-10"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>I can also change the colour of the points by a variable in the dataframe - for example by gender (<code>aes(colour=ST004D01T</code>) - NB I have to select that collumn in my intial selection. I can vary the size of points and make them slightly transparent (their alpha level): <code>geom_point(alpha=0.4, size=0.6)</code>, and I can move the legend to the bottom (<code>theme(legend.position = "bottom")</code>)</p>
+<p>I can also change the colour of the points by a variable in the <code>dataframe</code> - for example by gender (<code>aes(colour=ST004D01T</code>) - NB I have to select that column in my initial selection. I can vary the size of points and make them slightly transparent (their alpha level): <code>geom_point(alpha=0.4, size=0.6)</code>, and I can move the legend to the bottom (<code>theme(legend.position = "bottom")</code>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH, ST004D01T)<span class="sc">%&gt;%</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
-<span id="cb24-6"><a href="#cb24-6"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH,<span class="at">y=</span>PV1SCIE, <span class="at">colour=</span>ST004D01T)) <span class="sc">+</span></span>
-<span id="cb24-7"><a href="#cb24-7"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">size=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
-<span id="cb24-8"><a href="#cb24-8"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Mathematics Score"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>)<span class="sc">+</span></span>
-<span id="cb24-9"><a href="#cb24-9"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>))<span class="sc">+</span></span>
-<span id="cb24-10"><a href="#cb24-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH, ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb29-4"><a href="#cb29-4"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
+<span id="cb29-6"><a href="#cb29-6"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH,<span class="at">y=</span>PV1SCIE, <span class="at">colour=</span>ST004D01T)) <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">size=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Mathematics Score"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>)<span class="sc">+</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>))<span class="sc">+</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)<span class="sc">+</span></span>
+<span id="cb29-11"><a href="#cb29-11"></a>  <span class="fu">theme</span>(<span class="at">legend.title=</span><span class="fu">element_blank</span>()) <span class="co"># Removes the legend title (try running with this line removed)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -738,10 +857,10 @@ Tip
 <p>For a summary of all the elements of a graph you can change in <code>ggplot</code> - see this <a href="https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf">help sheet</a></p>
 </div>
 </div>
-</section></section><section id="seminar-activities" class="level1" data-number="5"><h1 data-number="5">
-<span class="header-section-number">5</span> Seminar activities</h1>
-<section id="task-1---discussion" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="task-1---discussion">
-<span class="header-section-number">5.1</span> Task 1 - discussion</h2>
+</section></section><section id="seminar-activities" class="level1" data-number="6"><h1 data-number="6">
+<span class="header-section-number">6</span> Seminar activities</h1>
+<section id="task-1---discussion" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="task-1---discussion">
+<span class="header-section-number">6.1</span> Task 1 - discussion</h2>
 <p>Based on <span class="citation" data-cites="davis2013introduction">Davis (<a href="#ref-davis2013introduction" role="doc-biblioref">2013</a>)</span> <a href="https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15">Link to chapter</a></p>
 <p><img src="images/03 Normal Curve-01.jpg" class="img-fluid"></p>
 <p>Consider how and why we think of things as being ‘normal’ (or not). Some suggested questions are:</p>
@@ -751,8 +870,8 @@ Tip
 <li>How do you feel about that? As an education professional, have you made comparisons between individual students and expected norms or averages? Between groups of students?</li>
 <li>When and how was this useful?</li>
 <li>When and how was this problematic?</li>
-</ul></section><section id="task-2---using-the-command-line" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="task-2---using-the-command-line">
-<span class="header-section-number">5.2</span> Task 2 - Using the command line</h2>
+</ul></section><section id="task-2---using-the-command-line" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="task-2---using-the-command-line">
+<span class="header-section-number">6.2</span> Task 2 - Using the command line</h2>
 <div class="question">
 <ul>
 <li>Using the command line find out:</li>
@@ -764,21 +883,25 @@ Tip
 <li>The unique values of <code>ST003D02T</code> - what information do you think this column holds?</li>
 </ol>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Using the command line</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">nrow</span>(PISA_2018)</span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="fu">ncol</span>(PISA_2018)</span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="fu">mean</span>(PISA_2018<span class="sc">$</span>PV1SCIE)</span>
-<span id="cb25-5"><a href="#cb25-5"></a><span class="fu">max</span>(PISA_2018<span class="sc">$</span>PV1SCIE)</span>
-<span id="cb25-6"><a href="#cb25-6"></a><span class="fu">min</span>(PISA_2018<span class="sc">$</span>PV1SCIE)</span>
-<span id="cb25-7"><a href="#cb25-7"></a><span class="fu">unique</span>(PISA_2018<span class="sc">$</span>ST003D02T)</span>
-<span id="cb25-8"><a href="#cb25-8"></a><span class="co"># This column contains students' birth months</span></span>
-<span id="cb25-9"><a href="#cb25-9"></a><span class="co"># You can find out the subtitle of columns using</span></span>
-<span id="cb25-10"><a href="#cb25-10"></a><span class="fu">attributes</span>(PISA_2018<span class="sc">$</span>ST003D02T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Using the command line</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="co"># a) Find the number of students (i.e. the number of rows) in the PISA 2018 dataset</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="fu">nrow</span>(PISA_2018)</span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="co"># b) The number of items in our dataset (i.e. the number of columns)</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a><span class="fu">ncol</span>(PISA_2018)</span>
+<span id="cb30-6"><a href="#cb30-6"></a><span class="co"># c) The mean, maximum and minimum science score (don't forget to use $)</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a><span class="fu">mean</span>(PISA_2018<span class="sc">$</span>PV1SCIE)</span>
+<span id="cb30-8"><a href="#cb30-8"></a><span class="fu">max</span>(PISA_2018<span class="sc">$</span>PV1SCIE)</span>
+<span id="cb30-9"><a href="#cb30-9"></a><span class="fu">min</span>(PISA_2018<span class="sc">$</span>PV1SCIE)</span>
+<span id="cb30-10"><a href="#cb30-10"></a><span class="co"># d) The unique values of ST003D02T - what information do you think this column holds?</span></span>
+<span id="cb30-11"><a href="#cb30-11"></a><span class="fu">unique</span>(PISA_2018<span class="sc">$</span>ST003D02T)</span>
+<span id="cb30-12"><a href="#cb30-12"></a><span class="co"># This column contains students' birth months</span></span>
+<span id="cb30-13"><a href="#cb30-13"></a><span class="co"># You can find out the subtitle of columns using</span></span>
+<span id="cb30-14"><a href="#cb30-14"></a><span class="fu">attributes</span>(PISA_2018<span class="sc">$</span>ST003D02T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
-</section><section id="task-3---using-the-summary-function" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="task-3---using-the-summary-function">
-<span class="header-section-number">5.3</span> Task 3 - Using the <code>summary</code> function</h2>
+</section><section id="task-3---using-the-summary-function" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="task-3---using-the-summary-function">
+<span class="header-section-number">6.3</span> Task 3 - Using the <code>summary</code> function</h2>
 <div class="question">
 <ul>
 <li>Using <code>summary</code> find:</li>
@@ -790,16 +913,16 @@ Tip
 <li>Comment on the difference in distribution of the reading and science scores</li>
 </ol>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Using the command line</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">summary</span>(PISA_2018<span class="sc">$</span>WEALTH)</span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="fu">summary</span>(PISA_2018<span class="sc">$</span>PV1READ)</span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="fu">summary</span>(PISA_2018<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Using the command line</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a></span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="fu">summary</span>(PISA_2018<span class="sc">$</span>WEALTH)</span>
+<span id="cb31-4"><a href="#cb31-4"></a><span class="fu">summary</span>(PISA_2018<span class="sc">$</span>PV1READ)</span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="fu">summary</span>(PISA_2018<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
-</section><section id="task-4---creating-summary-tables" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="task-4---creating-summary-tables">
-<span class="header-section-number">5.4</span> Task 4 - Creating summary tables</h2>
+</section><section id="task-4---creating-summary-tables" class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="task-4---creating-summary-tables">
+<span class="header-section-number">6.4</span> Task 4 - Creating summary tables</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -820,32 +943,32 @@ Tip
 <li><p>Filter the dataset for the UK, the US and China, and <code>group_by</code> gender (which is <code>ST004D01T</code>) and country. Use summarise to compare mathematics and science achievement.</p></li>
 </ul>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Summarising responses in the US and China and finding means</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a></span>
-<span id="cb27-3"><a href="#cb27-3"></a>PISA_2018 <span class="sc">%&gt;%</span> </span>
-<span id="cb27-4"><a href="#cb27-4"></a> <span class="fu">filter</span>(CNT <span class="sc">==</span><span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb27-5"><a href="#cb27-5"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci=</span><span class="fu">mean</span>(PV1SCIE), </span>
-<span id="cb27-6"><a href="#cb27-6"></a>            <span class="at">MeanMath=</span><span class="fu">mean</span>(PV1MATH),</span>
-<span id="cb27-7"><a href="#cb27-7"></a>            <span class="at">MeanRead=</span><span class="fu">mean</span>(PV1READ),</span>
-<span id="cb27-8"><a href="#cb27-8"></a>            <span class="at">Total=</span><span class="fu">n</span>())</span>
-<span id="cb27-9"><a href="#cb27-9"></a></span>
-<span id="cb27-10"><a href="#cb27-10"></a><span class="co"># Comparing male and female mathematics performance in the UK</span></span>
-<span id="cb27-11"><a href="#cb27-11"></a></span>
-<span id="cb27-12"><a href="#cb27-12"></a>PISA_2018 <span class="sc">%&gt;%</span> </span>
-<span id="cb27-13"><a href="#cb27-13"></a> <span class="fu">filter</span>(CNT <span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb27-14"><a href="#cb27-14"></a>  <span class="fu">group_by</span>(ST004D01T)<span class="sc">%&gt;%</span></span>
-<span id="cb27-15"><a href="#cb27-15"></a>  <span class="fu">summarise</span>(<span class="at">MeanMath=</span><span class="fu">mean</span>(PV1MATH),</span>
-<span id="cb27-16"><a href="#cb27-16"></a>            <span class="at">MaxMath=</span><span class="fu">max</span>(PVMATH),</span>
-<span id="cb27-17"><a href="#cb27-17"></a>            <span class="at">MinMath=</span><span class="fu">min</span>(PV1MATH))</span>
-<span id="cb27-18"><a href="#cb27-18"></a></span>
-<span id="cb27-19"><a href="#cb27-19"></a><span class="co"># Comparing male and female mathematics performance in the UK, US and China</span></span>
-<span id="cb27-20"><a href="#cb27-20"></a></span>
-<span id="cb27-21"><a href="#cb27-21"></a>PISA_2018 <span class="sc">%&gt;%</span> </span>
-<span id="cb27-22"><a href="#cb27-22"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span><span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"United States"</span> <span class="sc">|</span> CNT<span class="sc">==</span> <span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb27-23"><a href="#cb27-23"></a>  <span class="fu">group_by</span>(ST004D01T, CNT)<span class="sc">%&gt;%</span></span>
-<span id="cb27-24"><a href="#cb27-24"></a>  <span class="fu">summarise</span>(<span class="at">MeanMath=</span><span class="fu">mean</span>(PV1MATH),</span>
-<span id="cb27-25"><a href="#cb27-25"></a>            <span class="at">MaxMath=</span><span class="fu">max</span>(PV1MATH),</span>
-<span id="cb27-26"><a href="#cb27-26"></a>            <span class="at">MinMath=</span><span class="fu">min</span>(PV1MATH))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Summarising responses in the US and China and finding means</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a></span>
+<span id="cb32-3"><a href="#cb32-3"></a>PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb32-4"><a href="#cb32-4"></a> <span class="fu">filter</span>(CNT <span class="sc">==</span><span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci=</span><span class="fu">mean</span>(PV1SCIE), </span>
+<span id="cb32-6"><a href="#cb32-6"></a>            <span class="at">MeanMath=</span><span class="fu">mean</span>(PV1MATH),</span>
+<span id="cb32-7"><a href="#cb32-7"></a>            <span class="at">MeanRead=</span><span class="fu">mean</span>(PV1READ),</span>
+<span id="cb32-8"><a href="#cb32-8"></a>            <span class="at">Total=</span><span class="fu">n</span>())</span>
+<span id="cb32-9"><a href="#cb32-9"></a></span>
+<span id="cb32-10"><a href="#cb32-10"></a><span class="co"># Comparing male and female mathematics performance in the UK</span></span>
+<span id="cb32-11"><a href="#cb32-11"></a></span>
+<span id="cb32-12"><a href="#cb32-12"></a>PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb32-13"><a href="#cb32-13"></a> <span class="fu">filter</span>(CNT <span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb32-14"><a href="#cb32-14"></a>  <span class="fu">group_by</span>(ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb32-15"><a href="#cb32-15"></a>  <span class="fu">summarise</span>(<span class="at">MeanMath=</span><span class="fu">mean</span>(PV1MATH),</span>
+<span id="cb32-16"><a href="#cb32-16"></a>            <span class="at">MaxMath=</span><span class="fu">max</span>(PVMATH),</span>
+<span id="cb32-17"><a href="#cb32-17"></a>            <span class="at">MinMath=</span><span class="fu">min</span>(PV1MATH))</span>
+<span id="cb32-18"><a href="#cb32-18"></a></span>
+<span id="cb32-19"><a href="#cb32-19"></a><span class="co"># Comparing male and female mathematics performance in the UK, US and China</span></span>
+<span id="cb32-20"><a href="#cb32-20"></a></span>
+<span id="cb32-21"><a href="#cb32-21"></a>PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb32-22"><a href="#cb32-22"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span><span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"United States"</span> <span class="sc">|</span> CNT<span class="sc">==</span> <span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb32-23"><a href="#cb32-23"></a>  <span class="fu">group_by</span>(ST004D01T, CNT)<span class="sc">%&gt;%</span></span>
+<span id="cb32-24"><a href="#cb32-24"></a>  <span class="fu">summarise</span>(<span class="at">MeanMath=</span><span class="fu">mean</span>(PV1MATH),</span>
+<span id="cb32-25"><a href="#cb32-25"></a>            <span class="at">MaxMath=</span><span class="fu">max</span>(PV1MATH),</span>
+<span id="cb32-26"><a href="#cb32-26"></a>            <span class="at">MinMath=</span><span class="fu">min</span>(PV1MATH))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -865,34 +988,34 @@ Tip
 <div class="question">
 <p><code>ST205Q02HA</code> asks participants if they feel students in their school are competing with each other. For students in the UK, find out the percentage of students who responded: Not at all true, Slightly true, Very true, Extremely true, and NA. (Hint: don’t forget to <code><a href="https://rdrr.io/r/base/droplevels.html">droplevels()</a></code>)</p>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># Finding the percentage of students who feel they compete in the UK</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a></span>
-<span id="cb28-3"><a href="#cb28-3"></a>CompData<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
-<span id="cb28-4"><a href="#cb28-4"></a>  <span class="fu">select</span>(CNT, ST205Q02HA)<span class="sc">%&gt;%</span></span>
-<span id="cb28-5"><a href="#cb28-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb28-6"><a href="#cb28-6"></a>  <span class="fu">group_by</span>(ST205Q02HA)<span class="sc">%&gt;%</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a>  <span class="fu">droplevels</span>()</span>
-<span id="cb28-8"><a href="#cb28-8"></a></span>
-<span id="cb28-9"><a href="#cb28-9"></a>CompData<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(CompData))</span>
-<span id="cb28-10"><a href="#cb28-10"></a>Total<span class="ot">=</span><span class="fu">sum</span>(CompData<span class="sc">$</span>Freq)</span>
-<span id="cb28-11"><a href="#cb28-11"></a>CompData<span class="ot">&lt;-</span>CompData<span class="sc">%&gt;%</span></span>
-<span id="cb28-12"><a href="#cb28-12"></a>  <span class="fu">mutate</span>(<span class="at">PercComp=</span><span class="fu">round</span>((Freq<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span>Total),<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Finding the percentage of students who feel they compete in the UK</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a></span>
+<span id="cb33-3"><a href="#cb33-3"></a>CompData<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">select</span>(CNT, ST205Q02HA)<span class="sc">%&gt;%</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a>  <span class="fu">group_by</span>(ST205Q02HA)<span class="sc">%&gt;%</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a>  <span class="fu">droplevels</span>()</span>
+<span id="cb33-8"><a href="#cb33-8"></a></span>
+<span id="cb33-9"><a href="#cb33-9"></a>CompData<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(CompData))</span>
+<span id="cb33-10"><a href="#cb33-10"></a>Total<span class="ot">=</span><span class="fu">sum</span>(CompData<span class="sc">$</span>Freq)</span>
+<span id="cb33-11"><a href="#cb33-11"></a>CompData<span class="ot">&lt;-</span>CompData<span class="sc">%&gt;%</span></span>
+<span id="cb33-12"><a href="#cb33-12"></a>  <span class="fu">mutate</span>(<span class="at">PercComp=</span><span class="fu">round</span>((Freq<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span>Total),<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p><code>ST012Q09NA</code> asks students if they have a musical instrument in their home. What percentage of students in the UK have no instruments in their home? What is the percentage in China?</p>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Finding the percentage of students with no musical instruments in the UK and China</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a></span>
-<span id="cb29-3"><a href="#cb29-3"></a>MusicData<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
-<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">select</span>(CNT, ST012Q09NA)<span class="sc">%&gt;%</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb29-6"><a href="#cb29-6"></a>  <span class="fu">group_by</span>(ST012Q09NA, CNT)<span class="sc">%&gt;%</span></span>
-<span id="cb29-7"><a href="#cb29-7"></a>  <span class="fu">droplevels</span>()</span>
-<span id="cb29-8"><a href="#cb29-8"></a></span>
-<span id="cb29-9"><a href="#cb29-9"></a>MusicData<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(MusicData))</span>
-<span id="cb29-10"><a href="#cb29-10"></a>Total<span class="ot">=</span><span class="fu">sum</span>(MusicData<span class="sc">$</span>Freq)</span>
-<span id="cb29-11"><a href="#cb29-11"></a>MusicData<span class="ot">&lt;-</span>MusicData<span class="sc">%&gt;%</span></span>
-<span id="cb29-12"><a href="#cb29-12"></a>  <span class="fu">mutate</span>(<span class="at">PercComp=</span><span class="fu">round</span>((Freq<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span>Total),<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Finding the percentage of students with no musical instruments in the UK and China</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a></span>
+<span id="cb34-3"><a href="#cb34-3"></a>MusicData<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">select</span>(CNT, ST012Q09NA)<span class="sc">%&gt;%</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">group_by</span>(ST012Q09NA, CNT)<span class="sc">%&gt;%</span></span>
+<span id="cb34-7"><a href="#cb34-7"></a>  <span class="fu">droplevels</span>()</span>
+<span id="cb34-8"><a href="#cb34-8"></a></span>
+<span id="cb34-9"><a href="#cb34-9"></a>MusicData<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(MusicData))</span>
+<span id="cb34-10"><a href="#cb34-10"></a>Total<span class="ot">=</span><span class="fu">sum</span>(MusicData<span class="sc">$</span>Freq)</span>
+<span id="cb34-11"><a href="#cb34-11"></a>MusicData<span class="ot">&lt;-</span>MusicData<span class="sc">%&gt;%</span></span>
+<span id="cb34-12"><a href="#cb34-12"></a>  <span class="fu">mutate</span>(<span class="at">PercComp=</span><span class="fu">round</span>((Freq<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span>Total),<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -909,95 +1032,97 @@ Tip
 <p>Don’t forget to use the pipe operator <code>%&gt;%</code> between each function</p>
 </div>
 </div>
-</section><section id="task-5-bar-graphs" class="level2" data-number="5.5"><h2 data-number="5.5" class="anchored" data-anchor-id="task-5-bar-graphs">
-<span class="header-section-number">5.5</span> Task 5 Bar graphs</h2>
+</section><section id="task-5---bar-graphs" class="level2" data-number="6.5"><h2 data-number="6.5" class="anchored" data-anchor-id="task-5---bar-graphs">
+<span class="header-section-number">6.5</span> Task 5 - Bar graphs</h2>
 <div class="question">
 <ul>
 <li>Plot a bar graph of <code>ST221Q03HA</code> - I learn about other cultures at school? First for the UK, then for France.</li>
 </ul>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>Cultplot <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">select</span>(CNT, ST221Q03HA) <span class="sc">%&gt;%</span></span>
-<span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span> <span class="st">"France"</span>)</span>
-<span id="cb30-4"><a href="#cb30-4"></a></span>
-<span id="cb30-5"><a href="#cb30-5"></a><span class="co"># use culture data to create a graph</span></span>
-<span id="cb30-6"><a href="#cb30-6"></a><span class="fu">ggplot</span>(<span class="at">data=</span>Cultplot,</span>
-<span id="cb30-7"><a href="#cb30-7"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ST221Q03HA, <span class="at">fill=</span>CNT)) <span class="sc">+</span></span>
-<span id="cb30-8"><a href="#cb30-8"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"dodge2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>Cultplot <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">select</span>(CNT, ST221Q03HA) <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span> <span class="st">"France"</span>)</span>
+<span id="cb35-4"><a href="#cb35-4"></a></span>
+<span id="cb35-5"><a href="#cb35-5"></a><span class="co"># use culture data to create a graph</span></span>
+<span id="cb35-6"><a href="#cb35-6"></a><span class="fu">ggplot</span>(<span class="at">data=</span>Cultplot,</span>
+<span id="cb35-7"><a href="#cb35-7"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ST221Q03HA, <span class="at">fill=</span>CNT)) <span class="sc">+</span></span>
+<span id="cb35-8"><a href="#cb35-8"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"dodge2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ul>
 <li>Plot a bar graph of <code>ST013Q01TA</code> - How many books are there in your home? for students in the UK. Then plot a graph splitting the data by gender (<code>ST004D01T</code>)</li>
 </ul>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Create a data set related to books in the UK and include gender</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a>Bookplot <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">select</span>(CNT, ST013Q01TA, ST004D01T) <span class="sc">%&gt;%</span></span>
-<span id="cb31-4"><a href="#cb31-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb31-5"><a href="#cb31-5"></a></span>
-<span id="cb31-6"><a href="#cb31-6"></a><span class="co"># use book data to create a graph</span></span>
-<span id="cb31-7"><a href="#cb31-7"></a><span class="fu">ggplot</span>(<span class="at">data=</span>Bookplot,</span>
-<span id="cb31-8"><a href="#cb31-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ST013Q01TA, <span class="at">fill=</span>ST013Q01TA)) <span class="sc">+</span></span>
-<span id="cb31-9"><a href="#cb31-9"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"dodge2"</span>) <span class="sc">+</span></span>
-<span id="cb31-10"><a href="#cb31-10"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span>
-<span id="cb31-11"><a href="#cb31-11"></a></span>
-<span id="cb31-12"><a href="#cb31-12"></a><span class="co"># use fill by gender to split the data</span></span>
-<span id="cb31-13"><a href="#cb31-13"></a><span class="fu">ggplot</span>(<span class="at">data=</span>Bookplot,</span>
-<span id="cb31-14"><a href="#cb31-14"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ST013Q01TA, <span class="at">fill=</span>ST004D01T)) <span class="sc">+</span></span>
-<span id="cb31-15"><a href="#cb31-15"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"dodge2"</span>) <span class="sc">+</span></span>
-<span id="cb31-16"><a href="#cb31-16"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="co"># To rotate the x-axis text</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># Create a data set related to books in the UK and include gender</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>Bookplot <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">select</span>(CNT, ST013Q01TA, ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb36-5"><a href="#cb36-5"></a></span>
+<span id="cb36-6"><a href="#cb36-6"></a><span class="co"># use book data to create a graph</span></span>
+<span id="cb36-7"><a href="#cb36-7"></a><span class="fu">ggplot</span>(<span class="at">data=</span>Bookplot,</span>
+<span id="cb36-8"><a href="#cb36-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ST013Q01TA, <span class="at">fill=</span>ST013Q01TA)) <span class="sc">+</span></span>
+<span id="cb36-9"><a href="#cb36-9"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"dodge2"</span>) <span class="sc">+</span></span>
+<span id="cb36-10"><a href="#cb36-10"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span>
+<span id="cb36-11"><a href="#cb36-11"></a></span>
+<span id="cb36-12"><a href="#cb36-12"></a><span class="co"># use fill by gender to split the data</span></span>
+<span id="cb36-13"><a href="#cb36-13"></a><span class="fu">ggplot</span>(<span class="at">data=</span>Bookplot,</span>
+<span id="cb36-14"><a href="#cb36-14"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ST013Q01TA, <span class="at">fill=</span>ST004D01T)) <span class="sc">+</span></span>
+<span id="cb36-15"><a href="#cb36-15"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"dodge2"</span>) <span class="sc">+</span></span>
+<span id="cb36-16"><a href="#cb36-16"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="co"># To rotate the x-axis text</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ul>
 <li>Plot a bar graph of the mean mathematics scores of the countries in the PISA dataset (Hint, you will need to use <code>group_by</code> and <code>summarise</code> and <code>geom_bar(stat="identity")</code> is used when you want geom_bar to plot the actually values (because you have already summarised) rather than counting the values. Second hint: you can reorder the x-axis with the <code>reorder</code> function. Rather than a simple <code>x=CNT</code> you can put <code>x=reorder(CNT, -SciMean)</code> which will reorder the x axis in descending order (because of the <code>-</code> sign) of <code>SciMean</code>.</li>
 </ul>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Create a data set of science scores, and use group_by and summarise to create mean scores by country</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>Sciplot <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE) <span class="sc">%&gt;%</span></span>
-<span id="cb32-4"><a href="#cb32-4"></a>  <span class="fu">group_by</span>(CNT)<span class="sc">%&gt;%</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci=</span><span class="fu">mean</span>(PV1SCIE))</span>
-<span id="cb32-6"><a href="#cb32-6"></a><span class="co"># Use geom_bar to plot the data</span></span>
-<span id="cb32-7"><a href="#cb32-7"></a><span class="fu">ggplot</span>(<span class="at">data=</span>Sciplot,</span>
-<span id="cb32-8"><a href="#cb32-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(CNT, <span class="sc">-</span>MeanSci), <span class="at">y=</span>MeanSci, <span class="at">fill=</span>MeanSci)) <span class="sc">+</span></span>
-<span id="cb32-9"><a href="#cb32-9"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb32-10"><a href="#cb32-10"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Create a data set of science scores, and use group_by and summarise to create mean scores by country</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>Sciplot <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE) <span class="sc">%&gt;%</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">group_by</span>(CNT)<span class="sc">%&gt;%</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci=</span><span class="fu">mean</span>(PV1SCIE))</span>
+<span id="cb37-6"><a href="#cb37-6"></a><span class="co"># Use geom_bar to plot the data</span></span>
+<span id="cb37-7"><a href="#cb37-7"></a><span class="fu">ggplot</span>(<span class="at">data=</span>Sciplot,</span>
+<span id="cb37-8"><a href="#cb37-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(CNT, <span class="sc">-</span>MeanSci), <span class="at">y=</span>MeanSci, <span class="at">fill=</span>MeanSci)) <span class="sc">+</span></span>
+<span id="cb37-9"><a href="#cb37-9"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb37-10"><a href="#cb37-10"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
-</section><section id="task-6-scatter-graphs" class="level2" data-number="5.6"><h2 data-number="5.6" class="anchored" data-anchor-id="task-6-scatter-graphs">
-<span class="header-section-number">5.6</span> Task 6 Scatter graphs</h2>
+</section><section id="task-6---scatter-graphs" class="level2" data-number="6.6"><h2 data-number="6.6" class="anchored" data-anchor-id="task-6---scatter-graphs">
+<span class="header-section-number">6.6</span> Task 6 - Scatter graphs</h2>
 <div class="question">
 <ul>
 <li>For students in the UK and Brazil, plot science scores (<code>PV1SCIE</code>) by the index of economic, social and cultural status (<code>ESCS</code>) - a little like social class. The try varying the colour of points by country, adding a line.</li>
 </ul>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE, ESCS)<span class="sc">%&gt;%</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"Brazil"</span>)</span>
-<span id="cb33-4"><a href="#cb33-4"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
-<span id="cb33-5"><a href="#cb33-5"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
-<span id="cb33-6"><a href="#cb33-6"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ESCS,<span class="at">y=</span>PV1SCIE, <span class="at">colour=</span>CNT)) <span class="sc">+</span></span>
-<span id="cb33-7"><a href="#cb33-7"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.2</span>, <span class="at">size=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
-<span id="cb33-8"><a href="#cb33-8"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Index of economic, social and cultural status"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>)<span class="sc">+</span></span>
-<span id="cb33-9"><a href="#cb33-9"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>))<span class="sc">+</span></span>
-<span id="cb33-10"><a href="#cb33-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE, ESCS)<span class="sc">%&gt;%</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"Brazil"</span>)</span>
+<span id="cb38-4"><a href="#cb38-4"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
+<span id="cb38-5"><a href="#cb38-5"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
+<span id="cb38-6"><a href="#cb38-6"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ESCS,<span class="at">y=</span>PV1SCIE, <span class="at">colour=</span>CNT)) <span class="sc">+</span></span>
+<span id="cb38-7"><a href="#cb38-7"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.2</span>, <span class="at">size=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb38-8"><a href="#cb38-8"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Index of economic, social and cultural status"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>)<span class="sc">+</span></span>
+<span id="cb38-9"><a href="#cb38-9"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>))<span class="sc">+</span></span>
+<span id="cb38-10"><a href="#cb38-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)<span class="sc">+</span></span>
+<span id="cb38-11"><a href="#cb38-11"></a>  <span class="fu">labs</span>(<span class="at">CNT =</span> <span class="st">"Country"</span>) <span class="co"># Changes ST004D01T to gender for the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ul>
 <li>For students in the UK, plot a graph of science scores (<code>PV1SCIE</code>) against reading scores (<code>PV1READ</code>). Add a straight line and vary the colour of points by students’ gender</li>
 </ul>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1READ, ST004D01T) <span class="sc">%&gt;%</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb34-4"><a href="#cb34-4"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
-<span id="cb34-5"><a href="#cb34-5"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
-<span id="cb34-6"><a href="#cb34-6"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1READ,<span class="at">y=</span>PV1SCIE, <span class="at">colour=</span>ST004D01T)) <span class="sc">+</span></span>
-<span id="cb34-7"><a href="#cb34-7"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">size=</span><span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb34-8"><a href="#cb34-8"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Reading Score"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>) <span class="sc">+</span></span>
-<span id="cb34-9"><a href="#cb34-9"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>)) <span class="sc">+</span></span>
-<span id="cb34-10"><a href="#cb34-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1READ, ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb39-4"><a href="#cb39-4"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
+<span id="cb39-5"><a href="#cb39-5"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plotdata,</span>
+<span id="cb39-6"><a href="#cb39-6"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1READ,<span class="at">y=</span>PV1SCIE, <span class="at">colour=</span>ST004D01T)) <span class="sc">+</span></span>
+<span id="cb39-7"><a href="#cb39-7"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.6</span>, <span class="at">size=</span><span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb39-8"><a href="#cb39-8"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Reading Score"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>) <span class="sc">+</span></span>
+<span id="cb39-9"><a href="#cb39-9"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>)) <span class="sc">+</span></span>
+<span id="cb39-10"><a href="#cb39-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)<span class="sc">+</span></span>
+<span id="cb39-11"><a href="#cb39-11"></a>  <span class="fu">labs</span>(<span class="at">colour =</span> <span class="st">"Gender"</span>) <span class="co"># Changes ST004D01T to gender for the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ul>
@@ -1005,25 +1130,36 @@ Tip
 </ul>
 <ol type="a">
 <li>create a dataframe of mean <code>PV1MATH</code> and <code>ESCS</code> by country using <code>group_by</code> and <code>summarise</code>. (Don’t forget to use na.RM=TRUE)</li>
-<li>use <code>mutate</code> and <code>ifelse</code> to add a new variable, called <code>text</code> which contains the names of countires with mathematics scores over 500.</li>
+<li>use <code>mutate</code> and <code>ifelse</code> to add a new variable, called <code>text</code> which contains the names of countires with mathematics scores over 550.</li>
 <li>use <code>geom_label</code> to add these data points to the x and y coordinates of the countries e.g.&nbsp;<code>geom_label(PV1MATHmean, ESCSmean, label)</code>
 </li>
 </ol>
 <div class="cell">
-<div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">select</span>(CNT, ESCS, PV1MATH)<span class="sc">%&gt;%</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">group_by</span>(CNT)<span class="sc">%&gt;%</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a>  <span class="fu">summarise</span>(<span class="at">PV1MATHmean=</span><span class="fu">mean</span>(PV1MATH),</span>
+<span id="cb40-5"><a href="#cb40-5"></a>            <span class="at">ESCSmean=</span><span class="fu">mean</span>(ESCS, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb40-6"><a href="#cb40-6"></a>  <span class="fu">mutate</span>(<span class="at">text=</span><span class="fu">ifelse</span>(PV1MATHmean<span class="sc">&gt;</span><span class="dv">550</span>, <span class="fu">as.character</span>(CNT), <span class="st">""</span>)) </span>
+<span id="cb40-7"><a href="#cb40-7"></a><span class="co"># If PV1MATHmean is over 800 set text to equal CNT, otherwsie set it to blank ("")</span></span>
+<span id="cb40-8"><a href="#cb40-8"></a><span class="fu">ggplot</span>(plotdata, <span class="fu">aes</span>(<span class="at">y=</span>PV1MATHmean, <span class="at">x=</span>ESCSmean, <span class="at">colour=</span>PV1MATHmean))<span class="sc">+</span></span>
+<span id="cb40-9"><a href="#cb40-9"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb40-10"><a href="#cb40-10"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">y=</span>PV1MATHmean, <span class="at">x=</span>ESCSmean, <span class="at">label=</span>text))<span class="sc">+</span></span>
+<span id="cb40-11"><a href="#cb40-11"></a>  <span class="fu">xlab</span>(<span class="st">"Mean ESCS score"</span>)<span class="sc">+</span></span>
+<span id="cb40-12"><a href="#cb40-12"></a>  <span class="fu">ylab</span>(<span class="st">"Mean mathematics score"</span>)<span class="sc">+</span></span>
+<span id="cb40-13"><a href="#cb40-13"></a>  <span class="fu">ggtitle</span>(<span class="st">"Comparison of mean mathematics and mean ESCS score"</span>)<span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co"># Hide the legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
-</div>
-</section></section><section id="extension-task" class="level1" data-number="6"><h1 data-number="6">
-<span class="header-section-number">6</span> Extension task</h1>
-<section id="task-1-binning-data" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="task-1-binning-data">
-<span class="header-section-number">6.1</span> Task 1 Binning data</h2>
+</section></section><section id="extension-task" class="level1" data-number="7"><h1 data-number="7">
+<span class="header-section-number">7</span> Extension task</h1>
+<section id="task-1-binning-data" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="task-1-binning-data">
+<span class="header-section-number">7.1</span> Task 1 Binning data</h2>
 <p>If we want to plot a frequency plot, the kind of chart that often gives a normal distribution, we need to divide data into counts of ranges of data.</p>
 <p>For example, to produce a frequency plot of science scores in the UK, I can first run a <code>summary</code> command on <code>PV1SCIE</code> to find the minimum and maximum score:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># Find the range of science score</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">summary</span>(PISA_2018<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># Find the range of science score</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="fu">summary</span>(PISA_2018<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
   58.74  385.60  458.20  460.69  533.44  886.08    5377 </code></pre>
@@ -1032,20 +1168,20 @@ Tip
 <p>If we wanted to plot a frequency chart of heights, we might divide the range of scores (from 58.74-886.08) into bins of 20 points. To do this we can use the <code>cut(&lt;field&gt;,&lt;breaks&gt;)</code> function within the <code>mutate</code> command on a ‘data.frame’. The <code>&lt;field&gt;</code> specifies the range (i.e.&nbsp;from around 50-900) and <code>&lt;breaks&gt;</code> the size of bins.</p>
 <p>In the example below, I use <code>cut(PV1SCIE, breaks=seq(50,900,20))</code> to create a new vector (column in the table) with the total number of pupils divided up into bins. The specification <code>breaks=seq(50,900,20))</code> sets how the data are broken up - into bins (i.e.&nbsp;groups of respondents) of scores starting at 50 and rising to 900 in steps of 20.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Creates distribution of schools by size</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a>binnedsize <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with binned data</span></span>
-<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">select</span>(PV1SCIE, CNT)<span class="sc">%&gt;%</span> <span class="co"># Select the column I need</span></span>
-<span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb37-5"><a href="#cb37-5"></a>  <span class="fu">mutate</span>(<span class="at">BinnedPV1SCIE =</span> <span class="fu">cut</span>(PV1SCIE, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">50</span>,<span class="dv">900</span>,<span class="dv">20</span>)))<span class="sc">%&gt;%</span></span>
-<span id="cb37-6"><a href="#cb37-6"></a>  <span class="fu">na.omit</span>() <span class="co"># Drop any NAs</span></span>
-<span id="cb37-7"><a href="#cb37-7"></a><span class="co"># Plot the data as a bar graph</span></span>
-<span id="cb37-8"><a href="#cb37-8"></a><span class="fu">ggplot</span>(binnedsize,</span>
-<span id="cb37-9"><a href="#cb37-9"></a>       <span class="fu">aes</span>(<span class="at">x=</span>BinnedPV1SCIE)) <span class="sc">+</span></span>
-<span id="cb37-10"><a href="#cb37-10"></a>  <span class="fu">geom_bar</span>(<span class="at">fill=</span><span class="st">"dark green"</span>) <span class="sc">+</span></span>
-<span id="cb37-11"><a href="#cb37-11"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb37-12"><a href="#cb37-12"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Number of schools"</span>, <span class="at">x=</span><span class="st">"Pupil range"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Creates distribution of schools by size</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>binnedsize <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with binned data</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a>  <span class="fu">select</span>(PV1SCIE, CNT)<span class="sc">%&gt;%</span> <span class="co"># Select the column I need</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a>  <span class="fu">mutate</span>(<span class="at">BinnedPV1SCIE =</span> <span class="fu">cut</span>(PV1SCIE, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">50</span>,<span class="dv">900</span>,<span class="dv">20</span>)))<span class="sc">%&gt;%</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a>  <span class="fu">na.omit</span>() <span class="co"># Drop any NAs</span></span>
+<span id="cb43-7"><a href="#cb43-7"></a><span class="co"># Plot the data as a bar graph</span></span>
+<span id="cb43-8"><a href="#cb43-8"></a><span class="fu">ggplot</span>(binnedsize,</span>
+<span id="cb43-9"><a href="#cb43-9"></a>       <span class="fu">aes</span>(<span class="at">x=</span>BinnedPV1SCIE)) <span class="sc">+</span></span>
+<span id="cb43-10"><a href="#cb43-10"></a>  <span class="fu">geom_bar</span>(<span class="at">fill=</span><span class="st">"dark green"</span>) <span class="sc">+</span></span>
+<span id="cb43-11"><a href="#cb43-11"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb43-12"><a href="#cb43-12"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Number of schools"</span>, <span class="at">x=</span><span class="st">"Pupil range"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="question">
@@ -1064,18 +1200,18 @@ Tip
 </div>
 </div>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Creates distribution of schools by size</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a>binnedsize <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with binned data</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">select</span>(PV1MATH, CNT)<span class="sc">%&gt;%</span> <span class="co"># Select the column I need</span></span>
-<span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"Malta"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">mutate</span>(<span class="at">BinnedPV1MATH =</span> <span class="fu">cut</span>(PV1MATH, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">20</span>,<span class="dv">900</span>,<span class="dv">20</span>)))<span class="sc">%&gt;%</span></span>
-<span id="cb38-6"><a href="#cb38-6"></a>  <span class="fu">na.omit</span>() <span class="co"># Drop any NAs</span></span>
-<span id="cb38-7"><a href="#cb38-7"></a><span class="co"># Plot the data as a bar graph</span></span>
-<span id="cb38-8"><a href="#cb38-8"></a><span class="fu">ggplot</span>(binnedsize,</span>
-<span id="cb38-9"><a href="#cb38-9"></a>       <span class="fu">aes</span>(<span class="at">x=</span>BinnedPV1MATH)) <span class="sc">+</span></span>
-<span id="cb38-10"><a href="#cb38-10"></a>  <span class="fu">geom_bar</span>(<span class="at">fill=</span><span class="st">"orange"</span>) <span class="sc">+</span></span>
-<span id="cb38-11"><a href="#cb38-11"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb38-12"><a href="#cb38-12"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Number of schools"</span>, <span class="at">x=</span><span class="st">"Pupil range"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># Creates distribution of schools by size</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>binnedsize <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with binned data</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a>  <span class="fu">select</span>(PV1MATH, CNT)<span class="sc">%&gt;%</span> <span class="co"># Select the column I need</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"Malta"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a>  <span class="fu">mutate</span>(<span class="at">BinnedPV1MATH =</span> <span class="fu">cut</span>(PV1MATH, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">20</span>,<span class="dv">900</span>,<span class="dv">20</span>)))<span class="sc">%&gt;%</span></span>
+<span id="cb44-6"><a href="#cb44-6"></a>  <span class="fu">na.omit</span>() <span class="co"># Drop any NAs</span></span>
+<span id="cb44-7"><a href="#cb44-7"></a><span class="co"># Plot the data as a bar graph</span></span>
+<span id="cb44-8"><a href="#cb44-8"></a><span class="fu">ggplot</span>(binnedsize,</span>
+<span id="cb44-9"><a href="#cb44-9"></a>       <span class="fu">aes</span>(<span class="at">x=</span>BinnedPV1MATH)) <span class="sc">+</span></span>
+<span id="cb44-10"><a href="#cb44-10"></a>  <span class="fu">geom_bar</span>(<span class="at">fill=</span><span class="st">"orange"</span>) <span class="sc">+</span></span>
+<span id="cb44-11"><a href="#cb44-11"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb44-12"><a href="#cb44-12"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Number of schools"</span>, <span class="at">x=</span><span class="st">"Pupil range"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1093,76 +1229,137 @@ Tip
 </div>
 <p>Plot a binned <code>geom_bar</code> graph of the wealth scores in the UK and Belarus on the same axes.</p>
 <div class="cell">
-<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Creates distribution of schools by size</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>binnedwealth <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with binned data</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">select</span>(WEALTH, CNT)<span class="sc">%&gt;%</span> <span class="co"># Select the column I need</span></span>
-<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"Belarus"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb39-5"><a href="#cb39-5"></a>  <span class="fu">mutate</span>(<span class="at">BinnedWEALTH =</span> <span class="fu">cut</span>(WEALTH, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">8</span>,<span class="dv">5</span>, <span class="fl">0.25</span>)))<span class="sc">%&gt;%</span></span>
-<span id="cb39-6"><a href="#cb39-6"></a>  <span class="fu">na.omit</span>() <span class="co"># Drop any NAs</span></span>
-<span id="cb39-7"><a href="#cb39-7"></a><span class="co"># Plot the data as a bar graph</span></span>
-<span id="cb39-8"><a href="#cb39-8"></a><span class="fu">ggplot</span>(binnedwealth,</span>
-<span id="cb39-9"><a href="#cb39-9"></a>       <span class="fu">aes</span>(<span class="at">x=</span>BinnedWEALTH, <span class="at">fill=</span>CNT)) <span class="sc">+</span></span>
-<span id="cb39-10"><a href="#cb39-10"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb39-11"><a href="#cb39-11"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb39-12"><a href="#cb39-12"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Frequency"</span>, <span class="at">x=</span><span class="st">"Wealth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># Creates distribution of schools by size</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a>binnedwealth <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with binned data</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a>  <span class="fu">select</span>(WEALTH, CNT)<span class="sc">%&gt;%</span> <span class="co"># Select the column I need</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"Belarus"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb45-5"><a href="#cb45-5"></a>  <span class="fu">mutate</span>(<span class="at">BinnedWEALTH =</span> <span class="fu">cut</span>(WEALTH, <span class="at">breaks=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">8</span>,<span class="dv">5</span>, <span class="fl">0.25</span>)))<span class="sc">%&gt;%</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a>  <span class="fu">na.omit</span>() <span class="co"># Drop any NAs</span></span>
+<span id="cb45-7"><a href="#cb45-7"></a><span class="co"># Plot the data as a bar graph</span></span>
+<span id="cb45-8"><a href="#cb45-8"></a><span class="fu">ggplot</span>(binnedwealth,</span>
+<span id="cb45-9"><a href="#cb45-9"></a>       <span class="fu">aes</span>(<span class="at">x=</span>BinnedWEALTH, <span class="at">fill=</span>CNT)) <span class="sc">+</span></span>
+<span id="cb45-10"><a href="#cb45-10"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb45-11"><a href="#cb45-11"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb45-12"><a href="#cb45-12"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Frequency"</span>, <span class="at">x=</span><span class="st">"Wealth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
-</section><section id="task-2-plotting-data-on-maps" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="task-2-plotting-data-on-maps">
-<span class="header-section-number">6.2</span> Task 2 Plotting data on maps</h2>
+</section><section id="task-2-plotting-data-on-maps" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="task-2-plotting-data-on-maps">
+<span class="header-section-number">7.2</span> Task 2 Plotting data on maps</h2>
 <p>As well as graphs, R can also plot data onto maps. The <code>geom_map</code> function will plot a map of a region and you can either plot points (using <code>geom_point</code>) or fill regions by drawing a ploygon of the shape of that region (using <code>geom_polygon</code>).</p>
 <p>For example, imagine we created a dataframe of the mean science scores of countries in the PISA data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>WorldSci<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
-<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE)<span class="sc">%&gt;%</span></span>
-<span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">group_by</span>(CNT)<span class="sc">%&gt;%</span></span>
-<span id="cb40-4"><a href="#cb40-4"></a>  <span class="fu">summarise</span>(<span class="at">meanSci=</span><span class="fu">mean</span>(PV1SCIE))<span class="sc">%&gt;%</span></span>
-<span id="cb40-5"><a href="#cb40-5"></a>  <span class="fu">rename</span>(<span class="at">region=</span>CNT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>WorldSci <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE) <span class="sc">%&gt;%</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a>  <span class="fu">summarise</span>(<span class="at">meanSci =</span> <span class="fu">mean</span>(PV1SCIE)) <span class="sc">%&gt;%</span></span>
+<span id="cb46-5"><a href="#cb46-5"></a>  <span class="fu">rename</span>(<span class="at">region =</span> CNT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In order to plot the data onto a map, colouring the countries by science scores, we need data which gives the coordinates of the edges of the countries. This data is available in the <code>rworldmap</code> package. First we load the latitude and longitude data into a new dataframe <code>world_data</code>, then use <code>left_join</code> to combine it with the science data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># Create a dataframe of country latitude and longitude data</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a>world_data <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="at">map=</span><span class="st">"world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># Create a dataframe of country latitude and longitude data</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>world_data <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="at">map=</span><span class="st">"world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>One quirk of the two dataframes (<code>world_data</code> and the PISA data) is that some countries have different names. For example, in the PISA data, the United Kingdom, and in the <code>rworldmap</code> package, UK. We need to change the PISA version to match the <code>rworldmap</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># The names of two countries in the PISA data set and world_data data set don't match (UK/United Kingdom and US/United States). Change the level names in the PISA data to match the world_data</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a><span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)[<span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)<span class="sc">==</span><span class="st">"United Kingdom"</span>] <span class="ot">&lt;-</span> <span class="st">"UK"</span></span>
-<span id="cb42-3"><a href="#cb42-3"></a><span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)[<span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)<span class="sc">==</span><span class="st">"United States"</span>] <span class="ot">&lt;-</span> <span class="st">"USA"</span></span>
-<span id="cb42-4"><a href="#cb42-4"></a><span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)[<span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)<span class="sc">==</span><span class="st">"B-S-J-Z (China)"</span>] <span class="ot">&lt;-</span> <span class="st">"China"</span></span>
-<span id="cb42-5"><a href="#cb42-5"></a><span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)[<span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)<span class="sc">==</span><span class="st">"Russian Federation"</span>] <span class="ot">&lt;-</span> <span class="st">"Russia"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">unique</span>(world_data<span class="sc">$</span>region)</span>
+<span id="cb48-2"><a href="#cb48-2"></a></span>
+<span id="cb48-3"><a href="#cb48-3"></a><span class="co"># The names of two countries in the PISA data set and world_data data set don't match (UK/United Kingdom and US/United States). Change the level names in the PISA data to match the world_data</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a><span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)[<span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)<span class="sc">==</span><span class="st">"United Kingdom"</span>] <span class="ot">&lt;-</span> <span class="st">"UK"</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a><span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)[<span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)<span class="sc">==</span><span class="st">"United States"</span>] <span class="ot">&lt;-</span> <span class="st">"USA"</span></span>
+<span id="cb48-6"><a href="#cb48-6"></a><span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)[<span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)<span class="sc">==</span><span class="st">"B-S-J-Z (China)"</span>] <span class="ot">&lt;-</span> <span class="st">"China"</span></span>
+<span id="cb48-7"><a href="#cb48-7"></a><span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)[<span class="fu">levels</span>(WorldSci<span class="sc">$</span>region)<span class="sc">==</span><span class="st">"Russian Federation"</span>] <span class="ot">&lt;-</span> <span class="st">"Russia"</span></span>
+<span id="cb48-8"><a href="#cb48-8"></a></span>
+<span id="cb48-9"><a href="#cb48-9"></a><span class="co"># dplyr method</span></span>
+<span id="cb48-10"><a href="#cb48-10"></a><span class="co"># WorldSci &lt;- WorldSci %&gt;%</span></span>
+<span id="cb48-11"><a href="#cb48-11"></a><span class="co">#   mutate(region = case_when(</span></span>
+<span id="cb48-12"><a href="#cb48-12"></a><span class="co">#                       region == "United Kingdom" ~ "UK",</span></span>
+<span id="cb48-13"><a href="#cb48-13"></a><span class="co">#                       region == "United States"  ~ "USA",</span></span>
+<span id="cb48-14"><a href="#cb48-14"></a><span class="co">#                       region == "B-S-J-Z (China)" ~ "China",</span></span>
+<span id="cb48-15"><a href="#cb48-15"></a><span class="co">#                       region == "Russian Federation" ~ "Russia",</span></span>
+<span id="cb48-16"><a href="#cb48-16"></a><span class="co">#                       .default = region</span></span>
+<span id="cb48-17"><a href="#cb48-17"></a><span class="co">#   ))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Add the country latitude and longitude data to the PISA scores</span></span>
-<span id="cb43-2"><a href="#cb43-2"></a>WorldSci<span class="ot">&lt;-</span><span class="fu">left_join</span>(WorldSci,world_data, <span class="at">by=</span><span class="st">"region"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># Add the country latitude and longitude data to the PISA scores</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>WorldSci <span class="ot">&lt;-</span> <span class="fu">left_join</span>(WorldSci, world_data, <span class="at">by=</span><span class="st">"region"</span>)</span>
+<span id="cb49-3"><a href="#cb49-3"></a></span>
+<span id="cb49-4"><a href="#cb49-4"></a><span class="co"># Use geom_map to plot the basic world map (fill is white, line colour is black)</span></span>
+<span id="cb49-5"><a href="#cb49-5"></a><span class="co"># Use geom_polygon to plot the PISA data</span></span>
+<span id="cb49-6"><a href="#cb49-6"></a><span class="co"># Add a colour scale</span></span>
+<span id="cb49-7"><a href="#cb49-7"></a></span>
+<span id="cb49-8"><a href="#cb49-8"></a>Labels<span class="ot">&lt;-</span>WorldSci<span class="sc">%&gt;%</span></span>
+<span id="cb49-9"><a href="#cb49-9"></a>  <span class="fu">group_by</span>(region)<span class="sc">%&gt;%</span></span>
+<span id="cb49-10"><a href="#cb49-10"></a>  <span class="fu">summarise</span>(<span class="at">meanSci=</span><span class="fu">mean</span>(meanSci), <span class="at">lat=</span><span class="fu">mean</span>(lat), <span class="at">long=</span><span class="fu">mean</span>(long))<span class="sc">%&gt;%</span></span>
+<span id="cb49-11"><a href="#cb49-11"></a>  <span class="fu">na.omit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To plot the data, we use <code>ggplot</code>, with the data set to <code>WorldSci</code>, and the x and y variables set to <code>long</code> and <code>lat</code>, the longitudes and latitudes. We specify that we want to keep the grouping of the dataframe (i.e.&nbsp;by country).</p>
 <p>First we use <code>geom_map</code> to plot a blank map using the data - this will be base for the filled countries. In the <code>aes</code> we give the longitudes and latitudes, and, as we want a blank map set the <code>fill</code> to white and the line <code>colour</code> to black.</p>
 <p>Finally, we use <code>geom_polygon</code> to draw coloured shapes, with the <code>fill</code> changing by the value of <code>meanSci</code>. To make the map look nice, I have used a pre-defined colour scale.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># Use geom_map to plot the basic world map (fill is white, line colour is black)</span></span>
-<span id="cb44-2"><a href="#cb44-2"></a><span class="co"># Use geom_polygon to plot the PISA data</span></span>
-<span id="cb44-3"><a href="#cb44-3"></a><span class="co"># Add a colour scale</span></span>
-<span id="cb44-4"><a href="#cb44-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> WorldSci, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat, <span class="at">group=</span>group)) <span class="sc">+</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a>  <span class="fu">geom_map</span>(<span class="at">data=</span>world_data, <span class="at">map=</span>world_data, <span class="fu">aes</span>(long, lat, <span class="at">map_id=</span>region), <span class="at">fill=</span><span class="st">"white"</span>, <span class="at">colour=</span><span class="st">"black"</span>)<span class="sc">+</span></span>
-<span id="cb44-6"><a href="#cb44-6"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill=</span>meanSci)) <span class="sc">+</span></span>
-<span id="cb44-7"><a href="#cb44-7"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"magma"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># Use geom_map to plot the basic world map (fill is white, line colour is black)</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a><span class="co"># Use geom_polygon to plot the PISA data</span></span>
+<span id="cb50-3"><a href="#cb50-3"></a><span class="co"># Add a colour scale</span></span>
+<span id="cb50-4"><a href="#cb50-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> WorldSci, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat, <span class="at">group=</span>group)) <span class="sc">+</span></span>
+<span id="cb50-5"><a href="#cb50-5"></a>  <span class="fu">geom_map</span>(<span class="at">data=</span>world_data, </span>
+<span id="cb50-6"><a href="#cb50-6"></a>           <span class="at">map=</span>world_data, </span>
+<span id="cb50-7"><a href="#cb50-7"></a>           <span class="fu">aes</span>(long, lat, <span class="at">map_id=</span>region), </span>
+<span id="cb50-8"><a href="#cb50-8"></a>           <span class="at">fill=</span><span class="st">"white"</span>, </span>
+<span id="cb50-9"><a href="#cb50-9"></a>           <span class="at">colour=</span><span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb50-10"><a href="#cb50-10"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill=</span>meanSci)) <span class="sc">+</span></span>
+<span id="cb50-11"><a href="#cb50-11"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"viridis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section></section><section id="useful-resources" class="level1" data-number="7"><h1 data-number="7">
-<span class="header-section-number">7</span> Useful resources</h1>
+<p>To add labels, you can create a <code>data.frame</code>, with only the country names, and their longitudes and latitudes (the mean of the country longitude and latitude), to use as the labels. You can then add <code>geom_text_repel</code>to add the labels. The <code>repel</code> means the labels won’t overlap. Given the number of countries, using <code>geom_text_repel</code> creates a warning that some labels won’t fit.</p>
+<p>Note <code>geom_text_repel(data=Labels, inherit.aes = F, aes(x=long, y=lat,label=region))</code> we specify the label <code>data.frame</code>, tell the function to use different aesthetics that the first <code>aes</code> call for the map <code>inherit.aes = F</code> and, in <code>aes</code> pass the positions of the labels and specifiy that the labels are in the <code>region</code> vector.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> WorldSci, </span>
+<span id="cb51-2"><a href="#cb51-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat, <span class="at">group=</span>group)) <span class="sc">+</span></span>
+<span id="cb51-3"><a href="#cb51-3"></a>  <span class="fu">geom_map</span>(<span class="at">data=</span>world_data,</span>
+<span id="cb51-4"><a href="#cb51-4"></a>           <span class="at">map=</span>world_data, </span>
+<span id="cb51-5"><a href="#cb51-5"></a>           <span class="fu">aes</span>(<span class="at">map_id=</span>region), </span>
+<span id="cb51-6"><a href="#cb51-6"></a>           <span class="at">fill=</span><span class="st">"white"</span>,</span>
+<span id="cb51-7"><a href="#cb51-7"></a>           <span class="at">colour=</span><span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb51-8"><a href="#cb51-8"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill=</span>meanSci)) <span class="sc">+</span></span>
+<span id="cb51-9"><a href="#cb51-9"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"viridis"</span>) <span class="sc">+</span></span>
+<span id="cb51-10"><a href="#cb51-10"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>Labels,</span>
+<span id="cb51-11"><a href="#cb51-11"></a>                 <span class="at">inherit.aes =</span> F,</span>
+<span id="cb51-12"><a href="#cb51-12"></a>                 <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat,<span class="at">label=</span>region))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section></section><section id="useful-resources" class="level1" data-number="8"><h1 data-number="8">
+<span class="header-section-number">8</span> Useful resources</h1>
 <ul>
 <li>The ’<a href="https://www.data-to-viz.com">From Data to Viz’</a> blog has a helpful flowchart for choosing an appropriate type of graph for different forms of data.</li>
+<li>You can find a gallery of around 400 types of visualisation you can produce in R <a href="https://r-graph-gallery.com/all-graphs.html">at the R chart gallery</a>.</li>
 <li>The Royal Statistical Society has produced a useful guide to making visual representations, <a href="https://royal-statistical-society.github.io/datavisguide/">Best Practice for Data Representations</a>, that shows you how to make readable, accessible data visualisations.</li>
+<li>The classic text on representing data visually is Edward R. Tufte’s The Visual Display of Quantitative Information <span class="citation" data-cites="tufte2001visual">(<a href="#ref-tufte2001visual" role="doc-biblioref">Tufte 2001</a>)</span>. A beautiful book with illustrations of best practice in graphing and other forms of data representation.Tufte’s principles for graphical displays are that the representation should:</li>
 </ul>
+<blockquote class="blockquote">
+<p>• show the data</p>
+<p>• induce the viewer to think about the substance rather than about methodology, graphic design, the technology of graphic pro-duction, or something else</p>
+<p>• avoid distorting what the data have to say</p>
+<p>• present many numbers in a small space</p>
+<p>• make large data sets coherent</p>
+<p>• encourage the eye to compare different pieces of data</p>
+<p>• reveal the data at several levels of detail, from a broad overview to the fine structure</p>
+<p>• serve a reasonably clear purpose: description, exploration, tabulation, or decoration</p>
+<p>• be closely integrated with the statistical and verbal descriptions of a data set. <span class="citation" data-cites="tufte2001visual">(<a href="#ref-tufte2001visual" role="doc-biblioref">Tufte 2001, 2:13</a>)</span></p>
+</blockquote>
+<p>Lukasz Piwek has <a href="http://motioninsocial.com/tufte/">created guidance</a> on creating Tufte style representations using R packages.</p>
 
 
 
 </section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-davis2013introduction" class="csl-entry" role="listitem">
 Davis, Lennard J. 2013. <span>“Introduction: Normality, Power, and Culture.”</span> <em>The Disability Studies Reader</em> 4: 1–14. <a href="https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15">https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15</a>.
+</div>
+<div id="ref-tufte2001visual" class="csl-entry" role="listitem">
+Tufte, Edward R. 2001. <em>The Visual Display of Quantitative Information</em>. Vol. 2. Graphics Press.
 </div>
 </div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

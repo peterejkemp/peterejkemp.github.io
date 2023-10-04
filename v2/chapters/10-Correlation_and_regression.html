@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.450">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>MASTEMR - 10 Correlation and regression</title>
 <style>
@@ -103,7 +103,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><link rel="stylesheet" href="../css/mastemr.css">
 </head>
@@ -129,7 +130,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/10-Correlation_and_regression.html">10 Correlation and regression</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -166,7 +167,7 @@ div.csl-indent {
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">02 Intro to R</span></a>
+ <span class="menu-text">02 Introduction to R</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -193,7 +194,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to graphs</span></a>
+ <span class="menu-text">Making graphs</span></a>
   </div>
 </li>
       </ul>
@@ -255,7 +256,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/12-value_of_quant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 Effective international STEM education</span></a>
+ <span class="menu-text">12 The value of quantitative methods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -297,6 +298,12 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="../chapters/A4-Other_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Other datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A5-Self_Study_Tasks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix Self Study Tasks</span></a>
   </div>
 </li>
       </ul>
@@ -1464,14 +1471,12 @@ MATHEFF 2012 MATINTFC 2012 SCIEEFF 2015-->
 <div class="cell">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>GGGI <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Country, Overall.Score)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-  Country     Overall.Score
-  &lt;chr&gt;               &lt;dbl&gt;
-1 Iceland             0.873
-2 Finland             0.842
-3 Norway              0.842
-4 Sweden              0.813
-5 Philippines         0.783</code></pre>
+<pre><code>      Country Overall.Score
+1     Iceland        0.8731
+2     Finland        0.8421
+3      Norway        0.8417
+4      Sweden        0.8129
+5 Philippines        0.7832</code></pre>
 </div>
 </div>
 <p>Now we will load the 2015 PISA data set, we have a <code>.parquet</code> copy for you <a href="https://drive.google.com/file/d/18NpQO1DGY5dnjnlR2b3IF9Zv8xtpc1Fk/view?usp=share_link">here</a></p>
@@ -1493,7 +1498,7 @@ MATHEFF 2012 MATINTFC 2012 SCIEEFF 2015-->
 </div>
 <ul>
 <li>line 1, assigns <code>&lt;-</code> the result of the <code>left_join</code> to a new object, <code>PISA_2015_GGGI</code>,</li>
-<li>line 2, specifies <code>&lt;table_1&gt;</code> to be <code>PISA_2015</code> with the selected fields, note we have chosen to use <code>PV1</code> grades here, it’s unclear what the original paper uses (See <a href="../chapters/A1-PISA_analysis.html#sec-PV">§What are Plausible Values?</a>) for a discussion on the use of <code>PV</code> grades)</li>
+<li>line 2, specifies <code>&lt;table_1&gt;</code> to be <code>PISA_2015</code> with the selected fields, note we have chosen to use <code>PV1</code> grades here, it’s unclear what the original paper uses (See <strong>?@sec-PV</strong> for a discussion on the use of <code>PV</code> grades)</li>
 <li>line 3, specifies <code>&lt;table_2&gt;</code> to be <code>GGGI</code> with just the country and <code>Overall.Score</code> fields</li>
 <li>line 4, specifies the <code>&lt;matching_field&gt;</code> to be <code>CNT</code>from <code>PISA_2015</code> and <code>Country</code> from <code>GGGI</code>, this means that the data in <code>&lt;table_2&gt;</code> will be added to <code>&lt;table_1&gt;</code> where <code>CNT</code> and <code>Country</code> are the same. For example for every entry of <code>Finland</code> in <code>PISA_2015</code>, the <code>Overall.Score</code> of <code>0.8421</code> will be added. Where it can’t find a matching country, e.g.&nbsp;Albania doesn’t have a GGGI entry, <code>NA</code> will be added.</li>
 </ul>
