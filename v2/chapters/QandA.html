@@ -272,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A3-TIMSS_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TIMSS</span></a>
+ <span class="menu-text">TIMSS, PIRLS and ICILS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -325,7 +325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">select</span>(carat, cut, color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>To get around this make sure that you load the <code>tidyverse</code> <em>after</em> <code>MASS</code>, in fact you should always load the <code>tidyverse</code> last.</p>
+<p>To get around this make sure that you load the <code>tidyverse</code> <em>after</em> <code>MASS</code>, to be safe you should always load the <code>tidyverse</code> last.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(MASS) </span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(tidyverse)</span>
@@ -355,51 +355,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 53,930 more rows</code></pre>
 </div>
 </div>
+<p>Finally, there is a package that helps your deal with conflicts called <code>conflicted</code>. At the top of your script you can define which version of a function you prefer, this will be the version that will always be used. If you want to specify another version of a function, you can still use other versions of the function using the <code>::</code> notation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(conflicted)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">conflicts_prefer</span>(dplyr<span class="sc">::</span>select)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">conflicts_prefer</span>(dplyr<span class="sc">::</span>mutate)</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">conflicts_prefer</span>(dplyr<span class="sc">::</span>summarise)</span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">conflicts_prefer</span>(dplyr<span class="sc">::</span>filter)</span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a>df <span class="sc">%&gt;%</span> <span class="fu">select</span>(name, age) <span class="co"># uses select from dplyr</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>df <span class="sc">%&gt;%</span> MASS<span class="sc">::</span><span class="fu">select</span>(name) <span class="co"># uses select from MASS</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To find out if you have any conflicts, you can run <code>conflict_scout()</code>.</p>
 <p><strong>How can I unload packages</strong></p>
 <p>If you are finding yourself with a conflict as mentioned above and want to <code>unload</code> packages, then you need to run the following code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># adapted from: @mmfrgmpds https://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="cf">while</span>(<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">sessionInfo</span>()<span class="sc">$</span>loadedOnly)){</span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">lapply</span>(<span class="fu">names</span>(<span class="fu">sessionInfo</span>()<span class="sc">$</span>loadedOnly), require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">invisible</span>(<span class="fu">lapply</span>(<span class="fu">paste0</span>(<span class="st">'package:'</span>, <span class="fu">names</span>(<span class="fu">sessionInfo</span>()<span class="sc">$</span>otherPkgs)), detach, <span class="at">character.only=</span><span class="cn">TRUE</span>, <span class="at">unload=</span><span class="cn">TRUE</span>, <span class="at">force=</span><span class="cn">TRUE</span>))    </span>
-<span id="cb6-5"><a href="#cb6-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># adapted from: @mmfrgmpds https://stackoverflow.com/questions/7505547/detach-all-packages-while-working-in-r</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="cf">while</span>(<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">sessionInfo</span>()<span class="sc">$</span>loadedOnly)){</span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">lapply</span>(<span class="fu">names</span>(<span class="fu">sessionInfo</span>()<span class="sc">$</span>loadedOnly), require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">invisible</span>(<span class="fu">lapply</span>(<span class="fu">paste0</span>(<span class="st">'package:'</span>, <span class="fu">names</span>(<span class="fu">sessionInfo</span>()<span class="sc">$</span>otherPkgs)), detach, <span class="at">character.only=</span><span class="cn">TRUE</span>, <span class="at">unload=</span><span class="cn">TRUE</span>, <span class="at">force=</span><span class="cn">TRUE</span>))    </span>
+<span id="cb7-5"><a href="#cb7-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Why am I getting the error ‘could not find function “%&gt;%”’</strong></p>
 <p>The pipe operator <code>%&gt;%</code> is loaded when you load the tidyverse package - make sure you have installed tidyverse and loaded it</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)  <span class="co"># install</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">library</span>(tidyverse)             <span class="co"># load</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)  <span class="co"># install</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(tidyverse)             <span class="co"># load</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>I am getting the error: ‘“Error: Mapping should be created with <code>aes()</code> or <code>aes_()</code>.”’ when using ggplot</strong></p>
 <p>This may be caused by having a bracket after the geom rather than before it</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>,</span>
-<span id="cb8-2"><a href="#cb8-2"></a>                 <span class="at">y=</span><span class="dv">10</span><span class="sc">:</span><span class="dv">6</span>)</span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(x, y) <span class="sc">+</span>           <span class="co"># Reproduce error message</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>         <span class="fu">geom_point</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>,</span>
 <span id="cb9-2"><a href="#cb9-2"></a>                 <span class="at">y=</span><span class="dv">10</span><span class="sc">:</span><span class="dv">6</span>)</span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(x, y)) <span class="sc">+</span>           <span class="co"># Fixed error by moving bracket</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(x, y) <span class="sc">+</span>           <span class="co"># Reproduce error message</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>         <span class="fu">geom_point</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>My axis labels are too long</strong></p>
-<p>If you want to use long axis titles you may find they overrun the space available</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>,</span>
 <span id="cb10-2"><a href="#cb10-2"></a>                 <span class="at">y=</span><span class="dv">10</span><span class="sc">:</span><span class="dv">6</span>)</span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y)) <span class="sc">+</span>           </span>
-<span id="cb10-4"><a href="#cb10-4"></a>         <span class="fu">geom_col</span>()<span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">ylab</span>(<span class="st">"A very long description for the y-axis label that will overflow and not look very nice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(x, y)) <span class="sc">+</span>           <span class="co"># Fixed error by moving bracket</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>         <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>To insert a line break in the axis label, add <code>\n</code> to the text where you want line breaks.</p>
+<p><strong>My axis labels are too long</strong></p>
+<p>If you want to use long axis titles you may find they overrun the space available</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>,</span>
 <span id="cb11-2"><a href="#cb11-2"></a>                 <span class="at">y=</span><span class="dv">10</span><span class="sc">:</span><span class="dv">6</span>)</span>
 <span id="cb11-3"><a href="#cb11-3"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y)) <span class="sc">+</span>           </span>
 <span id="cb11-4"><a href="#cb11-4"></a>         <span class="fu">geom_col</span>()<span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">ylab</span>(<span class="st">"A very long description </span><span class="sc">\n</span><span class="st"> for the y-axis label that will </span><span class="sc">\n</span><span class="st"> overflow and not look very nice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">ylab</span>(<span class="st">"A very long description for the y-axis label that will overflow and not look very nice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To insert a line break in the axis label, add <code>\n</code> to the text where you want line breaks.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>,</span>
+<span id="cb12-2"><a href="#cb12-2"></a>                 <span class="at">y=</span><span class="dv">10</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y)) <span class="sc">+</span>           </span>
+<span id="cb12-4"><a href="#cb12-4"></a>         <span class="fu">geom_col</span>()<span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">ylab</span>(<span class="st">"A very long description </span><span class="sc">\n</span><span class="st"> for the y-axis label that will </span><span class="sc">\n</span><span class="st"> overflow and not look very nice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
