@@ -168,7 +168,7 @@ leaflet(data=grms_plot) %>%
 
 # Stats
 
-The thing that predicts the percentage of FSM students in a school is the percentage of FSM students in a LA and the progress 8 school of school. The Higher the progress 8 (`P8MEA`), the lower the percentage of FSM students in a school:
+The things that predicts the percentage of FSM students in a school are the percentage of FSM students in a LA and the progress 8 score of school. The higher the progress 8 (`P8MEA`), the _lower_ the percentage of FSM students in a school:
 
 > Sch FSM % ~ Gender + LA FSM % + Region FSM % + Progress 8
 
@@ -179,7 +179,8 @@ lm(data = grms %>% filter(Year %in% max(Year)),
   summary() %>%
   # tidy() %>%
   tbl_regression() %>%
-  bold_p()
+  bold_p()  %>%
+  add_glance_table(include = c(nobs, r.squared))
 
 ```
 
