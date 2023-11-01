@@ -15,6 +15,7 @@ author:
     email: peter.kemp@kcl.ac.uk
     affiliations:
     - name: King's College London
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
 link-citations: true
 editor_options: 
   chunk_output_type: console
@@ -29,6 +30,8 @@ warning: false
 #| include: false
 #| warning: false
 #| cache: false
+
+# see: https://docs.google.com/document/d/1cg-DLYOJq5TZap7xtfZ8uom_hrom_Ih1zV4galHzPYM/edit
 
 data_folder <- r"[C:\Users\Peter\Google Drive\Kings\Code\PISR\Data\]"
 data_folder <- r"[D:\Data\EdR\]"
@@ -166,24 +169,6 @@ leaflet(data=grms_plot) %>%
 # https://stackoverflow.com/questions/32940617/change-color-of-leaflet-marker
 ```
 
-# Stats
-
-The things that predicts the percentage of FSM students in a school are the percentage of FSM students in a LA and the progress 8 score of school. The higher the progress 8 (`P8MEA`), the _lower_ the percentage of FSM students in a school:
-
-> Sch FSM % ~ Gender + LA FSM % + Region FSM % + Progress 8
-
-```{r stats}
-### STATS
-lm(data = grms %>% filter(Year %in% max(Year)), 
-   `Sch FSM %` ~ Gender + `LA FSM %` + `Region FSM %` + `Progress 8`) %>% 
-  summary() %>%
-  # tidy() %>%
-  tbl_regression() %>%
-  bold_p()  %>%
-  add_glance_table(include = c(nobs, r.squared))
-
-```
-
 # Summary table
 
 Summary table for all grammar schools in `r max(grms$Year)`
@@ -226,8 +211,74 @@ grms %>%
     columns = c("Sch-LA FSM short %", "Sch-Region FSM short %"),
     method="numeric",
     palette = c("green", "red")) %>%
+  cols_width(
+    Year ~ px(70),
+    URN ~ px(150),
+    name ~ px(300),
+    LA ~ px(150),
+    Region ~ px(150),
+    Gender ~ px(100),
+    `Progress 8` ~ px(110),
+    #ends_with("r") ~ px(100),
+    #starts_with("date") ~ px(200),
+    everything() ~ px(100)
+  ) %>% 
   tab_options(ihtml.active = TRUE,
               ihtml.use_filters = TRUE)
+```
 
+# Stats
+
+The things that predicts the percentage of FSM students in a school are the percentage of FSM students in a LA and the progress 8 score of school. The higher the progress 8 (`P8MEA`), the _lower_ the percentage of FSM students in a school (mean=`r round(mean(grms[["Sch FSM %"]], na.rm=TRUE),2)`%; median=`r round(median(grms[["Sch FSM %"]], na.rm=TRUE),2)`%; sd=`r round(sd(grms[["Sch FSM %"]], na.rm=TRUE),2)`% ):
+
+> Sch FSM % ~ Gender + LA FSM % + Region FSM % + Progress 8
+
+```{r stats}
+### STATS
+lm(data = grms %>% ungroup() %>% filter(Year %in% max(grms$Year)), 
+   `Sch FSM %` ~ Gender + `LA FSM %` + `Region FSM %` + `Progress 8`) %>% 
+  summary() %>%
+  # tidy() %>%
+  tbl_regression() %>%
+  bold_p()  %>%
+  add_glance_table(include = c(nobs, r.squared))
+
+```
+
+```{r plt_FSM_P8}
+### STATS
+ggplot(data = grms %>% ungroup() %>% filter(Year %in% max(grms$Year)),
+       aes(x=`Progress 8`, y=`Sch FSM %`)) +
+  geom_point(aes(size=`KS4 students`), alpha=0.4) +
+  geom_smooth(method = "lm") +
+  facet_wrap(Gender ~. ) +
+  theme(legend.position = "bottom")
+
+```
+
+We can also look at the shortfall in FSM places in a school through `Sch-LA FSM short %`, that is the percentage difference between the schools' FSM % and the FSM % for the Local Authority. The higher the number the bigger the difference between the number of FSM students in a school and that expected if it was representative of the local authority. Again, we see progress 8 significantly predicting the shortfall. The higher the progress 8, the less representative a school in terms of FSM students:
+
+> Sch-LA FSM short % ~ Gender + LA FSM % + Region FSM % + Progress 8
+
+```{r stats_LA}
+### STATS
+lm(data = grms %>% ungroup() %>% filter(Year %in% max(grms$Year)), 
+   `Sch-LA FSM short %` ~ Gender + `LA FSM %` + `Region FSM %` + `Progress 8`) %>% 
+  summary() %>%
+  # tidy() %>%
+  tbl_regression() %>%
+  bold_p()  %>%
+  add_glance_table(include = c(nobs, r.squared))
+
+```
+
+```{r plt_FSM_LA_P8}
+### STATS
+ggplot(data = grms %>% ungroup() %>% filter(Year %in% max(grms$Year)),
+       aes(x=`Progress 8`, y=`Sch-LA FSM short %`)) +
+  geom_point(aes(size=`KS4 students`), alpha=0.4) +
+  geom_smooth(method = "lm") +
+  facet_wrap(Gender ~. ) +
+  theme(legend.position = "bottom")
 
 ```
