@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.3.450">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>MASTEMR - 06 Maths anxiety</title>
+<title>MASTEMR - 07 Chi-square tests</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,7 +127,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/06-ChisqPISA.html">06 Maths anxiety</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/06-ChisqPISA.html">07 Chi-square tests</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -167,7 +167,7 @@ div.csl-indent {
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">02 Intro to R</span></a>
+ <span class="menu-text">02 Introduction to R</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -176,32 +176,32 @@ div.csl-indent {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Introduction to R</span></a>
+ <span class="menu-text">Introduction to R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-2-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Loading packages and exploring data</span></a>
+ <span class="menu-text">Loading packages and exploring data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-3-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Piping and dplyr</span></a>
+ <span class="menu-text">Piping and dplyr</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Intro to graphs</span></a>
+ <span class="menu-text">Making graphs</span></a>
   </div>
 </li>
       </ul>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/03-Differing_performance_in_STEM_PISA.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/03-Descriptive.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">03 Descriptive Statistics</span></a>
   </div>
 </li>
@@ -220,19 +220,19 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">06 Maths anxiety</span></a>
+ <span class="menu-text">07 Chi-square tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/07-Inquiry_learning_in_science_RB_version.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07 Inquiry learning</span></a>
+  <a href="../chapters/07-T-testsPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 T-tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/08-Science_capital.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">08 Science capital</span></a>
+  <a href="../chapters/08-Writing_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08 Writing a quantitative report</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -243,7 +243,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/10-teachers_relationships_and_STEM_achievement.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/10-Correlation_and_regression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">10 Correlation and regression</span></a>
   </div>
 </li>
@@ -255,8 +255,8 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12-effective_international_STEM_ed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 Effective international STEM education</span></a>
+  <a href="../chapters/12-value_of_quant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 The value of quantitative methods</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -291,13 +291,19 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A3-TIMSS_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TIMSS</span></a>
+ <span class="menu-text">TIMSS, PIRLS and ICILS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A4-Other_datasets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Other datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A5-Self_Study_Tasks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix Self Study Tasks</span></a>
   </div>
 </li>
       </ul>
@@ -310,37 +316,58 @@ div.csl-indent {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#creating-contingency-tables" id="toc-creating-contingency-tables" class="nav-link active" data-scroll-target="#creating-contingency-tables"><span class="header-section-number">0.1</span> Creating contingency tables</a></li>
-  <li><a href="#hypothesis-testing-and-chi-square-goodness-of-fit-tests" id="toc-hypothesis-testing-and-chi-square-goodness-of-fit-tests" class="nav-link" data-scroll-target="#hypothesis-testing-and-chi-square-goodness-of-fit-tests"><span class="header-section-number">1</span> Hypothesis testing and Chi-square goodness of fit tests</a></li>
-  <li>
-<a href="#an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" id="toc-an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="nav-link" data-scroll-target="#an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050"><span class="header-section-number">2</span> An example: Does the disritbution of male and female students in the UK fit the expected pattern (50:50)?</a>
+<li>
+<a href="#pre-reading-and-pre-session-tasks" id="toc-pre-reading-and-pre-session-tasks" class="nav-link active" data-scroll-target="#pre-reading-and-pre-session-tasks"><span class="header-section-number">1</span> Pre-reading and pre-session tasks</a>
   <ul class="collapse">
-<li><a href="#loading-the-data" id="toc-loading-the-data" class="nav-link" data-scroll-target="#loading-the-data"><span class="header-section-number">2.1</span> Loading the data</a></li>
-  <li><a href="#performing-the-goodness-of-fit-test" id="toc-performing-the-goodness-of-fit-test" class="nav-link" data-scroll-target="#performing-the-goodness-of-fit-test"><span class="header-section-number">2.2</span> Performing the goodness of fit test</a></li>
-  <li><a href="#example---gender-distribution-in-the-pisa-sample" id="toc-example---gender-distribution-in-the-pisa-sample" class="nav-link" data-scroll-target="#example---gender-distribution-in-the-pisa-sample"><span class="header-section-number">2.3</span> Example - Gender distribution in the PISA sample</a></li>
+<li><a href="#pre-reading" id="toc-pre-reading" class="nav-link" data-scroll-target="#pre-reading"><span class="header-section-number">1.1</span> Pre-reading</a></li>
+  <li><a href="#pre-session-task---loading-the-data" id="toc-pre-session-task---loading-the-data" class="nav-link" data-scroll-target="#pre-session-task---loading-the-data"><span class="header-section-number">1.2</span> Pre-session task - Loading the data</a></li>
   </ul>
 </li>
-  <li><a href="#chi-square-test-of-independence" id="toc-chi-square-test-of-independence" class="nav-link" data-scroll-target="#chi-square-test-of-independence"><span class="header-section-number">3</span> Chi-square test of independence</a></li>
-  <li><a href="#plotting-the-chi-square-relationships" id="toc-plotting-the-chi-square-relationships" class="nav-link" data-scroll-target="#plotting-the-chi-square-relationships"><span class="header-section-number">4</span> Plotting the chi-square relationships</a></li>
-  <li><a href="#running-chi-square-tests-of-independence" id="toc-running-chi-square-tests-of-independence" class="nav-link" data-scroll-target="#running-chi-square-tests-of-independence"><span class="header-section-number">5</span> Running Chi square tests of independence</a></li>
+  <li>
+<a href="#chi-square-tests" id="toc-chi-square-tests" class="nav-link" data-scroll-target="#chi-square-tests"><span class="header-section-number">2</span> Chi-square tests</a>
+  <ul class="collapse">
+<li><a href="#assumptions-of-chi-square-tests" id="toc-assumptions-of-chi-square-tests" class="nav-link" data-scroll-target="#assumptions-of-chi-square-tests"><span class="header-section-number">2.1</span> Assumptions of Chi-square tests</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#performing-chi-square-tests" id="toc-performing-chi-square-tests" class="nav-link" data-scroll-target="#performing-chi-square-tests"><span class="header-section-number">3</span> Performing chi square tests</a>
+  <ul class="collapse">
+<li><a href="#creating-contingency-tables" id="toc-creating-contingency-tables" class="nav-link" data-scroll-target="#creating-contingency-tables"><span class="header-section-number">3.1</span> Creating contingency tables</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#hypothesis-testing-and-chi-square-goodness-of-fit-tests" id="toc-hypothesis-testing-and-chi-square-goodness-of-fit-tests" class="nav-link" data-scroll-target="#hypothesis-testing-and-chi-square-goodness-of-fit-tests"><span class="header-section-number">4</span> Hypothesis testing and Chi-square goodness of fit tests</a>
+  <ul class="collapse">
+<li><a href="#an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" id="toc-an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="nav-link" data-scroll-target="#an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050"><span class="header-section-number">4.1</span> An example: Does the disritbution of male and female students in the UK fit the expected pattern (50:50)?</a></li>
+  <li><a href="#an-example-gender-distribution-in-the-pisa-sample" id="toc-an-example-gender-distribution-in-the-pisa-sample" class="nav-link" data-scroll-target="#an-example-gender-distribution-in-the-pisa-sample"><span class="header-section-number">4.2</span> An example: Gender distribution in the PISA sample</a></li>
+  <li><a href="#chi-square-test-of-independence" id="toc-chi-square-test-of-independence" class="nav-link" data-scroll-target="#chi-square-test-of-independence"><span class="header-section-number">4.3</span> Chi-square test of independence</a></li>
+  <li><a href="#plotting-the-chi-square-relationships" id="toc-plotting-the-chi-square-relationships" class="nav-link" data-scroll-target="#plotting-the-chi-square-relationships"><span class="header-section-number">4.4</span> Plotting the chi-square relationships</a></li>
+  <li><a href="#running-chi-square-tests-of-independence" id="toc-running-chi-square-tests-of-independence" class="nav-link" data-scroll-target="#running-chi-square-tests-of-independence"><span class="header-section-number">4.5</span> Running Chi square tests of independence</a></li>
+  </ul>
+</li>
+  <li><a href="#testing-ordinal-data---the-kruskal-wallis-test" id="toc-testing-ordinal-data---the-kruskal-wallis-test" class="nav-link" data-scroll-target="#testing-ordinal-data---the-kruskal-wallis-test"><span class="header-section-number">5</span> Testing ordinal data - the Kruskal Wallis test</a></li>
   <li>
 <a href="#seminar-tasks" id="toc-seminar-tasks" class="nav-link" data-scroll-target="#seminar-tasks"><span class="header-section-number">6</span> Seminar Tasks</a>
   <ul class="collapse">
-<li><a href="#activity-1---creating-contingency-tables" id="toc-activity-1---creating-contingency-tables" class="nav-link" data-scroll-target="#activity-1---creating-contingency-tables"><span class="header-section-number">6.1</span> Activity 1 - Creating contingency tables</a></li>
-  <li><a href="#activity-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" id="toc-activity-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" class="nav-link" data-scroll-target="#activity-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations"><span class="header-section-number">6.2</span> Activity 2 - Goodness of fit test. Are the responses of the survey in proportion to populations?</a></li>
-  <li><a href="#activity-3---goodness-of-fit-test-birth-month-distribution" id="toc-activity-3---goodness-of-fit-test-birth-month-distribution" class="nav-link" data-scroll-target="#activity-3---goodness-of-fit-test-birth-month-distribution"><span class="header-section-number">6.3</span> Activity 3 - Goodness of fit test: Birth month distribution</a></li>
-  <li><a href="#activity-4---country-differences---hypothesis-testing" id="toc-activity-4---country-differences---hypothesis-testing" class="nav-link" data-scroll-target="#activity-4---country-differences---hypothesis-testing"><span class="header-section-number">6.4</span> Activity 4 - Country differences - hypothesis testing</a></li>
-  <li><a href="#testing-ordinal-data---the-kruskal-wallis-test" id="toc-testing-ordinal-data---the-kruskal-wallis-test" class="nav-link" data-scroll-target="#testing-ordinal-data---the-kruskal-wallis-test"><span class="header-section-number">6.5</span> Testing ordinal data - the Kruskal Wallis test</a></li>
-  <li><a href="#activity-5---testing-ordinal-data-with-the-kruskal-wallis-test" id="toc-activity-5---testing-ordinal-data-with-the-kruskal-wallis-test" class="nav-link" data-scroll-target="#activity-5---testing-ordinal-data-with-the-kruskal-wallis-test"><span class="header-section-number">6.6</span> Activity 5 - Testing ordinal data with the Kruskal-Wallis test</a></li>
+<li><a href="#task-1---creating-contingency-tables" id="toc-task-1---creating-contingency-tables" class="nav-link" data-scroll-target="#task-1---creating-contingency-tables"><span class="header-section-number">6.1</span> Task 1 - Creating contingency tables</a></li>
+  <li><a href="#task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" id="toc-task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" class="nav-link" data-scroll-target="#task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations"><span class="header-section-number">6.2</span> Task 2 - Goodness of fit test. Are the responses of the survey in proportion to populations?</a></li>
+  <li><a href="#task-3---goodness-of-fit-test-birth-month-distribution" id="toc-task-3---goodness-of-fit-test-birth-month-distribution" class="nav-link" data-scroll-target="#task-3---goodness-of-fit-test-birth-month-distribution"><span class="header-section-number">6.3</span> Task 3 - Goodness of fit test: Birth month distribution</a></li>
+  <li><a href="#task-4---country-differences---hypothesis-testing" id="toc-task-4---country-differences---hypothesis-testing" class="nav-link" data-scroll-target="#task-4---country-differences---hypothesis-testing"><span class="header-section-number">6.4</span> Task 4 - Country differences - hypothesis testing</a></li>
   </ul>
 </li>
-  <li><a href="#doing-chi-square-tests-in-r" id="toc-doing-chi-square-tests-in-r" class="nav-link" data-scroll-target="#doing-chi-square-tests-in-r"><span class="header-section-number">7</span> Doing Chi-Square tests in R</a></li>
+  <li><a href="#testing-ordinal-data-with-the-kruskal-wallis-test" id="toc-testing-ordinal-data-with-the-kruskal-wallis-test" class="nav-link" data-scroll-target="#testing-ordinal-data-with-the-kruskal-wallis-test"><span class="header-section-number">7</span> Testing ordinal data with the Kruskal-Wallis test</a></li>
+  <li>
+<a href="#extension-tasks" id="toc-extension-tasks" class="nav-link" data-scroll-target="#extension-tasks"><span class="header-section-number">8</span> Extension tasks</a>
+  <ul class="collapse">
+<li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources"><span class="header-section-number">8.1</span> Useful resources</a></li>
+  </ul>
+</li>
+  <li><a href="#doing-chi-square-tests-in-r" id="toc-doing-chi-square-tests-in-r" class="nav-link" data-scroll-target="#doing-chi-square-tests-in-r"><span class="header-section-number">9</span> Doing Chi-Square tests in R</a></li>
   </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">06 Maths anxiety</h1>
-<p class="subtitle lead">Chi-square</p>
+<h1 class="title">07 Chi-square tests</h1>
 </div>
 
 
@@ -353,19 +380,51 @@ div.csl-indent {
   </div>
   
 
-</header><p>Chi squared (<span class="math inline">\(\chi^2\)</span>) tests are <em>non-parametric</em> tests, this means that the test isn’t expecting the underlying data to be distributed in a certain way. Chi-squared determines how well the frequency distribution for a sample fits the population distribution and will let you know when things aren’t distributed as expected. For example you might expect girls and boys to have the same coloured dogs, a chi squared test can tell you whether the null hypothesis, that there is no difference between the colours of dogs owned by girls and boys, is true or not.</p>
-<p>In more mathematical terms, chi squared examines differences between the categories of an independent variable with respect to a dependent variable measured on a nominal (or categorical) scale. A nominal scale has values that aren’t ordered, or continuous, for example gender or favourite flavour of icecream.</p>
+</header><section id="pre-reading-and-pre-session-tasks" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Pre-reading and pre-session tasks</h1>
+<section id="pre-reading" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="pre-reading">
+<span class="header-section-number">1.1</span> Pre-reading</h2>
+</section><section id="pre-session-task---loading-the-data" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="pre-session-task---loading-the-data">
+<span class="header-section-number">1.2</span> Pre-session task - Loading the data</h2>
+<p>We will continue to use the PISA_2018 dataset, make sure it is loaded.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load PISA data</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_2018_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section><section id="chi-square-tests" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> Chi-square tests</h1>
+<p>Chi squared (<span class="math inline">\(\chi^2\)</span>) tests are <em>non-parametric</em> tests, this means that the test isn’t expecting the underlying data to be distributed in a certain way. Chi-squared determines how well the frequency distribution for a sample fits the population distribution and will let you know when things aren’t distributed as expected. For example you might expect girls and boys to have the same coloured dogs, a chi squared test can tell you whether the null hypothesis, that there is no difference between the colours of dogs owned by girls and boys, is true or not.</p>
+<p>In more mathematical terms, chi squared examines differences between the categories of an independent variable with respect to a dependent variable measured on a nominal (or categorical) scale. A nominal scale has values that aren’t ordered, or continuous, for example gender or favourite flavour of ice cream.</p>
 <p>Chi-square tests can be categorised in two groups:</p>
 <ul>
 <li><p><em>A test of goodness of fit</em> - this is a form of hypothesis test which determines whether a sample fits a wider population. For example, does the pattern of exam results in one school fit the national distribution?</p></li>
 <li><p><em>A test of independence</em> - allows inference to be made about whether two categorical variables in a population are related. For example, are there differences in the uptake of careers by gender?</p></li>
 </ul>
 <p>For more information on chi-square tests, see <a href="https://learningstatisticswithr.com/book/chisquare.html">chapter 12</a>, in Navaro’s Learning Statistics with R.</p>
-<section id="creating-contingency-tables" class="level2" data-number="0.1"><h2 data-number="0.1" class="anchored" data-anchor-id="creating-contingency-tables">
-<span class="header-section-number">0.1</span> Creating contingency tables</h2>
+<section id="assumptions-of-chi-square-tests" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="assumptions-of-chi-square-tests">
+<span class="header-section-number">2.1</span> Assumptions of Chi-square tests</h2>
+<p>Four assumptions need to be met in order to use a chi-square test: • The data (both variables) should be categorical (for ordinal data, see the section on Kruskal Wallis tests below). • All observations are independent • Cells in the contingency table (see below) are mutually exclusive • Expected values in each cell in the contingency table should be five or greater for more than 80% of cells.</p>
+<p>See <a href="https://learningstatisticswithr.com/book/chisquare.html#chisqassumptions">Section 12.5</a> in Navaro’s Learning Statistics with R</p>
+</section></section><section id="performing-chi-square-tests" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> Performing chi square tests</h1>
+<section id="creating-contingency-tables" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="creating-contingency-tables">
+<span class="header-section-number">3.1</span> Creating contingency tables</h2>
 <p>Chi-square calculations depend on contingency tables. A contingency table is a table that shows the frequency counts for two variables. We can use the <code>xtabs</code> function to create contingency tables in R.</p>
 <p>For example, imagine we want to create a contingency table for the number of boys and girls in the UK and US in the PISA sample. First we create a subset of the <code>PISA_2018</code> <code>data.frame</code> including country and gender, and <code>filter</code> for the two countries. We use the <code>xtabs</code> function to create the table. We pass the subset data (<code>UKUSgender</code>) to <code>xtabs</code> and indicate the columns and rows we want <code>~CNT + ST004D01T</code></p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Example contingency table</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>UKUSgender <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span> <span class="co"># Select gender and country variables</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United States"</span>) <span class="sc">%&gt;%</span> <span class="co"># Filter for  UK and the US</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a>ContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>UKUSgender, <span class="sc">~</span>CNT <span class="sc">+</span> ST004D01T)</span>
+<span id="cb2-9"><a href="#cb2-9"></a>ContTable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                ST004D01T
 CNT              Female Male
@@ -373,12 +432,12 @@ CNT              Female Male
   United States    2376 2462</code></pre>
 </div>
 </div>
-</section><section id="hypothesis-testing-and-chi-square-goodness-of-fit-tests" class="level1" data-number="1"><h1 data-number="1">
-<span class="header-section-number">1</span> Hypothesis testing and Chi-square goodness of fit tests</h1>
+</section></section><section id="hypothesis-testing-and-chi-square-goodness-of-fit-tests" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> Hypothesis testing and Chi-square goodness of fit tests</h1>
 <p>If we want to determine if a sample categorical data matches the pattern of a whole population we can use a Chi-square goodness of fit test. The test is a form of hypothesis testing.</p>
 <p>Hypothesis testing is one type of statistical analysis. A researcher states an assumption that they want to test.</p>
 <p>For example, they might want to examine whether the distribution of boys and girls in the UK matches the expected distribution of 50:50.</p>
-<p>A researcher typically proposes a null hypothesis - that is that there is no difference in groups. Whilst this is typical practice, and we will follow it in this course, researchers have pointed out that it is rare for the null hypothesis to be true, which impacts the validity of the test (see: <span class="citation" data-cites="cohen1994">(<a href="#ref-cohen1994" role="doc-biblioref"><strong>cohen1994?</strong></a>)</span>) . Nonetheless, we will adopt the practice here, as it is a widely used approach.</p>
+<p>A researcher typically proposes a null hypothesis - that is that there is no difference in groups. Whilst this is typical practice, and we will follow it in this course, researchers have pointed out that it is rare for the null hypothesis to be true, which impacts the validity of the test (see: <span class="citation" data-cites="cohen1994earth">Cohen (<a href="#ref-cohen1994earth" role="doc-biblioref">1994</a>)</span>) . Nonetheless, we will adopt the practice here, as it is a widely used approach.</p>
 <p>Our null hypothesis then is:</p>
 <p><em>There is no difference in the distribution of boys and girls in the UK and a random sample of 50/50 girls and boys</em>.</p>
 <p>Notice the ‘goodness of fit’ element - we are checking if some categorical data from a sample population (the UK) fits an expected pattern.</p>
@@ -402,21 +461,64 @@ Tip
 <p>See <span class="citation" data-cites="baker2016statisticians">Baker (<a href="#ref-baker2016statisticians" role="doc-biblioref">2016</a>)</span> for further discussion of how to interpret p-values.</p>
 </div>
 </div>
-</section><section id="an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="level1" data-number="2"><h1 data-number="2">
-<span class="header-section-number">2</span> An example: Does the disritbution of male and female students in the UK fit the expected pattern (50:50)?</h1>
-<section id="loading-the-data" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="loading-the-data">
-<span class="header-section-number">2.1</span> Loading the data</h2>
-<p>We will continue to use the PISA_2018 dataset, make sure it is loaded.</p>
-</section><section id="performing-the-goodness-of-fit-test" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="performing-the-goodness-of-fit-test">
-<span class="header-section-number">2.2</span> Performing the goodness of fit test</h2>
+<section id="an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050">
+<span class="header-section-number">4.1</span> An example: Does the disritbution of male and female students in the UK fit the expected pattern (50:50)?</h2>
 <p>To perform the goodness of fit test, we make a subset <code>dataframe</code> of the UK data including the <code>ST004D01T</code> (gender variable).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Perform a chi-square goodness of fit test on categorical data related to gender in the UK</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>UKPISAgender<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">select</span>(CNT, ST004D01T)<span class="sc">%&gt;%</span> <span class="co"># Select gender and country variables</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for the UK</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a>GenderContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>UKPISAgender,<span class="sc">~</span>CNT <span class="sc">+</span> ST004D01T)</span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>The outcome of the chi squared test returns a p-value = 0.1388. This is greater than 0.05, suggesting we reject the null hypothesis, and the numbers of boys and girls in the UK sample does not match a 50:50 distribution.</p>
-</section><section id="example---gender-distribution-in-the-pisa-sample" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="example---gender-distribution-in-the-pisa-sample">
-<span class="header-section-number">2.3</span> Example - Gender distribution in the PISA sample</h2>
+</section><section id="an-example-gender-distribution-in-the-pisa-sample" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="an-example-gender-distribution-in-the-pisa-sample">
+<span class="header-section-number">4.2</span> An example: Gender distribution in the PISA sample</h2>
 <div class="question">
 <ol type="a">
 <li>Should we accept or reject the hypothesis that the populations of boys and girls in the United States, Japan and China are 50:50?</li>
 </ol>
+<div class="cell">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Perform a chi-square goodness of fit test on categorical data related to gender in the US, Japan and China</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>USPISAgender<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">select</span>(CNT, ST004D01T)<span class="sc">%&gt;%</span> <span class="co"># Select gender and country variables</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United States"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for the US</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a>GenderContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>USPISAgender,<span class="sc">~</span>CNT <span class="sc">+</span> ST004D01T)</span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="cb5-11"><a href="#cb5-11"></a></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="co"># In the US, population of M:F differs from 50:50 p= 0.2163, reject null hypothesis of equality.</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a></span>
+<span id="cb5-14"><a href="#cb5-14"></a>JPNPISAgender<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a>  <span class="fu">select</span>(CNT, ST004D01T)<span class="sc">%&gt;%</span> <span class="co"># Select gender and country variables</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"Japan"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for the Japan</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a></span>
+<span id="cb5-19"><a href="#cb5-19"></a>GenderContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>JPNPISAgender,<span class="sc">~</span>CNT <span class="sc">+</span> ST004D01T)</span>
+<span id="cb5-20"><a href="#cb5-20"></a></span>
+<span id="cb5-21"><a href="#cb5-21"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="cb5-22"><a href="#cb5-22"></a></span>
+<span id="cb5-23"><a href="#cb5-23"></a><span class="co"># In Japan, population of M:F differs from 50:50 p= 0.09373, reject null hypothesis of equality.</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a></span>
+<span id="cb5-25"><a href="#cb5-25"></a>ChinaPISAgender<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb5-26"><a href="#cb5-26"></a>  <span class="fu">select</span>(CNT, ST004D01T)<span class="sc">%&gt;%</span> <span class="co"># Select gender and country variables</span></span>
+<span id="cb5-27"><a href="#cb5-27"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for China</span></span>
+<span id="cb5-28"><a href="#cb5-28"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb5-29"><a href="#cb5-29"></a></span>
+<span id="cb5-30"><a href="#cb5-30"></a>GenderFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>ChinaPISAgender,<span class="sc">~</span>CNT <span class="sc">+</span> ST004D01T)</span>
+<span id="cb5-31"><a href="#cb5-31"></a></span>
+<span id="cb5-32"><a href="#cb5-32"></a><span class="fu">chisq.test</span>(GenderFreqTable, <span class="at">p=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="cb5-33"><a href="#cb5-33"></a><span class="co"># In China, population of M:F is 50:50 p= 3.724e-06, accept null hypothesis of equality.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -431,37 +533,141 @@ Tip
 <p>R uses standard form: an output of p= 3.724e-06, represents, p=3.724x10<sup>-6</sup>, or p=0.0000003724.</p>
 </div>
 </div>
-</section></section><section id="chi-square-test-of-independence" class="level1" data-number="3"><h1 data-number="3">
-<span class="header-section-number">3</span> Chi-square test of independence</h1>
+</section><section id="chi-square-test-of-independence" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="chi-square-test-of-independence">
+<span class="header-section-number">4.3</span> Chi-square test of independence</h2>
 <p>Goodness of fit tests can be useful, but they rely on knowing the expected distribution (for example, assuming a 50:50 distribution of boys and girls).</p>
 <p>An alternative ways of using a Chi-square test, is the test of independence. This approach determines whether two categorical variables in a sample are related.</p>
 <p>For example, a categorical variable in the same is item - <code>ST011Q04TA</code> - is there a a quiet place to study in the home? Which can be responded to with ‘yes’ or ‘no’ (or <code>&lt;NA&gt;</code>).</p>
 <p>We might want to see if students in the UK respond to this question in the same way as the rest of the sample. That is, are students in the UK just as likely to have a quiet place to study as their international peers.</p>
 <p>A simple first attempt is to create frequency tables for the UK and the rest of the sample and examine the responses.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Produce tables of counts of having a quiet room for the UK and the rest of the sample</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>QuiRoom<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">select</span>(ST011Q04TA)<span class="sc">%&gt;%</span> <span class="co"># Select quiet room</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a>QuiFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>QuiRoom,<span class="sc">~</span>ST011Q04TA)</span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="fu">print</span>(QuiFreqTable)</span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a>UKQuiRoom<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">select</span>(CNT, ST011Q04TA)<span class="sc">%&gt;%</span> <span class="co"># Select quiet room and country variables</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for the UK</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a>UKQuiFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>UKQuiRoom,<span class="sc">~</span>ST011Q04TA)</span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="fu">print</span>(UKQuiFreqTable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>From the data, it is hard to tell if the UK is different from the overall pattern. To make things easier, we can use <code>mutate</code> to add a percentage column to aid comparison.</p>
-</section><section id="plotting-the-chi-square-relationships" class="level1" data-number="4"><h1 data-number="4">
-<span class="header-section-number">4</span> Plotting the chi-square relationships</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Produce tables of counts of having a quiet room for the UK and the rest of the sample</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>QuiRoom<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">select</span>(ST011Q04TA)<span class="sc">%&gt;%</span> <span class="co"># Select quiet room</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a>QuiFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>QuiRoom,<span class="sc">~</span>ST011Q04TA)</span>
+<span id="cb7-8"><a href="#cb7-8"></a>QuiFreqTable<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(QuiFreqTable)</span>
+<span id="cb7-9"><a href="#cb7-9"></a>Total<span class="ot">=</span><span class="fu">sum</span>(QuiFreqTable<span class="sc">$</span>Freq) <span class="co"># Find the total count</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>QuiFreqTable<span class="ot">&lt;-</span>QuiFreqTable<span class="sc">%&gt;%</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">mutate</span>(<span class="at">Perc=</span>(Freq<span class="sc">*</span><span class="dv">100</span>)<span class="sc">/</span>Total) <span class="co"># Mutate the table to calculate the percentage</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="fu">print</span>(QuiFreqTable)</span>
+<span id="cb7-13"><a href="#cb7-13"></a></span>
+<span id="cb7-14"><a href="#cb7-14"></a>UKQuiRoom<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">select</span>(CNT, ST011Q04TA)<span class="sc">%&gt;%</span> <span class="co"># Select quiet room and country variables</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for the UK</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a></span>
+<span id="cb7-19"><a href="#cb7-19"></a>UKQuiFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>UKQuiRoom,<span class="sc">~</span>ST011Q04TA)</span>
+<span id="cb7-20"><a href="#cb7-20"></a>UKQuiFreqTable<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(UKQuiFreqTable)</span>
+<span id="cb7-21"><a href="#cb7-21"></a>Total<span class="ot">=</span><span class="fu">sum</span>(UKQuiFreqTable<span class="sc">$</span>Freq) <span class="co"># Find the total count</span></span>
+<span id="cb7-22"><a href="#cb7-22"></a>UKQuiFreqTable<span class="ot">&lt;-</span>UKQuiFreqTable<span class="sc">%&gt;%</span></span>
+<span id="cb7-23"><a href="#cb7-23"></a>  <span class="fu">mutate</span>(<span class="at">Perc=</span>(Freq<span class="sc">*</span><span class="dv">100</span>)<span class="sc">/</span>Total)  <span class="co"># Mutate the table to calculate the percentage</span></span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="fu">print</span>(UKQuiFreqTable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="plotting-the-chi-square-relationships" class="level2" data-number="4.4"><h2 data-number="4.4" class="anchored" data-anchor-id="plotting-the-chi-square-relationships">
+<span class="header-section-number">4.4</span> Plotting the chi-square relationships</h2>
 <p>The numbers in the contingency table are hard to interpret - it is challenging to see how far out the numbers for each row are from each other. Alternatively, we can visualise the data from the contingency table by building a mosaic plot, a form of stacked bar chart. Mosaic plots can be a useful visulations before running a chi-squared test.</p>
 <p>To create a mosaic plot, you are going to need to install and load the <code>ggmosaic</code> package. See <strong>?@sec-load-run-pckges</strong> for more details on how to do this.</p>
 <p>Imagine we want to plot the ‘quiet room’ data (<code>ST011Q04TA</code>) from the previous section for the UK, US, and Brazil</p>
 <p>To create the mosaic plot we use <code>ggplot</code>, as we used for previous graphs. As before, we first pass the data (in this case <code>QuiRoom</code>) to <code>ggplot</code>. Then, to create the graph, <code>geom_mosaic</code> is used. <code>geom_mosaic</code> does not have a direct mapping of input to x and y variable so we need to pass it what we want plotted on the y-axis (<code>ST011Q04TA</code>) and x-axis (<code>CNT</code>) within the <code>product</code> function (<code>product(ST011Q04TA, CNT)</code>). We can also specify how we want the rectangles to be coloured (in our case, by <code>CNT</code>).</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a> <span class="co"># install.packages("ggmosaic")</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(ggmosaic)</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a>QuiRoom<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">select</span>(ST011Q04TA, CNT)<span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"Brazil"</span><span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"United States"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">droplevels</span>()</span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="co"># plot results</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="fu">ggplot</span>(<span class="at">data =</span> QuiRoom) <span class="sc">+</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST011Q04TA, CNT), <span class="at">fill=</span>CNT))<span class="sc">+</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>)<span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">ylab</span>(<span class="st">"Do you have a quiet room to work in?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="06-ChisqPISA_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section><section id="running-chi-square-tests-of-independence" class="level1" data-number="5"><h1 data-number="5">
-<span class="header-section-number">5</span> Running Chi square tests of independence</h1>
+</section><section id="running-chi-square-tests-of-independence" class="level2" data-number="4.5"><h2 data-number="4.5" class="anchored" data-anchor-id="running-chi-square-tests-of-independence">
+<span class="header-section-number">4.5</span> Running Chi square tests of independence</h2>
 <p>The mosaic plot suggests the availability of quiet rooms is different between the UK and Brazil, but the difference is only small between the UK and the US. Simply looking at the data does not tell us if the distributions are different - a Chi-square tests of independence can report the significance level, which can help us make a judgement.</p>
 <p>The null hypothesis in a test of independence is that the categorial variables are not related. So in the case of comparing the UK and Brazil the null hypothesis is: ‘There is no relationship between the country (UK or Brazil) and availability of a quiet room’.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Produce tables of counts of having a quiet room for the UK and the rest of the sample</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a>BraUKQuiRoom<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">select</span>(ST011Q04TA, CNT)<span class="sc">%&gt;%</span> <span class="co"># Select quiet room</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"Brazil"</span><span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for Brazil and UK</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a></span>
+<span id="cb9-8"><a href="#cb9-8"></a>BraUKQuiFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="sc">~</span>ST011Q04TA<span class="sc">+</span>CNT, <span class="at">data=</span>BraUKQuiRoom)</span>
+<span id="cb9-9"><a href="#cb9-9"></a></span>
+<span id="cb9-10"><a href="#cb9-10"></a>UKUSQuiRoom<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a>  <span class="fu">select</span>(CNT, ST011Q04TA)<span class="sc">%&gt;%</span> <span class="co"># Select quiet room and country variables</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United States"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for the UK</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a></span>
+<span id="cb9-15"><a href="#cb9-15"></a>UKUSQuiFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="sc">~</span>ST011Q04TA<span class="sc">+</span>CNT, <span class="at">data=</span>UKUSQuiRoom)</span>
+<span id="cb9-16"><a href="#cb9-16"></a></span>
+<span id="cb9-17"><a href="#cb9-17"></a><span class="co"># Perform Chisq test between UK and Brazil</span></span>
+<span id="cb9-18"><a href="#cb9-18"></a><span class="fu">chisq.test</span>(BraUKQuiFreqTable)</span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="co"># p-value &lt; 2.2e-16, less than 0.05, so there are signifcant differences by UK and Brazil, the null hypothesis is rejected</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a><span class="co"># Perform Chisq test between UK and US</span></span>
+<span id="cb9-21"><a href="#cb9-21"></a><span class="fu">chisq.test</span>(UKUSQuiFreqTable)</span>
+<span id="cb9-22"><a href="#cb9-22"></a><span class="co"># p-value = 1.924e-15 less than 0.05, so there are signifcant differences by UK and Brazil, the null hypothesis is rejected</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>The test here returns a p-value=1. This is more than 0.05 so implies there is a the null hypothesis can be accepted. The null hypothesis is that and it is assumed that the availability of quiet rooms in the UK is different from the population as a whole.</p>
+</section></section><section id="testing-ordinal-data---the-kruskal-wallis-test" class="level1" data-number="5"><h1 data-number="5">
+<span class="header-section-number">5</span> Testing ordinal data - the Kruskal Wallis test</h1>
+<p>An assumption of a chi-square test is that the data are categorical. Some of the items in the PISA are a type of categorical data which come in naturally ordered sequence - ordinal data. For example, gender is a categorical variable with no preferred order to responses: female or male. By contrast, the answer to a question: How many books do you have in your home? 0-10; 11-100; 101-200; More than 200, is ordinal data.</p>
+<p>Though there is some debate among statisticians, but if testing ordinal data, it is recommend you use an alternative to the chi-square test, the Kruskal Wallis test, which functions in a similar manner. It is called using the <code>kruskal.test</code> function. Unlike the chi square test, you pass it the raw data, rather than a contingency table.</p>
+<p>For example,<code>ST012Q02TA</code> asks students to report the number of cars in their home, ordinal data. To carry out the Kruskal Wallis on differences in car ownership in the UK by gender we create a <code>data.frame</code> of responses to <code>ST012Q02TA</code> in the UK by gender. Unlike the chi square test, there is no need to create a contingency table and we just pass the data frame to <code>kruskal.test</code>, specifiying we want to compare number of cars (<code>ST012Q02TA</code>) to gender (<code>ST004D01T</code>): <code>kruskal.test(data=CarsUKGender,ST012Q02TA~ST004D01T)</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>CarsUKGender<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">select</span>(CNT, ST004D01T,ST012Q02TA )<span class="sc">%&gt;%</span> <span class="co"># choose country, no of cars and gender</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span> <span class="co"># filter for the UK</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">select</span>(ST004D01T,ST012Q02TA )<span class="sc">%&gt;%</span> <span class="co">#drop the country variable now filtering is done</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="co"># Make the contingency table</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="fu">kruskal.test</span>(<span class="at">data=</span>CarsUKGender,ST012Q02TA<span class="sc">~</span>ST004D01T) <span class="co"># Perform the test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Kruskal-Wallis rank sum test
+
+data:  ST012Q02TA by ST004D01T
+Kruskal-Wallis chi-squared = 1.8514, df = 1, p-value = 0.1736</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># The p-value is more than 0.05 (p-value=0.1763), therefore we accept the null hypothesis that the number of cars is the same for boys and girls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section><section id="seminar-tasks" class="level1" data-number="6"><h1 data-number="6">
 <span class="header-section-number">6</span> Seminar Tasks</h1>
-<section id="activity-1---creating-contingency-tables" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="activity-1---creating-contingency-tables">
-<span class="header-section-number">6.1</span> Activity 1 - Creating contingency tables</h2>
+<section id="task-1---creating-contingency-tables" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="task-1---creating-contingency-tables">
+<span class="header-section-number">6.1</span> Task 1 - Creating contingency tables</h2>
 <div class="question">
 <ol type="a">
-<li>Create a contingency table for UK, Germany and France levels of maternal education (<code>ST005Q01TA</code>). in which countries are most mothers (in total) education to post school level?</li>
+<li>Create a contingency table for UK, Germany and France levels of maternal education (<code>ST005Q01TA</code>). In which countries are most mothers (in total) educated to post school level?</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -487,7 +693,16 @@ Tip
 </div>
 </div>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Create contingency table of mother's level of education</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a>MatEd<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">select</span>(CNT, ST005Q01TA)<span class="sc">%&gt;%</span> <span class="co"># Select maternal ed and country variables</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"France"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"Germany"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for CNT</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a></span>
+<span id="cb13-8"><a href="#cb13-8"></a>ContTab<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="sc">~</span>ST005Q01TA <span class="sc">+</span>CNT, <span class="at">data=</span>MatEd)</span>
+<span id="cb13-9"><a href="#cb13-9"></a>ContTab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>                                     CNT
 ST005Q01TA                            Germany France United Kingdom
   ISCED level 3A                         1590   3501           6024
@@ -496,23 +711,38 @@ ST005Q01TA                            Germany France United Kingdom
   ISCED level 1                            14     91             92
   She did not complete  ISCED level 1     233    159            100</code></pre>
 </div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># The country with the highest number of level 3A mothers is the UK</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ol start="2" type="a">
 <li>
 <code>ST011Q01TA</code> asks if students have a desk to study at. Create a contingency table by gender for this variable for students in the UK. Do more girls or boys have a desk?</li>
 </ol>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Create contingency table of having a desk to study at</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a>DeskUK <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">select</span>(CNT, ST011Q01TA, ST004D01T) <span class="sc">%&gt;%</span> <span class="co"># Select desk and country variables</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span> <span class="co"># Filter for the UK</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a></span>
+<span id="cb16-8"><a href="#cb16-8"></a>ContTab<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="sc">~</span>ST011Q01TA <span class="sc">+</span> ST004D01T, <span class="at">data=</span>DeskUK)</span>
+<span id="cb16-9"><a href="#cb16-9"></a></span>
+<span id="cb16-10"><a href="#cb16-10"></a>ContTab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>          ST004D01T
 ST011Q01TA Female Male
        Yes   5968 5728
        No     763  745</code></pre>
 </div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># More girls have a desk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ol start="3" type="a">
 <li>
 <code>ST011Q06TA</code> asks if students have access to the internet. In which country in the dataset do students report the highest levels of access to the internet?</li>
 </ol>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -524,67 +754,37 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p>To sort a table, the easiest way is to convert it to a dataframe and then use the <code>arrange</code> function. The default order for arrange is ascending, adding <code>desc</code> switches to descending.</p>
-</div>
-</div>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Arranging a table</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a></span>
+<span id="cb19-3"><a href="#cb19-3"></a>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">select</span>(CNT, ST011Q06TA) <span class="sc">%&gt;%</span> <span class="co"># Select internet and country variables</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">filter</span>(ST011Q06TA <span class="sc">==</span> <span class="st">"Yes"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-6"><a href="#cb19-6"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>          CNT
-ST011Q06TA Albania United Arab Emirates Argentina Australia Austria Belgium
-       Yes    5059                17616      9871     12547    6598    8295
-       No     1084                  949      1781       289     137      81
-          CNT
-ST011Q06TA Bulgaria Bosnia and Herzegovina Belarus Brazil Brunei Darussalam
-       Yes     4923                   6084    5668   9392              5347
-       No       128                    232      83    937              1274
-          CNT
-ST011Q06TA Canada Switzerland Chile Colombia Costa Rica Czech Republic Germany
-       Yes  21116        5669  6735     5110       5974           6864    4623
-       No     382          62   712     2025       1160             58      98
-          CNT
-ST011Q06TA Denmark Dominican Republic Spain Estonia Finland France
-       Yes    7424               4162 34663    5173    5548   6027
-       No       33               1137   708      27      20    176
-          CNT
-ST011Q06TA United Kingdom Georgia Greece Hong Kong Croatia Hungary Indonesia
-       Yes          13126    5031   6067      5728    6499    5018      6297
-       No             136     319    247       133      57      62      5557
-          CNT
-ST011Q06TA Ireland Iceland Israel Italy Jordan Japan Kazakhstan Korea Kosovo
-       Yes    5469    3199   5475 11127   7227  5777      17511  6441   4494
-       No       63      19    207   364   1463   292       1700   168    351
-          CNT
-ST011Q06TA Lebanon Lithuania Luxembourg Latvia Macao Morocco Moldova Mexico
-       Yes    4543      6687       5010   5156  3726    3364    4848   4632
-       No      820        83        164     51    45    2912     347   1809
-          CNT
-ST011Q06TA North Macedonia Malta Montenegro Malaysia Netherlands Norway
-       Yes            5246  3212       6234     4628        4616   5582
-       No               68    77        297     1398          56     43
-          CNT
-ST011Q06TA New Zealand Panama  Peru Philippines Poland Portugal Qatar
-       Yes        5888   3801  3444        3342   5540     5530 12613
-       No          149   1731  2540        3538     36      111   657
-          CNT
-ST011Q06TA Baku (Azerbaijan) B-S-J-Z (China) Moscow Region (RUS)
-       Yes              5538           11286                1960
-       No                904             683                  21
-          CNT
-ST011Q06TA Tatarstan (RUS) Romania Russian Federation Saudi Arabia Singapore
-       Yes            5609    4784               7285         5625      6530
-       No               59     173                112          258       114
-          CNT
-ST011Q06TA Serbia Slovak Republic Slovenia Sweden Chinese Taipei Thailand
-       Yes   6347            5734     6269   5333           6837     7301
-       No     138             111       45     55            325     1261
-          CNT
-ST011Q06TA Turkey Ukraine Uruguay United States Vietnam
-       Yes   5158    5775    4328          4586    4109
-       No    1642     126     616           180    1237</code></pre>
+<pre><code># A tibble: 80 × 2
+# Groups:   CNT [80]
+   CNT                      n
+   &lt;fct&gt;                &lt;int&gt;
+ 1 Spain                34663
+ 2 Canada               21116
+ 3 United Arab Emirates 17616
+ 4 Kazakhstan           17511
+ 5 United Kingdom       13126
+ 6 Qatar                12613
+ 7 Australia            12547
+ 8 B-S-J-Z (China)      11286
+ 9 Italy                11127
+10 Argentina             9871
+# ℹ 70 more rows</code></pre>
 </div>
 </div>
 </div>
-</section><section id="activity-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="activity-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations">
-<span class="header-section-number">6.2</span> Activity 2 - Goodness of fit test. Are the responses of the survey in proportion to populations?</h2>
+</div>
+</section><section id="task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations">
+<span class="header-section-number">6.2</span> Task 2 - Goodness of fit test. Are the responses of the survey in proportion to populations?</h2>
 <div class="question">
 <p>The populations of three countries in the sample are:</p>
 <table class="table">
@@ -614,8 +814,21 @@ ST011Q06TA Turkey Ukraine Uruguay United States Vietnam
 <p>Are the number of responses in the sample a good fit for the overall populations?</p>
 <p>Use a goodness of fit implementation of Chi square with the null hypothesis that the proportion of students in the sample of PISA match that of the overall population. <strong>Hint</strong>: You can use the <code>CNT</code> column to create counts of the total dataset.</p>
 </div>
-</section><section id="activity-3---goodness-of-fit-test-birth-month-distribution" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="activity-3---goodness-of-fit-test-birth-month-distribution">
-<span class="header-section-number">6.3</span> Activity 3 - Goodness of fit test: Birth month distribution</h2>
+<div class="cell">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>Subset <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">select</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United States"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"Germany"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">droplevels</span>()</span>
+<span id="cb21-5"><a href="#cb21-5"></a></span>
+<span id="cb21-6"><a href="#cb21-6"></a>CNTcount <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(Subset))</span>
+<span id="cb21-7"><a href="#cb21-7"></a></span>
+<span id="cb21-8"><a href="#cb21-8"></a><span class="fu">chisq.test</span>(CNTcount<span class="sc">$</span>Freq, <span class="at">p=</span><span class="fu">c</span>(<span class="fl">0.17</span>, <span class="fl">0.14</span>, <span class="fl">0.69</span>))</span>
+<span id="cb21-9"><a href="#cb21-9"></a></span>
+<span id="cb21-10"><a href="#cb21-10"></a><span class="co"># The UK has many more responses that expected by proportion of its size.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="task-3---goodness-of-fit-test-birth-month-distribution" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="task-3---goodness-of-fit-test-birth-month-distribution">
+<span class="header-section-number">6.3</span> Task 3 - Goodness of fit test: Birth month distribution</h2>
 <div class="question">
 <p>Perform a goodness of fit test to determine if the birth months (<code>ST003D02T</code>) of respondents are distributed as expected in</p>
 <ol type="a">
@@ -624,8 +837,46 @@ ST011Q06TA Turkey Ukraine Uruguay United States Vietnam
 <li>What might explain any patterns you see.</li>
 </ol>
 </div>
-</section><section id="activity-4---country-differences---hypothesis-testing" class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="activity-4---country-differences---hypothesis-testing">
-<span class="header-section-number">6.4</span> Activity 4 - Country differences - hypothesis testing</h2>
+<div class="cell">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>Worldmonth <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">select</span>(ST003D02T) <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">droplevels</span>()</span>
+<span id="cb22-4"><a href="#cb22-4"></a></span>
+<span id="cb22-5"><a href="#cb22-5"></a>Worldmonth <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(Worldmonth))</span>
+<span id="cb22-6"><a href="#cb22-6"></a></span>
+<span id="cb22-7"><a href="#cb22-7"></a>Expected <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">times=</span><span class="dv">12</span>))</span>
+<span id="cb22-8"><a href="#cb22-8"></a></span>
+<span id="cb22-9"><a href="#cb22-9"></a><span class="fu">chisq.test</span>(Worldmonth<span class="sc">$</span>Freq, <span class="at">p=</span>Expected)</span>
+<span id="cb22-10"><a href="#cb22-10"></a></span>
+<span id="cb22-11"><a href="#cb22-11"></a><span class="co"># p-value &lt; 2.2e-16, which is less than 0.05, reject the null hypothesis.The world data does not follow the expect distribution</span></span>
+<span id="cb22-12"><a href="#cb22-12"></a></span>
+<span id="cb22-13"><a href="#cb22-13"></a>UKmonth <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb22-14"><a href="#cb22-14"></a>  <span class="fu">select</span>(ST003D02T, CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb22-15"><a href="#cb22-15"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-16"><a href="#cb22-16"></a>  <span class="fu">select</span>(ST003D02T) <span class="sc">%&gt;%</span></span>
+<span id="cb22-17"><a href="#cb22-17"></a>  <span class="fu">droplevels</span>()</span>
+<span id="cb22-18"><a href="#cb22-18"></a></span>
+<span id="cb22-19"><a href="#cb22-19"></a>UKmonth <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(UKmonth))</span>
+<span id="cb22-20"><a href="#cb22-20"></a></span>
+<span id="cb22-21"><a href="#cb22-21"></a>Expected <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">times=</span><span class="dv">12</span>))</span>
+<span id="cb22-22"><a href="#cb22-22"></a></span>
+<span id="cb22-23"><a href="#cb22-23"></a><span class="fu">chisq.test</span>(UKmonth<span class="sc">$</span>Freq, <span class="at">p=</span>Expected)</span>
+<span id="cb22-24"><a href="#cb22-24"></a></span>
+<span id="cb22-25"><a href="#cb22-25"></a><span class="co"># p-value &lt; 2.2e-16, which is less than 0.05, reject the null hypothesis.The world data does not follow the expect distribution</span></span>
+<span id="cb22-26"><a href="#cb22-26"></a></span>
+<span id="cb22-27"><a href="#cb22-27"></a><span class="fu">ggplot</span>(<span class="at">data=</span>Worldmonth,</span>
+<span id="cb22-28"><a href="#cb22-28"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ST003D02T, <span class="at">y=</span>Freq, <span class="at">fill=</span>ST003D02T)) <span class="sc">+</span></span>
+<span id="cb22-29"><a href="#cb22-29"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb22-30"><a href="#cb22-30"></a>  <span class="fu">ggtitle</span>(<span class="st">"World birth months"</span>)</span>
+<span id="cb22-31"><a href="#cb22-31"></a></span>
+<span id="cb22-32"><a href="#cb22-32"></a><span class="fu">ggplot</span>(<span class="at">data=</span>UKmonth,</span>
+<span id="cb22-33"><a href="#cb22-33"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ST003D02T,<span class="at">y=</span>Freq, <span class="at">fill=</span>ST003D02T)) <span class="sc">+</span></span>
+<span id="cb22-34"><a href="#cb22-34"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb22-35"><a href="#cb22-35"></a>  <span class="fu">ggtitle</span>(<span class="st">"UK birth months"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="task-4---country-differences---hypothesis-testing" class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="task-4---country-differences---hypothesis-testing">
+<span class="header-section-number">6.4</span> Task 4 - Country differences - hypothesis testing</h2>
 <div class="question">
 <p>Perform a hypothesis test to determine:</p>
 <ol type="a">
@@ -633,11 +884,44 @@ ST011Q06TA Turkey Ukraine Uruguay United States Vietnam
 <code>ISCEDO</code> contains information about the type of school students attend - responses can be: General, Pre-Vocational, Vocational or Modular. Determine if the attendance at such schools is equivalent in the United Kingdom, United States, France, and Germany.</li>
 </ol>
 <p>Plot a mosaic plot of the proportions</p>
+<div class="cell">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>SchTypes <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">select</span>(CNT, ISCEDO) <span class="sc">%&gt;%</span> <span class="co"># choose country and type of school</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United States"</span><span class="sc">|</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>           CNT<span class="sc">==</span> <span class="st">"France"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"Germany"</span>)<span class="sc">%&gt;%</span> <span class="co"># filter by four countries</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a></span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="co"># Create a contingency table</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a>SchCont<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>SchTypes, <span class="sc">~</span>ISCEDO<span class="sc">+</span>CNT)</span>
+<span id="cb23-9"><a href="#cb23-9"></a></span>
+<span id="cb23-10"><a href="#cb23-10"></a><span class="fu">chisq.test</span>(SchCont) <span class="co"># Perform the test</span></span>
+<span id="cb23-11"><a href="#cb23-11"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis that the distributions are the same</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a></span>
+<span id="cb23-13"><a href="#cb23-13"></a><span class="fu">ggplot</span>(<span class="at">data=</span>SchTypes) <span class="sc">+</span></span>
+<span id="cb23-14"><a href="#cb23-14"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">product</span>(ISCEDO,CNT), <span class="at">fill=</span>ISCEDO))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </div>
 <div class="question">
 <ol start="2" type="a">
 <li>Are there significant differences between Japan, Greece and the UK in <code>IC001Q01TA</code>, Available for you to use at home: Desktop computer? (Yes or No). Produce a mosaic plot.</li>
 </ol>
+<div class="cell">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>Desktop <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">select</span>(CNT, IC001Q01TA) <span class="sc">%&gt;%</span> <span class="co"># choose country and use of computer</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"Japan"</span><span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"Greece"</span>) <span class="sc">%&gt;%</span> <span class="co"># filter by countries</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="co"># Produce a contingency table</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>ContDesk <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">data=</span>Desktop, <span class="sc">~</span>CNT<span class="sc">+</span>IC001Q01TA)</span>
+<span id="cb24-8"><a href="#cb24-8"></a></span>
+<span id="cb24-9"><a href="#cb24-9"></a><span class="fu">chisq.test</span>(ContDesk) <span class="co"># Perform the test</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis that the distributions are the same</span></span>
+<span id="cb24-11"><a href="#cb24-11"></a></span>
+<span id="cb24-12"><a href="#cb24-12"></a><span class="fu">ggplot</span>(<span class="at">data=</span>Desktop) <span class="sc">+</span></span>
+<span id="cb24-13"><a href="#cb24-13"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">product</span>(IC001Q01TA,CNT), <span class="at">fill=</span>IC001Q01TA))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </div>
 <div class="question">
 <p>Perform a hypothesis test to determine if <code>ST007Q01TA</code> - the highest level of schooling completed by respondents’ fathers, is different in the UK, US, France and Germany.</p>
@@ -656,106 +940,222 @@ Tip
 <p>Hint: assume the null hypothesis is that fathers have the same level of qualifications in the four countries.</p>
 </div>
 </div>
-</div>
-</section><section id="testing-ordinal-data---the-kruskal-wallis-test" class="level2" data-number="6.5"><h2 data-number="6.5" class="anchored" data-anchor-id="testing-ordinal-data---the-kruskal-wallis-test">
-<span class="header-section-number">6.5</span> Testing ordinal data - the Kruskal Wallis test</h2>
-<p>An assumption of a chi-square test is that the data are categorical. Some of the items in the PISA are a type of categorical data which come in naturally ordered sequence - ordinal data. For example, gender is a categorical variable with no preferred order to responses: female or male. By contrast, the answer to a question: How many books do you have in your home? 0-10; 11-100; 101-200; More than 200, is ordinal data.</p>
-<p>Though there is some debate among statisticians, but if testing ordinal data, it is recommend you use an alternative to the chi-square test, the Kruskal Wallis test, which functions in a similar manner. It is called using the <code>kruskal.test</code> function. Unlike the chi square test, you pass it the raw data, rather than a contingency table.</p>
-<p>For example,<code>ST012Q02TA</code> asks students to report the number of cars in their home, ordinal data. To carry out the Kruskal Wallis on differences in car ownership in the UK by gender we create a <code>data.frame</code> of responses to <code>ST012Q02TA</code> in the UK by gender. Unlike the chi square test, there is no need to create a contingency table and we just pass the data frame to <code>kruskal.test</code>, specifiying we want to compare number of cars (<code>ST012Q02TA</code>) to gender (<code>ST004D01T</code>): <code>kruskal.test(data=CarsUKGender,ST012Q02TA~ST004D01T)</code></p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Kruskal-Wallis rank sum test
-
-data:  ST012Q02TA by ST004D01T
-Kruskal-Wallis chi-squared = 1.8514, df = 1, p-value = 0.1736</code></pre>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>PatEdTypes<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">select</span>(CNT, ST007Q01TA)<span class="sc">%&gt;%</span> <span class="co"># choose country and type of school</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United States"</span><span class="sc">|</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>           CNT<span class="sc">==</span> <span class="st">"France"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"Germany"</span>)<span class="sc">%&gt;%</span> <span class="co"># filter by four countries</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a></span>
+<span id="cb25-7"><a href="#cb25-7"></a>Conttable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>PatEdTypes,<span class="sc">~</span>CNT,ST007Q01TA)</span>
+<span id="cb25-8"><a href="#cb25-8"></a><span class="fu">chisq.test</span>(Conttable) <span class="co"># Perform the test</span></span>
+<span id="cb25-9"><a href="#cb25-9"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis that the distributions are the same</span></span>
+<span id="cb25-10"><a href="#cb25-10"></a></span>
+<span id="cb25-11"><a href="#cb25-11"></a><span class="co"># Create a geom_mosaic</span></span>
+<span id="cb25-12"><a href="#cb25-12"></a><span class="fu">ggplot</span>(<span class="at">data=</span>PatEdTypes)<span class="sc">+</span></span>
+<span id="cb25-13"><a href="#cb25-13"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">product</span>(ST007Q01TA,CNT), <span class="at">fill=</span>ST007Q01TA))<span class="sc">+</span></span>
+<span id="cb25-14"><a href="#cb25-14"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency of father's level of qualification"</span>)<span class="sc">+</span></span>
+<span id="cb25-15"><a href="#cb25-15"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>)<span class="sc">+</span></span>
+<span id="cb25-16"><a href="#cb25-16"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="co"># Rotate x-axis labels</span></span>
+<span id="cb25-17"><a href="#cb25-17"></a></span>
+<span id="cb25-18"><a href="#cb25-18"></a><span class="co"># Follow up Question</span></span>
+<span id="cb25-19"><a href="#cb25-19"></a></span>
+<span id="cb25-20"><a href="#cb25-20"></a>PatEdTypes<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb25-21"><a href="#cb25-21"></a>  <span class="fu">select</span>(CNT, ST007Q01TA)<span class="sc">%&gt;%</span> <span class="co"># choose country and type of school</span></span>
+<span id="cb25-22"><a href="#cb25-22"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span> <span class="st">"France"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"Germany"</span>)<span class="sc">%&gt;%</span> </span>
+<span id="cb25-23"><a href="#cb25-23"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb25-24"><a href="#cb25-24"></a></span>
+<span id="cb25-25"><a href="#cb25-25"></a>Conttable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>PatEdTypes,<span class="sc">~</span>CNT,ST007Q01TA)</span>
+<span id="cb25-26"><a href="#cb25-26"></a><span class="fu">chisq.test</span>(Conttable) <span class="co"># Perform the test</span></span>
+<span id="cb25-27"><a href="#cb25-27"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis that the distributions are the same</span></span>
+<span id="cb25-28"><a href="#cb25-28"></a></span>
+<span id="cb25-29"><a href="#cb25-29"></a><span class="co"># Create a geom_mosaic</span></span>
+<span id="cb25-30"><a href="#cb25-30"></a><span class="fu">ggplot</span>(<span class="at">data=</span>PatEdTypes)<span class="sc">+</span></span>
+<span id="cb25-31"><a href="#cb25-31"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">product</span>(ST007Q01TA,CNT), <span class="at">fill=</span>ST007Q01TA))<span class="sc">+</span></span>
+<span id="cb25-32"><a href="#cb25-32"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency of father's level of qualification"</span>)<span class="sc">+</span></span>
+<span id="cb25-33"><a href="#cb25-33"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>)<span class="sc">+</span></span>
+<span id="cb25-34"><a href="#cb25-34"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="co"># Rotate x-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
-</section><section id="activity-5---testing-ordinal-data-with-the-kruskal-wallis-test" class="level2" data-number="6.6"><h2 data-number="6.6" class="anchored" data-anchor-id="activity-5---testing-ordinal-data-with-the-kruskal-wallis-test">
-<span class="header-section-number">6.6</span> Activity 5 - Testing ordinal data with the Kruskal-Wallis test</h2>
+</section></section><section id="testing-ordinal-data-with-the-kruskal-wallis-test" class="level1" data-number="7"><h1 data-number="7">
+<span class="header-section-number">7</span> Testing ordinal data with the Kruskal-Wallis test</h1>
 <div class="question">
-<p>Are there differences in the number of books in the home<code>ST013Q01TA</code> in the UK and the United States?</p>
+<p>Are there differences in the number of books in the home<code>ST013Q01TA</code> in the UK and the United States? Create a mosaic plot</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>UKUSbooks<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">select</span>(CNT, ST013Q01TA )<span class="sc">%&gt;%</span> <span class="co"># choose country and no of books</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United States"</span>)<span class="sc">%&gt;%</span> <span class="co"># filter for the UK and US</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="fu">kruskal.test</span>(<span class="at">data=</span>UKUSbooks,ST013Q01TA<span class="sc">~</span>CNT) <span class="co"># Perform the test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Kruskal-Wallis rank sum test
 
 data:  ST013Q01TA by CNT
 Kruskal-Wallis chi-squared = 149.18, df = 1, p-value &lt; 2.2e-16</code></pre>
 </div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># The p-value is more than 0.05 (p-value=1), therefore we accept the null hypothesis that the number of books is the same for respondents in the UK and the US</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="co"># Create a geom_mosaic</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="fu">ggplot</span>(<span class="at">data=</span>UKUSbooks)<span class="sc">+</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">product</span>(ST013Q01TA,CNT), <span class="at">fill=</span>ST013Q01TA))<span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a>  <span class="fu">ylab</span>(<span class="st">"Number of books in the home"</span>)<span class="sc">+</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>)<span class="sc">+</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="co"># Rotate x-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="06-ChisqPISA_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
 </div>
-<p>In the UK, are there differences for boys and girls for the number of instruments in the home (<code>ST012Q09NA</code>)?</p>
+</div>
+<p>In the UK, are there differences for boys and girls for the number of instruments in the home (<code>ST012Q09NA</code>)? Create a mosaic plot.</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>UKInstruments<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">select</span>(CNT, ST012Q09NA, ST004D01T )<span class="sc">%&gt;%</span> <span class="co"># choose CNT, no of instruments, gender</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span> <span class="co"># filter for the UK</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">select</span>(ST012Q09NA, ST004D01T)<span class="sc">%&gt;%</span> <span class="co">#drop the country variable now filtering is done</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a><span class="co"># Make the contingency table</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="fu">kruskal.test</span>(UKInstruments,ST012Q09NA <span class="sc">~</span>ST004D01T) <span class="co"># Perform the test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Kruskal-Wallis rank sum test
 
 data:  UKInstruments
 Kruskal-Wallis chi-squared = 21197, df = 1, p-value &lt; 2.2e-16</code></pre>
 </div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis. Girls and boys have different access to instruments in the home.</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a></span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="co"># Create a geom_mosaic</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a><span class="fu">ggplot</span>(<span class="at">data=</span>UKInstruments)<span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">product</span>(ST012Q09NA,ST004D01T), <span class="at">fill=</span>ST012Q09NA))<span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>  <span class="fu">ylab</span>(<span class="st">"Number of instruments in the home for UK young people"</span>)<span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a>  <span class="fu">xlab</span>(<span class="st">"Gender"</span>)<span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="co"># Rotate x-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="06-ChisqPISA_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>
-<p>In the UK, are there differences for boys and girls in the number of smart phones in the home (<code>ST012Q05NA</code>)?</p>
+</div>
+<p>In the UK, are there differences for boys and girls in the number of smart phones in the home (<code>ST012Q05NA</code>)? Plot the data as a mosaic plot.</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>UKPhones<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">select</span>(CNT, ST012Q05NA, ST004D01T )<span class="sc">%&gt;%</span> <span class="co"># choose CNT, no of instruments, gender</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span> <span class="co"># filter for the UK</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a>  <span class="fu">select</span>(ST012Q05NA, ST004D01T)<span class="sc">%&gt;%</span> <span class="co">#drop the country variable now filtering is done</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a><span class="co"># Make the contingency table</span></span>
+<span id="cb32-7"><a href="#cb32-7"></a><span class="fu">kruskal.test</span>(UKPhones,ST012Q05NA <span class="sc">~</span>ST004D01T) <span class="co"># Perform the test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Kruskal-Wallis rank sum test
 
 data:  UKPhones
 Kruskal-Wallis chi-squared = 23239, df = 1, p-value &lt; 2.2e-16</code></pre>
 </div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis. Girls and boys have different access to phones in the home.</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a></span>
+<span id="cb34-3"><a href="#cb34-3"></a><span class="co"># Create a geom_mosaic</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a><span class="fu">ggplot</span>(<span class="at">data=</span>UKPhones)<span class="sc">+</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">product</span>(ST012Q05NA,ST004D01T), <span class="at">fill=</span>ST012Q05NA))<span class="sc">+</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">ylab</span>(<span class="st">"Number of phones in the home for UK young people"</span>)<span class="sc">+</span></span>
+<span id="cb34-7"><a href="#cb34-7"></a>  <span class="fu">xlab</span>(<span class="st">"Gender"</span>)<span class="sc">+</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="co"># Rotate x-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="06-ChisqPISA_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section></section><section id="doing-chi-square-tests-in-r" class="level1" data-number="7"><h1 data-number="7">
-<span class="header-section-number">7</span> Doing Chi-Square tests in R</h1>
+</div>
+</section><section id="extension-tasks" class="level1" data-number="8"><h1 data-number="8">
+<span class="header-section-number">8</span> Extension tasks</h1>
+<p>Whilst chi-square tests are useful for reporting whether there are significant differences between the distribution of values in a contingency table, they don’t, by themselves tell you which cells in the contingency table differ from the expected values. To find out this information, you can do a post-hoc analysis. For example, if we want to consider if there are differences in the distribution of school types (<code>ISCEDO</code> - i.e general, vocational, etc) we create a subset of PISA data for the the UK, US, France and Germany (<code>PISAsub</code>), create a contingency table, plot the data, and perform the <code>chisq.test</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>PISAsub<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">select</span>(CNT, ISCEDO)<span class="sc">%&gt;%</span> <span class="co"># choose country and type of school</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"United Kingdom"</span>, <span class="st">"United States"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>))<span class="sc">%&gt;%</span> <span class="co"># filter by four countries</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb35-5"><a href="#cb35-5"></a></span>
+<span id="cb35-6"><a href="#cb35-6"></a>ContTab<span class="ot">&lt;-</span>(<span class="fu">xtabs</span>(<span class="sc">~</span>CNT <span class="sc">+</span> ISCEDO, PISAsub)) <span class="co"># Create contingency table by CNT and school type</span></span>
+<span id="cb35-7"><a href="#cb35-7"></a></span>
+<span id="cb35-8"><a href="#cb35-8"></a><span class="fu">ggplot</span>(<span class="at">data=</span>PISAsub)<span class="sc">+</span></span>
+<span id="cb35-9"><a href="#cb35-9"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">product</span>(ISCEDO, CNT), <span class="at">fill=</span>ISCEDO))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="06-ChisqPISA_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">chisq.test</span>(ContTab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  ContTab
+X-squared = 4281.8, df = 6, p-value &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">chisq.posthoc.test</span>(ContTab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Dimension     Value    General Pre-Vocational Vocational
+1   Germany Residuals   8.654495      -2.485784  -8.333644
+2   Germany  p values   0.000000       0.155120   0.000000
+3    France Residuals -65.021954      26.206030  58.987616
+ [ reached 'max' / getOption("max.print") -- omitted 5 rows ]</code></pre>
+</div>
+</div>
+<p>In this case, the chi square test returns a p-value &lt; 2.2e-16 suggesting significant differences between the countries.We can use the package <code>chisq.posthoc.test</code> to use the function <code>chisq.posthoc.test</code> to perform the additional test.</p>
+<p>The posthoc test returns a table of residuals and p-values for each cell in the contingency table The residuals give a sense how much each cell contributes to the total chi-squared value. The right most column (<code>Pr(&gt;Chi)</code>) reports whether this deviation is statistically significant. All the values are &lt;0.05, except for pre-vocational schools in Germany.</p>
+<section id="useful-resources" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="useful-resources">
+<span class="header-section-number">8.1</span> Useful resources</h2>
+</section></section><section id="doing-chi-square-tests-in-r" class="level1" data-number="9"><h1 data-number="9">
+<span class="header-section-number">9</span> Doing Chi-Square tests in R</h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qnZX0G1M29E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>You can find the code used in the video below</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Introduction to Chi-square</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="co">#</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="co"># Download data from /Users/k1765032/Library/CloudStorage/GoogleDrive-richardandrewbrock@gmail.com/.shortcut-targets-by-id/1c3CkaEBOICzepArDfjQUP34W2BYhFjM4/PISR/Data/PISA/subset/Students_2018_RBDP_none_levels.rds</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># You want the file: Students_2018_RBDP_none_levels.rds</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="co"># and place in your own file system</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="co"># change loc to load the data directly. Loading into R might take a few minutes</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a></span>
-<span id="cb9-8"><a href="#cb9-8"></a>loc <span class="ot">&lt;-</span> <span class="st">"https://drive.google.com/open?id=14pL2Bz677Kk5_nn9BTmEuuUGY9S09bDb&amp;authuser=richardandrewbrock%40gmail.com&amp;usp=drive_fs"</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(loc)</span>
-<span id="cb9-10"><a href="#cb9-10"></a></span>
-<span id="cb9-11"><a href="#cb9-11"></a><span class="co"># Are there differences between how often students change school?</span></span>
-<span id="cb9-12"><a href="#cb9-12"></a><span class="co"># ST004D01T is the gender variable (Male, Female)</span></span>
-<span id="cb9-13"><a href="#cb9-13"></a><span class="co"># SCCHANGE is a categorical variable (No change / One change / Two or more changes)</span></span>
-<span id="cb9-14"><a href="#cb9-14"></a></span>
-<span id="cb9-15"><a href="#cb9-15"></a>chidata <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb9-16"><a href="#cb9-16"></a>  <span class="fu">select</span>(CNT,ST004D01T,SCCHANGE) <span class="sc">%&gt;%</span></span>
-<span id="cb9-17"><a href="#cb9-17"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb9-18"><a href="#cb9-18"></a></span>
-<span id="cb9-19"><a href="#cb9-19"></a>chidata<span class="ot">&lt;-</span>chidata[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
-<span id="cb9-20"><a href="#cb9-20"></a>chidata<span class="ot">&lt;-</span><span class="fu">drop_na</span>(chidata)</span>
-<span id="cb9-21"><a href="#cb9-21"></a></span>
-<span id="cb9-22"><a href="#cb9-22"></a> chidata <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb9-23"><a href="#cb9-23"></a>   <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb9-24"><a href="#cb9-24"></a>   <span class="fu">select</span>(ST004D01T,SCCHANGE) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-25"><a href="#cb9-25"></a>   <span class="fu">drop_na</span>()</span>
-<span id="cb9-26"><a href="#cb9-26"></a><span class="co"># Above is the approiach I took in the video</span></span>
-<span id="cb9-27"><a href="#cb9-27"></a><span class="co"># An alternative, Pete suggests, which is more elegant, is below</span></span>
-<span id="cb9-28"><a href="#cb9-28"></a><span class="co"># Note he drops the country varibale, within the piped section</span></span>
-<span id="cb9-29"><a href="#cb9-29"></a><span class="co"># using: elect(-CNT)</span></span>
-<span id="cb9-30"><a href="#cb9-30"></a><span class="co">#    </span></span>
-<span id="cb9-31"><a href="#cb9-31"></a><span class="co"># chidata &lt;- PISA_2018 %&gt;%</span></span>
-<span id="cb9-32"><a href="#cb9-32"></a><span class="co">#   select(CNT,ST004D01T,SCCHANGE) %&gt;%</span></span>
-<span id="cb9-33"><a href="#cb9-33"></a><span class="co">#   filter(CNT=="United Kingdom") %&gt;%</span></span>
-<span id="cb9-34"><a href="#cb9-34"></a><span class="co">#   select(-CNT) %&gt;% </span></span>
-<span id="cb9-35"><a href="#cb9-35"></a><span class="co">#   drop_na()</span></span>
-<span id="cb9-36"><a href="#cb9-36"></a></span>
-<span id="cb9-37"><a href="#cb9-37"></a><span class="co"># run the test</span></span>
-<span id="cb9-38"><a href="#cb9-38"></a><span class="fu">chisq.test</span>(chidata<span class="sc">$</span>ST004D01T, chidata<span class="sc">$</span>SCCHANGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Introduction to Chi-square</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="co">#</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a><span class="co"># Download data from /Users/k1765032/Library/CloudStorage/GoogleDrive-richardandrewbrock@gmail.com/.shortcut-targets-by-id/1c3CkaEBOICzepArDfjQUP34W2BYhFjM4/PISR/Data/PISA/subset/Students_2018_RBDP_none_levels.rds</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="co"># You want the file: Students_2018_RBDP_none_levels.rds</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a><span class="co"># and place in your own file system</span></span>
+<span id="cb40-6"><a href="#cb40-6"></a><span class="co"># change loc to load the data directly. Loading into R might take a few minutes</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a></span>
+<span id="cb40-8"><a href="#cb40-8"></a>loc <span class="ot">&lt;-</span> <span class="st">"https://drive.google.com/open?id=14pL2Bz677Kk5_nn9BTmEuuUGY9S09bDb&amp;authuser=richardandrewbrock%40gmail.com&amp;usp=drive_fs"</span></span>
+<span id="cb40-9"><a href="#cb40-9"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(loc)</span>
+<span id="cb40-10"><a href="#cb40-10"></a></span>
+<span id="cb40-11"><a href="#cb40-11"></a><span class="co"># Are there differences between how often students change school?</span></span>
+<span id="cb40-12"><a href="#cb40-12"></a><span class="co"># ST004D01T is the gender variable (Male, Female)</span></span>
+<span id="cb40-13"><a href="#cb40-13"></a><span class="co"># SCCHANGE is a categorical variable (No change / One change / Two or more changes)</span></span>
+<span id="cb40-14"><a href="#cb40-14"></a></span>
+<span id="cb40-15"><a href="#cb40-15"></a>chidata <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb40-16"><a href="#cb40-16"></a>  <span class="fu">select</span>(CNT,ST004D01T,SCCHANGE) <span class="sc">%&gt;%</span></span>
+<span id="cb40-17"><a href="#cb40-17"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb40-18"><a href="#cb40-18"></a></span>
+<span id="cb40-19"><a href="#cb40-19"></a>chidata<span class="ot">&lt;-</span>chidata[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
+<span id="cb40-20"><a href="#cb40-20"></a>chidata<span class="ot">&lt;-</span><span class="fu">drop_na</span>(chidata)</span>
+<span id="cb40-21"><a href="#cb40-21"></a></span>
+<span id="cb40-22"><a href="#cb40-22"></a> chidata <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb40-23"><a href="#cb40-23"></a>   <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb40-24"><a href="#cb40-24"></a>   <span class="fu">select</span>(ST004D01T,SCCHANGE) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-25"><a href="#cb40-25"></a>   <span class="fu">drop_na</span>()</span>
+<span id="cb40-26"><a href="#cb40-26"></a><span class="co"># Above is the approiach I took in the video</span></span>
+<span id="cb40-27"><a href="#cb40-27"></a><span class="co"># An alternative, Pete suggests, which is more elegant, is below</span></span>
+<span id="cb40-28"><a href="#cb40-28"></a><span class="co"># Note he drops the country varibale, within the piped section</span></span>
+<span id="cb40-29"><a href="#cb40-29"></a><span class="co"># using: elect(-CNT)</span></span>
+<span id="cb40-30"><a href="#cb40-30"></a><span class="co">#    </span></span>
+<span id="cb40-31"><a href="#cb40-31"></a><span class="co"># chidata &lt;- PISA_2018 %&gt;%</span></span>
+<span id="cb40-32"><a href="#cb40-32"></a><span class="co">#   select(CNT,ST004D01T,SCCHANGE) %&gt;%</span></span>
+<span id="cb40-33"><a href="#cb40-33"></a><span class="co">#   filter(CNT=="United Kingdom") %&gt;%</span></span>
+<span id="cb40-34"><a href="#cb40-34"></a><span class="co">#   select(-CNT) %&gt;% </span></span>
+<span id="cb40-35"><a href="#cb40-35"></a><span class="co">#   drop_na()</span></span>
+<span id="cb40-36"><a href="#cb40-36"></a></span>
+<span id="cb40-37"><a href="#cb40-37"></a><span class="co"># run the test</span></span>
+<span id="cb40-38"><a href="#cb40-38"></a><span class="fu">chisq.test</span>(chidata<span class="sc">$</span>ST004D01T, chidata<span class="sc">$</span>SCCHANGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
 
 </section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-baker2016statisticians" class="csl-entry" role="listitem">
-Baker, M. 2016. <span>“Statisticians Issue Warning over Misuse of p Values. Nature 531 (March (7593)), 151.”</span>
+Baker, M. 2016. <span>“Statisticians Issue Warning over Misuse of p Values.”</span> <em>Nature</em>.
+</div>
+<div id="ref-cohen1994earth" class="csl-entry" role="listitem">
+Cohen, Jacob. 1994. <span>“The Earth Is Round (p&lt;. 05).”</span> <em>American Psychologist</em> 49 (12): 997.
 </div>
 </div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
