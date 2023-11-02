@@ -316,12 +316,22 @@ lm(data = grms %>% ungroup() %>% filter(Year %in% max(grms$Year)),
 
 ```{r plt_FSM_P8}
 ### STATS
-ggplot(data = grms %>% ungroup() %>% filter(Year %in% max(grms$Year)),
-       aes(x=`Progress 8`, y=`Sch FSM %`)) +
+
+grm_data <- grms %>% 
+               ungroup() %>% 
+               filter(Year %in% max(grms$Year)) %>%
+               mutate(`Sch FSM %` = round(`Sch FSM %`,2))
+
+plot <- ggplot(data = grm_data,
+       aes(x=`Progress 8`, y=`Sch FSM %`, group=name)) +
   geom_point(aes(size=`KS4 students`), alpha=0.4) +
-  geom_smooth(method = "lm") +
+  geom_smooth(data=grm_data,
+              aes(x=`Progress 8`, y=`Sch FSM %`, group=NULL),
+              method = "lm") +
   facet_wrap(Gender ~. ) +
   theme(legend.position = "bottom")
+
+ggplotly(plot)
 
 ```
 
@@ -331,6 +341,7 @@ We can also look at the shortfall in FSM places in a school through `Sch-LA FSM 
 
 ```{r stats_LA}
 ### STATS
+
 lm(data = grms %>% ungroup() %>% filter(Year %in% max(grms$Year)), 
    `Sch-LA FSM short %` ~ Gender + `LA FSM %` + `Region FSM %` + `Progress 8`) %>% 
   summary() %>%
@@ -343,11 +354,21 @@ lm(data = grms %>% ungroup() %>% filter(Year %in% max(grms$Year)),
 
 ```{r plt_FSM_LA_P8}
 ### STATS
-ggplot(data = grms %>% ungroup() %>% filter(Year %in% max(grms$Year)),
-       aes(x=`Progress 8`, y=`Sch-LA FSM short %`)) +
+
+grm_data <- grms %>% 
+               ungroup() %>% 
+               filter(Year %in% max(grms$Year)) %>%
+               mutate(`Sch-LA FSM short %` = round(`Sch-LA FSM short %`,2))
+
+plot <- ggplot(data = grm_data,
+       aes(x=`Progress 8`, y=`Sch-LA FSM short %`, group=name)) +
   geom_point(aes(size=`KS4 students`), alpha=0.4) +
-  geom_smooth(method = "lm") +
+  geom_smooth(data=grm_data,
+              aes(x=`Progress 8`, y=`Sch-LA FSM short %`, group=NULL),
+              method = "lm") +
   facet_wrap(Gender ~. ) +
   theme(legend.position = "bottom")
+
+ggplotly(plot)
 
 ```
