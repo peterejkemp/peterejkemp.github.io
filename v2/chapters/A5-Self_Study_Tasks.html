@@ -200,18 +200,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">06 T-tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07 Chi-square tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/08-Writing_report.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">08 Writing a quantitative report</span></a>
   </div>
@@ -513,12 +501,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">select</span>(ST004D01T,ISCEDO)<span class="sc">%&gt;%</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">==</span><span class="st">"Male"</span><span class="sc">|</span>ST004D01T<span class="sc">==</span><span class="st">"Female"</span>)<span class="sc">%&gt;%</span></span>
 <span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">filter</span>(ISCEDO<span class="sc">==</span><span class="st">"General"</span><span class="sc">|</span>ISCEDO<span class="sc">==</span><span class="st">"Vocational"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb11-6"><a href="#cb11-6"></a></span>
-<span id="cb11-7"><a href="#cb11-7"></a><span class="fu">install.packages</span>(<span class="st">"ggmosaic"</span>)</span>
-<span id="cb11-8"><a href="#cb11-8"></a><span class="fu">library</span>(ggmosaic)</span>
-<span id="cb11-9"><a href="#cb11-9"></a><span class="fu">ggplot</span>(Genderschool)<span class="sc">+</span></span>
-<span id="cb11-10"><a href="#cb11-10"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">product</span>(ST004D01T,ISCEDO), <span class="at">fill=</span>ISCEDO))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">na.omit</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">droplevels</span>()</span>
+<span id="cb11-7"><a href="#cb11-7"></a></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="fu">install.packages</span>(<span class="st">"ggmosaic"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="fu">library</span>(ggmosaic)</span>
+<span id="cb11-10"><a href="#cb11-10"></a><span class="fu">ggplot</span>(Genderschool)<span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">product</span>(ST004D01T,ISCEDO), <span class="at">fill=</span>ISCEDO))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <p><img src="A5-Self_Study_Tasks_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -551,7 +540,7 @@ sample estimates:
 mean of x mean of y 
  496.7440  473.1427 </code></pre>
 </div>
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># p-value is &lt; 2.2e-16 so signficant differences exist for maths</span></span>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># p-value is &lt; 2.2e-16 so significant differences exist for maths</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a><span class="fu">t.test</span>(UKscores<span class="sc">$</span>PV1READ, USscores<span class="sc">$</span>PV1READ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
@@ -566,7 +555,7 @@ sample estimates:
 mean of x mean of y 
  500.4976  500.1502 </code></pre>
 </div>
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># p-value = 0.8442 so no signficant differences exist for reading</span></span>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># p-value = 0.8442 so no significant differences exist for reading</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="fu">t.test</span>(UKscores<span class="sc">$</span>PV1SCIE, USscores<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
@@ -581,7 +570,7 @@ sample estimates:
 mean of x mean of y 
  495.2457  497.2772 </code></pre>
 </div>
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># p-value = 0.2124 so no signficant differences exist for reading</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># p-value = 0.2124 so no significant differences exist for reading</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>

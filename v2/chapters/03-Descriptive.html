@@ -219,18 +219,6 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">06 T-tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07 Chi-square tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/08-Writing_report.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">08 Writing a quantitative report</span></a>
   </div>
@@ -617,24 +605,24 @@ Tip
 </div>
 <p>A useful function is <code>table</code> which creates a summary table of the counts of unique entries in a dataframe. For example, we might want to know how many schools of different types (General, Pre-Vocational, Vocational, Modular) there are in the PISA dataset for the UK.</p>
 <p>We have met the <code>filter</code> function which subsets a table by rows. In the example below, we will use <code>select</code> which creates a subset of a table by columns. For example, if I want to create the table of school type by country, we need only include two columns from the PISA_2018 dataset, country (<code>CNT</code>) and schooltype (<code>ISCEDO</code>). We use the command <code>select</code> to focus on those two: <code>select(CNT, ISCEDO)</code>.</p>
-<p>To create a summary table, intuitively, we use the <code>table</code> function. There are two additional actions we need to do. First, because we piped the whole <code>PISA_2018</code> dataset, if we apply <code>table</code>, even though we have filtered by the UK, the dataset retains levels for all the other countries. If we don’t remove these levels, we will get a large dataset with many zero entries for the countries we have filtered out. The function <code><a href="https://rdrr.io/r/base/droplevels.html">droplevels()</a></code> removes the levels for other countries. Finally, the output of <code>table</code> is a datatype called (appropriately) a table. Dataframes are more easily maniuplated so we convert the table into a dataframe using <code>as.data.frame(table(SchoolType))</code></p>
+<p>To create a summary table, intuitively, we use the <code>table</code> function. There are two additional actions we need to do. First, because we piped the whole <code>PISA_2018</code> dataset, if we apply <code>table</code>, even though we have filtered by the UK, the dataset retains levels for all the other countries. If we don’t remove these levels, we will get a large dataset with many zero entries for the countries we have filtered out. The function <code><a href="https://rdrr.io/r/base/droplevels.html">droplevels()</a></code> removes the levels for other countries (i.e.&nbsp;everything other than the United Kingdom). Finally, the output of <code>table</code> is a datatype called (appropriately) a table. Dataframes are more easily maniuplated so we convert the table into a dataframe using <code>as.data.frame(table(SchoolType))</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Creating a summary dataframe</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>SchoolType<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span> <span class="co"># Create a new dataframe, SchoolType, and pipe PISA_2018</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter by the UK</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">select</span>(CNT, ISCEDO)<span class="sc">%&gt;%</span> <span class="co"># Choose the columns of interest</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">droplevels</span>() <span class="co"># Ignore countires we are not interested in</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>SchoolType <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="co"># Create a new dataframe, SchoolType, and pipe PISA_2018</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span><span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span> <span class="co"># Filter by the UK</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">select</span>(CNT, ISCEDO) <span class="sc">%&gt;%</span> <span class="co"># Choose the columns of interest</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">droplevels</span>() <span class="co"># Ignore countries we are not interested in</span></span>
 <span id="cb15-6"><a href="#cb15-6"></a></span>
-<span id="cb15-7"><a href="#cb15-7"></a>SchoolTypeSummary<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(SchoolType))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-7"><a href="#cb15-7"></a>SchoolTypeSummary <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(SchoolType))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can open the <code>SchoolTypeSummary</code> dataframe and see the summary data. <code>Table</code> has created a new column <code>Freq</code> which stores the results of the counts.</p>
 <p>It might now be intersting to now what percentage the counts of school types represent. To achieve that, first we create a variable that is the total number of schools (to calculate the percentage) -this variable is <code>total</code> and we perform a simple sum on the count column - <code>SchoolTypeSummary$Freq</code>.</p>
-<p>We then use the <code>mutate</code> function. <code>mutate</code> allows you to add a new column to a table. You pipe the dataframe to <code>mutate</code>, and begin by giving the name of the new column you want, in this case the percentage of schools of each type, I will call this PerSch <code>mutate(PerSch=</code>. Then I set the value of that column to the percentage calculation: <code>Freq*100/total)</code>. The Frequency count for each column will be multiplied by 100 and divided by the total.</p>
+<p>We then use the <code>mutate</code> function. <code>mutate</code> allows you to add a new column to a table. You pipe the dataframe to <code>mutate</code>, and begin by giving the name of the new column you want, in this case the percentage of schools of each type, I will call this PerSch <code>mutate(PerSch=</code>. Then I set the value of that column to the percentage calculation: <code>100*(Freq/total)</code>. The Frequency count for each column will be multiplied by 100 and divided by the total.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Adding a percentage column</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>total<span class="ot">=</span><span class="fu">sum</span>(SchoolTypeSummary<span class="sc">$</span>Freq)</span>
-<span id="cb16-3"><a href="#cb16-3"></a>SchoolTypeSummary<span class="sc">%&gt;%</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">mutate</span>(<span class="at">PerSch=</span>Freq<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span>total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-2"><a href="#cb16-2"></a>total <span class="ot">&lt;-</span> <span class="fu">sum</span>(SchoolTypeSummary<span class="sc">$</span>Freq)</span>
+<span id="cb16-3"><a href="#cb16-3"></a>SchoolTypeSummary <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">mutate</span>(<span class="at">PerSch=</span><span class="dv">100</span><span class="sc">*</span>(Freq<span class="sc">/</span>total))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             CNT         ISCEDO  Freq      PerSch
 1 United Kingdom        General 13762 99.59473151
@@ -642,6 +630,7 @@ Tip
 3 United Kingdom     Vocational    46  0.33289912</code></pre>
 </div>
 </div>
+<p>We can also get the same result by using the <code>sum</code> function inside <code>mutate.</code> Here <code>PerSch</code> is calculated for each row, taking the <code>Freq</code> value for that row and dividing it by the <code>sum</code> of <code>Freq</code> for all rows, i.e.&nbsp;calculating the percentage:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -652,12 +641,12 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can use the <code>round`` function to display a given number of decimal places. Here, I have used</code>round( ,2)` to limit the percentage calculation to two significant figures</p>
+<p>You can use the <code>round</code> function to display a given number of decimal places. Here, I have used <code>round( ,2)</code> to limit the percentage calculation to two significant figures</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Calculating Percentages of students on EHC plans</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a>total<span class="ot">=</span><span class="fu">sum</span>(SchoolTypeSummary<span class="sc">$</span>Freq)</span>
 <span id="cb18-3"><a href="#cb18-3"></a>SchoolTypeSummary<span class="sc">%&gt;%</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">mutate</span>(<span class="at">PerSch=</span><span class="fu">round</span>(Freq<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span>total,<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">mutate</span>(<span class="at">PerSch=</span><span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>(Freq<span class="sc">/</span>total),<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             CNT         ISCEDO  Freq PerSch
 1 United Kingdom        General 13762  99.59
@@ -689,7 +678,7 @@ Tip
 <span id="cb20-8"><a href="#cb20-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span>IC009Q11NA)) <span class="sc">+</span></span>
 <span id="cb20-9"><a href="#cb20-9"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>You can modify the graph by adding axis labels and titles using <code>xlab("label")</code>, <code>xlab("label")</code>, and <code>ggtitle("title")</code>.</p>
@@ -703,7 +692,7 @@ Tip
 <span id="cb21-7"><a href="#cb21-7"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
 <span id="cb21-8"><a href="#cb21-8"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of interacitve whiteboards in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>You can add colour, by specifying the fill of the bars should be by the value of <code>IC009Q11NA</code> in the aesthetics: <code>aes(x=IC009Q11NA, fill=IC009Q11NA)</code>.</p>
@@ -718,7 +707,7 @@ Tip
 <span id="cb22-8"><a href="#cb22-8"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
 <span id="cb22-9"><a href="#cb22-9"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of interacitve whiteboards in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>You make wish to plot multiple series, for examples, the interactive whiteboard data for boys and girls. In that case, we need to include the gender vector <code>ST004D01T</code> in the <code>dataframe</code> to plot <code>IWBplot</code>. To highlight the difference between boys and girls, in the aesthetics, we set the fill colour by the gender variable: <code>fill=ST004D01T</code>. Finally, we need to tell ggplot to plot the bars side-by-side, rather than stacking them - you do this by specifying <code>position = position_dodge2()</code>.</p>
@@ -736,7 +725,7 @@ Tip
 <span id="cb23-11"><a href="#cb23-11"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
 <span id="cb23-12"><a href="#cb23-12"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of interacitve whiteboards in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>If you take `<code>position = position_dodge2()</code> out, ggplot will default to stacking the bars.</p>
@@ -754,7 +743,7 @@ Tip
 <span id="cb24-11"><a href="#cb24-11"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
 <span id="cb24-12"><a href="#cb24-12"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of interacitve whiteboards in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>You can add text, for example the counts, to the graphs, using <code>geom_text</code>. We set the <code>label</code> to <code>..count..</code> and <code>stat=count</code>. Because the bars have been position using <code>position_dodge</code> you need to do the same for the labels. <code>vjust=-0.5</code> sets the height of the label over the bar.</p>
@@ -774,7 +763,7 @@ Tip
 <span id="cb25-13"><a href="#cb25-13"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>..count..), <span class="at">stat=</span><span class="st">"count"</span>, </span>
 <span id="cb25-14"><a href="#cb25-14"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width=</span><span class="fl">0.9</span>), <span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section><section id="scatter-graphs" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="scatter-graphs">
@@ -794,7 +783,7 @@ Tip
 <span id="cb26-7"><a href="#cb26-7"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH,<span class="at">y=</span>PV1SCIE)) <span class="sc">+</span></span>
 <span id="cb26-8"><a href="#cb26-8"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We can make things more pleasing by adding more features to the aesthetic variable. For example, I can add colour (<code>geom_point(colour="blue")</code>) and rename the axes <code>labs(x="Mathematics score", y="Science score")</code>. Note when adding to <code>ggplot</code>, the <code>+</code> should come at the end of the line before the new addition to avoid an error.</p>
@@ -809,7 +798,7 @@ Tip
 <span id="cb27-8"><a href="#cb27-8"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"blue"</span>)<span class="sc">+</span></span>
 <span id="cb27-9"><a href="#cb27-9"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Mathematics Score"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>I can also add a line using (<code>geom_smooth(method='lm')</code>) - here ‘lm’ specifies a linear plot (i.e.&nbsp;a straight line).</p>
@@ -825,7 +814,7 @@ Tip
 <span id="cb28-9"><a href="#cb28-9"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Mathematics Score"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>)<span class="sc">+</span></span>
 <span id="cb28-10"><a href="#cb28-10"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">'lm'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>I can also change the colour of the points by a variable in the <code>dataframe</code> - for example by gender (<code>aes(colour=ST004D01T</code>) - NB I have to select that column in my initial selection. I can vary the size of points and make them slightly transparent (their alpha level): <code>geom_point(alpha=0.4, size=0.6)</code>, and I can move the legend to the bottom (<code>theme(legend.position = "bottom")</code>)</p>
@@ -842,7 +831,7 @@ Tip
 <span id="cb29-10"><a href="#cb29-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)<span class="sc">+</span></span>
 <span id="cb29-11"><a href="#cb29-11"></a>  <span class="fu">theme</span>(<span class="at">legend.title=</span><span class="fu">element_blank</span>()) <span class="co"># Removes the legend title (try running with this line removed)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1182,7 +1171,7 @@ Tip
 <span id="cb43-11"><a href="#cb43-11"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
 <span id="cb43-12"><a href="#cb43-12"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Number of schools"</span>, <span class="at">x=</span><span class="st">"Pupil range"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="question">
@@ -1310,7 +1299,7 @@ Tip
 <span id="cb50-10"><a href="#cb50-10"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill=</span>meanSci)) <span class="sc">+</span></span>
 <span id="cb50-11"><a href="#cb50-11"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"viridis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>To add labels, you can create a <code>data.frame</code>, with only the country names, and their longitudes and latitudes (the mean of the country longitude and latitude), to use as the labels. You can then add <code>geom_text_repel</code>to add the labels. The <code>repel</code> means the labels won’t overlap. Given the number of countries, using <code>geom_text_repel</code> creates a warning that some labels won’t fit.</p>
@@ -1329,7 +1318,7 @@ Tip
 <span id="cb51-11"><a href="#cb51-11"></a>                 <span class="at">inherit.aes =</span> F,</span>
 <span id="cb51-12"><a href="#cb51-12"></a>                 <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat,<span class="at">label=</span>region))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section></section><section id="useful-resources" class="level1" data-number="8"><h1 data-number="8">

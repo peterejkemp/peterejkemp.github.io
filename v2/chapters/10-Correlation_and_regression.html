@@ -219,18 +219,6 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">06 T-tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07 Chi-square tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/08-Writing_report.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">08 Writing a quantitative report</span></a>
   </div>
@@ -420,14 +408,6 @@ https://docs.google.com/presentation/d/1QlXhCOaFMRyg8IJ2JczKkpjx26eS9BRi/edit#sl
 <li>If the correlation coefficient (r) is 0, i.e one factor increasing doesn’t impact the other factor, the slope of the line of best-fit will be flat. E.g. “the number of trees in a city has no relation to the number of chocolate bars purchased by children”</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># graph of correlation coefficients</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">ggplot</span>(<span class="at">data =</span> coef_graph_data, <span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span> </span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">paste</span>(<span class="st">"r = "</span>, r),<span class="at">x=</span><span class="fu">max</span>(x) <span class="sc">*</span><span class="fl">0.8</span>,<span class="at">y=</span><span class="fu">min</span>(y))) <span class="sc">+</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">ylab</span>(<span class="st">""</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>  <span class="fu">facet_wrap</span>(relationship <span class="sc">~</span> .)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="10-Correlation_and_regression_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -436,7 +416,7 @@ https://docs.google.com/presentation/d/1QlXhCOaFMRyg8IJ2JczKkpjx26eS9BRi/edit#sl
 <p><code>cor.test(&lt;vector1&gt;, &lt;vector2&gt;, method = "pearson")</code></p>
 <p>For our data we will be using the <code>PV1MATH</code> and <code>PV1READ</code> columns.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">cor.test</span>(corr_data<span class="sc">$</span>PV1MATH, corr_data<span class="sc">$</span>PV1READ, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">cor.test</span>(corr_data<span class="sc">$</span>PV1MATH, corr_data<span class="sc">$</span>PV1READ, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's product-moment correlation
@@ -484,22 +464,22 @@ Note
 <p>Data will need to contain continuous or ordinal variables. The Spearman correlation coefficient is based on the <em>ranked</em> values for each variable rather than the raw data. The Spearman correlation between two variables is equal to the Pearson correlation between the rank values of those two variables.</p>
 <p>We want to look at the correlation between attitudes towards the learning activities in schools (<code>ATTLNACT</code>) and wealth (<code>WEALTH</code>) for females from the UK with fathers who are Cooks.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># all the females who have fathers that are Cooks(!)</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>sub_data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
-<span id="cb5-3"><a href="#cb5-3"></a>                <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>,</span>
-<span id="cb5-4"><a href="#cb5-4"></a>                       ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>,</span>
-<span id="cb5-5"><a href="#cb5-5"></a>                       OCOD2 <span class="sc">==</span> <span class="st">"Cooks"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># all the females who have fathers that are Cooks(!)</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>sub_data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3"></a>                <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4"></a>                       ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5"></a>                       OCOD2 <span class="sc">==</span> <span class="st">"Cooks"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Graphing this data, it is unclear if it is normalised:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(sub_data) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x=</span>ATTLNACT))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(sub_data) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x=</span>ATTLNACT))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="10-Correlation_and_regression_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We can run the <em>Shapiro-Wilk Test</em> to check for the the normality of the data, any alpha value greater than <code>0.05</code> means we can assume that the data is normally distributed.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">shapiro.test</span>(sub_data<span class="sc">$</span>ATTLNACT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">shapiro.test</span>(sub_data<span class="sc">$</span>ATTLNACT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Shapiro-Wilk normality test
@@ -510,7 +490,7 @@ W = 0.84971, p-value = 0.003354</code></pre>
 </div>
 <p>In this case the data <em>isn’t</em> normally distributed as <code>p &lt; 0.05</code> and we need to use a non-parametric correlation test. We need to run <em>Spearman</em> rather than <em>Pearson</em>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">cor.test</span>(sub_data<span class="sc">$</span>WEALTH, sub_data<span class="sc">$</span>ATTLNACT, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">cor.test</span>(sub_data<span class="sc">$</span>WEALTH, sub_data<span class="sc">$</span>ATTLNACT, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Spearman's rank correlation rho
@@ -736,9 +716,9 @@ F-statistic: 1.329e+06 on 1 and 606625 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span class="header-section-number">5</span> Multiple linear regression</h1>
 <p>So far we have looked at the impact of a single independent variable on a single dependent variable. We are now going to look at building models that contain multiple independent variables, of both continuous and discrete values. For example, we might want to see how Gender (<code>ST004D01T</code>) and Reading score (<code>PV1READ</code>) help predict a maths score. To add extra independent variables, use the plus symbol <code>+</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> PV1READ <span class="sc">+</span> gender, </span>
-<span id="cb12-2"><a href="#cb12-2"></a>          <span class="at">data=</span>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">gender =</span> ST004D01T))</span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">summary</span>(mdl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> PV1READ <span class="sc">+</span> gender, </span>
+<span id="cb11-2"><a href="#cb11-2"></a>          <span class="at">data=</span>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">gender =</span> ST004D01T))</span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">summary</span>(mdl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -776,9 +756,9 @@ F-statistic: 7.223e+05 on 2 and 606622 DF,  p-value: &lt; 2.2e-16</code></pre>
 </blockquote>
 <p>Alternatively, you could make use of the <code>easystats</code> package which will do most of the heavy lifting for you:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">library</span>(easystats)</span>
-<span id="cb14-2"><a href="#cb14-2"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> PV1READ, <span class="at">data=</span>PISA_2018)</span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="fu">summary</span>(mdl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">library</span>(easystats)</span>
+<span id="cb13-2"><a href="#cb13-2"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> PV1READ, <span class="at">data=</span>PISA_2018)</span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="fu">summary</span>(mdl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -800,7 +780,7 @@ Residual standard error: 58.42 on 606625 degrees of freedom
 Multiple R-squared:  0.6866,    Adjusted R-squared:  0.6866 
 F-statistic: 1.329e+06 on 1 and 606625 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">report</span>(mdl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">report</span>(mdl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>We fitted a linear model (estimated using OLS) to predict PV1MATH with PV1READ
 (formula: PV1MATH ~ PV1READ). The model explains a statistically significant
@@ -822,21 +802,21 @@ computed using a Wald t-distribution approximation.</code></pre>
 <span class="header-section-number">7</span> Standardising results with z-values</h1>
 <p>When we are trying to compare data between countries, our results can be heavily skewed by the overall performance of a country. For example, imagine we have country <em>A</em> and country <em>U</em>. Students in country <em>A</em> generally get high grades with a very high standard deviation, whilst students in country <em>U</em> generally get very low grades with a very low standard deviation.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sex=</span><span class="fu">c</span>(<span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>),</span>
-<span id="cb18-2"><a href="#cb18-2"></a>           <span class="at">country=</span><span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"U"</span>,<span class="st">"U"</span>,<span class="st">"U"</span>,<span class="st">"U"</span>,<span class="st">"U"</span>,<span class="st">"U"</span>),</span>
-<span id="cb18-3"><a href="#cb18-3"></a>           <span class="at">grade=</span><span class="fu">c</span>(<span class="dv">100</span>,<span class="dv">87</span>,<span class="dv">98</span>,<span class="dv">95</span>,<span class="dv">82</span>,<span class="dv">90</span>,<span class="dv">10</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">12</span>,<span class="dv">10</span>,<span class="dv">11</span>))</span>
-<span id="cb18-4"><a href="#cb18-4"></a></span>
-<span id="cb18-5"><a href="#cb18-5"></a>df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(country, sex) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-6"><a href="#cb18-6"></a>  <span class="fu">mutate</span>(<span class="at">mgrade =</span> <span class="fu">mean</span>(grade)) <span class="sc">%&gt;%</span></span>
-<span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
-<span id="cb18-8"><a href="#cb18-8"></a>  <span class="fu">mutate</span>(<span class="at">meancountry =</span> <span class="fu">mean</span>(grade),</span>
-<span id="cb18-9"><a href="#cb18-9"></a>         <span class="at">sdgrade =</span> <span class="fu">sd</span>(grade)) <span class="sc">%&gt;%</span></span>
-<span id="cb18-10"><a href="#cb18-10"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> mgrade) <span class="sc">%&gt;%</span></span>
-<span id="cb18-11"><a href="#cb18-11"></a>  <span class="fu">summarise</span>(<span class="at">M_max =</span> <span class="fu">max</span>(M, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb18-12"><a href="#cb18-12"></a>            <span class="st">`</span><span class="at">F_max</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">max</span>(<span class="st">`</span><span class="at">F</span><span class="st">`</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb18-13"><a href="#cb18-13"></a>            <span class="at">difference =</span> M_max<span class="sc">-</span><span class="st">`</span><span class="at">F_max</span><span class="st">`</span>,</span>
-<span id="cb18-14"><a href="#cb18-14"></a>            <span class="at">sd =</span> <span class="fu">max</span>(sdgrade),</span>
-<span id="cb18-15"><a href="#cb18-15"></a>            <span class="at">mean =</span> <span class="fu">max</span>(meancountry))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sex=</span><span class="fu">c</span>(<span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>),</span>
+<span id="cb17-2"><a href="#cb17-2"></a>           <span class="at">country=</span><span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"A"</span>,<span class="st">"U"</span>,<span class="st">"U"</span>,<span class="st">"U"</span>,<span class="st">"U"</span>,<span class="st">"U"</span>,<span class="st">"U"</span>),</span>
+<span id="cb17-3"><a href="#cb17-3"></a>           <span class="at">grade=</span><span class="fu">c</span>(<span class="dv">100</span>,<span class="dv">87</span>,<span class="dv">98</span>,<span class="dv">95</span>,<span class="dv">82</span>,<span class="dv">90</span>,<span class="dv">10</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">12</span>,<span class="dv">10</span>,<span class="dv">11</span>))</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a>df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(country, sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-6"><a href="#cb17-6"></a>  <span class="fu">mutate</span>(<span class="at">mgrade =</span> <span class="fu">mean</span>(grade)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a>  <span class="fu">mutate</span>(<span class="at">meancountry =</span> <span class="fu">mean</span>(grade),</span>
+<span id="cb17-9"><a href="#cb17-9"></a>         <span class="at">sdgrade =</span> <span class="fu">sd</span>(grade)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> mgrade) <span class="sc">%&gt;%</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a>  <span class="fu">summarise</span>(<span class="at">M_max =</span> <span class="fu">max</span>(M, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb17-12"><a href="#cb17-12"></a>            <span class="st">`</span><span class="at">F_max</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">max</span>(<span class="st">`</span><span class="at">F</span><span class="st">`</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb17-13"><a href="#cb17-13"></a>            <span class="at">difference =</span> M_max<span class="sc">-</span><span class="st">`</span><span class="at">F_max</span><span class="st">`</span>,</span>
+<span id="cb17-14"><a href="#cb17-14"></a>            <span class="at">sd =</span> <span class="fu">max</span>(sdgrade),</span>
+<span id="cb17-15"><a href="#cb17-15"></a>            <span class="at">mean =</span> <span class="fu">max</span>(meancountry))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 6
   country M_max F_max difference    sd  mean
@@ -854,9 +834,9 @@ computed using a Wald t-distribution approximation.</code></pre>
 <p><code>(12 - 10) / 1.141 = 1.75</code></p>
 <p>These two values are then directly comparable, the first males in country A is relatively closer to the mean grade of country A, than the first female in country U. How does this work out for the whole country? Going back to whether sex had a greater impact on results in country A or country U we can calculate the z-values for each student by using the <code><a href="https://rdrr.io/r/base/scale.html">scale()</a></code> command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>dfz <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
-<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">mutate</span>(<span class="at">zgrade =</span> <span class="fu">scale</span>(grade))</span>
-<span id="cb20-3"><a href="#cb20-3"></a>dfz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>dfz <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">mutate</span>(<span class="at">zgrade =</span> <span class="fu">scale</span>(grade))</span>
+<span id="cb19-3"><a href="#cb19-3"></a>dfz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 4
 # Groups:   country [2]
@@ -878,9 +858,9 @@ computed using a Wald t-distribution approximation.</code></pre>
 </div>
 <p>We can then group by country and by sex and see how the <code>mean</code> z-value varies</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>dfz <span class="sc">%&gt;%</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">group_by</span>(country, sex) <span class="sc">%&gt;%</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">summarise</span>(<span class="at">mean_zgrade =</span> <span class="fu">mean</span>(zgrade))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>dfz <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">group_by</span>(country, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">summarise</span>(<span class="at">mean_zgrade =</span> <span class="fu">mean</span>(zgrade))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
 # Groups:   country [2]
@@ -966,9 +946,9 @@ Sometimes the dependent variable will be *boolean*, that is a field that can onl
 <li>What are <em>Spearman’s Rho</em> and <em>Pearson’s r</em>? When might you use one rather than the other?</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">#&gt; When the data you use has outliers or is not </span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="co">#&gt; normally distributed (non-parametric) you should use Spearman's Rho</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="co">#&gt; you can test this by checking that shapiro.test p &gt;0.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co">#&gt; When the data you use has outliers or is not </span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="co">#&gt; normally distributed (non-parametric) you should use Spearman's Rho</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="co">#&gt; you can test this by checking that shapiro.test p &gt;0.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="2" type="1">
@@ -981,25 +961,25 @@ Sometimes the dependent variable will be *boolean*, that is a field that can onl
 <li>A country is trying to find out whether girls or boys are better behaved in schools. They have access to school databases that record the number of bad behaviour slips for each student.</li>
 </ul>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># The government is trying to understand which groups of people have been affected by a pandemic. They have data on healthcare professionals, education professionals and train drivers and the number of days taken off ill in the last 6 months.</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="co">#&gt; Dependendent: days off ill</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="co">#&gt; Independent: job role</span></span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="co">#&gt; Suggested model: ANOVA to check if there are differences between jobs</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a></span>
-<span id="cb25-6"><a href="#cb25-6"></a><span class="co"># A cigarette company, working in a country that still allows cigarette advertising(!), wants to work out which groups in society are not currently smoking that many cigarettes. They want to find out if city dwellers are more likely to smoke than people living in the countryside.</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a><span class="co">#&gt; Dependent: Smoker / Non Smoker</span></span>
-<span id="cb25-8"><a href="#cb25-8"></a><span class="co">#&gt; Independent: City / Countryside residence</span></span>
-<span id="cb25-9"><a href="#cb25-9"></a><span class="co">#&gt; Suggested model: Chi-square</span></span>
-<span id="cb25-10"><a href="#cb25-10"></a></span>
-<span id="cb25-11"><a href="#cb25-11"></a><span class="co"># A netball team is trying to work out how likely their players are to get injured in a season. They have data on the number of injuries per player and the number of minutes each player has been playing netball.</span></span>
-<span id="cb25-12"><a href="#cb25-12"></a><span class="co">#&gt; Dependent: injuries</span></span>
-<span id="cb25-13"><a href="#cb25-13"></a><span class="co">#&gt; Independent: time on court</span></span>
-<span id="cb25-14"><a href="#cb25-14"></a><span class="co">#&gt; Suggested model: Linear model/regression</span></span>
-<span id="cb25-15"><a href="#cb25-15"></a></span>
-<span id="cb25-16"><a href="#cb25-16"></a><span class="co"># A country is trying to find out whether girls or boys are better behaved in schools. They have access to school databases that record the number of bad behaviour slips for each student.</span></span>
-<span id="cb25-17"><a href="#cb25-17"></a><span class="co">#&gt; Dependent: behaviour slips</span></span>
-<span id="cb25-18"><a href="#cb25-18"></a><span class="co">#&gt; Independent: Gender (Girls/Boys)</span></span>
-<span id="cb25-19"><a href="#cb25-19"></a><span class="co">#&gt; Suggested model: t-test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># The government is trying to understand which groups of people have been affected by a pandemic. They have data on healthcare professionals, education professionals and train drivers and the number of days taken off ill in the last 6 months.</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="co">#&gt; Dependendent: days off ill</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="co">#&gt; Independent: job role</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="co">#&gt; Suggested model: ANOVA to check if there are differences between jobs</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="co"># A cigarette company, working in a country that still allows cigarette advertising(!), wants to work out which groups in society are not currently smoking that many cigarettes. They want to find out if city dwellers are more likely to smoke than people living in the countryside.</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a><span class="co">#&gt; Dependent: Smoker / Non Smoker</span></span>
+<span id="cb24-8"><a href="#cb24-8"></a><span class="co">#&gt; Independent: City / Countryside residence</span></span>
+<span id="cb24-9"><a href="#cb24-9"></a><span class="co">#&gt; Suggested model: Chi-square</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a></span>
+<span id="cb24-11"><a href="#cb24-11"></a><span class="co"># A netball team is trying to work out how likely their players are to get injured in a season. They have data on the number of injuries per player and the number of minutes each player has been playing netball.</span></span>
+<span id="cb24-12"><a href="#cb24-12"></a><span class="co">#&gt; Dependent: injuries</span></span>
+<span id="cb24-13"><a href="#cb24-13"></a><span class="co">#&gt; Independent: time on court</span></span>
+<span id="cb24-14"><a href="#cb24-14"></a><span class="co">#&gt; Suggested model: Linear model/regression</span></span>
+<span id="cb24-15"><a href="#cb24-15"></a></span>
+<span id="cb24-16"><a href="#cb24-16"></a><span class="co"># A country is trying to find out whether girls or boys are better behaved in schools. They have access to school databases that record the number of bad behaviour slips for each student.</span></span>
+<span id="cb24-17"><a href="#cb24-17"></a><span class="co">#&gt; Dependent: behaviour slips</span></span>
+<span id="cb24-18"><a href="#cb24-18"></a><span class="co">#&gt; Independent: Gender (Girls/Boys)</span></span>
+<span id="cb24-19"><a href="#cb24-19"></a><span class="co">#&gt; Suggested model: t-test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="3" type="1">
@@ -1022,9 +1002,9 @@ sample estimates:
 </div>
 </div>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co">#&gt; The Index of economic, social and cultural status `ESCS` is strongly</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="co">#&gt; correlated with Family wealth `WEALTH`, with a correlation coefficient</span></span>
-<span id="cb27-3"><a href="#cb27-3"></a><span class="co">#&gt; of 0.697926. This model is signficant with a p-value of &lt; 0.001</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co">#&gt; The Index of economic, social and cultural status `ESCS` is strongly</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="co">#&gt; correlated with Family wealth `WEALTH`, with a correlation coefficient</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="co">#&gt; of 0.697926. This model is signficant with a p-value of &lt; 0.001</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="4" type="1">
@@ -1057,56 +1037,56 @@ sample estimates:
 </table>
 <p><em>Adj R<sup>2</sup></em> 0.721</p>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">#&gt; The model is pretty good at explaining the variance, The Adj. R2</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="co">#&gt; shows that population explains 72% of the variance in murders.</span></span>
-<span id="cb28-3"><a href="#cb28-3"></a><span class="co">#&gt; The model is significant as p &lt; 0.001. For every increase in </span></span>
-<span id="cb28-4"><a href="#cb28-4"></a><span class="co">#&gt; population of 1000 people, the model predicts another 0.1 deaths.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co">#&gt; The model is pretty good at explaining the variance, The Adj. R2</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="co">#&gt; shows that population explains 72% of the variance in murders.</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="co">#&gt; The model is significant as p &lt; 0.001. For every increase in </span></span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="co">#&gt; population of 1000 people, the model predicts another 0.1 deaths.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="5" type="1">
 <li>Work out the correlation between a country’s mean female science grade and mean male science grade. Should you use <em>Spearman’s Rho</em> or <em>Pearson’s r</em> in your model? Why?</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>df <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">maths =</span> <span class="fu">mean</span>(PV1MATH))</span>
-<span id="cb29-2"><a href="#cb29-2"></a></span>
-<span id="cb29-3"><a href="#cb29-3"></a>maths_male   <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>)</span>
-<span id="cb29-4"><a href="#cb29-4"></a>maths_female <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>)</span>
-<span id="cb29-5"><a href="#cb29-5"></a></span>
-<span id="cb29-6"><a href="#cb29-6"></a><span class="fu">cor.test</span>(maths_male<span class="sc">$</span>maths, maths_female<span class="sc">$</span>maths)</span>
-<span id="cb29-7"><a href="#cb29-7"></a></span>
-<span id="cb29-8"><a href="#cb29-8"></a><span class="co">#&gt; you should use Pearson as the shapiro wilkes test has a p-vale &gt; 0.05</span></span>
-<span id="cb29-9"><a href="#cb29-9"></a></span>
-<span id="cb29-10"><a href="#cb29-10"></a><span class="fu">shapiro.test</span>(maths_female<span class="sc">$</span>maths)</span>
-<span id="cb29-11"><a href="#cb29-11"></a><span class="co">#&gt; p-value = 0.1727</span></span>
-<span id="cb29-12"><a href="#cb29-12"></a></span>
-<span id="cb29-13"><a href="#cb29-13"></a><span class="fu">shapiro.test</span>(maths_male<span class="sc">$</span>maths)</span>
-<span id="cb29-14"><a href="#cb29-14"></a><span class="co">#&gt; p-value = 0.1414</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>df <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">maths =</span> <span class="fu">mean</span>(PV1MATH))</span>
+<span id="cb28-2"><a href="#cb28-2"></a></span>
+<span id="cb28-3"><a href="#cb28-3"></a>maths_male   <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>)</span>
+<span id="cb28-4"><a href="#cb28-4"></a>maths_female <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>)</span>
+<span id="cb28-5"><a href="#cb28-5"></a></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="fu">cor.test</span>(maths_male<span class="sc">$</span>maths, maths_female<span class="sc">$</span>maths)</span>
+<span id="cb28-7"><a href="#cb28-7"></a></span>
+<span id="cb28-8"><a href="#cb28-8"></a><span class="co">#&gt; you should use Pearson as the shapiro wilkes test has a p-vale &gt; 0.05</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a></span>
+<span id="cb28-10"><a href="#cb28-10"></a><span class="fu">shapiro.test</span>(maths_female<span class="sc">$</span>maths)</span>
+<span id="cb28-11"><a href="#cb28-11"></a><span class="co">#&gt; p-value = 0.1727</span></span>
+<span id="cb28-12"><a href="#cb28-12"></a></span>
+<span id="cb28-13"><a href="#cb28-13"></a><span class="fu">shapiro.test</span>(maths_male<span class="sc">$</span>maths)</span>
+<span id="cb28-14"><a href="#cb28-14"></a><span class="co">#&gt; p-value = 0.1414</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="6" type="1">
 <li>Create a linear model to explore the relationship between the time spent in science lessons (<code>SMINS</code>) and the grade in science (<code>PV1SCIE</code>)</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1SCIE <span class="sc">~</span> SMINS, <span class="at">data =</span> PISA_2018)</span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">summary</span>(mdl)</span>
-<span id="cb30-3"><a href="#cb30-3"></a></span>
-<span id="cb30-4"><a href="#cb30-4"></a><span class="co">#&gt; For every extra minute spent learning science, </span></span>
-<span id="cb30-5"><a href="#cb30-5"></a><span class="co">#&gt; there is a grade increase of 0.07, </span></span>
-<span id="cb30-6"><a href="#cb30-6"></a><span class="co">#&gt; SMINS is a significant predictor p &lt;2e-16 ***, </span></span>
-<span id="cb30-7"><a href="#cb30-7"></a><span class="co">#&gt; but the overall model has a very low R squared value of 0.01625</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1SCIE <span class="sc">~</span> SMINS, <span class="at">data =</span> PISA_2018)</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">summary</span>(mdl)</span>
+<span id="cb29-3"><a href="#cb29-3"></a></span>
+<span id="cb29-4"><a href="#cb29-4"></a><span class="co">#&gt; For every extra minute spent learning science, </span></span>
+<span id="cb29-5"><a href="#cb29-5"></a><span class="co">#&gt; there is a grade increase of 0.07, </span></span>
+<span id="cb29-6"><a href="#cb29-6"></a><span class="co">#&gt; SMINS is a significant predictor p &lt;2e-16 ***, </span></span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="co">#&gt; but the overall model has a very low R squared value of 0.01625</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Add the student maths score <code>PV1MATH</code> this model, how does this change the outcome?</p>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1SCIE <span class="sc">~</span> SMINS <span class="sc">+</span> PV1MATH, <span class="at">data =</span> PISA_2018)</span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">summary</span>(mdl)</span>
-<span id="cb31-3"><a href="#cb31-3"></a></span>
-<span id="cb31-4"><a href="#cb31-4"></a><span class="co">#&gt; For every extra minute spent learning science each week, </span></span>
-<span id="cb31-5"><a href="#cb31-5"></a><span class="co">#&gt; there is now a grade increase of only 0.015, </span></span>
-<span id="cb31-6"><a href="#cb31-6"></a><span class="co">#&gt; i.e. when controlling for maths outcomes, time in science </span></span>
-<span id="cb31-7"><a href="#cb31-7"></a><span class="co">#&gt; lessons explains less of the overall science grade. </span></span>
-<span id="cb31-8"><a href="#cb31-8"></a><span class="co">#&gt; Both factors remain significant and the overall model </span></span>
-<span id="cb31-9"><a href="#cb31-9"></a><span class="co">#&gt; now has a very high R squared value of 0.6974</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1SCIE <span class="sc">~</span> SMINS <span class="sc">+</span> PV1MATH, <span class="at">data =</span> PISA_2018)</span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">summary</span>(mdl)</span>
+<span id="cb30-3"><a href="#cb30-3"></a></span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="co">#&gt; For every extra minute spent learning science each week, </span></span>
+<span id="cb30-5"><a href="#cb30-5"></a><span class="co">#&gt; there is now a grade increase of only 0.015, </span></span>
+<span id="cb30-6"><a href="#cb30-6"></a><span class="co">#&gt; i.e. when controlling for maths outcomes, time in science </span></span>
+<span id="cb30-7"><a href="#cb30-7"></a><span class="co">#&gt; lessons explains less of the overall science grade. </span></span>
+<span id="cb30-8"><a href="#cb30-8"></a><span class="co">#&gt; Both factors remain significant and the overall model </span></span>
+<span id="cb30-9"><a href="#cb30-9"></a><span class="co">#&gt; now has a very high R squared value of 0.6974</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="7" type="1">
@@ -1114,48 +1094,48 @@ sample estimates:
 </ol>
 <p>Using a linear model, how do “Shortage of educational staff” <code>STAFFSHORT</code> and “Shortage of educational material” <code>EDUSHORT</code> relate to “Student behaviour hindering learning” <code>STUBEHA</code></p>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(STUBEHA <span class="sc">~</span> STAFFSHORT <span class="sc">+</span> EDUSHORT, <span class="at">data=</span>PISA_2018_school)</span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">summary</span>(mdl)</span>
-<span id="cb32-3"><a href="#cb32-3"></a></span>
-<span id="cb32-4"><a href="#cb32-4"></a><span class="co">#&gt; STAFFSHORT has a slightly larger estimate, 0.214186, than EDUSHORT, 0.17148.</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a><span class="co">#&gt; This means as staff and educational resource shortages increase, so does</span></span>
-<span id="cb32-6"><a href="#cb32-6"></a><span class="co">#&gt; student behaviour hindering learning.</span></span>
-<span id="cb32-7"><a href="#cb32-7"></a><span class="co">#&gt; Both factors are significant p &lt;2e-16 ***</span></span>
-<span id="cb32-8"><a href="#cb32-8"></a><span class="co">#&gt; The effect size of the overall model is low, at 0.08346</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(STUBEHA <span class="sc">~</span> STAFFSHORT <span class="sc">+</span> EDUSHORT, <span class="at">data=</span>PISA_2018_school)</span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">summary</span>(mdl)</span>
+<span id="cb31-3"><a href="#cb31-3"></a></span>
+<span id="cb31-4"><a href="#cb31-4"></a><span class="co">#&gt; STAFFSHORT has a slightly larger estimate, 0.214186, than EDUSHORT, 0.17148.</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="co">#&gt; This means as staff and educational resource shortages increase, so does</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a><span class="co">#&gt; student behaviour hindering learning.</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a><span class="co">#&gt; Both factors are significant p &lt;2e-16 ***</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a><span class="co">#&gt; The effect size of the overall model is low, at 0.08346</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Adjust the model to incorporate the percentage of boys in a school (see <code>SC002Q01TA</code> and <code>SCHSIZE</code>), what difference does this make?</p>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>tbl_beh_predict <span class="ot">&lt;-</span> PISA_2018_school <span class="sc">%&gt;%</span> </span>
-<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">mutate</span>(<span class="at">boy_per =</span> <span class="dv">100</span> <span class="sc">*</span> SC002Q01TA <span class="sc">/</span> SCHSIZE)</span>
-<span id="cb33-3"><a href="#cb33-3"></a></span>
-<span id="cb33-4"><a href="#cb33-4"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(STUBEHA <span class="sc">~</span> STAFFSHORT <span class="sc">+</span> EDUSHORT <span class="sc">+</span> boy_per, <span class="at">data=</span>tbl_beh_predict)</span>
-<span id="cb33-5"><a href="#cb33-5"></a><span class="fu">summary</span>(mdl)</span>
-<span id="cb33-6"><a href="#cb33-6"></a></span>
-<span id="cb33-7"><a href="#cb33-7"></a><span class="co">#&gt; adding percentage of boys to the model increases the effect size 0.09553,</span></span>
-<span id="cb33-8"><a href="#cb33-8"></a><span class="co">#&gt; albeit, still a small one.</span></span>
-<span id="cb33-9"><a href="#cb33-9"></a><span class="co">#&gt; when controlling for boy_per the estimate of staff shortages</span></span>
-<span id="cb33-10"><a href="#cb33-10"></a><span class="co">#&gt; decreases slightly, and the estimate of educational shortages</span></span>
-<span id="cb33-11"><a href="#cb33-11"></a><span class="co">#&gt; increases. The estimate of boy_per is significant, for every </span></span>
-<span id="cb33-12"><a href="#cb33-12"></a><span class="co">#&gt; one percent increase in boys in a school, student behaviour</span></span>
-<span id="cb33-13"><a href="#cb33-13"></a><span class="co">#&gt; hindering learning increases by 0.005, this model shows an all </span></span>
-<span id="cb33-14"><a href="#cb33-14"></a><span class="co">#&gt; girls school would likely have a student behaviour hindering</span></span>
-<span id="cb33-15"><a href="#cb33-15"></a><span class="co">#&gt; learning value 0.5 lower than an all boys school!</span></span>
-<span id="cb33-16"><a href="#cb33-16"></a><span class="co">#&gt; it'd be worth double checking to see if boy_per is parametric</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>tbl_beh_predict <span class="ot">&lt;-</span> PISA_2018_school <span class="sc">%&gt;%</span> </span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">mutate</span>(<span class="at">boy_per =</span> <span class="dv">100</span> <span class="sc">*</span> SC002Q01TA <span class="sc">/</span> SCHSIZE)</span>
+<span id="cb32-3"><a href="#cb32-3"></a></span>
+<span id="cb32-4"><a href="#cb32-4"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(STUBEHA <span class="sc">~</span> STAFFSHORT <span class="sc">+</span> EDUSHORT <span class="sc">+</span> boy_per, <span class="at">data=</span>tbl_beh_predict)</span>
+<span id="cb32-5"><a href="#cb32-5"></a><span class="fu">summary</span>(mdl)</span>
+<span id="cb32-6"><a href="#cb32-6"></a></span>
+<span id="cb32-7"><a href="#cb32-7"></a><span class="co">#&gt; adding percentage of boys to the model increases the effect size 0.09553,</span></span>
+<span id="cb32-8"><a href="#cb32-8"></a><span class="co">#&gt; albeit, still a small one.</span></span>
+<span id="cb32-9"><a href="#cb32-9"></a><span class="co">#&gt; when controlling for boy_per the estimate of staff shortages</span></span>
+<span id="cb32-10"><a href="#cb32-10"></a><span class="co">#&gt; decreases slightly, and the estimate of educational shortages</span></span>
+<span id="cb32-11"><a href="#cb32-11"></a><span class="co">#&gt; increases. The estimate of boy_per is significant, for every </span></span>
+<span id="cb32-12"><a href="#cb32-12"></a><span class="co">#&gt; one percent increase in boys in a school, student behaviour</span></span>
+<span id="cb32-13"><a href="#cb32-13"></a><span class="co">#&gt; hindering learning increases by 0.005, this model shows an all </span></span>
+<span id="cb32-14"><a href="#cb32-14"></a><span class="co">#&gt; girls school would likely have a student behaviour hindering</span></span>
+<span id="cb32-15"><a href="#cb32-15"></a><span class="co">#&gt; learning value 0.5 lower than an all boys school!</span></span>
+<span id="cb32-16"><a href="#cb32-16"></a><span class="co">#&gt; it'd be worth double checking to see if boy_per is parametric</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>How does the explanatory value of this model change if you only look at schools in the UK?</p>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(STUBEHA <span class="sc">~</span> STAFFSHORT <span class="sc">+</span> EDUSHORT <span class="sc">+</span> boy_per, </span>
-<span id="cb34-2"><a href="#cb34-2"></a>          <span class="at">data=</span>tbl_beh_predict <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>))</span>
-<span id="cb34-3"><a href="#cb34-3"></a><span class="fu">summary</span>(mdl)</span>
-<span id="cb34-4"><a href="#cb34-4"></a></span>
-<span id="cb34-5"><a href="#cb34-5"></a><span class="co">#&gt; for the UK the effect size is larger at 0.1686, more of the variance of</span></span>
-<span id="cb34-6"><a href="#cb34-6"></a><span class="co">#&gt; STUBEHA is explained by this model than for other countries</span></span>
-<span id="cb34-7"><a href="#cb34-7"></a><span class="co">#&gt; educational resource shortages have a negative impact on STUBEHA, </span></span>
-<span id="cb34-8"><a href="#cb34-8"></a><span class="co">#&gt; albeit with a very small estimate -0.003519</span></span>
-<span id="cb34-9"><a href="#cb34-9"></a><span class="co">#&gt; staff shortages have a bigger impact that other countries, with an</span></span>
-<span id="cb34-10"><a href="#cb34-10"></a><span class="co">#&gt; estimate of 0.396835</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(STUBEHA <span class="sc">~</span> STAFFSHORT <span class="sc">+</span> EDUSHORT <span class="sc">+</span> boy_per, </span>
+<span id="cb33-2"><a href="#cb33-2"></a>          <span class="at">data=</span>tbl_beh_predict <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>))</span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="fu">summary</span>(mdl)</span>
+<span id="cb33-4"><a href="#cb33-4"></a></span>
+<span id="cb33-5"><a href="#cb33-5"></a><span class="co">#&gt; for the UK the effect size is larger at 0.1686, more of the variance of</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a><span class="co">#&gt; STUBEHA is explained by this model than for other countries</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a><span class="co">#&gt; educational resource shortages have a negative impact on STUBEHA, </span></span>
+<span id="cb33-8"><a href="#cb33-8"></a><span class="co">#&gt; albeit with a very small estimate -0.003519</span></span>
+<span id="cb33-9"><a href="#cb33-9"></a><span class="co">#&gt; staff shortages have a bigger impact that other countries, with an</span></span>
+<span id="cb33-10"><a href="#cb33-10"></a><span class="co">#&gt; estimate of 0.396835</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="8" type="1">
@@ -1163,81 +1143,81 @@ sample estimates:
 </li>
 </ol>
 <div class="cell">
-<details><summary>left_join code</summary><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co">#&gt; SC016Q02TA   Percentage of total funding for school year from: Student fees or school charges paid by parents</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="co">#&gt; SC156Q03HA   At school: A programme to use digital devices for teaching and learning in specific subjects</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a><span class="co">#&gt; SC156Q04HA   At school: Regular discussions with teaching staff about the use of digital devices for pedagogical purposes</span></span>
-<span id="cb35-4"><a href="#cb35-4"></a><span class="co">#&gt; SC154Q01HA   School's use of assessments of students: To guide students' learning</span></span>
-<span id="cb35-5"><a href="#cb35-5"></a><span class="co">#&gt; SC154Q02WA   School's use of assessments of students: To inform parents about their child's progress</span></span>
-<span id="cb35-6"><a href="#cb35-6"></a><span class="co">#&gt; SC154Q05WA   School's use of assessments of students: To compare the school to &lt;district or national&gt; performance</span></span>
-<span id="cb35-7"><a href="#cb35-7"></a><span class="co">#&gt; SC154Q08WA   School's use of assessments of students: To identify aspects of instruction or the curriculum that could be improved</span></span>
-<span id="cb35-8"><a href="#cb35-8"></a><span class="co">#&gt; SC154Q09HA   School's use of assessments of students: To adapt teaching to the students' needs</span></span>
-<span id="cb35-9"><a href="#cb35-9"></a><span class="co">#&gt; STRATIO  Student-Teacher ratio</span></span>
-<span id="cb35-10"><a href="#cb35-10"></a><span class="co">#&gt; CLSIZE   Class Size (cheating here slightly as this is a nominal field which roughly maps to the continuous)</span></span>
-<span id="cb35-11"><a href="#cb35-11"></a><span class="co">#&gt; EDUSHORT Shortage of educational material (WLE)</span></span>
-<span id="cb35-12"><a href="#cb35-12"></a><span class="co">#&gt; STAFFSHORT   Shortage of educational staff (WLE)</span></span>
-<span id="cb35-13"><a href="#cb35-13"></a><span class="co">#&gt; STUBEHA  Student behaviour hindering learning (WLE)</span></span>
-<span id="cb35-14"><a href="#cb35-14"></a></span>
-<span id="cb35-15"><a href="#cb35-15"></a>PISA_2018_stusch <span class="ot">&lt;-</span> </span>
-<span id="cb35-16"><a href="#cb35-16"></a>  <span class="fu">left_join</span>(PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">select</span>(CNT, CNTSCHID, ST004D01T, WEALTH, </span>
-<span id="cb35-17"><a href="#cb35-17"></a>                                 ESCS, PV1SCIE, PV1MATH, PV1READ), </span>
-<span id="cb35-18"><a href="#cb35-18"></a>             PISA_2018_school <span class="sc">%&gt;%</span> </span>
-<span id="cb35-19"><a href="#cb35-19"></a>              <span class="fu">select</span>(CNT, CNTSCHID, SC016Q02TA, SC156Q03HA, SC156Q04HA,</span>
-<span id="cb35-20"><a href="#cb35-20"></a>                     SC154Q01HA, SC154Q02WA, SC154Q05WA, SC154Q08WA,</span>
-<span id="cb35-21"><a href="#cb35-21"></a>                     SC154Q09HA, STRATIO, CLSIZE, EDUSHORT, STAFFSHORT, STUBEHA))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>left_join code</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co">#&gt; SC016Q02TA   Percentage of total funding for school year from: Student fees or school charges paid by parents</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="co">#&gt; SC156Q03HA   At school: A programme to use digital devices for teaching and learning in specific subjects</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a><span class="co">#&gt; SC156Q04HA   At school: Regular discussions with teaching staff about the use of digital devices for pedagogical purposes</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a><span class="co">#&gt; SC154Q01HA   School's use of assessments of students: To guide students' learning</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a><span class="co">#&gt; SC154Q02WA   School's use of assessments of students: To inform parents about their child's progress</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a><span class="co">#&gt; SC154Q05WA   School's use of assessments of students: To compare the school to &lt;district or national&gt; performance</span></span>
+<span id="cb34-7"><a href="#cb34-7"></a><span class="co">#&gt; SC154Q08WA   School's use of assessments of students: To identify aspects of instruction or the curriculum that could be improved</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a><span class="co">#&gt; SC154Q09HA   School's use of assessments of students: To adapt teaching to the students' needs</span></span>
+<span id="cb34-9"><a href="#cb34-9"></a><span class="co">#&gt; STRATIO  Student-Teacher ratio</span></span>
+<span id="cb34-10"><a href="#cb34-10"></a><span class="co">#&gt; CLSIZE   Class Size (cheating here slightly as this is a nominal field which roughly maps to the continuous)</span></span>
+<span id="cb34-11"><a href="#cb34-11"></a><span class="co">#&gt; EDUSHORT Shortage of educational material (WLE)</span></span>
+<span id="cb34-12"><a href="#cb34-12"></a><span class="co">#&gt; STAFFSHORT   Shortage of educational staff (WLE)</span></span>
+<span id="cb34-13"><a href="#cb34-13"></a><span class="co">#&gt; STUBEHA  Student behaviour hindering learning (WLE)</span></span>
+<span id="cb34-14"><a href="#cb34-14"></a></span>
+<span id="cb34-15"><a href="#cb34-15"></a>PISA_2018_stusch <span class="ot">&lt;-</span> </span>
+<span id="cb34-16"><a href="#cb34-16"></a>  <span class="fu">left_join</span>(PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">select</span>(CNT, CNTSCHID, ST004D01T, WEALTH, </span>
+<span id="cb34-17"><a href="#cb34-17"></a>                                 ESCS, PV1SCIE, PV1MATH, PV1READ), </span>
+<span id="cb34-18"><a href="#cb34-18"></a>             PISA_2018_school <span class="sc">%&gt;%</span> </span>
+<span id="cb34-19"><a href="#cb34-19"></a>              <span class="fu">select</span>(CNT, CNTSCHID, SC016Q02TA, SC156Q03HA, SC156Q04HA,</span>
+<span id="cb34-20"><a href="#cb34-20"></a>                     SC154Q01HA, SC154Q02WA, SC154Q05WA, SC154Q08WA,</span>
+<span id="cb34-21"><a href="#cb34-21"></a>                     SC154Q09HA, STRATIO, CLSIZE, EDUSHORT, STAFFSHORT, STUBEHA))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Using a linear model, find out how well the student teacher ratio <code>STRATIO</code> in a school predicts the <code>mean</code> maths achievement <code>PV1MATH</code> in that school. <strong>HINT</strong>: you need one row for each school, so use summarise with unique on <code>STRATIO</code> and mean on <code>PV1MATH</code>:</p>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>stu_tch_mat <span class="ot">&lt;-</span> PISA_2018_stusch <span class="sc">%&gt;%</span> </span>
-<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
-<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">summarise</span>(<span class="at">stu_tch_rat =</span> <span class="fu">unique</span>(STRATIO),</span>
-<span id="cb36-4"><a href="#cb36-4"></a>            <span class="at">maths =</span> <span class="fu">mean</span>(PV1MATH))</span>
-<span id="cb36-5"><a href="#cb36-5"></a></span>
-<span id="cb36-6"><a href="#cb36-6"></a>mdl_stu_tch_mat <span class="ot">&lt;-</span> <span class="fu">lm</span>(maths <span class="sc">~</span> stu_tch_rat, <span class="at">data=</span>stu_tch_mat)</span>
-<span id="cb36-7"><a href="#cb36-7"></a><span class="fu">summary</span>(mdl_stu_tch_mat)</span>
-<span id="cb36-8"><a href="#cb36-8"></a></span>
-<span id="cb36-9"><a href="#cb36-9"></a><span class="co">#&gt; it's significant p &lt;2e-16 ***, but with a very low </span></span>
-<span id="cb36-10"><a href="#cb36-10"></a><span class="co">#&gt; estimates/betas, i.e. one extra student per teacher </span></span>
-<span id="cb36-11"><a href="#cb36-11"></a><span class="co">#&gt; decreases the maths score by just 1.3 points, </span></span>
-<span id="cb36-12"><a href="#cb36-12"></a><span class="co">#&gt; additionally the R squared value is low 0.02499 </span></span>
-<span id="cb36-13"><a href="#cb36-13"></a><span class="co">#&gt; this is "low impact" in the EEF toolkit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>stu_tch_mat <span class="ot">&lt;-</span> PISA_2018_stusch <span class="sc">%&gt;%</span> </span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">summarise</span>(<span class="at">stu_tch_rat =</span> <span class="fu">unique</span>(STRATIO),</span>
+<span id="cb35-4"><a href="#cb35-4"></a>            <span class="at">maths =</span> <span class="fu">mean</span>(PV1MATH))</span>
+<span id="cb35-5"><a href="#cb35-5"></a></span>
+<span id="cb35-6"><a href="#cb35-6"></a>mdl_stu_tch_mat <span class="ot">&lt;-</span> <span class="fu">lm</span>(maths <span class="sc">~</span> stu_tch_rat, <span class="at">data=</span>stu_tch_mat)</span>
+<span id="cb35-7"><a href="#cb35-7"></a><span class="fu">summary</span>(mdl_stu_tch_mat)</span>
+<span id="cb35-8"><a href="#cb35-8"></a></span>
+<span id="cb35-9"><a href="#cb35-9"></a><span class="co">#&gt; it's significant p &lt;2e-16 ***, but with a very low </span></span>
+<span id="cb35-10"><a href="#cb35-10"></a><span class="co">#&gt; estimates/betas, i.e. one extra student per teacher </span></span>
+<span id="cb35-11"><a href="#cb35-11"></a><span class="co">#&gt; decreases the maths score by just 1.3 points, </span></span>
+<span id="cb35-12"><a href="#cb35-12"></a><span class="co">#&gt; additionally the R squared value is low 0.02499 </span></span>
+<span id="cb35-13"><a href="#cb35-13"></a><span class="co">#&gt; this is "low impact" in the EEF toolkit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Adjust the linear model used above to incorporate <code>STUBEHA</code> “Student behaviour hindering learning” in addition to the student teacher ratio:</p>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>stu_tch_mat_bev <span class="ot">&lt;-</span> PISA_2018_stusch <span class="sc">%&gt;%</span> </span>
-<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
-<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">summarise</span>(<span class="at">stu_tch_rat =</span> <span class="fu">unique</span>(STRATIO),</span>
-<span id="cb37-4"><a href="#cb37-4"></a>            <span class="at">behaviour =</span> <span class="fu">unique</span>(STUBEHA),</span>
-<span id="cb37-5"><a href="#cb37-5"></a>            <span class="at">maths =</span> <span class="fu">mean</span>(PV1MATH))</span>
-<span id="cb37-6"><a href="#cb37-6"></a></span>
-<span id="cb37-7"><a href="#cb37-7"></a><span class="co">#&gt; max(stu_tch_mat_bev$behaviour, na.rm = TRUE)</span></span>
-<span id="cb37-8"><a href="#cb37-8"></a><span class="co">#&gt; min(stu_tch_mat_bev$behaviour, na.rm = TRUE)</span></span>
-<span id="cb37-9"><a href="#cb37-9"></a></span>
-<span id="cb37-10"><a href="#cb37-10"></a>mdl_stu_tch_mat_bev <span class="ot">&lt;-</span> <span class="fu">lm</span>(maths <span class="sc">~</span> stu_tch_rat <span class="sc">+</span> behaviour, <span class="at">data=</span>stu_tch_mat_bev)</span>
-<span id="cb37-11"><a href="#cb37-11"></a><span class="fu">summary</span>(mdl_stu_tch_mat_bev)</span>
-<span id="cb37-12"><a href="#cb37-12"></a></span>
-<span id="cb37-13"><a href="#cb37-13"></a><span class="co">#&gt; both factors are significant p&lt;2e-16 ***, but with low estimates/betas, </span></span>
-<span id="cb37-14"><a href="#cb37-14"></a><span class="co">#&gt; i.e. one extra student per teacher decreases </span></span>
-<span id="cb37-15"><a href="#cb37-15"></a><span class="co">#&gt; the maths score by 1.2 points and the aggregated student behaviour hinder </span></span>
-<span id="cb37-16"><a href="#cb37-16"></a><span class="co">#&gt; learning decreases maths by 11.1 points </span></span>
-<span id="cb37-17"><a href="#cb37-17"></a><span class="co">#&gt; (max behaviour = 3.6274, min = -4.3542), additionally the R squared value </span></span>
-<span id="cb37-18"><a href="#cb37-18"></a><span class="co">#&gt; is better, but still low 0.05619</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>stu_tch_mat_bev <span class="ot">&lt;-</span> PISA_2018_stusch <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">summarise</span>(<span class="at">stu_tch_rat =</span> <span class="fu">unique</span>(STRATIO),</span>
+<span id="cb36-4"><a href="#cb36-4"></a>            <span class="at">behaviour =</span> <span class="fu">unique</span>(STUBEHA),</span>
+<span id="cb36-5"><a href="#cb36-5"></a>            <span class="at">maths =</span> <span class="fu">mean</span>(PV1MATH))</span>
+<span id="cb36-6"><a href="#cb36-6"></a></span>
+<span id="cb36-7"><a href="#cb36-7"></a><span class="co">#&gt; max(stu_tch_mat_bev$behaviour, na.rm = TRUE)</span></span>
+<span id="cb36-8"><a href="#cb36-8"></a><span class="co">#&gt; min(stu_tch_mat_bev$behaviour, na.rm = TRUE)</span></span>
+<span id="cb36-9"><a href="#cb36-9"></a></span>
+<span id="cb36-10"><a href="#cb36-10"></a>mdl_stu_tch_mat_bev <span class="ot">&lt;-</span> <span class="fu">lm</span>(maths <span class="sc">~</span> stu_tch_rat <span class="sc">+</span> behaviour, <span class="at">data=</span>stu_tch_mat_bev)</span>
+<span id="cb36-11"><a href="#cb36-11"></a><span class="fu">summary</span>(mdl_stu_tch_mat_bev)</span>
+<span id="cb36-12"><a href="#cb36-12"></a></span>
+<span id="cb36-13"><a href="#cb36-13"></a><span class="co">#&gt; both factors are significant p&lt;2e-16 ***, but with low estimates/betas, </span></span>
+<span id="cb36-14"><a href="#cb36-14"></a><span class="co">#&gt; i.e. one extra student per teacher decreases </span></span>
+<span id="cb36-15"><a href="#cb36-15"></a><span class="co">#&gt; the maths score by 1.2 points and the aggregated student behaviour hinder </span></span>
+<span id="cb36-16"><a href="#cb36-16"></a><span class="co">#&gt; learning decreases maths by 11.1 points </span></span>
+<span id="cb36-17"><a href="#cb36-17"></a><span class="co">#&gt; (max behaviour = 3.6274, min = -4.3542), additionally the R squared value </span></span>
+<span id="cb36-18"><a href="#cb36-18"></a><span class="co">#&gt; is better, but still low 0.05619</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="9" type="1">
 <li>Explore the schools data set to look at other interesting models. The school data set has a lot more numeric/continuous fields than the student table! To find these fields use this code:</li>
 </ol>
 <div class="cell">
-<details><summary>find numeric fields</summary><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># to get the names of numeric fields along with their labels</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a>nms <span class="ot">&lt;-</span> PISA_2018_school <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> <span class="fu">names</span>()</span>
-<span id="cb38-3"><a href="#cb38-3"></a>lbls <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(nms,<span class="sc">~</span>{</span>
-<span id="cb38-4"><a href="#cb38-4"></a>  lbl <span class="ot">&lt;-</span> <span class="fu">attr</span>(PISA_2018_school[[.x]], <span class="st">"label"</span>)</span>
-<span id="cb38-5"><a href="#cb38-5"></a>  nme <span class="ot">&lt;-</span> .x</span>
-<span id="cb38-6"><a href="#cb38-6"></a>  row <span class="ot">&lt;-</span> <span class="fu">c</span>(nme, lbl)</span>
-<span id="cb38-7"><a href="#cb38-7"></a>  <span class="fu">names</span>(row) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"label"</span>)</span>
-<span id="cb38-8"><a href="#cb38-8"></a>  <span class="fu">return</span>(row)</span>
-<span id="cb38-9"><a href="#cb38-9"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>find numeric fields</summary><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># to get the names of numeric fields along with their labels</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>nms <span class="ot">&lt;-</span> PISA_2018_school <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> <span class="fu">names</span>()</span>
+<span id="cb37-3"><a href="#cb37-3"></a>lbls <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(nms,<span class="sc">~</span>{</span>
+<span id="cb37-4"><a href="#cb37-4"></a>  lbl <span class="ot">&lt;-</span> <span class="fu">attr</span>(PISA_2018_school[[.x]], <span class="st">"label"</span>)</span>
+<span id="cb37-5"><a href="#cb37-5"></a>  nme <span class="ot">&lt;-</span> .x</span>
+<span id="cb37-6"><a href="#cb37-6"></a>  row <span class="ot">&lt;-</span> <span class="fu">c</span>(nme, lbl)</span>
+<span id="cb37-7"><a href="#cb37-7"></a>  <span class="fu">names</span>(row) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"label"</span>)</span>
+<span id="cb37-8"><a href="#cb37-8"></a>  <span class="fu">return</span>(row)</span>
+<span id="cb37-9"><a href="#cb37-9"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="10" type="1">
@@ -1245,73 +1225,73 @@ sample estimates:
 <li><p>Recreate the Stoet &amp; Geary analysis (see <a href="#sec-standard-stoet-geary">Section&nbsp;9.4</a>) to see if there is a “gender gap in intraindividual <strong>mathematics</strong> scores” that is “larger in more gender-equal countries”. You might expect this to be the case as it exists for science. Is this a STEM wide finding? How does the science model look for 2018 data? Was it a one off finding?</p></li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># standardise the results for each student in line with pg7</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a><span class="co"># https://eprints.leedsbeckett.ac.uk/id/eprint/4753/6/symplectic-version.pdf</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a></span>
-<span id="cb39-4"><a href="#cb39-4"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb39-5"><a href="#cb39-5"></a><span class="fu">library</span>(arrow)</span>
-<span id="cb39-6"><a href="#cb39-6"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb39-7"><a href="#cb39-7"></a></span>
-<span id="cb39-8"><a href="#cb39-8"></a>PISA_2015_GGGI <span class="ot">&lt;-</span> <span class="fu">left_join</span>(</span>
-<span id="cb39-9"><a href="#cb39-9"></a>  PISA_2015 <span class="sc">%&gt;%</span> <span class="fu">select</span>(CNT, ST004D01T, PV1MATH, PV1SCIE, PV1READ, SCIEEFF),</span>
-<span id="cb39-10"><a href="#cb39-10"></a>  GGGI <span class="sc">%&gt;%</span> <span class="fu">select</span>(Country, Overall.Score),</span>
-<span id="cb39-11"><a href="#cb39-11"></a>  <span class="at">by=</span><span class="fu">c</span>(<span class="st">"CNT"</span><span class="ot">=</span><span class="st">"Country"</span>))</span>
-<span id="cb39-12"><a href="#cb39-12"></a></span>
-<span id="cb39-13"><a href="#cb39-13"></a><span class="co"># step 1</span></span>
-<span id="cb39-14"><a href="#cb39-14"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015_GGGI <span class="sc">%&gt;%</span> </span>
-<span id="cb39-15"><a href="#cb39-15"></a>  <span class="fu">rename</span>(<span class="at">gender =</span> ST004D01T) <span class="sc">%&gt;%</span></span>
-<span id="cb39-16"><a href="#cb39-16"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
-<span id="cb39-17"><a href="#cb39-17"></a>  <span class="fu">mutate</span>(<span class="at">zMaths   =</span> <span class="fu">scale</span>(PV1MATH),</span>
-<span id="cb39-18"><a href="#cb39-18"></a>         <span class="at">zScience =</span> <span class="fu">scale</span>(PV1SCIE), </span>
-<span id="cb39-19"><a href="#cb39-19"></a>         <span class="at">zReading =</span> <span class="fu">scale</span>(PV1READ))</span>
-<span id="cb39-20"><a href="#cb39-20"></a></span>
-<span id="cb39-21"><a href="#cb39-21"></a><span class="co"># step 2</span></span>
-<span id="cb39-22"><a href="#cb39-22"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
-<span id="cb39-23"><a href="#cb39-23"></a>  <span class="fu">mutate</span>(<span class="at">zGeneral =</span> (zMaths <span class="sc">+</span> zScience <span class="sc">+</span> zReading) <span class="sc">/</span> <span class="dv">3</span>)</span>
-<span id="cb39-24"><a href="#cb39-24"></a></span>
-<span id="cb39-25"><a href="#cb39-25"></a><span class="co"># step 3</span></span>
-<span id="cb39-26"><a href="#cb39-26"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
-<span id="cb39-27"><a href="#cb39-27"></a>  <span class="fu">mutate</span>(<span class="at">rel_MATH =</span> zMaths   <span class="sc">-</span> zGeneral,</span>
-<span id="cb39-28"><a href="#cb39-28"></a>         <span class="at">rel_SCIE =</span> zScience <span class="sc">-</span> zGeneral,</span>
-<span id="cb39-29"><a href="#cb39-29"></a>         <span class="at">rel_READ =</span> zReading <span class="sc">-</span> zGeneral)</span>
-<span id="cb39-30"><a href="#cb39-30"></a></span>
-<span id="cb39-31"><a href="#cb39-31"></a><span class="co"># step 4 part 1</span></span>
-<span id="cb39-32"><a href="#cb39-32"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
-<span id="cb39-33"><a href="#cb39-33"></a>  <span class="fu">group_by</span>(CNT, gender) <span class="sc">%&gt;%</span></span>
-<span id="cb39-34"><a href="#cb39-34"></a>  <span class="fu">summarise</span>(<span class="at">zMaths =</span> <span class="fu">mean</span>(zMaths, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb39-35"><a href="#cb39-35"></a>            <span class="at">zScience =</span> <span class="fu">mean</span>(zScience, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb39-36"><a href="#cb39-36"></a>            <span class="at">zReading =</span> <span class="fu">mean</span>(zReading, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb39-37"><a href="#cb39-37"></a>            <span class="at">zGeneral =</span> <span class="fu">mean</span>(zGeneral, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb39-38"><a href="#cb39-38"></a>            <span class="at">rel_MATH =</span> zMaths <span class="sc">-</span> zGeneral,</span>
-<span id="cb39-39"><a href="#cb39-39"></a>            <span class="at">rel_SCIE =</span> zScience <span class="sc">-</span> zGeneral,</span>
-<span id="cb39-40"><a href="#cb39-40"></a>            <span class="at">rel_READ =</span> zReading <span class="sc">-</span> zGeneral,</span>
-<span id="cb39-41"><a href="#cb39-41"></a>            <span class="at">gggi =</span> <span class="fu">unique</span>(Overall.Score))</span>
-<span id="cb39-42"><a href="#cb39-42"></a></span>
-<span id="cb39-43"><a href="#cb39-43"></a><span class="co"># step 4 part 2</span></span>
-<span id="cb39-44"><a href="#cb39-44"></a>pisa_gggi_diff <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span></span>
-<span id="cb39-45"><a href="#cb39-45"></a>  <span class="fu">select</span>(CNT, gender, gggi, rel_MATH) <span class="sc">%&gt;%</span></span>
-<span id="cb39-46"><a href="#cb39-46"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> gender,</span>
-<span id="cb39-47"><a href="#cb39-47"></a>              <span class="at">values_from =</span> rel_MATH) <span class="sc">%&gt;%</span></span>
-<span id="cb39-48"><a href="#cb39-48"></a>  <span class="fu">mutate</span>(<span class="at">difference =</span>  Male <span class="sc">-</span> Female)</span>
-<span id="cb39-49"><a href="#cb39-49"></a></span>
-<span id="cb39-50"><a href="#cb39-50"></a><span class="fu">ggplot</span>(pisa_gggi_diff,</span>
-<span id="cb39-51"><a href="#cb39-51"></a>       <span class="fu">aes</span>(<span class="at">x=</span>difference, <span class="at">y=</span>gggi)) <span class="sc">+</span> </span>
-<span id="cb39-52"><a href="#cb39-52"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb39-53"><a href="#cb39-53"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb39-54"><a href="#cb39-54"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>CNT),</span>
-<span id="cb39-55"><a href="#cb39-55"></a>            <span class="at">box.padding =</span> <span class="fl">0.2</span>,</span>
-<span id="cb39-56"><a href="#cb39-56"></a>            <span class="at">max.overlaps =</span> <span class="cn">Inf</span>,</span>
-<span id="cb39-57"><a href="#cb39-57"></a>            <span class="at">colour=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb39-58"><a href="#cb39-58"></a>  <span class="fu">xlab</span>(<span class="fu">paste0</span>(<span class="st">"relative difference in PV1MATH scores (male-female)"</span>))</span>
-<span id="cb39-59"><a href="#cb39-59"></a></span>
-<span id="cb39-60"><a href="#cb39-60"></a><span class="co"># perform correlation analysis</span></span>
-<span id="cb39-61"><a href="#cb39-61"></a>result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(pisa_gggi_diff<span class="sc">$</span>gggi, </span>
-<span id="cb39-62"><a href="#cb39-62"></a>                    pisa_gggi_diff<span class="sc">$</span>difference, </span>
-<span id="cb39-63"><a href="#cb39-63"></a>                    <span class="at">method=</span><span class="st">"spearman"</span>)</span>
-<span id="cb39-64"><a href="#cb39-64"></a>result</span>
-<span id="cb39-65"><a href="#cb39-65"></a><span class="co">#&gt; this result isn't significant as p-value &gt; 0.05</span></span>
-<span id="cb39-66"><a href="#cb39-66"></a><span class="co">#&gt; additionally the correlation coefficient is negative</span></span>
-<span id="cb39-67"><a href="#cb39-67"></a><span class="co">#&gt; this suggests that the STEM gender paradox doesn't apply to maths.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># standardise the results for each student in line with pg7</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="co"># https://eprints.leedsbeckett.ac.uk/id/eprint/4753/6/symplectic-version.pdf</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a></span>
+<span id="cb38-4"><a href="#cb38-4"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb38-5"><a href="#cb38-5"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb38-6"><a href="#cb38-6"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb38-7"><a href="#cb38-7"></a></span>
+<span id="cb38-8"><a href="#cb38-8"></a>PISA_2015_GGGI <span class="ot">&lt;-</span> <span class="fu">left_join</span>(</span>
+<span id="cb38-9"><a href="#cb38-9"></a>  PISA_2015 <span class="sc">%&gt;%</span> <span class="fu">select</span>(CNT, ST004D01T, PV1MATH, PV1SCIE, PV1READ, SCIEEFF),</span>
+<span id="cb38-10"><a href="#cb38-10"></a>  GGGI <span class="sc">%&gt;%</span> <span class="fu">select</span>(Country, Overall.Score),</span>
+<span id="cb38-11"><a href="#cb38-11"></a>  <span class="at">by=</span><span class="fu">c</span>(<span class="st">"CNT"</span><span class="ot">=</span><span class="st">"Country"</span>))</span>
+<span id="cb38-12"><a href="#cb38-12"></a></span>
+<span id="cb38-13"><a href="#cb38-13"></a><span class="co"># step 1</span></span>
+<span id="cb38-14"><a href="#cb38-14"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015_GGGI <span class="sc">%&gt;%</span> </span>
+<span id="cb38-15"><a href="#cb38-15"></a>  <span class="fu">rename</span>(<span class="at">gender =</span> ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb38-16"><a href="#cb38-16"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb38-17"><a href="#cb38-17"></a>  <span class="fu">mutate</span>(<span class="at">zMaths   =</span> <span class="fu">scale</span>(PV1MATH),</span>
+<span id="cb38-18"><a href="#cb38-18"></a>         <span class="at">zScience =</span> <span class="fu">scale</span>(PV1SCIE), </span>
+<span id="cb38-19"><a href="#cb38-19"></a>         <span class="at">zReading =</span> <span class="fu">scale</span>(PV1READ))</span>
+<span id="cb38-20"><a href="#cb38-20"></a></span>
+<span id="cb38-21"><a href="#cb38-21"></a><span class="co"># step 2</span></span>
+<span id="cb38-22"><a href="#cb38-22"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
+<span id="cb38-23"><a href="#cb38-23"></a>  <span class="fu">mutate</span>(<span class="at">zGeneral =</span> (zMaths <span class="sc">+</span> zScience <span class="sc">+</span> zReading) <span class="sc">/</span> <span class="dv">3</span>)</span>
+<span id="cb38-24"><a href="#cb38-24"></a></span>
+<span id="cb38-25"><a href="#cb38-25"></a><span class="co"># step 3</span></span>
+<span id="cb38-26"><a href="#cb38-26"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
+<span id="cb38-27"><a href="#cb38-27"></a>  <span class="fu">mutate</span>(<span class="at">rel_MATH =</span> zMaths   <span class="sc">-</span> zGeneral,</span>
+<span id="cb38-28"><a href="#cb38-28"></a>         <span class="at">rel_SCIE =</span> zScience <span class="sc">-</span> zGeneral,</span>
+<span id="cb38-29"><a href="#cb38-29"></a>         <span class="at">rel_READ =</span> zReading <span class="sc">-</span> zGeneral)</span>
+<span id="cb38-30"><a href="#cb38-30"></a></span>
+<span id="cb38-31"><a href="#cb38-31"></a><span class="co"># step 4 part 1</span></span>
+<span id="cb38-32"><a href="#cb38-32"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
+<span id="cb38-33"><a href="#cb38-33"></a>  <span class="fu">group_by</span>(CNT, gender) <span class="sc">%&gt;%</span></span>
+<span id="cb38-34"><a href="#cb38-34"></a>  <span class="fu">summarise</span>(<span class="at">zMaths =</span> <span class="fu">mean</span>(zMaths, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb38-35"><a href="#cb38-35"></a>            <span class="at">zScience =</span> <span class="fu">mean</span>(zScience, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb38-36"><a href="#cb38-36"></a>            <span class="at">zReading =</span> <span class="fu">mean</span>(zReading, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb38-37"><a href="#cb38-37"></a>            <span class="at">zGeneral =</span> <span class="fu">mean</span>(zGeneral, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb38-38"><a href="#cb38-38"></a>            <span class="at">rel_MATH =</span> zMaths <span class="sc">-</span> zGeneral,</span>
+<span id="cb38-39"><a href="#cb38-39"></a>            <span class="at">rel_SCIE =</span> zScience <span class="sc">-</span> zGeneral,</span>
+<span id="cb38-40"><a href="#cb38-40"></a>            <span class="at">rel_READ =</span> zReading <span class="sc">-</span> zGeneral,</span>
+<span id="cb38-41"><a href="#cb38-41"></a>            <span class="at">gggi =</span> <span class="fu">unique</span>(Overall.Score))</span>
+<span id="cb38-42"><a href="#cb38-42"></a></span>
+<span id="cb38-43"><a href="#cb38-43"></a><span class="co"># step 4 part 2</span></span>
+<span id="cb38-44"><a href="#cb38-44"></a>pisa_gggi_diff <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span></span>
+<span id="cb38-45"><a href="#cb38-45"></a>  <span class="fu">select</span>(CNT, gender, gggi, rel_MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb38-46"><a href="#cb38-46"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> gender,</span>
+<span id="cb38-47"><a href="#cb38-47"></a>              <span class="at">values_from =</span> rel_MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb38-48"><a href="#cb38-48"></a>  <span class="fu">mutate</span>(<span class="at">difference =</span>  Male <span class="sc">-</span> Female)</span>
+<span id="cb38-49"><a href="#cb38-49"></a></span>
+<span id="cb38-50"><a href="#cb38-50"></a><span class="fu">ggplot</span>(pisa_gggi_diff,</span>
+<span id="cb38-51"><a href="#cb38-51"></a>       <span class="fu">aes</span>(<span class="at">x=</span>difference, <span class="at">y=</span>gggi)) <span class="sc">+</span> </span>
+<span id="cb38-52"><a href="#cb38-52"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb38-53"><a href="#cb38-53"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb38-54"><a href="#cb38-54"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>CNT),</span>
+<span id="cb38-55"><a href="#cb38-55"></a>            <span class="at">box.padding =</span> <span class="fl">0.2</span>,</span>
+<span id="cb38-56"><a href="#cb38-56"></a>            <span class="at">max.overlaps =</span> <span class="cn">Inf</span>,</span>
+<span id="cb38-57"><a href="#cb38-57"></a>            <span class="at">colour=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb38-58"><a href="#cb38-58"></a>  <span class="fu">xlab</span>(<span class="fu">paste0</span>(<span class="st">"relative difference in PV1MATH scores (male-female)"</span>))</span>
+<span id="cb38-59"><a href="#cb38-59"></a></span>
+<span id="cb38-60"><a href="#cb38-60"></a><span class="co"># perform correlation analysis</span></span>
+<span id="cb38-61"><a href="#cb38-61"></a>result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(pisa_gggi_diff<span class="sc">$</span>gggi, </span>
+<span id="cb38-62"><a href="#cb38-62"></a>                    pisa_gggi_diff<span class="sc">$</span>difference, </span>
+<span id="cb38-63"><a href="#cb38-63"></a>                    <span class="at">method=</span><span class="st">"spearman"</span>)</span>
+<span id="cb38-64"><a href="#cb38-64"></a>result</span>
+<span id="cb38-65"><a href="#cb38-65"></a><span class="co">#&gt; this result isn't significant as p-value &gt; 0.05</span></span>
+<span id="cb38-66"><a href="#cb38-66"></a><span class="co">#&gt; additionally the correlation coefficient is negative</span></span>
+<span id="cb38-67"><a href="#cb38-67"></a><span class="co">#&gt; this suggests that the STEM gender paradox doesn't apply to maths.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -1324,35 +1304,35 @@ sample estimates:
 <code>PV1MATH</code> to <code>PV1SCIE</code>, is this a stronger relationship than that between Maths and Reading?</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">cor.test</span>(PISA_2018<span class="sc">$</span>PV1MATH, PISA_2018<span class="sc">$</span>PV1SCIE, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
-<span id="cb40-2"><a href="#cb40-2"></a><span class="co">#&gt; cor 0.8451287</span></span>
-<span id="cb40-3"><a href="#cb40-3"></a></span>
-<span id="cb40-4"><a href="#cb40-4"></a><span class="fu">cor.test</span>(PISA_2018<span class="sc">$</span>PV1MATH, PISA_2018<span class="sc">$</span>PV1READ, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
-<span id="cb40-5"><a href="#cb40-5"></a><span class="co">#&gt; cor 0.828626</span></span>
-<span id="cb40-6"><a href="#cb40-6"></a></span>
-<span id="cb40-7"><a href="#cb40-7"></a><span class="co">#&gt; very slightly, yes!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">cor.test</span>(PISA_2018<span class="sc">$</span>PV1MATH, PISA_2018<span class="sc">$</span>PV1SCIE, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="co">#&gt; cor 0.8451287</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a></span>
+<span id="cb39-4"><a href="#cb39-4"></a><span class="fu">cor.test</span>(PISA_2018<span class="sc">$</span>PV1MATH, PISA_2018<span class="sc">$</span>PV1READ, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb39-5"><a href="#cb39-5"></a><span class="co">#&gt; cor 0.828626</span></span>
+<span id="cb39-6"><a href="#cb39-6"></a></span>
+<span id="cb39-7"><a href="#cb39-7"></a><span class="co">#&gt; very slightly, yes!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="2" type="1">
 <li>The wealth <code>WEALTH</code> of females <code>ST004D01T</code> and their Reading <code>PV1READ</code> score, how does this compare to males? Why might they be different?</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>)</span>
-<span id="cb41-2"><a href="#cb41-2"></a><span class="fu">cor.test</span>(data<span class="sc">$</span>WEALTH, data<span class="sc">$</span>PV1READ, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
-<span id="cb41-3"><a href="#cb41-3"></a></span>
-<span id="cb41-4"><a href="#cb41-4"></a></span>
-<span id="cb41-5"><a href="#cb41-5"></a>data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>)</span>
-<span id="cb41-6"><a href="#cb41-6"></a><span class="fu">cor.test</span>(data<span class="sc">$</span>WEALTH, data<span class="sc">$</span>PV1READ, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
-<span id="cb41-7"><a href="#cb41-7"></a><span class="co">#&gt; cor 0.2553069</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>)</span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="fu">cor.test</span>(data<span class="sc">$</span>WEALTH, data<span class="sc">$</span>PV1READ, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb40-3"><a href="#cb40-3"></a></span>
+<span id="cb40-4"><a href="#cb40-4"></a></span>
+<span id="cb40-5"><a href="#cb40-5"></a>data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>)</span>
+<span id="cb40-6"><a href="#cb40-6"></a><span class="fu">cor.test</span>(data<span class="sc">$</span>WEALTH, data<span class="sc">$</span>PV1READ, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb40-7"><a href="#cb40-7"></a><span class="co">#&gt; cor 0.2553069</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="3" type="1">
 <li>For the <code>United Kingdom</code> How does the sense of belonging to school <code>BELONG</code> correlate with the attitude to learning activities <code>ATTLNACT</code>? How does the UK compare against other countries?</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
-<span id="cb42-2"><a href="#cb42-2"></a><span class="fu">cor.test</span>(data<span class="sc">$</span>BELONG, data<span class="sc">$</span>ATTLNACT, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
-<span id="cb42-3"><a href="#cb42-3"></a><span class="co">#&gt; cor 0.1314652</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="fu">cor.test</span>(data<span class="sc">$</span>BELONG, data<span class="sc">$</span>ATTLNACT, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb41-3"><a href="#cb41-3"></a><span class="co">#&gt; cor 0.1314652</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -1368,7 +1348,7 @@ Tip
 <div class="callout-body-container callout-body">
 <p>If you want to find all the <code>numeric</code> fields, i.e.&nbsp;the fields that you can easily run correlation calculations on, use the following code to list them:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> <span class="fu">names</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> <span class="fu">names</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "WVARSTRR"   "ESCS"       "LMINS"      "CNTSCHID"   "CNTSTUID"  
  [6] "ST060Q01NA" "MMINS"      "SMINS"      "TMINS"      "CULTPOSS"  
@@ -1386,42 +1366,42 @@ Tip
 <li><p>Run a regression model to look at how science grades predict Maths outcomes in UK students. How does this compare to students in France?</p></li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> PV1SCIE, </span>
-<span id="cb45-2"><a href="#cb45-2"></a>          <span class="at">data=</span>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>))</span>
-<span id="cb45-3"><a href="#cb45-3"></a><span class="fu">summary</span>(mdl)</span>
-<span id="cb45-4"><a href="#cb45-4"></a><span class="co">#&gt; Estimate = 0.757</span></span>
-<span id="cb45-5"><a href="#cb45-5"></a><span class="co">#&gt; p&lt;0.001</span></span>
-<span id="cb45-6"><a href="#cb45-6"></a><span class="co">#&gt; R2 = 0.6378</span></span>
-<span id="cb45-7"><a href="#cb45-7"></a></span>
-<span id="cb45-8"><a href="#cb45-8"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> PV1SCIE, </span>
-<span id="cb45-9"><a href="#cb45-9"></a>          <span class="at">data=</span>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"France"</span>))</span>
-<span id="cb45-10"><a href="#cb45-10"></a><span class="fu">summary</span>(mdl)</span>
-<span id="cb45-11"><a href="#cb45-11"></a><span class="co">#&gt; Estimate = 0.834</span></span>
-<span id="cb45-12"><a href="#cb45-12"></a><span class="co">#&gt; p&lt;0.001</span></span>
-<span id="cb45-13"><a href="#cb45-13"></a><span class="co">#&gt; R2 = 0.7326</span></span>
-<span id="cb45-14"><a href="#cb45-14"></a></span>
-<span id="cb45-15"><a href="#cb45-15"></a><span class="co">#&gt; both models are significant, but the model in France has a higher R squared value, i.e. Science is a better predictor of maths outcomes in France than it is in the UK.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> PV1SCIE, </span>
+<span id="cb44-2"><a href="#cb44-2"></a>          <span class="at">data=</span>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>))</span>
+<span id="cb44-3"><a href="#cb44-3"></a><span class="fu">summary</span>(mdl)</span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="co">#&gt; Estimate = 0.757</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a><span class="co">#&gt; p&lt;0.001</span></span>
+<span id="cb44-6"><a href="#cb44-6"></a><span class="co">#&gt; R2 = 0.6378</span></span>
+<span id="cb44-7"><a href="#cb44-7"></a></span>
+<span id="cb44-8"><a href="#cb44-8"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> PV1SCIE, </span>
+<span id="cb44-9"><a href="#cb44-9"></a>          <span class="at">data=</span>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"France"</span>))</span>
+<span id="cb44-10"><a href="#cb44-10"></a><span class="fu">summary</span>(mdl)</span>
+<span id="cb44-11"><a href="#cb44-11"></a><span class="co">#&gt; Estimate = 0.834</span></span>
+<span id="cb44-12"><a href="#cb44-12"></a><span class="co">#&gt; p&lt;0.001</span></span>
+<span id="cb44-13"><a href="#cb44-13"></a><span class="co">#&gt; R2 = 0.7326</span></span>
+<span id="cb44-14"><a href="#cb44-14"></a></span>
+<span id="cb44-15"><a href="#cb44-15"></a><span class="co">#&gt; both models are significant, but the model in France has a higher R squared value, i.e. Science is a better predictor of maths outcomes in France than it is in the UK.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="3" type="1">
 <li>Create a linear model to look at how wealth <code>WEALTH</code> influences Maths grades in the United Kingdom and Belarus. If we use the Education Endowment Foundation’s interpretation of effect sizes <span class="citation" data-cites="higgins2016sutton">(<a href="#ref-higgins2016sutton" role="doc-biblioref">Higgins et al. 2016, 5</a>)</span> what is the impact of increasing the wealth of students in each country?</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> WEALTH, </span>
-<span id="cb46-2"><a href="#cb46-2"></a>          <span class="at">data=</span>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>))</span>
-<span id="cb46-3"><a href="#cb46-3"></a><span class="fu">summary</span>(mdl)</span>
-<span id="cb46-4"><a href="#cb46-4"></a><span class="co">#&gt; Estimate = 14.3</span></span>
-<span id="cb46-5"><a href="#cb46-5"></a><span class="co">#&gt; p&lt;0.001</span></span>
-<span id="cb46-6"><a href="#cb46-6"></a><span class="co">#&gt; R2 = 0.01999</span></span>
-<span id="cb46-7"><a href="#cb46-7"></a><span class="co">#&gt; this is just below 0.02, meaning the model has "Very low or no impact"</span></span>
-<span id="cb46-8"><a href="#cb46-8"></a></span>
-<span id="cb46-9"><a href="#cb46-9"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> WEALTH, </span>
-<span id="cb46-10"><a href="#cb46-10"></a>          <span class="at">data=</span>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"Belarus"</span>))</span>
-<span id="cb46-11"><a href="#cb46-11"></a><span class="fu">summary</span>(mdl)</span>
-<span id="cb46-12"><a href="#cb46-12"></a><span class="co">#&gt; Estimate = 31.4</span></span>
-<span id="cb46-13"><a href="#cb46-13"></a><span class="co">#&gt; p&lt;0.001</span></span>
-<span id="cb46-14"><a href="#cb46-14"></a><span class="co">#&gt; R2 = 0.05476</span></span>
-<span id="cb46-15"><a href="#cb46-15"></a><span class="co">#&gt; Wealth has a greater impact on Maths results in Belarus than in the UK, with an effect size of "Low"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> WEALTH, </span>
+<span id="cb45-2"><a href="#cb45-2"></a>          <span class="at">data=</span>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>))</span>
+<span id="cb45-3"><a href="#cb45-3"></a><span class="fu">summary</span>(mdl)</span>
+<span id="cb45-4"><a href="#cb45-4"></a><span class="co">#&gt; Estimate = 14.3</span></span>
+<span id="cb45-5"><a href="#cb45-5"></a><span class="co">#&gt; p&lt;0.001</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a><span class="co">#&gt; R2 = 0.01999</span></span>
+<span id="cb45-7"><a href="#cb45-7"></a><span class="co">#&gt; this is just below 0.02, meaning the model has "Very low or no impact"</span></span>
+<span id="cb45-8"><a href="#cb45-8"></a></span>
+<span id="cb45-9"><a href="#cb45-9"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> WEALTH, </span>
+<span id="cb45-10"><a href="#cb45-10"></a>          <span class="at">data=</span>PISA_2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"Belarus"</span>))</span>
+<span id="cb45-11"><a href="#cb45-11"></a><span class="fu">summary</span>(mdl)</span>
+<span id="cb45-12"><a href="#cb45-12"></a><span class="co">#&gt; Estimate = 31.4</span></span>
+<span id="cb45-13"><a href="#cb45-13"></a><span class="co">#&gt; p&lt;0.001</span></span>
+<span id="cb45-14"><a href="#cb45-14"></a><span class="co">#&gt; R2 = 0.05476</span></span>
+<span id="cb45-15"><a href="#cb45-15"></a><span class="co">#&gt; Wealth has a greater impact on Maths results in Belarus than in the UK, with an effect size of "Low"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -1432,12 +1412,12 @@ Tip
 <li>What errors can you see in this code:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">ml</span>(ST113Q01TA <span class="sc">~</span> ST004D01T, WEALTH, <span class="at">data =</span> PISA_2015)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">ml</span>(ST113Q01TA <span class="sc">~</span> ST004D01T, WEALTH, <span class="at">data =</span> PISA_2015)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># 1. lm rather than ml</span></span>
-<span id="cb48-2"><a href="#cb48-2"></a><span class="co"># 2. + between ST004D01T + WEALTH, rather than an ,</span></span>
-<span id="cb48-3"><a href="#cb48-3"></a><span class="fu">lm</span>(ST113Q01TA <span class="sc">~</span> ST004D01T <span class="sc">+</span> WEALTH, <span class="at">data =</span> PISA_2015)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># 1. lm rather than ml</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a><span class="co"># 2. + between ST004D01T + WEALTH, rather than an ,</span></span>
+<span id="cb47-3"><a href="#cb47-3"></a><span class="fu">lm</span>(ST113Q01TA <span class="sc">~</span> ST004D01T <span class="sc">+</span> WEALTH, <span class="at">data =</span> PISA_2015)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="2" type="1">
@@ -1464,12 +1444,12 @@ MATHEFF 2012 MATINTFC 2012 SCIEEFF 2015-->
 <p>First we are going to download the GGGI, unfortunately, it’s difficult to find the 2015 data set, so we’ll use 2013 instead, which can be found <a href="https://data.humdata.org/dataset/29f2f52f-a9c2-4ff9-a99e-42b894dc18e9/resource/a8fe8c72-1359-4ce3-b8cc-03d9e5e85875/download/table-3b-detailed-rankings-2013.csv">here</a></p>
 <p>The data is in a <code>.csv</code> format so we need to use <code>read.csv</code> to get it into R (make sure that you use <code>read.csv</code> rather than <code>read_csv</code> as the names will come out slightly differently)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># load the GGGI</span></span>
-<span id="cb49-2"><a href="#cb49-2"></a>GGGI <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"&lt;folder&gt;table-3b-detailed-rankings-2013.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># load the GGGI</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>GGGI <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"&lt;folder&gt;table-3b-detailed-rankings-2013.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If we look at the names of the GGGI fields we find that there is a <code>Country</code> column and the <code>Overall.Score</code> column, these are the columns that we are interested in. We can also see that many of the top scoring countries, i.e.&nbsp;those with better gender equality are Nordic countries.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>GGGI <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Country, Overall.Score)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>GGGI <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Country, Overall.Score)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      Country Overall.Score
 1     Iceland        0.8731
@@ -1481,8 +1461,8 @@ MATHEFF 2012 MATINTFC 2012 SCIEEFF 2015-->
 </div>
 <p>Now we will load the 2015 PISA data set, we have a <code>.parquet</code> copy for you <a href="https://drive.google.com/file/d/18NpQO1DGY5dnjnlR2b3IF9Zv8xtpc1Fk/view?usp=share_link">here</a></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># load PISA_2015 student data set</span></span>
-<span id="cb52-2"><a href="#cb52-2"></a>PISA_2015 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">"&lt;folder&gt;PISA_2015_student_subset.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># load PISA_2015 student data set</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a>PISA_2015 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">"&lt;folder&gt;PISA_2015_student_subset.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="sec-leftjoin" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="sec-leftjoin">
 <span class="header-section-number">9.3</span> Linking data using <code>left_join</code>
@@ -1491,10 +1471,10 @@ MATHEFF 2012 MATINTFC 2012 SCIEEFF 2015-->
 <pre><code>left_join(&lt;table_1&gt;, &lt;table_2&gt;, by=&lt;matching_field[s]&gt;)</code></pre>
 <p>We will now join a subset of the <code>PISA_2015</code> data set to a subset of the <code>GGGI</code> scores:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>PISA_2015_GGGI <span class="ot">&lt;-</span> <span class="fu">left_join</span>(</span>
-<span id="cb54-2"><a href="#cb54-2"></a>  PISA_2015 <span class="sc">%&gt;%</span> <span class="fu">select</span>(CNT, ST004D01T, PV1MATH, PV1SCIE, PV1READ, SCIEEFF),</span>
-<span id="cb54-3"><a href="#cb54-3"></a>  GGGI <span class="sc">%&gt;%</span> <span class="fu">select</span>(Country, Overall.Score),</span>
-<span id="cb54-4"><a href="#cb54-4"></a>  <span class="at">by=</span><span class="fu">c</span>(<span class="st">"CNT"</span><span class="ot">=</span><span class="st">"Country"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>PISA_2015_GGGI <span class="ot">&lt;-</span> <span class="fu">left_join</span>(</span>
+<span id="cb53-2"><a href="#cb53-2"></a>  PISA_2015 <span class="sc">%&gt;%</span> <span class="fu">select</span>(CNT, ST004D01T, PV1MATH, PV1SCIE, PV1READ, SCIEEFF),</span>
+<span id="cb53-3"><a href="#cb53-3"></a>  GGGI <span class="sc">%&gt;%</span> <span class="fu">select</span>(Country, Overall.Score),</span>
+<span id="cb53-4"><a href="#cb53-4"></a>  <span class="at">by=</span><span class="fu">c</span>(<span class="st">"CNT"</span><span class="ot">=</span><span class="st">"Country"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>line 1, assigns <code>&lt;-</code> the result of the <code>left_join</code> to a new object, <code>PISA_2015_GGGI</code>,</li>
@@ -1543,64 +1523,64 @@ Tip
 </blockquote>
 <p>produces the following code:</p>
 <div class="cell">
-<details><summary>code</summary><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># standardise the results for each student in line with pg7</span></span>
-<span id="cb56-2"><a href="#cb56-2"></a><span class="co"># https://eprints.leedsbeckett.ac.uk/id/eprint/4753/6/symplectic-version.pdf</span></span>
-<span id="cb56-3"><a href="#cb56-3"></a></span>
-<span id="cb56-4"><a href="#cb56-4"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb56-5"><a href="#cb56-5"></a><span class="fu">library</span>(arrow)</span>
-<span id="cb56-6"><a href="#cb56-6"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb56-7"><a href="#cb56-7"></a></span>
-<span id="cb56-8"><a href="#cb56-8"></a><span class="co"># step 1</span></span>
-<span id="cb56-9"><a href="#cb56-9"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015_GGGI <span class="sc">%&gt;%</span> </span>
-<span id="cb56-10"><a href="#cb56-10"></a>  <span class="fu">rename</span>(<span class="at">gender =</span> ST004D01T) <span class="sc">%&gt;%</span></span>
-<span id="cb56-11"><a href="#cb56-11"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
-<span id="cb56-12"><a href="#cb56-12"></a>  <span class="fu">mutate</span>(<span class="at">zMaths   =</span> <span class="fu">scale</span>(PV1MATH),</span>
-<span id="cb56-13"><a href="#cb56-13"></a>         <span class="at">zScience =</span> <span class="fu">scale</span>(PV1SCIE), </span>
-<span id="cb56-14"><a href="#cb56-14"></a>         <span class="at">zReading =</span> <span class="fu">scale</span>(PV1READ))</span>
-<span id="cb56-15"><a href="#cb56-15"></a></span>
-<span id="cb56-16"><a href="#cb56-16"></a><span class="co"># step 2</span></span>
-<span id="cb56-17"><a href="#cb56-17"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
-<span id="cb56-18"><a href="#cb56-18"></a>  <span class="fu">mutate</span>(<span class="at">zGeneral =</span> (zMaths <span class="sc">+</span> zScience <span class="sc">+</span> zReading) <span class="sc">/</span> <span class="dv">3</span>)</span>
-<span id="cb56-19"><a href="#cb56-19"></a></span>
-<span id="cb56-20"><a href="#cb56-20"></a><span class="co"># step 3</span></span>
-<span id="cb56-21"><a href="#cb56-21"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
-<span id="cb56-22"><a href="#cb56-22"></a>  <span class="fu">mutate</span>(<span class="at">rel_MATH =</span> zMaths   <span class="sc">-</span> zGeneral,</span>
-<span id="cb56-23"><a href="#cb56-23"></a>         <span class="at">rel_SCIE =</span> zScience <span class="sc">-</span> zGeneral,</span>
-<span id="cb56-24"><a href="#cb56-24"></a>         <span class="at">rel_READ =</span> zReading <span class="sc">-</span> zGeneral)</span>
-<span id="cb56-25"><a href="#cb56-25"></a></span>
-<span id="cb56-26"><a href="#cb56-26"></a><span class="co"># step 4 part 1</span></span>
-<span id="cb56-27"><a href="#cb56-27"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
-<span id="cb56-28"><a href="#cb56-28"></a>  <span class="fu">group_by</span>(CNT, gender) <span class="sc">%&gt;%</span></span>
-<span id="cb56-29"><a href="#cb56-29"></a>  <span class="fu">summarise</span>(<span class="at">zMaths =</span> <span class="fu">mean</span>(zMaths, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb56-30"><a href="#cb56-30"></a>            <span class="at">zScience =</span> <span class="fu">mean</span>(zScience, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb56-31"><a href="#cb56-31"></a>            <span class="at">zReading =</span> <span class="fu">mean</span>(zReading, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb56-32"><a href="#cb56-32"></a>            <span class="at">zGeneral =</span> <span class="fu">mean</span>(zGeneral, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb56-33"><a href="#cb56-33"></a>            <span class="at">rel_MATH =</span> zMaths <span class="sc">-</span> zGeneral,</span>
-<span id="cb56-34"><a href="#cb56-34"></a>            <span class="at">rel_SCIE =</span> zScience <span class="sc">-</span> zGeneral,</span>
-<span id="cb56-35"><a href="#cb56-35"></a>            <span class="at">rel_READ =</span> zReading <span class="sc">-</span> zGeneral,</span>
-<span id="cb56-36"><a href="#cb56-36"></a>            <span class="at">gggi =</span> <span class="fu">unique</span>(Overall.Score))</span>
-<span id="cb56-37"><a href="#cb56-37"></a></span>
-<span id="cb56-38"><a href="#cb56-38"></a><span class="co"># step 4 part 2</span></span>
-<span id="cb56-39"><a href="#cb56-39"></a>pisa_gggi_diff <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span></span>
-<span id="cb56-40"><a href="#cb56-40"></a>  <span class="fu">select</span>(CNT, gender, gggi, rel_SCIE) <span class="sc">%&gt;%</span></span>
-<span id="cb56-41"><a href="#cb56-41"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> gender,</span>
-<span id="cb56-42"><a href="#cb56-42"></a>              <span class="at">values_from =</span> rel_SCIE) <span class="sc">%&gt;%</span></span>
-<span id="cb56-43"><a href="#cb56-43"></a>  <span class="fu">mutate</span>(<span class="at">difference =</span>  Male <span class="sc">-</span> Female)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>code</summary><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># standardise the results for each student in line with pg7</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="co"># https://eprints.leedsbeckett.ac.uk/id/eprint/4753/6/symplectic-version.pdf</span></span>
+<span id="cb55-3"><a href="#cb55-3"></a></span>
+<span id="cb55-4"><a href="#cb55-4"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb55-5"><a href="#cb55-5"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb55-6"><a href="#cb55-6"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb55-7"><a href="#cb55-7"></a></span>
+<span id="cb55-8"><a href="#cb55-8"></a><span class="co"># step 1</span></span>
+<span id="cb55-9"><a href="#cb55-9"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015_GGGI <span class="sc">%&gt;%</span> </span>
+<span id="cb55-10"><a href="#cb55-10"></a>  <span class="fu">rename</span>(<span class="at">gender =</span> ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb55-11"><a href="#cb55-11"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb55-12"><a href="#cb55-12"></a>  <span class="fu">mutate</span>(<span class="at">zMaths   =</span> <span class="fu">scale</span>(PV1MATH),</span>
+<span id="cb55-13"><a href="#cb55-13"></a>         <span class="at">zScience =</span> <span class="fu">scale</span>(PV1SCIE), </span>
+<span id="cb55-14"><a href="#cb55-14"></a>         <span class="at">zReading =</span> <span class="fu">scale</span>(PV1READ))</span>
+<span id="cb55-15"><a href="#cb55-15"></a></span>
+<span id="cb55-16"><a href="#cb55-16"></a><span class="co"># step 2</span></span>
+<span id="cb55-17"><a href="#cb55-17"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
+<span id="cb55-18"><a href="#cb55-18"></a>  <span class="fu">mutate</span>(<span class="at">zGeneral =</span> (zMaths <span class="sc">+</span> zScience <span class="sc">+</span> zReading) <span class="sc">/</span> <span class="dv">3</span>)</span>
+<span id="cb55-19"><a href="#cb55-19"></a></span>
+<span id="cb55-20"><a href="#cb55-20"></a><span class="co"># step 3</span></span>
+<span id="cb55-21"><a href="#cb55-21"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
+<span id="cb55-22"><a href="#cb55-22"></a>  <span class="fu">mutate</span>(<span class="at">rel_MATH =</span> zMaths   <span class="sc">-</span> zGeneral,</span>
+<span id="cb55-23"><a href="#cb55-23"></a>         <span class="at">rel_SCIE =</span> zScience <span class="sc">-</span> zGeneral,</span>
+<span id="cb55-24"><a href="#cb55-24"></a>         <span class="at">rel_READ =</span> zReading <span class="sc">-</span> zGeneral)</span>
+<span id="cb55-25"><a href="#cb55-25"></a></span>
+<span id="cb55-26"><a href="#cb55-26"></a><span class="co"># step 4 part 1</span></span>
+<span id="cb55-27"><a href="#cb55-27"></a>PISA_2015z <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span> </span>
+<span id="cb55-28"><a href="#cb55-28"></a>  <span class="fu">group_by</span>(CNT, gender) <span class="sc">%&gt;%</span></span>
+<span id="cb55-29"><a href="#cb55-29"></a>  <span class="fu">summarise</span>(<span class="at">zMaths =</span> <span class="fu">mean</span>(zMaths, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb55-30"><a href="#cb55-30"></a>            <span class="at">zScience =</span> <span class="fu">mean</span>(zScience, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb55-31"><a href="#cb55-31"></a>            <span class="at">zReading =</span> <span class="fu">mean</span>(zReading, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb55-32"><a href="#cb55-32"></a>            <span class="at">zGeneral =</span> <span class="fu">mean</span>(zGeneral, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb55-33"><a href="#cb55-33"></a>            <span class="at">rel_MATH =</span> zMaths <span class="sc">-</span> zGeneral,</span>
+<span id="cb55-34"><a href="#cb55-34"></a>            <span class="at">rel_SCIE =</span> zScience <span class="sc">-</span> zGeneral,</span>
+<span id="cb55-35"><a href="#cb55-35"></a>            <span class="at">rel_READ =</span> zReading <span class="sc">-</span> zGeneral,</span>
+<span id="cb55-36"><a href="#cb55-36"></a>            <span class="at">gggi =</span> <span class="fu">unique</span>(Overall.Score))</span>
+<span id="cb55-37"><a href="#cb55-37"></a></span>
+<span id="cb55-38"><a href="#cb55-38"></a><span class="co"># step 4 part 2</span></span>
+<span id="cb55-39"><a href="#cb55-39"></a>pisa_gggi_diff <span class="ot">&lt;-</span> PISA_2015z <span class="sc">%&gt;%</span></span>
+<span id="cb55-40"><a href="#cb55-40"></a>  <span class="fu">select</span>(CNT, gender, gggi, rel_SCIE) <span class="sc">%&gt;%</span></span>
+<span id="cb55-41"><a href="#cb55-41"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> gender,</span>
+<span id="cb55-42"><a href="#cb55-42"></a>              <span class="at">values_from =</span> rel_SCIE) <span class="sc">%&gt;%</span></span>
+<span id="cb55-43"><a href="#cb55-43"></a>  <span class="fu">mutate</span>(<span class="at">difference =</span>  Male <span class="sc">-</span> Female)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Finally we will plot the results:</p>
 <div class="cell">
-<details><summary>graph code</summary><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb57-2"><a href="#cb57-2"></a></span>
-<span id="cb57-3"><a href="#cb57-3"></a><span class="fu">ggplot</span>(pisa_gggi_diff,</span>
-<span id="cb57-4"><a href="#cb57-4"></a>       <span class="fu">aes</span>(<span class="at">x=</span>difference, <span class="at">y=</span>gggi)) <span class="sc">+</span> </span>
-<span id="cb57-5"><a href="#cb57-5"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb57-6"><a href="#cb57-6"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb57-7"><a href="#cb57-7"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>CNT),</span>
-<span id="cb57-8"><a href="#cb57-8"></a>            <span class="at">box.padding =</span> <span class="fl">0.2</span>,</span>
-<span id="cb57-9"><a href="#cb57-9"></a>            <span class="at">max.overlaps =</span> <span class="cn">Inf</span>,</span>
-<span id="cb57-10"><a href="#cb57-10"></a>            <span class="at">colour=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb57-11"><a href="#cb57-11"></a>  <span class="fu">xlab</span>(<span class="fu">paste0</span>(<span class="st">"relative difference in PV1SCIE scores (male-female)"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>graph code</summary><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb56-2"><a href="#cb56-2"></a></span>
+<span id="cb56-3"><a href="#cb56-3"></a><span class="fu">ggplot</span>(pisa_gggi_diff,</span>
+<span id="cb56-4"><a href="#cb56-4"></a>       <span class="fu">aes</span>(<span class="at">x=</span>difference, <span class="at">y=</span>gggi)) <span class="sc">+</span> </span>
+<span id="cb56-5"><a href="#cb56-5"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb56-6"><a href="#cb56-6"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb56-7"><a href="#cb56-7"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>CNT),</span>
+<span id="cb56-8"><a href="#cb56-8"></a>            <span class="at">box.padding =</span> <span class="fl">0.2</span>,</span>
+<span id="cb56-9"><a href="#cb56-9"></a>            <span class="at">max.overlaps =</span> <span class="cn">Inf</span>,</span>
+<span id="cb56-10"><a href="#cb56-10"></a>            <span class="at">colour=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb56-11"><a href="#cb56-11"></a>  <span class="fu">xlab</span>(<span class="fu">paste0</span>(<span class="st">"relative difference in PV1SCIE scores (male-female)"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <p><img src="10-Correlation_and_regression_files/figure-html/unnamed-chunk-57-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1611,10 +1591,10 @@ Tip
 </blockquote>
 <p>We can run our version of this model using the following:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a>result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(pisa_gggi_diff<span class="sc">$</span>gggi, </span>
-<span id="cb58-2"><a href="#cb58-2"></a>                    pisa_gggi_diff<span class="sc">$</span>difference, </span>
-<span id="cb58-3"><a href="#cb58-3"></a>                    <span class="at">method=</span><span class="st">"spearman"</span>)</span>
-<span id="cb58-4"><a href="#cb58-4"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(pisa_gggi_diff<span class="sc">$</span>gggi, </span>
+<span id="cb57-2"><a href="#cb57-2"></a>                    pisa_gggi_diff<span class="sc">$</span>difference, </span>
+<span id="cb57-3"><a href="#cb57-3"></a>                    <span class="at">method=</span><span class="st">"spearman"</span>)</span>
+<span id="cb57-4"><a href="#cb57-4"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Spearman's rank correlation rho
@@ -1630,17 +1610,17 @@ sample estimates:
 <p>Our model doesn’t show such a strong correlation. In fact, our model shows a “weak positive” relationship of just <code>0.287</code>, albeit a significant one (<code>p&lt;0.05</code>).</p>
 <p>For our version of this model it seems unnecessary to use Spearman’s rho, the number of countries we are comparing with valid data is 59 (<code>pisa_gggi_diff %&gt;% na.omit() %&gt;% nrow()</code>), which is greater than 30 and using the <em>central limit theorem</em> we should be able to use <em>Pearson’s r</em>. Additionally,<code>shapiro.test</code>on both difference and<code>gggi</code> give non-significant results, suggesting Pearson is the better test to use here:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">shapiro.test</span>(pisa_gggi_diff<span class="sc">$</span>gggi) </span>
-<span id="cb60-2"><a href="#cb60-2"></a><span class="co">#&gt; p-value = 0.1226</span></span>
-<span id="cb60-3"><a href="#cb60-3"></a><span class="fu">shapiro.test</span>(pisa_gggi_diff<span class="sc">$</span>difference)</span>
-<span id="cb60-4"><a href="#cb60-4"></a><span class="co">#&gt; p-value = 0.4078</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">shapiro.test</span>(pisa_gggi_diff<span class="sc">$</span>gggi) </span>
+<span id="cb59-2"><a href="#cb59-2"></a><span class="co">#&gt; p-value = 0.1226</span></span>
+<span id="cb59-3"><a href="#cb59-3"></a><span class="fu">shapiro.test</span>(pisa_gggi_diff<span class="sc">$</span>difference)</span>
+<span id="cb59-4"><a href="#cb59-4"></a><span class="co">#&gt; p-value = 0.4078</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If we run the model again using Pearson’s r, we get:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(pisa_gggi_diff<span class="sc">$</span>gggi, </span>
-<span id="cb61-2"><a href="#cb61-2"></a>                    pisa_gggi_diff<span class="sc">$</span>difference, </span>
-<span id="cb61-3"><a href="#cb61-3"></a>                    <span class="at">method=</span><span class="st">"pearson"</span>)</span>
-<span id="cb61-4"><a href="#cb61-4"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(pisa_gggi_diff<span class="sc">$</span>gggi, </span>
+<span id="cb60-2"><a href="#cb60-2"></a>                    pisa_gggi_diff<span class="sc">$</span>difference, </span>
+<span id="cb60-3"><a href="#cb60-3"></a>                    <span class="at">method=</span><span class="st">"pearson"</span>)</span>
+<span id="cb60-4"><a href="#cb60-4"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's product-moment correlation
@@ -1658,8 +1638,8 @@ sample estimates:
 <p>A result much closer to the one published. The differences here might be the result of the different GGGI data set we used or a difference in the way we calculated <code>difference</code>, or something to do with the correlation model used. It would be good to know!</p>
 <p>We can also explore this data using regression and a linear model looking at the relationship between <code>difference</code> in grades and the <code>gggi</code> value for each country:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(difference <span class="sc">~</span> gggi, <span class="at">data =</span> pisa_gggi_diff)</span>
-<span id="cb63-2"><a href="#cb63-2"></a><span class="fu">summary</span>(mdl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(difference <span class="sc">~</span> gggi, <span class="at">data =</span> pisa_gggi_diff)</span>
+<span id="cb62-2"><a href="#cb62-2"></a><span class="fu">summary</span>(mdl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
