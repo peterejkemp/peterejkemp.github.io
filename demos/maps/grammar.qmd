@@ -1,5 +1,5 @@
 ---
-title: "Grammar school Free School Meal students in England 2012-22"
+title: "Grammar school Free School Meal students in England 2012-23"
 format:
   html:
     toc: true
@@ -79,7 +79,7 @@ Year given along with overall FSM number of students and and number as a percent
 
 > 2022: 89(14.1%)
 
-_Expected_ values for the school given as numbers (e.g. `120` and `118`), if the school macthed the FSM figure for the Local Authority and Region. Percentages given are the percentage of students in the Local Authority and Region who are on free school meals
+_Expected_ values for the school given as numbers (e.g. `120` and `118`), if the school matched the FSM figure for the Local Authority and Region. Percentages given are the percentage of students in the Local Authority and Region who are on free school meals
 
 >   𝔼[LA :120(19.1%)]; 𝔼[Rgn:118(18.7%)];
 
@@ -225,6 +225,75 @@ grms %>%
   ) %>% 
   tab_options(ihtml.active = TRUE,
               ihtml.use_filters = TRUE)
+```
+
+# Summary graphs
+
+Grammar school shortfall in FSM provision compared to the Local Authority , year on year 2012-2023 (2020 data missing):
+
+```{r year_on_year_shortfall}
+#| echo: false
+library(plotly)
+
+# use ggplotly
+# get average and SD for each year overall and by gender
+
+grms_mean <- grms %>% group_by(Gender, Year) %>% 
+  summarise(n =n(),
+            mean_shortfall = round(mean(`Sch-LA FSM short %`, na.rm=TRUE),2),
+            mean_fsm_per = round(mean( `Sch FSM %`, na.rm=TRUE),2)) %>%
+  arrange(mean_shortfall) %>%
+  mutate(Year = as.Date(paste(Year, "01", "01", sep = "-")))
+
+  
+plot <- ggplot(data=grms_mean,
+       aes(x=Year, 
+           y=mean_shortfall, 
+           colour=Gender)) +
+  geom_line() +
+  #geom_violin() +
+  scale_x_date(date_labels = "%Y", date_breaks = "1 year") +
+  labs(x = "Year", y = "% FSM shortfall from LA") +
+  theme(legend.position="bottom",
+          legend.text=element_text(size=rel(0.5)),
+          legend.title=element_text(size=rel(0.5)),
+          axis.text.x = element_text(angle = 90, vjust = 0.5)) 
+
+plot <- ggplot(data=grms %>% 
+                 mutate(Year = as.Date(paste(Year, "01", "01", sep = "-"))) %>% 
+                 ungroup()) +
+  geom_boxplot(position=position_dodge(1),
+               aes(x=Year, y=`Sch-LA FSM short %`, group=Year, color=Gender)) +
+  # geom_jitter(shape=16, position=position_jitter(0.4)) +
+  scale_x_date(date_labels = "%Y", date_breaks = "1 year") +
+  labs(x = "Year", y = "% FSM shortfall from LA") +
+  theme(legend.position="bottom",
+          legend.text=element_text(size=rel(0.5)),
+          legend.title=element_text(size=rel(0.5)),
+          axis.text.x = element_text(angle = 90, vjust = 0.5)) 
+
+ggplotly(plot)
+```
+
+All grammar schools plotted by year against the shortfall in FSM provision compared to the Local Authority (2020 data missing):
+
+```{r plot_schools}
+
+grms_schools <- grms %>% mutate(Year = as.Date(paste(Year, "01-01", sep = "-")))
+
+plot_schools <- ggplot(data=grms_schools,
+       aes(x=Year, 
+           y=`Sch-LA FSM short %`, 
+           group=name)) +
+  geom_line(aes(colour=Gender), alpha=0.5) +
+  scale_x_date(date_labels = "%Y", date_breaks = "1 year") +
+  labs(x = "Year", y = "% FSM shortfall from LA") +
+  theme(legend.position="bottom",
+          legend.text=element_text(size=rel(0.5)),
+          legend.title=element_text(size=rel(0.5)),
+          axis.text.x = element_text(angle = 90, vjust = 0.5)) 
+
+ggplotly(plot_schools)
 ```
 
 # Stats
