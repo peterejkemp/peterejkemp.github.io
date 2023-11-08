@@ -270,12 +270,29 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Data sets</span></a>
+ <span class="menu-text">Additional tests</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A6-Bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Statistics</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendicies</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
@@ -517,11 +534,11 @@ mean of x mean of y
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">mean</span>(girlscores<span class="sc">$</span>Scores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 99.89479</code></pre>
+<pre><code>[1] 99.88367</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">mean</span>(boysscores<span class="sc">$</span>Scores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 105.075</code></pre>
+<pre><code>[1] 105.0403</code></pre>
 </div>
 </div>
 <p>The means are different but, by inspection, it is not possible to tell if the difference in means is statistically significant. To find that out we need to perform a t-test.</p>
@@ -532,13 +549,13 @@ mean of x mean of y
     Welch Two Sample t-test
 
 data:  girlscores$Scores and boysscores$Scores
-t = -36.65, df = 19992, p-value &lt; 2.2e-16
+t = -36.506, df = 19997, p-value &lt; 2.2e-16
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -5.457268 -4.903177
+ -5.43354 -4.87979
 sample estimates:
 mean of x mean of y 
- 99.89479 105.07501 </code></pre>
+ 99.88367 105.04034 </code></pre>
 </div>
 </div>
 <p>The test returns a p-value which we can use to make a conclusion. A p-value reports, assuming that there is no difference in the means of the two groups, what is the probability of getting a difference in means at least as big as the one we observe. Conventionally, we use 0.05 (1 in 20) as the cut off for statistical significance (a convention that has been much critiqued e.g. <span class="citation" data-cites="cohen1994earth baker2016statisticians">(<a href="#ref-cohen1994earth" role="doc-biblioref">Cohen 1994</a>; <a href="#ref-baker2016statisticians" role="doc-biblioref">Baker 2016</a>)</span>).</p>
