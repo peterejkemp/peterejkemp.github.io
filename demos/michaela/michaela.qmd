@@ -78,7 +78,7 @@ sch_LA <- schools %>%
 
 ```
 
-This report is about `r sch_name` (URN:`r sch_URN`) in the `r sch_LA` Local Authority. The report has been put together using DfE Open Datasets from `r min(year_active)` to `r max(year_active)`. The aim of the report is to outline some of the underlying statistics for a school that has such performed so well in the English progress 8 performance metric, and through comparisons with other similar providers, shed some light on the model that `r sch_name` uses to achieve such extraordinary results.
+This report is about `r sch_name` (URN:`r sch_URN`) in the `r sch_LA` Local Authority. The report has been put together using DfE Open Datasets from `r min(year_active)` to `r max(year_active)`. The aim of the report is to outline some of the underlying statistics for a school that has such performed so well in the English progress 8 performance metric, and through comparisons with other similar providers, shed some light on the model that `r sch_name` uses to achieve such extraordinary results. As you will see, `r sch_name` is an outlier in many ways.
 
 # Limitations
 
@@ -281,7 +281,7 @@ tbl_per %>% gt() %>%
 
 ## GCSE subjects entered
 
-When looking at all non-special schools of a similar size to `r sch_name` (`r glue("{max_size} >= KS4 entries >= {min_size}")`) across England, we have plotted the number of GCSE subjects offered (where >`r per_cutoff * 100`\% of KS4 students took an exam) against the Progress 8 score for each school.
+When looking at all non-special schools of a similar size to `r sch_name` (`r glue("{max_size} >= KS4 entries >= {min_size}")`) across England, we have plotted the number of GCSE subjects offered (where >`r per_cutoff * 100`\% of KS4 students took an exam) against the Progress 8 score for each school. The correlation coefficients are included and they suggest that, on average for 2018-2023, the more exam subjects offered in these schools, the higher the P8 score. `r sch_name` appears to be an outlier.
 
 ```{r}
 #| fig.height: 7
@@ -452,7 +452,7 @@ plt_all_subs_entered <- ggplot(data = plot_data,
 if you look at other subjects as well, e.g. vocational courses, `r sch_name` is more of an outlier, being within the lowest 1% of overall subjects for 2019-2023:
 
 ```{r}
-#| fig.height: 7
+#| fig.height: 9
 #| warning: false
 #| echo: false
 plt_all_subs_entered
