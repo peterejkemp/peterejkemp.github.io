@@ -1,0 +1,807 @@
+---
+title: "Michaela School stats"
+format: 
+  html:
+    toc: true
+number-sections: true
+editor: source
+tbl-cap-location: top
+author:
+  - name: Peter EJ Kemp
+    email: peter.kemp@kcl.ac.uk
+    affiliations:
+    - name: King's College London
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
+---
+
+```{r}
+#| warning: false
+#| echo: false
+node <- Sys.info()
+
+if(node["nodename"] == "KCL8KWNXY2"){
+  # basefolder <- r"(C:\Users\w1926273\OneDrive - King's College London\Code\SCARI\)"
+  basefolder <- r"(C:/Users/w1926273/Google Drive/Kings/Code/PISR/)"
+}else if(node["nodename"] == "PETES_PC"){
+  basefolder <- r"(C:/Users/Peter/Google Drive/Kings/Code/PISR/)"
+  old_proj_folder <- r"(C:/Users/Peter/Google Drive/Kings/Code/OpenAnalysis/)"
+  data_folder <- r"[C:\Users\Peter\Google Drive\Kings\Code\PISR\Data\]"
+  data_folder <- r"[D:\Data\EdR\]"
+}else if(node["nodename"] == "KCL3Y7NKR3"){ # new laptop
+  basefolder <- r"(G:\My Drive\Kings\Code\PISR\)"
+  old_proj_folder <- r"(C:/Users/Peter/Google Drive/Kings/Code/OpenAnalysis/)"
+  data_folder <- r"[G:\My Drive\Kings\Code\PISR\Data\]"
+  # data_folder <- r"[D:\Data\EdR\]"
+}
+
+options("scipen"=100, "digits"=4)
+
+# source(paste0(basefolder, "_reports/Michaela/", "michaela.R"))
+
+library(gt)
+library(gtExtras)
+library(ggrepel)
+library(tidyverse)
+library(conflicted)
+library(plotly)
+
+conflict_prefer("summarise", "dplyr")
+conflict_prefer("distinct", "dplyr")
+conflict_prefer("filter", "dplyr")
+conflict_prefer("mutate", "dplyr")
+conflict_prefer("map", "purrr")
+
+
+source(paste0(basefolder, "_reports/TRACER/code/PrettyPrinting.R"))
+source(paste0(basefolder, "_reports/TRACER/TRACER-setup.R"))
+source(paste0(basefolder, "code/DfE_Setup.R"))
+
+# source(paste0(codefolder, 'OpenAnalysis_load.R'))
+
+sch_URN <- 140862
+
+year_active <- schools %>%
+  filter(URN == sch_URN) %>% 
+  select(year, URN, FSM_ever_per, FSM_per ) %>%
+  dplyr::distinct() %>%
+  pull(year)
+
+sch_name <- schools %>%
+  filter(URN == sch_URN) %>% 
+  ungroup() %>%
+  distinct(SCHNAME) 
+
+sch_LA <- schools %>%
+  filter(URN == sch_URN) %>% 
+  ungroup() %>%
+  distinct(LA) 
+
+```
+
+This report is about `r sch_name` (URN:`r sch_URN`) in the `r sch_LA` Local Authority. The report has been put together using DfE Open Datasets from `r min(year_active)` to `r max(year_active)`. The aim of the report is to outline some of the underlying statistics for a school that has such performed so well in the English progress 8 performance metric, and through comparisons with other similar providers, shed some light on the model that `r sch_name` uses to achieve such extraordinary results.
+
+# Limitations
+
+The below doesn't double code Double GCSEs, instead, it currently treats them as a _single_ GCSE entry. The data this report is based off comes from the open DfE datasets, and this report is a trial run for testing these datasets. The DfE datasets are very messy and some mistakes might have slipped through. Errors are likely mine, please get in contact if you have any questions or corrections.
+
+# Student backgrounds
+
+`r sch_name` serves a poorer community than the average school in the local authority, though the difference between Michaela's students and the average in `r sch_LA` has decreased substantially since the school began:
+
+```{r load_stats}
+#| warning: false
+#| echo: false
+#| code-fold: true
+
+#TODO: we must work out why the schools dataset has the wrong FSM values in it, e.g.:
+tbl_FSM <- schools %>%
+  filter(URN == sch_URN) %>% 
+  select(year, URN, stu_total, FSM_ever_per, FSM_per, PTFSM6CLA1A) %>%
+  dplyr::distinct() %>%
+  mutate(FSM_ever_per = round(FSM_ever_per,1),
+         FSM_per = round(FSM_per,1))
+
+# get the FSM figures for each LA
+tbl_FSM_LA <- schools %>%
+  group_by(LA, year) %>% 
+  # filter(LA == "Brent") %>%
+  select(year, URN, stu_total, FSM_ever_per, FSM_per, TPUP) %>%
+  filter(!is.na(TPUP) & !is.na(FSM_ever_per)) %>%
+  mutate(ever_pop = TPUP * FSM_ever_per,
+         fsm_pop = TPUP * FSM_per) %>% # what about schools with NA for FSM_per??? TODO:
+  summarise(
+    LA_students = sum(stu_total, na.rm=TRUE),
+    LA_FSM_ever = round(sum(ever_pop) / sum(TPUP), 1),
+    LA_FSM = round(sum(fsm_pop) / sum(TPUP), 1))
+
+# run grammar.qmd to pull main datasets
+tbl_FSM_prov_LA <- left_join(tbl_FSM, 
+                             tbl_FSM_LA %>% filter(LA == sch_LA)) %>% 
+  ungroup() %>% select(-URN) %>%
+  gt() %>%
+  cols_label(
+    year = "Year",
+    stu_total = "Total</br>students",
+    FSM_ever_per = "PP",
+    FSM_per = "FSM",
+    PTFSM6CLA1A = "PTFSM6CLA1A",
+    LA = "LA",
+    LA_students = "LA Total</br>students",
+    LA_FSM_ever = "PP",
+    LA_FSM = "FSM",
+    .fn = md
+  ) %>%
+  sub_missing(missing_text = "--")
+  
+```
+
+```{r}
+#| warning: false
+#| echo: false
+
+tbl_FSM_prov_LA
+```
+
+```{r}
+#| warning: false
+#| echo: false
+#| code-fold: true
+#arrow::write_parquet(schools, glue("{data_folder}DfE/{type}/{type}.parquet"))
+#arrow::write_parquet(results_all, glue("{data_folder}DfE/{type}/{type}.parquet"))
+
+ks4provider <- DfE_load_ks4provider()
+### THIS COMES FROM code/DfE_Setup.R
+
+### Does Michaela do better by poorer kids:
+tbl_P8MEA <- ks4provider %>%
+  filter(URN == sch_URN) %>% 
+  select(year, URN, DIFFN_P8MEA) %>%
+  distinct()
+
+# ?ATT8SCR_LO
+tbl_ATT8SCR_LO_top <- ks4provider %>%
+  #filter(URN == 140862) %>% 
+  select(year,SCHNAME,  URN, DIFFN_P8MEA, ATT8SCR_LO) %>%
+  distinct() %>%
+  filter(year %in% c(2019,2022, 2023)) %>%
+  arrange(desc(ATT8SCR_LO))
+
+# missing 2015?!
+tbl_PTFSM6CLA1A <- ks4provider %>%
+  filter(URN == sch_URN) %>% 
+  select(year, URN, PTFSM6CLA1A) %>%
+  distinct()
+
+# work out number of quals per school
+subjects_entered <- results_all %>% 
+  left_join(schools %>% 
+              mutate(year = as.numeric(gsub(".*[-]", "",year))), 
+            by=c("year"="year", "urn"="URN")) %>%
+  # filter(urn == 140862) %>% 
+  select(year, urn, `School name`, Qualification, `Subject description`, 
+         `Total number entered`, `Number of students at the end of year`, 
+         schType, Ofsted, OfstedDate) %>%
+  mutate(per_entered = `Total number entered`/ `Number of students at the end of year`) %>%
+  left_join(ks4provider, by=c("year"="year", "urn"="URN"))
+
+#################################
+## similar P8 scores
+#################################
+tbl_noidea <- subjects_entered %>% 
+  group_by(year, urn) %>%
+  summarise(`Number of students at the end of year` = mean(`Number of students at the end of year`),
+    PTFSM6CLA1A = mean(PTFSM6CLA1A, na.rm=TRUE)) %>%
+  group_by(year) %>%
+  mutate(total_stu = sum(`Number of students at the end of year`),
+         FSM = ((`Number of students at the end of year` * PTFSM6CLA1A))/unique(total_stu)) %>%
+  distinct(year, FSM, total_stu)
+  
+# ks4provider %>%
+#   filter(URN == sch_URN) %>% 
+#   select(year, URN, PTFSM6CLA1A) %>%
+#   distinct()
+# 
+# schools %>%
+#   filter(URN == sch_URN) %>% 
+#   select(year, URN, FSM_ever_per) %>%
+#   distinct()
+
+# unique(subjects_entered$P8MEA)
+
+# michaela = P8, 2.27
+# michaela = FSM, 2.27
+
+library(ggpubr) 
+
+max_size <- 150
+min_size <- 100
+per_cutoff <- 0.1
+
+plot_data <- subjects_entered %>% 
+  filter(!is.na(P8MEA),
+         per_entered >= per_cutoff,
+         grepl("GCSE", Qualification),
+         !grepl("(S|s)pecial", schType),
+         `Number of students at the end of year` >= min_size,
+         `Number of students at the end of year` <= max_size,
+         ) %>% 
+  group_by(year, urn, `School name`, ATT8SCR, P8PUP, P8MEA, P8MEA_ORIG) %>%
+  summarise(subs = n()) %>%
+  mutate(Mich = urn==sch_URN)
+
+plt_subs_entered <- ggplot(data = plot_data, aes(x=subs, y=P8MEA)) +
+  geom_point(aes(colour=Mich), alpha=0.4) +
+  geom_smooth(method = lm) +
+  stat_cor(method = "pearson", label.x = 10, label.y = -2.0) +
+  facet_wrap(year ~ .) +
+  labs(title="Number of exam entries against Progress 8", 
+       subtitle = glue("{sch_name} plotted against schools of similar student intakes; correlation line and coefficient"),
+       caption = glue("Data source: DfE; {max_size} >= KS4 entries >= {min_size}")) +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+# School exam comparison
+
+Michaela has only ever entered students for GCSE exams (including GCSE Double Award),
+
+```{r}
+#| warning: false
+#| echo: false
+tmp <- results_all %>% 
+  filter(urn == sch_URN) %>%
+  select(year, `Subject description`, `Total number entered`, `Number of students at the end of year`) %>%
+  mutate(subject = `Subject description`,
+          n = `Total number entered`,
+          per =  round(100*(`Total number entered`/`Number of students at the end of year`),2)) %>%
+  select(year, subject, n, per) 
+
+tbl_per <- tmp %>%
+  select(-n) %>%
+  pivot_wider(names_from = year,
+              values_from = per)
+  
+tbl_n <- tmp %>%
+  select(-per) %>%
+  pivot_wider(names_from = year,
+              values_from = n) 
+
+tbl_per %>% gt() %>%
+  sub_missing(missing_text = "--") %>%
+  data_color(columns=c("2019", "2021", "2022", "2023"),
+             palette = c("darkgreen", "green"),
+             domain = c(10, 100)
+             ) %>%
+  tab_header(
+    title = md("GCSE offering at Michael School"),
+    subtitle = md("percentage of students taking exams"))
+
+```
+
+
+## GCSE subjects entered
+
+When looking at all non-special schools of a similar size to `r sch_name` (`r glue("{max_size} >= KS4 entries >= {min_size}")`) across England, we have plotted the number of GCSE subjects offered (where >`r per_cutoff * 100`\% of KS4 students took an exam) against the Progress 8 score for each school.
+
+```{r}
+#| fig.height: 7
+#| warning: false
+#| echo: false
+plt_subs_entered +
+    theme(legend.position="bottom")
+```
+
+```{r}
+#| warning: false
+#| echo: false
+#| code-fold: true
+#################################
+## similar schools entering GCSEs
+#################################
+
+plot_data <- subjects_entered %>%
+  filter(
+         per_entered >= per_cutoff,
+         grepl("GCSE", Qualification),
+         !grepl("(S|s)pecial", schType),
+         !grepl("dependent", schType),
+         `Number of students at the end of year` >= min_size,
+         `Number of students at the end of year` <= max_size) %>%
+  group_by(year, `School name`, schType) %>%
+  summarise(n = n(),
+            sch_size = max(`Number of students at the end of year`)) %>%
+  mutate(Mich = `School name` == sch_name) %>%
+  # mutate(Mich = grepl("Michaela", `School name`)) %>%
+  group_by(year) %>%
+  mutate(med = median(n)) %>%
+  group_by(year, n) %>%
+  summarise(schools = n(),
+            Mich = max(Mich),
+            med = max(n == med)) %>%
+  arrange(year, n) %>%
+  group_by(year) %>%
+  mutate(count = cumsum(schools),
+         per = round(100*count / sum(schools), 1))
+
+plt_cum_subs_entered <- ggplot(data = plot_data, 
+       aes(x=n, y=schools, fill=Mich)) + 
+  geom_bar(stat="identity") + 
+  geom_bar(data = plot_data %>% filter(med == 1),
+           stat="identity", aes(x=n, y=schools), fill="darkgreen") + 
+  geom_text(data = plot_data, 
+            aes(x=n, y=schools, label=per),
+            size=2.3, hjust=-0.3, vjust=0.1, angle = 90) +
+  xlim(NA,25) +
+  facet_wrap(year ~ ., ncol = 2) +
+  xlab(NULL) +
+  guides(fill="none") + 
+  labs(title = "Number of GCSEs offered by English non-special provision state schools",
+       # subtitle = bquote(~bold("green")" median group; "~bold("blue")" Michaela group; "~bold("text labels")" cumulative percentage"),
+       subtitle = expression(paste(bold("green")," median group; ", bold("blue"), " Michaela group; ", bold("text labels"), " cumulative percentage")),
+       caption = "source: https://www.gov.uk/school-performance-tables")
+
+```
+
+```{r}
+#| fig.height: 9
+#| warning: false
+#| echo: false
+
+plt_cum_subs_entered
+```
+
+```{r}
+#| warning: false
+#| echo: false
+#| code-fold: true
+yr <- max(year_active)
+
+tbl_subs_entered <- subjects_entered %>%
+  filter(
+    per_entered >= 0.1,
+    grepl("GCSE", Qualification),
+    !grepl("(S|s)pecial", schType),
+    !grepl("dependent", schType),
+    `Number of students at the end of year` >= 100,
+    `Number of students at the end of year` <= 150) %>%
+  group_by(year, `School name`, schType) %>%
+  summarise(quals = n(),
+            sch_size = max(`Number of students at the end of year`)) %>%
+  mutate(Mich = grepl("Michaela", `School name`)) %>%
+  group_by(year) %>%
+  mutate(med = median(quals),
+         total_schools = n()) %>% 
+  filter(year == yr) %>%
+  arrange(quals) %>%
+  ungroup() %>%
+  mutate(row_number = row_number()) %>%
+  gt() %>%
+  cols_hide(c("med", "year", "row_number")) %>%
+  gt_highlight_rows(rows=Mich==TRUE) %>%
+  cols_hide(c("Mich", "schType")) %>%
+  tab_header(
+    title = md("Number of **GCSEs** offered in English non-special provision state schools"),
+    subtitle = md(paste(yr," data; >10% cohort taking them; Schools >= 100 and <=150 students"))
+  ) %>% 
+  tab_options(ihtml.active = TRUE,
+              ihtml.use_filters = TRUE)
+
+```
+
+We can see the number of __GCSEs__ entered for schools in `r yr`
+
+```{r}
+#| warning: false
+#| echo: false
+
+tbl_subs_entered
+```
+
+```{r}
+#| warning: false
+#| echo: false
+#| code-fold: true
+################################
+### All quals
+################################
+
+plot_data <- subjects_entered %>%
+  filter(
+    per_entered >= 0.1,
+    # grepl("GCSE", Qualification),
+    !grepl("(S|s)pecial", schType),
+    !grepl("dependent", schType),
+    `Number of students at the end of year` >= 100,
+    `Number of students at the end of year` <= 150) %>%
+  group_by(year, `School name`, schType) %>%
+  summarise(n = n(),
+            sch_size = max(`Number of students at the end of year`)) %>%
+  mutate(Mich = grepl("Michaela", `School name`)) %>%
+  group_by(year) %>%
+  mutate(med = median(n)) %>%
+  group_by(year, n) %>%
+  summarise(schools = n(),
+            Mich = max(Mich),
+            med = max(n == med)) %>%
+  arrange(year, n) %>%
+  group_by(year) %>%
+  mutate(count = cumsum(schools),
+         per = round(100*count / sum(schools), 1))
+
+plt_all_subs_entered <- ggplot(data = plot_data, 
+       aes(x=n, y=schools, fill=Mich)) + 
+  geom_bar(stat="identity") + 
+  geom_bar(data = plot_data %>% filter(med == 1),
+           stat="identity", aes(x=n, y=schools), fill="darkgreen") + 
+  geom_text(data = plot_data, 
+            aes(x=n, y=schools, label=per),
+            size=2.3, hjust=-0.3, vjust=0.1, angle = 90) +
+  xlim(4,28) +
+  facet_wrap(year ~ ., ncol=2) +
+  xlab(NULL) +
+  guides(fill="none") + 
+  labs(title = "Number of All quals offered by English non-special provision state schools",
+       # subtitle = bquote(~bold("green")" median group; "~bold("blue")" Michaela group; "~bold("text labels")" cumulative percentage"),
+       subtitle = expression(paste(bold("green")," median group; ", bold("blue"), " Michaela group; ", bold("text labels"), " cumulative percentage")),
+       caption = "source: https://www.gov.uk/school-performance-tables")
+
+```
+
+## All subject entries
+
+if you look at other subjects as well, e.g. vocational courses, `r sch_name` is more of an outlier, being within the lowest 1% of overall subjects for 2019-2023:
+
+```{r}
+#| fig.height: 7
+#| warning: false
+#| echo: false
+plt_all_subs_entered
+```
+
+In 2023 they were 7th in the country for this criteria, among schools of a similar size: 
+
+```{r}
+#| warning: false
+#| echo: false
+#| code-fold: true
+yr <- max(year_active)
+
+subjects_entered %>%
+  filter(
+    per_entered >= 0.1,
+    # grepl("GCSE", Qualification),
+    !grepl("(S|s)pecial", schType),
+    !grepl("dependent", schType),
+    `Number of students at the end of year` >= 100,
+    `Number of students at the end of year` <= 150) %>%
+  group_by(year, `School name`, schType) %>%
+  summarise(quals = n(),
+            sch_size = max(`Number of students at the end of year`)) %>%
+  mutate(Mich = grepl("Michaela", `School name`)) %>%
+  group_by(year) %>%
+  mutate(med = median(quals),
+         total_schools = n()) %>% 
+  filter(year == yr) %>%
+  arrange(quals) %>%
+  ungroup() %>%
+  mutate(row_number = row_number()) %>%
+  gt() %>%
+  cols_hide(c("med", "year", "row_number")) %>%
+  gt_highlight_rows(rows=Mich==TRUE) %>%
+  cols_hide(c("Mich", "schType")) %>%
+  tab_header(
+    title = md("Number of __exam subjects__ offered in English non-special provision state schools"),
+    subtitle = md(paste(yr," data; >10% cohort taking them; Schools >= 100 and <=150 students"))
+  ) %>% 
+  tab_options(ihtml.active = TRUE,
+              ihtml.use_filters = TRUE)
+
+```
+
+
+```{r}
+#| warning: false
+#| echo: false
+###############################
+# outstanding schools
+###############################
+
+# Does this actually get Outstanding schools?
+
+# pull all urns for schools that are currently outstanding
+# NOT NEEDED, WE WANT YEAR ON YEAR
+current_outstanding <- subjects_entered %>% 
+  distinct(year, urn, Ofsted) %>%
+  filter(!is.na(Ofsted)) %>%
+  group_by(urn) %>%
+  arrange(desc(year)) %>%
+  slice(1) %>%
+  filter(Ofsted == "Outstanding")
+  
+sch_ofsted_offer <- subjects_entered %>%
+  filter(Ofsted == "Outstanding" | 
+           urn == sch_URN) %>%
+  filter(
+    per_entered >= 0.1,
+    # grepl("GCSE", Qualification),
+    !grepl("(S|s)pecial", schType),
+    !grepl("dependent", schType),
+    `Number of students at the end of year` >= 100,
+    `Number of students at the end of year` <= 150) %>%
+  group_by(year, `School name`, schType) %>%
+  summarise(n = n(),
+            sch_size = max(`Number of students at the end of year`)) %>%
+  mutate(Mich = `School name` == sch_name)
+
+plot_data <- sch_ofsted_offer %>%
+  group_by(year) %>%
+  mutate(med = median(n)) %>%
+  group_by(year, n) %>%
+  summarise(schools = n(),
+            Mich = max(Mich),
+            med = max(n == med)) %>%
+  arrange(year, n) %>%
+  group_by(year) %>%
+  mutate(count = cumsum(schools),
+         per = round(100*count / sum(schools), 1))
+
+plt_subs_ofsted <- ggplot(data = plot_data, 
+       aes(x=n, y=schools, fill=Mich)) + 
+  geom_bar(stat="identity") + 
+  geom_bar(data = plot_data %>% filter(med == 1),
+           stat="identity", aes(x=n, y=schools), fill="darkgreen") + 
+  geom_text(data = plot_data, 
+            aes(x=n, y=schools, label=per),
+            size=2.3, hjust=-0.3, vjust=0.1, angle = 90) +
+  xlim(4,28) +
+  facet_wrap(year ~ .) +
+  xlab(NULL) +
+  guides(fill="none") + 
+  labs(title = expression(paste("Number of ",bold("subjects")," offered by ", bold("Outstanding"), " English non-special provision state schools")),
+       # subtitle = bquote(~bold("green")" median group; "~bold("blue")" Michaela group; "~bold("text labels")" cumulative percentage"),
+       subtitle = expression(paste(bold("green")," median group; ", bold("blue"), " Michaela group; ", bold("text labels"), " cumulative percentage")),
+       caption = "source: https://www.gov.uk/school-performance-tables")
+```
+
+# Schools of similar size and Oftsed rating
+
+`r sch_name`'s 2023 [Ofsted report](https://files.ofsted.gov.uk/v1/file/50222824) states that "They plan a broad and exceptionally rich curriculum, which prepares pupils exceptionally well for the next steps in education"; the [2017 report](https://files.ofsted.gov.uk/v1/file/2699471) says, similarly: "The curriculum ensures that pupils develop their knowledge and understanding across a broad and balanced range of subjects". 
+
+## All exam subjects
+
+From the perspective of exam subjects, the exam subject offering at Michaela is far lower than nearly all other comparable schools, i.e. schools of similar size which currently hold an "Outstanding" Oftsed grade. There is only one exception in the data, with Energy Coast UTC, in 2022, having a smaller offering, likely to be made up of vocational qualifications.
+
+This isn't to say that `r sch_name` doesn't offer a broad curriculum in other ways, for example through cross curricula teaching, extra curricula activities, non-examined and KS3 offerings. But it does highlight that the school's approach is unorthodox.
+
+```{r}
+#| warning: false
+#| echo: false
+
+plt_subs_ofsted
+```
+
+```{r}
+#| warning: false
+#| echo: false
+sch_ofsted_offer %>% ungroup() %>% #select(-Mich) %>% 
+  gt() %>% 
+  gt_highlight_rows(rows=Mich==TRUE) %>%
+  cols_hide(Mich) %>%
+  tab_header(
+    title = md("Number of __subjects__ offered by Outstanding English non-special provision state schools"),
+    subtitle = md("Data 2019-2023")) %>%
+  tab_options(ihtml.active = TRUE,
+              ihtml.use_filters = TRUE)
+```
+
+## GCSE exam subjects
+
+We can perform the same analysis using _GCSE_ only:
+
+```{r}
+#| warning: false
+#| echo: false
+#| code-fold: true
+sch_ofsted_offer <- subjects_entered %>%
+  filter(Ofsted == "Outstanding" | 
+           urn == sch_URN) %>%
+  filter(
+    per_entered >= 0.1,
+    grepl("GCSE", Qualification),
+    !grepl("(S|s)pecial", schType),
+    !grepl("dependent", schType),
+    `Number of students at the end of year` >= 100,
+    `Number of students at the end of year` <= 150) %>%
+  group_by(year, `School name`, schType) %>%
+  summarise(n = n(),
+            sch_size = max(`Number of students at the end of year`)) %>%
+  mutate(Mich = `School name` == sch_name)
+
+plot_data <- sch_ofsted_offer %>%
+  group_by(year) %>%
+  mutate(med = median(n)) %>%
+  group_by(year, n) %>%
+  summarise(schools = n(),
+            Mich = max(Mich),
+            med = max(n == med)) %>%
+  arrange(year, n) %>%
+  group_by(year) %>%
+  mutate(count = cumsum(schools),
+         per = round(100*count / sum(schools), 1))
+
+plt_subs_ofsted_gcse <- ggplot(data = plot_data, 
+       aes(x=n, y=schools, fill=Mich)) + 
+  geom_bar(stat="identity") + 
+  geom_bar(data = plot_data %>% filter(med == 1),
+           stat="identity", aes(x=n, y=schools), fill="darkgreen") + 
+  geom_text(data = plot_data, 
+            aes(x=n, y=schools, label=per),
+            size=2.3, hjust=-0.3, vjust=0.1, angle = 90) +
+  xlim(4,28) +
+  facet_wrap(year ~ .) +
+  xlab(NULL) +
+  guides(fill="none") + 
+  labs(title = expression(paste("Number of ",bold("GCSEs")," offered by Outstanding English non-special provision state schools")),
+       # subtitle = bquote(~bold("green")" median group; "~bold("blue")" Michaela group; "~bold("text labels")" cumulative percentage"),
+       subtitle = expression(paste(bold("green")," median group; ", bold("blue"), " Michaela group; ", bold("text labels"), " cumulative percentage")),
+       caption = "source: https://www.gov.uk/school-performance-tables")
+
+```
+
+This places Michaela on the same number of GCSEs as two schools in 2019 (North Shore Academy; Ron Dearing UTC), higher than one school in 2021 (Energy Coast UTC) and higher than three schools in 2022 (Energy Coast UTC; De Lacy Academy; Ron Dearing UTC):
+
+```{r}
+#| warning: false
+#| echo: false
+
+plt_subs_ofsted_gcse
+```
+
+```{r}
+#| warning: false
+#| echo: false
+
+sch_ofsted_offer %>% ungroup() %>% #select(-Mich) %>% 
+  gt() %>% 
+  gt_highlight_rows(rows=Mich==TRUE) %>%
+  cols_hide(Mich) %>%
+  tab_header(
+    title = md("Number of __GCSEs__ offered by __Outstanding__ English non-special provision state schools"),
+    subtitle = md("Data 2019-2023")) %>%
+  tab_options(ihtml.active = TRUE,
+              ihtml.use_filters = TRUE)
+# sch_ofsted_gcse <- subjects_entered %>%
+#   filter(Ofsted == "Outstanding" | 
+#            urn == 140862) %>%
+#   filter(
+#     per_entered >= 0.1,
+#     grepl("GCSE", Qualification),
+#     !grepl("(S|s)pecial", schType),
+#     !grepl("dependent", schType),
+#     `Number of students at the end of year` >= 100,
+#     `Number of students at the end of year` <= 150) %>%
+#   group_by(year, `School name`, schType) %>%
+#   summarise(quals = n(),
+#             sch_size = max(`Number of students at the end of year`)) %>%
+#   mutate(Mich = grepl("Michaela", `School name`)) %>%
+#   group_by(year) %>%
+#   mutate(med = median(quals),
+#          total_schools = n()) %>% 
+#   filter(year %in% c(2022)) %>%
+#   arrange(quals) %>%
+#   ungroup() %>%
+#   mutate(row_number = row_number()) %>%
+#   gt() %>%
+#   gt_highlight_rows(rows=Mich==TRUE) %>%
+#   cols_hide(Mich)
+# 
+# yr <- max(year_active)
+# 
+# subjects_entered %>%
+#   filter(Ofsted == "Outstanding" | 
+#            urn == sch_URN) %>%
+#   filter(
+#     per_entered >= 0.1,
+#     # grepl("GCSE", Qualification),
+#     !grepl("(S|s)pecial", schType),
+#     !grepl("dependent", schType),
+#     `Number of students at the end of year` >= 100,
+#     `Number of students at the end of year` <= 150) %>%
+#   group_by(year, `School name`, schType) %>%
+#   summarise(quals = n(),
+#             sch_size = max(`Number of students at the end of year`)) %>%
+#   mutate(Mich = grepl("Michaela", `School name`)) %>%
+#   group_by(year) %>%
+#   mutate(med = median(quals),
+#          total_schools = n()) %>% 
+#   filter(year == yr) %>%
+#   arrange(quals) %>%
+#   ungroup() %>%
+#   mutate(row_number = row_number()) %>%
+#   gt() %>%
+#   gt_highlight_rows(rows=Mich==TRUE) %>%
+#   cols_hide(c("Mich", "schType")) %>%
+#   tab_header(
+#     title = md("Number of **exam subjects** offered in **Outstanding** English non-special provision state schools"),
+#     subtitle = md(paste(yr," data; >10% cohort taking them; Schools >= 100 and <=150 students"))
+#   )
+# 
+# 
+# subjects_entered %>%
+#   filter(Ofsted == "Outstanding" | 
+#            urn == 140862) %>%
+#   filter(
+#     per_entered >= 0.1,
+#     grepl("GCSE", Qualification),
+#     !grepl("(S|s)pecial", schType),
+#     !grepl("dependent", schType),
+#     `Number of students at the end of year` >= 100,
+#     `Number of students at the end of year` <= 150) %>%
+#   group_by(year, `School name`, schType) %>%
+#   summarise(quals = n(),
+#             sch_size = max(`Number of students at the end of year`)) %>%
+#   mutate(Mich = grepl("Michaela", `School name`)) %>%
+#   group_by(year) %>%
+#   mutate(med = median(quals),
+#          total_schools = n()) %>% 
+#   filter(year == yr) %>%
+#   arrange(quals) %>%
+#   ungroup() %>%
+#   mutate(row_number = row_number()) %>%
+#   gt() %>%
+#   gt_highlight_rows(rows=Mich==TRUE) %>%
+#   cols_hide(c("Mich", "schType")) %>%
+#   tab_header(
+#     title = md("Number of **GCSEs** offered in **Outstanding** English non-special provision state schools"),
+#     subtitle = md(paste(yr," data; >10% cohort taking them; Schools >= 100 and <=150 students"))
+#   )
+```
+
+For direct subject comparison, we can see the entries for Energy Coast UTC looking like this:
+
+```{r}
+#| warning: false
+#| echo: false
+
+
+# Energy Coast UTC
+tmp <- results_all %>% 
+  filter(urn == 140600) %>%
+  select(year, `Subject description`, Qualification, `Total number entered`, `Number of students at the end of year`) %>%
+  mutate(subject = paste(`Subject description`, Qualification),
+          n = `Total number entered`,
+          per =  round(100*(`Total number entered`/`Number of students at the end of year`),2)) %>%
+  select(year, subject, n, per) 
+
+tbl_per <- tmp %>%
+  select(-n) %>%
+  pivot_wider(names_from = year,
+              values_from = per)
+  
+tbl_n <- tmp %>%
+  select(-per) %>%
+  pivot_wider(names_from = year,
+              values_from = n) 
+
+tbl_per %>% gt() %>%
+  sub_missing(missing_text = "--") %>%
+  data_color(columns=where(~ is.numeric(.x)),
+             palette = c("darkgreen", "green"),
+             domain = c(10, 100)
+             ) %>%
+  tab_header(
+    title = md("GCSE offering at Energy Coast UTC"),
+    subtitle = md("percentage of students taking exams"))
+
+```
+
+
+# Data sources
+
+Data for this analysis comes from:
+
+- https://www.compare-school-performance.service.gov.uk/download-data
+- https://reports.ofsted.gov.uk 
+
+
+
