@@ -273,7 +273,7 @@ tbl_per %>% gt() %>%
              domain = c(10, 100)
              ) %>%
   tab_header(
-    title = md("GCSE offering at Michael School"),
+    title = md("GCSE offering at Michaela School"),
     subtitle = md("percentage of students taking exams"))
 
 ```
@@ -768,6 +768,11 @@ For direct subject comparison, we can see the entries for Energy Coast UTC looki
 tmp <- results_all %>% 
   filter(urn == 140600) %>%
   select(year, `Subject description`, Qualification, `Total number entered`, `Number of students at the end of year`) %>%
+  mutate(Qualification = ifelse(grepl("Double Award GCSE",Qualification),
+                                "GCSE Double", 
+                                ifelse(grepl("GCSE",Qualification),
+                                       "GCSE", 
+                                       Qualification))) %>%
   mutate(subject = paste(`Subject description`, Qualification),
           n = `Total number entered`,
           per =  round(100*(`Total number entered`/`Number of students at the end of year`),2)) %>%
