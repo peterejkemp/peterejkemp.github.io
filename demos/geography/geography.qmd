@@ -1,0 +1,76 @@
+---
+title: "Geography vs History: GCSE entries 2012-2023"
+format: 
+  html:
+    toc: true
+author:
+  - name: Peter EJ Kemp
+    email: peter.kemp@kcl.ac.uk
+    affiliations:
+    - name: King's College London
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
+number-sections: true
+editor: source
+tbl-cap-location: top
+---
+
+```{r}
+#| warning: false
+#| echo: false
+node <- Sys.info()
+
+if(node["nodename"] == "KCL8KWNXY2"){
+  # basefolder <- r"(C:\Users\w1926273\OneDrive - King's College London\Code\SCARI\)"
+  basefolder <- r"(C:/Users/w1926273/Google Drive/Kings/Code/PISR/)"
+}else if(node["nodename"] == "PETES_PC"){
+  basefolder <- r"(C:/Users/Peter/Google Drive/Kings/Code/PISR/)"
+  old_proj_folder <- r"(C:/Users/Peter/Google Drive/Kings/Code/OpenAnalysis/)"
+}else if(node["nodename"] == "KCL3Y7NKR3"){ # new laptop
+  basefolder <- r"(G:\My Drive\Kings\Code\PISR\)"
+  old_proj_folder <- r"(C:/Users/Peter/Google Drive/Kings/Code/OpenAnalysis/)"
+}
+
+source(paste0(basefolder, "_reports/Michaela/", "geography.R"))
+```
+
+# Overall provision of Geography and History
+
+```{r}
+#| warning: false
+#| echo: false
+plt_total_providers
+```
+
+```{r}
+#| warning: false
+#| echo: false
+plt_total_students
+```
+
+```{r}
+#| warning: false
+#| echo: false
+no_sub
+```
+
+# Distribution of Geography and History provision
+
+```{r}
+#| warning: false
+#| echo: false
+plt_density
+```
+
+```{r}
+#| warning: false
+#| echo: false
+plt_per_school
+```
+
+# Map of Geography and History provision
+
+```{r leaflet}
+#| warning: false
+#| echo: false
+map_geo_provision
+```
