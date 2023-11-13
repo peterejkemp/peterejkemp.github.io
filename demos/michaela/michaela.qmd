@@ -78,11 +78,63 @@ sch_LA <- schools %>%
 
 ```
 
-This report is about `r sch_name` (URN:`r sch_URN`) in the `r sch_LA` Local Authority. The report has been put together using DfE Open Datasets from `r min(year_active)` to `r max(year_active)`. The aim of the report is to outline some of the underlying statistics for a school that has such performed so well in the English progress 8 performance metric, and through comparisons with other similar providers, shed some light on the model that `r sch_name` uses to achieve such extraordinary results. As you will see, `r sch_name` is an outlier in many ways.
+```{r subject_offer_table}
+#| warning: false
+#| echo: false
+
+sub_offering_longitudinal <- function(results_all, URN=138006){
+  
+  nme <- results_all %>% filter(urn == URN) %>% 
+    distinct(`School name`) %>% pull(`School name`)
+  
+  tmp <- results_all %>% 
+    filter(urn == URN) %>%
+    select(year, `Subject description`, Qualification, 
+           `Total number entered`, `Number of students at the end of year`) %>%
+    mutate(Qualification = 
+             ifelse(grepl("Double Award GCSE|GCSE Double Award",Qualification),
+                                  "GCSE Double", 
+                                  ifelse(grepl("GCSE",Qualification),
+                                         "GCSE", 
+                                         Qualification))) %>%
+    mutate(subject = paste(`Subject description`, Qualification),
+            n = `Total number entered`,
+            per =  round(100*(`Total number entered`/`Number of students at the end of year`),2)) %>%
+    select(year, subject, n, per) 
+
+  tbl_per <- tmp %>%
+    select(-n) %>%
+    pivot_wider(names_from = year,
+                values_from = per) %>%
+    arrange(desc(`2023`))
+  
+  tbl_n <- tmp %>%
+    select(-per) %>%
+    pivot_wider(names_from = year,
+                values_from = n) 
+  
+  
+  tbl_per %>% gt() %>%
+    sub_missing(missing_text = "--") %>%
+    data_color(columns=where(~ is.numeric(.x)),
+               palette = c("darkgreen", "green"),
+               domain = c(10, 100)
+               ) %>%
+    tab_header(
+      title = md(glue("Subject offering at {nme}")),
+      subtitle = md("percentage of students taking each exam"))
+}
+
+```
+
+This report is about `r sch_name` (URN:`r sch_URN`) in the `r sch_LA` Local Authority. The report has been put together using DfE open datasets from `r min(year_active)` to `r max(year_active)`. The aim of the report is to outline some of the underlying statistics for a school that has performed so well in the English progress 8 performance metric, and through comparisons with other similar providers, shed some light on the model that `r sch_name` uses to achieve such extraordinary results. As you will see, `r sch_name` is an outlier in many ways.
 
 # Limitations
 
-The below doesn't double code Double GCSEs, instead, it currently treats them as a _single_ GCSE entry. The data this report is based off comes from the open DfE datasets, and this report is a trial run for testing these datasets. The DfE datasets are very messy and some mistakes might have slipped through. Errors are likely mine, please get in contact if you have any questions or corrections.
+- The below doesn't double code Double GCSEs, instead, it currently treats them as a _single_ GCSE entry. 
+- In the tables showing _"Outstanding"_ Ofsted grades, the Outstanding grade might be from several years before. For example [Energy Coast UTC](https://reports.ofsted.gov.uk/provider/23/140600) appears in 2022 data as _Outstanding_, but not in 2023, as it was downgraded to _"Good"_ (though Ofsted still does appear to approve of its curriculum offering).
+- The data this report is based off comes from the open DfE datasets, and this report is a trial run for testing these datasets. The DfE datasets are very messy and some mistakes might have slipped through. 
+- Errors are likely mine, please get in contact if you have any questions or corrections.
 
 # Student backgrounds
 
@@ -92,6 +144,8 @@ The below doesn't double code Double GCSEs, instead, it currently treats them as
 #| warning: false
 #| echo: false
 #| code-fold: true
+
+options("scipen"=6, "digits"=4)
 
 #TODO: we must work out why the schools dataset has the wrong FSM values in it, e.g.:
 tbl_FSM <- schools %>%
@@ -234,7 +288,7 @@ plt_subs_entered <- ggplot(data = plot_data, aes(x=subs, y=P8MEA)) +
   geom_smooth(method = lm) +
   stat_cor(method = "pearson", label.x = 10, label.y = -2.0) +
   facet_wrap(year ~ .) +
-  labs(title="Number of exam entries against Progress 8", 
+  labs(title="Number of exam subjects offered, against Progress 8", 
        subtitle = glue("{sch_name} plotted against schools of similar student intakes; correlation line and coefficient"),
        caption = glue("Data source: DfE; {max_size} >= KS4 entries >= {min_size}")) +
   theme(plot.title = element_text(hjust = 0.5))
@@ -248,34 +302,7 @@ Michaela has only ever entered students for GCSE exams (including GCSE Double Aw
 ```{r}
 #| warning: false
 #| echo: false
-tmp <- results_all %>% 
-  filter(urn == sch_URN) %>%
-  select(year, `Subject description`, `Total number entered`, `Number of students at the end of year`) %>%
-  mutate(subject = `Subject description`,
-          n = `Total number entered`,
-          per =  round(100*(`Total number entered`/`Number of students at the end of year`),2)) %>%
-  select(year, subject, n, per) 
-
-tbl_per <- tmp %>%
-  select(-n) %>%
-  pivot_wider(names_from = year,
-              values_from = per)
-  
-tbl_n <- tmp %>%
-  select(-per) %>%
-  pivot_wider(names_from = year,
-              values_from = n) 
-
-tbl_per %>% gt() %>%
-  sub_missing(missing_text = "--") %>%
-  data_color(columns=c("2019", "2021", "2022", "2023"),
-             palette = c("darkgreen", "green"),
-             domain = c(10, 100)
-             ) %>%
-  tab_header(
-    title = md("GCSE offering at Michaela School"),
-    subtitle = md("percentage of students taking exams"))
-
+sub_offering_longitudinal(results_all, URN=sch_URN)
 ```
 
 
@@ -670,6 +697,181 @@ sch_ofsted_offer %>% ungroup() %>% #select(-Mich) %>%
     subtitle = md("Data 2019-2023")) %>%
   tab_options(ihtml.active = TRUE,
               ihtml.use_filters = TRUE)
+
+```
+
+# Comparing subject offering to other schools
+
+For direct subject comparison, we can see the entries for [Energy Coast UTC](https://reports.ofsted.gov.uk/provider/23/140600) (Outstanding Ofsted 2019, downgraded to Good in 2023) looking like this:
+
+```{r}
+#| warning: false
+#| echo: false
+sub_offering_longitudinal(results_all, URN=140600) %>%
+  tab_options(ihtml.active = TRUE,
+              ihtml.use_filters = TRUE)
+```
+
+[De Lacy Academy](https://reports.ofsted.gov.uk/provider/23/138006) (Outstanding Ofsted 2022), the year that it offered fewer GCSEs than Michaela you can see a significant number of other quals:
+
+```{r}
+#| warning: false
+#| echo: false
+sub_offering_longitudinal(results_all, URN=138006) %>%
+  tab_options(ihtml.active = TRUE,
+              ihtml.use_filters = TRUE)
+# 
+# 
+# sub_offering_longitudinal(results_all, URN=147201) %>%
+#   tab_options(ihtml.active = TRUE,
+#               ihtml.use_filters = TRUE)
+
+
+
+```
+
+# P8 summary tables
+
+If we look at the top 100 highest performing P8 schools in `r max(year_active)` we see that most offer triple science and Michaela retains the smallest number of GCSEs despite the fact that other schools are substantially smaller:
+
+```{r}
+#| warning: false
+#| echo: false
+top_P8 <- ks4provider %>% ungroup() %>%
+  filter(year == max(year_active)) %>% 
+  arrange(desc(P8MEA)) %>%
+  select(URN, SCHNAME,RELDENOM, TPUP, BPUP, GPUP, P8MEA, PTFSM6CLA1A, PTEALGRP2) %>%
+  mutate(P8_pos = row_number(),
+         urn = URN) %>%
+  relocate(P8_pos, .before=urn)# %>%
+  #head(100)#
+
+subs_offered <- results_all %>% 
+  filter(urn %in% top_P8$URN, 
+         year==max(year_active)) %>%
+  # filter(urn == "147201") %>%
+  group_by(urn) %>%
+  mutate(total_stu = `Number of students at the end of year`,
+         per = round(100*(`Total number entered`/total_stu),2),
+         single_che = `Subject description` == "Chemistry" & grepl("GCSE", Qualification) ,
+         single_bio = `Subject description` == "Biology" & grepl("GCSE", Qualification),
+         single_phy = `Subject description` == "Physics" & grepl("GCSE", Qualification)) %>%
+  filter(per >= 10) %>%
+  summarise(total_GCSE = sum(ifelse(grepl("GCSE", Qualification), TRUE, FALSE)),
+            total_Other = sum(ifelse(grepl("GCSE", Qualification), FALSE, TRUE)),
+            total_subs = total_GCSE + total_Other,
+            triple_sci = max(single_che) + max(single_bio) + max(single_phy)) %>%
+  arrange((total_GCSE))
+
+low_col <- "black"
+hig_col <- "green"
+
+subs_offered <- left_join(top_P8, subs_offered) %>% 
+  arrange(P8_pos) %>%
+  relocate(P8_pos, .before=URN) %>% 
+  # mutate(triple_sci = triple_sci  == 3) %>%
+  select(-urn) 
+
+subs_offered %>% head(100) %>%
+  gt() %>%
+  data_color(columns=TPUP,
+               palette = c(low_col, hig_col)
+               ) %>%
+  data_color(columns=P8MEA,
+               palette = c(low_col, hig_col)
+               ) %>%
+  data_color(columns=PTFSM6CLA1A,
+               palette = c(low_col, hig_col)
+               ) %>%
+  data_color(columns=PTEALGRP2,
+               palette = c(low_col, hig_col)
+               ) %>%
+  data_color(columns=total_GCSE,
+               palette = c(low_col, hig_col)
+               ) %>%
+  data_color(columns=total_Other,
+               palette = c(low_col, hig_col)
+               ) %>%
+  data_color(columns=total_subs,
+               palette = c(low_col, hig_col)
+               ) %>%
+  data_color(columns=triple_sci,
+               palette = c(low_col, hig_col),
+              na_color = "red"
+               ) %>%
+  tab_options(ihtml.active = TRUE,
+              ihtml.use_filters = TRUE)
+  
+```
+
+# Models to predict P8 scores - standardised models
+
+To predict the P8 score of a school we can look at total GCSEs offered `total_GCSE`; whether the school has a religious affiliation `religion`; total pupils `TPUP` in KS4 classes; Pupil premium % of KS4 population `PTFSM6CLA1A`; EAL % of KS4 population `PTEALGRP2`; and whether the school is offering triple science `triple_sci`. As these variables have vastly different distributions we will _standardise_ the results by using their _z-values_ this is done using the `scale()` command in R, allowing us to see what a standard deviation in each variable (except `triple_sci` and `religion` which are Boolean) will result in:
+
+> P8MEA ~ total_GCSE + religion + TPUP + PTFSM6CLA1A + PTEALGRP2 + triple_sci,
+
+We can see that the two most powerful predictors are % of students on pupil premium (-0.44SD), number of GCSEs offered (+0.4SD), % of students who are EAL (+0.3SD), and a school being religiously affiliated (+0.18SD). The total pupil population `TPUP` is also significantly associated with P8 score, but the Beta value is small, at +0.06SD:
+
+```{r}
+#| warning: false
+#| echo: false
+
+mdl_data <- subs_offered %>% 
+     mutate(P8MEA = scale(P8MEA),
+            total_GCSE = scale(total_GCSE),
+            total_subs = scale(total_subs),
+            TPUP = scale(TPUP),#
+            BPUP = scale(BPUP),#
+            GPUP = scale(GPUP),#
+            PTFSM6CLA1A = scale(PTFSM6CLA1A),
+            PTEALGRP2 = scale(PTEALGRP2),
+            triple_sci = triple_sci >=3) %>%
+     mutate(religion = ifelse(RELDENOM %in% c("Does not apply", "None"),
+                              FALSE,
+                              ifelse(RELDENOM %in% c("Unknown"),
+                                     NA,
+                                     TRUE))
+            )
+
+```
+
+```{r}
+#| warning: false
+#| echo: false
+lm(P8MEA ~ total_GCSE + religion + TPUP + PTFSM6CLA1A + PTEALGRP2 + triple_sci,
+   data = mdl_data) %>% 
+  tbl_regression() %>%
+  bold_p()  %>%
+  add_glance_table(include = c(nobs, r.squared))
+
+```
+
+Looking at mixed schools only, we can see that an increase of 1SD in the number of girls in your school `GPUP` results in +0.09SD P8 increase. Boys `BPUP` remain statistically insignificant.
+
+> P8MEA ~ total_GCSE + religion + BPUP + GPUP  + PTFSM6CLA1A + PTEALGRP2 + triple_sci
+
+
+```{r}
+#| warning: false
+#| echo: false
+lm(P8MEA ~ total_GCSE + religion + BPUP + GPUP  + PTFSM6CLA1A + PTEALGRP2 + triple_sci,
+   data = mdl_data) %>% 
+  tbl_regression() %>%
+  bold_p()  %>%
+  add_glance_table(include = c(nobs, r.squared))
+
+```
+
+# Data sources
+
+Data for this analysis comes from:
+
+- https://www.compare-school-performance.service.gov.uk/download-data
+- https://reports.ofsted.gov.uk 
+
+```{r junk}
+#| warning: false
+#| echo: false
 # sch_ofsted_gcse <- subjects_entered %>%
 #   filter(Ofsted == "Outstanding" | 
 #            urn == 140862) %>%
@@ -756,57 +958,4 @@ sch_ofsted_offer %>% ungroup() %>% #select(-Mich) %>%
 #     subtitle = md(paste(yr," data; >10% cohort taking them; Schools >= 100 and <=150 students"))
 #   )
 ```
-
-For direct subject comparison, we can see the entries for Energy Coast UTC looking like this:
-
-```{r}
-#| warning: false
-#| echo: false
-
-
-# Energy Coast UTC
-tmp <- results_all %>% 
-  filter(urn == 140600) %>%
-  select(year, `Subject description`, Qualification, `Total number entered`, `Number of students at the end of year`) %>%
-  mutate(Qualification = ifelse(grepl("Double Award GCSE",Qualification),
-                                "GCSE Double", 
-                                ifelse(grepl("GCSE",Qualification),
-                                       "GCSE", 
-                                       Qualification))) %>%
-  mutate(subject = paste(`Subject description`, Qualification),
-          n = `Total number entered`,
-          per =  round(100*(`Total number entered`/`Number of students at the end of year`),2)) %>%
-  select(year, subject, n, per) 
-
-tbl_per <- tmp %>%
-  select(-n) %>%
-  pivot_wider(names_from = year,
-              values_from = per)
-  
-tbl_n <- tmp %>%
-  select(-per) %>%
-  pivot_wider(names_from = year,
-              values_from = n) 
-
-tbl_per %>% gt() %>%
-  sub_missing(missing_text = "--") %>%
-  data_color(columns=where(~ is.numeric(.x)),
-             palette = c("darkgreen", "green"),
-             domain = c(10, 100)
-             ) %>%
-  tab_header(
-    title = md("GCSE offering at Energy Coast UTC"),
-    subtitle = md("percentage of students taking exams"))
-
-```
-
-
-# Data sources
-
-Data for this analysis comes from:
-
-- https://www.compare-school-performance.service.gov.uk/download-data
-- https://reports.ofsted.gov.uk 
-
-
 
