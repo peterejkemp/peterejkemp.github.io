@@ -133,6 +133,7 @@ This report is about `r sch_name` (URN:`r sch_URN`) in the `r sch_LA` Local Auth
 
 - The below doesn't double code Double GCSEs, instead, it currently treats them as a _single_ GCSE entry. 
 - In the tables showing _"Outstanding"_ Ofsted grades, the Outstanding grade might be from several years before. For example [Energy Coast UTC](https://reports.ofsted.gov.uk/provider/23/140600) appears in 2022 data as _Outstanding_, but not in 2023, as it was downgraded to _"Good"_ (though Ofsted still does appear to approve of its curriculum offering).
+- where I report a subject being offered below, this is where that subject was taken by 15 students or 10% or more of the KS4 exam entries in a school, this helps filter out subjects such as _Portuguese_ that might be taken by Portuguese speaking students in a school as an additional exam and not actually be timetabled to be taught.
 - The data this report is based off comes from the open DfE datasets, and this report is a trial run for testing these datasets. The DfE datasets are very messy and some mistakes might have slipped through. 
 - Errors are likely mine, please get in contact if you have any questions or corrections.
 
@@ -756,7 +757,7 @@ subs_offered <- results_all %>%
          single_che = `Subject description` == "Chemistry" & grepl("GCSE", Qualification) ,
          single_bio = `Subject description` == "Biology" & grepl("GCSE", Qualification),
          single_phy = `Subject description` == "Physics" & grepl("GCSE", Qualification)) %>%
-  filter(per >= 10) %>%
+  filter(per >= 10 | `Total number entered` >= 15) %>%
   summarise(total_GCSE = sum(ifelse(grepl("GCSE", Qualification), TRUE, FALSE)),
             total_Other = sum(ifelse(grepl("GCSE", Qualification), FALSE, TRUE)),
             total_subs = total_GCSE + total_Other,
@@ -810,7 +811,7 @@ To predict the P8 score of a school we can look at total GCSEs offered `total_GC
 
 > P8MEA ~ total_GCSE + religion + TPUP + PTFSM6CLA1A + PTEALGRP2 + triple_sci,
 
-We can see that the two most powerful predictors are % of students on pupil premium (-0.44SD), number of GCSEs offered (+0.4SD), % of students who are EAL (+0.3SD), and a school being religiously affiliated (+0.18SD). The total pupil population `TPUP` is also significantly associated with P8 score, but the Beta value is small, at +0.06SD:
+We can see that the two most powerful predictors are % of students on pupil premium (-0.47SD), number of GCSEs offered (+0.37SD), % of students who are EAL (+0.31SD), and a school being religiously affiliated (+0.19SD). The total pupil population `TPUP` is also significantly associated with P8 score, but the Beta value is small, at +0.07SD:
 
 ```{r}
 #| warning: false
@@ -846,7 +847,7 @@ lm(P8MEA ~ total_GCSE + religion + TPUP + PTFSM6CLA1A + PTEALGRP2 + triple_sci,
 
 ```
 
-Looking at mixed schools only, we can see that an increase of 1SD in the number of girls in your school `GPUP` results in +0.09SD P8 increase. Boys `BPUP` remain statistically insignificant.
+Looking at mixed schools only, we can see that neither the numberof Girls `GPUP` or the number of Boys `BPUP` are statistically significant.
 
 > P8MEA ~ total_GCSE + religion + BPUP + GPUP  + PTFSM6CLA1A + PTEALGRP2 + triple_sci
 
