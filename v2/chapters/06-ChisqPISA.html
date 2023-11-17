@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.3.450">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>MASTEMR - 07 Chi-square tests</title>
+<title>MASTEMR - 07 Hypothesis testing and Chi-square tests</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,7 +127,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/06-ChisqPISA.html">07 Chi-square tests</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/06-ChisqPISA.html">07 Hypothesis testing and Chi-square tests</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -220,7 +220,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">07 Chi-square tests</span></a>
+ <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -341,50 +341,62 @@ div.csl-indent {
   </ul>
 </li>
   <li>
-<a href="#chi-square-tests" id="toc-chi-square-tests" class="nav-link" data-scroll-target="#chi-square-tests"><span class="header-section-number">2</span> Chi-square tests</a>
+<a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing"><span class="header-section-number">2</span> Hypothesis testing</a>
   <ul class="collapse">
-<li><a href="#assumptions-of-chi-square-tests" id="toc-assumptions-of-chi-square-tests" class="nav-link" data-scroll-target="#assumptions-of-chi-square-tests"><span class="header-section-number">2.1</span> Assumptions of Chi-square tests</a></li>
+<li><a href="#choosing-a-hypotheis-test" id="toc-choosing-a-hypotheis-test" class="nav-link" data-scroll-target="#choosing-a-hypotheis-test"><span class="header-section-number">2.1</span> Choosing a Hypotheis Test</a></li>
+  <li><a href="#performing-a-hypothesis-test---fisher" id="toc-performing-a-hypothesis-test---fisher" class="nav-link" data-scroll-target="#performing-a-hypothesis-test---fisher"><span class="header-section-number">2.2</span> Performing a hypothesis test - Fisher</a></li>
   </ul>
 </li>
   <li>
-<a href="#performing-chi-square-tests" id="toc-performing-chi-square-tests" class="nav-link" data-scroll-target="#performing-chi-square-tests"><span class="header-section-number">3</span> Performing chi square tests</a>
+<a href="#chi-square-tests" id="toc-chi-square-tests" class="nav-link" data-scroll-target="#chi-square-tests"><span class="header-section-number">3</span> Chi-square tests</a>
   <ul class="collapse">
-<li><a href="#creating-contingency-tables" id="toc-creating-contingency-tables" class="nav-link" data-scroll-target="#creating-contingency-tables"><span class="header-section-number">3.1</span> Creating contingency tables</a></li>
+<li><a href="#conditions-of-chi-square-tests" id="toc-conditions-of-chi-square-tests" class="nav-link" data-scroll-target="#conditions-of-chi-square-tests"><span class="header-section-number">3.1</span> Conditions of Chi-Square Tests</a></li>
+  <li><a href="#types-of-chi-square-tests" id="toc-types-of-chi-square-tests" class="nav-link" data-scroll-target="#types-of-chi-square-tests"><span class="header-section-number">3.2</span> Types of Chi-Square Tests</a></li>
   </ul>
 </li>
   <li>
-<a href="#hypothesis-testing-and-chi-square-goodness-of-fit-tests" id="toc-hypothesis-testing-and-chi-square-goodness-of-fit-tests" class="nav-link" data-scroll-target="#hypothesis-testing-and-chi-square-goodness-of-fit-tests"><span class="header-section-number">4</span> Hypothesis testing and Chi-square goodness of fit tests</a>
+<a href="#performing-chi-square-tests" id="toc-performing-chi-square-tests" class="nav-link" data-scroll-target="#performing-chi-square-tests"><span class="header-section-number">4</span> Performing chi square tests</a>
   <ul class="collapse">
-<li><a href="#an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" id="toc-an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="nav-link" data-scroll-target="#an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050"><span class="header-section-number">4.1</span> An example: Does the disritbution of male and female students in the UK fit the expected pattern (50:50)?</a></li>
-  <li><a href="#an-example-gender-distribution-in-the-pisa-sample" id="toc-an-example-gender-distribution-in-the-pisa-sample" class="nav-link" data-scroll-target="#an-example-gender-distribution-in-the-pisa-sample"><span class="header-section-number">4.2</span> An example: Gender distribution in the PISA sample</a></li>
-  <li><a href="#chi-square-test-of-independence" id="toc-chi-square-test-of-independence" class="nav-link" data-scroll-target="#chi-square-test-of-independence"><span class="header-section-number">4.3</span> Chi-square test of independence</a></li>
-  <li><a href="#plotting-the-chi-square-relationships" id="toc-plotting-the-chi-square-relationships" class="nav-link" data-scroll-target="#plotting-the-chi-square-relationships"><span class="header-section-number">4.4</span> Plotting the chi-square relationships</a></li>
-  <li><a href="#running-chi-square-tests-of-independence" id="toc-running-chi-square-tests-of-independence" class="nav-link" data-scroll-target="#running-chi-square-tests-of-independence"><span class="header-section-number">4.5</span> Running Chi square tests of independence</a></li>
+<li><a href="#creating-contingency-tables" id="toc-creating-contingency-tables" class="nav-link" data-scroll-target="#creating-contingency-tables"><span class="header-section-number">4.1</span> Creating contingency tables</a></li>
   </ul>
 </li>
-  <li><a href="#testing-ordinal-data---the-kruskal-wallis-test" id="toc-testing-ordinal-data---the-kruskal-wallis-test" class="nav-link" data-scroll-target="#testing-ordinal-data---the-kruskal-wallis-test"><span class="header-section-number">5</span> Testing ordinal data - the Kruskal Wallis test</a></li>
   <li>
-<a href="#seminar-tasks" id="toc-seminar-tasks" class="nav-link" data-scroll-target="#seminar-tasks"><span class="header-section-number">6</span> Seminar Tasks</a>
+<a href="#chi-square-goodness-of-fit-tests" id="toc-chi-square-goodness-of-fit-tests" class="nav-link" data-scroll-target="#chi-square-goodness-of-fit-tests"><span class="header-section-number">5</span> Chi-square goodness of fit tests</a>
   <ul class="collapse">
-<li><a href="#task-1---creating-contingency-tables" id="toc-task-1---creating-contingency-tables" class="nav-link" data-scroll-target="#task-1---creating-contingency-tables"><span class="header-section-number">6.1</span> Task 1 - Creating contingency tables</a></li>
-  <li><a href="#task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" id="toc-task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" class="nav-link" data-scroll-target="#task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations"><span class="header-section-number">6.2</span> Task 2 - Goodness of fit test. Are the responses of the survey in proportion to populations?</a></li>
-  <li><a href="#task-3---goodness-of-fit-test-birth-month-distribution" id="toc-task-3---goodness-of-fit-test-birth-month-distribution" class="nav-link" data-scroll-target="#task-3---goodness-of-fit-test-birth-month-distribution"><span class="header-section-number">6.3</span> Task 3 - Goodness of fit test: Birth month distribution</a></li>
-  <li><a href="#task-4---country-differences---hypothesis-testing" id="toc-task-4---country-differences---hypothesis-testing" class="nav-link" data-scroll-target="#task-4---country-differences---hypothesis-testing"><span class="header-section-number">6.4</span> Task 4 - Country differences - hypothesis testing</a></li>
+<li><a href="#an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" id="toc-an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="nav-link" data-scroll-target="#an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050"><span class="header-section-number">5.1</span> An example: Does the disritbution of male and female students in the UK fit the expected pattern (50:50)?</a></li>
+  <li><a href="#an-example-gender-distribution-in-the-pisa-sample" id="toc-an-example-gender-distribution-in-the-pisa-sample" class="nav-link" data-scroll-target="#an-example-gender-distribution-in-the-pisa-sample"><span class="header-section-number">5.2</span> An example: Gender distribution in the PISA sample</a></li>
   </ul>
 </li>
-  <li><a href="#testing-ordinal-data-with-the-kruskal-wallis-test" id="toc-testing-ordinal-data-with-the-kruskal-wallis-test" class="nav-link" data-scroll-target="#testing-ordinal-data-with-the-kruskal-wallis-test"><span class="header-section-number">7</span> Testing ordinal data with the Kruskal-Wallis test</a></li>
   <li>
-<a href="#extension-tasks" id="toc-extension-tasks" class="nav-link" data-scroll-target="#extension-tasks"><span class="header-section-number">8</span> Extension tasks</a>
+<a href="#chi-square-test-of-independence" id="toc-chi-square-test-of-independence" class="nav-link" data-scroll-target="#chi-square-test-of-independence"><span class="header-section-number">6</span> Chi-square test of independence</a>
   <ul class="collapse">
-<li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources"><span class="header-section-number">8.1</span> Useful resources</a></li>
+<li><a href="#plotting-the-chi-square-relationships" id="toc-plotting-the-chi-square-relationships" class="nav-link" data-scroll-target="#plotting-the-chi-square-relationships"><span class="header-section-number">6.1</span> Plotting the chi-square relationships</a></li>
+  <li><a href="#running-chi-square-tests-of-independence" id="toc-running-chi-square-tests-of-independence" class="nav-link" data-scroll-target="#running-chi-square-tests-of-independence"><span class="header-section-number">6.2</span> Running Chi-square tests of independence</a></li>
   </ul>
 </li>
-  <li><a href="#doing-chi-square-tests-in-r" id="toc-doing-chi-square-tests-in-r" class="nav-link" data-scroll-target="#doing-chi-square-tests-in-r"><span class="header-section-number">9</span> Doing Chi-Square tests in R</a></li>
+  <li><a href="#testing-ordinal-data---the-kruskal-wallis-test" id="toc-testing-ordinal-data---the-kruskal-wallis-test" class="nav-link" data-scroll-target="#testing-ordinal-data---the-kruskal-wallis-test"><span class="header-section-number">7</span> Testing ordinal data - the Kruskal Wallis test</a></li>
+  <li>
+<a href="#seminar-tasks" id="toc-seminar-tasks" class="nav-link" data-scroll-target="#seminar-tasks"><span class="header-section-number">8</span> Seminar Tasks</a>
+  <ul class="collapse">
+<li><a href="#task-1---creating-contingency-tables" id="toc-task-1---creating-contingency-tables" class="nav-link" data-scroll-target="#task-1---creating-contingency-tables"><span class="header-section-number">8.1</span> Task 1 - Creating contingency tables</a></li>
+  <li><a href="#task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" id="toc-task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" class="nav-link" data-scroll-target="#task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations"><span class="header-section-number">8.2</span> Task 2 - Goodness of fit test. Are the responses of the survey in proportion to populations?</a></li>
+  <li><a href="#task-3---goodness-of-fit-test-birth-month-distribution" id="toc-task-3---goodness-of-fit-test-birth-month-distribution" class="nav-link" data-scroll-target="#task-3---goodness-of-fit-test-birth-month-distribution"><span class="header-section-number">8.3</span> Task 3 - Goodness of fit test: Birth month distribution</a></li>
+  <li><a href="#task-4---country-differences---hypothesis-testing" id="toc-task-4---country-differences---hypothesis-testing" class="nav-link" data-scroll-target="#task-4---country-differences---hypothesis-testing"><span class="header-section-number">8.4</span> Task 4 - Country differences - hypothesis testing</a></li>
+  </ul>
+</li>
+  <li><a href="#testing-ordinal-data-with-the-kruskal-wallis-test" id="toc-testing-ordinal-data-with-the-kruskal-wallis-test" class="nav-link" data-scroll-target="#testing-ordinal-data-with-the-kruskal-wallis-test"><span class="header-section-number">9</span> Testing ordinal data with the Kruskal-Wallis test</a></li>
+  <li>
+<a href="#extension-tasks" id="toc-extension-tasks" class="nav-link" data-scroll-target="#extension-tasks"><span class="header-section-number">10</span> Extension tasks</a>
+  <ul class="collapse">
+<li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources"><span class="header-section-number">10.1</span> Useful resources</a></li>
+  </ul>
+</li>
+  <li><a href="#doing-chi-square-tests-in-r" id="toc-doing-chi-square-tests-in-r" class="nav-link" data-scroll-target="#doing-chi-square-tests-in-r"><span class="header-section-number">11</span> Doing Chi-Square tests in R</a></li>
   </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">07 Chi-square tests</h1>
+<h1 class="title">07 Hypothesis testing and Chi-square tests</h1>
 </div>
 
 
@@ -412,24 +424,79 @@ div.csl-indent {
 <span id="cb1-5"><a href="#cb1-5"></a></span>
 <span id="cb1-6"><a href="#cb1-6"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_2018_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section><section id="chi-square-tests" class="level1" data-number="2"><h1 data-number="2">
-<span class="header-section-number">2</span> Chi-square tests</h1>
+</section></section><section id="hypothesis-testing" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> Hypothesis testing</h1>
+<p>Hypothesis testing is a form of statistical inference used to draw conclusions about population distributions or parameters (such as the mean or variance). Data from a simple random sample is to test the plausibility of a hypothesis and the likelihood of it being true (or not).</p>
+<p>When going about doing a hypothesis test we commonly choose what are called the null and alternative hypotheses. The null hypothesis usually refers to the hypothesis that there is no significant statistical difference in a set of observations, such as differences between expected values and observed values, differences between means, or differences between data and a distribution. The alternative hypothesis usually refers to the opposite of this, where there is a significant statistical difference in a set of observations, however, sometimes this can be of one direction, such as one mean being greater than another mean, instead of there being no difference.</p>
+<p>We assume the null hypothesis is true when conducting a hypothesis test. The test itself then measures the plausibility that the null hypothesis is true and returns what is called a p-value (the probability the null hypthesis is true). If this value is relatively large then it is likely the null hypothesis is true. However, if this value is relatively small, then it is unlikely the null hypothesis is true and therefore likely it is false and that the alternative hypothesis is true instead.</p>
+<p>Typically, we use a set value such as 0.05 or 0.01 as the threshold to determine whether the null-hypothesis is true or not. So, if the null hypothesis is greater than this value then we accept that it is true, and if it is less than this value we reject that it is true and accept that the alternative hypothesis is true instead.</p>
+<section id="choosing-a-hypotheis-test" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="choosing-a-hypotheis-test">
+<span class="header-section-number">2.1</span> Choosing a Hypotheis Test</h2>
+<p>When conducting a hypothesis test we need to choose the most appropriate test depending on the type of data we are working with, what we are trying to test and whether certain conditions are met or not. Here is a basic summary of what you may need to consider.</p>
+<p>Type(s) of data:</p>
+<ul>
+<li><p>Categorical (ordinal, nominal, binary);</p></li>
+<li><p>Quantitative (continuous, discrete).</p></li>
+</ul>
+<p>What you are trying to test:</p>
+<ul>
+<li><p>Relationships between variables;</p></li>
+<li><p>Comparison of means.</p></li>
+</ul>
+<p>Distribution of data:</p>
+<ul>
+<li><p>Normally distributed (parametric tests);</p></li>
+<li><p>Not normally distributed (nonparametric tests).</p></li>
+</ul>
+<p>When we consider each of the types of tests the conditions for the test will be stated, so it will be clear which test can be used when.</p>
+</section><section id="performing-a-hypothesis-test---fisher" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="performing-a-hypothesis-test---fisher">
+<span class="header-section-number">2.2</span> Performing a hypothesis test - Fisher</h2>
+<p>Fisher, one of the statisticians who moved the field of hypothesis testing forward and formalised some of the procedures used for hypothesis testing suggests using the following steps when conducting hypothesis testing.</p>
+<ol type="1">
+<li>
+<p>Select an appropriate test.</p>
+<p>Here, we need to consider the type(s) of data, what we are trying to test and whether the data is normally distributed or not, along with other conditions needed for the different tests.</p>
+</li>
+<li>
+<p>Set up the null and alternative hypotheses.</p>
+<p>This heavily depends on which test is being used, so more guidance will be given under each of the tests.</p>
+</li>
+<li>
+<p>Calculate the theoretical probability of the null hypothesis being true.</p>
+<p>This is where the test itself is used to calculate the probability of the null hypothesis being true (i.e.&nbsp;returning the p-value from the test).</p>
+</li>
+<li>
+<p>Assess the statistical significance of the result.</p>
+<p>This is where the p-value from step 3 is compared with a predetermined threshold, such as 0.05 or 0.01 to determine if the null hypothesis is true or false.</p>
+</li>
+<li>
+<p>Interpret the statistical significance of the results.</p>
+<p>Here, we take the result from step 4, so deciding whether to accept the null hypothesis or reject the null hypothesis and accept the alternative hypothesis and then what this means in the context of the problem being posed.</p>
+</li>
+</ol></section></section><section id="chi-square-tests" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> Chi-square tests</h1>
 <p>Chi squared (<span class="math inline">\(\chi^2\)</span>) tests are <em>non-parametric</em> tests, this means that the test isn’t expecting the underlying data to be distributed in a certain way. Chi-squared determines how well the frequency distribution for a sample fits the population distribution and will let you know when things aren’t distributed as expected. For example you might expect girls and boys to have the same coloured dogs, a chi squared test can tell you whether the null hypothesis, that there is no difference between the colours of dogs owned by girls and boys, is true or not.</p>
 <p>In more mathematical terms, chi squared examines differences between the categories of an independent variable with respect to a dependent variable measured on a nominal (or categorical) scale. A nominal scale has values that aren’t ordered, or continuous, for example gender or favourite flavour of ice cream.</p>
+<section id="conditions-of-chi-square-tests" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="conditions-of-chi-square-tests">
+<span class="header-section-number">3.1</span> Conditions of Chi-Square Tests</h2>
+<p>Four assumptions need to be met in order to use a chi-square test:</p>
+<p>a) The data (both variables) should be categorical (for ordinal data, see the section on Kruskal Wallis tests below);</p>
+<p>b) All observations are independent;</p>
+<p>c) Cells in the contingency table (see below) are mutually exclusive;</p>
+<p>d) Expected values in each cell in the contingency table should be five or greater for more than 80% of cells.</p>
+<p>See <a href="https://learningstatisticswithr.com/book/chisquare.html#chisqassumptions">Section 12.5</a> in Navaro’s Learning Statistics with R</p>
+</section><section id="types-of-chi-square-tests" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="types-of-chi-square-tests">
+<span class="header-section-number">3.2</span> Types of Chi-Square Tests</h2>
 <p>Chi-square tests can be categorised in two groups:</p>
 <ul>
 <li><p><em>A test of goodness of fit</em> - this is a form of hypothesis test which determines whether a sample fits a wider population. For example, does the pattern of exam results in one school fit the national distribution?</p></li>
 <li><p><em>A test of independence</em> - allows inference to be made about whether two categorical variables in a population are related. For example, are there differences in the uptake of careers by gender?</p></li>
 </ul>
 <p>For more information on chi-square tests, see <a href="https://learningstatisticswithr.com/book/chisquare.html">chapter 12</a>, in Navaro’s Learning Statistics with R.</p>
-<section id="assumptions-of-chi-square-tests" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="assumptions-of-chi-square-tests">
-<span class="header-section-number">2.1</span> Assumptions of Chi-square tests</h2>
-<p>Four assumptions need to be met in order to use a chi-square test: • The data (both variables) should be categorical (for ordinal data, see the section on Kruskal Wallis tests below). • All observations are independent • Cells in the contingency table (see below) are mutually exclusive • Expected values in each cell in the contingency table should be five or greater for more than 80% of cells.</p>
-<p>See <a href="https://learningstatisticswithr.com/book/chisquare.html#chisqassumptions">Section 12.5</a> in Navaro’s Learning Statistics with R</p>
-</section></section><section id="performing-chi-square-tests" class="level1" data-number="3"><h1 data-number="3">
-<span class="header-section-number">3</span> Performing chi square tests</h1>
-<section id="creating-contingency-tables" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="creating-contingency-tables">
-<span class="header-section-number">3.1</span> Creating contingency tables</h2>
+</section></section><section id="performing-chi-square-tests" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> Performing chi square tests</h1>
+<section id="creating-contingency-tables" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="creating-contingency-tables">
+<span class="header-section-number">4.1</span> Creating contingency tables</h2>
 <p>Chi-square calculations depend on contingency tables. A contingency table is a table that shows the frequency counts for two variables. We can use the <code>xtabs</code> function to create contingency tables in R.</p>
 <p>For example, imagine we want to create a contingency table for the number of boys and girls in the UK and US in the PISA sample. First we create a subset of the <code>PISA_2018</code> <code>data.frame</code> including country and gender, and <code>filter</code> for the two countries. We use the <code>xtabs</code> function to create the table. We pass the subset data (<code>UKUSgender</code>) to <code>xtabs</code> and indicate the columns and rows we want <code>~CNT + ST004D01T</code></p>
 <div class="cell">
@@ -449,8 +516,8 @@ CNT              Female Male
   United States    2376 2462</code></pre>
 </div>
 </div>
-</section></section><section id="hypothesis-testing-and-chi-square-goodness-of-fit-tests" class="level1" data-number="4"><h1 data-number="4">
-<span class="header-section-number">4</span> Hypothesis testing and Chi-square goodness of fit tests</h1>
+</section></section><section id="chi-square-goodness-of-fit-tests" class="level1" data-number="5"><h1 data-number="5">
+<span class="header-section-number">5</span> Chi-square goodness of fit tests</h1>
 <p>If we want to determine if a sample categorical data matches the pattern of a whole population we can use a Chi-square goodness of fit test. The test is a form of hypothesis testing.</p>
 <p>Hypothesis testing is one type of statistical analysis. A researcher states an assumption that they want to test.</p>
 <p>For example, they might want to examine whether the distribution of boys and girls in the UK matches the expected distribution of 50:50.</p>
@@ -478,8 +545,8 @@ Tip
 <p>See <span class="citation" data-cites="baker2016statisticians">Baker (<a href="#ref-baker2016statisticians" role="doc-biblioref">2016</a>)</span> for further discussion of how to interpret p-values.</p>
 </div>
 </div>
-<section id="an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050">
-<span class="header-section-number">4.1</span> An example: Does the disritbution of male and female students in the UK fit the expected pattern (50:50)?</h2>
+<section id="an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050">
+<span class="header-section-number">5.1</span> An example: Does the disritbution of male and female students in the UK fit the expected pattern (50:50)?</h2>
 <p>To perform the goodness of fit test, we make a subset <code>dataframe</code> of the UK data including the <code>ST004D01T</code> (gender variable).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Perform a chi-square goodness of fit test on categorical data related to gender in the UK</span></span>
@@ -494,8 +561,8 @@ Tip
 <span id="cb4-10"><a href="#cb4-10"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The outcome of the chi squared test returns a p-value = 0.1388. This is greater than 0.05, suggesting we reject the null hypothesis, and the numbers of boys and girls in the UK sample does not match a 50:50 distribution.</p>
-</section><section id="an-example-gender-distribution-in-the-pisa-sample" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="an-example-gender-distribution-in-the-pisa-sample">
-<span class="header-section-number">4.2</span> An example: Gender distribution in the PISA sample</h2>
+</section><section id="an-example-gender-distribution-in-the-pisa-sample" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="an-example-gender-distribution-in-the-pisa-sample">
+<span class="header-section-number">5.2</span> An example: Gender distribution in the PISA sample</h2>
 <div class="question">
 <ol type="a">
 <li>Should we accept or reject the hypothesis that the populations of boys and girls in the United States, Japan and China are 50:50?</li>
@@ -550,8 +617,8 @@ Tip
 <p>R uses standard form: an output of p= 3.724e-06, represents, p=3.724x10<sup>-6</sup>, or p=0.0000003724.</p>
 </div>
 </div>
-</section><section id="chi-square-test-of-independence" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="chi-square-test-of-independence">
-<span class="header-section-number">4.3</span> Chi-square test of independence</h2>
+</section></section><section id="chi-square-test-of-independence" class="level1" data-number="6"><h1 data-number="6">
+<span class="header-section-number">6</span> Chi-square test of independence</h1>
 <p>Goodness of fit tests can be useful, but they rely on knowing the expected distribution (for example, assuming a 50:50 distribution of boys and girls).</p>
 <p>An alternative ways of using a Chi-square test, is the test of independence. This approach determines whether two categorical variables in a sample are related.</p>
 <p>For example, a categorical variable in the same is item - <code>ST011Q04TA</code> - is there a a quiet place to study in the home? Which can be responded to with ‘yes’ or ‘no’ (or <code>&lt;NA&gt;</code>).</p>
@@ -602,8 +669,8 @@ Tip
 <span id="cb7-23"><a href="#cb7-23"></a>  <span class="fu">mutate</span>(<span class="at">Perc=</span>(Freq<span class="sc">*</span><span class="dv">100</span>)<span class="sc">/</span>Total)  <span class="co"># Mutate the table to calculate the percentage</span></span>
 <span id="cb7-24"><a href="#cb7-24"></a><span class="fu">print</span>(UKQuiFreqTable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="plotting-the-chi-square-relationships" class="level2" data-number="4.4"><h2 data-number="4.4" class="anchored" data-anchor-id="plotting-the-chi-square-relationships">
-<span class="header-section-number">4.4</span> Plotting the chi-square relationships</h2>
+<section id="plotting-the-chi-square-relationships" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="plotting-the-chi-square-relationships">
+<span class="header-section-number">6.1</span> Plotting the chi-square relationships</h2>
 <p>The numbers in the contingency table are hard to interpret - it is challenging to see how far out the numbers for each row are from each other. Alternatively, we can visualise the data from the contingency table by building a mosaic plot, a form of stacked bar chart. Mosaic plots can be a useful visulations before running a chi-squared test.</p>
 <p>To create a mosaic plot, you are going to need to install and load the <code>ggmosaic</code> package. See <strong>?@sec-load-run-pckges</strong> for more details on how to do this.</p>
 <p>Imagine we want to plot the ‘quiet room’ data (<code>ST011Q04TA</code>) from the previous section for the UK, US, and Brazil</p>
@@ -626,8 +693,8 @@ Tip
 <p><img src="06-ChisqPISA_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section><section id="running-chi-square-tests-of-independence" class="level2" data-number="4.5"><h2 data-number="4.5" class="anchored" data-anchor-id="running-chi-square-tests-of-independence">
-<span class="header-section-number">4.5</span> Running Chi square tests of independence</h2>
+</section><section id="running-chi-square-tests-of-independence" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="running-chi-square-tests-of-independence">
+<span class="header-section-number">6.2</span> Running Chi-square tests of independence</h2>
 <p>The mosaic plot suggests the availability of quiet rooms is different between the UK and Brazil, but the difference is only small between the UK and the US. Simply looking at the data does not tell us if the distributions are different - a Chi-square tests of independence can report the significance level, which can help us make a judgement.</p>
 <p>The null hypothesis in a test of independence is that the categorial variables are not related. So in the case of comparing the UK and Brazil the null hypothesis is: ‘There is no relationship between the country (UK or Brazil) and availability of a quiet room’.</p>
 <div class="cell">
@@ -655,8 +722,8 @@ Tip
 <span id="cb9-22"><a href="#cb9-22"></a><span class="co"># p-value = 1.924e-15 less than 0.05, so there are signifcant differences by UK and Brazil, the null hypothesis is rejected</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The test here returns a p-value=1. This is more than 0.05 so implies there is a the null hypothesis can be accepted. The null hypothesis is that and it is assumed that the availability of quiet rooms in the UK is different from the population as a whole.</p>
-</section></section><section id="testing-ordinal-data---the-kruskal-wallis-test" class="level1" data-number="5"><h1 data-number="5">
-<span class="header-section-number">5</span> Testing ordinal data - the Kruskal Wallis test</h1>
+</section></section><section id="testing-ordinal-data---the-kruskal-wallis-test" class="level1" data-number="7"><h1 data-number="7">
+<span class="header-section-number">7</span> Testing ordinal data - the Kruskal Wallis test</h1>
 <p>An assumption of a chi-square test is that the data are categorical. Some of the items in the PISA are a type of categorical data which come in naturally ordered sequence - ordinal data. For example, gender is a categorical variable with no preferred order to responses: female or male. By contrast, the answer to a question: How many books do you have in your home? 0-10; 11-100; 101-200; More than 200, is ordinal data.</p>
 <p>Though there is some debate among statisticians, but if testing ordinal data, it is recommend you use an alternative to the chi-square test, the Kruskal Wallis test, which functions in a similar manner. It is called using the <code>kruskal.test</code> function. Unlike the chi square test, you pass it the raw data, rather than a contingency table.</p>
 <p>For example,<code>ST012Q02TA</code> asks students to report the number of cars in their home, ordinal data. To carry out the Kruskal Wallis on differences in car ownership in the UK by gender we create a <code>data.frame</code> of responses to <code>ST012Q02TA</code> in the UK by gender. Unlike the chi square test, there is no need to create a contingency table and we just pass the data frame to <code>kruskal.test</code>, specifiying we want to compare number of cars (<code>ST012Q02TA</code>) to gender (<code>ST004D01T</code>): <code>kruskal.test(data=CarsUKGender,ST012Q02TA~ST004D01T)</code></p>
@@ -678,10 +745,10 @@ Kruskal-Wallis chi-squared = 1.8514, df = 1, p-value = 0.1736</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># The p-value is more than 0.05 (p-value=0.1763), therefore we accept the null hypothesis that the number of cars is the same for boys and girls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="seminar-tasks" class="level1" data-number="6"><h1 data-number="6">
-<span class="header-section-number">6</span> Seminar Tasks</h1>
-<section id="task-1---creating-contingency-tables" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="task-1---creating-contingency-tables">
-<span class="header-section-number">6.1</span> Task 1 - Creating contingency tables</h2>
+</section><section id="seminar-tasks" class="level1" data-number="8"><h1 data-number="8">
+<span class="header-section-number">8</span> Seminar Tasks</h1>
+<section id="task-1---creating-contingency-tables" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="task-1---creating-contingency-tables">
+<span class="header-section-number">8.1</span> Task 1 - Creating contingency tables</h2>
 <div class="question">
 <ol type="a">
 <li>Create a contingency table for UK, Germany and France levels of maternal education (<code>ST005Q01TA</code>). In which countries are most mothers (in total) educated to post school level?</li>
@@ -757,7 +824,7 @@ ST011Q01TA Female Male
 </div>
 <ol start="3" type="a">
 <li>
-<code>ST011Q06TA</code> asks if students have access to the internet. In which country in the dataset do students report the highest levels of access to the internet?</li>
+<code>ST011Q06TA</code> asks if students have access to the internet. In which country in the data frame do students report the highest levels of access to the internet?</li>
 </ol>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -800,8 +867,8 @@ Tip
 </div>
 </div>
 </div>
-</section><section id="task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations">
-<span class="header-section-number">6.2</span> Task 2 - Goodness of fit test. Are the responses of the survey in proportion to populations?</h2>
+</section><section id="task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="task-2---goodness-of-fit-test.-are-the-responses-of-the-survey-in-proportion-to-populations">
+<span class="header-section-number">8.2</span> Task 2 - Goodness of fit test. Are the responses of the survey in proportion to populations?</h2>
 <div class="question">
 <p>The populations of three countries in the sample are:</p>
 <table class="table">
@@ -829,7 +896,7 @@ Tip
 </tbody>
 </table>
 <p>Are the number of responses in the sample a good fit for the overall populations?</p>
-<p>Use a goodness of fit implementation of Chi square with the null hypothesis that the proportion of students in the sample of PISA match that of the overall population. <strong>Hint</strong>: You can use the <code>CNT</code> column to create counts of the total dataset.</p>
+<p>Use a goodness of fit implementation of Chi square with the null hypothesis that the proportion of students in the sample of PISA match that of the overall population. <strong>Hint</strong>: You can use the <code>CNT</code> column to create counts of the total data.</p>
 </div>
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>Subset <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
@@ -844,8 +911,8 @@ Tip
 <span id="cb21-10"><a href="#cb21-10"></a><span class="co"># The UK has many more responses that expected by proportion of its size.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section><section id="task-3---goodness-of-fit-test-birth-month-distribution" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="task-3---goodness-of-fit-test-birth-month-distribution">
-<span class="header-section-number">6.3</span> Task 3 - Goodness of fit test: Birth month distribution</h2>
+</section><section id="task-3---goodness-of-fit-test-birth-month-distribution" class="level2" data-number="8.3"><h2 data-number="8.3" class="anchored" data-anchor-id="task-3---goodness-of-fit-test-birth-month-distribution">
+<span class="header-section-number">8.3</span> Task 3 - Goodness of fit test: Birth month distribution</h2>
 <div class="question">
 <p>Perform a goodness of fit test to determine if the birth months (<code>ST003D02T</code>) of respondents are distributed as expected in</p>
 <ol type="a">
@@ -892,8 +959,8 @@ Tip
 <span id="cb22-35"><a href="#cb22-35"></a>  <span class="fu">ggtitle</span>(<span class="st">"UK birth months"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section><section id="task-4---country-differences---hypothesis-testing" class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="task-4---country-differences---hypothesis-testing">
-<span class="header-section-number">6.4</span> Task 4 - Country differences - hypothesis testing</h2>
+</section><section id="task-4---country-differences---hypothesis-testing" class="level2" data-number="8.4"><h2 data-number="8.4" class="anchored" data-anchor-id="task-4---country-differences---hypothesis-testing">
+<span class="header-section-number">8.4</span> Task 4 - Country differences - hypothesis testing</h2>
 <div class="question">
 <p>Perform a hypothesis test to determine:</p>
 <ol type="a">
@@ -995,8 +1062,8 @@ Tip
 </details>
 </div>
 </div>
-</section></section><section id="testing-ordinal-data-with-the-kruskal-wallis-test" class="level1" data-number="7"><h1 data-number="7">
-<span class="header-section-number">7</span> Testing ordinal data with the Kruskal-Wallis test</h1>
+</section></section><section id="testing-ordinal-data-with-the-kruskal-wallis-test" class="level1" data-number="9"><h1 data-number="9">
+<span class="header-section-number">9</span> Testing ordinal data with the Kruskal-Wallis test</h1>
 <div class="question">
 <p>Are there differences in the number of books in the home<code>ST013Q01TA</code> in the UK and the United States? Create a mosaic plot</p>
 <div class="cell">
@@ -1082,8 +1149,8 @@ Kruskal-Wallis chi-squared = 23239, df = 1, p-value &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </div>
-</section><section id="extension-tasks" class="level1" data-number="8"><h1 data-number="8">
-<span class="header-section-number">8</span> Extension tasks</h1>
+</section><section id="extension-tasks" class="level1" data-number="10"><h1 data-number="10">
+<span class="header-section-number">10</span> Extension tasks</h1>
 <p>Whilst chi-square tests are useful for reporting whether there are significant differences between the distribution of values in a contingency table, they don’t, by themselves tell you which cells in the contingency table differ from the expected values. To find out this information, you can do a post-hoc analysis. For example, if we want to consider if there are differences in the distribution of school types (<code>ISCEDO</code> - i.e general, vocational, etc) we create a subset of PISA data for the the UK, US, France and Germany (<code>PISAsub</code>), create a contingency table, plot the data, and perform the <code>chisq.test</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>PISAsub<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
@@ -1117,10 +1184,10 @@ X-squared = 4281.8, df = 6, p-value &lt; 2.2e-16</code></pre>
 </div>
 <p>In this case, the chi square test returns a p-value &lt; 2.2e-16 suggesting significant differences between the countries.We can use the package <code>chisq.posthoc.test</code> to use the function <code>chisq.posthoc.test</code> to perform the additional test.</p>
 <p>The posthoc test returns a table of residuals and p-values for each cell in the contingency table The residuals give a sense how much each cell contributes to the total chi-squared value. The right most column (<code>Pr(&gt;Chi)</code>) reports whether this deviation is statistically significant. All the values are &lt;0.05, except for pre-vocational schools in Germany.</p>
-<section id="useful-resources" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="useful-resources">
-<span class="header-section-number">8.1</span> Useful resources</h2>
-</section></section><section id="doing-chi-square-tests-in-r" class="level1" data-number="9"><h1 data-number="9">
-<span class="header-section-number">9</span> Doing Chi-Square tests in R</h1>
+<section id="useful-resources" class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" data-anchor-id="useful-resources">
+<span class="header-section-number">10.1</span> Useful resources</h2>
+</section></section><section id="doing-chi-square-tests-in-r" class="level1" data-number="11"><h1 data-number="11">
+<span class="header-section-number">11</span> Doing Chi-Square tests in R</h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qnZX0G1M29E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>You can find the code used in the video below</p>

@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07 Chi-square tests</span></a>
+ <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -379,19 +379,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header><p>This short course aims to take you through the process of writing your first programs in the <strong>R statistical programming language</strong> to analyse national and international educational datasets. To do this we will be using the <strong>R Studio</strong> integrated development environment (IDE), a desktop application to support you in writing R scripts. R Studio supports your programming by flagging up errors in your code as you write it, and helping you manage your analysis environment by giving you quick access to tables, objects and graphs as you develop them. In addition, we will be looking at data analysis using the <strong>tidyverse</strong> code packages. The tidyverse is a standardised collection of supporting code that helps you read data, tidy it into a usable format, analyse it and present your findings.</p>
 <p>The R programming language offers similar functionality to an application based statistical tool such as SPSS, with more of a focus on you writing code to solve your problems, rather than using prebuilt tools. R is open source, meaning that it is free to use and that lots of people have written code in R that they have shared with others. R statistical libraries are some of the most comprehensive in existence. R is popular<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> in academia and industry, being used for everything from sales modelling to cancer detection.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># This example shows how R can pull data directly from the internet</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># tidy it and start making graphs. All within 9 lines of code</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>education <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb1-6"><a href="#cb1-6"></a>  <span class="st">"https://barrolee.github.io/BarroLeeDataSet/BLData/BL_v3_MF.csv"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a>education <span class="sc">%&gt;%</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a>  <span class="fu">filter</span>(agefrom <span class="sc">==</span> <span class="dv">15</span>, ageto <span class="sc">==</span> <span class="dv">24</span>,</span>
-<span id="cb1-10"><a href="#cb1-10"></a>         country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Germany"</span>,<span class="st">"France"</span>,<span class="st">"Italy"</span>,<span class="st">"United Kingdom"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>yr_sch, <span class="at">colour=</span>country)) <span class="sc">+</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Tabs code</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># ::: {.panel-tabset .nav-pills}</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># </span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># ## Scatterplot</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># Content that will show under first tab</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># </span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># ## Boxplot</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># Content that will show under first tab</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># </span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># ## Barplot</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># Content that will show under first tab</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co"># :::</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co"># This example shows how R can pull data directly from the internet</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># tidy it and start making graphs. All within 9 lines of code</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-20"><a href="#cb1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21"></a>education <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb1-22"><a href="#cb1-22"></a>  <span class="st">"https://barrolee.github.io/BarroLeeDataSet/BLData/BL_v3_MF.csv"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23"></a></span>
+<span id="cb1-24"><a href="#cb1-24"></a>education <span class="sc">%&gt;%</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>  <span class="fu">filter</span>(agefrom <span class="sc">==</span> <span class="dv">15</span>, ageto <span class="sc">==</span> <span class="dv">24</span>,</span>
+<span id="cb1-26"><a href="#cb1-26"></a>         country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Germany"</span>,<span class="st">"France"</span>,<span class="st">"Italy"</span>,<span class="st">"United Kingdom"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>yr_sch, <span class="at">colour=</span>country)) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Whilst it is possible to use R through menu systems and drop down tools, the focus of this course is for you to write your own R scripts. These are text files that will tell the computer how to go through the process of loading, cleaning, analysing and presenting data. The sequential and modular nature of these files makes it very easy to develop and test each stage separately, reuse code in the future, and share with others.</p>
 <p>This booklet is written with the following sections to support you:</p>

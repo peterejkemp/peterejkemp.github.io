@@ -51,26 +51,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -106,7 +87,7 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="../css/mastemr.css">
+}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><link rel="stylesheet" href="../css/mastemr.css">
 </head>
 <body class="nav-sidebar docked nav-fixed">
 
@@ -220,7 +201,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07 Chi-square tests</span></a>
+ <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -373,8 +354,8 @@ div.csl-indent {
 
 </header><section id="the-frequentist-approach-to-statistics" class="level2" data-number="0.1"><h2 data-number="0.1" class="anchored" data-anchor-id="the-frequentist-approach-to-statistics">
 <span class="header-section-number">0.1</span> The Frequentist Approach to Statistics</h2>
-<p>The statistical methods you have encountered to this point, the t-tests, chi-squared tests and linear models, are examples of an approach to statistics labelled frequentists statistics. Typically these methods report p-values which indicate the probability, assuming that the null hypothesis is true, of obtaining similar or more extreme results. Frequentist methods calculate the probability of the occurrence of events based on the outcome of many trials.</p>
-<p>However, frequentist statistics are often misinterpreted. Consider the case of two sets of exam results for class A and B which we taught by different methods. We wish to determine if there is a statistically significant difference in means so we perform a t-test.</p>
+<p>The statistical methods you have encountered to this point, the t-tests, chi-squared tests and linear models, are examples of an approach to statistics labelled frequentist statistics. Typically these methods report p-values which indicate the probability, assuming that the null hypothesis is true, of obtaining similar or more extreme results. Frequentist methods calculate the probability of the occurrence of events based on the outcome of many trials.</p>
+<p>However, frequentist statistics, because of the way the outcomes of tests are presented, can be hard to interpret. Consider the case of two sets of exam results for class A and B which are taught by different methods. We wish to determine if there is a statistically significant difference in means, to see if one approach to teaching is better than the other, so we perform a t-test.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>ClassA<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">54</span>,<span class="dv">53</span>,<span class="dv">72</span>,<span class="dv">31</span>,<span class="dv">25</span>,<span class="dv">34</span>,<span class="dv">87</span>,<span class="dv">45</span>,<span class="dv">26</span>,<span class="dv">42</span>,<span class="dv">54</span>,<span class="dv">58</span>,<span class="dv">80</span>)</span>
 <span id="cb1-2"><a href="#cb1-2"></a>ClassB<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">82</span>,<span class="dv">94</span>,<span class="dv">88</span>,<span class="dv">76</span>,<span class="dv">82</span>,<span class="dv">60</span>,<span class="dv">88</span>,<span class="dv">90</span>,<span class="dv">75</span>,<span class="dv">77</span>,<span class="dv">96</span>,<span class="dv">61</span>,<span class="dv">74</span>)</span>
@@ -394,14 +375,31 @@ mean of x mean of y
  50.84615  80.23077 </code></pre>
 </div>
 </div>
-<p>In this case, the p-value is 0.0002, less than 0.05, so we conclude that, if we assume the null hypothesis (that the means of the classes are the same), there is a probability of 0.0002 (1 in 5000) than results like this, or more extreme, could have arisen by chance.</p>
-<p>The p-value can be thought of as indicating the probability of a false positive - it doesn’t tell us what we typically want to know - what is the probability that the condition group’s teaching is better than the control. The Frequentist approach reports, after many trials, the limit of the relative frequency of an event - for example, assuming that the two classes have the same mean score, there is a 1 in 5000 chance that the results like this, or more extreme, would occur. This is not an intuitive approach to reporting probability - the Bayesian approach offers an alternative.</p>
+<p>In this case, the p-value of the frequentist t-test is 0.0002, less than 0.05. We conclude that, if we assume the null hypothesis (that the means of the classes are the same), there is a probability of 0.0002 (1 in 5000) than results like this, or more extreme, could have arisen by chance.</p>
+<p>The p-value here can be thought of as indicating the probability of a false positive. That is, it reports the probability that a difference in means of this size or larger could have arise by chance.</p>
+<p>The trouble with the frequentist p-value is that is doesn’t tell us what we typically want to know - what is the probability that the scores in the condition group are different from the control (and hence there is a difference in the teaching approaches). The Frequentist approach reports, after a number of trials, the limit of the relative frequency of an event. For example, after 13 students in each class have sat the test, and assuming that the two classes have the same mean score, there is a 1 in 5000 chance that the results like this, or more extreme, would occur. This is not an intuitive approach to reporting probability - the Bayesian approach offers an alternative.</p>
 </section><section id="the-bayesian-approach-to-statistics" class="level2" data-number="0.2"><h2 data-number="0.2" class="anchored" data-anchor-id="the-bayesian-approach-to-statistics">
 <span class="header-section-number">0.2</span> The Bayesian Approach to Statistics</h2>
-<p>The Bayesian approach was developed by the English statistician and Presbyterian minister, Thomas Bayes. The Bayesian approach adopts a different approach to expressing the outcome of statistical tests. In the Bayesian model, probability expresses a degree of belief an event. Central to Bayesian statistics is the assumption that the degree of belief should be revised based on prior knowledge.</p>
+<p>The Bayesian approach was developed by the English statistician and Presbyterian minister, Thomas Bayes. The Bayesian approach adopts proposes a different model to expressing the outcome of statistical tests. Bayesian statistics report a probability which expresses a degree of belief an event. Central to Bayesian statistics is the assumption that the degree of belief should be revised based on prior knowledge.</p>
 <blockquote class="blockquote">
-<p>“’The key ideas of Bayesian statistics: that probability is orderly opinion, and that inference from data is nothing other than the revision of such opinion in the light of relevant new information” - <span class="citation" data-cites="edwards1963">(<a href="#ref-edwards1963" role="doc-biblioref">Edwards, Lindman, and Savage 1963, 194</a>)</span></p>
+<p>“’The key ideas of Bayesian statistics: that probability is orderly opinion, and that inference from data is nothing other than the revision of such opinion in the light of relevant new information” - <span class="citation" data-cites="edwards1963">(<a href="#ref-edwards1963" role="doc-biblioref"><strong>edwards1963?</strong></a>)</span></p>
 </blockquote>
+<p>Bayes’ theorem can be stated mathematically as:<span class="math inline">\(P(A\vert B)=\frac{P(B \vert A)P(A)}{P(B)}, \text{ if } P(B) \neq 0\)</span></p>
+<p>A and B represent two events. <span class="math inline">\(P(A)\)</span> represents the probability of A occurring and <span class="math inline">\(P(A)\)</span> the probability of B happening. The formula assumes that <span class="math inline">\(P(B)\ne0\)</span>, that is there is some probability the event B will happen.</p>
+<p><span class="math inline">\(P(A\vert B)\)</span> is a conditional probability - that is, the probability that A will occur given that B has occurred.</p>
+<p><span class="math inline">\(P(B\vert A)\)</span> is another conditional probability - this time, the probability that B will occur given that A has occurred.</p>
+<p>We can see how the formula works in an example:</p>
+<p>Imagine that the prevalence of students who have profound and multiple learning difficulties (PMLD) in state secondary schools in the UK is 1%. We might also know that the screening process for PMLD gives a false positive (i.e.&nbsp;incorrectly categorises a student with no learning difficulties with PMLD) 5% of the time.</p>
+<p>A student receives a diagnosis of PMLD - what is the probability that they have PMLD?</p>
+<p>We can use the formula to find the probability that the student has PMLD, given that they have a positive test <span class="math inline">\(P(HasPMLD\vert PositiveTest)\)</span>. But let us first consider the calculation intuitively.</p>
+<p><span class="math inline">\(P(HasPMLD\vert PositiveTest)=\frac{P(PositiveTest \vert HasPMLD)P(HasPMLD)}{P(PositiveTest)}\)</span></p>
+<p>If we select 1000 people at random for PMLD testing, 10 will have PMLD. 990 students will not have PMLD. Of those 990 people, 5% will receive a positive screening. 5% of 990 is 49.5 people. So there are 10 (correct screenings) + 49.5 (false positives) = 59.5 people who test positive. The probability that someone has PMLD, given a positive test is <span class="math inline">\(P(HasPMLD\vert PositiveTest)\)</span> is <span class="math inline">\(10/59.5=0.17\)</span> surprisingly low.</p>
+<p>We can use the formula to get to the same result:</p>
+<p><span class="math inline">\(P(HasPMLD\vert PositiveTest)=\frac{P(PositiveTest \vert HasPMLD)P(HasPMLD)}{P(PositiveTest)}\)</span></p>
+<p><span class="math inline">\(P(PositiveTest \vert HasPMLD)=1\)</span> <span class="math inline">\(P(HasPMLD)=0.01\)</span></p>
+<p><span class="math inline">\(P(PositiveTest)=(1*10/1000)+(0.05*990/1000)=0.0595\)</span></p>
+<p><span class="math inline">\(P(HasPSMLD\vert PositiveTest)=\frac{(1)(0.01)}{(0.0595)}=0.17\)</span></p>
+<p>The example indicates the value of taking prior information into account when making inferences. Intuitively, it might be expected that, with the low rate of false positives (5%) a positive test would mean a high certainty of diagnosis. However, combined with knowledge of the prevalence of PMLD in the population, the probability of having PSMLD after a positive test is only around 1 in 5.</p>
 <section id="the-bayesian-t-test" class="level3" data-number="0.2.1"><h3 data-number="0.2.1" class="anchored" data-anchor-id="the-bayesian-t-test">
 <span class="header-section-number">0.2.1</span> The Bayesian t-test</h3>
 <p>The <code>BayesFactor</code> package can be used to perform a Bayesian version of the t-test.</p>
@@ -448,7 +446,7 @@ Bayes factor type: BFindepSample, JZS</code></pre>
 <span id="cb5-5"><a href="#cb5-5"></a>                           <span class="at">Degree =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
 <span id="cb5-6"><a href="#cb5-6"></a></span>
 <span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Create a contingency table</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a>conttab<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> DegreeGender, <span class="sc">~</span> Degree <span class="sc">+</span> Gender)</span>
+<span id="cb5-8"><a href="#cb5-8"></a>conttab <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">data =</span> DegreeGender, <span class="sc">~</span> Degree <span class="sc">+</span> Gender)</span>
 <span id="cb5-9"><a href="#cb5-9"></a></span>
 <span id="cb5-10"><a href="#cb5-10"></a><span class="co"># Perform the Bayesian chi-square test</span></span>
 <span id="cb5-11"><a href="#cb5-11"></a><span class="fu">contingencyTableBF</span>(conttab, <span class="at">sampleType =</span> <span class="st">"jointMulti"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -472,7 +470,7 @@ data:  conttab
 X-squared = 0.29167, df = 1, p-value = 0.5892</code></pre>
 </div>
 </div>
-<p>The outcome of the chi-square test, gives a Bayes factor of 1.351891. This value raises the question of how to interpret different values of Bayes factors. <span class="citation" data-cites="kass1995">Kass and Raftery (<a href="#ref-kass1995" role="doc-biblioref">1995</a>)</span> have suggested these labels for interpreting Bayes factors:</p>
+<p>The outcome of the chi-square test, gives a Bayes factor of 1.351891. This value raises the question of how to interpret different values of Bayes factors. <span class="citation" data-cites="kass1995">(<a href="#ref-kass1995" role="doc-biblioref"><strong>kass1995?</strong></a>)</span> have suggested these labels for interpreting Bayes factors:</p>
 <table class="table">
 <thead><tr class="header">
 <th>Bayes Factor</th>
@@ -536,18 +534,18 @@ lm(formula = Var1 ~ Var2, data = testdata)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--2.9573 -1.3898 -0.1116  1.1539  4.4266 
+-4.6500 -1.0653 -0.0951  1.6139  3.3329 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) -4.00745    0.69250  -5.787  5.3e-07 ***
-Var2         0.95826    0.02153  44.511  &lt; 2e-16 ***
+(Intercept)  -3.8734     0.7972  -4.859  1.3e-05 ***
+Var2          0.9524     0.0229  41.586  &lt; 2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 1.676 on 48 degrees of freedom
-Multiple R-squared:  0.9763,    Adjusted R-squared:  0.9759 
-F-statistic:  1981 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 1.804 on 48 degrees of freedom
+Multiple R-squared:  0.973, Adjusted R-squared:  0.9724 
+F-statistic:  1729 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Perform the Bayesian linear model</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>mod <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">data=</span>testdata, Var1 <span class="sc">~</span> Var2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -573,9 +571,9 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.026 seconds (Warm-up)
-Chain 1:                0.022 seconds (Sampling)
-Chain 1:                0.048 seconds (Total)
+Chain 1:  Elapsed Time: 0.028 seconds (Warm-up)
+Chain 1:                0.03 seconds (Sampling)
+Chain 1:                0.058 seconds (Total)
 Chain 1: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
@@ -598,9 +596,9 @@ Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 2: 
-Chain 2:  Elapsed Time: 0.028 seconds (Warm-up)
+Chain 2:  Elapsed Time: 0.026 seconds (Warm-up)
 Chain 2:                0.023 seconds (Sampling)
-Chain 2:                0.051 seconds (Total)
+Chain 2:                0.049 seconds (Total)
 Chain 2: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
@@ -623,9 +621,9 @@ Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 3: 
-Chain 3:  Elapsed Time: 0.026 seconds (Warm-up)
-Chain 3:                0.021 seconds (Sampling)
-Chain 3:                0.047 seconds (Total)
+Chain 3:  Elapsed Time: 0.029 seconds (Warm-up)
+Chain 3:                0.024 seconds (Sampling)
+Chain 3:                0.053 seconds (Total)
 Chain 3: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
@@ -648,9 +646,9 @@ Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 4: 
-Chain 4:  Elapsed Time: 0.026 seconds (Warm-up)
+Chain 4:  Elapsed Time: 0.029 seconds (Warm-up)
 Chain 4:                0.021 seconds (Sampling)
-Chain 4:                0.047 seconds (Total)
+Chain 4:                0.05 seconds (Total)
 Chain 4: </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">summary</span>(mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -664,12 +662,12 @@ Formula: Var1 ~ Var2
 
 Population-Level Effects: 
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    -4.01      0.70    -5.44    -2.63 1.00     3994     2369
-Var2          0.96      0.02     0.92     1.00 1.00     4022     2853
+Intercept    -3.87      0.84    -5.50    -2.23 1.00     3981     2708
+Var2          0.95      0.02     0.90     1.00 1.00     3979     2675
 
 Family Specific Parameters: 
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma     1.72      0.17     1.41     2.10 1.00     3205     2874
+sigma     1.85      0.20     1.52     2.28 1.00     3770     2935
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -678,8 +676,8 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Calculate the Bayesian equivalent of R2</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="fu">bayes_R2</span>(mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    Estimate   Est.Error      Q2.5     Q97.5
-R2 0.9758098 0.001374283 0.9720754 0.9768908</code></pre>
+<pre><code>   Estimate   Est.Error      Q2.5     Q97.5
+R2 0.972323 0.001739155 0.9675464 0.9737031</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># The R2 for the model is 0.97 so 97% of the variance is explained</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -718,8 +716,8 @@ R2 0.9758098 0.001374283 0.9720754 0.9768908</code></pre>
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 0.000117 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.17 seconds.
+Chain 1: Gradient evaluation took 9.7e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.97 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -736,15 +734,15 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 0.57 seconds (Warm-up)
-Chain 1:                0.347 seconds (Sampling)
-Chain 1:                0.917 seconds (Total)
+Chain 1:  Elapsed Time: 0.55 seconds (Warm-up)
+Chain 1:                0.307 seconds (Sampling)
+Chain 1:                0.857 seconds (Total)
 Chain 1: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 Chain 2: 
-Chain 2: Gradient evaluation took 7.3e-05 seconds
-Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.73 seconds.
+Chain 2: Gradient evaluation took 5.1e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.51 seconds.
 Chain 2: Adjust your expectations accordingly!
 Chain 2: 
 Chain 2: 
@@ -761,15 +759,15 @@ Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 2: 
-Chain 2:  Elapsed Time: 0.751 seconds (Warm-up)
-Chain 2:                0.324 seconds (Sampling)
-Chain 2:                1.075 seconds (Total)
+Chain 2:  Elapsed Time: 0.688 seconds (Warm-up)
+Chain 2:                0.327 seconds (Sampling)
+Chain 2:                1.015 seconds (Total)
 Chain 2: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 Chain 3: 
-Chain 3: Gradient evaluation took 6.3e-05 seconds
-Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.63 seconds.
+Chain 3: Gradient evaluation took 5.2e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.52 seconds.
 Chain 3: Adjust your expectations accordingly!
 Chain 3: 
 Chain 3: 
@@ -786,15 +784,15 @@ Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 3: 
-Chain 3:  Elapsed Time: 0.838 seconds (Warm-up)
-Chain 3:                0.295 seconds (Sampling)
-Chain 3:                1.133 seconds (Total)
+Chain 3:  Elapsed Time: 0.548 seconds (Warm-up)
+Chain 3:                0.311 seconds (Sampling)
+Chain 3:                0.859 seconds (Total)
 Chain 3: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
 Chain 4: 
-Chain 4: Gradient evaluation took 6.3e-05 seconds
-Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.63 seconds.
+Chain 4: Gradient evaluation took 5.1e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.51 seconds.
 Chain 4: Adjust your expectations accordingly!
 Chain 4: 
 Chain 4: 
@@ -811,9 +809,9 @@ Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 4: 
-Chain 4:  Elapsed Time: 0.61 seconds (Warm-up)
-Chain 4:                0.292 seconds (Sampling)
-Chain 4:                0.902 seconds (Total)
+Chain 4:  Elapsed Time: 0.649 seconds (Warm-up)
+Chain 4:                0.311 seconds (Sampling)
+Chain 4:                0.96 seconds (Total)
 Chain 4: </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">summary</span>(modbay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -827,12 +825,12 @@ Formula: PV1SCIE ~ PV1MATH
 
 Population-Level Effects: 
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    76.99      2.75    71.60    82.31 1.00     4643     2651
-PV1MATH       0.84      0.01     0.83     0.85 1.00     4604     2920
+Intercept    76.92      2.70    71.69    82.12 1.00     4034     3225
+PV1MATH       0.84      0.01     0.83     0.85 1.00     4152     3050
 
 Family Specific Parameters: 
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma    57.03      0.35    56.37    57.72 1.00     4227     2896
+sigma    57.02      0.34    56.37    57.70 1.00     3713     2776
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -841,7 +839,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">bayes_R2</span>(modbay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Estimate   Est.Error      Q2.5     Q97.5
-R2 0.6377285 0.002987055 0.6316793 0.6434456</code></pre>
+R2 0.6377874 0.002941712 0.6319421 0.6434639</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Compare to the simple linear model</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> UKPISA_2018, </span>
@@ -911,8 +909,8 @@ F-statistic: 2.433e+04 on 1 and 13816 DF,  p-value: &lt; 2.2e-16</code></pre>
 <pre><code>
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
 Chain 1: 
-Chain 1: Gradient evaluation took 0.000126 seconds
-Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.26 seconds.
+Chain 1: Gradient evaluation took 0.000121 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.21 seconds.
 Chain 1: Adjust your expectations accordingly!
 Chain 1: 
 Chain 1: 
@@ -929,15 +927,15 @@ Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 1: 
-Chain 1:  Elapsed Time: 1.304 seconds (Warm-up)
-Chain 1:                0.505 seconds (Sampling)
-Chain 1:                1.809 seconds (Total)
+Chain 1:  Elapsed Time: 1.296 seconds (Warm-up)
+Chain 1:                0.534 seconds (Sampling)
+Chain 1:                1.83 seconds (Total)
 Chain 1: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
 Chain 2: 
-Chain 2: Gradient evaluation took 8.7e-05 seconds
-Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.87 seconds.
+Chain 2: Gradient evaluation took 6.2e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.62 seconds.
 Chain 2: Adjust your expectations accordingly!
 Chain 2: 
 Chain 2: 
@@ -954,15 +952,15 @@ Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 2: 
-Chain 2:  Elapsed Time: 1.03 seconds (Warm-up)
-Chain 2:                0.557 seconds (Sampling)
-Chain 2:                1.587 seconds (Total)
+Chain 2:  Elapsed Time: 1.018 seconds (Warm-up)
+Chain 2:                0.51 seconds (Sampling)
+Chain 2:                1.528 seconds (Total)
 Chain 2: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
 Chain 3: 
-Chain 3: Gradient evaluation took 8.1e-05 seconds
-Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.81 seconds.
+Chain 3: Gradient evaluation took 9.3e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.93 seconds.
 Chain 3: Adjust your expectations accordingly!
 Chain 3: 
 Chain 3: 
@@ -979,15 +977,15 @@ Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 3: 
-Chain 3:  Elapsed Time: 1.371 seconds (Warm-up)
-Chain 3:                0.508 seconds (Sampling)
-Chain 3:                1.879 seconds (Total)
+Chain 3:  Elapsed Time: 1.825 seconds (Warm-up)
+Chain 3:                0.739 seconds (Sampling)
+Chain 3:                2.564 seconds (Total)
 Chain 3: 
 
 SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
 Chain 4: 
-Chain 4: Gradient evaluation took 7.2e-05 seconds
-Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.72 seconds.
+Chain 4: Gradient evaluation took 6.8e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.68 seconds.
 Chain 4: Adjust your expectations accordingly!
 Chain 4: 
 Chain 4: 
@@ -1004,9 +1002,9 @@ Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
 Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 Chain 4: 
-Chain 4:  Elapsed Time: 1.365 seconds (Warm-up)
-Chain 4:                0.56 seconds (Sampling)
-Chain 4:                1.925 seconds (Total)
+Chain 4:  Elapsed Time: 1.211 seconds (Warm-up)
+Chain 4:                0.688 seconds (Sampling)
+Chain 4:                1.899 seconds (Total)
 Chain 4: </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">summary</span>(modbay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1020,13 +1018,13 @@ Formula: PV1SCIE ~ PV1MATH + PV1READ
 
 Population-Level Effects: 
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    35.07      2.40    30.43    39.84 1.00     4644     3083
-PV1MATH       0.39      0.01     0.37     0.40 1.00     2548     2853
+Intercept    35.07      2.23    30.64    39.55 1.00     5175     3516
+PV1MATH       0.39      0.01     0.37     0.40 1.00     2399     2312
  [ reached getOption("max.print") -- omitted 1 row ]
 
 Family Specific Parameters: 
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma    46.72      0.27    46.21    47.26 1.00     3478     2617
+sigma    46.71      0.28    46.18    47.25 1.00     3463     2623
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -1034,8 +1032,8 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">bayes_R2</span>(modbay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   Estimate  Est.Error      Q2.5     Q97.5
-R2 0.756972 0.00184786 0.7533455 0.7605087</code></pre>
+<pre><code>   Estimate   Est.Error      Q2.5    Q97.5
+R2 0.756989 0.001725666 0.7534811 0.760285</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Plot the distribution of the coefficients</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a><span class="fu">plot</span>(modbay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1056,7 +1054,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>“Let the computer find out” is a poor strategy and usually reflects the fact that the researcher didnot bother to think clearly about the problem of interest and its scientific setting <span class="citation" data-cites="burnham2007">(<a href="#ref-burnham2007" role="doc-biblioref">Burnham and Anderson 2007, 147</a>)</span></p>
+<p>“Let the computer find out” is a poor strategy and usually reflects the fact that the researcher didnot bother to think clearly about the problem of interest and its scientific setting <span class="citation" data-cites="burnham2007">(<a href="#ref-burnham2007" role="doc-biblioref"><strong>burnham2007?</strong></a>)</span></p>
 </div>
 </div>
 <p>Nonetheless, once you have thought clearly about a range of models ranking the potential Bayesian models can provide insights. This can be done using the <code>regressionBF</code> function of the <code>BayesFactor</code> package. We call <code>models &lt;- regressionBF(PV1SCIE ~ ., data = PISAUK)</code> which asks for regression to predict science scores (<code>PV1SCIE~</code>) by all of the variables (<code>.</code>) in the data frame (<code>data=PISAUK</code>) Note that variables need to be converted to factor variables. The function returns a <code>data.frame</code> ranking the models, the one with the highest Bayes factor <code>bf</code> is a candidate for the best fit.</p>
@@ -1088,9 +1086,9 @@ PV1MATH + PV1READ + ESCS          9102.115 1.455009e-06
 PV1MATH + PV1READ + WEALTH + ESCS 9101.061 2.469989e-06
 PV1MATH + PV1READ + WEALTH        9048.201 1.432174e-06
                                                       time         code
-PV1MATH + PV1READ + ESCS          Wed Nov  8 17:28:00 2023  51307b8cc86
-PV1MATH + PV1READ + WEALTH + ESCS Wed Nov  8 17:28:00 2023 51303a5c4586
-PV1MATH + PV1READ + WEALTH        Wed Nov  8 17:28:00 2023 513042596146
+PV1MATH + PV1READ + ESCS          Fri Nov 17 11:53:56 2023 1d7447c556da
+PV1MATH + PV1READ + WEALTH + ESCS Fri Nov 17 11:53:56 2023 1d7466b626c8
+PV1MATH + PV1READ + WEALTH        Fri Nov 17 11:53:56 2023 1d74331c6294
  [ reached 'max' / getOption("max.print") -- omitted 12 rows ]</code></pre>
 </div>
 </div>
@@ -1122,10 +1120,10 @@ PV1MATH + PV1READ + WEALTH        Wed Nov  8 17:28:00 2023 513042596146
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Create a data frame for having a desk to study at in the UK and the US</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a>Desk <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
 <span id="cb43-3"><a href="#cb43-3"></a>  <span class="fu">select</span>(CNT, ST011Q01TA) <span class="sc">%&gt;%</span></span>
-<span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"United States"</span>)</span>
+<span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"United States"</span>)</span>
 <span id="cb43-5"><a href="#cb43-5"></a></span>
 <span id="cb43-6"><a href="#cb43-6"></a><span class="co"># Create a contingency table</span></span>
-<span id="cb43-7"><a href="#cb43-7"></a>conttab <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">data=</span>Desk, <span class="sc">~</span> CNT <span class="sc">+</span> ST011Q01TA)</span>
+<span id="cb43-7"><a href="#cb43-7"></a>conttab <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">data =</span> Desk, <span class="sc">~</span> CNT <span class="sc">+</span> ST011Q01TA)</span>
 <span id="cb43-8"><a href="#cb43-8"></a>conttab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                        ST011Q01TA
@@ -1159,8 +1157,8 @@ CNT                Yes    No
 </div>
 </div>
 <p>:::</p>
-<p>::: {.cell code fold=‘true’}</p>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># Create a dataframe for having a quiet room in the UK</span></span>
+<div class="cell">
+<details><summary>Answer A</summary><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># Create a dataframe for having a quiet room in the UK</span></span>
 <span id="cb47-2"><a href="#cb47-2"></a>Quiroom <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
 <span id="cb47-3"><a href="#cb47-3"></a>  <span class="fu">select</span>(CNT, ST004D01T, ST011Q03TA) <span class="sc">%&gt;%</span></span>
 <span id="cb47-4"><a href="#cb47-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
@@ -1170,7 +1168,7 @@ CNT                Yes    No
 <span id="cb47-8"><a href="#cb47-8"></a></span>
 <span id="cb47-9"><a href="#cb47-9"></a><span class="co"># Perform the Bayesian chi-square test</span></span>
 <span id="cb47-10"><a href="#cb47-10"></a><span class="fu">contingencyTableBF</span>(conttab, <span class="at">sampleType =</span> <span class="st">"jointMulti"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>Bayes factor analysis
 --------------
 [1] Non-indep. (a=1) : 2.01724e-64 ±0%
@@ -1180,10 +1178,11 @@ Against denominator:
 ---
 Bayes factor type: BFcontingencyTable, joint multinomial</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># Returns a base factor of 2.01724e-64 - highly unlikely there is a difference by gender in having a quiet room</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
-<p>::: {.cell code fold=‘true’}</p>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># Create a dataframe for having a computer in the UK, US, France and Germany</span></span>
+<details><summary>Answer A</summary><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># Returns a base factor of 2.01724e-64 - highly unlikely there is a difference by gender in having a quiet room</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details><summary>Answer B</summary><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># Create a dataframe for having a computer in the UK, US, France and Germany</span></span>
 <span id="cb50-2"><a href="#cb50-2"></a>Comp <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
 <span id="cb50-3"><a href="#cb50-3"></a>  <span class="fu">select</span>(CNT, ST011Q04TA) <span class="sc">%&gt;%</span></span>
 <span id="cb50-4"><a href="#cb50-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United States"</span><span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"Germany"</span><span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"France"</span>)</span>
@@ -1198,14 +1197,15 @@ Bayes factor type: BFcontingencyTable, joint multinomial</code></pre>
 <span id="cb50-13"><a href="#cb50-13"></a><span class="fu">contingencyTableBF</span>(conttab, <span class="at">sampleType =</span> <span class="st">"jointMulti"</span>)</span>
 <span id="cb50-14"><a href="#cb50-14"></a></span>
 <span id="cb50-15"><a href="#cb50-15"></a><span class="co"># Returns a base factor of 1.871984e+14 - highly likely there is a difference by country in having a computer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
+</details>
+</div>
 </section><section id="task-2-bayesian-t-tests" class="level3" data-number="0.3.2"><h3 data-number="0.3.2" class="anchored" data-anchor-id="task-2-bayesian-t-tests">
 <span class="header-section-number">0.3.2</span> Task 2 Bayesian t-tests</h3>
 <div class="question">
 <p>Use a Bayesian t-test to determine: a) In the PISA 2018 data, are statistically significant differences in reading scores (PV1READ) for boys and girls (look at <code>ST004D01T</code> for gender) in the UK?</p>
 </div>
-<p>::: {.cell code fold=‘true’}</p>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># Create a data frame for having a Reading scores in the UK including gender</span></span>
+<div class="cell">
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># Create a data frame for having a Reading scores in the UK including gender</span></span>
 <span id="cb51-2"><a href="#cb51-2"></a>Read <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
 <span id="cb51-3"><a href="#cb51-3"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1READ) <span class="sc">%&gt;%</span></span>
 <span id="cb51-4"><a href="#cb51-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
@@ -1214,12 +1214,13 @@ Bayes factor type: BFcontingencyTable, joint multinomial</code></pre>
 <span id="cb51-7"><a href="#cb51-7"></a><span class="fu">ttestBF</span>(<span class="at">data=</span>Read, <span class="at">formula=</span> PV1READ <span class="sc">~</span> ST004D01T)</span>
 <span id="cb51-8"><a href="#cb51-8"></a></span>
 <span id="cb51-9"><a href="#cb51-9"></a><span class="co"># The Bayes factor is 8.194083e+39 - it is highly likely that are differences between the genders in reading in the UK</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
+</details>
+</div>
 <div class="question">
 <p>Use a Bayesian t-test to determine: In the PISA 2018 data, are statistically significant differences in mathematics scores (<code>PV1MATH</code>) between the UK and the US?</p>
 </div>
-<p>::: {.cell code fold=‘true’}</p>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># Create a data frame for having a mathematics scores in the UK and US </span></span>
+<div class="cell">
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># Create a data frame for having a mathematics scores in the UK and US </span></span>
 <span id="cb52-2"><a href="#cb52-2"></a>PISAMath <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
 <span id="cb52-3"><a href="#cb52-3"></a>  <span class="fu">select</span>(CNT, PV1MATH) <span class="sc">%&gt;%</span></span>
 <span id="cb52-4"><a href="#cb52-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"United States"</span>)</span>
@@ -1231,14 +1232,15 @@ Bayes factor type: BFcontingencyTable, joint multinomial</code></pre>
 <span id="cb52-10"><a href="#cb52-10"></a><span class="fu">ttestBF</span>(<span class="at">data=</span>PISAMath, <span class="at">formula =</span> PV1MATH <span class="sc">~</span> CNT)</span>
 <span id="cb52-11"><a href="#cb52-11"></a></span>
 <span id="cb52-12"><a href="#cb52-12"></a><span class="co"># The Bayes factor is 9.628524e+50 - it is highly likely that there is a difference in mean mathematics scores between the US and UK</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
+</details>
+</div>
 </section><section id="task-3-bayesian-linear-models" class="level3" data-number="0.3.3"><h3 data-number="0.3.3" class="anchored" data-anchor-id="task-3-bayesian-linear-models">
 <span class="header-section-number">0.3.3</span> Task 3 Bayesian linear models</h3>
 <div class="question">
 <p>Use a Bayesian linear model to determine: a) In the PISA 2018 data, build a model of mathematics scores (<code>PV1MATH</code>) in the UK. What percentage of variance in mathematics score is explained by the model: <code>PV1MATH \~ PV1READ + ST004D01T (gender) + WEALTH</code></p>
 </div>
-<p>::: {.cell code fold=‘true’}</p>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># Create a data frame for having a Reading scores in the UK including gender</span></span>
+<div class="cell">
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># Create a data frame for having a Reading scores in the UK including gender</span></span>
 <span id="cb53-2"><a href="#cb53-2"></a>UKMath <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
 <span id="cb53-3"><a href="#cb53-3"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH, WEALTH, PV1READ) <span class="sc">%&gt;%</span></span>
 <span id="cb53-4"><a href="#cb53-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
@@ -1246,19 +1248,21 @@ Bayes factor type: BFcontingencyTable, joint multinomial</code></pre>
 <span id="cb53-6"><a href="#cb53-6"></a><span class="co"># Perform the Bayesian linear model</span></span>
 <span id="cb53-7"><a href="#cb53-7"></a>mod <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">data=</span>UKMath, PV1MATH <span class="sc">~</span> PV1READ <span class="sc">+</span> ST004D01T <span class="sc">+</span> WEALTH)</span>
 <span id="cb53-8"><a href="#cb53-8"></a><span class="fu">summary</span>(mod)</span>
-<span id="cb53-9"><a href="#cb53-9"></a><span class="co"># Calculate the Bayesian equivalent of R2</span></span>
-<span id="cb53-10"><a href="#cb53-10"></a><span class="fu">bayes_R2</span>(mod)</span>
-<span id="cb53-11"><a href="#cb53-11"></a></span>
-<span id="cb53-12"><a href="#cb53-12"></a><span class="co"># The model explains 64% of the variance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
+<span id="cb53-9"><a href="#cb53-9"></a></span>
+<span id="cb53-10"><a href="#cb53-10"></a><span class="co"># Calculate the Bayesian equivalent of R2</span></span>
+<span id="cb53-11"><a href="#cb53-11"></a><span class="fu">bayes_R2</span>(mod)</span>
+<span id="cb53-12"><a href="#cb53-12"></a></span>
+<span id="cb53-13"><a href="#cb53-13"></a><span class="co"># The model explains 64% of the variance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <div class="question">
 <p>Use a Bayesian linear model to build the best model you can of the difference between boys and girls mathematics scores in the whole day set. a) Create a dataframe of boys and girls mathematics achievement across the world using <code>summarise</code> b) Use <code>mutate</code> to a difference in score column c) Propose a model (consider e.g., <code>PV1READ</code>, <code>WEALTH</code> etc), calculate the R2 value, and then tune the model by adding additional independent variable to increase its R2</p>
 <p>If you aren’t feeling confident with your R data manipulation, you can use the hint below to start with a dataframe of gender difference and various variables by country.</p>
 </div>
-<p>::: {.cell code fold=‘true’}</p>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># Creating the data frame for analysis</span></span>
+<div class="cell">
+<details><summary>Hint</summary><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># Creating the data frame for analysis</span></span>
 <span id="cb54-2"><a href="#cb54-2"></a><span class="co"># Create a data frame for having a mathematics scores by  gender</span></span>
-<span id="cb54-3"><a href="#cb54-3"></a>MathScore<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb54-3"><a href="#cb54-3"></a>MathScore <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
 <span id="cb54-4"><a href="#cb54-4"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
 <span id="cb54-5"><a href="#cb54-5"></a>  <span class="fu">group_by</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span></span>
 <span id="cb54-6"><a href="#cb54-6"></a>  <span class="fu">summarise</span>(<span class="at">math=</span><span class="fu">mean</span>(PV1MATH)) <span class="sc">%&gt;%</span></span>
@@ -1280,9 +1284,10 @@ Bayes factor type: BFcontingencyTable, joint multinomial</code></pre>
 <span id="cb54-22"><a href="#cb54-22"></a>  <span class="fu">na.omit</span>()</span>
 <span id="cb54-23"><a href="#cb54-23"></a><span class="co"># join the independents to the maths scores gender differences</span></span>
 <span id="cb54-24"><a href="#cb54-24"></a>MathScore<span class="ot">&lt;-</span><span class="fu">left_join</span>(MathScore, Independents, <span class="at">by=</span><span class="st">"CNT"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
-<p>::: {.cell code fold=‘true’}</p>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># Create a data frame for having a mathematics scores by  gender</span></span>
+</details>
+</div>
+<div class="cell">
+<details><summary>Full Answer</summary><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># Create a data frame for having a mathematics scores by  gender</span></span>
 <span id="cb55-2"><a href="#cb55-2"></a>MathScore <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
 <span id="cb55-3"><a href="#cb55-3"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
 <span id="cb55-4"><a href="#cb55-4"></a>  <span class="fu">group_by</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span></span>
@@ -1293,7 +1298,7 @@ Bayes factor type: BFcontingencyTable, joint multinomial</code></pre>
 <span id="cb55-9"><a href="#cb55-9"></a></span>
 <span id="cb55-10"><a href="#cb55-10"></a>MathScore <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(<span class="at">data=</span>MathScore, <span class="at">names_from=</span>ST004D01T, <span class="at">values_from=</span>math)</span>
 <span id="cb55-11"><a href="#cb55-11"></a>MathScore <span class="ot">&lt;-</span> MathScore <span class="sc">%&gt;%</span></span>
-<span id="cb55-12"><a href="#cb55-12"></a>  <span class="fu">mutate</span>(<span class="at">genddiff=</span>Female<span class="sc">-</span>Male)</span>
+<span id="cb55-12"><a href="#cb55-12"></a>  <span class="fu">mutate</span>(<span class="at">genddiff =</span> Female <span class="sc">-</span> Male)</span>
 <span id="cb55-13"><a href="#cb55-13"></a></span>
 <span id="cb55-14"><a href="#cb55-14"></a><span class="co"># Create a summary of means of the independent variables (e.g. WEALTH, reading etc) by country</span></span>
 <span id="cb55-15"><a href="#cb55-15"></a></span>
@@ -1306,10 +1311,10 @@ Bayes factor type: BFcontingencyTable, joint multinomial</code></pre>
 <span id="cb55-22"><a href="#cb55-22"></a>  <span class="fu">na.omit</span>()</span>
 <span id="cb55-23"><a href="#cb55-23"></a><span class="co"># join the independents to the maths scores gender differences</span></span>
 <span id="cb55-24"><a href="#cb55-24"></a></span>
-<span id="cb55-25"><a href="#cb55-25"></a>MathScore<span class="ot">&lt;-</span><span class="fu">left_join</span>(MathScore, Independents, <span class="at">by=</span><span class="st">"CNT"</span>)</span>
+<span id="cb55-25"><a href="#cb55-25"></a>MathScore <span class="ot">&lt;-</span> <span class="fu">left_join</span>(MathScore, Independents, <span class="at">by=</span><span class="st">"CNT"</span>)</span>
 <span id="cb55-26"><a href="#cb55-26"></a></span>
 <span id="cb55-27"><a href="#cb55-27"></a><span class="co"># Perform the Bayesian linear model with reading alone</span></span>
-<span id="cb55-28"><a href="#cb55-28"></a>mod<span class="ot">&lt;-</span><span class="fu">brm</span>(<span class="at">data=</span>MathScore, genddiff <span class="sc">~</span> read)</span>
+<span id="cb55-28"><a href="#cb55-28"></a>mod<span class="ot">&lt;-</span><span class="fu">brm</span>(<span class="at">data =</span> MathScore, genddiff <span class="sc">~</span> read)</span>
 <span id="cb55-29"><a href="#cb55-29"></a><span class="fu">summary</span>(mod)</span>
 <span id="cb55-30"><a href="#cb55-30"></a><span class="co"># Calculate the Bayesian equivalent of R2</span></span>
 <span id="cb55-31"><a href="#cb55-31"></a><span class="fu">bayes_R2</span>(mod)</span>
@@ -1318,63 +1323,69 @@ Bayes factor type: BFcontingencyTable, joint multinomial</code></pre>
 <span id="cb55-34"><a href="#cb55-34"></a><span class="co"># Perform the Bayesian linear model with reading and wealth</span></span>
 <span id="cb55-35"><a href="#cb55-35"></a>mod<span class="ot">&lt;-</span><span class="fu">brm</span>(<span class="at">data=</span>MathScore, genddiff <span class="sc">~</span> read <span class="sc">+</span> wealth)</span>
 <span id="cb55-36"><a href="#cb55-36"></a><span class="fu">summary</span>(mod)</span>
-<span id="cb55-37"><a href="#cb55-37"></a><span class="co"># Calculate the Bayesian equivalent of R2</span></span>
-<span id="cb55-38"><a href="#cb55-38"></a><span class="fu">bayes_R2</span>(mod)</span>
-<span id="cb55-39"><a href="#cb55-39"></a></span>
-<span id="cb55-40"><a href="#cb55-40"></a><span class="co"># The reading and wealth model explains 19% of the variance</span></span>
-<span id="cb55-41"><a href="#cb55-41"></a></span>
-<span id="cb55-42"><a href="#cb55-42"></a><span class="co"># Perform the Bayesian linear model with reading, wealth and ESCS</span></span>
-<span id="cb55-43"><a href="#cb55-43"></a>mod <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">data=</span>MathScore, genddiff <span class="sc">~</span> read <span class="sc">+</span> wealth <span class="sc">+</span> ESCS)</span>
-<span id="cb55-44"><a href="#cb55-44"></a><span class="fu">summary</span>(mod)</span>
-<span id="cb55-45"><a href="#cb55-45"></a><span class="co"># Calculate the Bayesian equivalent of R2</span></span>
-<span id="cb55-46"><a href="#cb55-46"></a><span class="fu">bayes_R2</span>(mod)</span>
-<span id="cb55-47"><a href="#cb55-47"></a></span>
-<span id="cb55-48"><a href="#cb55-48"></a><span class="co"># The reading, wealth and ESCS model explains 20% of the variance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
+<span id="cb55-37"><a href="#cb55-37"></a></span>
+<span id="cb55-38"><a href="#cb55-38"></a><span class="co"># Calculate the Bayesian equivalent of R2</span></span>
+<span id="cb55-39"><a href="#cb55-39"></a><span class="fu">bayes_R2</span>(mod)</span>
+<span id="cb55-40"><a href="#cb55-40"></a></span>
+<span id="cb55-41"><a href="#cb55-41"></a><span class="co"># The reading and wealth model explains 19% of the variance</span></span>
+<span id="cb55-42"><a href="#cb55-42"></a></span>
+<span id="cb55-43"><a href="#cb55-43"></a><span class="co"># Perform the Bayesian linear model with reading, wealth and ESCS</span></span>
+<span id="cb55-44"><a href="#cb55-44"></a>mod <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">data=</span>MathScore, genddiff <span class="sc">~</span> read <span class="sc">+</span> wealth <span class="sc">+</span> ESCS)</span>
+<span id="cb55-45"><a href="#cb55-45"></a><span class="fu">summary</span>(mod)</span>
+<span id="cb55-46"><a href="#cb55-46"></a></span>
+<span id="cb55-47"><a href="#cb55-47"></a><span class="co"># Calculate the Bayesian equivalent of R2</span></span>
+<span id="cb55-48"><a href="#cb55-48"></a><span class="fu">bayes_R2</span>(mod)</span>
+<span id="cb55-49"><a href="#cb55-49"></a></span>
+<span id="cb55-50"><a href="#cb55-50"></a><span class="co"># The reading, wealth and ESCS model explains 20% of the variance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section><section id="task-4-bayesian-linear-models" class="level3" data-number="0.3.4"><h3 data-number="0.3.4" class="anchored" data-anchor-id="task-4-bayesian-linear-models">
 <span class="header-section-number">0.3.4</span> Task 4 Bayesian linear models</h3>
 <div class="question">
 <p>Use a Bayesian linear model to determine: a) In the UK PISA 2018 data, build a model of mathematics scores (<code>PV1MATH</code>) in the US based on reading scores (<code>PV1READ</code>) and science scores (<code>PV1SCIE</code>). Using the 2015 dataset to provide prior distributions for reading and science scores. Plot the distribution of the model parameters</p>
 </div>
-<p>::: {.cell code fold=‘true’}</p>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># Determine prior distribution parameters</span></span>
-<span id="cb56-2"><a href="#cb56-2"></a>PISA2015studentbayes <span class="sc">%&gt;%</span></span>
-<span id="cb56-3"><a href="#cb56-3"></a>  <span class="fu">select</span>(PV1SCIE,CNT) <span class="sc">%&gt;%</span></span>
-<span id="cb56-4"><a href="#cb56-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"GBR"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb56-5"><a href="#cb56-5"></a>  <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">sd=</span><span class="fu">sd</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
-<span id="cb56-6"><a href="#cb56-6"></a></span>
-<span id="cb56-7"><a href="#cb56-7"></a>PISA2015studentbayes <span class="sc">%&gt;%</span></span>
-<span id="cb56-8"><a href="#cb56-8"></a>  <span class="fu">select</span>(PV1READ,CNT) <span class="sc">%&gt;%</span></span>
-<span id="cb56-9"><a href="#cb56-9"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"GBR"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb56-10"><a href="#cb56-10"></a>  <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">sd=</span><span class="fu">sd</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
-<span id="cb56-11"><a href="#cb56-11"></a></span>
-<span id="cb56-12"><a href="#cb56-12"></a><span class="co"># Specify the prior distribution using set priors from the `BMS` package</span></span>
-<span id="cb56-13"><a href="#cb56-13"></a>prior2015 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">set_prior</span>(<span class="st">"normal(503.5, 96.6)"</span>, <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"PV1SCIE"</span>),</span>
-<span id="cb56-14"><a href="#cb56-14"></a>               <span class="fu">set_prior</span>(<span class="st">"normal(496, 92.7)"</span>, <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"PV1READ"</span>))</span>
-<span id="cb56-15"><a href="#cb56-15"></a></span>
-<span id="cb56-16"><a href="#cb56-16"></a><span class="co"># Create the data frame of UK scores in 2018 to model</span></span>
-<span id="cb56-17"><a href="#cb56-17"></a>UKPISA_2018 <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb56-18"><a href="#cb56-18"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb56-19"><a href="#cb56-19"></a></span>
-<span id="cb56-20"><a href="#cb56-20"></a><span class="co"># Use the Bayesian regression model function 'brm' to fir the model, specifying the prior</span></span>
-<span id="cb56-21"><a href="#cb56-21"></a>modbay<span class="ot">&lt;-</span><span class="fu">brm</span>(<span class="at">data=</span>UKPISA_2018, <span class="at">formula =</span> PV1MATH <span class="sc">~</span>PV1SCIE<span class="sc">+</span>PV1READ, <span class="at">prior=</span>prior2015)</span>
-<span id="cb56-22"><a href="#cb56-22"></a><span class="fu">summary</span>(modbay)</span>
-<span id="cb56-23"><a href="#cb56-23"></a><span class="fu">bayes_R2</span>(modbay)</span>
-<span id="cb56-24"><a href="#cb56-24"></a></span>
-<span id="cb56-25"><a href="#cb56-25"></a><span class="co"># Plot the distribution of the coefficients</span></span>
-<span id="cb56-26"><a href="#cb56-26"></a><span class="fu">plot</span>(modbay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
+<div class="cell">
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># Determine prior distribution parameters</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a>PISA_2015 <span class="sc">%&gt;%</span></span>
+<span id="cb56-3"><a href="#cb56-3"></a>  <span class="fu">select</span>(PV1SCIE, CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb56-4"><a href="#cb56-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb56-5"><a href="#cb56-5"></a>  <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>), </span>
+<span id="cb56-6"><a href="#cb56-6"></a>            <span class="at">sd=</span><span class="fu">sd</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
+<span id="cb56-7"><a href="#cb56-7"></a></span>
+<span id="cb56-8"><a href="#cb56-8"></a>PISA_2015 <span class="sc">%&gt;%</span></span>
+<span id="cb56-9"><a href="#cb56-9"></a>  <span class="fu">select</span>(PV1READ,CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb56-10"><a href="#cb56-10"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb56-11"><a href="#cb56-11"></a>  <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>), </span>
+<span id="cb56-12"><a href="#cb56-12"></a>            <span class="at">sd=</span><span class="fu">sd</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
+<span id="cb56-13"><a href="#cb56-13"></a></span>
+<span id="cb56-14"><a href="#cb56-14"></a><span class="co"># Specify the prior distribution using set priors from the `BMS` package</span></span>
+<span id="cb56-15"><a href="#cb56-15"></a>prior2015 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">set_prior</span>(<span class="st">"normal(503.5, 96.6)"</span>, <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"PV1SCIE"</span>),</span>
+<span id="cb56-16"><a href="#cb56-16"></a>               <span class="fu">set_prior</span>(<span class="st">"normal(496, 92.7)"</span>, <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"PV1READ"</span>))</span>
+<span id="cb56-17"><a href="#cb56-17"></a></span>
+<span id="cb56-18"><a href="#cb56-18"></a><span class="co"># Create the data frame of UK scores in 2018 to model</span></span>
+<span id="cb56-19"><a href="#cb56-19"></a>UKPISA_2018 <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb56-20"><a href="#cb56-20"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb56-21"><a href="#cb56-21"></a></span>
+<span id="cb56-22"><a href="#cb56-22"></a><span class="co"># Use the Bayesian regression model function 'brm' to fir the model, specifying the prior</span></span>
+<span id="cb56-23"><a href="#cb56-23"></a>modbay <span class="ot">&lt;-</span> <span class="fu">brm</span>(<span class="at">data=</span>UKPISA_2018, <span class="at">formula =</span> PV1MATH <span class="sc">~</span>PV1SCIE<span class="sc">+</span>PV1READ, <span class="at">prior=</span>prior2015)</span>
+<span id="cb56-24"><a href="#cb56-24"></a><span class="fu">summary</span>(modbay)</span>
+<span id="cb56-25"><a href="#cb56-25"></a><span class="fu">bayes_R2</span>(modbay)</span>
+<span id="cb56-26"><a href="#cb56-26"></a></span>
+<span id="cb56-27"><a href="#cb56-27"></a><span class="co"># Plot the distribution of the coefficients</span></span>
+<span id="cb56-28"><a href="#cb56-28"></a><span class="fu">plot</span>(modbay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section><section id="task-5-bayesian-comparison-of-models" class="level3" data-number="0.3.5"><h3 data-number="0.3.5" class="anchored" data-anchor-id="task-5-bayesian-comparison-of-models">
 <span class="header-section-number">0.3.5</span> Task 5 Bayesian comparison of models</h3>
 <div class="question">
 <p>Use the <code>regressionBF</code> function of the <code>BayesFactor</code> package to compare different models for the performance of UK students in mathematics. What is the best model you can find?</p>
 </div>
-<p>::: {.cell code fold=‘true’}</p>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># Create a UK subset</span></span>
-<span id="cb57-2"><a href="#cb57-2"></a>PISAUK<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
-<span id="cb57-3"><a href="#cb57-3"></a>  <span class="fu">select</span>(PV1MATH, PV1READ, PV1SCIE, WEALTH, ESCS, CNT)<span class="sc">%&gt;%</span></span>
-<span id="cb57-4"><a href="#cb57-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb57-5"><a href="#cb57-5"></a>  <span class="fu">select</span>(<span class="sc">-</span>CNT)<span class="sc">%&gt;%</span></span>
+<div class="cell">
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># Create a UK subset</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a>PISAUK <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb57-3"><a href="#cb57-3"></a>  <span class="fu">select</span>(PV1MATH, PV1READ, PV1SCIE, WEALTH, ESCS, CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb57-4"><a href="#cb57-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb57-5"><a href="#cb57-5"></a>  <span class="fu">select</span>(<span class="sc">-</span>CNT) <span class="sc">%&gt;%</span></span>
 <span id="cb57-6"><a href="#cb57-6"></a>  <span class="fu">na.omit</span>()</span>
 <span id="cb57-7"><a href="#cb57-7"></a></span>
 <span id="cb57-8"><a href="#cb57-8"></a><span class="co"># Convert variables to factors</span></span>
@@ -1395,21 +1406,11 @@ Bayes factor type: BFcontingencyTable, joint multinomial</code></pre>
 <span id="cb57-23"><a href="#cb57-23"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(output<span class="sc">$</span>bf))</span>
 <span id="cb57-24"><a href="#cb57-24"></a>output</span>
 <span id="cb57-25"><a href="#cb57-25"></a><span class="co"># The best model appears to be: PV1SCIE ~ PV1READ + PV1SCIE + WEALTH + ESCS</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>:::</p>
+</details>
+</div>
 
 
-
-</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-burnham2007" class="csl-entry" role="listitem">
-Burnham, Kenneth P., and David R. Anderson. 2007. <em>Model Selection and Multimodel Inference: A Practical Information-Theoretic Approach</em>. Springer Science &amp; Business Media.
-</div>
-<div id="ref-edwards1963" class="csl-entry" role="listitem">
-Edwards, Ward, Harold Lindman, and Leonard J. Savage. 1963. <span>“Bayesian Statistical Inference for Psychological Research.”</span> <em>Psychological Review</em> 70 (3): 193–242. <a href="https://doi.org/10.1037/h0044139">https://doi.org/10.1037/h0044139</a>.
-</div>
-<div id="ref-kass1995" class="csl-entry" role="listitem">
-Kass, Robert E., and Adrian E. Raftery. 1995. <span>“Bayes Factors.”</span> <em>Journal of the American Statistical Association</em> 90 (430): 773–95. <a href="https://doi.org/10.1080/01621459.1995.10476572">https://doi.org/10.1080/01621459.1995.10476572</a>.
-</div>
-</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
