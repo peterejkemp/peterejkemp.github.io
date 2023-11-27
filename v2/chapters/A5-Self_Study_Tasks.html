@@ -359,8 +359,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>PISAsummary<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span>  <span class="co"># Pipe the overall frame to a summary data.frame</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE)<span class="sc">%&gt;%</span>  <span class="co"># Select the two required columns</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span>        <span class="co"># Group the entries by country</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">summarise</span>(<span class="at">meansci=</span><span class="fu">mean</span>(PV1SCIE)) <span class="co"># calculate means for each country</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">print</span>(PISAsummary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">summarise</span>(<span class="at">meansci =</span> <span class="fu">mean</span>(PV1SCIE)) <span class="co"># calculate means for each country</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">print</span>(PISAsummary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 80 × 2
    CNT                    meansci
@@ -386,17 +387,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Use the table function to create a summary of numbers of types of school ISCEDO recorded in the data frame for the UK. Use the mutate function to turn these into percentages (you will need to calculate a total)</p>
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>UKPISA<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">select</span>(CNT,ISCEDO)<span class="sc">%&gt;%</span>             <span class="co"># Select the country school type </span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span>  <span class="co"># filter for the UK</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">select</span>(ISCEDO)                    <span class="co"># Just select the school type </span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>                                    <span class="co"># I.e. remove the country</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">select</span>(CNT,ISCEDO)<span class="sc">%&gt;%</span>               <span class="co"># Select the country school type </span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span>  <span class="co"># filter for the UK</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">select</span>(ISCEDO)                      <span class="co"># Just select the school type </span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>                                      <span class="co"># I.e. remove the country</span></span>
 <span id="cb3-6"><a href="#cb3-6"></a></span>
 <span id="cb3-7"><a href="#cb3-7"></a>UKPISA<span class="ot">&lt;-</span><span class="fu">table</span>(UKPISA)               <span class="co"># Create a summary of counts</span></span>
 <span id="cb3-8"><a href="#cb3-8"></a>                                    <span class="co"># To manipulate the table it is</span></span>
 <span id="cb3-9"><a href="#cb3-9"></a>UKPISA<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(UKPISA)       <span class="co"># easier to convert it to a </span></span>
 <span id="cb3-10"><a href="#cb3-10"></a>                                    <span class="co"># a data.frame</span></span>
 <span id="cb3-11"><a href="#cb3-11"></a></span>
-<span id="cb3-12"><a href="#cb3-12"></a>UKPISA<span class="ot">&lt;-</span><span class="fu">mutate</span>(UKPISA, <span class="at">per=</span>Freq<span class="sc">/</span><span class="fu">sum</span>(Freq)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-12"><a href="#cb3-12"></a>UKPISA<span class="ot">&lt;-</span><span class="fu">mutate</span>(UKPISA, <span class="at">per =</span> Freq <span class="sc">/</span> <span class="fu">sum</span>(Freq)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -408,13 +409,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Create a data frame in wide format, with three columns for each student's scores (math, reading and science)</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>UKScores<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">select</span>(CNT,PV1MATH, PV1READ, PV1SCIE)<span class="sc">%&gt;%</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
 <span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">select</span>(PV1MATH, PV1READ, PV1SCIE)</span>
 <span id="cb4-6"><a href="#cb4-6"></a><span class="co"># Use pivot longer to turn the three columns into one. First, pass pivotlonger the dataframe to be converted, then the three columns</span></span>
 <span id="cb4-7"><a href="#cb4-7"></a><span class="co"># to convert into one, the name of the new longer column and the</span></span>
 <span id="cb4-8"><a href="#cb4-8"></a><span class="co"># name of the new scores column</span></span>
 <span id="cb4-9"><a href="#cb4-9"></a></span>
-<span id="cb4-10"><a href="#cb4-10"></a>UKScores<span class="ot">&lt;-</span><span class="fu">pivot_longer</span>(UKScores, <span class="at">cols=</span><span class="fu">c</span>(<span class="st">'PV1MATH'</span>, <span class="st">'PV1READ'</span>, <span class="st">'PV1SCIE'</span>),</span>
+<span id="cb4-10"><a href="#cb4-10"></a>UKScores<span class="ot">&lt;-</span><span class="fu">pivot_longer</span>(UKScores, <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">'PV1MATH'</span>, <span class="st">'PV1READ'</span>, <span class="st">'PV1SCIE'</span>),</span>
 <span id="cb4-11"><a href="#cb4-11"></a>                       <span class="at">names_to =</span> <span class="st">'Subject'</span>, <span class="at">values_to =</span> <span class="st">'Score'</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
@@ -426,13 +427,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>Plotdata<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">select</span>(CNT, PV1MATH)<span class="sc">%&gt;%</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United States"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"Germany"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">group_by</span>(CNT)<span class="sc">%&gt;%</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(PV1MATH))</span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">ggplot</span>(Plotdata,               <span class="co"># Pass the data to be plotted to ggplot</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span>CNT, <span class="at">y=</span>mean))<span class="sc">+</span>    <span class="co"># set the x and y varibale</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"red"</span>)         <span class="co"># plot a column graph and fill in red</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span><span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"United States"</span><span class="sc">|</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>           CNT <span class="sc">==</span> <span class="st">"Germany"</span><span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">group_by</span>(CNT)<span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(PV1MATH))</span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">ggplot</span>(Plotdata,               <span class="co"># Pass the data to be plotted to ggplot</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> CNT, <span class="at">y =</span> mean))<span class="sc">+</span>    <span class="co"># set the x and y varibale</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"red"</span>)         <span class="co"># plot a column graph and fill in red</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <p><img src="A5-Self_Study_Tasks_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -445,14 +447,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>Plotdata<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">select</span>(CNT, PV1MATH, ST004D01T)<span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United States"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"Germany"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">group_by</span>(CNT, ST004D01T)<span class="sc">%&gt;%</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(PV1MATH))</span>
-<span id="cb6-6"><a href="#cb6-6"></a></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">ggplot</span>(Plotdata,</span>
-<span id="cb6-8"><a href="#cb6-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span>CNT, <span class="at">y=</span>mean, <span class="at">fill=</span>ST004D01T))<span class="sc">+</span> <span class="co"># Setting the fill to the gender</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a>                                            <span class="co"># variable gives two series</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>())     <span class="co"># position_dodge here means the</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"United States"</span><span class="sc">|</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>           CNT <span class="sc">==</span> <span class="st">"Germany"</span><span class="sc">|</span>CNT <span class="sc">==</span> <span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">group_by</span>(CNT, ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(PV1MATH))</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="fu">ggplot</span>(Plotdata,</span>
+<span id="cb6-9"><a href="#cb6-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> CNT, <span class="at">y=</span>mean, <span class="at">fill =</span> ST004D01T))<span class="sc">+</span> <span class="co"># Setting the fill to the gender</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>                                            <span class="co"># variable gives two series</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>())     <span class="co"># position_dodge here means the</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <p><img src="A5-Self_Study_Tasks_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -465,16 +468,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="question">
 <p>Plot a graph of science scores against mathematics scores for students in the UK</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>Plotdata<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span>              <span class="co"># Create a new dataframe to be plotted</span></span>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>Plotdata<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span>              <span class="co"># Create a new data frame to be plotted</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">select</span>(CNT, PV1MATH, PV1SCIE)<span class="sc">%&gt;%</span>  <span class="co"># Choose the country, and scores vectors</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)    <span class="co"># Filter for only Uk results</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)    <span class="co"># Filter for only Uk results</span></span>
 <span id="cb8-4"><a href="#cb8-4"></a></span>
 <span id="cb8-5"><a href="#cb8-5"></a><span class="fu">ggplot</span>(Plotdata,                  <span class="co"># Pass the data to be plotted to ggplot</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH, <span class="at">y=</span>PV1SCIE))<span class="sc">+</span> <span class="co"># Define the x and y varibale</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a>      <span class="fu">geom_point</span>(<span class="at">size=</span><span class="fl">0.1</span>, <span class="at">alpha=</span><span class="fl">0.2</span>, <span class="at">colour=</span><span class="st">"red"</span>)<span class="sc">+</span> </span>
+<span id="cb8-6"><a href="#cb8-6"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">y =</span> PV1SCIE))<span class="sc">+</span> <span class="co"># Define the x and y variable</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>      <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">colour=</span><span class="st">"red"</span>)<span class="sc">+</span> </span>
 <span id="cb8-8"><a href="#cb8-8"></a>                                  <span class="co"># Use geom-point to create a scatter                                      # graph and set the size of the point </span></span>
 <span id="cb8-9"><a href="#cb8-9"></a>                                    <span class="co"># alpha (i.e transparency)</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a>      <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Math Score"</span>, <span class="at">y=</span><span class="st">"Science score"</span>) <span class="co"># Add clearer labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-10"><a href="#cb8-10"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Math Score"</span>, <span class="at">y =</span> <span class="st">"Science score"</span>) <span class="co"># Add clearer labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <p><img src="A5-Self_Study_Tasks_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -487,13 +490,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>Plotdata<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span>              <span class="co"># Create a new dataframe to be plotted</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">select</span>(CNT, PV1MATH, PV1SCIE, ST004D01T)<span class="sc">%&gt;%</span>  </span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)    <span class="co"># Filter for only Uk results</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)    <span class="co"># Filter for only Uk results</span></span>
 <span id="cb9-4"><a href="#cb9-4"></a></span>
 <span id="cb9-5"><a href="#cb9-5"></a><span class="fu">ggplot</span>(Plotdata,                  </span>
-<span id="cb9-6"><a href="#cb9-6"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH, <span class="at">y=</span>PV1SCIE, <span class="at">colour=</span>ST004D01T))<span class="sc">+</span> </span>
-<span id="cb9-7"><a href="#cb9-7"></a>      <span class="fu">geom_point</span>(<span class="at">size=</span><span class="fl">0.1</span>, <span class="at">alpha=</span><span class="fl">0.2</span>)<span class="sc">+</span> </span>
+<span id="cb9-6"><a href="#cb9-6"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">y =</span> PV1SCIE, <span class="at">colour =</span> ST004D01T))<span class="sc">+</span> </span>
+<span id="cb9-7"><a href="#cb9-7"></a>      <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span> </span>
 <span id="cb9-8"><a href="#cb9-8"></a>                          <span class="co"># As above, but set colour by the gender varibale</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a>      <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Math Score"</span>, <span class="at">y=</span><span class="st">"Science score"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-9"><a href="#cb9-9"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Math Score"</span>, <span class="at">y =</span> <span class="st">"Science score"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <p><img src="A5-Self_Study_Tasks_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -507,15 +510,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>Plotdata<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">select</span>(CNT, PV1MATH, PV1SCIE) <span class="sc">%&gt;%</span></span>
 <span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">summarise</span>(<span class="at">meansci=</span><span class="fu">mean</span>(PV1SCIE), <span class="at">meanmath=</span><span class="fu">mean</span>(PV1MATH), <span class="at">total=</span><span class="fu">n</span>())</span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="co"># Summarise finds mean scores by countries and n() is used to sum</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a>  <span class="co"># the number of students in each country</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a><span class="fu">ggplot</span>(Plotdata,</span>
-<span id="cb10-8"><a href="#cb10-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span>meansci, <span class="at">y=</span>meanmath, <span class="at">size=</span>total, <span class="at">colour=</span><span class="st">"red"</span>))<span class="sc">+</span></span>
-<span id="cb10-9"><a href="#cb10-9"></a>  <span class="co"># The size aesthetic is set to the total entries value computed</span></span>
-<span id="cb10-10"><a href="#cb10-10"></a>  <span class="co"># for the data set</span></span>
-<span id="cb10-11"><a href="#cb10-11"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb10-12"><a href="#cb10-12"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Mean science score"</span>, <span class="at">y=</span><span class="st">"Mean math score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">summarise</span>(<span class="at">meansci =</span> <span class="fu">mean</span>(PV1SCIE), <span class="at">meanmath=</span><span class="fu">mean</span>(PV1MATH), <span class="at">total=</span><span class="fu">n</span>())</span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="co"># Summarise finds mean scores by countries and n() is used to sum</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="co"># the number of students in each country</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="fu">ggplot</span>(Plotdata,</span>
+<span id="cb10-10"><a href="#cb10-10"></a>       <span class="fu">aes</span>(<span class="at">x =</span> meansci, <span class="at">y =</span> meanmath, <span class="at">size =</span> total, <span class="at">colour =</span> <span class="st">"red"</span>))<span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a>  <span class="co"># The size aesthetic is set to the total entries value computed</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a>  <span class="co"># for the data set</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Mean science score"</span>, <span class="at">y =</span> <span class="st">"Mean math score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <p><img src="A5-Self_Study_Tasks_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -528,15 +533,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>Genderschool<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">select</span>(ST004D01T,ISCEDO)<span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">==</span><span class="st">"Male"</span><span class="sc">|</span>ST004D01T<span class="sc">==</span><span class="st">"Female"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">filter</span>(ISCEDO<span class="sc">==</span><span class="st">"General"</span><span class="sc">|</span>ISCEDO<span class="sc">==</span><span class="st">"Vocational"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span><span class="sc">|</span>ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">filter</span>(ISCEDO <span class="sc">==</span> <span class="st">"General"</span><span class="sc">|</span>ISCEDO <span class="sc">==</span> <span class="st">"Vocational"</span>)<span class="sc">%&gt;%</span></span>
 <span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">na.omit</span>()<span class="sc">%&gt;%</span></span>
 <span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">droplevels</span>()</span>
 <span id="cb11-7"><a href="#cb11-7"></a></span>
 <span id="cb11-8"><a href="#cb11-8"></a><span class="fu">install.packages</span>(<span class="st">"ggmosaic"</span>)</span>
 <span id="cb11-9"><a href="#cb11-9"></a><span class="fu">library</span>(ggmosaic)</span>
 <span id="cb11-10"><a href="#cb11-10"></a><span class="fu">ggplot</span>(Genderschool)<span class="sc">+</span></span>
-<span id="cb11-11"><a href="#cb11-11"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">product</span>(ST004D01T,ISCEDO), <span class="at">fill=</span>ISCEDO))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-11"><a href="#cb11-11"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST004D01T,ISCEDO), <span class="at">fill =</span> ISCEDO))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <p><img src="A5-Self_Study_Tasks_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -550,12 +555,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Create data frames with the score results for UK and US</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>UKscores<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">select</span>(CNT,PV1MATH,PV1READ, PV1SCIE)<span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb12-5"><a href="#cb12-5"></a>USscores<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">select</span>(CNT,PV1MATH,PV1READ, PV1SCIE)<span class="sc">%&gt;%</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United States"</span>)</span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="co"># Perform the t-test with maths results</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="fu">t.test</span>(UKscores<span class="sc">$</span>PV1MATH, USscores<span class="sc">$</span>PV1MATH)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a>USscores<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">select</span>(CNT,PV1MATH,PV1READ, PV1SCIE)<span class="sc">%&gt;%</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United States"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9"></a></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="co"># Perform the t-test with maths results</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="fu">t.test</span>(UKscores<span class="sc">$</span>PV1MATH, USscores<span class="sc">$</span>PV1MATH)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -570,7 +578,8 @@ mean of x mean of y
  496.7440  473.1427 </code></pre>
 </div>
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># p-value is &lt; 2.2e-16 so significant differences exist for maths</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="fu">t.test</span>(UKscores<span class="sc">$</span>PV1READ, USscores<span class="sc">$</span>PV1READ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="fu">t.test</span>(UKscores<span class="sc">$</span>PV1READ, USscores<span class="sc">$</span>PV1READ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -585,7 +594,8 @@ mean of x mean of y
  500.4976  500.1502 </code></pre>
 </div>
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># p-value = 0.8442 so no significant differences exist for reading</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">t.test</span>(UKscores<span class="sc">$</span>PV1SCIE, USscores<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="fu">t.test</span>(UKscores<span class="sc">$</span>PV1SCIE, USscores<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -610,14 +620,17 @@ mean of x mean of y
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Create data frames with the score results for UK in two</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a><span class="co"># groups, has internet and no internet, based on ST011Q06TA</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a>UKHasIntscores<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">select</span>(CNT,PV1MATH,PV1READ, PV1SCIE, ST011Q06TA)<span class="sc">%&gt;%</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span> <span class="sc">&amp;</span> ST011Q06TA<span class="sc">==</span><span class="st">"Yes"</span>)</span>
-<span id="cb19-6"><a href="#cb19-6"></a>UKNoIntscores<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
-<span id="cb19-7"><a href="#cb19-7"></a>  <span class="fu">select</span>(CNT,PV1MATH,PV1READ, PV1SCIE, ST011Q06TA)<span class="sc">%&gt;%</span></span>
-<span id="cb19-8"><a href="#cb19-8"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span> <span class="sc">&amp;</span> ST011Q06TA<span class="sc">==</span><span class="st">"No"</span>)</span>
-<span id="cb19-9"><a href="#cb19-9"></a><span class="co"># Perform the t-test with maths results</span></span>
-<span id="cb19-10"><a href="#cb19-10"></a><span class="fu">t.test</span>(UKHasIntscores<span class="sc">$</span>PV1MATH, UKNoIntscores<span class="sc">$</span>PV1MATH)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a>UKHasIntscores<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">select</span>(CNT,PV1MATH,PV1READ, PV1SCIE, ST011Q06TA)<span class="sc">%&gt;%</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span> <span class="sc">&amp;</span> ST011Q06TA <span class="sc">==</span> <span class="st">"Yes"</span>)</span>
+<span id="cb19-7"><a href="#cb19-7"></a></span>
+<span id="cb19-8"><a href="#cb19-8"></a>UKNoIntscores<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a>  <span class="fu">select</span>(CNT,PV1MATH,PV1READ, PV1SCIE, ST011Q06TA)<span class="sc">%&gt;%</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span> <span class="sc">&amp;</span> ST011Q06TA <span class="sc">==</span> <span class="st">"No"</span>)</span>
+<span id="cb19-11"><a href="#cb19-11"></a></span>
+<span id="cb19-12"><a href="#cb19-12"></a><span class="co"># Perform the t-test with maths results</span></span>
+<span id="cb19-13"><a href="#cb19-13"></a><span class="fu">t.test</span>(UKHasIntscores<span class="sc">$</span>PV1MATH, UKNoIntscores<span class="sc">$</span>PV1MATH)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -632,8 +645,10 @@ mean of x mean of y
  498.8200  389.5673 </code></pre>
 </div>
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># p-value is &lt; 2.2e-16 so no signficant differences for maths scores from</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="co"># those with and without internet</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a><span class="fu">t.test</span>(UKHasIntscores<span class="sc">$</span>PV1READ, UKNoIntscores<span class="sc">$</span>PV1READ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-2"><a href="#cb21-2"></a></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="co"># those with and without internet</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a></span>
+<span id="cb21-5"><a href="#cb21-5"></a><span class="fu">t.test</span>(UKHasIntscores<span class="sc">$</span>PV1READ, UKNoIntscores<span class="sc">$</span>PV1READ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -648,8 +663,10 @@ mean of x mean of y
  503.4454  404.9180 </code></pre>
 </div>
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># p-value is &lt; 2.2e-16 so no signficant differences for reading scores from</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="co"># those with and without internet</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a><span class="fu">t.test</span>(UKHasIntscores<span class="sc">$</span>PV1SCIE, UKNoIntscores<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-2"><a href="#cb23-2"></a></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="co"># those with and without internet</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="fu">t.test</span>(UKHasIntscores<span class="sc">$</span>PV1SCIE, UKNoIntscores<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -674,15 +691,20 @@ mean of x mean of y
 <p>Using the PISA 2018 data set, are the mean mathematics scores of US boys and girls different to a statistically significant degree?</p>
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Create a dataframe of US boys math scores</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a>USboys<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a>  <span class="fu">select</span>(CNT, PV1MATH, ST004D01T)<span class="sc">%&gt;%</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United States"</span>)</span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="co"># Create a dataframe of US girls math scores</span></span>
-<span id="cb26-6"><a href="#cb26-6"></a>USgirls<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb26-7"><a href="#cb26-7"></a>  <span class="fu">select</span>(CNT, PV1MATH, ST004D01T)<span class="sc">%&gt;%</span></span>
-<span id="cb26-8"><a href="#cb26-8"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United States"</span>)</span>
-<span id="cb26-9"><a href="#cb26-9"></a><span class="co"># Perform the t-test, using $PVMATH to indicate which column of the dataframe to use</span></span>
-<span id="cb26-10"><a href="#cb26-10"></a><span class="fu">t.test</span>(USboys<span class="sc">$</span>PV1MATH, USgirls<span class="sc">$</span>PV1MATH)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-2"><a href="#cb26-2"></a></span>
+<span id="cb26-3"><a href="#cb26-3"></a>USboys<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">select</span>(CNT, PV1MATH, ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United States"</span>)</span>
+<span id="cb26-6"><a href="#cb26-6"></a></span>
+<span id="cb26-7"><a href="#cb26-7"></a><span class="co"># Create a dataframe of US girls math scores</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a></span>
+<span id="cb26-9"><a href="#cb26-9"></a>USgirls<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb26-10"><a href="#cb26-10"></a>  <span class="fu">select</span>(CNT, PV1MATH, ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb26-11"><a href="#cb26-11"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United States"</span>)</span>
+<span id="cb26-12"><a href="#cb26-12"></a></span>
+<span id="cb26-13"><a href="#cb26-13"></a><span class="co"># Perform the t-test, using $PVMATH to indicate which column of the dataframe to use</span></span>
+<span id="cb26-14"><a href="#cb26-14"></a></span>
+<span id="cb26-15"><a href="#cb26-15"></a><span class="fu">t.test</span>(USboys<span class="sc">$</span>PV1MATH, USgirls<span class="sc">$</span>PV1MATH)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -705,16 +727,21 @@ mean of x mean of y
 <div class="question">
 <p>Are the mean science scores of all students in the US and the UK different to a statistically significant degree?</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Create a dataframe of US science scores</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a>USSci<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE)<span class="sc">%&gt;%</span></span>
-<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United States"</span>)</span>
-<span id="cb29-5"><a href="#cb29-5"></a><span class="co"># Create a dataframe of UK science scores</span></span>
-<span id="cb29-6"><a href="#cb29-6"></a>UKSci<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb29-7"><a href="#cb29-7"></a>  <span class="fu">select</span>(CNT, PV1SCIE)<span class="sc">%&gt;%</span></span>
-<span id="cb29-8"><a href="#cb29-8"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb29-9"><a href="#cb29-9"></a><span class="co"># Perfom the t-test, using $PV1SCIE to indicate which column of the dataframe to use</span></span>
-<span id="cb29-10"><a href="#cb29-10"></a><span class="fu">t.test</span>(USSci<span class="sc">$</span>PV1SCIE, UKSci<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Create a data frame of US science scores</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a></span>
+<span id="cb29-3"><a href="#cb29-3"></a>USSci<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">select</span>(CNT, PV1SCIE)<span class="sc">%&gt;%</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United States"</span>)</span>
+<span id="cb29-6"><a href="#cb29-6"></a></span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="co"># Create a data frame of UK science scores</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a></span>
+<span id="cb29-9"><a href="#cb29-9"></a>UKSci<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a>  <span class="fu">select</span>(CNT, PV1SCIE)<span class="sc">%&gt;%</span></span>
+<span id="cb29-11"><a href="#cb29-11"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
+<span id="cb29-12"><a href="#cb29-12"></a></span>
+<span id="cb29-13"><a href="#cb29-13"></a><span class="co"># Perform the t-test, using $PV1SCIE to indicate which column of the dataframe to use</span></span>
+<span id="cb29-14"><a href="#cb29-14"></a></span>
+<span id="cb29-15"><a href="#cb29-15"></a><span class="fu">t.test</span>(USSci<span class="sc">$</span>PV1SCIE, UKSci<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -735,22 +762,29 @@ mean of x mean of y
 </section><section id="task-14-chi-square-practice-1" class="level2" data-number="0.14"><h2 data-number="0.14" class="anchored" data-anchor-id="task-14-chi-square-practice-1">
 <span class="header-section-number">0.14</span> Task 14 Chi-square practice #1</h2>
 <div class="question">
-<p>Are statiscally significant differences in the proportion of boys and girls and the number of books in the home for the whole dataset?</p>
+<p>Are statiscally significant differences in the proportion of boys and girls and the number of books in the home (<code>ST013Q01TA</code>) for the whole dataset?</p>
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Create a dataframe of boys and number of books in the home</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>Malebooksinhome<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">select</span>(ST004D01T, ST013Q01TA)<span class="sc">%&gt;%</span></span>
-<span id="cb32-4"><a href="#cb32-4"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">==</span><span class="st">"Male"</span>)</span>
-<span id="cb32-5"><a href="#cb32-5"></a><span class="co"># Sum these up and convert to a data frame for chisq.test</span></span>
-<span id="cb32-6"><a href="#cb32-6"></a>Malebooksinhome<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(Malebooksinhome<span class="sc">$</span>ST013Q01TA))</span>
-<span id="cb32-7"><a href="#cb32-7"></a><span class="co"># Repeat for girls</span></span>
-<span id="cb32-8"><a href="#cb32-8"></a>Femalebooksinhome<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb32-9"><a href="#cb32-9"></a>  <span class="fu">select</span>(ST004D01T, ST013Q01TA)<span class="sc">%&gt;%</span></span>
-<span id="cb32-10"><a href="#cb32-10"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">==</span><span class="st">"Female"</span>)</span>
-<span id="cb32-11"><a href="#cb32-11"></a></span>
-<span id="cb32-12"><a href="#cb32-12"></a>Femalebooksinhome<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(Femalebooksinhome<span class="sc">$</span>ST013Q01TA))</span>
-<span id="cb32-13"><a href="#cb32-13"></a><span class="co"># Perform the chisq.test</span></span>
-<span id="cb32-14"><a href="#cb32-14"></a><span class="fu">chisq.test</span>(Malebooksinhome<span class="sc">$</span>Freq,Femalebooksinhome<span class="sc">$</span>Freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-2"><a href="#cb32-2"></a></span>
+<span id="cb32-3"><a href="#cb32-3"></a>Malebooksinhome<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a>  <span class="fu">select</span>(ST004D01T, ST013Q01TA)<span class="sc">%&gt;%</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>)</span>
+<span id="cb32-6"><a href="#cb32-6"></a></span>
+<span id="cb32-7"><a href="#cb32-7"></a><span class="co"># Sum these up and convert to a data frame for chisq.test</span></span>
+<span id="cb32-8"><a href="#cb32-8"></a></span>
+<span id="cb32-9"><a href="#cb32-9"></a>Malebooksinhome<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(Malebooksinhome<span class="sc">$</span>ST013Q01TA))</span>
+<span id="cb32-10"><a href="#cb32-10"></a></span>
+<span id="cb32-11"><a href="#cb32-11"></a><span class="co"># Repeat for girls</span></span>
+<span id="cb32-12"><a href="#cb32-12"></a></span>
+<span id="cb32-13"><a href="#cb32-13"></a>Femalebooksinhome<span class="ot">&lt;-</span>PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb32-14"><a href="#cb32-14"></a>  <span class="fu">select</span>(ST004D01T, ST013Q01TA)<span class="sc">%&gt;%</span></span>
+<span id="cb32-15"><a href="#cb32-15"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>)</span>
+<span id="cb32-16"><a href="#cb32-16"></a></span>
+<span id="cb32-17"><a href="#cb32-17"></a>Femalebooksinhome<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(Femalebooksinhome<span class="sc">$</span>ST013Q01TA))</span>
+<span id="cb32-18"><a href="#cb32-18"></a></span>
+<span id="cb32-19"><a href="#cb32-19"></a><span class="co"># Perform the chisq.test</span></span>
+<span id="cb32-20"><a href="#cb32-20"></a></span>
+<span id="cb32-21"><a href="#cb32-21"></a><span class="fu">chisq.test</span>(Malebooksinhome<span class="sc">$</span>Freq,Femalebooksinhome<span class="sc">$</span>Freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test
@@ -768,23 +802,30 @@ X-squared = 60, df = 36, p-value = 0.00727</code></pre>
 <p>Are there statistically significant differences, in the whole data set, between boys and girls use of the internet at school to browse for homework (IC011Q03TA)?</p>
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># Create a data frame of the girls responses to the question on internet use at school </span></span>
-<span id="cb35-2"><a href="#cb35-2"></a>girlsint<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">select</span>(IC011Q03TA, ST004D01T)<span class="sc">%&gt;%</span></span>
-<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">==</span><span class="st">"Female"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb35-5"><a href="#cb35-5"></a>   <span class="fu">select</span>(IC011Q03TA)</span>
-<span id="cb35-6"><a href="#cb35-6"></a><span class="co"># Do the same for boys</span></span>
-<span id="cb35-7"><a href="#cb35-7"></a>boysint<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
-<span id="cb35-8"><a href="#cb35-8"></a>  <span class="fu">select</span>(IC011Q03TA, ST004D01T)<span class="sc">%&gt;%</span></span>
-<span id="cb35-9"><a href="#cb35-9"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">==</span><span class="st">"Male"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb35-10"><a href="#cb35-10"></a>   <span class="fu">select</span>(IC011Q03TA)</span>
-<span id="cb35-11"><a href="#cb35-11"></a><span class="co"># Create frequency count tables of those data frames</span></span>
-<span id="cb35-12"><a href="#cb35-12"></a><span class="co"># Note the chisq.test function takes data frames as inputs</span></span>
-<span id="cb35-13"><a href="#cb35-13"></a><span class="co"># but the output of table is a table, so we convert the tables</span></span>
-<span id="cb35-14"><a href="#cb35-14"></a><span class="co"># back to data frames</span></span>
-<span id="cb35-15"><a href="#cb35-15"></a>girlsint<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(girlsint))</span>
-<span id="cb35-16"><a href="#cb35-16"></a>boysint<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(boysint))</span>
-<span id="cb35-17"><a href="#cb35-17"></a><span class="co"># Run the chi.sq test using the freq column in the dataframe</span></span>
-<span id="cb35-18"><a href="#cb35-18"></a><span class="fu">chisq.test</span>(girlsint<span class="sc">$</span>Freq,boysint<span class="sc">$</span>Freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-2"><a href="#cb35-2"></a></span>
+<span id="cb35-3"><a href="#cb35-3"></a>girlsint<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">select</span>(IC011Q03TA, ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb35-5"><a href="#cb35-5"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb35-6"><a href="#cb35-6"></a>   <span class="fu">select</span>(IC011Q03TA)</span>
+<span id="cb35-7"><a href="#cb35-7"></a></span>
+<span id="cb35-8"><a href="#cb35-8"></a><span class="co"># Do the same for boys</span></span>
+<span id="cb35-9"><a href="#cb35-9"></a></span>
+<span id="cb35-10"><a href="#cb35-10"></a>boysint<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb35-11"><a href="#cb35-11"></a>  <span class="fu">select</span>(IC011Q03TA, ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb35-12"><a href="#cb35-12"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb35-13"><a href="#cb35-13"></a>   <span class="fu">select</span>(IC011Q03TA)</span>
+<span id="cb35-14"><a href="#cb35-14"></a></span>
+<span id="cb35-15"><a href="#cb35-15"></a><span class="co"># Create frequency count tables of those data frames</span></span>
+<span id="cb35-16"><a href="#cb35-16"></a><span class="co"># Note the chisq.test function takes data frames as inputs</span></span>
+<span id="cb35-17"><a href="#cb35-17"></a><span class="co"># but the output of table is a table, so we convert the tables</span></span>
+<span id="cb35-18"><a href="#cb35-18"></a><span class="co"># back to data frames</span></span>
+<span id="cb35-19"><a href="#cb35-19"></a></span>
+<span id="cb35-20"><a href="#cb35-20"></a>girlsint<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(girlsint))</span>
+<span id="cb35-21"><a href="#cb35-21"></a>boysint<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(boysint))</span>
+<span id="cb35-22"><a href="#cb35-22"></a></span>
+<span id="cb35-23"><a href="#cb35-23"></a><span class="co"># Run the chi.sq test using the freq column in the dataframe</span></span>
+<span id="cb35-24"><a href="#cb35-24"></a></span>
+<span id="cb35-25"><a href="#cb35-25"></a><span class="fu">chisq.test</span>(girlsint<span class="sc">$</span>Freq,boysint<span class="sc">$</span>Freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test
@@ -803,22 +844,29 @@ X-squared = 45, df = 25, p-value = 0.008362</code></pre>
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># IC009Q02TA - Available for use in school - a laptop</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a><span class="co"># Filter the data to get laptop use in the UK, put that into a new dataframe UKchidata</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a>UKchidata<span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">select</span>(CNT, IC009Q02TA)<span class="sc">%&gt;%</span></span>
-<span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb38-6"><a href="#cb38-6"></a>  <span class="fu">select</span>(IC009Q02TA)<span class="sc">%&gt;%</span></span>
-<span id="cb38-7"><a href="#cb38-7"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb38-8"><a href="#cb38-8"></a><span class="co"># Filter the data to get laptop use in the US, put that into a new dataframe USchidata</span></span>
-<span id="cb38-9"><a href="#cb38-9"></a>USchidata<span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb38-10"><a href="#cb38-10"></a>  <span class="fu">select</span>(CNT, IC009Q02TA)<span class="sc">%&gt;%</span></span>
-<span id="cb38-11"><a href="#cb38-11"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United States"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb38-12"><a href="#cb38-12"></a>  <span class="fu">select</span>(IC009Q02TA)<span class="sc">%&gt;%</span></span>
-<span id="cb38-13"><a href="#cb38-13"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb38-14"><a href="#cb38-14"></a><span class="co"># use table to count the entries and convert to a data frame</span></span>
-<span id="cb38-15"><a href="#cb38-15"></a>UKchidata<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(UKchidata))</span>
-<span id="cb38-16"><a href="#cb38-16"></a>USchidata<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(USchidata))</span>
-<span id="cb38-17"><a href="#cb38-17"></a><span class="co"># Do the chi squared test</span></span>
-<span id="cb38-18"><a href="#cb38-18"></a><span class="fu">chisq.test</span>(UKchidata<span class="sc">$</span>Freq, USchidata<span class="sc">$</span>Freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-3"><a href="#cb38-3"></a></span>
+<span id="cb38-4"><a href="#cb38-4"></a>UKchidata<span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">select</span>(CNT, IC009Q02TA)<span class="sc">%&gt;%</span></span>
+<span id="cb38-6"><a href="#cb38-6"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb38-7"><a href="#cb38-7"></a>  <span class="fu">select</span>(IC009Q02TA)<span class="sc">%&gt;%</span></span>
+<span id="cb38-8"><a href="#cb38-8"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb38-9"><a href="#cb38-9"></a></span>
+<span id="cb38-10"><a href="#cb38-10"></a><span class="co"># Filter the data to get laptop use in the US, put that into a new dataframe USchidata</span></span>
+<span id="cb38-11"><a href="#cb38-11"></a></span>
+<span id="cb38-12"><a href="#cb38-12"></a>USchidata<span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb38-13"><a href="#cb38-13"></a>  <span class="fu">select</span>(CNT, IC009Q02TA)<span class="sc">%&gt;%</span></span>
+<span id="cb38-14"><a href="#cb38-14"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United States"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb38-15"><a href="#cb38-15"></a>  <span class="fu">select</span>(IC009Q02TA)<span class="sc">%&gt;%</span></span>
+<span id="cb38-16"><a href="#cb38-16"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb38-17"><a href="#cb38-17"></a></span>
+<span id="cb38-18"><a href="#cb38-18"></a><span class="co"># use table to count the entries and convert to a data frame</span></span>
+<span id="cb38-19"><a href="#cb38-19"></a></span>
+<span id="cb38-20"><a href="#cb38-20"></a>UKchidata<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(UKchidata))</span>
+<span id="cb38-21"><a href="#cb38-21"></a>USchidata<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(USchidata))</span>
+<span id="cb38-22"><a href="#cb38-22"></a></span>
+<span id="cb38-23"><a href="#cb38-23"></a><span class="co"># Do the chi squared test</span></span>
+<span id="cb38-24"><a href="#cb38-24"></a></span>
+<span id="cb38-25"><a href="#cb38-25"></a><span class="fu">chisq.test</span>(UKchidata<span class="sc">$</span>Freq, USchidata<span class="sc">$</span>Freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test
@@ -835,13 +883,17 @@ X-squared = 21, df = 9, p-value = 0.01265</code></pre>
 <div class="question">
 <p>Are there statistically significant differences in mathematics scores of France, Germany, Spain, the UK and Italy? Find between which pairs of countries statistically significant differences in mathematics scores exist.</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># Create a dataframe of the required countries</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a>EuroPISA <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb41-3"><a href="#cb41-3"></a>  <span class="fu">select</span>(CNT, PV1MATH)<span class="sc">%&gt;%</span></span>
-<span id="cb41-4"><a href="#cb41-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"Spain"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"France"</span><span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"United Kingdom"</span><span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"Italy"</span><span class="sc">|</span>CNT<span class="sc">==</span><span class="st">"Germany"</span>)</span>
-<span id="cb41-5"><a href="#cb41-5"></a><span class="co"># Perform the anova</span></span>
-<span id="cb41-6"><a href="#cb41-6"></a>resaov<span class="ot">&lt;-</span><span class="fu">aov</span>(<span class="at">data=</span>EuroPISA, PV1MATH <span class="sc">~</span> CNT)</span>
-<span id="cb41-7"><a href="#cb41-7"></a><span class="fu">summary</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># Create a data frame of the required countries</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a></span>
+<span id="cb41-3"><a href="#cb41-3"></a>EuroPISA <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a>  <span class="fu">select</span>(CNT, PV1MATH)<span class="sc">%&gt;%</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Spain"</span><span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"France"</span><span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span><span class="sc">|</span> </span>
+<span id="cb41-6"><a href="#cb41-6"></a>         CNT <span class="sc">==</span> <span class="st">"Italy"</span><span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"Germany"</span>)</span>
+<span id="cb41-7"><a href="#cb41-7"></a></span>
+<span id="cb41-8"><a href="#cb41-8"></a><span class="co"># Perform the anova</span></span>
+<span id="cb41-9"><a href="#cb41-9"></a></span>
+<span id="cb41-10"><a href="#cb41-10"></a>resaov<span class="ot">&lt;-</span><span class="fu">aov</span>(<span class="at">data=</span>EuroPISA, PV1MATH <span class="sc">~</span> CNT)</span>
+<span id="cb41-11"><a href="#cb41-11"></a><span class="fu">summary</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>               Df    Sum Sq Mean Sq F value Pr(&gt;F)    
 CNT             4   1082967  270742   33.71 &lt;2e-16 ***
@@ -851,7 +903,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Yes, statistically significant differences exist between the countries Pr(&gt;F) &lt;2e-16 ***</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a><span class="co"># Perform a Tukey HSD test</span></span>
-<span id="cb43-3"><a href="#cb43-3"></a><span class="fu">TukeyHSD</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-3"><a href="#cb43-3"></a></span>
+<span id="cb43-4"><a href="#cb43-4"></a><span class="fu">TukeyHSD</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>  Tukey multiple comparisons of means
     95% family-wise confidence level
@@ -873,13 +926,19 @@ United Kingdom-Germany  -5.263839  -9.173636  -1.354043 0.0022356
 <span class="header-section-number">0.18</span> Task 19 Anova practice #2</h2>
 <div class="question">
 <p>For the UK PISA 2018 data set, which variable out of <code>WEALTH</code>, <code>ST004D01T</code>, <code>OCOD1</code> (Mother’s occupation), <code>OCOD2</code> (Father’s occupation), <code>ST011Q06TA</code> (having a link to the internet), and highest level of parental education (<code>HISCED</code>) accounts for the most variation in science score? What percentage of variance is explained by each variable?</p>
-<p>! This is a big calculation so will take some time to compute!</p>
+<p>! This is a big calculation so will take some time to compute !</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>UKPISA_2018 <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb46-2"><a href="#cb46-2"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb46-3"><a href="#cb46-3"></a></span>
-<span id="cb46-4"><a href="#cb46-4"></a>resaov<span class="ot">&lt;-</span><span class="fu">aov</span>(<span class="at">data=</span>UKPISA_2018, PV1SCIE <span class="sc">~</span> WEALTH <span class="sc">+</span> ST004D01T <span class="sc">+</span> OCOD1 <span class="sc">+</span> OCOD2 <span class="sc">+</span> ST011Q06TA <span class="sc">+</span> HISCED)</span>
-<span id="cb46-5"><a href="#cb46-5"></a><span class="fu">summary</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># Create a data frame for the UK</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>UKPISA_2018 <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
+<span id="cb46-4"><a href="#cb46-4"></a></span>
+<span id="cb46-5"><a href="#cb46-5"></a><span class="co"># Perform the anova calculation with science score as the dependent variable</span></span>
+<span id="cb46-6"><a href="#cb46-6"></a></span>
+<span id="cb46-7"><a href="#cb46-7"></a>resaov<span class="ot">&lt;-</span><span class="fu">aov</span>(<span class="at">data=</span>UKPISA_2018, PV1SCIE <span class="sc">~</span> WEALTH <span class="sc">+</span> ST004D01T <span class="sc">+</span> OCOD1 <span class="sc">+</span> </span>
+<span id="cb46-8"><a href="#cb46-8"></a>              OCOD2 <span class="sc">+</span> ST011Q06TA <span class="sc">+</span> HISCED)</span>
+<span id="cb46-9"><a href="#cb46-9"></a></span>
+<span id="cb46-10"><a href="#cb46-10"></a><span class="co"># Print the output</span></span>
+<span id="cb46-11"><a href="#cb46-11"></a><span class="fu">summary</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>               Df   Sum Sq Mean Sq F value   Pr(&gt;F)    
 WEALTH          1  1229855 1229855 161.257  &lt; 2e-16 ***
@@ -889,10 +948,11 @@ ST004D01T       1     4594    4594   0.602    0.438
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 1517 observations deleted due to missingness</code></pre>
 </div>
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>eta <span class="ot">&lt;-</span> <span class="fu">etaSquared</span>(resaov)</span>
-<span id="cb48-2"><a href="#cb48-2"></a>eta <span class="ot">&lt;-</span> <span class="dv">100</span><span class="sc">*</span>eta</span>
-<span id="cb48-3"><a href="#cb48-3"></a>eta <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(eta)</span>
-<span id="cb48-4"><a href="#cb48-4"></a>eta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># Calcuate the value of eta and multiple by a 100 to get the % of variance explained</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>eta <span class="ot">&lt;-</span> <span class="fu">etaSquared</span>(resaov)</span>
+<span id="cb48-3"><a href="#cb48-3"></a>eta <span class="ot">&lt;-</span> <span class="dv">100</span><span class="sc">*</span>eta</span>
+<span id="cb48-4"><a href="#cb48-4"></a>eta <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(eta)</span>
+<span id="cb48-5"><a href="#cb48-5"></a>eta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>                 eta.sq eta.sq.part
 WEALTH     0.0274095131 0.034125604

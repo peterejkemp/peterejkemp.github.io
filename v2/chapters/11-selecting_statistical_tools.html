@@ -87,7 +87,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="../css/mastemr.css">
+}</script><script src="../site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><script src="../site_libs/d3-3.3.8/d3.min.js"></script><script src="../site_libs/dagre-0.4.0/dagre-d3.min.js"></script><link href="../site_libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
+<script src="../site_libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script><link href="../site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="../site_libs/chromatography-0.1/chromatography.js"></script><script src="../site_libs/DiagrammeR-binding-1.0.10/DiagrammeR.js"></script><link rel="stylesheet" href="../css/mastemr.css">
 </head>
 <body class="nav-sidebar docked nav-fixed">
 
@@ -354,92 +356,181 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">1</span> Pre-session tasks</h1>
 <section id="pre-session-reading" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="pre-session-reading">
 <span class="header-section-number">1.1</span> Pre-session reading</h2>
+<p>Look over the test selection flow chart:</p>
+<div class="cell">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">DiagrammeR</span>(<span class="st">"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="st">    graph LR</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="st">     A[What do you want to do?]--&gt;B[Test a hypothesis - on what kind of data?];</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="st">     A--&gt;C[Examine a relationship];</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="st">     B--&gt;D[Continuous];</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="st">     D--&gt;E[Normally Distribured/Parametric];</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="st">     E--&gt;F[1 Group];</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="st">     F--&gt;G[One sample t-test];</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="st">     E--&gt;H[Do a test of normality];</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="st">     H--&gt;I[qqplot];</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="st">     D--&gt;J[Tests on skewed distributions];</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="st">     B--&gt;K[Discrete / Categorical];</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="st">     K--&gt;L[2 Groups];</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="st">     L--&gt;M[Unpaired groups];</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="st">     M--&gt;N[Expected counts more than 5 in more than 75 per cent of cells];</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="st">     N--&gt;O[Chi-square];</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="st">     M--&gt;P[Expected counts more than 5 in less than 75 per cent of cells];</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="st">     P--&gt;Q[Fisher exact test];</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="st">     D--&gt;R[Continuous variables];</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="st">     R--&gt;S[Linear Regression];</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="st">     E--&gt;T[2 groups]</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="st">     T--&gt;U[Paired groups]</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="st">     T--&gt;V[Unpaired groups]</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="st">     U--&gt;W[Paired t-test]</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="st">     V--&gt;X[Unpaired t-test]</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="st">      E--&gt;Y[3 groups or more]</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="st">    Y--&gt;Z[Anova]</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="st">    style G fill:#E5E25F;</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="st">    style I fill:#D62724D1;</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="st">    style J fill:#B6E6E6;</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="st">    style I fill:#B6E6E6;</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="st">    style W fill:#E5E25F;</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="st">    style X fill:#E5E25F;</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="st">    style Z fill:#E5E25F;</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="st">    style Q fill:#E5E25F;</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a><span class="st">    style O fill:#E5E25F;</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a><span class="st">    style S fill:#E5E25F;</span></span>
+<span id="cb1-39"><a href="#cb1-39"></a><span class="st">    "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div class="DiagrammeR html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7083f13024f1ea6ce215" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-7083f13024f1ea6ce215">{"x":{"diagram":"\n    graph LR\n     A[What do you want to do?]-->B[Test a hypothesis - on what kind of data?];\n     A-->C[Examine a relationship];\n     B-->D[Continuous];\n     D-->E[Normally Distribured/Parametric];\n     E-->F[1 Group];\n     F-->G[One sample t-test];\n     E-->H[Do a test of normality];\n     H-->I[qqplot];\n     D-->J[Tests on skewed distributions];\n     B-->K[Discrete / Categorical];\n     K-->L[2 Groups];\n     L-->M[Unpaired groups];\n     M-->N[Expected counts more than 5 in more than 75 per cent of cells];\n     N-->O[Chi-square];\n     M-->P[Expected counts more than 5 in less than 75 per cent of cells];\n     P-->Q[Fisher exact test];\n     D-->R[Continuous variables];\n     R-->S[Linear Regression];\n     E-->T[2 groups]\n     T-->U[Paired groups]\n     T-->V[Unpaired groups]\n     U-->W[Paired t-test]\n     V-->X[Unpaired t-test]\n      E-->Y[3 groups or more]\n    Y-->Z[Anova]\n    style G fill:#E5E25F;\n    style I fill:#D62724D1;\n    style J fill:#B6E6E6;\n    style I fill:#B6E6E6;\n    style W fill:#E5E25F;\n    style X fill:#E5E25F;\n    style Z fill:#E5E25F;\n    style Q fill:#E5E25F;\n    style O fill:#E5E25F;\n    style S fill:#E5E25F;\n    "},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 </section><section id="pre-session-task---loading-the-data" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="pre-session-task---loading-the-data">
 <span class="header-section-number">1.2</span> Pre-session task - Loading the data</h2>
 <p>We will continue to use the PISA_2018 dataset, make sure it is loaded.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load PISA data</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(arrow)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_2018_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Load PISA data</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_2018_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section><section id="choosing-appropriate-quantitative-tests" class="level1" data-number="2"><h1 data-number="2">
 <span class="header-section-number">2</span> Choosing appropriate quantitative tests</h1>
-<p>In the lecture, this flow chart was introduced:</p>
-<p><embed src="images/011 Selecting a test-01.pdf" style="width:20cm;height:15cm"></p>
+<p>In the lecture, this flow chart was introduced (which us produced using R code here - unfold the code to see how this is done using the <code>DiagrammeR</code> package)</p>
+<div class="cell">
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">DiagrammeR</span>(<span class="st">"</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="st">    graph LR</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="st">     A[What do you want to do?]--&gt;B[Test a hypothesis - on what kind of data?];</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="st">     A--&gt;C[Examine a relationship];</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="st">     B--&gt;D[Continuous];</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="st">     D--&gt;E[Normally Distribured/Parametric];</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="st">     E--&gt;F[1 Group];</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="st">     F--&gt;G[One sample t-test];</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="st">     E--&gt;H[Do a test of normality];</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="st">     H--&gt;I[qqplot];</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="st">     D--&gt;J[Tests on skewed distributions];</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="st">     B--&gt;K[Discrete / Categorical];</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="st">     K--&gt;L[2 Groups];</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="st">     L--&gt;M[Unpaired groups];</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="st">     M--&gt;N[Expected counts more than 5 in more than 75 per cent of cells];</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="st">     N--&gt;O[Chi-square];</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="st">     M--&gt;P[Expected counts more than 5 in less than 75 per cent of cells];</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="st">     P--&gt;Q[Fisher exact test];</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="st">     D--&gt;R[Continuous variables];</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="st">     R--&gt;S[Linear Regression];</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="st">     E--&gt;T[2 groups]</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="st">     T--&gt;U[Paired groups]</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="st">     T--&gt;V[Unpaired groups]</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="st">     U--&gt;W[Paired t-test]</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a><span class="st">     V--&gt;X[Unpaired t-test]</span></span>
+<span id="cb3-26"><a href="#cb3-26"></a><span class="st">      E--&gt;Y[3 groups or more]</span></span>
+<span id="cb3-27"><a href="#cb3-27"></a><span class="st">    Y--&gt;Z[Anova]</span></span>
+<span id="cb3-28"><a href="#cb3-28"></a><span class="st">    style G fill:#E5E25F;</span></span>
+<span id="cb3-29"><a href="#cb3-29"></a><span class="st">    style I fill:#D62724D1;</span></span>
+<span id="cb3-30"><a href="#cb3-30"></a><span class="st">    style J fill:#B6E6E6;</span></span>
+<span id="cb3-31"><a href="#cb3-31"></a><span class="st">    style I fill:#B6E6E6;</span></span>
+<span id="cb3-32"><a href="#cb3-32"></a><span class="st">    style W fill:#E5E25F;</span></span>
+<span id="cb3-33"><a href="#cb3-33"></a><span class="st">    style X fill:#E5E25F;</span></span>
+<span id="cb3-34"><a href="#cb3-34"></a><span class="st">    style Z fill:#E5E25F;</span></span>
+<span id="cb3-35"><a href="#cb3-35"></a><span class="st">    style Q fill:#E5E25F;</span></span>
+<span id="cb3-36"><a href="#cb3-36"></a><span class="st">    style O fill:#E5E25F;</span></span>
+<span id="cb3-37"><a href="#cb3-37"></a><span class="st">    style S fill:#E5E25F;</span></span>
+<span id="cb3-38"><a href="#cb3-38"></a><span class="st">    "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div class="DiagrammeR html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-42ad743b85a2483b1647" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-42ad743b85a2483b1647">{"x":{"diagram":"\n    graph LR\n     A[What do you want to do?]-->B[Test a hypothesis - on what kind of data?];\n     A-->C[Examine a relationship];\n     B-->D[Continuous];\n     D-->E[Normally Distribured/Parametric];\n     E-->F[1 Group];\n     F-->G[One sample t-test];\n     E-->H[Do a test of normality];\n     H-->I[qqplot];\n     D-->J[Tests on skewed distributions];\n     B-->K[Discrete / Categorical];\n     K-->L[2 Groups];\n     L-->M[Unpaired groups];\n     M-->N[Expected counts more than 5 in more than 75 per cent of cells];\n     N-->O[Chi-square];\n     M-->P[Expected counts more than 5 in less than 75 per cent of cells];\n     P-->Q[Fisher exact test];\n     D-->R[Continuous variables];\n     R-->S[Linear Regression];\n     E-->T[2 groups]\n     T-->U[Paired groups]\n     T-->V[Unpaired groups]\n     U-->W[Paired t-test]\n     V-->X[Unpaired t-test]\n      E-->Y[3 groups or more]\n    Y-->Z[Anova]\n    style G fill:#E5E25F;\n    style I fill:#D62724D1;\n    style J fill:#B6E6E6;\n    style I fill:#B6E6E6;\n    style W fill:#E5E25F;\n    style X fill:#E5E25F;\n    style Z fill:#E5E25F;\n    style Q fill:#E5E25F;\n    style O fill:#E5E25F;\n    style S fill:#E5E25F;\n    "},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 <p>That chart will help you choose the test to use for the tasks below. # Seminar Tasks</p>
 <section id="task-1-plot-a-graph-of-mean-science-scores-by-country" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="task-1-plot-a-graph-of-mean-science-scores-by-country">
 <span class="header-section-number">2.1</span> Task 1 Plot a graph of mean science scores by country</h2>
 <p>Imagine we wish to compare the mean scores of students on the science element of PISA by plotting a bar graph. First you need to use the <code>sumarise</code> function to calculate means by countries. Then use ggplot with <code>geom_col</code> to create the graph. <strong><em>Extension task:</em></strong> add error bars for the standard deviations of science scores.</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Task 1: Plot a graph of mean science scores by country</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co"># Create a variable avgscience - for every country (Group_by(CNT)) calculate the mean</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># science score (PV1SCIE) and ignore NA (na.rm=TRUE)</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>avgscience <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">summarise</span>(<span class="at">mean_sci =</span> <span class="fu">mean</span>(PV1SCIE, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co"># Arrange in descending order  </span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_sci))</span>
-<span id="cb2-9"><a href="#cb2-9"></a></span>
-<span id="cb2-10"><a href="#cb2-10"></a></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="co"># Plot the data in avgscience, x=CNT (reorder to ascending order), mean science score on the y</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="co"># Change the fill colour to red, rotate the text, locate the text and reduce the font size</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="fu">ggplot</span>(<span class="at">data =</span> avgscience, </span>
-<span id="cb2-14"><a href="#cb2-14"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(CNT, <span class="sc">-</span> mean_sci), <span class="at">y =</span> mean_sci)) <span class="sc">+</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="fl">0.95</span>, <span class="at">vjust =</span> <span class="fl">0.2</span>, </span>
-<span id="cb2-17"><a href="#cb2-17"></a>                                 <span class="at">size =</span> <span class="dv">5</span>))<span class="sc">+</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Mean Science Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Task 1: Plot a graph of mean science scores by country</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co"># Create a variable avgscience - for every country (Group_by(CNT)) calculate the mean</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># science score (PV1SCIE) and ignore NA (na.rm=TRUE)</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>avgscience <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">summarise</span>(<span class="at">mean_sci =</span> <span class="fu">mean</span>(PV1SCIE, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co"># Arrange in descending order  </span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_sci))</span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co"># Plot the data in avgscience, x=CNT (reorder to ascending order), mean science score on the y</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co"># Change the fill colour to red, rotate the text, locate the text and reduce the font size</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="fu">ggplot</span>(<span class="at">data =</span> avgscience, </span>
+<span id="cb4-14"><a href="#cb4-14"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(CNT, <span class="sc">-</span> mean_sci), <span class="at">y =</span> mean_sci)) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="fl">0.95</span>, <span class="at">vjust =</span> <span class="fl">0.2</span>, </span>
+<span id="cb4-17"><a href="#cb4-17"></a>                                 <span class="at">size =</span> <span class="dv">5</span>))<span class="sc">+</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Mean Science Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="11-selecting_statistical_tools_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<p><img src="11-selecting_statistical_tools_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Extension version: added summarise to find standard deviation </span></span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>avgscience <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">summarise</span>(<span class="at">mean_sci =</span> <span class="fu">mean</span>(PV1SCIE, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb3-6"><a href="#cb3-6"></a>            <span class="at">sd_sci =</span> <span class="fu">sd</span>(PV1SCIE, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_sci))</span>
-<span id="cb3-8"><a href="#cb3-8"></a></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="co"># Extension version: geom_errorbar added with aes y=mean_sci (the centre of the bar) and then the maximum and minimum set to the mean plus or minus the standard deviation (ymin=mean_sci-sd_sci, ymax=mean_sci+sd_sci) </span></span>
-<span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="fu">ggplot</span>(<span class="at">data =</span> avgscience, </span>
-<span id="cb3-12"><a href="#cb3-12"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(CNT, <span class="sc">-</span>mean_sci), <span class="at">y =</span> mean_sci)) <span class="sc">+</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="fl">0.95</span>, <span class="at">vjust =</span> <span class="fl">0.2</span>, </span>
-<span id="cb3-15"><a href="#cb3-15"></a>                                 <span class="at">size =</span> <span class="dv">5</span>))<span class="sc">+</span></span>
-<span id="cb3-16"><a href="#cb3-16"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Mean Science Score"</span>)<span class="sc">+</span></span>
-<span id="cb3-17"><a href="#cb3-17"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean_sci, <span class="at">ymin =</span> mean_sci<span class="sc">-</span>sd_sci, </span>
-<span id="cb3-18"><a href="#cb3-18"></a>                    <span class="at">ymax =</span> mean_sci<span class="sc">+</span>sd_sci), </span>
-<span id="cb3-19"><a href="#cb3-19"></a>                <span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">'black'</span>, <span class="at">size =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Extension version: added summarise to find standard deviation </span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>avgscience <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">summarise</span>(<span class="at">mean_sci =</span> <span class="fu">mean</span>(PV1SCIE, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb5-6"><a href="#cb5-6"></a>            <span class="at">sd_sci =</span> <span class="fu">sd</span>(PV1SCIE, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_sci))</span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co"># Extension version: geom_errorbar added with aes y=mean_sci (the centre of the bar) and then the maximum and minimum set to the mean plus or minus the standard deviation (ymin=mean_sci-sd_sci, ymax=mean_sci+sd_sci) </span></span>
+<span id="cb5-10"><a href="#cb5-10"></a></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="fu">ggplot</span>(<span class="at">data =</span> avgscience, </span>
+<span id="cb5-12"><a href="#cb5-12"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(CNT, <span class="sc">-</span>mean_sci), <span class="at">y =</span> mean_sci)) <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="fl">0.95</span>, <span class="at">vjust =</span> <span class="fl">0.2</span>, </span>
+<span id="cb5-15"><a href="#cb5-15"></a>                                 <span class="at">size =</span> <span class="dv">5</span>))<span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Mean Science Score"</span>)<span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean_sci, <span class="at">ymin =</span> mean_sci<span class="sc">-</span>sd_sci, </span>
+<span id="cb5-18"><a href="#cb5-18"></a>                    <span class="at">ymax =</span> mean_sci<span class="sc">+</span>sd_sci), </span>
+<span id="cb5-19"><a href="#cb5-19"></a>                <span class="at">width =</span> <span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">'black'</span>, <span class="at">size =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="11-selecting_statistical_tools_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
+<p><img src="11-selecting_statistical_tools_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section><section id="task-2-are-there-differences-in-science-scores-by-gender-for-the-total-data-set" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="task-2-are-there-differences-in-science-scores-by-gender-for-the-total-data-set">
 <span class="header-section-number">2.2</span> Task 2 Are there differences in science scores by gender for the total data set?</h2>
 <p>Consider the kinds of variables that represent the science score. What is an appropriate test to determine differences in the means between the two groups? Create two vectors, for boys and girls, that you can feed into the <code>t.test</code> function.</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Task 2: Are there differences in Science scores by gender for the total data set? (No)</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="co"># A comparision of means of two continuous variables, use a t-test.</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># Choose the  gender (ST004D01T) and science score columns (PV1SCIE) from  2018 data, filter for males </span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Put that data into MaleSci</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a>MaleSci <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
-<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">select</span>(ST004D01T, PV1SCIE) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>)</span>
-<span id="cb4-9"><a href="#cb4-9"></a></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co"># Choose the  gender (ST004D01T) and science score columns (PV1SCIE) from  2018 data, filter for females </span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="co"># Put that data into FemaleSci</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a></span>
-<span id="cb4-13"><a href="#cb4-13"></a>FemaleSci <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
-<span id="cb4-14"><a href="#cb4-14"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1SCIE) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-15"><a href="#cb4-15"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>)</span>
-<span id="cb4-16"><a href="#cb4-16"></a></span>
-<span id="cb4-17"><a href="#cb4-17"></a><span class="co">#Do a t-test comparing MaleSci and FemaleSci</span></span>
-<span id="cb4-18"><a href="#cb4-18"></a><span class="fu">t.test</span>(MaleSci<span class="sc">$</span>PV1SCIE, FemaleSci<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Task 2: Are there differences in Science scores by gender for the total data set? (No)</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co"># A comparision of means of two continuous variables, use a t-test.</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># Choose the  gender (ST004D01T) and science score columns (PV1SCIE) from  2018 data, filter for males </span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Put that data into MaleSci</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a>MaleSci <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">select</span>(ST004D01T, PV1SCIE) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>)</span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="co"># Choose the  gender (ST004D01T) and science score columns (PV1SCIE) from  2018 data, filter for females </span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="co"># Put that data into FemaleSci</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a></span>
+<span id="cb6-13"><a href="#cb6-13"></a>FemaleSci <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb6-14"><a href="#cb6-14"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1SCIE) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-15"><a href="#cb6-15"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>)</span>
+<span id="cb6-16"><a href="#cb6-16"></a></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="co">#Do a t-test comparing MaleSci and FemaleSci</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="fu">t.test</span>(MaleSci<span class="sc">$</span>PV1SCIE, FemaleSci<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -458,25 +549,25 @@ mean of x mean of y
 <span class="header-section-number">2.3</span> Task 3 Are there differences in science scores by gender for UK students?</h2>
 <p>As above, but include a filter by country.</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Task 3: Are there differences in Science scores by gender for UK students? (No)</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="co"># A comparision of means of two continuous variables, use a t-test.</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># Choose the country (CNT), gender (ST004D01T) and science score columns (PV1SCIE) from  2018 data, filter for males and the UK</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Put that data into UKMaleSci</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a>UKMaleSci <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
-<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1SCIE) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>)  <span class="sc">%&gt;%</span> </span>
-<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
-<span id="cb6-10"><a href="#cb6-10"></a></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="co"># Choose the country (CNT), gender (ST004D01T) and science score columns (PV1SCIE) from  2018 data, filter for females and the UK</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="co"># Put that data into UKFemaleSci</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a>UKFemaleSci <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
-<span id="cb6-14"><a href="#cb6-14"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1SCIE) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-15"><a href="#cb6-15"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-16"><a href="#cb6-16"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
-<span id="cb6-17"><a href="#cb6-17"></a></span>
-<span id="cb6-18"><a href="#cb6-18"></a><span class="co"># Do a t-test comparing UKMaleSci and UKFemaleSci</span></span>
-<span id="cb6-19"><a href="#cb6-19"></a><span class="fu">t.test</span>(UKMaleSci<span class="sc">$</span>PV1SCIE, UKFemaleSci<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Task 3: Are there differences in Science scores by gender for UK students? (No)</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="co"># A comparision of means of two continuous variables, use a t-test.</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="co"># Choose the country (CNT), gender (ST004D01T) and science score columns (PV1SCIE) from  2018 data, filter for males and the UK</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># Put that data into UKMaleSci</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a></span>
+<span id="cb8-6"><a href="#cb8-6"></a>UKMaleSci <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1SCIE) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-8"><a href="#cb8-8"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>)  <span class="sc">%&gt;%</span> </span>
+<span id="cb8-9"><a href="#cb8-9"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10"></a></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="co"># Choose the country (CNT), gender (ST004D01T) and science score columns (PV1SCIE) from  2018 data, filter for females and the UK</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="co"># Put that data into UKFemaleSci</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>UKFemaleSci <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-14"><a href="#cb8-14"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1SCIE) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-15"><a href="#cb8-15"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-16"><a href="#cb8-16"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
+<span id="cb8-17"><a href="#cb8-17"></a></span>
+<span id="cb8-18"><a href="#cb8-18"></a><span class="co"># Do a t-test comparing UKMaleSci and UKFemaleSci</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a><span class="fu">t.test</span>(UKMaleSci<span class="sc">$</span>PV1SCIE, UKFemaleSci<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -495,11 +586,11 @@ mean of x mean of y
 <span class="header-section-number">2.4</span> Task 4 For the whole data set, is there a correlation between students’ science score and reading scores?</h2>
 <p>Reflect on the appropriate test to show correlation between two scores. This test can be carried out quite simply using a couple of lines of code. <strong><em>Extensions:</em></strong> a) perform the same analysis, but consider the impact of gender; b) Find the correlations between reading and science core by country, and rank from most highly correlated to least.</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Task 4: For the whole data set, is there a correlation between students’ science score reading score? (Yes, significant 0.77)</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="co"># Do the regression test between science score (PV1SCIE) and reading score (PV1READ) on the PISA_2018 data</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>lmSciRead <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1SCIE <span class="sc">~</span> PV1READ, <span class="at">data =</span> PISA_2018)</span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="fu">summary</span>(lmSciRead)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Task 4: For the whole data set, is there a correlation between students’ science score reading score? (Yes, significant 0.77)</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="co"># Do the regression test between science score (PV1SCIE) and reading score (PV1READ) on the PISA_2018 data</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>lmSciRead <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1SCIE <span class="sc">~</span> PV1READ, <span class="at">data =</span> PISA_2018)</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="fu">summary</span>(lmSciRead)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -521,9 +612,9 @@ Residual standard error: 48.65 on 606625 degrees of freedom
 Multiple R-squared:  0.7755,    Adjusted R-squared:  0.7755 
 F-statistic: 2.095e+06 on 1 and 606625 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Extension 1: Add Gender:</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a> lmSciRead <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1SCIE <span class="sc">~</span> PV1READ <span class="sc">+</span> ST004D01T, <span class="at">data=</span>PISA_2018)</span>
-<span id="cb10-3"><a href="#cb10-3"></a> <span class="fu">summary</span>(lmSciRead)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Extension 1: Add Gender:</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a> lmSciRead <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1SCIE <span class="sc">~</span> PV1READ <span class="sc">+</span> ST004D01T, <span class="at">data=</span>PISA_2018)</span>
+<span id="cb12-3"><a href="#cb12-3"></a> <span class="fu">summary</span>(lmSciRead)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -546,65 +637,65 @@ Residual standard error: 47.54 on 606622 degrees of freedom
 Multiple R-squared:  0.7856,    Adjusted R-squared:  0.7856 
 F-statistic: 1.111e+06 on 2 and 606622 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Extentions 2: Rank by correlation</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a> CNTPISA<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1READ)<span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">group_by</span>(CNT)<span class="sc">%&gt;%</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci=</span><span class="fu">mean</span>(PV1SCIE),</span>
-<span id="cb12-6"><a href="#cb12-6"></a>            <span class="at">MeanRead=</span><span class="fu">mean</span>(PV1READ),</span>
-<span id="cb12-7"><a href="#cb12-7"></a>            <span class="at">Cor=</span><span class="fu">cor</span>(PV1SCIE,PV1READ)) <span class="sc">%&gt;%</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Cor))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Extentions 2: Rank by correlation</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a> CNTPISA<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1READ)<span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">group_by</span>(CNT)<span class="sc">%&gt;%</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci=</span><span class="fu">mean</span>(PV1SCIE),</span>
+<span id="cb14-6"><a href="#cb14-6"></a>            <span class="at">MeanRead=</span><span class="fu">mean</span>(PV1READ),</span>
+<span id="cb14-7"><a href="#cb14-7"></a>            <span class="at">Cor=</span><span class="fu">cor</span>(PV1SCIE,PV1READ)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Cor))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="task-5-plot-a-representation-of-uk-students-science-score-against-reading-score-with-a-linear-best-fit-line." class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="task-5-plot-a-representation-of-uk-students-science-score-against-reading-score-with-a-linear-best-fit-line.">
 <span class="header-section-number">2.5</span> Task 5 Plot a representation of UK students’ science score against reading score, with a linear best fit line.</h2>
 <p>It will help here to create a <code>data.frame</code> that contains a filtered version of the whole dataset you can pass to <code>ggplot</code>.</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Task 5: Plot a representation of UK students’ science score against reading score.</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a> </span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="co"># Choose the three variables of interest, science score (PV1SCIE), reading score (PV1READ) and country (CNT)</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="co"># and filter for the UK. Put the values into regplotdata</span></span>
-<span id="cb13-5"><a href="#cb13-5"></a>regplotdata<span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
-<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">select</span>(PV1SCIE, PV1READ, CNT) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-7"><a href="#cb13-7"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
-<span id="cb13-8"><a href="#cb13-8"></a></span>
-<span id="cb13-9"><a href="#cb13-9"></a><span class="co"># Plot the data in regplotdata, set the science score on the x-xis and reading on y-axis, set the size, colour and alpha (transparency)</span></span>
-<span id="cb13-10"><a href="#cb13-10"></a><span class="co"># of points and add a linear ('lm') black line</span></span>
-<span id="cb13-11"><a href="#cb13-11"></a></span>
-<span id="cb13-12"><a href="#cb13-12"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> regplotdata, </span>
-<span id="cb13-13"><a href="#cb13-13"></a>         <span class="fu">aes</span>(<span class="at">x =</span> PV1SCIE, <span class="at">y =</span> PV1READ)) <span class="sc">+</span></span>
-<span id="cb13-14"><a href="#cb13-14"></a>    <span class="fu">geom_point</span>(<span class="at">size=</span><span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">"red"</span>, <span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span> </span>
-<span id="cb13-15"><a href="#cb13-15"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">colour=</span><span class="st">"black"</span>)<span class="sc">+</span></span>
-<span id="cb13-16"><a href="#cb13-16"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Science Score"</span>, <span class="at">y =</span> <span class="st">"Reading score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Task 5: Plot a representation of UK students’ science score against reading score.</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a> </span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="co"># Choose the three variables of interest, science score (PV1SCIE), reading score (PV1READ) and country (CNT)</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="co"># and filter for the UK. Put the values into regplotdata</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>regplotdata<span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span> </span>
+<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">select</span>(PV1SCIE, PV1READ, CNT) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-7"><a href="#cb15-7"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
+<span id="cb15-8"><a href="#cb15-8"></a></span>
+<span id="cb15-9"><a href="#cb15-9"></a><span class="co"># Plot the data in regplotdata, set the science score on the x-xis and reading on y-axis, set the size, colour and alpha (transparency)</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a><span class="co"># of points and add a linear ('lm') black line</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a></span>
+<span id="cb15-12"><a href="#cb15-12"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> regplotdata, </span>
+<span id="cb15-13"><a href="#cb15-13"></a>         <span class="fu">aes</span>(<span class="at">x =</span> PV1SCIE, <span class="at">y =</span> PV1READ)) <span class="sc">+</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a>    <span class="fu">geom_point</span>(<span class="at">size=</span><span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">"red"</span>, <span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span> </span>
+<span id="cb15-15"><a href="#cb15-15"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">colour=</span><span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb15-16"><a href="#cb15-16"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Science Score"</span>, <span class="at">y =</span> <span class="st">"Reading score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="11-selecting_statistical_tools_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<p><img src="11-selecting_statistical_tools_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section><section id="task-6-do-girls-and-boys-in-the-uk-engage-in-different-levels-of-environmental-activism" class="level2" data-number="2.6"><h2 data-number="2.6" class="anchored" data-anchor-id="task-6-do-girls-and-boys-in-the-uk-engage-in-different-levels-of-environmental-activism">
 <span class="header-section-number">2.6</span> Task 6 Do girls and boys in the UK engage in different levels of environmental activism?</h2>
-<p>The PISA 2018 data set includes the variable <code>ST222Q09H</code> (I participate in activities in favour of environmental protection). Determine if the data for girls and boys are homogenous (i.e.&nbsp;if the null hypothesis that girls and boys engage in the same levels of activism is true).</p>
+<p>The PISA 2018 data set includes the variable <code>ST222Q09HA</code> (I participate in activities in favour of environmental protection). Determine if the data for girls and boys are homogenous (i.e.&nbsp;if the null hypothesis that girls and boys engage in the same levels of activism is true).</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Task 6: Is there a relationship between UK boys' and girls' levels of enviromnental activism.</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>  </span>
-<span id="cb14-3"><a href="#cb14-3"></a>chi_data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">select</span>(CNT, ST004D01T, ST222Q09HA) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)  <span class="sc">%&gt;%</span> </span>
-<span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb14-7"><a href="#cb14-7"></a><span class="co"># We wish to compare two categorical variables, gender (Male/Female) and engagement in enviromental activism (Yes/No)</span></span>
-<span id="cb14-8"><a href="#cb14-8"></a><span class="co"># Create a frequency table</span></span>
-<span id="cb14-9"><a href="#cb14-9"></a>Activismtable <span class="ot">&lt;-</span> chi_data <span class="sc">%&gt;%</span></span>
-<span id="cb14-10"><a href="#cb14-10"></a>    <span class="fu">group_by</span>(ST004D01T, ST222Q09HA)<span class="sc">%&gt;%</span></span>
-<span id="cb14-11"><a href="#cb14-11"></a>    <span class="fu">count</span>()</span>
-<span id="cb14-12"><a href="#cb14-12"></a><span class="co"># Pivot the table to create a contingency table</span></span>
-<span id="cb14-13"><a href="#cb14-13"></a>Activismtable <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(Activismtable, <span class="at">names_from =</span> ST222Q09HA, </span>
-<span id="cb14-14"><a href="#cb14-14"></a>                             <span class="at">values_from =</span> n)</span>
-<span id="cb14-15"><a href="#cb14-15"></a></span>
-<span id="cb14-16"><a href="#cb14-16"></a><span class="co"># Drop the first column for passing to chisq.test</span></span>
-<span id="cb14-17"><a href="#cb14-17"></a>Activismtable <span class="ot">&lt;-</span> <span class="fu">subset</span>(Activismtable, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>,<span class="st">"No"</span>))</span>
-<span id="cb14-18"><a href="#cb14-18"></a>  </span>
-<span id="cb14-19"><a href="#cb14-19"></a><span class="co"># Perform the chisq.test on the data</span></span>
-<span id="cb14-20"><a href="#cb14-20"></a></span>
-<span id="cb14-21"><a href="#cb14-21"></a><span class="fu">chisq.test</span>(Activismtable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Task 6: Is there a relationship between UK boys' and girls' levels of enviromnental activism.</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  </span>
+<span id="cb16-3"><a href="#cb16-3"></a>chi_data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">select</span>(CNT, ST004D01T, ST222Q09HA) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)  <span class="sc">%&gt;%</span> </span>
+<span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb16-7"><a href="#cb16-7"></a><span class="co"># We wish to compare two categorical variables, gender (Male/Female) and engagement in enviromental activism (Yes/No)</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="co"># Create a frequency table</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a>Activismtable <span class="ot">&lt;-</span> chi_data <span class="sc">%&gt;%</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a>    <span class="fu">group_by</span>(ST004D01T, ST222Q09HA)<span class="sc">%&gt;%</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a>    <span class="fu">count</span>()</span>
+<span id="cb16-12"><a href="#cb16-12"></a><span class="co"># Pivot the table to create a contingency table</span></span>
+<span id="cb16-13"><a href="#cb16-13"></a>Activismtable <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(Activismtable, <span class="at">names_from =</span> ST222Q09HA, </span>
+<span id="cb16-14"><a href="#cb16-14"></a>                             <span class="at">values_from =</span> n)</span>
+<span id="cb16-15"><a href="#cb16-15"></a></span>
+<span id="cb16-16"><a href="#cb16-16"></a><span class="co"># Drop the first column for passing to chisq.test</span></span>
+<span id="cb16-17"><a href="#cb16-17"></a>Activismtable <span class="ot">&lt;-</span> <span class="fu">subset</span>(Activismtable, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>,<span class="st">"No"</span>))</span>
+<span id="cb16-18"><a href="#cb16-18"></a>  </span>
+<span id="cb16-19"><a href="#cb16-19"></a><span class="co"># Perform the chisq.test on the data</span></span>
+<span id="cb16-20"><a href="#cb16-20"></a></span>
+<span id="cb16-21"><a href="#cb16-21"></a><span class="fu">chisq.test</span>(Activismtable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test with Yates' continuity correction
@@ -612,25 +703,25 @@ F-statistic: 1.111e+06 on 2 and 606622 DF,  p-value: &lt; 2.2e-16</code></pre>
 data:  Activismtable
 X-squared = 0.07963, df = 1, p-value = 0.7778</code></pre>
 </div>
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># p-value= 0.7778 - accept the null hypothesis - boys and girls have similar levels of activism</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># p-value= 0.7778 - accept the null hypothesis - boys and girls have similar levels of activism</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="task-7-does-participation-in-environmental-activism-explain-variation-in-science-score-for-uk-students" class="level2" data-number="2.7"><h2 data-number="2.7" class="anchored" data-anchor-id="task-7-does-participation-in-environmental-activism-explain-variation-in-science-score-for-uk-students">
 <span class="header-section-number">2.7</span> Task 7 Does participation in environmental activism explain variation in science score for UK students?</h2>
 <p>Arguments have been made the students who know more science, might engage in more environmental activism. Determine what percentage of variation in UK science scores is explained by a) the variable <code>ST222Q09HA</code> (I participate in activities in favour of environmental protection); b) <code>ST222Q04HA</code> (I sign environmental petitions online); and c) <code>ST222Q03HA</code> (I choose certain products for ethical or environmental reasons).</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Task 7: How much varibaility in science score is explained by participation in activism?</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="co"># Explanation of variation is performed by carrying out an anova test</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a></span>
-<span id="cb17-4"><a href="#cb17-4"></a>UK_data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">select</span>(CNT, PV1SCIE, ST222Q09HA, ST222Q04HA, ST222Q03HA) <span class="sc">%&gt;%</span></span>
-<span id="cb17-6"><a href="#cb17-6"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)  <span class="sc">%&gt;%</span> </span>
-<span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb17-8"><a href="#cb17-8"></a></span>
-<span id="cb17-9"><a href="#cb17-9"></a><span class="co"># Perform the anova test</span></span>
-<span id="cb17-10"><a href="#cb17-10"></a>resaov <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="at">data =</span> UK_data, </span>
-<span id="cb17-11"><a href="#cb17-11"></a>              PV1SCIE <span class="sc">~</span>ST222Q09HA <span class="sc">+</span> ST222Q04HA <span class="sc">+</span> ST222Q03HA)</span>
-<span id="cb17-12"><a href="#cb17-12"></a><span class="fu">summary</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Task 7: How much variability in science score is explained by participation in activism?</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="co"># Explanation of variation is performed by carrying out an anova test</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a>UK_data <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">select</span>(CNT, PV1SCIE, ST222Q09HA, ST222Q04HA, ST222Q03HA) <span class="sc">%&gt;%</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)  <span class="sc">%&gt;%</span> </span>
+<span id="cb19-7"><a href="#cb19-7"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb19-8"><a href="#cb19-8"></a></span>
+<span id="cb19-9"><a href="#cb19-9"></a><span class="co"># Perform the anova test</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a>resaov <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="at">data =</span> UK_data, </span>
+<span id="cb19-11"><a href="#cb19-11"></a>              PV1SCIE <span class="sc">~</span>ST222Q09HA <span class="sc">+</span> ST222Q04HA <span class="sc">+</span> ST222Q03HA)</span>
+<span id="cb19-12"><a href="#cb19-12"></a><span class="fu">summary</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>              Df   Sum Sq Mean Sq F value  Pr(&gt;F)   
 ST222Q09HA     1    58181   58181   6.984 0.00827 **
@@ -639,20 +730,20 @@ ST222Q04HA     1    14619   14619   1.755 0.18540
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">#&gt; Significant differences exist for ST222Q09HA (I participate in activities in favour of environmental protection) (Pr(&gt;F)=0.00827) but not ST222Q04HA (signing petitions) (p=0.18540) or choosing products for ethical/environmental reasons (p=0.45662)</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="co"># Determine the % of variation explained</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="fu">library</span>(lsr)</span>
-<span id="cb19-5"><a href="#cb19-5"></a>eta <span class="ot">&lt;-</span> <span class="fu">etaSquared</span>(resaov)</span>
-<span id="cb19-6"><a href="#cb19-6"></a>eta <span class="ot">&lt;-</span> <span class="dv">100</span><span class="sc">*</span>eta</span>
-<span id="cb19-7"><a href="#cb19-7"></a>eta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co">#&gt; Significant differences exist for ST222Q09HA (I participate in activities in favour of environmental protection) (Pr(&gt;F)=0.00827) but not ST222Q04HA (signing petitions) (p=0.18540) or choosing products for ethical/environmental reasons (p=0.45662)</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="co"># Determine the % of variation explained</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="fu">library</span>(lsr)</span>
+<span id="cb21-5"><a href="#cb21-5"></a>eta <span class="ot">&lt;-</span> <span class="fu">etaSquared</span>(resaov)</span>
+<span id="cb21-6"><a href="#cb21-6"></a>eta <span class="ot">&lt;-</span> <span class="dv">100</span><span class="sc">*</span>eta</span>
+<span id="cb21-7"><a href="#cb21-7"></a>eta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>               eta.sq eta.sq.part
 ST222Q09HA 0.11363973  0.11391504
 ST222Q04HA 0.05024603  0.05039979
 ST222Q03HA 0.02119558  0.02126664</code></pre>
 </div>
-<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co">#&gt; Participation in environmental activism only explains 0.11% of variation in science scores  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co">#&gt; Participation in environmental activism only explains 0.11% of variation in science scores  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
