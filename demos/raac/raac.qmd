@@ -1,5 +1,5 @@
 ---
-title: "RAAC in English schools - 2023-10-19"
+title: "RAAC in English schools - 2023-12-06"
 format: 
   html:
     toc: true
@@ -19,6 +19,7 @@ tbl-cap-location: top
 
 #setup_TRACER_vars()
 #?desc
+
 
 # TODO: find out why 139218 149972 aren't in the schools df, update schools to tell us the type of school, e.g. primary, secondary, 16 plus etc
 
@@ -58,7 +59,7 @@ raac_raw <- read_excel(glue(basefolder, "_reports/RAAC/RAAC.xlsx"),
   clean_names() %>%
   filter(`setting_name` != "Not applicable") %>%
   mutate(urn = as.numeric(urn)) %>%
-  dplyr::rename("setting_mitigation" = "setting_mitigation_16_10_2023")
+  dplyr::rename("setting_mitigation" = "setting_mitigation_27_11_23")
 
 raac <- left_join(raac_raw, 
           schools %>% 
@@ -99,6 +100,28 @@ library(sf)
 library(scales)
 library(htmltools)
 
+# need to fix Lat Lon for schools
+
+
+#get northing easting
+edubase <- read_csv("D:\\Data\\EdR\\Edubase\\edubasealldata.csv")
+raac <- left_join(raac %>% select(-Easting, -Northing), 
+                  edubase %>% 
+            select(URN, Easting, Northing) %>% 
+            filter(URN %in% raac$urn) %>% distinct(),
+          by=c("urn"="URN")) %>% distinct() 
+  
+
+lat_lon <- raac %>%
+  st_as_sf(coords = c("Easting", "Northing"), crs = 27700) %>%
+  st_transform(4326) %>%
+  st_coordinates() %>%
+  as_tibble()
+
+
+raac$lat <- lat_lon$Y
+raac$lon <- lat_lon$X
+
 # set colour scale
 pal <- colorNumeric(c("black", "green"), 
                     domain=c(min(raac$stu_total, na.rm = TRUE):max(raac$stu_total, na.rm = TRUE)))
@@ -124,12 +147,12 @@ map_raac_provision <- leaflet(data=raac) %>%
 
 # Introduction
 
-A very quick lunchtime report on school providers with RAAC and their mitigation plans. Data from [here](https://www.gov.uk/government/publications/reinforced-autoclaved-aerated-concrete-raac-management-information) and up to date as of 2023-10-19, using the DfE dataset that states: "List of education settings with confirmed RAAC as of **16 October 2023**". Data likely to change, mistakes highly likely mine, please drop me an email if you have any suggestions / questions.
+A very quick lunchtime report on school providers with RAAC and their mitigation plans. Data from [here](https://www.gov.uk/government/publications/reinforced-autoclaved-aerated-concrete-raac-management-information) and up to date as of 2023-12-06, using the DfE dataset that states: "List of education settings with confirmed RAAC as of **27 November 2023**". Data likely to change, mistakes highly likely mine, please drop me an email if you have any suggestions / questions.
 
 -   summary tables are for state schools and state school students
 -   Total student figures come from the 2021/22 DfE dataset
 -   it's possible schools using new URNs as of 2022/23 or 2023/24 will not be included in this list (e.g. academy converters)
--   The return rate for each LA is still unclear. Low occurance of RAAC might be due to high return rate. This needs clearing up.
+-   The return rate for each LA is still unclear. Low occurrence of RAAC might be due to high return rate. This needs clearing up.
 -   The DfE have changed the format of the data file again, from ods to xlsx, with two sheets rather than one. Some errors might appear through that.
 
 # Map of providers with RAAC
@@ -153,7 +176,7 @@ map_raac_provision
 #| warning: false
 raac_all <- schools %>% 
             group_by(URN) %>% 
-            filter(year == 2022,
+            filter(year == 2023,
                    schType %in% c("Comprehensive", "Special", "Grammar")) %>%
             mutate(raac = URN %in% raac$urn)
 
@@ -203,8 +226,16 @@ la_prov <- raac_all %>%
   dplyr::rename(provider_no = `FALSE`,
          provider_yes = `TRUE`) %>%
   mutate(`provider_%` = 1*(provider_yes / (provider_no + provider_yes)))
-  
+
 la_all <- left_join(la_stu, la_prov)
+
+# Missing schools
+sch_missing <- setdiff(raac$urn, raac_all$URN)
+sch_missing <- raac %>% 
+  filter(urn %in% sch_missing) %>% 
+  select(urn, setting_name, local_authority, type_of_setting) %>% 
+  mutate(urn = glue('<p><a href = \"https://www.get-information-schools.service.gov.uk/Establishments/Establishment/Details/{urn}\">{urn}</a>'),
+         urn = map(urn, gt::html)) %>% gt()
 
 # number of children in each la in raac schools
 # percentage of children in each La in raac schools
@@ -252,10 +283,12 @@ overall_all %>% ungroup() %>% gt() %>%
   
 ```
 
+Some schools with RAAC are missing from this dataset:
+
 ```{r overall_by_school_type}
 #| warning: false
 #| echo: false
-
+sch_missing
 
 
 # get info on total % of primary and secondary schools closed
