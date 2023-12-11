@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>MASTEMR - Loading packages and exploring data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="../css/mastemr.css">
+</head>
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="index.qmd" class="navbar-brand navbar-brand-logo">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="index.qmd">
+    <span class="navbar-title">MASTEMR</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools ms-auto">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-2-Intro_to_analysis_software.html">Loading packages and exploring data</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Sessions</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">02 Introduction to R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-2-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Loading packages and exploring data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-3-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piping and dplyr</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making graphs</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-Descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Descriptive Statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Presentations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Introduction to PISA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-T-testsPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 T-tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-Writing_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08 Writing a quantitative report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09 Assignment 3 tutorials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-Correlation_and_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 Correlation and regression</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 Selecting statistical tools</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-value_of_quant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 The value of quantitative methods</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Additional tests</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A6-Bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Statistics</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendicies</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A2-DfE_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DfE England</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A3-TIMSS_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TIMSS, PIRLS and ICILS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A4-Other_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A5-Self_Study_Tasks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix Self Study Tasks</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#sec-loading" id="toc-sec-loading" class="nav-link active" data-scroll-target="#sec-loading"><span class="header-section-number">1</span> Loading data</a></li>
+  <li><a href="#dataframes" id="toc-dataframes" class="nav-link" data-scroll-target="#dataframes"><span class="header-section-number">2</span> Dataframes</a></li>
+  <li><a href="#loading-data-from-the-web" id="toc-loading-data-from-the-web" class="nav-link" data-scroll-target="#loading-data-from-the-web"><span class="header-section-number">3</span> Loading data from the web</a></li>
+  <li><a href="#sec-loading-computer" id="toc-sec-loading-computer" class="nav-link" data-scroll-target="#sec-loading-computer"><span class="header-section-number">4</span> Loading data from your computer</a></li>
+  <li>
+<a href="#setting-working-directories" id="toc-setting-working-directories" class="nav-link" data-scroll-target="#setting-working-directories"><span class="header-section-number">5</span> Setting working directories</a>
+  <ul class="collapse">
+<li><a href="#proper-addresses" id="toc-proper-addresses" class="nav-link" data-scroll-target="#proper-addresses"><span class="header-section-number">5.1</span> Proper addresses</a></li>
+  </ul>
+</li>
+  <li><a href="#sec-parquet" id="toc-sec-parquet" class="nav-link" data-scroll-target="#sec-parquet"><span class="header-section-number">6</span> .parquet files</a></li>
+  <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files"><span class="header-section-number">7</span> .csv files</a></li>
+  <li>
+<a href="#exploring-data" id="toc-exploring-data" class="nav-link" data-scroll-target="#exploring-data"><span class="header-section-number">8</span> Exploring data</a>
+  <ul class="collapse">
+<li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">8.1</span> Questions</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Loading packages and exploring data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header><p>This course focuses on using the <em>tidyverse</em>; a free collection of programming <em>packages</em> that will allow you to write code that imports data, tidys it, transforms it into useful datasets, visualises findings, creates statistical models and communicates findings to others data using a standardised set of commands.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/data-science-workflow.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Data science workflow - RStudio</figcaption></figure>
+</div>
+<p>For many people the tidyverse is the main reason that they use R. The tidyverse is used widely in government, academia, NGOs and industry, notable examples include the <a href="https://johnburnmurdoch.github.io/slides/r-ggplot/#/">Financial Times</a> and the <a href="https://bbc.github.io/rcookbook/">BBC</a>. Code in the tidyverse can be (relatively) easily understood by others and <em>you</em>, when you come back to a project after several months.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Try this out</strong></p>
+<p>The code above transforms data and converts it into a graph. It doesn’t have any comments, but you should hopefully be able to understand what a lot of the code does by just reading it. Can you guess what each line does? Try running the code by selecting parts of it and pressing <code>control</code> | <code>command ⌘</code> and <code>Enter</code></p>
+</div>
+</div>
+<section id="sec-loading" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Loading data</h1>
+<p>We can’t do much with R without loading data from elsewhere. Data will come in many formats and R should be able to deal with all of them. Some of the datasets you access will be a few rows and columns; others, like the ones we are going to use on this course, might run into hundreds of thousands or even millions of rows and hundreds or thousands of columns. Depending on the format you are using, you might need to use specific packages. A few of the data file types you might meet are described below:</p>
+<table class="table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 69%">
+</colgroup>
+<thead><tr class="header">
+<th>File type</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Comma separated values [.csv]</td>
+<td>As it says in the name, <code>.csv</code> files store data by separating data items with commas. They are a common way of transferring data and can be easily created and read by Excel, Google spreadsheets and text editors (in addition to R). CSVs aren’t compressed so will generally be larger than other file types. They don’t store information on the types of data stored in the file so you might find yourself having to specify that a date column is a date, rather than a string of text. You can read and write csv files without the need to load any packages, but if you do use <code>readr</code> you might find things go much faster.</td>
+</tr>
+<tr class="even">
+<td>Excel [.xls | .xlsx | .xlsxm]</td>
+<td>Excel files store data in a compressed custom format. This means files will generally be smaller than CSVs and will also contain information on the types of data stored in different columns. R can read and write these files using the <code>openxlsx</code> package, but you can also use the tidyverse’s <code>readxl</code> for reading, and <code>writexl</code> for writing for excel formats.</td>
+</tr>
+<tr class="odd">
+<td>R Data [.rds]</td>
+<td>R has it’s own data format, <code>.rds</code>. Saving to this format means that you will make perfect copies of your R data, including data types and factors. When you load <code>.rds</code> files they will look exactly the same as when you saved them. Data can be highly compressed and it’s one of the fastest formats for getting data into R. You can read and write <code>.rds</code> files without the need to load any packages, but using the functions in <code>readr</code> might speed things up a bit. You won’t be able to look at <code>.rds</code> files in other programs such as Excel</td>
+</tr>
+<tr class="even">
+<td>Arrow [.parquet]</td>
+<td>Apache Arrow <code>.parquet</code> is a relatively new format that allows for the transfer of files between different systems. Files are small and incredibly fast to load, whilst looking exactly the same as when you save them. The PISA dataset used here, that takes ~20 seconds to load in <code>.rds</code> format, will load in less than 2 seconds in <code>.parquet</code> format. Because of the way that data is stored you won’t be able to open these files in programs such as Excel. You will need the <code>arrow</code> package to read and write <code>.parquet</code> files.</td>
+</tr>
+<tr class="odd">
+<td>SPSS [.sav]</td>
+<td>SPSS is a common analysis tool in the world of social science. The native format for SPSS data is <code>.sav</code>. These files are compressed and include information on column labels and column datatypes. You will need either the <code>haven</code> or <code>foreign</code> packages to read data into R. Once you have loaded the .sav you will probably want to convert the data into a format that is more suitable for R, normally this will involve converting columns into factors. We cover <em>factors</em> in more detail below.</td>
+</tr>
+<tr class="even">
+<td>Stata [.dta]</td>
+<td>
+<code>haven</code> or <code>foreign</code> packages to read data into R</td>
+</tr>
+<tr class="odd">
+<td>SAS [.sas]</td>
+<td>
+<code>haven</code> or <code>foreign</code> packages to read data into R</td>
+</tr>
+<tr class="even">
+<td>Structured Query Language [.sql]</td>
+<td>a common format for data stored in large databases. Normally SQL code would be used to query these, you can use the tidyverse to help construct SQL this through the package <code>dbplyr</code> which will convert your tidyverse pipe code into SQL. R can be set up to communicate directly with databases using the <code>DBI</code> package.</td>
+</tr>
+<tr class="odd">
+<td>JavaScript Object Notation [.json]</td>
+<td>
+<code>.json</code> is a popular format for sharing data on the web. You can use <code>jsonlite</code> and <code>rjson</code> to access this type of data</td>
+</tr>
+</tbody>
+</table>
+<p>For this course we will be looking at <code>.csv</code>, <code>excel</code>, <code>.rds</code> and <code>parquet</code> files.</p>
+</section><section id="dataframes" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> Dataframes</h1>
+<p>Loading datasets into R will normally store them as <em>dataframes</em> (also known as <em>tibbles</em> when using the tidyverse). Dataframes are the equivalent of tables in a spreadsheet, with rows, columns and datatypes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">select</span>(CNT, PV1MATH, ESCS, IC172Q01JA) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">mutate</span>(<span class="at">CNT =</span> CNT <span class="sc">%&gt;%</span> <span class="fu">as.character</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  CNT     PV1MATH   ESCS IC172Q01JA       
+  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;fct&gt;            
+1 Albania    180.  1.11  Agree            
+2 Albania    308. -3.05  Strongly disagree
+3 Albania    268. -0.187 &lt;NA&gt;             
+4 Albania    273. -3.22  Disagree         
+5 Albania    435. -1.05  Agree            </code></pre>
+</div>
+</div>
+<p>The table above has 4 columns, each column has a datatype, <code>CNT</code> is a character vector, PV1MATH is a double (numeric) vector, ESCS is a double (numeric) vector and <code>IC172Q01JA</code> is a factor. For more about datatypes, see <strong>?@sec-datatypes</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Core to the <em>tidyverse</em> is the idea of <em>tidy data</em>, a rule of thumb for creating data sets that can be easily manipulated, modeled and presented. <em>Tidy data</em> are data sets where each variable is a column and each observation a row.</p>
+<p>This data isn’t tidy data as each row has contains multiple exam results (observations):</p>
+<table class="table">
+<thead><tr class="header">
+<th>ID</th>
+<th>Exam 1</th>
+<th>Grade 1</th>
+<th>Exam 2</th>
+<th>Grade 2</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>R2341</td>
+<td>English</td>
+<td>4</td>
+<td>Maths</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>R8842</td>
+<td>English</td>
+<td>5</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>This dataframe is tidy data as each student has one entry for each exam:</p>
+<table class="table">
+<thead><tr class="header">
+<th>ID</th>
+<th>Exam</th>
+<th>Grade</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>R2341</td>
+<td>English</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>R2341</td>
+<td>Maths</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>R8842</td>
+<td>English</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>First we need to get some data into R so we can start analysing them. We can load large datatables into R by either providing the online web address, or by loading it from a local file directory on your hard drive. Both methods are covered below:</p>
+</section><section id="loading-data-from-the-web" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> Loading data from the web</h1>
+<p>To download files from the web you’ll need to find the exact location of the file you are using. For example below we will need another package, <code>openxlsx</code>, which you need to <em>install</em> before you load it (see: <strong>?@sec-packages</strong>, or use line 1 below). The code shown will download the files from an online Google drive directly into objects in R using <code>read.xlsx(&lt;file_web_address&gt;, &lt;sheet_name&gt;)</code>:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To convert data on your google drive into a link that works in R, you can use the following website: <a href="https://sites.google.com/site/gdocs2direct/" class="uri">https://sites.google.com/site/gdocs2direct/</a>. Note that not all read/load commands in R will work with web addresses and some will require you have to copies of the datasets on your disk drive. Additionally, downloading large datasets from the web directly into R can be very slow, loading the dataset from your harddrive will nearly always be <em>much</em> faster.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">install.packages</span>(<span class="st">"openxlsx"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>results <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"https://drive.google.com/uc?export=download&amp;id=1tp9xe3dS__eg7RrXf0T_oMxcrz_TbMdM"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5"></a>                      <span class="at">sheet=</span><span class="st">"Results"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>schools <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"https://drive.google.com/uc?export=download&amp;id=1tp9xe3dS__eg7RrXf0T_oMxcrz_TbMdM"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7"></a>                      <span class="at">sheet=</span><span class="st">"Schools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="sec-loading-computer" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> Loading data from your computer</h1>
+<p>Downloading files directly from web addresses can be slow and you might want to prefer to use files saved to your computer’s hard drive. You can do this by following the steps below:</p>
+<p>Download the <code>PISA_2022_student_subset.parquet</code> file from <a href="../Users/k1765032/Library/CloudStorage/GoogleDrive-richardandrewbrock@gmail.com/.shortcut-targets-by-id/1c3CkaEBOICzepArDfjQUP34W2BYhFjM4/PISR/Data/PISA/2022/PISA_student_2022.parquet">here</a> and save it to your computer where your R code file is.</p>
+<p>Copy the location of the file (see next step for help)</p>
+<ul>
+<li>
+<p>To find the location of a file in <strong><em>Windows</em></strong> do the following:</p>
+<ol type="1">
+<li>
+<p>Navigate to the location of the file in <em>Windows Explorer</em>:</p>
+<p><img src="images/navigate_file_location.png" class="img-fluid"></p>
+</li>
+<li>
+<p>Click on the address bar</p>
+<p><img src="images/select_file_location.png" class="img-fluid"></p>
+</li>
+<li><p>Copy the location</p></li>
+</ol>
+</li>
+<li>
+<p>To find the location of a file in <strong><em>Mac OSX</em></strong> do the following:</p>
+<ol type="1">
+<li><p>Open <em>Finder</em></p></li>
+<li><p>Navigate to the folder where you saved the file</p></li>
+<li>
+<p>Right click on the name of the file, then press the <strong>option</strong> <code>⌥</code> (or <code>Alt</code>) button and select <code>Copy &lt;name of file&gt; as Pathname</code></p>
+<p><img src="images/mac_pathnames.jpg" class="img-fluid"></p>
+</li>
+<li><p>Alternatively, follow <a href="https://support.apple.com/en-gb/guide/mac-help/mchlp1774/mac">this</a></p></li>
+</ol>
+</li>
+</ul>
+<p>To load this particular data into R we need to use the <code>read_parquet</code> command from the <code>arrow</code> package, specifying the location and name of the file we are loading. See the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">install.packages</span>(<span class="st">"arrow"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[C:/Users/Peter/code/PISA_2022_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="setting-working-directories" class="level1" data-number="5"><h1 data-number="5">
+<span class="header-section-number">5</span> Setting working directories</h1>
+<p>Using the <code>setwd(&lt;location&gt;)</code> you can specify where R will look by default for any datasets. In the example below, the <code>dfe_data.xlsx</code> will have been downloaded and stored in <code>C:/Users/Peter/code</code>. By running <code>setwd("C:/Users/Peter/code")</code> R will always look in that location when trying to load files, meaning that <code>read_parquet(r"[C:/Users/Peter/code/PISA_student_2022.parquet]")</code> will be treated the same as <code>read_parquet(r"[PISA_student_2022.parquet]")</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># context: setup</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">setwd</span>(r<span class="st">"[C:/Users/Peter/code/]"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[PISA_student_2022.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To work out what your current working directory is, you can use <code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code>.</p>
+<section id="proper-addresses" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="proper-addresses">
+<span class="header-section-number">5.1</span> Proper addresses</h2>
+<p>You might have found that you get an error if you don’t convert your backslashes <code>\</code> into forwardslashes <code>/</code>. It’s common mistake and very annoying. In most programming languages a backslash signifies the start of a special command, for example <code>\n</code> signifies a <code>newline</code>.</p>
+<p>With R there are three ways to get around the problem of backslashes in file locations, for the location:<code>"C:\myfolder\"</code> we could:</p>
+<ul>
+<li>replace them with forwardslashes (as shown above):<code>"C:/myfolder/"</code>
+</li>
+<li>replace them with double backslashes (the special character specified by two backslashes is one backslash!):<code>"C:\\myfolder\\"</code>
+</li>
+<li>use the inbuilt R command to deal with filenames: <code>r"[C:\myfolder\]"</code>
+</li>
+</ul></section></section><section id="sec-parquet" class="level1" data-number="6"><h1 data-number="6">
+<span class="header-section-number">6</span> .parquet files</h1>
+<p>For the majority of this workbook you will be using a cutdown version of the <code>PISA_2022</code> student table. This dataset is huge and we have loaded it into R, selected fields we think are useful, converted column types to work with R and saved in the <code>.parquet</code> format. <code>.parquet</code> files are quick to load and small in size. To load a <code>.parquet</code> file you can use the <code>read_parquet(&lt;location&gt;)</code> command from the <code>arrow</code> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb6-2"><a href="#cb6-2"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">"&lt;yourfolder&gt;/PISA_2022_student_subset.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you want to save out any of your findings, you can use <code>write_parquet(&lt;object&gt;, &lt;location&gt;)</code>, where <code>object</code> is the table you are working on and <code>location</code> is where you want to save it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">write_rds</span>(PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"France"</span>), <span class="st">"&lt;yourfolder&gt;/pisa_france_2022.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="csv-files" class="level1" data-number="7"><h1 data-number="7">
+<span class="header-section-number">7</span> .csv files</h1>
+<p>A very common way of distributing data is through <code>.csv</code> files. These files can be easily compressed and opened in common office spreadsheet tools such as Excel. To load a <code>.csv</code> we can use <code>read_csv("&lt;file_location&gt;")</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="co"># loading from a website</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://barrolee.github.io/BarroLeeDataSet/BLData/BL_v3_MF.csv"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co"># loading from your hard drive</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"&lt;your_folder&gt;/BL_v3_MF.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You might want to save your own work as a <code>.csv</code> for use later or for manipulation in another tool e.g.&nbsp;Excel. To do this we can use <code>write_csv(&lt;your_data&gt;, "&lt;your_folder&gt;&lt;name&gt;.csv")</code>. <strong>NOTE</strong>: don’t forget to add <code>.csv</code> to the end of your “<your_folder><name><strong>.csv</strong>”, otherwise you might struggle to open the file in another program.</name></your_folder></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="co"># loading from a website</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">write_csv</span>(data, <span class="st">"summary_stats.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="exploring-data" class="level1" data-number="8"><h1 data-number="8">
+<span class="header-section-number">8</span> Exploring data</h1>
+<p>Now that we have loaded the <code>PISA_2022</code> dataset we can start to explore it.</p>
+<p>You can check that the tables have loaded correctly by typing the object name and ‘<em>running</em>’ the line (<code>control</code>|<code>command ⌘</code> and <code>Enter</code>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>PISA_2022</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 613,744 × 68
+   CNT     CNTSCHID CNTSTUID REGION  OECD  LANGTEST_QQQ ST003D02T ST003D03T
+ * &lt;fct&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;        &lt;fct&gt;     &lt;fct&gt;    
+ 1 Albania   800282   800001 Albania No    Albanian     May       2006     
+ 2 Albania   800115   800002 Albania No    Albanian     February  2006     
+ 3 Albania   800242   800003 Albania No    Albanian     August    2006     
+ 4 Albania   800245   800005 Albania No    Albanian     July      2006     
+ 5 Albania   800285   800006 Albania No    Albanian     January   2006     
+ 6 Albania   800172   800007 Albania No    Albanian     May       2006     
+ 7 Albania   800082   800008 Albania No    Albanian     May       2006     
+ 8 Albania   800274   800009 Albania No    Albanian     December  2006     
+ 9 Albania   800057   800010 Albania No    Albanian     August    2006     
+10 Albania   800132   800012 Albania No    Albanian     September 2006     
+# ℹ 613,734 more rows
+# ℹ 60 more variables: ST004D01T &lt;fct&gt;, ST250Q01JA &lt;fct&gt;, ST250Q02JA &lt;fct&gt;,
+#   ST250Q03JA &lt;fct&gt;, ST250Q05JA &lt;fct&gt;, ST251Q01JA &lt;fct&gt;, ST251Q06JA &lt;fct&gt;,
+#   ST253Q01JA &lt;fct&gt;, ST254Q01JA &lt;fct&gt;, ST254Q03JA &lt;fct&gt;, ST255Q01JA &lt;fct&gt;,
+#   ST256Q02JA &lt;fct&gt;, ST005Q01JA &lt;fct&gt;, ST007Q01JA &lt;fct&gt;, ST125Q01NA &lt;fct&gt;,
+#   ST261Q01JA &lt;fct&gt;, ST261Q04JA &lt;fct&gt;, ST038Q08NA &lt;fct&gt;, ST337Q07JA &lt;fct&gt;,
+#   ST324Q11JA &lt;fct&gt;, ST355Q03JA &lt;fct&gt;, FL150Q02TA &lt;fct&gt;, IC172Q01JA &lt;fct&gt;, …</code></pre>
+</div>
+</div>
+<p>We can see from this that the <code>tibble</code> (another word for <em>dataframe</em>, basically a spreadsheet table) is 613744 rows, with 68 columns <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This is data for all the students from around the world that took part in PISA 2022. The actual PISA dataset has many more columns than this, but for the examples here we have selected 68 of the more interesting data variables. The column names might seem rather confusing and you might want to refer to the [PISA 2022 code book](https://webfs.oecd.org/pisa2022/CY08MSP_CODEBOOK_5thDecember23.xlsx to find out what everything means.</p>
+<p>The data shown in the console window is only the top few rows and first few columns. To see the whole table click on the <code>Environment panel</code> and the table icon <img src="images/icon_table.png" class="img-fluid"> to explore the table:</p>
+<p><img src="images/environment_view_table.png" class="img-fluid"></p>
+<p>Alternatively, you can also hold down <code>command ⌘</code>|<code>control</code> and click on the table name in your R Script to view the table. You can also type <code>View(&lt;table_name&gt;)</code>. <strong>Note:</strong> this has a capital “V”</p>
+<p>In the table view mode you can read the label attached to each column, this will give you more detail about what the column stores. If you hover over columns it will display the label:</p>
+<p><img src="images/environment_col_label.png" class="img-fluid"></p>
+<p>Alternatively, to read the full label of a column, the following code can be used:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># You might also want to read the label of a field</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">attr</span>(PISA_2022<span class="sc">$</span>ST013Q01TA, <span class="st">"label"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+</div>
+<p>Each view only shows you 50 columns, to see more use the navigation panel:</p>
+<p><img src="images/navigation_panel.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To learn more about loading data from in other formats, e.g.&nbsp;SPSS and STATA, look at the tidyverse documentation for <a href="https://haven.tidyverse.org/">haven</a>.</p>
+</div>
+</div>
+<p>The <code>PISA_2022</code> dataframe is made up of multiple columns, with each column acting like a <em>vector</em>, which means each column stores values of only one datatype. If we look at the first four columns of the schools table, you can see the <code>CNTSTUID</code>, <code>ESCS</code> and <code>PV1MATH</code> columns are <code>&lt;dbl&gt;</code> (<code>numeric</code>) and the other three columns are of <code>&lt;fctr&gt;</code> (<code>factor</code>), a special datatype in R that helps store categorical and ordinal variables, see <strong>?@sec-factors</strong> for more information on how factors work.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  CNTSTUID ST004D01T CNT       ESCS PV1MATH
+     &lt;dbl&gt; &lt;fct&gt;     &lt;fct&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+1   800001 Female    Albania  1.11     180.
+2   800002 Male      Albania -3.05     308.
+3   800003 Male      Albania -0.187    268.
+4   800005 Female    Albania -3.22     273.
+5   800006 Female    Albania -1.05     435.</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vectors are data structures that bring together one or more data elements of the same datatype. E.g. we might have a numeric vector recording the grades of a class, or a character vector storing the gender of a set of students. To define a vector we use <code>c(item, item, ...)</code>, where <code>c</code> stands for combine. Vectors are very important to R, even declaring a single object, <code>x &lt;- 6</code>, is creating a vector of size one. To find out more about vectors see: <strong>?@sec-vectors</strong></p>
+</div>
+</div>
+<p>We can find out some general information about the table we have loaded. <code>nrow</code> and <code>ncol</code> tell you about the dimensions of the table</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">nrow</span>(PISA_2022)  <span class="co"># how many rows are in the results table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 613744</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ncol</span>(PISA_2022)  <span class="co"># how many columns are in the results table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 68</code></pre>
+</div>
+</div>
+<p>If we want to know the names of the columns we can use the <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> command that returns a vector. This can be a little confusing as it’ll return the names used in the dataframe, which can be hard to interpret, e.g.&nbsp;<code>ST004D01T</code> is PISA’s way of encoding gender. You might find the labels in the view of the table available through <code>view(PISA_2022)</code> and the <em>Environment</em> panel easier to navigate:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">names</span>(PISA_2022) <span class="co"># the column names of a table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "CNT"          "CNTSCHID"     "CNTSTUID"     "REGION"       "OECD"        
+ [6] "LANGTEST_QQQ" "ST003D02T"    "ST003D03T"    "ST004D01T"    "ST250Q01JA"  
+[11] "ST250Q02JA"   "ST250Q03JA"   "ST250Q05JA"   "ST251Q01JA"   "ST251Q06JA"  
+[16] "ST253Q01JA"   "ST254Q01JA"   "ST254Q03JA"   "ST255Q01JA"   "ST256Q02JA"  
+[21] "ST005Q01JA"   "ST007Q01JA"   "ST125Q01NA"   "ST261Q01JA"   "ST261Q04JA"  
+[26] "ST038Q08NA"   "ST337Q07JA"   "ST324Q11JA"   "ST355Q03JA"   "FL150Q02TA"  
+[31] "IC172Q01JA"   "WB150Q01HA"   "WB151Q01HA"   "WB152Q01HA"   "WB153Q01HA"  
+[36] "WB153Q02HA"   "WB153Q03HA"   "WB153Q04HA"   "WB153Q05HA"   "WB154Q01HA"  
+ [ reached getOption("max.print") -- omitted 28 entries ]</code></pre>
+</div>
+</div>
+<p>As mentioned, the columns in the tables are very much like a collection of <em>vectors</em>, to access these columns we can put a <code>$</code> [dollar sign] after the name of a table. This allows us to see all the columns that table has, using the up and down arrows to select, press the <code>Tab</code> key to complete:</p>
+<p><img src="images/dollar_fields.png" class="img-fluid"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>PISA_2022<span class="sc">$</span>ST004D01T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Female Male   Male   Female Female Male   Male   Female Female Female
+[11] Male   Male   Male   Male   Female Female Male   Female Female Female
+[21] Male   Male   Male   Female Female Female Female Female Male   Female
+[31] Male   Male   Male   Female Female Male   Female Female Female Female
+ [ reached getOption("max.print") -- omitted 613704 entries ]
+attr(,"label")
+[1] Student (Standardized) Gender
+Levels: Female Male Valid Skip Not Applicable Invalid No Response</code></pre>
+</div>
+</div>
+<p>We can apply functions to the returned column/vector, for example: <code>sum</code>, <code>mean</code>, <code>median</code>, <code>max</code>, <code>min</code>, <code>sd</code>, <code>round</code>, <code>unique</code>, <code>summary</code>, <code>length</code>. To find all the different/unique values contained in a column we can write:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">unique</span>(PISA_2022<span class="sc">$</span>CNT) <span class="co"># the unique values in this column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Albania               Baku (Azerbaijan)     Argentina            
+ [4] Australia             Austria               Belgium              
+ [7] Brazil                Brunei Darussalam     Bulgaria             
+[10] Cambodia              Canada                Chile                
+[13] Chinese Taipei        Colombia              Costa Rica           
+[16] Croatia               Czech Republic        Denmark              
+[19] Dominican Republic    El Salvador           Estonia              
+[22] Finland               France                Georgia              
+[25] Palestinian Authority Germany               Greece               
+[28] Guatemala             Hong Kong (China)     Hungary              
+[31] Iceland               Indonesia             Ireland              
+[34] Israel                Italy                 Kosovo               
+[37] Jamaica               Japan                 Kazakhstan           
+[40] Jordan               
+ [ reached getOption("max.print") -- omitted 40 entries ]
+81 Levels: Albania United Arab Emirates Argentina Australia Austria ... Viet Nam</code></pre>
+</div>
+</div>
+<p>We can also combine commands, with <code>length(&lt;vector&gt;)</code> telling you how many items are in the <code>unique(PISA_2022$CNT)</code> command</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># tells you the number of countries in PISA 2022</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">length</span>(<span class="fu">unique</span>(PISA_2022<span class="sc">$</span>CNT))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 80</code></pre>
+</div>
+</div>
+<p>You might meet errors when you try and run some of the commands because a field has missing data, recorded as <code>NA</code>. In the case below it doesn’t know what to do with the <code>NA</code> values in <code>PV1MATH</code>, so it gives up and returns <code>NA</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">max</span>(PISA_2022<span class="sc">$</span>ESCS) <span class="co"># max cultural capital value for all students</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>You can see the <code>NA</code>s by just loking at this column:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>PISA_2022<span class="sc">$</span>ESCS <span class="co"># NAs present in data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1.1112 -3.0507 -0.1867 -3.2198 -1.0548  1.0855 -0.7623 -1.0237 -1.1697
+[10]  0.2857 -1.9799  0.0630 -0.1699 -2.5828 -1.1781 -0.5965 -1.0903  0.7457
+[19] -0.8850 -1.6258 -0.3345 -2.0967 -1.1041 -1.0403      NA  0.3638 -2.7519
+[28] -0.1190 -1.2030 -0.4250 -0.1505 -1.7077 -1.6741 -1.0123 -1.0653 -0.4197
+[37] -1.7776 -0.2216 -1.1821  0.3523
+ [ reached getOption("max.print") -- omitted 613704 entries ]
+attr(,"label")
+[1] "Index of economic, social and cultural status"</code></pre>
+</div>
+</div>
+<p>To get around this you can tell R to remove/ignore the <code>NA</code> values when performing maths calculations:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># max cultural capital score for all students</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">max</span>(PISA_2022<span class="sc">$</span>ESCS, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.38</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>R’s inbuilt <code>mode</code> function doesn’t calculate the mathematical <em>mode</em>, instead it tells you what type of data you are dealing with. You can work out the mode of data by using the <code>modeest</code> package:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">library</span>(modeest)</span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">mlv</span>(PISA_2022<span class="sc">$</span>PV1MATH, <span class="at">method =</span> <span class="st">"mfv"</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 386.086</code></pre>
+</div>
+</div>
+<p>There is more discussion on how to use modes in R <a href="https://stackoverflow.com/questions/2547402/how-to-find-the-statistical-mode">here</a></p>
+</div>
+</div>
+<p>Calculations might also be upset when you try to perform maths on a column that is stored as another datatype. For example if you wanted to work out the mean common number of minutes spent learning the language that the PISA test was sat in, e.g.&nbsp;number of hours of weekly English lessons in England:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">mean</span>(PISA_2022<span class="sc">$</span>LMINS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>Looking at the structure of this column, we can see it is stored as a <code>factor</code>, not as a <code>numeric</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">str</span>(PISA_2022<span class="sc">$</span>LMINS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> NULL</code></pre>
+</div>
+</div>
+<p>So we need to change the type of the column to make it work with the <code>mean</code> command, changing it to <code>as.numeric(&lt;column&gt;)</code> for the calculation, for more details on datatypes, see <strong>?@sec-datatypes</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># this isn't ideal for proper analysis as you will need to remove all the "No Response" data</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="fu">mean</span>(<span class="fu">as.numeric</span>(PISA_2022<span class="sc">$</span>LMINS), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NaN</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To get a good overview of what a table contains, you can use the <code>str(&lt;table_name&gt;)</code> and <code>summary(&lt;table_name&gt;)</code> commands.</p>
+</div>
+</div>
+<section id="questions" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="questions">
+<span class="header-section-number">8.1</span> Questions</h2>
+<div class="question">
+<p>Using the <code>PISA_2022</code> dataset:</p>
+<ol type="1">
+<li>use the Environment window to view the dataset, what is the name and the label of the 100th column?</li>
+</ol>
+<div class="cell">
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># the 100th column is ST102Q02TA</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="co"># the label is: "How often during &lt;test language lessons&gt;: The teacher asks questions to check whether we have understood what was taught"</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a></span>
+<span id="cb41-4"><a href="#cb41-4"></a><span class="co"># you could use View() instead of the environment window, note the capital V</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a><span class="fu">View</span>(PISA_2022)</span>
+<span id="cb41-6"><a href="#cb41-6"></a><span class="co"># use could use the vector subset to fetch the 100th name</span></span>
+<span id="cb41-7"><a href="#cb41-7"></a><span class="fu">names</span>(PISA_2022)[<span class="dv">100</span>]</span>
+<span id="cb41-8"><a href="#cb41-8"></a></span>
+<span id="cb41-9"><a href="#cb41-9"></a><span class="co"># The vector is "ST062Q02TA"</span></span>
+<span id="cb41-10"><a href="#cb41-10"></a></span>
+<span id="cb41-11"><a href="#cb41-11"></a><span class="co"># you could use the attr function to find the label</span></span>
+<span id="cb41-12"><a href="#cb41-12"></a><span class="fu">attr</span>(PISA_2022<span class="sc">$</span>ST062Q02TA, <span class="st">"label"</span>)</span>
+<span id="cb41-13"><a href="#cb41-13"></a><span class="co">#  "In the last two full weeks of school, how often: I [skipped] some classes"</span></span>
+<span id="cb41-14"><a href="#cb41-14"></a><span class="co"># or using the dollar sign to load this field will also give the label</span></span>
+<span id="cb41-15"><a href="#cb41-15"></a>PISA_2022<span class="sc">$</span>ST062Q02TA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol start="2" type="1">
+<li>Use the dollar sign <code>$</code> to return the column <code>ST004D01T</code>. What is stored in this column?</li>
+</ol>
+<div class="cell">
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># Student (Standardized) Gender</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a>PISA_2022<span class="sc">$</span>ST004D01T</span>
+<span id="cb42-3"><a href="#cb42-3"></a></span>
+<span id="cb42-4"><a href="#cb42-4"></a><span class="co">#  [1] Female Male   Male   Female Female Male   Male   Female Female Female Male  </span></span>
+<span id="cb42-5"><a href="#cb42-5"></a><span class="co">#  [12] Male   Male   Male   Female Female Male   Female Female Female Male   Male  </span></span>
+<span id="cb42-6"><a href="#cb42-6"></a><span class="co">#  [23] Male   Female Female Female Female Female Male   Female Male   Male   Male  </span></span>
+<span id="cb42-7"><a href="#cb42-7"></a><span class="co">#  [34] Female Female Male   Female Female Female Female Female Male   Female Male  </span></span>
+<span id="cb42-8"><a href="#cb42-8"></a><span class="co">#   [ reached getOption("max.print") -- omitted 612744 entries ]</span></span>
+<span id="cb42-9"><a href="#cb42-9"></a><span class="co"># attr(,"label")</span></span>
+<span id="cb42-10"><a href="#cb42-10"></a><span class="co"># [1] Student (Standardized) Gender</span></span>
+<span id="cb42-11"><a href="#cb42-11"></a><span class="co"># Levels: Female Male Valid Skip Not Applicable Invalid No Response</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol start="3" type="1">
+<li>How many students results are in the whole table?</li>
+</ol>
+<div class="cell">
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">nrow</span>(PISA_2022)</span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="co"># [1] 613744</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol start="4" type="1">
+<li>What <code>unique</code> values does the dataset hold for Mother’s occupation <code>OCOD1</code> and Father’s occupation <code>OCOD2</code>? Which is larger?</li>
+</ol>
+<div class="cell">
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD1)</span>
+<span id="cb44-2"><a href="#cb44-2"></a><span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD2)</span>
+<span id="cb44-3"><a href="#cb44-3"></a></span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="co"># you can read the length from the above, or you could use the</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a><span class="co"># length command to tell you the length of the vector</span></span>
+<span id="cb44-6"><a href="#cb44-6"></a></span>
+<span id="cb44-7"><a href="#cb44-7"></a><span class="fu">length</span>(<span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD1))</span>
+<span id="cb44-8"><a href="#cb44-8"></a><span class="co"># [1] 590</span></span>
+<span id="cb44-9"><a href="#cb44-9"></a><span class="fu">length</span>(<span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD2))</span>
+<span id="cb44-10"><a href="#cb44-10"></a><span class="co"># [1] 590</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol start="5" type="1">
+<li>What are the <code>max</code>imum, <code>mean</code>, <code>median</code> and <code>min</code>umum science grades <code>PV1SCIE</code> achieved by any student</li>
+</ol>
+<div class="cell">
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># remember to set the na.rm = TRUE</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">max</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb45-3"><a href="#cb45-3"></a><span class="co"># [1] 895.375</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a><span class="fu">mean</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb45-5"><a href="#cb45-5"></a><span class="co"># [1] 450.4625</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a><span class="fu">median</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb45-7"><a href="#cb45-7"></a><span class="co"># [1] 444.464</span></span>
+<span id="cb45-8"><a href="#cb45-8"></a><span class="fu">min</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb45-9"><a href="#cb45-9"></a><span class="co"># [1] 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol start="6" type="1">
+<li>Explore the dataset and makes notes about the range of values of 2 other columns</li>
+</ol>
+</div>
+
+
+</section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<ol>
+<li id="fn1"><p>Even in this cut down format the PISA data might take a few minutes to load. You can find the full dataset <a href="https://drive.google.com/open?id=17AYuiKXxWFY6XkJZRCFXRYRRNNmata-f&amp;usp=drive_fs">here</a>, but be warned, it might crash you machine when trying to load it! Plug your laptop into a power supply, and having 16GB of RAM highly recommended! You might also need to wrangle some of the fields to make them work for your purposes, you might enjoy the challenge!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

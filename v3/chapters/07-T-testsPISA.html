@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>MASTEMR - 06 T-tests</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="../css/mastemr.css">
+</head>
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="index.qmd" class="navbar-brand navbar-brand-logo">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="index.qmd">
+    <span class="navbar-title">MASTEMR</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools ms-auto">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/07-T-testsPISA.html">06 T-tests</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Sessions</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">02 Introduction to R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-2-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Loading packages and exploring data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-3-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piping and dplyr</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making graphs</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-Descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Descriptive Statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Presentations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Introduction to PISA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-T-testsPISA.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">06 T-tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-Writing_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08 Writing a quantitative report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09 Assignment 3 tutorials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-Correlation_and_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 Correlation and regression</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 Selecting statistical tools</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-value_of_quant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 The value of quantitative methods</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Additional tests</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A6-Bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Statistics</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendicies</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A2-DfE_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DfE England</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A3-TIMSS_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TIMSS, PIRLS and ICILS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A4-Other_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A5-Self_Study_Tasks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix Self Study Tasks</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#pre-reading-and-pre-session-tasks" id="toc-pre-reading-and-pre-session-tasks" class="nav-link active" data-scroll-target="#pre-reading-and-pre-session-tasks"><span class="header-section-number">1</span> Pre-reading and pre-session tasks</a>
+  <ul class="collapse">
+<li><a href="#pre-reading" id="toc-pre-reading" class="nav-link" data-scroll-target="#pre-reading"><span class="header-section-number">1.1</span> Pre-reading</a></li>
+  <li><a href="#pre-session-task" id="toc-pre-session-task" class="nav-link" data-scroll-target="#pre-session-task"><span class="header-section-number">1.2</span> Pre-session task</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#t-tests" id="toc-t-tests" class="nav-link" data-scroll-target="#t-tests"><span class="header-section-number">2</span> T-tests</a>
+  <ul class="collapse">
+<li><a href="#conditions-of-t-tests" id="toc-conditions-of-t-tests" class="nav-link" data-scroll-target="#conditions-of-t-tests"><span class="header-section-number">2.1</span> Conditions of t-tests</a></li>
+  <li><a href="#hypothesis-testing-and-t-test" id="toc-hypothesis-testing-and-t-test" class="nav-link" data-scroll-target="#hypothesis-testing-and-t-test"><span class="header-section-number">2.2</span> Hypothesis Testing and t-test</a></li>
+  <li><a href="#types-of-t-test" id="toc-types-of-t-test" class="nav-link" data-scroll-target="#types-of-t-test"><span class="header-section-number">2.3</span> Types of t-test</a></li>
+  <li><a href="#one-sample-t-tests" id="toc-one-sample-t-tests" class="nav-link" data-scroll-target="#one-sample-t-tests"><span class="header-section-number">2.4</span> One Sample t-tests</a></li>
+  <li><a href="#unpaired-two-sample-t-tests" id="toc-unpaired-two-sample-t-tests" class="nav-link" data-scroll-target="#unpaired-two-sample-t-tests"><span class="header-section-number">2.5</span> Unpaired Two Sample t-tests</a></li>
+  <li><a href="#paired-two-sample-t-tests" id="toc-paired-two-sample-t-tests" class="nav-link" data-scroll-target="#paired-two-sample-t-tests"><span class="header-section-number">2.6</span> Paired Two Sample t-tests</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#anova-multiple-t-tests" id="toc-anova-multiple-t-tests" class="nav-link" data-scroll-target="#anova-multiple-t-tests"><span class="header-section-number">3</span> Anova (multiple t-tests)</a>
+  <ul class="collapse">
+<li><a href="#eta-squared" id="toc-eta-squared" class="nav-link" data-scroll-target="#eta-squared"><span class="header-section-number">3.1</span> Eta-squared</a></li>
+  <li><a href="#tukeys-hsd" id="toc-tukeys-hsd" class="nav-link" data-scroll-target="#tukeys-hsd"><span class="header-section-number">3.2</span> Tukey’s HSD</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#seminar-tasks" id="toc-seminar-tasks" class="nav-link" data-scroll-target="#seminar-tasks"><span class="header-section-number">4</span> Seminar Tasks</a>
+  <ul class="collapse">
+<li><a href="#task-1-choice-of-tests" id="toc-task-1-choice-of-tests" class="nav-link" data-scroll-target="#task-1-choice-of-tests"><span class="header-section-number">4.1</span> Task 1 Choice of tests</a></li>
+  <li><a href="#task-2-performing-t-tests" id="toc-task-2-performing-t-tests" class="nav-link" data-scroll-target="#task-2-performing-t-tests"><span class="header-section-number">4.2</span> Task 2 Performing t-tests</a></li>
+  <li><a href="#task-3-multiple-t-tests-with-anova" id="toc-task-3-multiple-t-tests-with-anova" class="nav-link" data-scroll-target="#task-3-multiple-t-tests-with-anova"><span class="header-section-number">4.3</span> Task 3 Multiple t-tests with anova</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#extension-and-additional-reading" id="toc-extension-and-additional-reading" class="nav-link" data-scroll-target="#extension-and-additional-reading"><span class="header-section-number">5</span> Extension and additional reading</a>
+  <ul class="collapse">
+<li><a href="#recreating-a-paper-in-r" id="toc-recreating-a-paper-in-r" class="nav-link" data-scroll-target="#recreating-a-paper-in-r"><span class="header-section-number">5.1</span> Recreating a paper in R</a></li>
+  </ul>
+</li>
+  <li><a href="#doing-t-tests-in-r" id="toc-doing-t-tests-in-r" class="nav-link" data-scroll-target="#doing-t-tests-in-r"><span class="header-section-number">6</span> Doing t-tests in R</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">06 T-tests</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header><section id="pre-reading-and-pre-session-tasks" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Pre-reading and pre-session tasks</h1>
+<section id="pre-reading" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="pre-reading">
+<span class="header-section-number">1.1</span> Pre-reading</h2>
+<p>Before the session, please read chapter 7, introduction to t-tests, in <span class="citation" data-cites="geher2014straightforward">Geher and Hall (<a href="#ref-geher2014straightforward" role="doc-biblioref">2014</a>)</span> <a href="https://ebookcentral.proquest.com/lib/kcl/reader.action?docID=1692209&amp;ppg=136">available here</a>.</p>
+</section><section id="pre-session-task" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="pre-session-task">
+<span class="header-section-number">1.2</span> Pre-session task</h2>
+</section></section><section id="t-tests" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> T-tests</h1>
+<p>T-tests are statistical tests used to determine if the mean of a sample is different to a presumed population mean, or if the means of two different samples are different to one another.</p>
+<p>Here are some examples in educational research of when t-tests might be applied:</p>
+<ol type="1">
+<li>A school wants to measure whether there is a statistical difference between Year 11’s Progress 8 scores and the national average( which is approximately 0 on average in England). A t-test is used to determine if there is a statistical difference between the mean of the Year 11’s progress 8 scores in the school and the national average.</li>
+<li>A researcher implements an intervention with a random sample of pupils from a school. A second random sample is also taken, which is called the control group. After a period of time of teaching, one with the intervention and without, the pupils are tested. A t-test is performed to see if there is a statistical difference between the mean of the control group and the mean of the intervention group.</li>
+<li>A teacher wants to see how well a class is able to recall knowledge learned 6 months after they are given a test. The pupils are given similar test questions before and after the period. A t-test is used to see if there is a statistical difference between test scores in the first test and in the test 6 months later.</li>
+</ol>
+<section id="conditions-of-t-tests" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="conditions-of-t-tests">
+<span class="header-section-number">2.1</span> Conditions of t-tests</h2>
+<p>There are six conditions required for a t-test to be used:</p>
+<p>a) the population data is continuous;</p>
+<p>b) the sample size is small;</p>
+<p>c) the sample was randomly sampled;</p>
+<p>d) the variance of the data in each group is similar (homogeneity of variance);</p>
+<p>e) the population data follows a normally distribution;</p>
+<p>f) the observations are independent of one another.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Due to the robustness of the t-test some of the conditions can be adjusted. For example,</p>
+<ul>
+<li><p>Discrete interval data can be used (so long as there is sufficient granularity);</p></li>
+<li><p>The sample data may be approximately normally distributed;</p></li>
+<li><p>Variances can be unequal (this is covered by Welch’s t-test);</p></li>
+<li><p>Sample sizes can be large (this does not affect the validity of the test, but with a known population variance a z-test may be more appropriate).</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A rule of thumb researchers use is that if the ratio of variances of the larger sample to the smaller is less than 4, then a t-test can be used.</p>
+</div>
+</div>
+</section><section id="hypothesis-testing-and-t-test" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="hypothesis-testing-and-t-test">
+<span class="header-section-number">2.2</span> Hypothesis Testing and t-test</h2>
+<p>When using the t-test, we are testing the null hypothesis that there is no difference between the mean of a sample and, depending on the type of t-test, either the hypothesised value of the population mean or the mean of another sample. In other words, <strong>if it is equal</strong>.</p>
+<div class="cell">
+<details><summary>show the code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Create random data sets of 10,000 boys' and girls' scores</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>girlscores <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">10000</span>, <span class="at">mean=</span><span class="dv">100</span>, <span class="at">sd=</span><span class="dv">10</span>))</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>girlscores <span class="ot">&lt;-</span> girlscores <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">mutate</span>(<span class="at">gender=</span><span class="st">"female"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">rename</span>(<span class="at">Scores=</span><span class="st">"rnorm(n = 10000, mean = 100, sd = 10)"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a>boysscores <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">10000</span>, <span class="at">mean=</span><span class="dv">105</span>, <span class="at">sd=</span><span class="dv">10</span>))</span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a>boysscores <span class="ot">&lt;-</span> boysscores <span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>  <span class="fu">mutate</span>(<span class="at">gender=</span><span class="st">"male"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>  <span class="fu">rename</span>(<span class="at">Scores=</span><span class="st">"rnorm(n = 10000, mean = 105, sd = 10)"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># Plot the data</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>totalscores <span class="ot">&lt;-</span> <span class="fu">rbind</span>(boysscores, girlscores)</span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="fu">ggplot</span>(totalscores) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>  <span class="fu">geom_histogram</span>(<span class="at">data=</span>boysscores,</span>
+<span id="cb1-19"><a href="#cb1-19"></a>                 <span class="fu">aes</span>(<span class="at">x=</span>Scores, <span class="at">fill=</span>gender, <span class="at">alpha=</span><span class="fl">0.5</span>), <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a>  <span class="fu">geom_histogram</span>(<span class="at">data=</span>girlscores,</span>
+<span id="cb1-21"><a href="#cb1-21"></a>                 <span class="fu">aes</span>(<span class="at">x=</span>Scores, <span class="at">fill=</span>gender, <span class="at">alpha=</span><span class="fl">0.5</span>), <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="fu">mean</span>(boysscores<span class="sc">$</span>Scores), <span class="at">colour=</span><span class="st">"turquoise4"</span>, </span>
+<span id="cb1-23"><a href="#cb1-23"></a>             <span class="at">linetype=</span><span class="dv">3</span>) <span class="sc">+</span> <span class="co"># Add a vertical line for the mean scores</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="fu">mean</span>(girlscores<span class="sc">$</span>Scores), <span class="at">colour=</span><span class="st">"red2"</span>, <span class="at">linetype=</span><span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">mean</span>(boysscores<span class="sc">$</span>Scores), <span class="at">y=</span><span class="dv">440</span>, <span class="co"># Add an arrow between means</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a>                   <span class="at">xend=</span><span class="fu">mean</span>(girlscores<span class="sc">$</span>Scores),</span>
+<span id="cb1-27"><a href="#cb1-27"></a>                   <span class="at">yend=</span><span class="dv">440</span>), </span>
+<span id="cb1-28"><a href="#cb1-28"></a>               <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.01</span>, <span class="st">"npc"</span>), <span class="at">ends =</span> <span class="st">"both"</span>)) <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a>  <span class="fu">geom_text</span>(<span class="at">x=</span><span class="dv">125</span>, <span class="at">y=</span><span class="dv">440</span>, <span class="at">label=</span><span class="st">"Difference in means"</span>) <span class="sc">+</span> <span class="co"># Add text label</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a>  <span class="fu">xlab</span>(<span class="st">"score"</span>) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a>  <span class="fu">ylab</span>(<span class="st">"Numer of students"</span>) <span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a>  <span class="fu">guides</span>(<span class="at">alpha=</span><span class="st">"none"</span>) <span class="co"># Remove alpha from the legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="07-T-testsPISA_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" style="width:95.0%"></p>
+</div>
+</div>
+<p>The alternative hypothesis then depends on whether we are testing if the mean of a sample is less than, greater than, or not equal to the hypothesised value of the population mean or mean of another sample. In other words, <strong>if it less than or greater than, then it’s a one-tailed test</strong> (since it is only considering one direction of the mean), and <strong>if it’s not equal to, then it’s a two-tailed test</strong> (since it is considering both sides of the mean).</p>
+<div class="cell">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(gridExtra) <span class="co"># for grid.arrange</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>plot1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">y =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>, <span class="at">mean=</span><span class="dv">100</span>, <span class="at">sd=</span><span class="dv">10</span>), <span class="at">group =</span> <span class="st">"A"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a>plot2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">y =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>, <span class="at">mean=</span><span class="dv">130</span>, <span class="at">sd=</span><span class="dv">10</span>), <span class="at">group =</span> <span class="st">"B"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a>plot3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">y =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>, <span class="at">mean=</span><span class="dv">70</span>,  <span class="at">sd=</span><span class="dv">10</span>), <span class="at">group =</span> <span class="st">"C"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a>plot4 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">y =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>, <span class="at">mean=</span><span class="dv">100</span>, <span class="at">sd=</span><span class="dv">10</span>), <span class="at">group =</span> <span class="st">"D"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7"></a>plot5 <span class="ot">&lt;-</span> plot3</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a>plot5<span class="sc">$</span>group<span class="ot">&lt;-</span><span class="st">"E"</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>plot5<span class="sc">$</span>y <span class="ot">&lt;-</span> plot5<span class="sc">$</span>y <span class="sc">+</span> <span class="dv">60</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a>onetail <span class="ot">&lt;-</span> <span class="fu">rbind</span>(plot1, plot2)</span>
+<span id="cb2-12"><a href="#cb2-12"></a>twotail <span class="ot">&lt;-</span> <span class="fu">rbind</span>(plot3, plot4, plot5)</span>
+<span id="cb2-13"><a href="#cb2-13"></a></span>
+<span id="cb2-14"><a href="#cb2-14"></a>p1<span class="ot">&lt;-</span><span class="fu">ggplot</span>(onetail, <span class="fu">aes</span>(<span class="at">x=</span>y, <span class="at">fill=</span>group)) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a>  <span class="fu">ggtitle</span>(<span class="st">"One tailed tests look for differences in one direction"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17"></a></span>
+<span id="cb2-18"><a href="#cb2-18"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(twotail, <span class="fu">aes</span>(<span class="at">x=</span>y, <span class="at">fill=</span>group)) <span class="sc">+</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a>  <span class="fu">ggtitle</span>(<span class="st">"Two tailed tests look for differences in two directions"</span>)</span>
+<span id="cb2-21"><a href="#cb2-21"></a></span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="fu">grid.arrange</span>(p1, p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="07-T-testsPISA_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" style="width:95.0%"></p>
+</div>
+</div>
+<p>To determine the outcome of the t-test we need to decide a sufficiently low enough probability (p-value) that, if it’s below this, then it is unlikely that the null hypothesis is true and so we reject the null hypothesis. Typically, this is set to 0.05, or 5%, but in other cases it might be as high as 0.1 or as low as 0.01 or 0.001 depending on the circumstances. Therefore, if the p-value is greater than 0.05 we accept the null hypothesis and if it less than 0.05 we reject the null hypothesis and accept the alternative hypothesis.</p>
+<p>When considering the number of tails, we then need to consider the p-value here also. If we set the overall probability to be 0.05 for the threshold that we reject the null hypothesis, then for a <strong>one-tailed</strong> test we compare our result with <strong>0.05</strong>. However, with a two-tailed test, since we are looking at a <strong>two-tailed</strong> test, then the probability of each of the tails is 0.025 and therefore we compare our value with <strong>0.025</strong> instead.</p>
+<p>Conventionally, we use 0.05 (1 in 20) as the cut off for statistical significance (a convention that has been much critiqued e.g. <span class="citation" data-cites="cohen1994earth baker2016statisticians">(<a href="#ref-cohen1994earth" role="doc-biblioref">Cohen 1994</a>; <a href="#ref-baker2016statisticians" role="doc-biblioref">Baker 2016</a>)</span>).</p>
+</section><section id="types-of-t-test" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="types-of-t-test">
+<span class="header-section-number">2.3</span> Types of t-test</h2>
+<p>There are a two main types of t-tests:</p>
+<ul>
+<li>One sample t-test - checks if the mean of a sample is different to a hypothesised value for the population mean.</li>
+<li>Two sample t-test - checks if the mean of one sample is different to the mean of another sample. There are two main types:</li>
+<li>Paired tests - compares the means of measurements from the same individual or object (e.g.&nbsp;in a pre- and post-test - the comparison of means and before and after scores compares the same student’s scores in the first test with the second).</li>
+<li>Unpaired t-tests - compares the means of two unrelated groups (for example, are the mean science scores of boys and girls in a school different).</li>
+</ul>
+<p>For more information on t-tests, see <a href="https://learningstatisticswithr.com/book/ttest.html">chapter 13</a>, in Navaro’s Learning Statistics with R.</p>
+</section><section id="one-sample-t-tests" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="one-sample-t-tests">
+<span class="header-section-number">2.4</span> One Sample t-tests</h2>
+<p>One sample t-tests are used to compare the mean of a sample of a data set with a value. This value is usually a known population mean or a theoretical population mean depending on the context of the test.</p>
+<p>For a <strong>two-tailed test</strong>, the hypotheses are as follows</p>
+<ul>
+<li><p>Null hypothesis: sample mean = population mean;</p></li>
+<li><p>Alternative hypothesis: sample mean ≠ population mean.</p></li>
+</ul>
+<p>For a <strong>one-tailed test</strong>, the hypotheses are as follows (depending on the direction of the test)</p>
+<p>Either,</p>
+<ul>
+<li><p>Null hypothesis: sample mean = population mean;</p></li>
+<li><p>Alternative hypothesis: sample mean &gt; population mean.</p></li>
+</ul>
+<p>Or,</p>
+<ul>
+<li><p>Null hypothesis: sample mean = population mean;</p></li>
+<li><p>Alternative hypothesis: sample mean &lt; population mean.</p></li>
+</ul>
+<p><strong>Example: Are Females’ Reading Scores in the UK the Same or Different on Average to the UK Average?</strong></p>
+<p>Let’s look at an example of where we might want to consider a sample, in this case females’ reading scores in the UK, with a presumed population mean, the average reading score in the UK. This is a presumed mean, since we don’t know the true population mean here, but we do know the average reading score from the PISA data, which is 494 (taken from PISA <a href="https://www.oecd.org/publication/pisa-2022-results/country-notes/united-kingdom-9c15db47/">2022</a>).</p>
+<p>Following the steps for performing a hypothesis test, we will start by selecting the appropriate test. Since we are comparing the mean of one sample with a population mean, then we need to use a one sample t-test.</p>
+<p>First, you will need to load the PISA data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Load PISA Data</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[add the link to your data file]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To ensure we can use this test we need to make sure the conditions are met. Since PISA tests are constructed in a way which means they are normally distributed, then it is likely our sample is also normally distributed. However, it is good practice to check the distribution using a histogram (or qqplot) at the very least, and where appropriate, a normality test. Due to the large sample size normality testing isn’t usually required, so we will just consider a histogram (or qqplot) here.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Define PISA UK Girls Dataset</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>PISA_2022_Read_Girls <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">select</span>(CNT, PV1READ, ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span> <span class="sc">&amp;</span> ST004D01T<span class="sc">==</span> <span class="st">"Female"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co"># Plot histogram</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">ggplot</span>(<span class="at">data=</span>PISA_2022_Read_Girls,</span>
+<span id="cb4-8"><a href="#cb4-8"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1READ)) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">fill=</span><span class="st">"darkseagreen4"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="07-T-testsPISA_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" style="width:95.0%"></p>
+</div>
+</div>
+<p>We can see from the histogram that the sample is approximately normally distributed (as it follows a bell shaped curve).</p>
+<p>Next, we state the null and alternative hypotheses. Since we are determining whether the average reading score is the same or different, we are using a two-tailed test. This gives us the following hypotheses:</p>
+<ul>
+<li><p>Null hypothesis: mean reading score for females in UK = mean reading score in UK</p></li>
+<li><p>Alternative hypothesis: mean reading score for females in UK ≠ mean reading score in UK</p></li>
+</ul>
+<p>Having set up the hypotheses, we now need to calculate the probability of the null hypothesis being true. To do this, we use R’s <code>t.test</code> function and compare the scores for females in reading in the UK with the OECD average score for reading, which is defined as 476 (<a href="https://www.oecd-ilibrary.org/sites/9149c2f5-en/index.html?itemId=/content/component/9149c2f5-en#:~:text=linklink%20copied!-,Average%20performance%20in%20mathematics%2C%20reading%20and%20science,in%20science%20is%20485%20points.">OECD website</a>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>OECD_ave_read_UK <span class="ot">&lt;-</span>(<span class="dv">476</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">t.test</span>(PISA_2022_Read_Girls<span class="sc">$</span>PV1READ, <span class="at">mu=</span>OECD_ave_read_UK)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  PISA_2022_Read_Girls$PV1READ
+t = 19.064, df = 6396, p-value &lt; 2.2e-16
+alternative hypothesis: true mean is not equal to 476
+95 percent confidence interval:
+ 497.7143 502.6918
+sample estimates:
+mean of x 
+  500.203 </code></pre>
+</div>
+</div>
+<p>We can see from the result that we get a p-value of &lt; 2.2e-16, which is very small. As this is lower than 0.025 (for a two-tailed test) we reject the null hypothesis.</p>
+<p>Therefore, we accept the null hypothesis that the average reading score for females in the UK is different to the overall average reading score in the UK. Looking at the average stated in the t-test, the average score is higher for girls, at 500.23.</p>
+</section><section id="unpaired-two-sample-t-tests" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="unpaired-two-sample-t-tests">
+<span class="header-section-number">2.5</span> Unpaired Two Sample t-tests</h2>
+<p>Unpaired two sample t-tests are used to compare the means of two, unconnected samples. They are unconnected in the sense that the samples taken are independent and are measurements of two unrelated groups.</p>
+<p>For a <strong>two-tailed test</strong>, the hypotheses are as follows</p>
+<ul>
+<li><p>Null hypothesis: sample mean of first group = sample mean of second group;</p></li>
+<li><p>Alternative hypothesis: sample mean of first group ≠ sample mean of second group.</p></li>
+</ul>
+<p>For a <strong>one-tailed test</strong>, the hypotheses are as follows (depending on the direction of the test)</p>
+<p>Either,</p>
+<ul>
+<li><p>Null hypothesis: sample mean of first group = sample mean of second group;</p></li>
+<li><p>Alternative hypothesis: sample mean of first group &gt; sample mean of second group.</p></li>
+</ul>
+<p>Or,</p>
+<ul>
+<li><p>Null hypothesis: sample mean of first group = sample mean of second group;</p></li>
+<li><p>Alternative hypothesis: sample mean of first group &lt; sample mean of second group.</p></li>
+</ul>
+<p><strong>Example: Are Males’ and Females’ Maths Scores in the USA the Same or Different to One Another?</strong></p>
+<p>Let’s say we want to discern if the average maths score differ for males and females in the USA. We want to test to see if there is a statistical difference between the means.</p>
+<p>Following the steps for performing a hypothesis test, we will start by selecting the appropriate test. Since we are comparing the means of two, unrelated samples (since they are the measurements of two different groups that are not connected) then we use an unpaired t-test.</p>
+<p>Again, we need to check if the groups are approximately normally distributed so check the histogram of each group.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Create a US maths subsets</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>USMATH<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">select</span>(CNT, PV1MATH,ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United States"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a>USMATHGIRLS <span class="ot">&lt;-</span> USMATH <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">==</span><span class="st">"Female"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a>USMATHBOYS <span class="ot">&lt;-</span> USMATH <span class="sc">%&gt;%</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">==</span><span class="st">"Male"</span>)</span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="co"># Plot histogram</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="fu">ggplot</span>(<span class="at">data=</span>USMATHGIRLS,</span>
+<span id="cb7-13"><a href="#cb7-13"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH)) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">fill=</span><span class="st">"darkseagreen4"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="07-T-testsPISA_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" style="width:95.0%"></p>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>USMATHBOYS,</span>
+<span id="cb8-2"><a href="#cb8-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">fill=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="07-T-testsPISA_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" style="width:95.0%"></p>
+</div>
+</div>
+<p>Again, we can see both samples of males and females are approximately normally distributed.</p>
+<p>Next, we state the null and alternative hypotheses. Since we are determining whether the average maths scores are the same or different, we are using a two-tailed test. This gives us the following hypotheses:</p>
+<ul>
+<li><p>Null hypothesis: mean maths score for males in US = mean maths score for females in UK</p></li>
+<li><p>Alternative hypothesis: mean maths score for males in US ≠ mean maths score for females in UK.</p></li>
+</ul>
+<p>Next, we calculate the probability of the null hypothesis being true. As before, we use R’s <code>t.test</code> function and compare the mean scores of males and females in the US.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Plot a two-sided, unpaired t-test</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">t.test</span>(PV1MATH <span class="sc">~</span> ST004D01T, <span class="at">data =</span> USMATH, </span>
+<span id="cb9-3"><a href="#cb9-3"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  PV1MATH by ST004D01T
+t = -3.9455, df = 4499.5, p-value = 8.086e-05
+alternative hypothesis: true difference in means between group Female and group Male is not equal to 0
+95 percent confidence interval:
+ -16.59477  -5.57744
+sample estimates:
+mean in group Female   mean in group Male 
+            456.1248             467.2109 </code></pre>
+</div>
+</div>
+<p>We can see from the t-test result that the p-value returned is 8.086e-05. As this is lower than 0.025 (for a two-tailed test) we reject the null hypothesis.</p>
+<p>As such, we accept the alternative hypothesis that the average scores for males and females in the US are statistically different, with the average score for males being higher than average score for females.</p>
+</section><section id="paired-two-sample-t-tests" class="level2" data-number="2.6"><h2 data-number="2.6" class="anchored" data-anchor-id="paired-two-sample-t-tests">
+<span class="header-section-number">2.6</span> Paired Two Sample t-tests</h2>
+<p>Paired two sample t-tests compare the mean of a sample to the mean of a related sample. Usually, this is where there is a repeated measure taken of the same individuals or objects, such as a pre and post test. It can also be used for comparing a pair of measurements taken of the same individuals or objects.</p>
+<p>For a <strong>two-tailed test</strong>, the hypotheses are as follows</p>
+<ul>
+<li><p>Null hypothesis: sample mean of first group = sample mean of second group;</p></li>
+<li><p>Alternative hypothesis: sample mean of first group ≠ sample mean of second group.</p></li>
+</ul>
+<p>For a <strong>one-tailed test</strong>, the hypotheses are as follows (depending on the direction of the test)</p>
+<p>Either,</p>
+<ul>
+<li><p>Null hypothesis: sample mean of first group = sample mean of second group;</p></li>
+<li><p>Alternative hypothesis: sample mean of first group &gt; sample mean of second group.</p></li>
+</ul>
+<p>Or,</p>
+<ul>
+<li><p>Null hypothesis: sample mean of first group = sample mean of second group;</p></li>
+<li><p>Alternative hypothesis: sample mean of first group &lt; sample mean of second group.</p></li>
+</ul>
+<p><strong>Example: Are there differences between science and maths scores on average in the UK?</strong></p>
+<p>Let’s say we want to compare the science and maths scores of students in the UK to see if there is a difference in their average score or not.</p>
+<p>Following the steps for performing a hypothesis test, we will start by selecting the appropriate test. Since we are comparing the means of two, related samples (since they are two measurements of the same students, therefore related) then we use a paired t-test.</p>
+<p>Again, we need to check if the groups are approximately normally distributed so check the histogram of each group.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Create a US maths subsets</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>UKMATH<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">select</span>(CNT, PV1MATH,ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5"></a></span>
+<span id="cb11-6"><a href="#cb11-6"></a>UKSCIENCE<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>  <span class="fu">select</span>(CNT, PV1SCIE, ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9"></a></span>
+<span id="cb11-10"><a href="#cb11-10"></a><span class="co"># Plot histogram</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a><span class="fu">ggplot</span>(<span class="at">data=</span>UKMATH,</span>
+<span id="cb11-12"><a href="#cb11-12"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1MATH)) <span class="sc">+</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">fill=</span><span class="st">"darkseagreen4"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="07-T-testsPISA_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" style="width:95.0%"></p>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>UKSCIENCE,</span>
+<span id="cb12-2"><a href="#cb12-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>PV1SCIE)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">fill=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="07-T-testsPISA_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid" style="width:95.0%"></p>
+</div>
+</div>
+<p>Again, we can see the two samples are approximately distributed so can use the t-test.</p>
+<p>Next, we state the null and alternative hypotheses. Since we are determining whether the average maths score is the same or different to the average science score, we are using a two-tailed test. This gives us the following hypotheses:</p>
+<ul>
+<li><p>Null hypothesis: mean maths score in UK = mean science score in UK</p></li>
+<li><p>Alternative hypothesis: mean maths score in UK ≠ mean science score in UK</p></li>
+</ul>
+<p>Having set up the hypotheses, we now need to calculate the probability of the null hypothesis being true. Again, we use R’s <code>t.test</code> function and compare the average maths scores with the average science scores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Perform a two-sided, paired t-test</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">t.test</span>(UKMATH<span class="sc">$</span>PV1MATH, UKSCIENCE<span class="sc">$</span>PV1SCIE, </span>
+<span id="cb13-3"><a href="#cb13-3"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Paired t-test
+
+data:  UKMATH$PV1MATH and UKSCIENCE$PV1SCIE
+t = -21.651, df = 12971, p-value &lt; 2.2e-16
+alternative hypothesis: true mean difference is not equal to 0
+95 percent confidence interval:
+ -10.602602  -8.842174
+sample estimates:
+mean difference 
+      -9.722388 </code></pre>
+</div>
+</div>
+<p>We return a p-value of &lt; 2.2e-16, which is less than 0.025 (for a two-tailed test), meaning we reject the null hypothesis that there is no difference between the average score in maths and science.</p>
+<p>Therefore, we accept the alternative hypothesis that there is a difference in scores in maths and science in the UK. This difference is approximately 1.5 points.</p>
+<p>::: call-out tip</p>
+<p>In R, there are often multiple ways of doing the same tests. Note with <code>t.test</code> there are two forms you can use, depending on the format of the data you want to test.</p>
+<p>First, in the example above, we had two data frames, for math scores, and science scores, so we can pass two data frames to <code>t.test</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Carry out a two-sided, paired t-test</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">t.test</span>(UKMATH<span class="sc">$</span>PV1MATH, UKSCIENCE<span class="sc">$</span>PV1SCIE, </span>
+<span id="cb15-3"><a href="#cb15-3"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Paired t-test
+
+data:  UKMATH$PV1MATH and UKSCIENCE$PV1SCIE
+t = -21.651, df = 12971, p-value &lt; 2.2e-16
+alternative hypothesis: true mean difference is not equal to 0
+95 percent confidence interval:
+ -10.602602  -8.842174
+sample estimates:
+mean difference 
+      -9.722388 </code></pre>
+</div>
+</div>
+<p>Alternatively, our data might be in one data frame, with a variable indicating the two groups. For example, if we wanted to perform a test of UK science scores, we might create a single data frame in which the two groups are indicated by the column <code>ST004D01T</code>, gender. In that case, we can use the <code>~</code> operator to do a <code>t.test</code> on the <code>PISAUK$PV1SCIE</code> (i.e.&nbsp;the science scores) by (<code>~</code>) gender.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>UKSci<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE,ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="co"># Plot a two-sided, unpaired t-test</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a><span class="fu">t.test</span>(UKSci<span class="sc">$</span>PV1SCIE <span class="sc">~</span> ST004D01T, <span class="at">data=</span>UKSci,</span>
+<span id="cb17-7"><a href="#cb17-7"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  UKSci$PV1SCIE by ST004D01T
+t = -3.9298, df = 12964, p-value = 8.547e-05
+alternative hypothesis: true difference in means between group Female and group Male is not equal to 0
+95 percent confidence interval:
+ -10.553500  -3.529142
+sample estimates:
+mean in group Female   mean in group Male 
+            488.6962             495.7375 </code></pre>
+</div>
+</div>
+<p>:::</p>
+</section></section><section id="anova-multiple-t-tests" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> Anova (multiple t-tests)</h1>
+<p>We have performed t-tests of the difference in mathematics scores between boys and girls in the UK. We may now want to perform the same t-test for all the countries in the sample. This can create a problem. Remember that a p-value report the probability that an outcome is due to chance. The more times we repeat a t-test, the more likely we are to see an effect, even when none-exists.</p>
+<p>To avoid potential artefacts from doing multiple t-tests, when we want to compute the means of more than two groups, we use an anova (analysis of variance) test.</p>
+<p>To determine if there is a statistically significant difference between groups we run an anova calculation, using the <code>aov</code> function in R. The dependent variable is the one we are interested in explaining, the independent variables are the factors we think might explain the variance.</p>
+<p><code>aov(data, dependent_var ~ independent_var + independent_var + ...)</code></p>
+<p>For example, we used t-tests to look at differences in scores between a pair of countries (e.g the UK and the US). We can now compare across all the countires.</p>
+<p>We pass the function the data we wish to focus on (<code>PV1MATH</code>) and then indicate we wish to look for variation in the <code>PV1MATH</code>, by <code>CNT</code>. We then summarise the result to get a table.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>ALLPISAMATH<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">select</span>(CNT, PV1MATH)</span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a>resaov <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="at">data=</span>ALLPISAMATH, PV1MATH <span class="sc">~</span> CNT)</span>
+<span id="cb19-5"><a href="#cb19-5"></a>sumresaov <span class="ot">&lt;-</span> <span class="fu">summary</span>(resaov)</span>
+<span id="cb19-6"><a href="#cb19-6"></a>sumresaov</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                Df    Sum Sq  Mean Sq F value Pr(&gt;F)    
+CNT             79 1.811e+09 22927902    3089 &lt;2e-16 ***
+Residuals   613664 4.554e+09     7421                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>The resulting table has two rows: <code>CNT</code> residuals. The <code>aov</code> function looks to determine if there is a difference in the variance across countires. After determining any variation from those two variables, any remaining variation is associated with residuals - you can think of this as the unexplained variation that isn’t associated with the vectors we specified (i.e.&nbsp;the country).</p>
+<p>First, look at the <code>Pr(&gt;F)</code> column. This is a test of significance and reports if the groups in that row show statistically significant variation. In our case, country returns <code>Pr(&gt;F) &lt;2e-16 ***</code> - which is over <code>0.05</code>. This suggests there are significant differences across countries.</p>
+<p>This is not terribly interesting so far(!) - but we can do two post-hoc tests (i.e.&nbsp;tests after the first test, to find out the effect size and between which countries differences exist)</p>
+<section id="eta-squared" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="eta-squared">
+<span class="header-section-number">3.1</span> Eta-squared</h2>
+<p>Now knowing that there are significant differences between the two class groups, we can next determine how much variation in the test score is explained by class. To do this we calculate a variable called eta-squared.</p>
+<p>Eta-squared gives the proportion of variance explained by each variable. The eta squared function is in the package <code>lsr</code> so we will install <code>lsr</code>, and then use the result of our anova (<code>resaov</code>) to calculate the eta squared variable using the function <code>etaSquared</code>. To report the value of eta as a percentage we need to multiply the output of eta by 100.</p>
+<p>Eta squared tells us the proportion of the total variance that is explained by a variable (you can also think of it as an effect size). An eta squared value of 1 indicates all the variance of a sample is explain by some variable and 0 means the variable is not responsible for any of the observed variance. We can multiply the eta-squared score by 100 to get a value for the percentage of variance explained.</p>
+<p>The percentage of variance explained is a useful figure. For example, it has been reported that schools only account for 14% of the variance in progress 8 scores, whilst family explains 43% (<span class="citation" data-cites="wilkinson2018assessing">Wilkinson, Bryson, and Stokes (<a href="#ref-wilkinson2018assessing" role="doc-biblioref">2018</a>)</span>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">library</span>(lsr)</span>
+<span id="cb21-2"><a href="#cb21-2"></a>eta <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">etaSquared</span>(resaov))</span>
+<span id="cb21-3"><a href="#cb21-3"></a>eta <span class="ot">&lt;-</span> eta<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>eta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      eta.sq eta.sq.part
+CNT 28.45522    28.45522</code></pre>
+</div>
+</div>
+<p>The important column here is the <code>eta.sq</code> column - it tells us that the country explains 28% of the variance in test scores. (The second column contains information about partial eta-squared, which we won’t go into, but are used when the results of each measure are <em>not independent</em> i.e. one result influences another).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As a rule of thumb, a percentage variance explained of 1% is considered small, 6% medium and 14% and more large</p>
+</div>
+</div>
+</section><section id="tukeys-hsd" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="tukeys-hsd">
+<span class="header-section-number">3.2</span> Tukey’s HSD</h2>
+<p>When an anova test reports that are some statistically significant differences between groups, it does not imply there are statistically significant differences between all subgroups. For example, if the anova reports statistically significant differences by age, statistically significant differences might exist between 11, 12 and 13-year old students, but not between 13 and 14-year olds.</p>
+<p>We can use an additional anova test, <strong>Tukey’s Honest Significant Difference</strong> test (or Tukey’s HSD for short), to find out which pairs of subgroups have statistically significant differences in means.</p>
+<p>Consider the question: Are there statistically significant differences in the variance of science scores of the UK, US, France and Germany? To determine if such differences exist, we create a new subset for those countries’ science scores, and then run an anova test by country, reporting the eta squared value.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>PISAMULTI <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE)<span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"United States"</span> <span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"Germany"</span> <span class="sc">|</span> CNT<span class="sc">==</span><span class="st">"France"</span>)</span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="co"># filter(CNT %in% c("United Kingdom", "United States", "Germany", "France"))</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a></span>
+<span id="cb23-6"><a href="#cb23-6"></a>resaov<span class="ot">&lt;-</span><span class="fu">aov</span>(PV1SCIE <span class="sc">~</span> CNT, <span class="at">data=</span>PISAMULTI)</span>
+<span id="cb23-7"><a href="#cb23-7"></a>sumresaov<span class="ot">&lt;-</span><span class="fu">summary</span>(resaov)</span>
+<span id="cb23-8"><a href="#cb23-8"></a>sumresaov</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Df    Sum Sq Mean Sq F value Pr(&gt;F)    
+CNT             3    993358  331119   30.24 &lt;2e-16 ***
+Residuals   30406 332902262   10949                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>eta<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">etaSquared</span>(resaov))</span>
+<span id="cb25-2"><a href="#cb25-2"></a>eta<span class="ot">&lt;-</span>eta<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>eta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       eta.sq eta.sq.part
+CNT 0.2975057   0.2975057</code></pre>
+</div>
+</div>
+<p>The anova results tell us there are significant differences between the countries, which account for 0.3 % of variance in scores. We can then run a Tukey HSD test to determine which countries have significant differences between mean scores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">TukeyHSD</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = PV1SCIE ~ CNT, data = PISAMULTI)
+
+$CNT
+                                   diff        lwr       upr     p adj
+France-Germany               -13.871343 -18.613536 -9.129150 0.0000000
+United Kingdom-Germany        -2.989572  -7.159141  1.179997 0.2536226
+United States-Germany          2.995899  -2.266149  8.257948 0.4602611
+United Kingdom-France         10.881771   6.851391 14.912151 0.0000000
+United States-France          16.867243  11.714786 22.019699 0.0000000
+United States-United Kingdom   5.985472   1.354627 10.616316 0.0049773</code></pre>
+</div>
+</div>
+<p>From that we get a table with p values (p adj) for different pairs of countries. Note that these are below 0.05 for France-Germany, UK-France, US-UK and US-France, but greater than 0.05 for UK-Germany, US-Germany. So we can conclude there are significant differences in science scores between France-Germany, UK-France, US-UK and US-France but not between the UK and Germany, and the US and Germany.</p>
+</section></section><section id="seminar-tasks" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> Seminar Tasks</h1>
+<section id="task-1-choice-of-tests" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="task-1-choice-of-tests">
+<span class="header-section-number">4.1</span> Task 1 Choice of tests</h2>
+<p>Consider the following scenarios. Which (if any) of the t-tests would be most of appropriate, including whether it would be a one or two tailed test.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One and two-tailed tests</p>
+<p>Remember that a one-tailed test only looks for differences in one direction from the mean (for example, that one sample has a higher mean than the other). A two-tailed tests tests for the possibility of the means of the two groups being higher or lower than each other.</p>
+</div>
+</div>
+<div class="question">
+<ol type="a">
+<li><p>An educational researcher wants to test a teaching approach with a group of 12 students to see if an intervention increases performance in their year 6 SATs results. Pupils are given a SATS paper before the intervention and again after. The results of these are normalised and then compared.</p></li>
+<li><p>A teacher wants to see if their pupils’ GCSE computer science test scores are in line with the national average or not. The tests are out of 180 marks.</p></li>
+<li><p>The DfE want to compare uptake of STEM subjects pre and post pandemic to see if there has been any change in the percentage of students studying at least one STEM subject for A level.</p></li>
+<li><p>A school wants to compare salaries of staff between this academic year and last academic year to see whether there has been a significant increase.</p></li>
+<li><p>The same school as in d) wants to compare salaries of support staff and teaching staff to see if there is a significant difference.</p></li>
+<li><p>A researcher wants to find out how much time pupils spend looking at screens during lesson time, to see if there is a difference between year 7 and year 10 students. 10 pupils in year 7 and 10 pupils in year 10 are randomly selected across a school and observed throughout a school day in November. The times are recorded to the nearest minute.</p></li>
+<li><p>A business manager wants to check if the financial expenditure on STEM teachers per year is similar to the national average (based on average numbers of pupils on role)</p></li>
+</ol>
+</div>
+<div class="cell">
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Answers</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a></span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="co"># a)  An educational researcher wants to test a teaching approach with a group of 12 students to see if an intervention increases performance in their year 6 SATs results. Pupils are given a SATS paper before the intervention and again after. The results of these are normalised and then compared.</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a></span>
+<span id="cb29-5"><a href="#cb29-5"></a><span class="co"># Paired (because we compare pairs of results (before and after) for the same student) and two-tailed (because we are interested in the means being higher or lower)</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a></span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="co"># b)  A teacher wants to see if their pupils' GCSE computer science test scores are in line with the national average or not. The tests are out of 180 marks.</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a></span>
+<span id="cb29-9"><a href="#cb29-9"></a><span class="co"># Unpaired (the teacher compares their students with another pool) and two-tailed (because we are interested in the means being higher or lower)</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a></span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="co"># c)  The DfE want to compare uptake of STEM subjects pre and post pandemic to see if there has been any change in the percentage of students studying at least one STEM subject for A level.</span></span>
+<span id="cb29-12"><a href="#cb29-12"></a></span>
+<span id="cb29-13"><a href="#cb29-13"></a><span class="co"># Unpaired (the students taking STEM subjects before and after the pandemic will be different individuals from different cohorts) and two-tailed (because we are interested in the means being higher or lower)</span></span>
+<span id="cb29-14"><a href="#cb29-14"></a></span>
+<span id="cb29-15"><a href="#cb29-15"></a><span class="co"># d)  A school wants to compare salaries of staff between this academic year and last academic year to see whether there has been a significant increase.</span></span>
+<span id="cb29-16"><a href="#cb29-16"></a></span>
+<span id="cb29-17"><a href="#cb29-17"></a><span class="co"># Possibly paired (if the staff body has remained the same), and two-tailed (because we are interested in the means being higher or lower)</span></span>
+<span id="cb29-18"><a href="#cb29-18"></a></span>
+<span id="cb29-19"><a href="#cb29-19"></a><span class="co"># e)  The same school as in d) wants to compare salaries of support staff and teaching staff to see if there is a significant difference.</span></span>
+<span id="cb29-20"><a href="#cb29-20"></a></span>
+<span id="cb29-21"><a href="#cb29-21"></a><span class="co"># Unpaired (because there are two different groups, teachers and support staff), and two-tailed (because we are interested in the mean salaries being higher or lower)</span></span>
+<span id="cb29-22"><a href="#cb29-22"></a></span>
+<span id="cb29-23"><a href="#cb29-23"></a><span class="co"># f)  A researcher wants to find out how much time pupils spend looking at screens during lesson time, to see if there is a difference between year 7 and year 10 students. 10 pupils in year 7 and 10 pupils in year 10 are randomly selected across a school and observed  throughout a school day in November. The times are recorded to the nearest minute.</span></span>
+<span id="cb29-24"><a href="#cb29-24"></a></span>
+<span id="cb29-25"><a href="#cb29-25"></a><span class="co"># Unpaired (because there are two different groups, Y7 and Y10), and two-tailed (because we are interested in the means of times being higher or lower)</span></span>
+<span id="cb29-26"><a href="#cb29-26"></a></span>
+<span id="cb29-27"><a href="#cb29-27"></a><span class="co"># g)  A business manager wants to check if the financial expenditure on STEM teachers per year is similar to the national average (based on average numbers of pupils on role)</span></span>
+<span id="cb29-28"><a href="#cb29-28"></a></span>
+<span id="cb29-29"><a href="#cb29-29"></a><span class="co"># Unpaired (because there are two different groups, the school and the national cohort), and two-tailed (because we are interested in the expenditure means being higher or lower)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="task-2-performing-t-tests" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="task-2-performing-t-tests">
+<span class="header-section-number">4.2</span> Task 2 Performing t-tests</h2>
+<div class="question">
+<ol type="1">
+<li>Use the PISA dataset and the gender <code>ST004D01T</code> and <code>PV1MATH</code> (Math score) variables to perform a two-sided, unpaired t-test to determine if boys and girls perform differently on the test in the UK. Before performing the test, check for the normality of the data, and check for equal variance.</li>
+</ol>
+</div>
+<div class="question">
+<ol start="2" type="1">
+<li>Choose a different country of interest to compare performance in males and females in that country</li>
+</ol>
+<div class="cell">
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Are there differences between the mean scores of boys and girls in Japan PISA mathematics?</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="co">#</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="co"># Select the gender (ST004D01T) and math score columns (PV1MATH)</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="co"># Filter the data to select UK responses</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a></span>
+<span id="cb30-6"><a href="#cb30-6"></a>MaleJapan <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'Japan'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Male'</span>)</span>
+<span id="cb30-9"><a href="#cb30-9"></a></span>
+<span id="cb30-10"><a href="#cb30-10"></a>FemaleJapan <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb30-11"><a href="#cb30-11"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb30-12"><a href="#cb30-12"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'Japan'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Female'</span>)</span>
+<span id="cb30-13"><a href="#cb30-13"></a></span>
+<span id="cb30-14"><a href="#cb30-14"></a><span class="co"># The conditions to do a t-test include that the data are normally distributed</span></span>
+<span id="cb30-15"><a href="#cb30-15"></a><span class="fu">qqnorm</span>(MaleJapan<span class="sc">$</span>PV1MATH)</span>
+<span id="cb30-16"><a href="#cb30-16"></a><span class="fu">qqline</span>(MaleJapan<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb30-17"><a href="#cb30-17"></a></span>
+<span id="cb30-18"><a href="#cb30-18"></a><span class="fu">qqnorm</span>(FemaleJapan<span class="sc">$</span>PV1MATH)</span>
+<span id="cb30-19"><a href="#cb30-19"></a><span class="fu">qqline</span>(FemaleJapan<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb30-20"><a href="#cb30-20"></a></span>
+<span id="cb30-21"><a href="#cb30-21"></a></span>
+<span id="cb30-22"><a href="#cb30-22"></a><span class="co"># The plots produces relatively straight lines so the distributions can be # assumed to be normal</span></span>
+<span id="cb30-23"><a href="#cb30-23"></a><span class="co">#</span></span>
+<span id="cb30-24"><a href="#cb30-24"></a><span class="co"># We will then check the variances of the two data sets</span></span>
+<span id="cb30-25"><a href="#cb30-25"></a></span>
+<span id="cb30-26"><a href="#cb30-26"></a>VarM<span class="ot">&lt;-</span><span class="fu">var</span>(MaleJapan<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb30-27"><a href="#cb30-27"></a>VarF<span class="ot">&lt;-</span><span class="fu">var</span>(FemaleJapan<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb30-28"><a href="#cb30-28"></a>VarM<span class="sc">/</span>VarF</span>
+<span id="cb30-29"><a href="#cb30-29"></a></span>
+<span id="cb30-30"><a href="#cb30-30"></a><span class="co"># The variance ratio is close to 1 (1.26)</span></span>
+<span id="cb30-31"><a href="#cb30-31"></a><span class="co"># So our two conditions are met and can we can perform the t-test</span></span>
+<span id="cb30-32"><a href="#cb30-32"></a></span>
+<span id="cb30-33"><a href="#cb30-33"></a><span class="co"># Create a Japan Math subset</span></span>
+<span id="cb30-34"><a href="#cb30-34"></a>CHIMATH <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb30-35"><a href="#cb30-35"></a>  <span class="fu">select</span>(CNT, PV1MATH, ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb30-36"><a href="#cb30-36"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Japan"</span>)</span>
+<span id="cb30-37"><a href="#cb30-37"></a><span class="co"># Plot a two-sided, unpaired t-test</span></span>
+<span id="cb30-38"><a href="#cb30-38"></a><span class="fu">t.test</span>(MaleJapan<span class="sc">$</span>PV1MATH, FemaleJapan<span class="sc">$</span>PV1MATH,  </span>
+<span id="cb30-39"><a href="#cb30-39"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
+<span id="cb30-40"><a href="#cb30-40"></a></span>
+<span id="cb30-41"><a href="#cb30-41"></a><span class="co"># The p-value is &lt;0.025 (0.0004128) suggesting there are statistically</span></span>
+<span id="cb30-42"><a href="#cb30-42"></a><span class="co"># differences between boys and girls in mathematics in Japan</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div class="question">
+<ol start="3" type="1">
+<li>Now try to compare the performance of males and females in Maths in all the <code>OECD</code> countries in the PISA data. You may need to think about how to do this using R without repeating the test for each country.</li>
+</ol>
+<div class="cell">
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>MaleOECD <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">select</span>(OECD, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">filter</span>(OECD <span class="sc">==</span> <span class="st">'Yes'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Male'</span>)</span>
+<span id="cb31-4"><a href="#cb31-4"></a></span>
+<span id="cb31-5"><a href="#cb31-5"></a>FemaleOECD <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>  <span class="fu">select</span>(OECD, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a>  <span class="fu">filter</span>(OECD <span class="sc">==</span> <span class="st">'Yes'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Female'</span>)</span>
+<span id="cb31-8"><a href="#cb31-8"></a></span>
+<span id="cb31-9"><a href="#cb31-9"></a><span class="fu">qqnorm</span>(MaleOECD<span class="sc">$</span>PV1MATH)</span>
+<span id="cb31-10"><a href="#cb31-10"></a><span class="fu">qqline</span>(MaleOECD<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb31-11"><a href="#cb31-11"></a></span>
+<span id="cb31-12"><a href="#cb31-12"></a><span class="fu">qqnorm</span>(FemaleOECD<span class="sc">$</span>PV1MATH)</span>
+<span id="cb31-13"><a href="#cb31-13"></a><span class="fu">qqline</span>(FemaleOECD<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb31-14"><a href="#cb31-14"></a></span>
+<span id="cb31-15"><a href="#cb31-15"></a></span>
+<span id="cb31-16"><a href="#cb31-16"></a><span class="co"># The plots produces relatively straight lines so the distributions can be assumed to be normal</span></span>
+<span id="cb31-17"><a href="#cb31-17"></a></span>
+<span id="cb31-18"><a href="#cb31-18"></a><span class="co"># We will then check the variances of the two data sets</span></span>
+<span id="cb31-19"><a href="#cb31-19"></a></span>
+<span id="cb31-20"><a href="#cb31-20"></a>VarM <span class="ot">&lt;-</span> <span class="fu">var</span>(MaleOECD<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb31-21"><a href="#cb31-21"></a>VarF <span class="ot">&lt;-</span> <span class="fu">var</span>(FemaleOECD<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb31-22"><a href="#cb31-22"></a>VarM <span class="sc">/</span> VarF</span>
+<span id="cb31-23"><a href="#cb31-23"></a></span>
+<span id="cb31-24"><a href="#cb31-24"></a><span class="co"># The variance ratio is close to 1 (1.18)</span></span>
+<span id="cb31-25"><a href="#cb31-25"></a><span class="co"># So our two conditions are met and can we can perform the t-test</span></span>
+<span id="cb31-26"><a href="#cb31-26"></a></span>
+<span id="cb31-27"><a href="#cb31-27"></a><span class="co"># The p-value is &lt;0.05 (&lt;2.2e-16) suggesting there are statistically</span></span>
+<span id="cb31-28"><a href="#cb31-28"></a><span class="co"># differences between boys and girls</span></span>
+<span id="cb31-29"><a href="#cb31-29"></a></span>
+<span id="cb31-30"><a href="#cb31-30"></a>OECD <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb31-31"><a href="#cb31-31"></a>  <span class="fu">select</span>(OECD, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb31-32"><a href="#cb31-32"></a>  <span class="fu">filter</span>(OECD<span class="sc">==</span><span class="st">'Yes'</span>)</span>
+<span id="cb31-33"><a href="#cb31-33"></a></span>
+<span id="cb31-34"><a href="#cb31-34"></a><span class="fu">t.test</span>(MaleOECD<span class="sc">$</span>PV1MATH, FemaleOECD<span class="sc">$</span>PV1MATH, </span>
+<span id="cb31-35"><a href="#cb31-35"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div class="question">
+<ol start="4" type="1">
+<li>Are there statistically significant differences in mean <code>HOMEPOS</code> scores of boys and girls in the UK?</li>
+</ol>
+<div class="cell">
+<details><summary>Answer</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>MaleUK <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">select</span>(ST004D01T, HOMEPOS) <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">'Male'</span>)</span>
+<span id="cb32-4"><a href="#cb32-4"></a></span>
+<span id="cb32-5"><a href="#cb32-5"></a>FemaleUK <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a>  <span class="fu">select</span>(ST004D01T, HOMEPOS) <span class="sc">%&gt;%</span></span>
+<span id="cb32-7"><a href="#cb32-7"></a>  <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">'Female'</span>)</span>
+<span id="cb32-8"><a href="#cb32-8"></a></span>
+<span id="cb32-9"><a href="#cb32-9"></a><span class="fu">qqnorm</span>(MaleUK<span class="sc">$</span>HOMEPOS)</span>
+<span id="cb32-10"><a href="#cb32-10"></a><span class="fu">qqline</span>(MaleUK<span class="sc">$</span>HOMEPOS, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb32-11"><a href="#cb32-11"></a><span class="fu">qqnorm</span>(FemaleUK<span class="sc">$</span>HOMEPOS)</span>
+<span id="cb32-12"><a href="#cb32-12"></a><span class="fu">qqline</span>(FemaleUK<span class="sc">$</span>HOMEPOS, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb32-13"><a href="#cb32-13"></a></span>
+<span id="cb32-14"><a href="#cb32-14"></a><span class="co"># The plots here are somewhat skewed which might suggest not performing the test</span></span>
+<span id="cb32-15"><a href="#cb32-15"></a></span>
+<span id="cb32-16"><a href="#cb32-16"></a><span class="co"># We will then check the variances of the two data sets</span></span>
+<span id="cb32-17"><a href="#cb32-17"></a></span>
+<span id="cb32-18"><a href="#cb32-18"></a>VarM <span class="ot">&lt;-</span> <span class="fu">var</span>(MaleUK<span class="sc">$</span>HOMEPOS, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb32-19"><a href="#cb32-19"></a>VarF <span class="ot">&lt;-</span> <span class="fu">var</span>(FemaleUK<span class="sc">$</span>HOMEPOS, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb32-20"><a href="#cb32-20"></a>VarM <span class="sc">/</span> VarF</span>
+<span id="cb32-21"><a href="#cb32-21"></a></span>
+<span id="cb32-22"><a href="#cb32-22"></a><span class="co"># The variance ratio is close to 1 (1.1)</span></span>
+<span id="cb32-23"><a href="#cb32-23"></a><span class="co"># So our two conditions are met and can we can perform the t-test</span></span>
+<span id="cb32-24"><a href="#cb32-24"></a></span>
+<span id="cb32-25"><a href="#cb32-25"></a>HOMEPOS <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb32-26"><a href="#cb32-26"></a>  <span class="fu">select</span>(HOMEPOS, ST004D01T, CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb32-27"><a href="#cb32-27"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'United Kingdom'</span>)</span>
+<span id="cb32-28"><a href="#cb32-28"></a></span>
+<span id="cb32-29"><a href="#cb32-29"></a><span class="fu">t.test</span>(MaleUK<span class="sc">$</span>HOMEPOS, FemaleUK<span class="sc">$</span>HOMEPOS, </span>
+<span id="cb32-30"><a href="#cb32-30"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
+<span id="cb32-31"><a href="#cb32-31"></a></span>
+<span id="cb32-32"><a href="#cb32-32"></a><span class="co"># p-value &lt; 2.2e-16 so there are statistically significant differences between boys' and girls' reported wealth in the UK</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</section><section id="task-3-multiple-t-tests-with-anova" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="task-3-multiple-t-tests-with-anova">
+<span class="header-section-number">4.3</span> Task 3 Multiple t-tests with anova</h2>
+<div class="question">
+<p>For the UK, France, Thailand, and the US determine if there are statistically significant differences in variation in mathematics scores.</p>
+<div class="cell">
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>PISAMULTI<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">select</span>(CNT, PV1MATH)<span class="sc">%&gt;%</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"Thailand"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"United States"</span> <span class="sc">|</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a>         CNT <span class="sc">==</span> <span class="st">"France"</span>)</span>
+<span id="cb33-5"><a href="#cb33-5"></a></span>
+<span id="cb33-6"><a href="#cb33-6"></a></span>
+<span id="cb33-7"><a href="#cb33-7"></a>resaov<span class="ot">&lt;-</span><span class="fu">aov</span>(PV1MATH <span class="sc">~</span> CNT, <span class="at">data =</span> PISAMULTI)</span>
+<span id="cb33-8"><a href="#cb33-8"></a>sumresaov<span class="ot">&lt;-</span><span class="fu">summary</span>(resaov)</span>
+<span id="cb33-9"><a href="#cb33-9"></a>sumresaov</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>               Df    Sum Sq Mean Sq F value Pr(&gt;F)    
+CNT             3  24352745 8117582   905.3 &lt;2e-16 ***
+Residuals   32785 293984339    8967                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>eta<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">etaSquared</span>(resaov))</span>
+<span id="cb35-2"><a href="#cb35-2"></a>eta<span class="ot">&lt;-</span>eta<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>eta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>      eta.sq eta.sq.part
+CNT 7.649987    7.649987</code></pre>
+</div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">TukeyHSD</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = PV1MATH ~ CNT, data = PISAMULTI)
+
+$CNT
+                                   diff       lwr        upr     p adj
+United Kingdom-France         14.447781  10.80031  18.095251 0.0000000
+Thailand-France              -53.254801 -57.21819 -49.291415 0.0000000
+United States-France          -6.221682 -10.88462  -1.558739 0.0034071
+Thailand-United Kingdom      -67.702582 -71.09801 -64.307154 0.0000000
+United States-United Kingdom -20.669463 -24.86035 -16.478575 0.0000000
+United States-Thailand        47.033119  42.56457  51.501668 0.0000000</code></pre>
+</div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># There are statistically significant differences in mathematics scores for all pairs of countries</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div class="question">
+<p>For the UK, are there statistically significant differences in reading score by students who speak different languages (LANGN)</p>
+<div class="cell">
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Create a data frame with Reading and school type variables, filte for the uK</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>UKLangRead<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">select</span>(CNT, PV1READ, LANGN)<span class="sc">%&gt;%</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
+<span id="cb40-5"><a href="#cb40-5"></a></span>
+<span id="cb40-6"><a href="#cb40-6"></a><span class="co"># Perform an anova test for reading scores, school type</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a></span>
+<span id="cb40-8"><a href="#cb40-8"></a>resaov<span class="ot">&lt;-</span><span class="fu">aov</span>(PV1READ <span class="sc">~</span> LANGN, <span class="at">data =</span> UKLangRead)</span>
+<span id="cb40-9"><a href="#cb40-9"></a>sumresaov<span class="ot">&lt;-</span><span class="fu">summary</span>(resaov)</span>
+<span id="cb40-10"><a href="#cb40-10"></a>sumresaov</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>               Df    Sum Sq Mean Sq F value Pr(&gt;F)    
+LANGN           9   3653767  405974   37.84 &lt;2e-16 ***
+Residuals   12962 139057822   10728                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># Calculate eta squared</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a></span>
+<span id="cb42-3"><a href="#cb42-3"></a>eta<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">etaSquared</span>(resaov))</span>
+<span id="cb42-4"><a href="#cb42-4"></a>eta<span class="ot">&lt;-</span>eta<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a>eta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>        eta.sq eta.sq.part
+LANGN 2.560245    2.560245</code></pre>
+</div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># Perform the post-hoc Tukey test to determine where signficiant differences lie</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a></span>
+<span id="cb44-3"><a href="#cb44-3"></a><span class="fu">TukeyHSD</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = PV1READ ~ LANGN, data = UKLangRead)
+
+$LANGN
+                                                                     diff
+English-Scots                                                 62.84014574
+Welsh-Scots                                                  -12.93526998
+Scottish Gaelic-Scots                                         57.85860281
+Irish-Scots                                                  -33.91929005
+Other European languages (QSC)-Scots                          51.39604436
+Ulster Scots-Scots                                            20.20519166
+A non-European Union language-Scots                           23.91065526
+Another language (QUK)-Scots                                  51.46413115
+Missing-Scots                                                 31.77456179
+Welsh-English                                                -75.77541571
+                                                                     lwr
+English-Scots                                                  45.851374
+Welsh-Scots                                                   -45.517499
+Scottish Gaelic-Scots                                         -67.131182
+Irish-Scots                                                   -98.058036
+Other European languages (QSC)-Scots                           20.170235
+Ulster Scots-Scots                                            -33.622454
+A non-European Union language-Scots                            -9.506853
+Another language (QUK)-Scots                                   31.207521
+Missing-Scots                                                  13.175387
+Welsh-English                                                -103.973070
+                                                                    upr
+English-Scots                                                 79.828918
+Welsh-Scots                                                   19.646959
+Scottish Gaelic-Scots                                        182.848388
+Irish-Scots                                                   30.219456
+Other European languages (QSC)-Scots                          82.621854
+Ulster Scots-Scots                                            74.032838
+A non-European Union language-Scots                           57.328163
+Another language (QUK)-Scots                                  71.720741
+Missing-Scots                                                 50.373737
+Welsh-English                                                -47.577761
+                                                                 p adj
+English-Scots                                                0.0000000
+Welsh-Scots                                                  0.9629532
+Scottish Gaelic-Scots                                        0.9059913
+Irish-Scots                                                  0.8106915
+Other European languages (QSC)-Scots                         0.0000086
+Ulster Scots-Scots                                           0.9743577
+A non-European Union language-Scots                          0.4128165
+Another language (QUK)-Scots                                 0.0000000
+Missing-Scots                                                0.0000029
+Welsh-English                                                0.0000000
+ [ reached getOption("max.print") -- omitted 35 rows ]</code></pre>
+</div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># There are statistically significant differences between Pre-vocational and general, and vocational and pre-vocational, but not between vocational and general.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div class="question">
+<p>For the UK, use <code>ifelse</code> on the <code>HOMEPOS</code> variable to create categories for four quartiles (divide the data into top; upper-mid; lower-mid; and bottom). Use anova to determine between which groups there are statistically significant differences in science scores</p>
+<p>::: call-out tip Hint: You can use <code>quantiles &lt;- quantile(UKSci$PV1SCIE, prob=c(.25,.5,.75), na.rm=TRUE)</code> to give the values of PV1SCIE that account for 25%, 50% and 75% of the responses.</p>
+</div>
+<div class="cell">
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># Create a data frame of UK science scores and Wealth data</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a><span class="co"># Drop levels to remove other countries</span></span>
+<span id="cb47-3"><a href="#cb47-3"></a>UKSci <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb47-4"><a href="#cb47-4"></a>  <span class="fu">select</span>(CNT, PV1SCIE, HOMEPOS)<span class="sc">%&gt;%</span></span>
+<span id="cb47-5"><a href="#cb47-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb47-6"><a href="#cb47-6"></a>  <span class="fu">na.omit</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb47-7"><a href="#cb47-7"></a>  <span class="fu">droplevels</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb47-8"><a href="#cb47-8"></a>  <span class="fu">select</span>(PV1SCIE, HOMEPOS)</span>
+<span id="cb47-9"><a href="#cb47-9"></a></span>
+<span id="cb47-10"><a href="#cb47-10"></a><span class="co"># Find the cut of points for 25%, 50% and 75% (quantiles) of HOMEPOS</span></span>
+<span id="cb47-11"><a href="#cb47-11"></a></span>
+<span id="cb47-12"><a href="#cb47-12"></a>quantiles <span class="ot">&lt;-</span> <span class="fu">quantile</span>(UKSci<span class="sc">$</span>HOMEPOS, <span class="at">prob=</span><span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">5</span>,.<span class="dv">75</span>), <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb47-13"><a href="#cb47-13"></a></span>
+<span id="cb47-14"><a href="#cb47-14"></a><span class="co"># Note the results are stored in quantiles[1] (25%), quantiles[2] </span></span>
+<span id="cb47-15"><a href="#cb47-15"></a><span class="co"># (50%), quantiles[3] (75%)</span></span>
+<span id="cb47-16"><a href="#cb47-16"></a></span>
+<span id="cb47-17"><a href="#cb47-17"></a><span class="co"># Mutate the HOMEPOS column, using ifelse, to substitute the labels, "Bottom",</span></span>
+<span id="cb47-18"><a href="#cb47-18"></a><span class="co"># "Mid", "upper-mid" and "top" for the quantiles.</span></span>
+<span id="cb47-19"><a href="#cb47-19"></a></span>
+<span id="cb47-20"><a href="#cb47-20"></a>UKSci<span class="ot">&lt;-</span>UKSci<span class="sc">%&gt;%</span></span>
+<span id="cb47-21"><a href="#cb47-21"></a>  <span class="fu">mutate</span>(<span class="at">HOMEPOS=</span><span class="fu">ifelse</span>(HOMEPOS<span class="sc">&lt;</span>quantiles[<span class="dv">1</span>], <span class="st">"Bottom"</span>, </span>
+<span id="cb47-22"><a href="#cb47-22"></a>                        <span class="fu">ifelse</span>(HOMEPOS <span class="sc">&lt;</span> quantiles[<span class="dv">2</span>], <span class="st">"Lower-mid"</span>,</span>
+<span id="cb47-23"><a href="#cb47-23"></a>                               <span class="fu">ifelse</span>(HOMEPOS <span class="sc">&lt;</span> quantiles[<span class="dv">3</span>],</span>
+<span id="cb47-24"><a href="#cb47-24"></a>                                      <span class="st">"Upper-mid"</span>,<span class="st">"Top"</span>))))</span>
+<span id="cb47-25"><a href="#cb47-25"></a></span>
+<span id="cb47-26"><a href="#cb47-26"></a><span class="co"># Perform the avova for science scores by wealth, categories into 4 groups</span></span>
+<span id="cb47-27"><a href="#cb47-27"></a></span>
+<span id="cb47-28"><a href="#cb47-28"></a>resaov<span class="ot">&lt;-</span><span class="fu">aov</span>(PV1SCIE <span class="sc">~</span> HOMEPOS, <span class="at">data=</span>UKSci)</span>
+<span id="cb47-29"><a href="#cb47-29"></a>sumresaov<span class="ot">&lt;-</span><span class="fu">summary</span>(resaov)</span>
+<span id="cb47-30"><a href="#cb47-30"></a>sumresaov</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>               Df    Sum Sq Mean Sq F value Pr(&gt;F)    
+HOMEPOS         3  13965393 4655131   484.5 &lt;2e-16 ***
+Residuals   11483 110321087    9607                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># p is &lt;2e-16 so significant differences exist between wealth groups on science</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="co"># scores</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a></span>
+<span id="cb49-4"><a href="#cb49-4"></a><span class="co"># perform the post hoc Tukey test to find out where statistically signficant differences exist</span></span>
+<span id="cb49-5"><a href="#cb49-5"></a></span>
+<span id="cb49-6"><a href="#cb49-6"></a><span class="fu">TukeyHSD</span>(resaov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = PV1SCIE ~ HOMEPOS, data = UKSci)
+
+$HOMEPOS
+                         diff       lwr       upr p adj
+Lower-mid-Bottom     30.44388  23.79735  37.09042     0
+Top-Bottom           94.24677  87.60024 100.89330     0
+Upper-mid-Bottom     59.32648  52.67995  65.97302     0
+Top-Lower-mid        63.80289  57.15693  70.44885     0
+Upper-mid-Lower-mid  28.88260  22.23665  35.52856     0
+Upper-mid-Top       -34.92029 -41.56624 -28.27433     0</code></pre>
+</div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># There are statistically significant differences between all groups by wealth</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>:::</p>
+</section></section><section id="extension-and-additional-reading" class="level1" data-number="5"><h1 data-number="5">
+<span class="header-section-number">5</span> Extension and additional reading</h1>
+<section id="recreating-a-paper-in-r" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="recreating-a-paper-in-r">
+<span class="header-section-number">5.1</span> Recreating a paper in R</h2>
+<div class="question">
+<p>Looking at <span class="citation" data-cites="cook2014visiphilia">Cook (<a href="#ref-cook2014visiphilia" role="doc-biblioref">2014</a>)</span>, consider the following</p>
+<!-- -->
+<ol type="1">
+<li>Is it possible to replicate the results using the PISA 2018 data set? Make a graph showing the difference in male and female <code>PV1MATH</code> results for each country <code>CNT</code>. To do this we are going to have to:</li>
+</ol>
+<ul>
+<li>work out the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> maths score <code>PV1MATH</code> for each country <code>CNT</code> and gender <code>ST004D01T</code> grouping, call this <code>meanmath</code> and create a new data frame to store this</li>
+<li>from this data frame, create two new data frames, one for males only and one for females only</li>
+<li>
+<code>rename()</code> (see <strong>?@sec-renaming</strong>) the <code>meanmath</code> score in each data frame to <code>male_mean</code> and <code>female_mean</code>
+</li>
+<li>bind the data frames together using using column bind function <code>cbind(&lt;male_df&gt;, &lt;female_df&gt;)</code> and store this in a new dataframe called <code>Mathgendergap</code>. <strong>NOTE:</strong> cbind only accepts tables with different names, so you’ll need to select <code>select(CNT, male_mean)</code> from the male dataframe and <code>select(female_mean)</code> from the female dataframe.</li>
+<li>use <code>mutate</code> (see <strong>?@sec-mutate</strong>) to calculate the difference in male and female mean maths scores for each country</li>
+<li>plot the results for each country</li>
+</ul>
+<div class="cell">
+<details><summary>creating difference dataset</summary><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># A relatively simple recreation (without significance testing)</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>Mathgendergap <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb52-3"><a href="#cb52-3"></a>  <span class="fu">select</span>(CNT,PV1MATH,ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb52-4"><a href="#cb52-4"></a>  <span class="fu">group_by</span>(CNT,ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb52-5"><a href="#cb52-5"></a>  <span class="fu">summarise</span>(<span class="at">meanmath=</span><span class="fu">mean</span>(PV1MATH)) <span class="sc">%&gt;%</span></span>
+<span id="cb52-6"><a href="#cb52-6"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb52-7"><a href="#cb52-7"></a></span>
+<span id="cb52-8"><a href="#cb52-8"></a><span class="co"># alternative, using column binding, cbind():</span></span>
+<span id="cb52-9"><a href="#cb52-9"></a>Mathgendergap<span class="ot">&lt;-</span>  <span class="fu">cbind</span>(Mathgendergap <span class="sc">%&gt;%</span> </span>
+<span id="cb52-10"><a href="#cb52-10"></a>                           <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb52-11"><a href="#cb52-11"></a>                           <span class="fu">rename</span>(<span class="at">male_mean =</span> meanmath) <span class="sc">%&gt;%</span></span>
+<span id="cb52-12"><a href="#cb52-12"></a>                             <span class="fu">select</span>(CNT, male_mean),</span>
+<span id="cb52-13"><a href="#cb52-13"></a>                        Mathgendergap <span class="sc">%&gt;%</span></span>
+<span id="cb52-14"><a href="#cb52-14"></a>                           <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb52-15"><a href="#cb52-15"></a>                             <span class="fu">rename</span>(<span class="at">female_mean =</span> meanmath) <span class="sc">%&gt;%</span></span>
+<span id="cb52-16"><a href="#cb52-16"></a>                             <span class="fu">select</span>(female_mean))</span>
+<span id="cb52-17"><a href="#cb52-17"></a></span>
+<span id="cb52-18"><a href="#cb52-18"></a><span class="co"># alternatively you can use pivot_wider</span></span>
+<span id="cb52-19"><a href="#cb52-19"></a><span class="co"># Mathgendergap &lt;- pivot_wider(Mathgendergap, names_from = ST004D01T, values_from = meanmath)</span></span>
+<span id="cb52-20"><a href="#cb52-20"></a></span>
+<span id="cb52-21"><a href="#cb52-21"></a>Mathgendergap <span class="ot">&lt;-</span> Mathgendergap <span class="sc">%&gt;%</span></span>
+<span id="cb52-22"><a href="#cb52-22"></a>  <span class="fu">mutate</span>(<span class="at">difference =</span> female_mean <span class="sc">-</span> male_mean) <span class="sc">%&gt;%</span></span>
+<span id="cb52-23"><a href="#cb52-23"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(difference))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The above code doesn’t include the t-test results for each country, to do this we need to run some more complex code, you can see how it works below:</p>
+<div class="cell">
+<details><summary>code</summary><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># A fuller recreation with t-tests</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="co"># conduct a ttest across countries on a specified column</span></span>
+<span id="cb53-3"><a href="#cb53-3"></a><span class="fu">library</span>(broom)</span>
+<span id="cb53-4"><a href="#cb53-4"></a></span>
+<span id="cb53-5"><a href="#cb53-5"></a>ttest_by_country <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">column =</span> PV1MATH){</span>
+<span id="cb53-6"><a href="#cb53-6"></a></span>
+<span id="cb53-7"><a href="#cb53-7"></a>  <span class="co"># work out which countries have full 30+ datasets for this ttest</span></span>
+<span id="cb53-8"><a href="#cb53-8"></a>  countries <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb53-9"><a href="#cb53-9"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>({{column}})) <span class="sc">%&gt;%</span>    <span class="co"># {{column}} allows you to change the field of focus</span></span>
+<span id="cb53-10"><a href="#cb53-10"></a>    <span class="fu">select</span>(CNT, ST004D01T, {{column}}) <span class="sc">%&gt;%</span></span>
+<span id="cb53-11"><a href="#cb53-11"></a>    <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb53-12"><a href="#cb53-12"></a>    <span class="fu">filter</span>(<span class="fu">n</span>() <span class="sc">&gt;</span> <span class="dv">30</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb53-13"><a href="#cb53-13"></a>    <span class="fu">pull</span>(CNT) <span class="sc">%&gt;%</span>  <span class="co"># the pull command returns the column as a vector, not a table</span></span>
+<span id="cb53-14"><a href="#cb53-14"></a>    <span class="fu">unique</span>()</span>
+<span id="cb53-15"><a href="#cb53-15"></a> </span>
+<span id="cb53-16"><a href="#cb53-16"></a>  <span class="co"># list the countries that don't meet that criteria</span></span>
+<span id="cb53-17"><a href="#cb53-17"></a>  <span class="fu">message</span>(<span class="st">"dropping: "</span>, <span class="fu">setdiff</span>(<span class="fu">unique</span>(data<span class="sc">$</span>CNT), countries), <span class="st">" as too few entries for ttest"</span>)</span>
+<span id="cb53-18"><a href="#cb53-18"></a> </span>
+<span id="cb53-19"><a href="#cb53-19"></a>  <span class="co"># reduce the dataset to only those countries with 30+ entries</span></span>
+<span id="cb53-20"><a href="#cb53-20"></a>  data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb53-21"><a href="#cb53-21"></a>    <span class="fu">filter</span>(CNT <span class="sc">%in%</span> countries)</span>
+<span id="cb53-22"><a href="#cb53-22"></a></span>
+<span id="cb53-23"><a href="#cb53-23"></a>  <span class="co"># for each country in this new dataset perform a set of calculations</span></span>
+<span id="cb53-24"><a href="#cb53-24"></a>  test_result <span class="ot">&lt;-</span> <span class="fu">map_df</span>(<span class="fu">unique</span>(data<span class="sc">$</span>CNT),</span>
+<span id="cb53-25"><a href="#cb53-25"></a>                        <span class="cf">function</span>(x){</span>
+<span id="cb53-26"><a href="#cb53-26"></a>   </span>
+<span id="cb53-27"><a href="#cb53-27"></a>                            <span class="co"># make a subset of the data just for that country</span></span>
+<span id="cb53-28"><a href="#cb53-28"></a>                            df <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT <span class="sc">==</span> x)</span>
+<span id="cb53-29"><a href="#cb53-29"></a>                           </span>
+<span id="cb53-30"><a href="#cb53-30"></a>                            <span class="co"># get the results pull({{column}}) for females and males as two separate vectors</span></span>
+<span id="cb53-31"><a href="#cb53-31"></a>                            f_data <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>({{column}})</span>
+<span id="cb53-32"><a href="#cb53-32"></a>                            m_data <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>({{column}})</span>
+<span id="cb53-33"><a href="#cb53-33"></a>                           </span>
+<span id="cb53-34"><a href="#cb53-34"></a>                            <span class="co"># tell us the number of results</span></span>
+<span id="cb53-35"><a href="#cb53-35"></a>                            <span class="fu">message</span>(x, <span class="st">" f:"</span>, <span class="fu">length</span>(f_data), <span class="st">" m:"</span>, <span class="fu">length</span>(m_data))</span>
+<span id="cb53-36"><a href="#cb53-36"></a>                           </span>
+<span id="cb53-37"><a href="#cb53-37"></a>                            <span class="co"># work out the means of each vector</span></span>
+<span id="cb53-38"><a href="#cb53-38"></a>                            f_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(f_data)</span>
+<span id="cb53-39"><a href="#cb53-39"></a>                            m_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(m_data)</span>
+<span id="cb53-40"><a href="#cb53-40"></a>                           </span>
+<span id="cb53-41"><a href="#cb53-41"></a>                            <span class="fu">t.test</span>(m_data, f_data) <span class="sc">%&gt;%</span>  <span class="co"># conduct a ttest on the male and female results</span></span>
+<span id="cb53-42"><a href="#cb53-42"></a>                              <span class="fu">tidy</span>() <span class="sc">%&gt;%</span>      <span class="co"># convert the ttest result into a dataframe</span></span>
+<span id="cb53-43"><a href="#cb53-43"></a>                              <span class="fu">mutate</span>(<span class="at">CNT =</span> x,           <span class="co"># add columns to record the country</span></span>
+<span id="cb53-44"><a href="#cb53-44"></a>                                     <span class="at">f_mean =</span> f_mean,   <span class="co"># the mean female grade</span></span>
+<span id="cb53-45"><a href="#cb53-45"></a>                                     <span class="at">m_mean =</span> m_mean,   <span class="co"># the mean male grade</span></span>
+<span id="cb53-46"><a href="#cb53-46"></a>                                     <span class="at">gender_diff =</span> m_mean <span class="sc">-</span> f_mean,  <span class="co"># the difference between the two</span></span>
+<span id="cb53-47"><a href="#cb53-47"></a>                                     <span class="at">prop_male =</span> <span class="fu">length</span>(m_data) <span class="sc">/</span> (<span class="fu">length</span>(m_data) <span class="sc">+</span> <span class="fu">length</span>(f_data)))</span>
+<span id="cb53-48"><a href="#cb53-48"></a>                                     <span class="co"># and the proportion who are male in the dataset</span></span>
+<span id="cb53-49"><a href="#cb53-49"></a>    })</span>
+<span id="cb53-50"><a href="#cb53-50"></a>  <span class="fu">return</span>(test_result)</span>
+<span id="cb53-51"><a href="#cb53-51"></a>}</span>
+<span id="cb53-52"><a href="#cb53-52"></a></span>
+<span id="cb53-53"><a href="#cb53-53"></a>plot_ttest_by_country <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">column =</span> <span class="st">"PV1MATH"</span>){</span>
+<span id="cb53-54"><a href="#cb53-54"></a></span>
+<span id="cb53-55"><a href="#cb53-55"></a>  <span class="fu">ggplot</span>(data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">sig =</span> p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>),</span>
+<span id="cb53-56"><a href="#cb53-56"></a>         <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(CNT, gender_diff), <span class="at">y=</span>gender_diff, <span class="at">colour=</span>sig))<span class="sc">+</span></span>
+<span id="cb53-57"><a href="#cb53-57"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> prop_male)) <span class="sc">+</span>  </span>
+<span id="cb53-58"><a href="#cb53-58"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">lty=</span><span class="dv">2</span>) <span class="sc">+</span>  <span class="co"># add a line on 0</span></span>
+<span id="cb53-59"><a href="#cb53-59"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span>     <span class="co"># rotate the graph</span></span>
+<span id="cb53-60"><a href="#cb53-60"></a>    <span class="fu">xlab</span>(<span class="st">"country"</span>) <span class="sc">+</span></span>
+<span id="cb53-61"><a href="#cb53-61"></a>    <span class="fu">ylab</span>(<span class="st">"mean(male - female)"</span>) <span class="sc">+</span></span>
+<span id="cb53-62"><a href="#cb53-62"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste</span>(<span class="st">"gender differences for:"</span>, column)) <span class="sc">+</span></span>
+<span id="cb53-63"><a href="#cb53-63"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb53-64"><a href="#cb53-64"></a>                                     <span class="at">hjust=</span><span class="dv">1</span>, <span class="at">size=</span><span class="dv">5</span>))</span>
+<span id="cb53-65"><a href="#cb53-65"></a>}</span>
+<span id="cb53-66"><a href="#cb53-66"></a></span>
+<span id="cb53-67"><a href="#cb53-67"></a><span class="co"># run the first function using 2018 data and the PV1MATH column</span></span>
+<span id="cb53-68"><a href="#cb53-68"></a>ttest_results <span class="ot">&lt;-</span> <span class="fu">ttest_by_country</span>(PISA_2022, PV1MATH)</span>
+<span id="cb53-69"><a href="#cb53-69"></a></span>
+<span id="cb53-70"><a href="#cb53-70"></a><span class="co">#plot the results</span></span>
+<span id="cb53-71"><a href="#cb53-71"></a><span class="fu">plot_ttest_by_country</span>(ttest_results, <span class="st">"PV1MATH"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<p><img src="07-T-testsPISA_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" style="width:95.0%"></p>
+</div>
+<details><summary>code</summary><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># Alternatively, you could run the following:</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="co"># run a ttest for each country</span></span>
+<span id="cb54-3"><a href="#cb54-3"></a><span class="co"># ttest_results &lt;- PISA_2022 %&gt;%</span></span>
+<span id="cb54-4"><a href="#cb54-4"></a><span class="co">#     filter(!is.na(PV1MATH)) %&gt;% # Vietnam no results?!</span></span>
+<span id="cb54-5"><a href="#cb54-5"></a><span class="co">#     select(CNT, ST004D01T, PV1MATH) %&gt;%</span></span>
+<span id="cb54-6"><a href="#cb54-6"></a><span class="co">#     group_by(CNT) %&gt;%</span></span>
+<span id="cb54-7"><a href="#cb54-7"></a><span class="co">#     nest(data = c(ST004D01T, PV1MATH)) %&gt;% #create a dataframe of gender results for each country</span></span>
+<span id="cb54-8"><a href="#cb54-8"></a><span class="co">#     summarise(tt = map(data, function(df){ # apply a ttest to each country</span></span>
+<span id="cb54-9"><a href="#cb54-9"></a><span class="co">#       t.test(df %&gt;% filter(ST004D01T == "Female") %$% PV1MATH,</span></span>
+<span id="cb54-10"><a href="#cb54-10"></a><span class="co">#              df %&gt;% filter(ST004D01T == "Male") %$% PV1MATH) %&gt;%</span></span>
+<span id="cb54-11"><a href="#cb54-11"></a><span class="co">#         tidy() # convert results into a dataframe</span></span>
+<span id="cb54-12"><a href="#cb54-12"></a><span class="co">#     })) %&gt;%</span></span>
+<span id="cb54-13"><a href="#cb54-13"></a><span class="co">#     unnest(tt)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ol start="2" type="1">
+<li>What issues are there with using a t-test for the context given in the paper?</li>
+<li>How do your findings from question 3 and the 2018 dataset compare with those in the paper? Are there any differences or disagreements with your findings?</li>
+<li>How could the paper be improved?</li>
+</ol>
+</div>
+</section></section><section id="doing-t-tests-in-r" class="level1" data-number="6"><h1 data-number="6">
+<span class="header-section-number">6</span> Doing t-tests in R</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KdhAcLPq5B4?start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>You can find the code from the video below:</p>
+<div class="cell">
+<details><summary>Show the Code</summary><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># Introduction to t-tests in R</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="co">#</span></span>
+<span id="cb55-3"><a href="#cb55-3"></a><span class="co"># Download data from /Users/k1765032/Library/CloudStorage/GoogleDrive-richardandrewbrock@gmail.com/.shortcut-targets-by-id/1c3CkaEBOICzepArDfjQUP34W2BYhFjM4/PISR/Data/PISA/subset/Students_2018_RBDP_none_levels.rds</span></span>
+<span id="cb55-4"><a href="#cb55-4"></a><span class="co"># You want the file: Students_2018_RBDP_none_levels.rds</span></span>
+<span id="cb55-5"><a href="#cb55-5"></a><span class="co"># and place in your own file system</span></span>
+<span id="cb55-6"><a href="#cb55-6"></a><span class="co"># change loc to load the data directly. Loading into R might take a few minutes</span></span>
+<span id="cb55-7"><a href="#cb55-7"></a><span class="fu">install.packages</span>(<span class="st">"nortest"</span>)</span>
+<span id="cb55-8"><a href="#cb55-8"></a></span>
+<span id="cb55-9"><a href="#cb55-9"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb55-10"><a href="#cb55-10"></a><span class="fu">library</span>(nortest)</span>
+<span id="cb55-11"><a href="#cb55-11"></a>loc <span class="ot">&lt;-</span> <span class="st">"/Users/k1765032/Library/CloudStorage/GoogleDrive-richardandrewbrock@gmail.com/.shortcut-targets-by-id/1c3CkaEBOICzepArDfjQUP34W2BYhFjM4/PISR/Data/PISA/subset/Students_2022_RBDP_none_levels.rds"</span></span>
+<span id="cb55-12"><a href="#cb55-12"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(loc)</span>
+<span id="cb55-13"><a href="#cb55-13"></a></span>
+<span id="cb55-14"><a href="#cb55-14"></a><span class="co"># Are there differences between the mean scores of UK boys and girls in PISA mathematics?</span></span>
+<span id="cb55-15"><a href="#cb55-15"></a><span class="co">#</span></span>
+<span id="cb55-16"><a href="#cb55-16"></a><span class="co"># Select the gender (ST004D01T) and math score columns (PV1MATH)</span></span>
+<span id="cb55-17"><a href="#cb55-17"></a><span class="co"># Filter the data to select UK responses</span></span>
+<span id="cb55-18"><a href="#cb55-18"></a></span>
+<span id="cb55-19"><a href="#cb55-19"></a>MaleUK <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb55-20"><a href="#cb55-20"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb55-21"><a href="#cb55-21"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">'United Kingdom'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb55-22"><a href="#cb55-22"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">==</span><span class="st">'Male'</span>)</span>
+<span id="cb55-23"><a href="#cb55-23"></a></span>
+<span id="cb55-24"><a href="#cb55-24"></a>FemaleUK <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb55-25"><a href="#cb55-25"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb55-26"><a href="#cb55-26"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">'United Kingdom'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb55-27"><a href="#cb55-27"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">==</span><span class="st">'Female'</span>)</span>
+<span id="cb55-28"><a href="#cb55-28"></a></span>
+<span id="cb55-29"><a href="#cb55-29"></a><span class="co"># The conditions to do a t-test include that the data are normally distributed</span></span>
+<span id="cb55-30"><a href="#cb55-30"></a><span class="co"># and there is homogeneity (similarity) of the variances (the squared standard deviations)</span></span>
+<span id="cb55-31"><a href="#cb55-31"></a><span class="co"># Let us check the conditions are met by calculating first if the data sets are normally</span></span>
+<span id="cb55-32"><a href="#cb55-32"></a><span class="co"># distributed using the Pearson test of normality from the nortest package</span></span>
+<span id="cb55-33"><a href="#cb55-33"></a></span>
+<span id="cb55-34"><a href="#cb55-34"></a><span class="fu">pearson.test</span>(<span class="fu">as.numeric</span>(MaleUK<span class="sc">$</span>PV1MATH))</span>
+<span id="cb55-35"><a href="#cb55-35"></a><span class="fu">pearson.test</span>(<span class="fu">as.numeric</span>(FemaleUK<span class="sc">$</span>PV1MATH))</span>
+<span id="cb55-36"><a href="#cb55-36"></a></span>
+<span id="cb55-37"><a href="#cb55-37"></a><span class="co"># The p-values are over 0.05 so both distriburtions are normal</span></span>
+<span id="cb55-38"><a href="#cb55-38"></a><span class="co"># Pearson chi-square normality test</span></span>
+<span id="cb55-39"><a href="#cb55-39"></a><span class="co">#</span></span>
+<span id="cb55-40"><a href="#cb55-40"></a><span class="co"># data:  as.numeric(MaleUK$PV1MATH)</span></span>
+<span id="cb55-41"><a href="#cb55-41"></a><span class="co"># P = 75.714, p-value = 0.1936</span></span>
+<span id="cb55-42"><a href="#cb55-42"></a><span class="co"># Pearson chi-square normality test</span></span>
+<span id="cb55-43"><a href="#cb55-43"></a><span class="co">#</span></span>
+<span id="cb55-44"><a href="#cb55-44"></a><span class="co"># data:  as.numeric(FemaleUK$PV1MATH)</span></span>
+<span id="cb55-45"><a href="#cb55-45"></a><span class="co"># P = 74.06, p-value = 0.2589</span></span>
+<span id="cb55-46"><a href="#cb55-46"></a><span class="co">#</span></span>
+<span id="cb55-47"><a href="#cb55-47"></a><span class="co"># We will then check the variances of the two data sets</span></span>
+<span id="cb55-48"><a href="#cb55-48"></a></span>
+<span id="cb55-49"><a href="#cb55-49"></a>VarM <span class="ot">&lt;-</span> <span class="fu">var</span>(MaleUK<span class="sc">$</span>PV1MATH)</span>
+<span id="cb55-50"><a href="#cb55-50"></a>VarF <span class="ot">&lt;-</span> <span class="fu">var</span>(FemaleUK<span class="sc">$</span>PV1MATH)</span>
+<span id="cb55-51"><a href="#cb55-51"></a>VarM<span class="sc">/</span>VarF</span>
+<span id="cb55-52"><a href="#cb55-52"></a></span>
+<span id="cb55-53"><a href="#cb55-53"></a><span class="co"># The variance ratio is close to 1 (1.1)</span></span>
+<span id="cb55-54"><a href="#cb55-54"></a><span class="co"># So our two conditions are met and can we can perform the t-test</span></span>
+<span id="cb55-55"><a href="#cb55-55"></a></span>
+<span id="cb55-56"><a href="#cb55-56"></a><span class="fu">t.test</span>(MaleUK<span class="sc">$</span>PV1MATH, FemaleUK<span class="sc">$</span>PV1MATH)</span>
+<span id="cb55-57"><a href="#cb55-57"></a></span>
+<span id="cb55-58"><a href="#cb55-58"></a><span class="co"># The p-value is &lt;0.05 (4.061e-08) suggesting there are statistically</span></span>
+<span id="cb55-59"><a href="#cb55-59"></a><span class="co"># differences between boys and girls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+
+
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-baker2016statisticians" class="csl-entry" role="listitem">
+Baker, M. 2016. <span>“Statisticians Issue Warning over Misuse of p Values.”</span> <em>Nature</em>.
+</div>
+<div id="ref-cohen1994earth" class="csl-entry" role="listitem">
+Cohen, Jacob. 1994. <span>“The Earth Is Round (p&lt;. 05).”</span> <em>American Psychologist</em> 49 (12): 997.
+</div>
+<div id="ref-cook2014visiphilia" class="csl-entry" role="listitem">
+Cook, Di. 2014. <span>“Visiphilia: The Gender Gap in Math Is Not Universal.”</span> <em>Chance</em> 27 (4): 48–52. <a href="https://www.tandfonline.com/doi/full/10.1080/09332480.2014.988961">https://www.tandfonline.com/doi/full/10.1080/09332480.2014.988961</a>.
+</div>
+<div id="ref-geher2014straightforward" class="csl-entry" role="listitem">
+Geher, Glenn, and Sara Hall. 2014. <em>Straightforward Statistics: Understanding the Tools of Research</em>. Oxford University Press, USA.
+</div>
+<div id="ref-wilkinson2018assessing" class="csl-entry" role="listitem">
+Wilkinson, David, Alex Bryson, and Lucy Stokes. 2018. <span>“Assessing the Variance in Pupil Attainment: How Important Is the School Attended?”</span> <em>National Institute Economic Review</em> 243 (1): R4–16. <a href="https://docs.iza.org/dp11372.pdf">https://docs.iza.org/dp11372.pdf</a>.
+</div>
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

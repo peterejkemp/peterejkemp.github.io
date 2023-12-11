@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>MASTEMR - PISA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="../css/mastemr.css">
+</head>
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="index.qmd" class="navbar-brand navbar-brand-logo">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="index.qmd">
+    <span class="navbar-title">MASTEMR</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools ms-auto">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/A1-PISA_analysis.html">Appendicies</a></li><li class="breadcrumb-item"><a href="../chapters/A1-PISA_analysis.html">PISA</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Sessions</span></span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">02 Introduction to R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-2-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Loading packages and exploring data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-3-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piping and dplyr</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making graphs</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-Descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Descriptive Statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Presentations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Introduction to PISA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-T-testsPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 T-tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-Writing_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08 Writing a quantitative report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09 Assignment 3 tutorials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-Correlation_and_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 Correlation and regression</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 Selecting statistical tools</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-value_of_quant.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 The value of quantitative methods</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Additional tests</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A6-Bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Statistics</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendicies</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A2-DfE_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DfE England</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A3-TIMSS_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TIMSS, PIRLS and ICILS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A4-Other_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A5-Self_Study_Tasks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix Self Study Tasks</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#what-is-pisa" id="toc-what-is-pisa" class="nav-link active" data-scroll-target="#what-is-pisa"><span class="header-section-number">1</span> What is PISA</a></li>
+  <li><a href="#how-to-use-it" id="toc-how-to-use-it" class="nav-link" data-scroll-target="#how-to-use-it"><span class="header-section-number">2</span> How to use it</a></li>
+  <li><a href="#common-issues" id="toc-common-issues" class="nav-link" data-scroll-target="#common-issues"><span class="header-section-number">3</span> Common issues</a></li>
+  <li>
+<a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">4</span> Questions</a>
+  <ul class="collapse">
+<li><a href="#sec-PV" id="toc-sec-PV" class="nav-link" data-scroll-target="#sec-PV"><span class="header-section-number">4.1</span> What are Plausible Values?</a></li>
+  <li><a href="#why-are-some-countries-oecd-countries-and-others-arent" id="toc-why-are-some-countries-oecd-countries-and-others-arent" class="nav-link" data-scroll-target="#why-are-some-countries-oecd-countries-and-others-arent"><span class="header-section-number">4.2</span> Why are some countries OECD countries and others aren’t?</a></li>
+  <li><a href="#why-are-the-pv-grades-pivoting-around-the-500-mark" id="toc-why-are-the-pv-grades-pivoting-around-the-500-mark" class="nav-link" data-scroll-target="#why-are-the-pv-grades-pivoting-around-the-500-mark"><span class="header-section-number">4.3</span> Why are the PV grades pivoting around the ~500 mark?</a></li>
+  <li><a href="#why-are-the-letters-ta-and-na-used-in-some-field-names" id="toc-why-are-the-letters-ta-and-na-used-in-some-field-names" class="nav-link" data-scroll-target="#why-are-the-letters-ta-and-na-used-in-some-field-names"><span class="header-section-number">4.4</span> Why are the letters TA and NA used in some field names?</a></li>
+  <li><a href="#how-do-i-find-fields-that-are-numeric" id="toc-how-do-i-find-fields-that-are-numeric" class="nav-link" data-scroll-target="#how-do-i-find-fields-that-are-numeric"><span class="header-section-number">4.5</span> How do I find fields that are numeric?</a></li>
+  <li><a href="#how-are-students-selected-to-take-part-in-pisa" id="toc-how-are-students-selected-to-take-part-in-pisa" class="nav-link" data-scroll-target="#how-are-students-selected-to-take-part-in-pisa"><span class="header-section-number">4.6</span> How are students selected to take part in PISA?</a></li>
+  <li><a href="#what-are-the-pisa-test-questions-like" id="toc-what-are-the-pisa-test-questions-like" class="nav-link" data-scroll-target="#what-are-the-pisa-test-questions-like"><span class="header-section-number">4.7</span> What are the PISA test questions like?</a></li>
+  <li><a href="#what-are-the-pisa-domains" id="toc-what-are-the-pisa-domains" class="nav-link" data-scroll-target="#what-are-the-pisa-domains"><span class="header-section-number">4.8</span> What are the PISA domains?</a></li>
+  <li><a href="#why-is-china-given-the-cnt-value-b-s-j-z-china-2018-or-b-s-j-g-china-2015" id="toc-why-is-china-given-the-cnt-value-b-s-j-z-china-2018-or-b-s-j-g-china-2015" class="nav-link" data-scroll-target="#why-is-china-given-the-cnt-value-b-s-j-z-china-2018-or-b-s-j-g-china-2015"><span class="header-section-number">4.9</span> Why is China given the <code>CNT</code> value <code>B-S-J-Z (China)</code> (2018) or <code>B-S-J-G (China)</code> (2015)?</a></li>
+  <li><a href="#how-do-i-calculate-weighted-means-of-the-pv-scores" id="toc-how-do-i-calculate-weighted-means-of-the-pv-scores" class="nav-link" data-scroll-target="#how-do-i-calculate-weighted-means-of-the-pv-scores"><span class="header-section-number">4.10</span> How do I calculate weighted means of the PV scores?**</a></li>
+  </ul>
+</li>
+  <li><a href="#interesting-papers-and-reading-on-pisa" id="toc-interesting-papers-and-reading-on-pisa" class="nav-link" data-scroll-target="#interesting-papers-and-reading-on-pisa"><span class="header-section-number">5</span> Interesting papers and reading on PISA</a></li>
+  <li><a href="#copyright" id="toc-copyright" class="nav-link" data-scroll-target="#copyright"><span class="header-section-number">6</span> Copyright</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">PISA</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header><section id="what-is-pisa" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> What is PISA</h1>
+<p>The Programme for International Student Assessment (PISA) is an OECD initiative that looks at the reading, mathematics and science abilities of students aged 15 years old. Data is collected from ~38 OECD countries and other partner countries every three years.</p>
+<table class="table">
+<thead><tr class="header">
+<th>Dataset</th>
+<th>Description</th>
+<th style="text-align: center;">03</th>
+<th style="text-align: center;">06</th>
+<th style="text-align: center;">09</th>
+<th style="text-align: center;">12</th>
+<th style="text-align: center;">15</th>
+<th style="text-align: center;">18</th>
+<th style="text-align: center;">21</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Student</td>
+<td>demographic data on student participants</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1-41Ynn4hzEL1vO2L-wIqdRotXDtDdjYh/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1No_3a2zZsjxPurfDKIhzA3xpHD3iHECJ/view?usp=drive_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/171x7ghqLfQhVdyWXdXNPOxDlS788Ui6Y/view?usp=share_link">x</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>School</td>
+<td>descriptive data about schools</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1wWfsZcGW2nGFloS0CUOX1DlX7KdptxQr/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1sIrtiz035J4OT3-eHUhECIwtzfdDTCEa/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1ZJkiIGkVfBdRupTVxbaRQ1fwOZr_RV8O/view?usp=share_link">x</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>Parent</td>
+<td>a survey for student’s parents including information about home environments and parental education</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>Teacher</td>
+<td>demographic, teaching, qualification and training data</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1UpU_r8czkaIQdcSFbpRMqQ_lcOJg-voP/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1UumvsA71ncvqrWGwqNqKsGn1ctja5no6/view?usp=share_link">x</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>Cognitive</td>
+<td></td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/19GLw1-YA1aJGWoCWXfZGtUWnQi4pcjik/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1sTpe3TJSnByhZdxzezkmXjH2uTH9TOUP/view?usp=share_link">x</a></td>
+<td style="text-align: center;"><a href="https://drive.google.com/file/d/1nhwySp0A-LHfN-oO8HES9PQOIDZNmOzT/view?usp=share_link">x</a></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>PISA datasets above can be found on the <a href="https://www.oecd.org/pisa/data/">OECD website</a>. The links in the table above will allow you to download .rds versions of these files which we have created, though they might need additional editing, e.g.&nbsp;reducing the number of columns or changing the types of each column. If you want to find out more about what each field stores, take a look at the corresponding codebook, <a href="https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx">2018</a>, <a href="https://webfs.oecd.org/pisa/Codebook_CMB.xlsx">2015</a>.</p>
+</section><section id="how-to-use-it" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> How to use it</h1>
+<p>The PISA datasets come in <em>SPSS</em> or <em>SAS</em> formats. The data used in this course comes directly from downloading the SPSS <code>.sav</code> files and using the <code>haven</code> package to clean it into a native R format suitable for analysis, in most cases <code>.parquet</code> files (see: <strong>?@sec-parquet</strong>). There are a few quirks that you need to be aware of:</p>
+<ul>
+<li>R uses levels (factors) instead of labelled data</li>
+<li>All SPSS fields are <em>labelled</em>, and auto conversion into the native R dataframe format would make numeric fields, factors(!?). To avoid this confusion we have stripped out the no-response data for numeric fields and replaced it with <code>NA</code> values. This means that you won’t be able to tell the reason that a field is missing, and the following labels have all been set to <code>NA</code>:</li>
+</ul>
+<table class="table">
+<caption>Labels set to <code>NA</code> in <code>.rds</code> and <code>.parquet</code> files</caption>
+<thead><tr class="header">
+<th>value</th>
+<th>label</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>95</td>
+<td>Valid Skip</td>
+</tr>
+<tr class="even">
+<td>97</td>
+<td>Not Applicable</td>
+</tr>
+<tr class="odd">
+<td>98</td>
+<td>Invalid</td>
+</tr>
+<tr class="even">
+<td>99</td>
+<td>No Response</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>As the fields are now using R’s native factor format you might find that the data doesn’t quite match the format of the table labels. For example, <code>CNT</code> is labelled “Country code 3-character”, but the data is now instead the full country name.</li>
+<li>the examples shown in the book use cut down PISA datasets, where only a limited number of columns are included. The full datasets are linked in the table above.</li>
+</ul></section><section id="common-issues" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> Common issues</h1>
+<p>The PISA datasets can be absolutely huge and might bring your computer to its knees; if you are using a computer with less than 16GB of RAM you might not be able to load some tables at all. Tables such as the <em>Cognitive</em> dataset have hundreds of thousands of rows and thousands of columns, loading them directly might lead to an error similar to this: <code>Error: cannot allocate vector of size 2.1 Gb</code>. This means that R can’t find enough RAM to load the dataset and has given up. You can see a rough estimate of how much RAM R is currently using the top Environment panel:</p>
+<p><img src="..\images/environment-RAM.png" class="img-fluid"></p>
+<p>To get around this issues you can try to clean your current R environment using the brush tool:</p>
+<p><img src="..\images/environment-brush.png" class="img-fluid"></p>
+<p>This will drop all the current dataframes, objects, functions and packages that you have loaded meaning you will have to reload packages such as <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> and <code><a href="https://haven.tidyverse.org">library(haven)</a></code> before you can attempt to reload the PISA tables.</p>
+<p>A lack of RAM might also be the result of lots of other programs running concurrently on your computer. Try to close anything that you don’t need, web browsers can be particularly RAM hungry, so close them or as many tabs as you can.</p>
+<p>If none of the above works, then please get in touch with the team, letting them know which table you need from which year, with which fields and for which countries. We will be able to provide you with a cutdown dataset.</p>
+</section><section id="questions" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> Questions</h1>
+<section id="sec-PV" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="sec-PV">
+<span class="header-section-number">4.1</span> What are Plausible Values?</h2>
+<p>In the PISA dataset, the outcomes of student tests are reported as plausible values, for example, in the variables of the science test (<code>PV1SCIE</code>, <code>PV2SCIE</code>, <code>PV3SCIE</code>, <code>PV3SCIE</code>, and <code>PV5SCIE</code>). It might seem counter intuitive that there are five values for a score on a test.</p>
+<p>Plausible values (PVs) are a way of expressing the error in a measurement. The number of questions in the full PISA survey is very large, so students are randomly allocated to take a subset of questions (and even then, the test still takes two hours!). As no student completes the full set of questions (only 40% of students even answer questions in reading, science and mathematics <span class="citation" data-cites="OECD2014technical">OECD (<a href="#ref-OECD2014technical" role="doc-biblioref">2014</a>)</span>), estimating how a student would have performed on the full question set involves some error. Plausible values are a way of expressing the uncertainty in the estimation of student scores.</p>
+<p>One way of thinking of the PV scores is that they represent five different estimates of students’ abilities based on the questions they have answered. To decrease measurement error, five different approaches are applied to create five different estimates, the PV scores.</p>
+<p>The PISA Data Analysis Manual suggests:</p>
+<blockquote class="blockquote">
+<p>Population statistics should be estimated using each plausible value separately. The reported population statistic is then the average of each plausible value statistic. For instance, if one is interested in the correlation coefficient between the social index and the reading performance in PISA, then five correlation coefficients should be computed and then averaged</p>
+<p>Plausible values should never be averaged at the student level, i.e.&nbsp;by computing in the dataset the mean of the five plausible values at the student level and then computing the statistic of interest once using that average PV value. Doing so would be equivalent to an EAP estimate, with a bias as described in the previous section.</p>
+<p><span class="citation" data-cites="monseur2009pisa">(<a href="#ref-monseur2009pisa" role="doc-biblioref">Monseur et al. 2009, 100</a>)</span></p>
+</blockquote>
+</section><section id="why-are-some-countries-oecd-countries-and-others-arent" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="why-are-some-countries-oecd-countries-and-others-arent">
+<span class="header-section-number">4.2</span> Why are some countries OECD countries and others aren’t?</h2>
+<p>The Organisation for Economic Co-operation and Development (OECD) has 38 member states. PISA is run by the OECD and its member states normally take part in each PISA cycle, but other countries are allowed to take part as <em>Partners</em>. You can find more details on participation <a href="https://www.oecd.org/pisa/aboutpisa/pisa-participants.htm">here</a>.</p>
+<p>Results for OECD members are generally higher than for Partner countries:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">group_by</span>(OECD) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">summarise</span>(<span class="at">country_n =</span> <span class="fu">length</span>(<span class="fu">unique</span>(CNT)),</span>
+<span id="cb1-4"><a href="#cb1-4"></a>            <span class="at">math_mean =</span> <span class="fu">mean</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb1-5"><a href="#cb1-5"></a>            <span class="at">math_sd =</span> <span class="fu">sd</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb1-6"><a href="#cb1-6"></a>            <span class="at">students_n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  OECD  country_n math_mean math_sd students_n
+  &lt;fct&gt;     &lt;int&gt;     &lt;dbl&gt;   &lt;dbl&gt;      &lt;int&gt;
+1 No           43      409.    97.8     318587
+2 Yes          37      475.    95.0     295157</code></pre>
+</div>
+</div>
+</section><section id="why-are-the-pv-grades-pivoting-around-the-500-mark" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="why-are-the-pv-grades-pivoting-around-the-500-mark">
+<span class="header-section-number">4.3</span> Why are the PV grades pivoting around the ~500 mark?</h2>
+<p>The scores for students in mathematics, reading and science are scaled so that the mean of students in OECD countries is roughly 500 points with a standard deviation of 100 points. To see this, run the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">filter</span>(OECD<span class="sc">==</span><span class="st">"Yes"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">summarise</span>(<span class="at">math_mean =</span> <span class="fu">mean</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb3-4"><a href="#cb3-4"></a>            <span class="at">math_sd =</span> <span class="fu">sd</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb3-5"><a href="#cb3-5"></a>            <span class="at">scie_mean =</span> <span class="fu">mean</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb3-6"><a href="#cb3-6"></a>            <span class="at">scie_sd =</span> <span class="fu">sd</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb3-7"><a href="#cb3-7"></a>            <span class="at">read_mean =</span> <span class="fu">mean</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb3-8"><a href="#cb3-8"></a>            <span class="at">read_sd =</span> <span class="fu">sd</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 6
+  math_mean math_sd scie_mean scie_sd read_mean read_sd
+      &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1      475.    95.0      487.    101.      478.    104.</code></pre>
+</div>
+</div>
+<p><strong>Shouldn’t the mean PV score be 500?</strong></p>
+<p>The OECD’s initial plan (in the 2000 study) was that the mean PC score for OECD countries should be 500 and the standard deviation 100 <span class="citation" data-cites="pisa2018results">(<a href="#ref-pisa2018results" role="doc-biblioref">OECD 2019a</a>)</span>. However, after the 2000 study, scores were scaled to be comparable with the first cycle of data, resulting in means differing from 500 <span class="citation" data-cites="pulkkinen2022correspondence">(<a href="#ref-pulkkinen2022correspondence" role="doc-biblioref">Pulkkinen and Rautopuro 2022</a>)</span>. For example, by 2015, the mean for science had fallen to 493 in science and reading, and 490 in mathematics.</p>
+</section><section id="why-are-the-letters-ta-and-na-used-in-some-field-names" class="level2" data-number="4.4"><h2 data-number="4.4" class="anchored" data-anchor-id="why-are-the-letters-ta-and-na-used-in-some-field-names">
+<span class="header-section-number">4.4</span> Why are the letters TA and NA used in some field names?</h2>
+</section><section id="how-do-i-find-fields-that-are-numeric" class="level2" data-number="4.5"><h2 data-number="4.5" class="anchored" data-anchor-id="how-do-i-find-fields-that-are-numeric">
+<span class="header-section-number">4.5</span> How do I find fields that are numeric?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># using the following code!</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>nms <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> <span class="fu">names</span>()</span>
+<span id="cb5-4"><a href="#cb5-4"></a>lbls <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(nms,\(nme){</span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">message</span>(nme)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>  lbl <span class="ot">&lt;-</span> <span class="fu">attr</span>(PISA_2022[[nme]], <span class="st">"label"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7"></a>  row <span class="ot">&lt;-</span> <span class="fu">c</span>(nme, lbl)</span>
+<span id="cb5-8"><a href="#cb5-8"></a>  <span class="fu">names</span>(row) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"label"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9"></a>  <span class="fu">return</span>(row)</span>
+<span id="cb5-10"><a href="#cb5-10"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="how-are-students-selected-to-take-part-in-pisa" class="level2" data-number="4.6"><h2 data-number="4.6" class="anchored" data-anchor-id="how-are-students-selected-to-take-part-in-pisa">
+<span class="header-section-number">4.6</span> How are students selected to take part in PISA?</h2>
+<p>The students who take part in the PISA study are aged between 15 years and 3 (completed) months and 16 years and 2 (completed) months at the beginning of the testing period <span class="citation" data-cites="OECD2018technical">(<a href="#ref-OECD2018technical" role="doc-biblioref">OECD 2018</a>)</span>. A number of classes of students are excluded from data collection:</p>
+<ul>
+<li>Students classed as ‘functionally disabled’ so that they cannot participate in the test.</li>
+<li>Judged by teachers to have cognitive, emotional or behavioural difficulties that mean they cannot participate.</li>
+<li>The student lacks language abilities to take the test in the assessment language.</li>
+<li>There are no test material available in the student’s language</li>
+<li>Another agreed reason</li>
+</ul>
+<p>The OECD expect that 85% of schools in their original sample participate - nonparticipating schools can be replaced with a substitute, ‘replacement’ school. A minimum weighted response rate of 80% is required within schools.</p>
+<p>The sampling strategy for PISA is a stratified two-stage sample design. That is schools are sampled to represent proportional distribution by size (referring to the number of enrolled 15-year-olds) sampling. Within schools, students are sampled with equal probability.</p>
+<p>Students are selected by … <span class="citation" data-cites="ref">(<a href="#ref-ref" role="doc-biblioref"><strong>ref?</strong></a>)</span></p>
+<p>Add Christian Bokhove papers https://bokhove.net/r-materials/</p>
+<p>From the data, you can see that 50% of schools entered fewer than 30 students into PISA.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">summarise</span>(<span class="at">size =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">mutate</span>(<span class="at">quartile =</span> <span class="fu">ntile</span>(size, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">group_by</span>(quartile) <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">summarise</span>(<span class="at">Qmax =</span> <span class="fu">max</span>(size),</span>
+<span id="cb6-7"><a href="#cb6-7"></a>            <span class="at">Qmedian =</span> <span class="fu">median</span>(size),</span>
+<span id="cb6-8"><a href="#cb6-8"></a>            <span class="at">Qmean =</span> <span class="fu">mean</span>(size))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+  quartile  Qmax Qmedian Qmean
+     &lt;int&gt; &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt;
+1        1    19      10  10.1
+2        2    30      25  25.2
+3        3    37      34  33.8
+4        4   475      40  44.4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(PISA_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">summarise</span>(<span class="at">size =</span> <span class="fu">n</span>()), <span class="fu">aes</span>(<span class="at">x=</span>size)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="A1-PISA_analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" style="width:95.0%"></p>
+</div>
+</div>
+</section><section id="what-are-the-pisa-test-questions-like" class="level2" data-number="4.7"><h2 data-number="4.7" class="anchored" data-anchor-id="what-are-the-pisa-test-questions-like">
+<span class="header-section-number">4.7</span> What are the PISA test questions like?</h2>
+<p>You can view sample PISA science, reading and mathematics questions <a href="https://www.oecd.org/pisa/test/">here</a>.</p>
+</section><section id="what-are-the-pisa-domains" class="level2" data-number="4.8"><h2 data-number="4.8" class="anchored" data-anchor-id="what-are-the-pisa-domains">
+<span class="header-section-number">4.8</span> What are the PISA domains?</h2>
+<p>Every PISA test has included test items measuring literacy, numeracy and science. In each cycle, one of three areas is the focus of study (the major domain). In addition, extra domains have been added to cycles (for example, creative thinking and collaborative problem solving). The additional domains are shown in the table below.</p>
+<table class="table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 61%">
+</colgroup>
+<thead><tr class="header">
+<th>Year</th>
+<th>Major Domain</th>
+<th>Minor Domains</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><strong>2000</strong></td>
+<td>Reading literacy</td>
+<td>Mathematics, Science</td>
+</tr>
+<tr class="even">
+<td><strong>2003</strong></td>
+<td>Mathematics</td>
+<td>Reading literacy, Science, Cross-curricular problem solving</td>
+</tr>
+<tr class="odd">
+<td><strong>2006</strong></td>
+<td>Science</td>
+<td>Reading literacy, Mathematics</td>
+</tr>
+<tr class="even">
+<td><strong>2009</strong></td>
+<td>Reading literacy</td>
+<td>Mathematics, Science</td>
+</tr>
+<tr class="odd">
+<td><strong>2012</strong></td>
+<td>Mathematics</td>
+<td>Reading literacy, Science, Creative problem solving</td>
+</tr>
+<tr class="even">
+<td><strong>2015</strong></td>
+<td>Science</td>
+<td>Mathematics, Reading literacy, Collaborative problem solving</td>
+</tr>
+<tr class="odd">
+<td><strong>2018</strong></td>
+<td>Reading literacy</td>
+<td>Mathematics, Science, Global Competence</td>
+</tr>
+<tr class="even">
+<td><strong>2022</strong></td>
+<td>Mathematics</td>
+<td>Reading literacy, Science, Creative thinking</td>
+</tr>
+<tr class="odd">
+<td><strong>2025</strong></td>
+<td>Science</td>
+<td>Mathematics, Reading literacy, Learning in the Digital World</td>
+</tr>
+</tbody>
+</table></section><section id="why-is-china-given-the-cnt-value-b-s-j-z-china-2018-or-b-s-j-g-china-2015" class="level2" data-number="4.9"><h2 data-number="4.9" class="anchored" data-anchor-id="why-is-china-given-the-cnt-value-b-s-j-z-china-2018-or-b-s-j-g-china-2015">
+<span class="header-section-number">4.9</span> Why is China given the <code>CNT</code> value <code>B-S-J-Z (China)</code> (2018) or <code>B-S-J-G (China)</code> (2015)?</h2>
+<p>B-S-J-G/Z (China) is an acronym for Beijing, Shanghai, Jiangsu and Guangdong/Zhejiang, the four provinces/municipalities of the People’s Republic of China that take part in PISA data collection. Zhejiang took the place of Guangdong in the 2018 dataset. Several authors (including <span class="citation" data-cites="du2019science">(<a href="#ref-du2019science" role="doc-biblioref">Du and Wong 2019</a>)</span>) comment that sampling only from some of the most developed regions of China means the country’s data is unlikely to be nationally representative.</p>
+</section><section id="how-do-i-calculate-weighted-means-of-the-pv-scores" class="level2" data-number="4.10"><h2 data-number="4.10" class="anchored" data-anchor-id="how-do-i-calculate-weighted-means-of-the-pv-scores">
+<span class="header-section-number">4.10</span> How do I calculate weighted means of the PV scores?**</h2>
+<p>You can use a function written by Miguel Diaz Kusztrick <a href="http://software-tecnico-libre.es/en/article-by-topic/all-sections/all-topics/all-articles/pisa-database-plausible-values-r-code">STL</a></p>
+<p>Here is his function for calculating weighted means and standard deviations:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Copyright Miguel Diaz Kusztrick</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>wght_meansd_pv <span class="ot">&lt;-</span> <span class="cf">function</span>(sdata, pv, weight, brr) {</span>
+<span id="cb9-3"><a href="#cb9-3"></a>    mmeans  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="fu">names</span>(mmeans) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MEAN"</span>,<span class="st">"SE-MEAN"</span>,<span class="st">"STDEV"</span>,<span class="st">"SE-STDEV"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    </span>
+<span id="cb9-6"><a href="#cb9-6"></a>    mmeanspv <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    stdspv   <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
+<span id="cb9-8"><a href="#cb9-8"></a>    mmeansbr <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
+<span id="cb9-9"><a href="#cb9-9"></a>    stdsbr   <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
+<span id="cb9-10"><a href="#cb9-10"></a>    sum_weight <span class="ot">&lt;-</span> <span class="fu">sum</span>(sdata[,weight])</span>
+<span id="cb9-11"><a href="#cb9-11"></a>    </span>
+<span id="cb9-12"><a href="#cb9-12"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pv)) {</span>
+<span id="cb9-13"><a href="#cb9-13"></a>        mmeanspv[i] <span class="ot">&lt;-</span> <span class="fu">sum</span>(sdata[,weight]<span class="sc">*</span>sdata[,pv[i]])<span class="sc">/</span>sum_weight</span>
+<span id="cb9-14"><a href="#cb9-14"></a>        stdspv[i]   <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="fu">sum</span>(sdata[,weight]<span class="sc">*</span>(sdata[,pv[i]]<span class="sc">^</span><span class="dv">2</span>))<span class="sc">/</span>swght)<span class="sc">-</span>mmeanspv[i]<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb9-15"><a href="#cb9-15"></a>        <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(brr)) {</span>
+<span id="cb9-16"><a href="#cb9-16"></a>            sbrr<span class="ot">&lt;-</span><span class="fu">sum</span>(sdata[,brr[j]])</span>
+<span id="cb9-17"><a href="#cb9-17"></a>            mbrrj<span class="ot">&lt;-</span><span class="fu">sum</span>(sdata[,brr[j]]<span class="sc">*</span>sdata[,pv[i]])<span class="sc">/</span>sbrr</span>
+<span id="cb9-18"><a href="#cb9-18"></a>            mmeansbr[i]<span class="ot">&lt;-</span>mmeansbr[i] <span class="sc">+</span> (mbrrj <span class="sc">-</span> mmeanspv[i])<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb9-19"><a href="#cb9-19"></a>            stdsbr[i]<span class="ot">&lt;-</span>stdsbr[i] <span class="sc">+</span> (<span class="fu">sqrt</span>((<span class="fu">sum</span>(sdata[,brr[j]]<span class="sc">*</span>(sdata[,pv[i]]<span class="sc">^</span><span class="dv">2</span>))<span class="sc">/</span>sbrr)<span class="sc">-</span>mbrrj<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> stdspv[i])<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a>        }       </span>
+<span id="cb9-21"><a href="#cb9-21"></a>    }</span>
+<span id="cb9-22"><a href="#cb9-22"></a>    mmeans[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>(mmeanspv) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
+<span id="cb9-23"><a href="#cb9-23"></a>    mmeans[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>((mmeansbr <span class="sc">*</span> <span class="dv">4</span>) <span class="sc">/</span> <span class="fu">length</span>(brr)) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
+<span id="cb9-24"><a href="#cb9-24"></a>    mmeans[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>(stdspv) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
+<span id="cb9-25"><a href="#cb9-25"></a>    mmeans[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>((stdsbr <span class="sc">*</span> <span class="dv">4</span>) <span class="sc">/</span> <span class="fu">length</span>(brr)) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
+<span id="cb9-26"><a href="#cb9-26"></a>    ivar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb9-27"><a href="#cb9-27"></a>    </span>
+<span id="cb9-28"><a href="#cb9-28"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pv)) {</span>
+<span id="cb9-29"><a href="#cb9-29"></a>        ivar[<span class="dv">1</span>] <span class="ot">&lt;-</span> ivar[<span class="dv">1</span>] <span class="sc">+</span> (mmeanspv[i] <span class="sc">-</span> mmeans[<span class="dv">1</span>])<span class="sc">^</span><span class="dv">2</span>;</span>
+<span id="cb9-30"><a href="#cb9-30"></a>        ivar[<span class="dv">2</span>] <span class="ot">&lt;-</span> ivar[<span class="dv">2</span>] <span class="sc">+</span> (stdspv[i] <span class="sc">-</span> mmeans[<span class="dv">3</span>])<span class="sc">^</span><span class="dv">2</span>;</span>
+<span id="cb9-31"><a href="#cb9-31"></a>    }</span>
+<span id="cb9-32"><a href="#cb9-32"></a>    ivar <span class="ot">=</span> (<span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="fu">length</span>(pv))) <span class="sc">*</span> (ivar <span class="sc">/</span> (<span class="fu">length</span>(pv) <span class="sc">-</span> <span class="dv">1</span>));</span>
+<span id="cb9-33"><a href="#cb9-33"></a>    mmeans[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(mmeans[<span class="dv">2</span>] <span class="sc">+</span> ivar[<span class="dv">1</span>]);</span>
+<span id="cb9-34"><a href="#cb9-34"></a>    mmeans[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(mmeans[<span class="dv">4</span>] <span class="sc">+</span> ivar[<span class="dv">2</span>]);</span>
+<span id="cb9-35"><a href="#cb9-35"></a>    <span class="fu">return</span>(mmeans);</span>
+<span id="cb9-36"><a href="#cb9-36"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section><section id="interesting-papers-and-reading-on-pisa" class="level1" data-number="5"><h1 data-number="5">
+<span class="header-section-number">5</span> Interesting papers and reading on PISA</h1>
+<p><strong>There are a number of useful OECD reports including</strong>:</p>
+<ul>
+<li>PISA Data Analysis Manual: SPSS second edition <span class="citation" data-cites="pisadat2009manual">OECD (<a href="#ref-pisadat2009manual" role="doc-biblioref">2009</a>)</span>;</li>
+<li>The PISA 2018 technical report <span class="citation" data-cites="pisa2019technical">OECD (<a href="#ref-pisa2019technical" role="doc-biblioref">2019b</a>)</span>
+</li>
+<li>PISA 2018 results <span class="citation" data-cites="pisa2018results">OECD (<a href="#ref-pisa2018results" role="doc-biblioref">2019a</a>)</span>
+</li>
+<li><a href="https://www.oecd.org/pisa/pisaproducts/PISA-2021-Adjusted-Design.pdf">PISA Adjusted 2021 design</a></li>
+<li><a href="https://pisa-framework.oecd.org/science-2025/assets/docs/PISA_2025_Science_Framework.pdf">The PISA 2025 draft framework</a></li>
+</ul>
+<p><strong>John Jerrim and colleagues</strong> have written a number of papers which provide commentary on PISA analysis</p>
+<ul>
+<li>PISA 2012: how do results for the paper and computer tests compare? <span class="citation" data-cites="jerrim2016pisa">Jerrim (<a href="#ref-jerrim2016pisa" role="doc-biblioref">2016</a>)</span>
+</li>
+<li>To weight or not to weight?: The case of PISA data <span class="citation" data-cites="jerrim2017weight">Jerrim et al. (<a href="#ref-jerrim2017weight" role="doc-biblioref">2017</a>)</span>
+</li>
+<li>PISA 2015: how big is the ‘mode effect’ and what has been done about it? <span class="citation" data-cites="jerrim2018pisa">Jerrim et al. (<a href="#ref-jerrim2018pisa" role="doc-biblioref">2018</a>)</span>
+</li>
+<li>PISA 2018 in England, Northern Ireland, Scotland and Wales: Is the data really representative of all four corners of the UK? <span class="citation" data-cites="jerrim2021pisa">Jerrim (<a href="#ref-jerrim2021pisa" role="doc-biblioref">2021</a>)</span>
+</li>
+<li>Is Canada really an education superpower? The impact of non-participation on results from PISA 2015 <span class="citation" data-cites="anders2021canada">Anders et al. (<a href="#ref-anders2021canada" role="doc-biblioref">2021</a>)</span>
+</li>
+<li>Has Peak PISA passed? An investigation of interest in International Large-Scale Assessments across countries and over time <span class="citation" data-cites="jerrim2023peak">Jerrim (<a href="#ref-jerrim2023peak" role="doc-biblioref">2023</a>)</span>
+</li>
+<li>Conditioning: how background variables can influence PISA scores <span class="citation" data-cites="zieger2022conditioning">Zieger et al. (<a href="#ref-zieger2022conditioning" role="doc-biblioref">2022</a>)</span>
+</li>
+</ul>
+<p><strong>Other PISA Papers of Interest</strong></p>
+<!-- -->
+<ul>
+<li>PISA according to PISA: Does PISA keep what it promises? <span class="citation" data-cites="cordingley2008research">Cordingley (<a href="#ref-cordingley2008research" role="doc-biblioref">2008</a>)</span>
+</li>
+<li>The policy impact of PISA: An exploration of the normative effects of international benchmarking in school system performance <span class="citation" data-cites="breakspear2012policy">Breakspear (<a href="#ref-breakspear2012policy" role="doc-biblioref">2012</a>)</span>
+</li>
+<li>A call for a more measured approach to reporting and interpreting PISA results <span class="citation" data-cites="rutkowski2016call">Rutkowski and Rutkowski (<a href="#ref-rutkowski2016call" role="doc-biblioref">2016</a>)</span>
+</li>
+<li>PISA data: Raising concerns with its use in policy settings <span class="citation" data-cites="gillis2016pisa">Gillis, Polesel, and Wu (<a href="#ref-gillis2016pisa" role="doc-biblioref">2016</a>)</span>
+</li>
+<li>Differential item functioning in PISA due to mode effects <span class="citation" data-cites="feskens2019differential">Feskens, Fox, and Zwitser (<a href="#ref-feskens2019differential" role="doc-biblioref">2019</a>)</span>
+</li>
+<li>The measure of socio-economic status in PISA: A review and some suggested improvements <span class="citation" data-cites="avvisati2020measure">Avvisati (<a href="#ref-avvisati2020measure" role="doc-biblioref">2020</a>)</span>
+</li>
+<li>Conditioning: How background variables can influence PISA scores <span class="citation" data-cites="zieger2022conditioning">Zieger et al. (<a href="#ref-zieger2022conditioning" role="doc-biblioref">2022</a>)</span>
+</li>
+<li>A critique of how socio-economic status is measured in PISA <span class="citation" data-cites="avvisati2020measure">Avvisati (<a href="#ref-avvisati2020measure" role="doc-biblioref">2020</a>)</span>
+</li>
+</ul></section><section id="copyright" class="level1" data-number="6"><h1 data-number="6">
+<span class="header-section-number">6</span> Copyright</h1>
+<blockquote class="blockquote">
+<p>All PISA products are published under the <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO</a> (CC BY-NC-SA 3.0 IGO)</p>
+</blockquote>
+<p>This includes the <code>.rds</code> and <code>.parquet</code> formatted datasets linked above.</p>
+
+
+
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-anders2021canada" class="csl-entry" role="listitem">
+Anders, Jake, Silvan Has, John Jerrim, Nikki Shure, and Laura Zieger. 2021. <span>“Is Canada Really an Education Superpower? The Impact of Non-Participation on Results from PISA 2015.”</span> <em>Educational Assessment, Evaluation and Accountability</em> 33: 229–49.
+</div>
+<div id="ref-avvisati2020measure" class="csl-entry" role="listitem">
+Avvisati, Francesco. 2020. <span>“The Measure of Socio-Economic Status in PISA: A Review and Some Suggested Improvements.”</span> <em>Large-Scale Assessments in Education</em> 8 (1): 1–37.
+</div>
+<div id="ref-breakspear2012policy" class="csl-entry" role="listitem">
+Breakspear, Simon. 2012. <span>“The Policy Impact of PISA: An Exploration of the Normative Effects of International Benchmarking in School System Performance.”</span>
+</div>
+<div id="ref-cordingley2008research" class="csl-entry" role="listitem">
+Cordingley, P. 2008. <span>“Research and Evidence-Informed Practice: Focusing on Practice and Practitioners.”</span> <em>Cambridge Journal of Education</em> 38 (1): 37–52. <a href="https://doi.org/10.1080/03057640801889964">https://doi.org/10.1080/03057640801889964</a>.
+</div>
+<div id="ref-du2019science" class="csl-entry" role="listitem">
+Du, Xin, and Billy Wong. 2019. <span>“Science Career Aspiration and Science Capital in China and <span>UK</span>: A Comparative Study Using PISA Data.”</span> <em>International Journal of Science Education</em> 41 (15): 2136–55.
+</div>
+<div id="ref-feskens2019differential" class="csl-entry" role="listitem">
+Feskens, Remco, Jean-Paul Fox, and Robert Zwitser. 2019. <span>“Differential Item Functioning in PISA Due to Mode Effects.”</span> <em>Theoretical and Practical Advances in Computer-Based Educational Measurement</em>, 231–47.
+</div>
+<div id="ref-gillis2016pisa" class="csl-entry" role="listitem">
+Gillis, Shelley, John Polesel, and Margaret Wu. 2016. <span>“PISA Data: Raising Concerns with Its Use in Policy Settings.”</span> <em>The Australian Educational Researcher</em> 43: 131–46.
+</div>
+<div id="ref-jerrim2016pisa" class="csl-entry" role="listitem">
+Jerrim, John. 2016. <span>“PISA 2012: How Do Results for the Paper and Computer Tests Compare?”</span> <em>Assessment in Education: Principles, Policy &amp; Practice</em> 23 (4): 495–518.
+</div>
+<div id="ref-jerrim2021pisa" class="csl-entry" role="listitem">
+———. 2021. <span>“PISA 2018 in England, Northern Ireland, Scotland and Wales: Is the Data Really Representative of All Four Corners of the UK?”</span> <em>Review of Education</em> 9 (3): e3270.
+</div>
+<div id="ref-jerrim2023peak" class="csl-entry" role="listitem">
+———. 2023. <span>“Has Peak PISA Passed? An Investigation of Interest in International Large-Scale Assessments Across Countries and over Time.”</span> <em>European Educational Research Journal</em>, 14749041231151793.
+</div>
+<div id="ref-jerrim2017weight" class="csl-entry" role="listitem">
+Jerrim, John, Luis Alejandro Lopez-Agudo, Oscar D Marcenaro-Gutierrez, and Nikki Shure. 2017. <span>“To Weight or Not to Weight?: The Case of PISA Data.”</span> In <em>Proceedings of the XXVI Meeting of the Economics of Education Association, Murcia, Spain</em>, 29–30.
+</div>
+<div id="ref-jerrim2018pisa" class="csl-entry" role="listitem">
+Jerrim, John, John Micklewright, Jorg-Henrik Heine, Christine Salzer, and Caroline McKeown. 2018. <span>“PISA 2015: How Big Is the ‘Mode Effect’and What Has Been Done about It?”</span> <em>Oxford Review of Education</em> 44 (4): 476–93.
+</div>
+<div id="ref-monseur2009pisa" class="csl-entry" role="listitem">
+Monseur, Christian et al. 2009. <span>“PISA Data Analysis Manual: <span>SPSS</span> Second Edition.”</span> <a href="https://www.oecd-ilibrary.org/docserver/9789264056275-en.pdf?expires=1672909117&amp;id=id&amp;accname=guest&amp;checksum=3AD95B021546E6CB9B93D8895B011056">https://www.oecd-ilibrary.org/docserver/9789264056275-en.pdf?expires=1672909117&amp;id=id&amp;accname=guest&amp;checksum=3AD95B021546E6CB9B93D8895B011056</a>.
+</div>
+<div id="ref-pisadat2009manual" class="csl-entry" role="listitem">
+OECD. 2009. <span>“<span>PISA Data Analysis Manual: SPSS, Second Edition</span>.”</span> <em><span>PISA</span></em>, March. <a href="https://doi.org/10.1787/9789264056275-en">https://doi.org/10.1787/9789264056275-en</a>.
+</div>
+<div id="ref-OECD2014technical" class="csl-entry" role="listitem">
+———. 2014. <span>“PISA 2012 Technical Report.”</span> OECD, Paris. <a href="https://www.oecd.org/pisa/pisaproducts/PISA-2012-technical-report-final.pdf">https://www.oecd.org/pisa/pisaproducts/PISA-2012-technical-report-final.pdf</a>.
+</div>
+<div id="ref-OECD2018technical" class="csl-entry" role="listitem">
+———. 2018. <span>“Technical Report.”</span> OECD, Paris. <a href="https://www.oecd.org/pisa/data/pisa2018technicalreport/PISA2018-TecReport-Ch-01-Programme-for-International-Student-Assessment-An-Overview.pdf">https://www.oecd.org/pisa/data/pisa2018technicalreport/PISA2018-TecReport-Ch-01-Programme-for-International-Student-Assessment-An-Overview.pdf</a>.
+</div>
+<div id="ref-pisa2018results" class="csl-entry" role="listitem">
+———. 2019a. <span>“<span>PISA 2018 Results (Volume I)</span>.”</span> <em><span>PISA</span></em>, December. <a href="https://doi.org/10.1787/a9b5930a-en">https://doi.org/10.1787/a9b5930a-en</a>.
+</div>
+<div id="ref-pisa2019technical" class="csl-entry" role="listitem">
+———. 2019b. <span>“<span class="nocase">PISA 2018 technical background</span>.”</span> <em><span>PISA</span></em>, December. <a href="https://doi.org/10.1787/89178eb6-en">https://doi.org/10.1787/89178eb6-en</a>.
+</div>
+<div id="ref-pulkkinen2022correspondence" class="csl-entry" role="listitem">
+Pulkkinen, Jonna, and Juhani Rautopuro. 2022. <span>“The Correspondence Between PISA Performance and School Achievement in Finland.”</span> <em>International Journal of Educational Research</em> 114: 102000.
+</div>
+<div id="ref-rutkowski2016call" class="csl-entry" role="listitem">
+Rutkowski, Leslie, and David Rutkowski. 2016. <span>“A Call for a More Measured Approach to Reporting and Interpreting PISA Results.”</span> <em>Educational Researcher</em> 45 (4): 252–57.
+</div>
+<div id="ref-zieger2022conditioning" class="csl-entry" role="listitem">
+Zieger, Laura Raffaella, John Jerrim, Jake Anders, and Nikki Shure. 2022. <span>“Conditioning: How Background Variables Can Influence PISA Scores.”</span> <em>Assessment in Education: Principles, Policy &amp; Practice</em> 29 (6): 632–52.
+</div>
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
