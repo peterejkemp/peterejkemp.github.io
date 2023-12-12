@@ -244,29 +244,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Additional tests</span></a>
+ <span class="menu-text">Appendicies</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/A6-Bayesian.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bayesian Statistics</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Appendicies</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
@@ -385,6 +368,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>yr_sch, <span class="at">colour=</span>country)) <span class="sc">+</span></span>
 <span id="cb1-12"><a href="#cb1-12"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb1-13"><a href="#cb1-13"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02-1-Intro_to_analysis_software_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" style="width:95.0%"></p>
+</div>
 </div>
 <p>Whilst it is possible to use R through menu systems and drop down tools, the focus of this course is for you to write your own R scripts. These are text files that will tell the computer how to go through the process of loading, cleaning, analysing and presenting data. The sequential and modular nature of these files makes it very easy to develop and test each stage separately, reuse code in the future, and share with others.</p>
 <p>This booklet is written with the following sections to support you:</p>
@@ -498,25 +484,37 @@ Tip
 <p><img src="images/output_data_starwars.png" class="img-fluid"></p>
 </li>
 <li><p>Install the <code>arrow</code> package, repeat step 2, above.</p></li>
-<li><p>Download the <code>PISA_2022_student_subset.parquet</code> dataset from <a href="https://drive.google.com/file/d/17Owl5F5fmuOWiAXQomVfQMr_9CYDHoBC/view?usp=share_link">here</a> and <strong>download</strong> it on your computer, make a note of the <strong>full folder location</strong> where you have saved this!</p></li>
+<li><p>Download the <code>PISA_2022_student_subset.parquet</code> dataset from <a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/EWdsEj9h3CJFmHqA-Qq5jQoBRSKGM_Qm_4Af_xomr2N5kw?e=7NHpO8">here</a> and <strong>download</strong> it on your computer, make a note of the <strong>full folder location</strong> where you have saved this!</p></li>
 </ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If you need help with finding the full folder location of your file, often a hurdle for Mac users, go to <strong>?@sec-loading-computer</strong></p>
+</div>
+</div>
 <ol start="10" type="1">
 <li>Copy the following code and replace <code>&lt;folder&gt;</code> with the full folder location of where your dataset was saved, make sure that you have <code>.parquet</code> on the end. And keep the <code>(r"[  ]")</code>!</li>
 </ol>
 <div class="cell">
 <details><summary>examples of what this should look like for PC and Mac</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># For Pete (PC) the address format was:</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[C:\Users\Peter\KCL\MASTEMR\PISA_2022_student_subset.parquet]"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[C:\Users\Peter\KCL\MASTEMR\PISA_student_2022_subset.parquet]"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3"></a></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="co"># For Richard (Mac) the address format was:</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[/Users/k1765032/Documents/Teaching/STEM MA/Quantitative module/Data sets/PISA_2022_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[/Users/k1765032/Documents/Teaching/STEM MA/Quantitative module/Data sets/PISA_student_2022_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(arrow)</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_2022_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a href="#cb5-4"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_student_2022_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="11" type="1">
 <li>Underneath the code you have already written, copy the code below (you don’t have to write it yourself), and run it. Try and figure out what each line does and what it’s telling you.</li>

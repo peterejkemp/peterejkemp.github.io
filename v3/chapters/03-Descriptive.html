@@ -263,29 +263,12 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Additional tests</span></a>
+ <span class="menu-text">Appendicies</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/A6-Bayesian.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bayesian Statistics</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Appendicies</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
@@ -798,14 +781,19 @@ Tip
 <span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">select</span>(CNT, ST253Q01JA, ST004D01T) <span class="sc">%&gt;%</span></span>
 <span id="cb28-4"><a href="#cb28-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
 <span id="cb28-5"><a href="#cb28-5"></a></span>
-<span id="cb28-6"><a href="#cb28-6"></a><span class="co"># Plotting two series - in this case, by gender</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a></span>
-<span id="cb28-8"><a href="#cb28-8"></a><span class="fu">ggplot</span>(<span class="at">data=</span>DDplot,</span>
-<span id="cb28-9"><a href="#cb28-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ST253Q01JA, <span class="at">fill =</span> ST004D01T)) <span class="sc">+</span></span>
-<span id="cb28-10"><a href="#cb28-10"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
-<span id="cb28-11"><a href="#cb28-11"></a>  <span class="fu">xlab</span>(<span class="st">"How many digital devices do you have"</span>)<span class="sc">+</span></span>
-<span id="cb28-12"><a href="#cb28-12"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
-<span id="cb28-13"><a href="#cb28-13"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="co"># Changing the longer label for a shorter for ease of plotting</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="co"># Change the long "There are no &lt;digital devices&gt; with screens" to "None"</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a>DDplot<span class="ot">&lt;-</span>DDplot<span class="sc">%&gt;%</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a>  <span class="fu">mutate</span>(<span class="at">ST253Q01JA =</span> <span class="fu">recode</span>(ST253Q01JA, <span class="st">"There are no &lt;digital devices&gt; with screens."</span><span class="ot">=</span><span class="st">"None"</span>))</span>
+<span id="cb28-10"><a href="#cb28-10"></a></span>
+<span id="cb28-11"><a href="#cb28-11"></a><span class="co"># Plotting two series - in this case, by gender</span></span>
+<span id="cb28-12"><a href="#cb28-12"></a></span>
+<span id="cb28-13"><a href="#cb28-13"></a><span class="fu">ggplot</span>(<span class="at">data=</span>DDplot,</span>
+<span id="cb28-14"><a href="#cb28-14"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ST253Q01JA, <span class="at">fill =</span> ST004D01T)) <span class="sc">+</span></span>
+<span id="cb28-15"><a href="#cb28-15"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
+<span id="cb28-16"><a href="#cb28-16"></a>  <span class="fu">xlab</span>(<span class="st">"How many digital devices do you have"</span>)<span class="sc">+</span></span>
+<span id="cb28-17"><a href="#cb28-17"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
+<span id="cb28-18"><a href="#cb28-18"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="03-Descriptive_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -817,15 +805,20 @@ Tip
 <span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">select</span>(CNT, ST253Q01JA, ST004D01T) <span class="sc">%&gt;%</span></span>
 <span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
 <span id="cb29-5"><a href="#cb29-5"></a></span>
-<span id="cb29-6"><a href="#cb29-6"></a><span class="co"># Plotting two series - in this case, by gender with text</span></span>
-<span id="cb29-7"><a href="#cb29-7"></a><span class="fu">ggplot</span>(<span class="at">data =</span> DDplot,</span>
-<span id="cb29-8"><a href="#cb29-8"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ST253Q01JA, <span class="at">fill =</span> ST004D01T)) <span class="sc">+</span></span>
-<span id="cb29-9"><a href="#cb29-9"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge2</span>())<span class="sc">+</span></span>
-<span id="cb29-10"><a href="#cb29-10"></a>  <span class="fu">xlab</span>(<span class="st">"How many digital devices do you have?"</span>)<span class="sc">+</span></span>
-<span id="cb29-11"><a href="#cb29-11"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
-<span id="cb29-12"><a href="#cb29-12"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>)<span class="sc">+</span></span>
-<span id="cb29-13"><a href="#cb29-13"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>..count..), <span class="at">stat =</span> <span class="st">"count"</span>, </span>
-<span id="cb29-14"><a href="#cb29-14"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.9</span>), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-6"><a href="#cb29-6"></a><span class="co"># Changing the longer label for a shorter for ease of plotting</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>DDplot<span class="ot">&lt;-</span>DDplot<span class="sc">%&gt;%</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>  <span class="fu">mutate</span>(<span class="at">ST253Q01JA =</span> <span class="fu">recode</span>(ST253Q01JA, <span class="st">"There are no &lt;digital devices&gt; with screens."</span><span class="ot">=</span><span class="st">"None"</span>))</span>
+<span id="cb29-9"><a href="#cb29-9"></a></span>
+<span id="cb29-10"><a href="#cb29-10"></a></span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="co"># Plotting two series - in this case, by gender with text</span></span>
+<span id="cb29-12"><a href="#cb29-12"></a><span class="fu">ggplot</span>(<span class="at">data =</span> DDplot,</span>
+<span id="cb29-13"><a href="#cb29-13"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ST253Q01JA, <span class="at">fill =</span> ST004D01T)) <span class="sc">+</span></span>
+<span id="cb29-14"><a href="#cb29-14"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge2</span>())<span class="sc">+</span></span>
+<span id="cb29-15"><a href="#cb29-15"></a>  <span class="fu">xlab</span>(<span class="st">"How many digital devices do you have?"</span>)<span class="sc">+</span></span>
+<span id="cb29-16"><a href="#cb29-16"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
+<span id="cb29-17"><a href="#cb29-17"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>)<span class="sc">+</span></span>
+<span id="cb29-18"><a href="#cb29-18"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>..count..), <span class="at">stat =</span> <span class="st">"count"</span>, </span>
+<span id="cb29-19"><a href="#cb29-19"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.9</span>), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="03-Descriptive_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>

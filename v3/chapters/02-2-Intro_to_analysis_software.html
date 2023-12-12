@@ -244,29 +244,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Additional tests</span></a>
+ <span class="menu-text">Appendicies</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/A6-Bayesian.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bayesian Statistics</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Appendicies</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
@@ -530,7 +513,20 @@ Tip
 </section><section id="sec-loading-computer" class="level1" data-number="4"><h1 data-number="4">
 <span class="header-section-number">4</span> Loading data from your computer</h1>
 <p>Downloading files directly from web addresses can be slow and you might want to prefer to use files saved to your computer’s hard drive. You can do this by following the steps below:</p>
-<p>Download the <code>PISA_2022_student_subset.parquet</code> file from <a href="../Users/k1765032/Library/CloudStorage/GoogleDrive-richardandrewbrock@gmail.com/.shortcut-targets-by-id/1c3CkaEBOICzepArDfjQUP34W2BYhFjM4/PISR/Data/PISA/2022/PISA_student_2022.parquet">here</a> and save it to your computer where your R code file is.</p>
+<p>Download the <code>PISA_student_2022_subset.parquet</code> file from <a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/EUT13jrQxKJCp64WnH1MG3MBHoDqkzx1NJZIoVpUFHUYvg?e=RGPPgE">here</a> and save it to your computer where your R code file is.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The PISA student dataset is huge, with over 1,200 pieces of information stored on 600,000+ students. This book uses a subset of this data, but if you do want the full dataset, you can download it from <a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/EWdsEj9h3CJFmHqA-Qq5jQoBRSKGM_Qm_4Af_xomr2N5kw?e=JNnofI">here</a></p>
+</div>
+</div>
 <p>Copy the location of the file (see next step for help)</p>
 <ul>
 <li>
@@ -592,7 +588,7 @@ Tip
 <p>For the majority of this workbook you will be using a cutdown version of the <code>PISA_2022</code> student table. This dataset is huge and we have loaded it into R, selected fields we think are useful, converted column types to work with R and saved in the <code>.parquet</code> format. <code>.parquet</code> files are quick to load and small in size. To load a <code>.parquet</code> file you can use the <code>read_parquet(&lt;location&gt;)</code> command from the <code>arrow</code> package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(arrow)</span>
-<span id="cb6-2"><a href="#cb6-2"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">"&lt;yourfolder&gt;/PISA_2022_student_subset.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">"&lt;yourfolder&gt;/PISA_student_2022_subset.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you want to save out any of your findings, you can use <code>write_parquet(&lt;object&gt;, &lt;location&gt;)</code>, where <code>object</code> is the table you are working on and <code>location</code> is where you want to save it.</p>
 <div class="cell">
