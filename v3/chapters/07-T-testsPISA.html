@@ -320,7 +320,7 @@ div.csl-indent {
 <a href="#t-tests" id="toc-t-tests" class="nav-link" data-scroll-target="#t-tests"><span class="header-section-number">2</span> T-tests</a>
   <ul class="collapse">
 <li><a href="#conditions-of-t-tests" id="toc-conditions-of-t-tests" class="nav-link" data-scroll-target="#conditions-of-t-tests"><span class="header-section-number">2.1</span> Conditions of t-tests</a></li>
-  <li><a href="#hypothesis-testing-and-t-test" id="toc-hypothesis-testing-and-t-test" class="nav-link" data-scroll-target="#hypothesis-testing-and-t-test"><span class="header-section-number">2.2</span> Hypothesis Testing and t-test</a></li>
+  <li><a href="#hypothesis-testing-and-t-tests" id="toc-hypothesis-testing-and-t-tests" class="nav-link" data-scroll-target="#hypothesis-testing-and-t-tests"><span class="header-section-number">2.2</span> Hypothesis Testing and t-tests</a></li>
   <li><a href="#types-of-t-test" id="toc-types-of-t-test" class="nav-link" data-scroll-target="#types-of-t-test"><span class="header-section-number">2.3</span> Types of t-test</a></li>
   <li><a href="#one-sample-t-tests" id="toc-one-sample-t-tests" class="nav-link" data-scroll-target="#one-sample-t-tests"><span class="header-section-number">2.4</span> One Sample t-tests</a></li>
   <li><a href="#unpaired-two-sample-t-tests" id="toc-unpaired-two-sample-t-tests" class="nav-link" data-scroll-target="#unpaired-two-sample-t-tests"><span class="header-section-number">2.5</span> Unpaired Two Sample t-tests</a></li>
@@ -423,8 +423,8 @@ Note
 <p>A rule of thumb researchers use is that if the ratio of variances of the larger sample to the smaller is less than 4, then a t-test can be used.</p>
 </div>
 </div>
-</section><section id="hypothesis-testing-and-t-test" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="hypothesis-testing-and-t-test">
-<span class="header-section-number">2.2</span> Hypothesis Testing and t-test</h2>
+</section><section id="hypothesis-testing-and-t-tests" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="hypothesis-testing-and-t-tests">
+<span class="header-section-number">2.2</span> Hypothesis Testing and t-tests</h2>
 <p>When using the t-test, we are testing the null hypothesis that there is no difference between the mean of a sample and, depending on the type of t-test, either the hypothesised value of the population mean or the mean of another sample. In other words, <strong>if it is equal</strong>.</p>
 <div class="cell">
 <details><summary>show the code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Create random data sets of 10,000 boys' and girls' scores</span></span>
@@ -480,13 +480,30 @@ Note
 <span id="cb2-13"><a href="#cb2-13"></a></span>
 <span id="cb2-14"><a href="#cb2-14"></a>p1<span class="ot">&lt;-</span><span class="fu">ggplot</span>(onetail, <span class="fu">aes</span>(<span class="at">x=</span>y, <span class="at">fill=</span>group)) <span class="sc">+</span></span>
 <span id="cb2-15"><a href="#cb2-15"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a>  <span class="fu">ggtitle</span>(<span class="st">"One tailed tests look for differences in one direction"</span>)</span>
-<span id="cb2-17"><a href="#cb2-17"></a></span>
-<span id="cb2-18"><a href="#cb2-18"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(twotail, <span class="fu">aes</span>(<span class="at">x=</span>y, <span class="at">fill=</span>group)) <span class="sc">+</span></span>
-<span id="cb2-19"><a href="#cb2-19"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a>  <span class="fu">ggtitle</span>(<span class="st">"Two tailed tests look for differences in two directions"</span>)</span>
-<span id="cb2-21"><a href="#cb2-21"></a></span>
-<span id="cb2-22"><a href="#cb2-22"></a><span class="fu">grid.arrange</span>(p1, p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-16"><a href="#cb2-16"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">mean</span>(plot1<span class="sc">$</span>y), <span class="at">y=</span><span class="fl">0.045</span>, <span class="co"># Add an arrow between means</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a>                   <span class="at">xend=</span><span class="fu">mean</span>(plot2<span class="sc">$</span>y),</span>
+<span id="cb2-18"><a href="#cb2-18"></a>                   <span class="at">yend=</span><span class="fl">0.045</span>), </span>
+<span id="cb2-19"><a href="#cb2-19"></a>               <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.01</span>, <span class="st">"npc"</span>), <span class="at">ends =</span> <span class="st">"both"</span>))<span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(plot1<span class="sc">$</span>y), <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(plot2<span class="sc">$</span>y), <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a>  <span class="fu">ggtitle</span>(<span class="st">"One tailed tests look for differences in one direction"</span>)</span>
+<span id="cb2-23"><a href="#cb2-23"></a></span>
+<span id="cb2-24"><a href="#cb2-24"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(twotail, <span class="fu">aes</span>(<span class="at">x=</span>y, <span class="at">fill=</span>group)) <span class="sc">+</span></span>
+<span id="cb2-25"><a href="#cb2-25"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="#cb2-26"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">mean</span>(plot3<span class="sc">$</span>y), <span class="at">y=</span><span class="fl">0.043</span>, <span class="co"># Add an arrow between means</span></span>
+<span id="cb2-27"><a href="#cb2-27"></a>                   <span class="at">xend=</span><span class="fu">mean</span>(plot4<span class="sc">$</span>y),</span>
+<span id="cb2-28"><a href="#cb2-28"></a>                   <span class="at">yend=</span><span class="fl">0.043</span>), </span>
+<span id="cb2-29"><a href="#cb2-29"></a>               <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.01</span>, <span class="st">"npc"</span>), <span class="at">ends =</span> <span class="st">"both"</span>)) <span class="sc">+</span></span>
+<span id="cb2-30"><a href="#cb2-30"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">mean</span>(plot4<span class="sc">$</span>y), <span class="at">y=</span><span class="fl">0.045</span>, <span class="co"># Add an arrow between means</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a>                   <span class="at">xend=</span><span class="fu">mean</span>(plot5<span class="sc">$</span>y),</span>
+<span id="cb2-32"><a href="#cb2-32"></a>                   <span class="at">yend=</span><span class="fl">0.045</span>), </span>
+<span id="cb2-33"><a href="#cb2-33"></a>               <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.01</span>, <span class="st">"npc"</span>), <span class="at">ends =</span> <span class="st">"both"</span>))<span class="sc">+</span></span>
+<span id="cb2-34"><a href="#cb2-34"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(plot3<span class="sc">$</span>y), <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb2-35"><a href="#cb2-35"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(plot4<span class="sc">$</span>y), <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb2-36"><a href="#cb2-36"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(plot5<span class="sc">$</span>y), <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb2-37"><a href="#cb2-37"></a>  <span class="fu">ggtitle</span>(<span class="st">"Two tailed tests look for differences in two directions"</span>)</span>
+<span id="cb2-38"><a href="#cb2-38"></a></span>
+<span id="cb2-39"><a href="#cb2-39"></a><span class="fu">grid.arrange</span>(p1, p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <p><img src="07-T-testsPISA_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>

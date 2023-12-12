@@ -552,7 +552,7 @@ Tip
 <span class="header-section-number">5.2</span> An example: Gender distribution in the PISA sample</h2>
 <div class="question">
 <ol type="a">
-<li>Should we accept or reject the hypothesis that the populations of boys and girls in the United States, Japan and China are 50:50?</li>
+<li>Should we accept or reject the hypothesis that the populations of boys and girls in the United States, Japan and Korea are 50:50?</li>
 </ol>
 <div class="cell">
 <details><summary>Show the code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Perform a chi-square goodness of fit test on categorical data related to gender in the US, Japan and China</span></span>
@@ -572,7 +572,7 @@ Tip
 <span id="cb5-15"><a href="#cb5-15"></a></span>
 <span id="cb5-16"><a href="#cb5-16"></a><span class="co"># In the US, population of M:F differs from 50:50 p= 0.2535, reject null hypothesis of equality.</span></span>
 <span id="cb5-17"><a href="#cb5-17"></a></span>
-<span id="cb5-18"><a href="#cb5-18"></a>JPNPISAgender<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a>JPNPISAgender<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb5-19"><a href="#cb5-19"></a>  <span class="fu">select</span>(CNT, ST004D01T)<span class="sc">%&gt;%</span> <span class="co"># Select gender and country variables</span></span>
 <span id="cb5-20"><a href="#cb5-20"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"Japan"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for the Japan</span></span>
 <span id="cb5-21"><a href="#cb5-21"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
@@ -585,22 +585,22 @@ Tip
 <span id="cb5-28"><a href="#cb5-28"></a></span>
 <span id="cb5-29"><a href="#cb5-29"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
 <span id="cb5-30"><a href="#cb5-30"></a></span>
-<span id="cb5-31"><a href="#cb5-31"></a><span class="co"># In Japan, population of M:F differs from 50:50 p= 0.09373, reject null hypothesis of equality.</span></span>
+<span id="cb5-31"><a href="#cb5-31"></a><span class="co"># In Japan, population of M:F differs from 50:50 p= 0.5271, reject null hypothesis of equality.</span></span>
 <span id="cb5-32"><a href="#cb5-32"></a></span>
-<span id="cb5-33"><a href="#cb5-33"></a>ChinaPISAgender<span class="ot">&lt;-</span>PISA_2018<span class="sc">%&gt;%</span></span>
+<span id="cb5-33"><a href="#cb5-33"></a>KoreaPISAgender<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb5-34"><a href="#cb5-34"></a>  <span class="fu">select</span>(CNT, ST004D01T)<span class="sc">%&gt;%</span> <span class="co"># Select gender and country variables</span></span>
-<span id="cb5-35"><a href="#cb5-35"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"B-S-J-Z (China)"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for China</span></span>
+<span id="cb5-35"><a href="#cb5-35"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"Korea"</span>)<span class="sc">%&gt;%</span> <span class="co"># Filter for Korea</span></span>
 <span id="cb5-36"><a href="#cb5-36"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
 <span id="cb5-37"><a href="#cb5-37"></a></span>
 <span id="cb5-38"><a href="#cb5-38"></a></span>
 <span id="cb5-39"><a href="#cb5-39"></a><span class="co"># produce the contingency table by country and gender</span></span>
 <span id="cb5-40"><a href="#cb5-40"></a></span>
-<span id="cb5-41"><a href="#cb5-41"></a>GenderFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>ChinaPISAgender,<span class="sc">~</span>CNT <span class="sc">+</span> ST004D01T)</span>
+<span id="cb5-41"><a href="#cb5-41"></a>GenderFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>KoreaPISAgender,<span class="sc">~</span>CNT <span class="sc">+</span> ST004D01T)</span>
 <span id="cb5-42"><a href="#cb5-42"></a></span>
 <span id="cb5-43"><a href="#cb5-43"></a><span class="co"># Perform the chisq test, comparing against the expected probabilities of 50:50 (e.g. 1/2 to 1/2)</span></span>
 <span id="cb5-44"><a href="#cb5-44"></a></span>
 <span id="cb5-45"><a href="#cb5-45"></a><span class="fu">chisq.test</span>(GenderFreqTable, <span class="at">p=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
-<span id="cb5-46"><a href="#cb5-46"></a><span class="co"># In China, population of M:F is 50:50 p=3.724e-06, accept null hypothesis of equality.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-46"><a href="#cb5-46"></a><span class="co"># In Korea, population of M:F is 50:50 p=0.0147, accept null hypothesis of equality.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -1014,7 +1014,7 @@ Tip
 <span id="cb24-14"><a href="#cb24-14"></a></span>
 <span id="cb24-15"><a href="#cb24-15"></a><span class="co"># p-value &lt; 2.2e-16, which is less than 0.05, reject the null hypothesis.The world data does not follow the expect distribution</span></span>
 <span id="cb24-16"><a href="#cb24-16"></a></span>
-<span id="cb24-17"><a href="#cb24-17"></a>UKmonth <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb24-17"><a href="#cb24-17"></a>UKmonth <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb24-18"><a href="#cb24-18"></a>  <span class="fu">select</span>(ST003D02T, CNT) <span class="sc">%&gt;%</span></span>
 <span id="cb24-19"><a href="#cb24-19"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb24-20"><a href="#cb24-20"></a>  <span class="fu">group_by</span>(ST003D02T)<span class="sc">%&gt;%</span></span>
@@ -1029,7 +1029,7 @@ Tip
 <span id="cb24-29"><a href="#cb24-29"></a></span>
 <span id="cb24-30"><a href="#cb24-30"></a><span class="fu">chisq.test</span>(UKmonth<span class="sc">$</span>n, <span class="at">p=</span>Expected)</span>
 <span id="cb24-31"><a href="#cb24-31"></a></span>
-<span id="cb24-32"><a href="#cb24-32"></a><span class="co"># p-value &lt; 2.2e-16, which is less than 0.05, reject the null hypothesis.The world data does not follow the expect distribution</span></span>
+<span id="cb24-32"><a href="#cb24-32"></a><span class="co"># p-value &lt; 0.0002224, which is less than 0.05, reject the null hypothesis. The UK data do not follow the expect distribution</span></span>
 <span id="cb24-33"><a href="#cb24-33"></a></span>
 <span id="cb24-34"><a href="#cb24-34"></a><span class="fu">ggplot</span>(<span class="at">data=</span>Worldmonth,</span>
 <span id="cb24-35"><a href="#cb24-35"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ST003D02T, <span class="at">y=</span>n, <span class="at">fill=</span>ST003D02T)) <span class="sc">+</span></span>

@@ -711,10 +711,10 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <p>Remember to include the <code>==</code> sign when looking to filter on equality; additionally, you can use <code>!=</code> (not equals), <code>&gt;=</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&lt;</code>.</p>
-<p>Remember matching is case sensitive, “june” <code>!=</code> “June”</p>
+<p>Remember matching is case sensitive, “september” <code>!=</code> “September”</p>
 </div>
 </div>
-<p>Rather than just looking at September born students, we want to find all the students born in the Autumn term. But if we add a couple more criteria on <code>ST003D02T</code> nothing is returned!</p>
+<p>Rather than just looking at September born students, we want to find all the students born in the Autumn term. But if we add a couple more criteria on <code>ST003D02T</code> nothing is returned! Why?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">select</span>(CNT, ESCS, ST004D01T, ST003D02T, PV1MATH) <span class="sc">%&gt;%</span></span>
