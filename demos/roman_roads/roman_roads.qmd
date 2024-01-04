@@ -39,12 +39,12 @@ regions <- c("Essex", "Suffolk", "Kent", "Surrey", "Hampshire", "Norfolk", "Camb
 england_roads <- read_rds(r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england.rds]")
 
 straight_roads <- england_roads %>% 
-  filter(str_detect(name,"Roman|Straight|The Street|streht")) %>%
+  filter(str_detect(name,"(?i)Roman|Straight|strait|strate|streat|The Street|streht")) %>%
   filter(!str_detect(name,"(?i)Roundabout|Close|Romanhurst"))
 
 straight_roads <- straight_roads %>% 
-  # filter(str_detect(name, "(?i)straight road|roman road"))
-  filter(str_detect(name, "(?i)the street|roman road|straight road|streht"))
+  # filter(str_detect(name, "(?i)the straight|strait|strate|straight"))
+  filter(str_detect(name, "(?i)the strait|the street|roman road|straight road|the straight|streht"))
 par(mar = rep(0.1, 4))
 #plot(sf::st_geometry(straight_roads))
 
@@ -110,8 +110,11 @@ leaflet() %>%
 
 # unique(roman_roads$layer)
 # romad_roads <- roman_roads %>% filter(str_detect(layer, "Margary|Gough|Street|Early Medieval|roads"))
+
 ```
 
+Modern road data (in blue) for `r paste0(regions, collapse=", ")` from Open Street Map, matched by name including "(?i)the strait|the street|roman road|straight road|the straight|streht".
 
+Roman roads (in red) from: http://romanroadsinbritain.info/data.html, copyright M.C.Bishop with a Creative Commons ([Attribution-NonCommercial-ShareAlike or CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)) licence.
 
 
