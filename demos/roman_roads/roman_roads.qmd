@@ -1,0 +1,117 @@
+---
+title: Roman Roads in UK
+warning: false
+echo: false
+---
+
+```{r}
+# install.packages("osmdata")
+# install.packages("osmextract")
+
+library(osmdata)
+library(osmextract)
+library(sf)
+# library(rgdal)
+
+library(tidyverse)
+library(arrow)
+# https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html#1_Introduction
+
+##### READ OPEN STREETMAP
+
+# use this as it doesn't time out
+options(osmdata_overpass_url = "http://overpass-api.de/api/interpreter")
+
+# heavy duty fetch, 
+regions <- c("Essex", "Suffolk", "Kent", "Surrey", "Hampshire", "Norfolk", "Cambridgeshire", "Hertfordshire", "East Sussex", "West Sussex")
+
+# roads=map_dfr(regions, \(region){
+#   oe_get(
+#     paste(region,"England"),
+#     quiet = FALSE,
+#     query = "SELECT * FROM 'lines' WHERE highway IS NOT NULL"
+#   ) %>% mutate(region = region)
+# })
+# 
+# # save this huge file to local
+# write_rds(roads, r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england.rds]")
+
+england_roads <- read_rds(r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england.rds]")
+
+straight_roads <- england_roads %>% 
+  filter(str_detect(name,"Roman|Straight|The Street|streht")) %>%
+  filter(!str_detect(name,"(?i)Roundabout|Close|Romanhurst"))
+
+straight_roads <- straight_roads %>% 
+  # filter(str_detect(name, "(?i)straight road|roman road"))
+  filter(str_detect(name, "(?i)the street|roman road|straight road|streht"))
+par(mar = rep(0.1, 4))
+#plot(sf::st_geometry(straight_roads))
+
+# the geometry stores a list of xy pairs
+geom <- straight_roads %>% head(1) %>% pull(geometry)
+
+# make a small request to OpenStreetmap
+# Bounding box for England
+# essex_poly <- opq(getbb ('essex uk', format_out = 'polygon'))
+# 
+# essex_highways <- essex_poly %>% add_osm_feature(key = 'highway') %>%
+#     osmdata_sf()
+
+####### LOAD Roman Road, from: http://romanroadsinbritain.info/data.html
+# kml_file <- r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\roman.kml]"
+# 
+# kml_layers<- st_layers(kml_file)[["name"]]
+# 
+# roman_roads <- map_dfr(kml_layers, \(lyr){
+#   #tmp<-st_read(kml_file,"Margary 212")
+#   #attributes(tmp$geometry)
+#   sf::st_read(kml_file, layer=lyr) %>% mutate(layer=lyr)
+# })
+
+rds_file <- "D:/OneDrive/KCL OneDrive/OneDrive - King's College London/Code/QERKCL_PISA/data/OSM/roman_roads.rds"
+
+# save this slow file to local
+# write_rds(roman_roads, rds_file)
+# geometry of the kml file has additional attributes that aren't stored in a parquet file, so using an rds
+roman_roads <- read_rds(rds_file)
+
+par(mar = rep(0.1, 4))
+#plot(sf::st_geometry(roman_roads[-445,]))
+
+## Plot road names on top of archaeological geometry
+
+# 445 gives errors, it's a margary line
+roman_roads <- roman_roads[-445,]
+
+# get rid of the Z axis for plotting LINESTRINGs
+roman_roads_poly <- roman_roads %>% 
+  filter(st_geometry_type(geometry) == "LINESTRING") %>%
+  mutate(geometry = st_zm(geometry, "XY"))
+
+roman_roads_point <- roman_roads %>% 
+  filter(st_geometry_type(geometry) == "POINT")
+
+
+library(leaflet.extras)
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%
+  addPolylines(data = roman_roads_poly, 
+              color = "red", 
+              weight = 4,
+              label = ~Name) %>%
+  addPolylines(data = straight_roads, 
+              color = "blue", 
+              weight = 2,
+              label = ~name) %>%
+  addFullscreenControl()
+
+
+# unique(roman_roads$layer)
+# romad_roads <- roman_roads %>% filter(str_detect(layer, "Margary|Gough|Street|Early Medieval|roads"))
+```
+
+
+
+
