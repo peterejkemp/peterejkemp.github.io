@@ -23,8 +23,8 @@ library(arrow)
 options(osmdata_overpass_url = "http://overpass-api.de/api/interpreter")
 
 # heavy duty fetch, 
-regions <- c("Essex", "Suffolk", "Kent", "Surrey", "Hampshire", "Norfolk", "Cambridgeshire", "Hertfordshire", "East Sussex", "West Sussex")
-
+regions <- c("Essex", "Suffolk", "Kent", "Surrey", "Hampshire", "Norfolk", "Cambridgeshire", "Hertfordshire", "East Sussex", "West Sussex", "Cumbria", "Durham", "Bedfordshire", "Buckinghamshire", "Oxfordshire", "Wiltshire", "Lincolnshire","Berkshire", "Dorset", "Somerset", "Devon", "Cornwall", "Warwickshire", "Cheshire", "Rutland")
+ 
 # roads=map_dfr(regions, \(region){
 #   oe_get(
 #     paste(region,"England"),
@@ -35,6 +35,8 @@ regions <- c("Essex", "Suffolk", "Kent", "Surrey", "Hampshire", "Norfolk", "Camb
 # 
 # # save this huge file to local
 # write_rds(roads, r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england.rds]")
+# 
+# england_roads <- roads
 
 england_roads <- read_rds(r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england.rds]")
 
@@ -100,7 +102,7 @@ leaflet() %>%
   addPolylines(data = roman_roads_poly, 
               color = "red", 
               weight = 4,
-              label = ~Name) %>%
+              label = ~paste(layer,"-", Name)) %>%
   addPolylines(data = straight_roads, 
               color = "blue", 
               weight = 2,
