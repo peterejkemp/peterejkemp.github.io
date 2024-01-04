@@ -43,8 +43,8 @@ straight_roads <- england_roads %>%
   filter(!str_detect(name,"(?i)Roundabout|Close|Romanhurst"))
 
 straight_roads <- straight_roads %>% 
-  # filter(str_detect(name, "(?i)the straight|strait|strate|straight"))
-  filter(str_detect(name, "(?i)the strait|the street|roman road|straight road|the straight|streht"))
+  #filter(str_detect(name, "(?i)straight lane"))
+  filter(str_detect(name, "(?i)the strait|straight lane|roman lane|straight lane|the street|roman road|straight road|the straight|streht"))
 par(mar = rep(0.1, 4))
 #plot(sf::st_geometry(straight_roads))
 
@@ -113,7 +113,7 @@ leaflet() %>%
 
 ```
 
-Modern road data (in blue) for `r paste0(regions, collapse=", ")` from Open Street Map, matched by name including "(?i)the strait|the street|roman road|straight road|the straight|streht".
+Modern road data (in blue) for `r paste0(regions, collapse=", ")` from Open Street Map, matched by name including "(?i)the strait|straight lane|roman lane|straight lane|the street|roman road|straight road|the straight|streht".
 
 Roman roads (in red) from: http://romanroadsinbritain.info/data.html, copyright M.C.Bishop with a Creative Commons ([Attribution-NonCommercial-ShareAlike or CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)) licence.
 
