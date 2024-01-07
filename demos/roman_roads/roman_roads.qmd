@@ -181,13 +181,14 @@ leaflet() %>%
 Modern road data (in blue) for `r paste0(regions, collapse=", ")` from Open Street Map, matched by name including "(?i)the strait|the causeway|straight lane|streat lane|roman lane|straight lane|the street|roman road|roman bank|roman way|straight road|the straight|streht|street road|street lane|long causeway". Roman _Way_ was excluded as lots of new developments appear to use this.
 
 ```{r}
-straight_roads %>% as.data.frame() %>%
+straight_roads %>% as.data.frame() %>% distinct() %>%
   group_by(region, name) %>% 
   summarise(n=n()) %>% 
   arrange(desc(n)) %>% 
   ungroup() %>%
   gt() %>% 
-  tab_options()
+  opt_interactive(use_filters=TRUE)
+
 ```
 
 Ancient roads (in red) including Margary's roads from: http://romanroadsinbritain.info/data.html, copyright M.C.Bishop with a Creative Commons ([Attribution-NonCommercial-ShareAlike or CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)) licence.
