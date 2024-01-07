@@ -19,6 +19,7 @@ This is an interactive map of the known Roman roads across England, overlaid wit
 library(osmdata)
 library(osmextract)
 library(sf)
+library(gt)
 # library(rgdal)
 
 library(tidyverse)
@@ -31,8 +32,11 @@ library(arrow)
 options(osmdata_overpass_url = "http://overpass-api.de/api/interpreter")
 
 # heavy duty fetch, 
-regions <- c("Essex", "Suffolk", "Kent", "Surrey", "Hampshire", "Norfolk", "Cambridgeshire", "Hertfordshire", "East Sussex", "West Sussex", "Cumbria", "Durham", "Bedfordshire", "Buckinghamshire", "Oxfordshire", "Wiltshire", "Lincolnshire","Berkshire", "Dorset", "Somerset", "Devon", "Cornwall", "Warwickshire", "Cheshire", "Rutland") %>% sort()
+regions <- c("Cheshire", "Rutland", "Essex", "Suffolk", "Kent", "Surrey", "Hampshire", "Norfolk", "Northamptonshire", "Devon", "Cornwall", "Cambridgeshire","Leicestershire", "North Yorkshire","West Yorkshire", "County Durham", "Northumberland","South Yorkshire", "Derbyshire", "Hertfordshire", "East Sussex", "West Sussex", "Cumbria", "Durham", "Bedfordshire", "Buckinghamshire", "Oxfordshire", "Wiltshire", "Lincolnshire","Berkshire", "Dorset", "Somerset", "Devon", "Cornwall","Staffordshire","Gloucestershire","Worcestershire","Shropshire", "Somerset", "Warwickshire","Isle of Wight") %>% sort()
  
+#regs <- straight_roads$region %>% unique()
+#setdiff(regions, regs)
+
 # roads=map_dfr(regions, \(region){
 #   oe_get(
 #     paste(region,"England"),
@@ -43,18 +47,22 @@ regions <- c("Essex", "Suffolk", "Kent", "Surrey", "Hampshire", "Norfolk", "Camb
 # 
 # # save this huge file to local
 # write_rds(roads, r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england.rds]")
+# write_rds(straight_roads, r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england_straight.rds]")
 # 
 # england_roads <- roads
 
-england_roads <- read_rds(r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england.rds]")
+# england_roads <- read_rds(r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england.rds]")
+
+england_roads <- read_rds(r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england_straight.rds]")
 
 straight_roads <- england_roads %>% 
-  filter(str_detect(name,"(?i)Roman|Straight|strait|strate|streat|The Street|streht|causeway")) %>%
+  filter(str_detect(name,"(?i)Roman|Straight|strait|strate|streat|The Street|streht|causeway|west street|east street|north street|south street")) %>%
   filter(!str_detect(name,"(?i)Roundabout|Close|Romanhurst"))
 
 straight_roads <- straight_roads %>% 
   #filter(str_detect(name, "(?i)straight lane"))
-  filter(str_detect(name, "(?i)the strait|the causeway|straight lane|roman lane|straight lane|the street|roman road|straight road|the straight|streht|street road|street lane"))
+  filter(str_detect(name, "(?i)the strait|the causeway|straight lane|streat lane|roman lane|straight lane|the street|roman road|roman bank|straight road|the straight|streht|street road|street lane|long causeway|east|west|north|south"))
+
 par(mar = rep(0.1, 4))
 #plot(sf::st_geometry(straight_roads))
 
@@ -103,6 +111,8 @@ roman_roads_point <- roman_roads %>%
   filter(st_geometry_type(geometry) == "POINT")
 
 
+# roman_roads_poly %>% as.data.frame() %>% group_by(layer) %>% summarise(n=n())
+
 library(leaflet.extras)
 library(leaflet)
 leaflet() %>%
@@ -110,21 +120,76 @@ leaflet() %>%
   addPolylines(data = roman_roads_poly, 
               color = "red", 
               weight = 4,
-              label = ~paste(layer,"-", Name)) %>%
-  addPolylines(data = straight_roads, 
+              label = ~paste(layer,"-", Name),
+              group="ancient_roads") %>%
+
+    addPolylines(data = straight_roads %>% filter(name == "The Street"), 
+              color = "darkblue", 
+              weight = 2,
+              label = ~name,
+              group="the_street") %>%
+    addPolylines(data = straight_roads %>% 
+                   filter(name == "The Causeway"), 
+              color = "darkblue", 
+              weight = 2,
+              label = ~name,
+              group="the_causeway") %>%
+    addPolylines(data = straight_roads %>% 
+                   filter(grepl("Roman Road", name)), 
+              color = "darkblue", 
+              weight = 2,
+              label = ~name,
+              group="roman_road") %>%
+  addPolylines(data = straight_roads %>% 
+                   filter(name == "Roman Bank"), 
+              color = "darkblue", 
+              weight = 2,
+              label = ~name,
+              group="roman_bank") %>%
+  addPolylines(data = straight_roads %>% 
+                   filter(grepl("Straight|Streat", name)), 
+              color = "darkblue",
+              weight = 2,
+              label = ~name,
+              group="straight_road") %>%
+  addPolylines(data = straight_roads %>% 
+                 filter(grepl("East Street|West Street|North Street|South Street", name)), 
+              color = "darkblue", 
+              weight = 2,
+              label = ~name,
+              group="compass_streets") %>%
+  addPolylines(data = straight_roads %>% 
+                 filter(!grepl("Straight|Streat|Bank|Roman Road|The Causeway|The Street|East Street|West Street|North Street|South Street",name)), 
               color = "blue", 
               weight = 2,
-              label = ~name) %>%
+              label = ~name,
+              group="other_roads") %>%
+  addLayersControl(
+    overlayGroups = c("ancient_roads","the_street","the_causeway",
+    "roman_road", "roman_bank","straight_road","compass_streets",
+                                            "other_roads"),
+    options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  hideGroup("compass_streets") %>%
   addFullscreenControl()
-
 
 # unique(roman_roads$layer)
 # romad_roads <- roman_roads %>% filter(str_detect(layer, "Margary|Gough|Street|Early Medieval|roads"))
 
 ```
 
-Modern road data (in blue) for `r paste0(regions, collapse=", ")` from Open Street Map, matched by name including "(?i)the strait|straight lane|roman lane|straight lane|the street|roman road|straight road|the straight|streht".
+Modern road data (in blue) for `r paste0(regions, collapse=", ")` from Open Street Map, matched by name including "(?i)the strait|the causeway|straight lane|streat lane|roman lane|straight lane|the street|roman road|roman bank|roman way|straight road|the straight|streht|street road|street lane|long causeway". Roman _Way_ was excluded as lots of new developments appear to use this.
 
-Roman roads (in red) from: http://romanroadsinbritain.info/data.html, copyright M.C.Bishop with a Creative Commons ([Attribution-NonCommercial-ShareAlike or CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)) licence.
+```{r}
+straight_roads %>% as.data.frame() %>%
+  group_by(region, name) %>% 
+  summarise(n=n()) %>% 
+  arrange(desc(n)) %>% 
+  ungroup() %>%
+  gt() %>% 
+  tab_options()
+```
+
+Ancient roads (in red) including Margary's roads from: http://romanroadsinbritain.info/data.html, copyright M.C.Bishop with a Creative Commons ([Attribution-NonCommercial-ShareAlike or CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)) licence.
 
 
