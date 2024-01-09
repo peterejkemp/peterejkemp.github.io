@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>MASTEMR - PISA</title>
 <style>
@@ -215,13 +215,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
+ <span class="menu-text">06 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-T-testsPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">06 T-tests</span></a>
+ <span class="menu-text">07 T-tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -296,7 +296,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A5-Self_Study_Tasks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Appendix Self Study Tasks</span></a>
+ <span class="menu-text">Self Study Tasks</span></a>
   </div>
 </li>
       </ul>
@@ -327,6 +327,7 @@ div.csl-indent {
   <li><a href="#why-is-china-given-the-cnt-value-b-s-j-z-china-2018-or-b-s-j-g-china-2015" id="toc-why-is-china-given-the-cnt-value-b-s-j-z-china-2018-or-b-s-j-g-china-2015" class="nav-link" data-scroll-target="#why-is-china-given-the-cnt-value-b-s-j-z-china-2018-or-b-s-j-g-china-2015"><span class="header-section-number">4.10</span> Why is China given the <code>CNT</code> value <code>B-S-J-Z (China)</code> (2018) or <code>B-S-J-G (China)</code> (2015)?</a></li>
   <li><a href="#where-is-mainland-china-in-pisa-2022" id="toc-where-is-mainland-china-in-pisa-2022" class="nav-link" data-scroll-target="#where-is-mainland-china-in-pisa-2022"><span class="header-section-number">4.11</span> Where is mainland China in PISA 2022?</a></li>
   <li><a href="#how-do-i-calculate-weighted-means-of-the-pv-scores" id="toc-how-do-i-calculate-weighted-means-of-the-pv-scores" class="nav-link" data-scroll-target="#how-do-i-calculate-weighted-means-of-the-pv-scores"><span class="header-section-number">4.12</span> How do I calculate weighted means of the PV scores?**</a></li>
+  <li><a href="#pisa-quirks" id="toc-pisa-quirks" class="nav-link" data-scroll-target="#pisa-quirks"><span class="header-section-number">4.13</span> PISA quirks</a></li>
   </ul>
 </li>
   <li><a href="#interesting-papers-and-reading-on-pisa" id="toc-interesting-papers-and-reading-on-pisa" class="nav-link" data-scroll-target="#interesting-papers-and-reading-on-pisa"><span class="header-section-number">5</span> Interesting papers and reading on PISA</a></li>
@@ -350,7 +351,7 @@ div.csl-indent {
 
 </header><section id="what-is-pisa" class="level1" data-number="1"><h1 data-number="1">
 <span class="header-section-number">1</span> What is PISA</h1>
-<p>The Programme for International Student Assessment (PISA) is an OECD initiative that looks at the reading, mathematics and science abilities of students aged 15 years old. Data is collected from ~38 OECD countries and other partner countries every three years.</p>
+<p>The <em>Programme for International Student Assessment</em> (PISA) is an OECD initiative that looks at the reading, mathematics and science abilities of students aged 15 years old. Data is collected from ~38 OECD countries and other partner countries every three years.</p>
 <table class="table">
 <thead><tr class="header">
 <th>Dataset</th>
@@ -361,7 +362,7 @@ div.csl-indent {
 <th style="text-align: center;">12</th>
 <th style="text-align: center;">15</th>
 <th style="text-align: center;">18</th>
-<th style="text-align: center;">21</th>
+<th style="text-align: center;">22</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -421,10 +422,10 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>PISA datasets above can be found on the <a href="https://www.oecd.org/pisa/data/">OECD website</a>. The links in the table above will allow you to download .rds versions of these files which we have created, though they might need additional editing, e.g.&nbsp;reducing the number of columns or changing the types of each column. If you want to find out more about what each field stores, take a look at the corresponding codebook, <a href="https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx">2018</a>, <a href="https://webfs.oecd.org/pisa/Codebook_CMB.xlsx">2015</a>.</p>
+<p>PISA datasets above can be found on the <a href="https://www.oecd.org/pisa/data/">OECD website</a>. The links in the table above will allow you to download .rds versions of these files which we have created, though they might need additional editing, e.g.&nbsp;reducing the number of columns or changing the types of each column. If you want to find out more about what each field stores, take a look at the corresponding codebook,<a href="https://webfs.oecd.org/pisa2022/CY08MSP_CODEBOOK_5thDecember23.xlsx">2022</a>, <a href="https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx">2018</a>, <a href="https://webfs.oecd.org/pisa/Codebook_CMB.xlsx">2015</a>.</p>
 </section><section id="how-to-use-it" class="level1" data-number="2"><h1 data-number="2">
 <span class="header-section-number">2</span> How to use it</h1>
-<p>The PISA datasets come in <em>SPSS</em> or <em>SAS</em> formats. The data used in this course comes directly from downloading the SPSS <code>.sav</code> files and using the <code>haven</code> package to clean it into a native R format suitable for analysis, in most cases <code>.parquet</code> files (see: <strong>?@sec-parquet</strong>). There are a few quirks that you need to be aware of:</p>
+<p>The PISA datasets come in <em>SPSS</em> or <em>SAS</em> formats. The data used in this course comes directly from downloading the SPSS <code>.sav</code> files and using the <code>haven</code> package to clean it into a native R format suitable for analysis, in most cases <code>.parquet</code> files (see: <a href="../chapters/02-2-Intro_to_analysis_software.html#sec-parquet">§.parquet files</a>)). There are a few quirks that you need to be aware of:</p>
 <ul>
 <li>R uses levels (factors) instead of labelled data</li>
 <li>All SPSS fields are <em>labelled</em>, and auto conversion into the native R dataframe format would make numeric fields, factors(!?). To avoid this confusion we have stripped out the no-response data for numeric fields and replaced it with <code>NA</code> values. This means that you won’t be able to tell the reason that a field is missing, and the following labels have all been set to <code>NA</code>:</li>
@@ -691,6 +692,54 @@ div.csl-indent {
 <span id="cb9-34"><a href="#cb9-34"></a>    mmeans[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(mmeans[<span class="dv">4</span>] <span class="sc">+</span> ivar[<span class="dv">2</span>]);</span>
 <span id="cb9-35"><a href="#cb9-35"></a>    <span class="fu">return</span>(mmeans);</span>
 <span id="cb9-36"><a href="#cb9-36"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="pisa-quirks" class="level2" data-number="4.13"><h2 data-number="4.13" class="anchored" data-anchor-id="pisa-quirks">
+<span class="header-section-number">4.13</span> PISA quirks</h2>
+<ul>
+<li>All 2022 school responses to questions about the clubs and extra curricular activities run in a school <code>SC053Q____</code> are coded as <code>NA</code>, as are <code>SC207____</code>. It’s not clear why this data is included in the dataset or whether this data should have values but doesn’t. This data is included in the full <code>PISA_school_2022.parquet</code> file.</li>
+</ul>
+<div class="cell">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>club_flds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"SC053Q01TA"</span>,<span class="st">"SC053Q02TA"</span>,<span class="st">"SC053Q03TA"</span>,<span class="st">"SC053Q04TA"</span>,<span class="st">"SC053Q05NA"</span>,</span>
+<span id="cb10-2"><a href="#cb10-2"></a>               <span class="st">"SC053Q06NA"</span>,<span class="st">"SC053Q07TA"</span>,<span class="st">"SC053Q08TA"</span>,<span class="st">"SC053Q09TA"</span>,<span class="st">"SC053Q10TA"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a>PISA_2022_school <span class="sc">%&gt;%</span> </span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"CNT"</span>, <span class="fu">starts_with</span>(<span class="st">"SC053Q"</span>), <span class="fu">starts_with</span>(<span class="st">"SC207"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>CNT, </span>
+<span id="cb10-8"><a href="#cb10-8"></a>               <span class="at">names_to =</span> <span class="st">"club"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9"></a>               <span class="at">values_to =</span> <span class="st">"present"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(present))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>Additionally, <code>ST33_____</code> and <code>ST34_____</code> on the student questionnaire are missing answers.</li>
+</ul>
+<div class="cell">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"CNT"</span>, <span class="fu">starts_with</span>(<span class="st">"ST33"</span>), <span class="fu">starts_with</span>(<span class="st">"ST34"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>CNT, </span>
+<span id="cb11-5"><a href="#cb11-5"></a>               <span class="at">names_to =</span> <span class="st">"club"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6"></a>               <span class="at">values_to =</span> <span class="st">"present"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(present))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>Cyprus is still present in the levels of <code>CNT</code> even though PISA hasn’t recorded <a href="https://www.oecd.org/pisa/aboutpisa/cyprus-pisa.htm">data on Cyprus</a> since 2012. Other countries that didn’t participate in the 2022 round have been removed from the levels, e.g.&nbsp;China.</li>
+</ul>
+<div class="cell">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>countries <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">pull</span>(CNT) <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span>
+<span id="cb12-2"><a href="#cb12-2"></a>country_lvls <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">pull</span>(CNT) <span class="sc">%&gt;%</span> <span class="fu">levels</span>()</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">setdiff</span>(country_lvls,countries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>The <em>United Kingdom</em> is the country referred to when correctly combining the results of England, Scotland, Wales and Northern Ireland. However, the <em>regions</em> of the United Kingdom listed by the OECD are <em>“Great Britain:”</em> England, Scotland, Wales and Northern Ireland. Northern Ireland isn’t part of Great Britain.</li>
+</ul>
+<div class="cell">
+<details><summary>Code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">select</span>(CNT, REGION) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Great Britain"</span>, REGION)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section></section><section id="interesting-papers-and-reading-on-pisa" class="level1" data-number="5"><h1 data-number="5">
 <span class="header-section-number">5</span> Interesting papers and reading on PISA</h1>

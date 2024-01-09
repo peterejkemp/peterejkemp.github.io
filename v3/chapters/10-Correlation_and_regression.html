@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>MASTEMR - 10 Correlation and regression</title>
 <style>
@@ -215,13 +215,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
+ <span class="menu-text">06 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-T-testsPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">06 T-tests</span></a>
+ <span class="menu-text">07 T-tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -296,7 +296,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A5-Self_Study_Tasks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Appendix Self Study Tasks</span></a>
+ <span class="menu-text">Self Study Tasks</span></a>
   </div>
 </li>
       </ul>
@@ -522,7 +522,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>the <em>central limit theorem</em> means that when you have a sufficiently large sample you can presume that the data is normally distributed. As a rule of thumb <em>“30 is the magic number”</em>, and any samples you are studying with 30 or more data items can be treated as parametric, e.g.&nbsp;you would always use <em>pearson</em> when running correlation analysis on 30 or more items.</p>
+<p>The <em>central limit theorem</em> means that when you have a sufficiently large sample you can presume that the data is normally distributed. As a rule of thumb <em>“30 is the magic number”</em>, and any samples you are studying with 30 or more data items can be treated as parametric, e.g.&nbsp;you would always use <em>pearson</em> when running correlation analysis on 30 or more items. This is a rough rule of thumb and you should always check the normality of your data before when checking and presenting any result any tests.</p>
 <p>!ADD REFERENCE!</p>
 </div>
 </div>
@@ -1484,7 +1484,7 @@ MATHEFF 2012 MATINTFC 2012 SCIEEFF 2015-->
 </div>
 <ul>
 <li>line 1, assigns <code>&lt;-</code> the result of the <code>left_join</code> to a new object, <code>PISA_2015_GGGI</code>,</li>
-<li>line 2, specifies <code>&lt;table_1&gt;</code> to be <code>PISA_2015</code> with the selected fields, note we have chosen to use <code>PV1</code> grades here, it’s unclear what the original paper uses (See <strong>?@sec-PV</strong> for a discussion on the use of <code>PV</code> grades)</li>
+<li>line 2, specifies <code>&lt;table_1&gt;</code> to be <code>PISA_2015</code> with the selected fields, note we have chosen to use <code>PV1</code> grades here, it’s unclear what the original paper uses (See <a href="../chapters/A1-PISA_analysis.html#sec-PV">§What are Plausible Values?</a>) for a discussion on the use of <code>PV</code> grades)</li>
 <li>line 3, specifies <code>&lt;table_2&gt;</code> to be <code>GGGI</code> with just the country and <code>Overall.Score</code> fields</li>
 <li>line 4, specifies the <code>&lt;matching_field&gt;</code> to be <code>CNT</code>from <code>PISA_2015</code> and <code>Country</code> from <code>GGGI</code>, this means that the data in <code>&lt;table_2&gt;</code> will be added to <code>&lt;table_1&gt;</code> where <code>CNT</code> and <code>Country</code> are the same. For example for every entry of <code>Finland</code> in <code>PISA_2015</code>, the <code>Overall.Score</code> of <code>0.8421</code> will be added. Where it can’t find a matching country, e.g.&nbsp;Albania doesn’t have a GGGI entry, <code>NA</code> will be added.</li>
 </ul>
