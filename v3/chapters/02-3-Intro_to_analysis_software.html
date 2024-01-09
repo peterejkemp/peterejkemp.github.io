@@ -399,7 +399,7 @@ Note
 <li>line 7 filters out any gender <code>ST004D01T</code> that is <code>NA</code>. First is finds all the students that have <code>NA</code> as their gender by using <code>is.na(ST004D01T)</code>, then is <em>NOTs</em>/flips the result using the exclamation mark <code>!</code>, giving those students who don’t have their gender set to <code>NA</code>. The filtered data is then piped to the next line</li>
 <li>line 8, finally we <code>arrange</code> / sort the results in <code>desc</code>ending order by the <code>mean_maths</code> column. The default for arrange is <em>ascending</em> order, leave out the <code>desc(  )</code> for the numbers to be ordered in the opposite way.</li>
 </ul>
-<p>Males get a slightly better maths score than Females for this <code>PV1MATH</code> score, other scores are available, please read <strong>?@sec-PV</strong> to find out more about the limitations of using this value.</p>
+<p>Males get a slightly better maths score than Females for this <code>PV1MATH</code> score, other scores are available, please read <a href="../chapters/A1-PISA_analysis.html#sec-PV">§What are Plausible Values?</a>) to find out more about the limitations of using this value.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

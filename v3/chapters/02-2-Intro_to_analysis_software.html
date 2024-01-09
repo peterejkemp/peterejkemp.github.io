@@ -487,7 +487,7 @@ Tip
 <p>First we need to get some data into R so we can start analysing them. We can load large datatables into R by either providing the online web address, or by loading it from a local file directory on your hard drive. Both methods are covered below:</p>
 </section><section id="loading-data-from-the-web" class="level1" data-number="3"><h1 data-number="3">
 <span class="header-section-number">3</span> Loading data from the web</h1>
-<p>To download files from the web you’ll need to find the exact location of the file you are using. For example below we will need another package, <code>openxlsx</code>, which you need to <em>install</em> before you load it (see: <strong>?@sec-packages</strong>, or use line 1 below). The code shown will download the files from an online Google drive directly into objects in R using <code>read.xlsx(&lt;file_web_address&gt;, &lt;sheet_name&gt;)</code>:</p>
+<p>To download files from the web you’ll need to find the exact location of the file you are using. For example below we will need another package, <code>openxlsx</code>, which you need to <em>install</em> before you load it (see: <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-packages">§Setting up RStudio and the tidyverse</a>), or use line 1 below). The code shown will download the files from an online Google drive directly into objects in R using <code>read.xlsx(&lt;file_web_address&gt;, &lt;sheet_name&gt;)</code>:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -670,7 +670,7 @@ Note
 <p>To learn more about loading data from in other formats, e.g.&nbsp;SPSS and STATA, look at the tidyverse documentation for <a href="https://haven.tidyverse.org/">haven</a>.</p>
 </div>
 </div>
-<p>The <code>PISA_2022</code> dataframe is made up of multiple columns, with each column acting like a <em>vector</em>, which means each column stores values of only one datatype. If we look at the first four columns of the schools table, you can see the <code>CNTSTUID</code>, <code>ESCS</code> and <code>PV1MATH</code> columns are <code>&lt;dbl&gt;</code> (<code>numeric</code>) and the other three columns are of <code>&lt;fctr&gt;</code> (<code>factor</code>), a special datatype in R that helps store categorical and ordinal variables, see <strong>?@sec-factors</strong> for more information on how factors work.</p>
+<p>The <code>PISA_2022</code> dataframe is made up of multiple columns, with each column acting like a <em>vector</em>, which means each column stores values of only one datatype. If we look at the first four columns of the schools table, you can see the <code>CNTSTUID</code>, <code>ESCS</code> and <code>PV1MATH</code> columns are <code>&lt;dbl&gt;</code> (<code>numeric</code>) and the other three columns are of <code>&lt;fctr&gt;</code> (<code>factor</code>), a special datatype in R that helps store categorical and ordinal variables, see <a href="../chapters/02-3-Intro_to_analysis_software.html#sec-factors">§Factors and statistical data types</a>) for more information on how factors work.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
@@ -693,7 +693,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Vectors are data structures that bring together one or more data elements of the same datatype. E.g. we might have a numeric vector recording the grades of a class, or a character vector storing the gender of a set of students. To define a vector we use <code>c(item, item, ...)</code>, where <code>c</code> stands for combine. Vectors are very important to R, even declaring a single object, <code>x &lt;- 6</code>, is creating a vector of size one. To find out more about vectors see: <strong>?@sec-vectors</strong></p>
+<p>Vectors are data structures that bring together one or more data elements of the same datatype. E.g. we might have a numeric vector recording the grades of a class, or a character vector storing the gender of a set of students. To define a vector we use <code>c(item, item, ...)</code>, where <code>c</code> stands for combine. Vectors are very important to R, even declaring a single object, <code>x &lt;- 6</code>, is creating a vector of size one. To find out more about vectors see: <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-vectors">§Vectors</a>)</p>
 </div>
 </div>
 <p>We can find out some general information about the table we have loaded. <code>nrow</code> and <code>ncol</code> tell you about the dimensions of the table</p>
