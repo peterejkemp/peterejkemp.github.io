@@ -10,7 +10,7 @@ warning: false
 echo: false
 ---
 
-This is an interactive map of the known Roman roads across England, overlaid with extant roads that have names suggesting a roman origin, e.g. "straight road", "roman road", "the street", "the causeway". Whilst many roads with these names will be modern roads, some will be on the same routes as the Roman roads. This map allows you to explore the extent to which this is true.
+This is an interactive map of the known Roman roads across England, overlaid with extant roads that have names suggesting a roman origin, e.g. "straight road", "roman road", "the street" (a corruption of the word "straight"), "the causeway" etc. Whilst many roads with these names will be modern roads, some will be on the same routes as the Roman roads. This map allows you to explore the extent to which this is true.
 
 ```{r}
 # install.packages("osmdata")
@@ -32,12 +32,14 @@ library(arrow)
 options(osmdata_overpass_url = "http://overpass-api.de/api/interpreter")
 
 # heavy duty fetch, 
-regions <- c("Cheshire", "Rutland", "Essex", "Suffolk", "Kent", "Surrey", "Hampshire", "Norfolk", "Northamptonshire", "Devon", "Cornwall", "Cambridgeshire","Leicestershire", "North Yorkshire","West Yorkshire", "County Durham", "Northumberland","South Yorkshire", "Derbyshire", "Hertfordshire", "East Sussex", "West Sussex", "Cumbria", "Durham", "Bedfordshire", "Buckinghamshire", "Oxfordshire", "Wiltshire", "Lincolnshire","Berkshire", "Dorset", "Somerset", "Devon", "Cornwall","Staffordshire","Gloucestershire","Worcestershire","Shropshire", "Somerset", "Warwickshire","Isle of Wight") %>% sort()
+regions <- c("Cheshire", "Rutland", "Essex", "Suffolk", "Kent", "Surrey", "Hampshire", "Norfolk", "Northamptonshire", "Devon", "Cornwall", "Cambridgeshire","Leicestershire", "North Yorkshire","West Yorkshire", "County Durham", "Northumberland","South Yorkshire", "Derbyshire", "Hertfordshire", "East Sussex", "West Sussex", "Cumbria", "Durham", "Bedfordshire", "Buckinghamshire", "Oxfordshire", "Wiltshire", "Lincolnshire","Berkshire", "Dorset", "Somerset", "Devon", "Cornwall","Staffordshire","Gloucestershire","Worcestershire","Shropshire", "Somerset", "Warwickshire","Isle of Wight", "Shropshire", "Lancashire", "Nottinghamshire", "Herefordshire", "Huntingdonshire", "Bedfordshire", "Greater Manchester", "West Midlands", "East Riding of Yorkshire", "Tyne and Wear") |> 
+  unique() |> sort()
  
 #regs <- straight_roads$region %>% unique()
 #setdiff(regions, regs)
 
 # roads=map_dfr(regions, \(region){
+#   # region <- "Herefordshire"
 #   oe_get(
 #     paste(region,"England"),
 #     quiet = FALSE,
@@ -47,9 +49,8 @@ regions <- c("Cheshire", "Rutland", "Essex", "Suffolk", "Kent", "Surrey", "Hamps
 # 
 # # save this huge file to local
 # write_rds(roads, r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england.rds]")
-# write_rds(straight_roads, r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england_straight.rds]")
-# 
 # england_roads <- roads
+
 
 # england_roads <- read_rds(r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england.rds]")
 
@@ -61,7 +62,10 @@ straight_roads <- england_roads %>%
 
 straight_roads <- straight_roads %>% 
   #filter(str_detect(name, "(?i)straight lane"))
-  filter(str_detect(name, "(?i)the strait|the causeway|straight lane|streat lane|roman lane|straight lane|the street|roman road|roman bank|straight road|the straight|streht|street road|street lane|long causeway|east|west|north|south"))
+  filter(str_detect(name, "(?i)the strait|the causeway|straight lane|streat lane|roman lane|roman way|straight lane|the street|roman road|roman bank|straight road|the straight|streht|street road|street lane|long causeway|east|west|north|south"))
+
+# write_rds(straight_roads, r"[D:\OneDrive\KCL OneDrive\OneDrive - King's College London\Code\QERKCL_PISA\data\OSM\highways_england_straight.rds]")
+# 
 
 par(mar = rep(0.1, 4))
 #plot(sf::st_geometry(straight_roads))
@@ -159,7 +163,13 @@ leaflet() %>%
               label = ~name,
               group="compass_streets") %>%
   addPolylines(data = straight_roads %>% 
-                 filter(!grepl("Straight|Streat|Bank|Roman Road|The Causeway|The Street|East Street|West Street|North Street|South Street",name)), 
+                 filter(grepl("(?i)Roman way", name)), 
+              color = "darkblue", 
+              weight = 2,
+              label = ~name,
+              group="roman_way") %>%
+  addPolylines(data = straight_roads %>% 
+                 filter(!grepl("(?i)Straight|Streat|Bank|Roman Road|The Causeway|The Street|East Street|West Street|North Street|South Street|roman way",name)), 
               color = "blue", 
               weight = 2,
               label = ~name,
@@ -167,10 +177,11 @@ leaflet() %>%
   addLayersControl(
     overlayGroups = c("ancient_roads","the_street","the_causeway",
     "roman_road", "roman_bank","straight_road","compass_streets",
-                                            "other_roads"),
+    "roman_way", "other_roads"),
     options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("compass_streets") %>%
+  hideGroup("roman_way") %>%
   addFullscreenControl()
 
 # unique(roman_roads$layer)
@@ -178,7 +189,7 @@ leaflet() %>%
 
 ```
 
-Modern road data (in blue) for `r paste0(regions, collapse=", ")` from Open Street Map, matched by name including "(?i)the strait|the causeway|straight lane|streat lane|roman lane|straight lane|the street|roman road|roman bank|roman way|straight road|the straight|streht|street road|street lane|long causeway". Roman _Way_ was excluded as lots of new developments appear to use this.
+Modern road data (in blue) for `r paste0(regions, collapse=", ")` from Open Street Map, matched by name including "(?i)the strait|the causeway|straight lane|streat lane|roman lane|straight lane|the street|roman road|roman bank|roman way|straight road|the straight|streht|street road|street lane|long causeway". East Street, North Street, South Street, West Street and Roman _Way_ can be added by selecting the layer, but they are excluded by default as lots of new developments appear to use these names.
 
 ```{r}
 straight_roads %>% as.data.frame() %>% distinct() %>%
@@ -188,7 +199,6 @@ straight_roads %>% as.data.frame() %>% distinct() %>%
   ungroup() %>%
   gt() %>% 
   opt_interactive(use_filters=TRUE)
-
 ```
 
 Ancient roads (in red) including Margary's roads from: http://romanroadsinbritain.info/data.html, copyright M.C.Bishop with a Creative Commons ([Attribution-NonCommercial-ShareAlike or CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)) licence.
