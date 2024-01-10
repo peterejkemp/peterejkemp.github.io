@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>MASTEMR - 06 Hypothesis testing and Chi-square tests</title>
 <style>
@@ -691,7 +691,7 @@ Tip
 <section id="plotting-the-chi-square-relationships" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="plotting-the-chi-square-relationships">
 <span class="header-section-number">6.1</span> Plotting the chi-square relationships</h2>
 <p>The numbers in the contingency table are hard to interpret - it is challenging to see how far out the numbers for each row are from each other. Alternatively, we can visualise the data from the contingency table by building a mosaic plot, a form of stacked bar chart. Mosaic plots can be a useful visulations before running a chi-squared test.</p>
-<p>To create a mosaic plot, you are going to need to install and load the <code>ggmosaic</code> package. See <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-load-run-pckges">§Installing and loading packages</a>) for more details on how to do this.</p>
+<p>To create a mosaic plot, you are going to need to install and load the <code>ggmosaic</code> package. See [<]strong[>]<a href="../chapters/02-1-Intro_to_analysis_software.html#sec-load-run-pckges">§Installing and loading packages</a>[<][/]strong[>] for more details on how to do this.</p>
 <p>Imagine we want to plot the ‘accomplishment’ data (<code>WB178Q01HA</code>) from the previous section for the Netherlands, Mexico and New Zealand.</p>
 <p>To create the mosaic plot we use <code>ggplot</code>, as we used for previous graphs. As before, we first pass the data (in this case <code>Accomp</code>) to <code>ggplot</code>. Then, to create the graph, <code>geom_mosaic</code> is used. <code>geom_mosaic</code> does not have a direct mapping of input to x and y variable so we need to pass it what we want plotted on the y-axis (<code>WB178Q01HA</code>) and x-axis (<code>CNT</code>) within the <code>product</code> function (<code>product(WB178Q01HA, CNT)</code>). We can also specify how we want the rectangles to be coloured (in our case, by <code>CNT</code>).</p>
 <div class="cell">

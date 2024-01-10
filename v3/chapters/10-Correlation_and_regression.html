@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>MASTEMR - 10 Correlation and regression</title>
 <style>
@@ -1357,9 +1357,10 @@ Tip
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> <span class="fu">names</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "CNTSCHID"   "CNTSTUID"   "WB151Q01HA" "WB152Q01HA" "BELONG"    
- [6] "DISCLIM"    "HOMEPOS"    "ESCS"       "ATTCONFM"   "ICTEFFIC"  
-[11] "PQMIMP"     "PARINVOL"   "PV1MATH"    "PV1READ"    "PV1SCIE"   </code></pre>
+<pre><code> [1] "CNTSCHID"   "CNTSTUID"   "ST016Q01NA" "WB151Q01HA" "WB152Q01HA"
+ [6] "WB156Q01HA" "BELONG"     "DISCLIM"    "HOMEPOS"    "ESCS"      
+[11] "ATTCONFM"   "ICTEFFIC"   "STUBMI"     "PQMIMP"     "PARINVOL"  
+[16] "PV1MATH"    "PV1READ"    "PV1SCIE"   </code></pre>
 </div>
 </div>
 </div>
@@ -1484,7 +1485,7 @@ MATHEFF 2012 MATINTFC 2012 SCIEEFF 2015-->
 </div>
 <ul>
 <li>line 1, assigns <code>&lt;-</code> the result of the <code>left_join</code> to a new object, <code>PISA_2015_GGGI</code>,</li>
-<li>line 2, specifies <code>&lt;table_1&gt;</code> to be <code>PISA_2015</code> with the selected fields, note we have chosen to use <code>PV1</code> grades here, it’s unclear what the original paper uses (See <a href="../chapters/A1-PISA_analysis.html#sec-PV">§What are Plausible Values?</a>) for a discussion on the use of <code>PV</code> grades)</li>
+<li>line 2, specifies <code>&lt;table_1&gt;</code> to be <code>PISA_2015</code> with the selected fields, note we have chosen to use <code>PV1</code> grades here, it’s unclear what the original paper uses (See [<]strong[>]<a href="../chapters/A1-PISA_analysis.html#sec-PV">§What are Plausible Values?</a>[<][/]strong[>] for a discussion on the use of <code>PV</code> grades)</li>
 <li>line 3, specifies <code>&lt;table_2&gt;</code> to be <code>GGGI</code> with just the country and <code>Overall.Score</code> fields</li>
 <li>line 4, specifies the <code>&lt;matching_field&gt;</code> to be <code>CNT</code>from <code>PISA_2015</code> and <code>Country</code> from <code>GGGI</code>, this means that the data in <code>&lt;table_2&gt;</code> will be added to <code>&lt;table_1&gt;</code> where <code>CNT</code> and <code>Country</code> are the same. For example for every entry of <code>Finland</code> in <code>PISA_2015</code>, the <code>Overall.Score</code> of <code>0.8421</code> will be added. Where it can’t find a matching country, e.g.&nbsp;Albania doesn’t have a GGGI entry, <code>NA</code> will be added.</li>
 </ul>

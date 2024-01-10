@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>MASTEMR - Loading packages and exploring data</title>
 <style>
@@ -419,7 +419,7 @@ Note
 5 Albania    435. -1.05  Agree            </code></pre>
 </div>
 </div>
-<p>The table above has 4 columns, each column has a datatype, <code>CNT</code> is a character vector, PV1MATH is a double (numeric) vector, ESCS is a double (numeric) vector and <code>IC172Q01JA</code> is a factor. For more about datatypes, see <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-datatypes">§Datatypes</a>)</p>
+<p>The table above has 4 columns, each column has a datatype, <code>CNT</code> is a character vector, PV1MATH is a double (numeric) vector, ESCS is a double (numeric) vector and <code>IC172Q01JA</code> is a factor. For more about datatypes, see [<]strong[>]<a href="../chapters/02-1-Intro_to_analysis_software.html#sec-datatypes">§Datatypes</a>[<][/]strong[>]</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -487,7 +487,7 @@ Tip
 <p>First we need to get some data into R so we can start analysing them. We can load large datatables into R by either providing the online web address, or by loading it from a local file directory on your hard drive. Both methods are covered below:</p>
 </section><section id="loading-data-from-the-web" class="level1" data-number="3"><h1 data-number="3">
 <span class="header-section-number">3</span> Loading data from the web</h1>
-<p>To download files from the web you’ll need to find the exact location of the file you are using. For example below we will need another package, <code>openxlsx</code>, which you need to <em>install</em> before you load it (see: <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-packages">§Setting up RStudio and the tidyverse</a>), or use line 1 below). The code shown will download the files from an online Google drive directly into objects in R using <code>read.xlsx(&lt;file_web_address&gt;, &lt;sheet_name&gt;)</code>:</p>
+<p>To download files from the web you’ll need to find the exact location of the file you are using. For example below we will need another package, <code>openxlsx</code>, which you need to <em>install</em> before you load it (see: [<]strong[>]<a href="../chapters/02-1-Intro_to_analysis_software.html#sec-packages">§Setting up RStudio and the tidyverse</a>[<][/]strong[>], or use line 1 below). The code shown will download the files from an online Google drive directly into objects in R using <code>read.xlsx(&lt;file_web_address&gt;, &lt;sheet_name&gt;)</code>:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -593,7 +593,7 @@ Note
 <p>If you want to save out any of your findings, you can use <code>write_parquet(&lt;object&gt;, &lt;location&gt;)</code>, where <code>object</code> is the table you are working on and <code>location</code> is where you want to save it.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">write_rds</span>(PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"France"</span>), <span class="st">"&lt;yourfolder&gt;/pisa_france_2022.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">write_parquet</span>(PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"France"</span>), <span class="st">"&lt;yourfolder&gt;/pisa_france_2022.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="csv-files" class="level1" data-number="7"><h1 data-number="7">
 <span class="header-section-number">7</span> .csv files</h1>
@@ -609,8 +609,8 @@ Note
 <p>You might want to save your own work as a <code>.csv</code> for use later or for manipulation in another tool e.g.&nbsp;Excel. To do this we can use <code>write_csv(&lt;your_data&gt;, "&lt;your_folder&gt;&lt;name&gt;.csv")</code>. <strong>NOTE</strong>: don’t forget to add <code>.csv</code> to the end of your “<your_folder><name><strong>.csv</strong>”, otherwise you might struggle to open the file in another program.</name></your_folder></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="co"># loading from a website</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">write_csv</span>(data, <span class="st">"summary_stats.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="co"># saving your results to a file called `summary_stats.csv`</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">write_csv</span>(my_results, <span class="st">"summary_stats.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="exploring-data" class="level1" data-number="8"><h1 data-number="8">
 <span class="header-section-number">8</span> Exploring data</h1>
@@ -619,7 +619,7 @@ Note
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>PISA_2022</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 613,744 × 68
+<pre><code># A tibble: 613,744 × 81
    CNT     CNTSCHID CNTSTUID REGION  OECD  LANGTEST_QQQ ST003D02T ST003D03T
  * &lt;fct&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;        &lt;fct&gt;     &lt;fct&gt;    
  1 Albania   800282   800001 Albania No    Albanian     May       2006     
@@ -633,15 +633,15 @@ Note
  9 Albania   800057   800010 Albania No    Albanian     August    2006     
 10 Albania   800132   800012 Albania No    Albanian     September 2006     
 # ℹ 613,734 more rows
-# ℹ 60 more variables: ST004D01T &lt;fct&gt;, ST250Q01JA &lt;fct&gt;, ST250Q02JA &lt;fct&gt;,
+# ℹ 73 more variables: ST004D01T &lt;fct&gt;, ST250Q01JA &lt;fct&gt;, ST250Q02JA &lt;fct&gt;,
 #   ST250Q03JA &lt;fct&gt;, ST250Q05JA &lt;fct&gt;, ST251Q01JA &lt;fct&gt;, ST251Q06JA &lt;fct&gt;,
-#   ST253Q01JA &lt;fct&gt;, ST254Q01JA &lt;fct&gt;, ST254Q03JA &lt;fct&gt;, ST255Q01JA &lt;fct&gt;,
-#   ST256Q02JA &lt;fct&gt;, ST005Q01JA &lt;fct&gt;, ST007Q01JA &lt;fct&gt;, ST125Q01NA &lt;fct&gt;,
-#   ST261Q01JA &lt;fct&gt;, ST261Q04JA &lt;fct&gt;, ST038Q08NA &lt;fct&gt;, ST337Q07JA &lt;fct&gt;,
-#   ST324Q11JA &lt;fct&gt;, ST355Q03JA &lt;fct&gt;, FL150Q02TA &lt;fct&gt;, IC172Q01JA &lt;fct&gt;, …</code></pre>
+#   ST253Q01JA &lt;fct&gt;, ST254Q01JA &lt;fct&gt;, ST254Q02JA &lt;fct&gt;, ST254Q03JA &lt;fct&gt;,
+#   ST254Q04JA &lt;fct&gt;, ST254Q05JA &lt;fct&gt;, ST254Q06JA &lt;fct&gt;, ST255Q01JA &lt;fct&gt;,
+#   ST256Q02JA &lt;fct&gt;, ST005Q01JA &lt;fct&gt;, ST007Q01JA &lt;fct&gt;, ST019AQ01T &lt;fct&gt;,
+#   ST019BQ01T &lt;fct&gt;, ST019CQ01T &lt;fct&gt;, ST125Q01NA &lt;fct&gt;, ST261Q01JA &lt;fct&gt;, …</code></pre>
 </div>
 </div>
-<p>We can see from this that the <code>tibble</code> (another word for <em>dataframe</em>, basically a spreadsheet table) is 613744 rows, with 68 columns <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This is data for all the students from around the world that took part in PISA 2022. The actual PISA dataset has many more columns than this, but for the examples here we have selected 68 of the more interesting data variables. The column names might seem rather confusing and you might want to refer to the [PISA 2022 code book](https://webfs.oecd.org/pisa2022/CY08MSP_CODEBOOK_5thDecember23.xlsx to find out what everything means.</p>
+<p>We can see from this that the <code>tibble</code> (another word for <em>dataframe</em>, basically a spreadsheet table) is 613744 rows, with 81 columns <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This is data for all the students from around the world that took part in PISA 2022. The actual PISA dataset has many more columns than this, but for the examples here we have selected 81 of the more interesting data variables. The column names might seem rather confusing and you might want to refer to the <a href="https://webfs.oecd.org/pisa2022/CY08MSP_CODEBOOK_5thDecember23.xlsx">PISA 2022 code book</a> to find out what everything means.</p>
 <p>The data shown in the console window is only the top few rows and first few columns. To see the whole table click on the <code>Environment panel</code> and the table icon <img src="images/icon_table.png" class="img-fluid"> to explore the table:</p>
 <p><img src="images/environment_view_table.png" class="img-fluid"></p>
 <p>Alternatively, you can also hold down <code>command ⌘</code>|<code>control</code> and click on the table name in your R Script to view the table. You can also type <code>View(&lt;table_name&gt;)</code>. <strong>Note:</strong> this has a capital “V”</p>
@@ -650,9 +650,9 @@ Note
 <p>Alternatively, to read the full label of a column, the following code can be used:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># You might also want to read the label of a field</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">attr</span>(PISA_2022<span class="sc">$</span>ST013Q01TA, <span class="st">"label"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">attr</span>(PISA_2022<span class="sc">$</span>ST324Q11JA, <span class="st">"label"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
+<pre><code>[1] "Agree/disagree: School has been a waste of time."</code></pre>
 </div>
 </div>
 <p>Each view only shows you 50 columns, to see more use the navigation panel:</p>
@@ -670,7 +670,7 @@ Note
 <p>To learn more about loading data from in other formats, e.g.&nbsp;SPSS and STATA, look at the tidyverse documentation for <a href="https://haven.tidyverse.org/">haven</a>.</p>
 </div>
 </div>
-<p>The <code>PISA_2022</code> dataframe is made up of multiple columns, with each column acting like a <em>vector</em>, which means each column stores values of only one datatype. If we look at the first four columns of the schools table, you can see the <code>CNTSTUID</code>, <code>ESCS</code> and <code>PV1MATH</code> columns are <code>&lt;dbl&gt;</code> (<code>numeric</code>) and the other three columns are of <code>&lt;fctr&gt;</code> (<code>factor</code>), a special datatype in R that helps store categorical and ordinal variables, see <a href="../chapters/02-3-Intro_to_analysis_software.html#sec-factors">§Factors and statistical data types</a>) for more information on how factors work.</p>
+<p>The <code>PISA_2022</code> dataframe is made up of multiple columns, with each column acting like a <em>vector</em>, which means each column stores values of only one datatype. If we look at the first four columns of the schools table, you can see the <code>CNTSTUID</code>, <code>ESCS</code> and <code>PV1MATH</code> columns are <code>&lt;dbl&gt;</code> (<code>numeric</code>) and the other three columns are of <code>&lt;fctr&gt;</code> (<code>factor</code>), a special datatype in R that helps store categorical and ordinal variables, see [<]strong[>]<a href="../chapters/02-3-Intro_to_analysis_software.html#sec-factors">§Factors and statistical data types</a>[<][/]strong[>] for more information on how factors work.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
@@ -693,7 +693,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Vectors are data structures that bring together one or more data elements of the same datatype. E.g. we might have a numeric vector recording the grades of a class, or a character vector storing the gender of a set of students. To define a vector we use <code>c(item, item, ...)</code>, where <code>c</code> stands for combine. Vectors are very important to R, even declaring a single object, <code>x &lt;- 6</code>, is creating a vector of size one. To find out more about vectors see: <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-vectors">§Vectors</a>)</p>
+<p>Vectors are data structures that bring together one or more data elements of the same datatype. E.g. we might have a numeric vector recording the grades of a class, or a character vector storing the gender of a set of students. To define a vector we use <code>c(item, item, ...)</code>, where <code>c</code> stands for combine. Vectors are very important to R, even declaring a single object, <code>x &lt;- 6</code>, is creating a vector of size one. To find out more about vectors see: [<]strong[>]<a href="../chapters/02-1-Intro_to_analysis_software.html#sec-vectors">§Vectors</a>[<][/]strong[>]</p>
 </div>
 </div>
 <p>We can find out some general information about the table we have loaded. <code>nrow</code> and <code>ncol</code> tell you about the dimensions of the table</p>
@@ -704,37 +704,47 @@ Note
 </div>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ncol</span>(PISA_2022)  <span class="co"># how many columns are in the results table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 68</code></pre>
+<pre><code>[1] 81</code></pre>
 </div>
 </div>
-<p>If we want to know the names of the columns we can use the <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> command that returns a vector. This can be a little confusing as it’ll return the names used in the dataframe, which can be hard to interpret, e.g.&nbsp;<code>ST004D01T</code> is PISA’s way of encoding gender. You might find the labels in the view of the table available through <code>view(PISA_2022)</code> and the <em>Environment</em> panel easier to navigate:</p>
+<p>If we want to know the names of the columns we can use the <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> command that returns a vector. This can be a little confusing as it’ll return the names used in the dataframe, which can be hard to interpret, e.g.&nbsp;<code>ST004D01T</code> is PISA’s way of encoding gender. You might find the labels in the view of the table available through <code>View(PISA_2022)</code> (<strong>note:</strong> the capital V in View) and the <em>Environment</em> panel easier to navigate:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">names</span>(PISA_2022) <span class="co"># the column names of a table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "CNT"          "CNTSCHID"     "CNTSTUID"     "REGION"       "OECD"        
  [6] "LANGTEST_QQQ" "ST003D02T"    "ST003D03T"    "ST004D01T"    "ST250Q01JA"  
 [11] "ST250Q02JA"   "ST250Q03JA"   "ST250Q05JA"   "ST251Q01JA"   "ST251Q06JA"  
-[16] "ST253Q01JA"   "ST254Q01JA"   "ST254Q03JA"   "ST255Q01JA"   "ST256Q02JA"  
-[21] "ST005Q01JA"   "ST007Q01JA"   "ST125Q01NA"   "ST261Q01JA"   "ST261Q04JA"  
-[26] "ST038Q08NA"   "ST337Q07JA"   "ST324Q11JA"   "ST355Q03JA"   "FL150Q02TA"  
-[31] "IC172Q01JA"   "WB150Q01HA"   "WB151Q01HA"   "WB152Q01HA"   "WB153Q01HA"  
-[36] "WB153Q02HA"   "WB153Q03HA"   "WB153Q04HA"   "WB153Q05HA"   "WB154Q01HA"  
- [ reached getOption("max.print") -- omitted 28 entries ]</code></pre>
+[16] "ST253Q01JA"   "ST254Q01JA"   "ST254Q02JA"   "ST254Q03JA"   "ST254Q04JA"  
+[21] "ST254Q05JA"   "ST254Q06JA"   "ST255Q01JA"   "ST256Q02JA"   "ST005Q01JA"  
+[26] "ST007Q01JA"   "ST019AQ01T"   "ST019BQ01T"   "ST019CQ01T"   "ST125Q01NA"  
+[31] "ST261Q01JA"   "ST261Q04JA"   "ST062Q02TA"   "ST038Q08NA"   "ST016Q01NA"  
+[36] "ST337Q07JA"   "ST324Q11JA"   "ST355Q03JA"   "FL150Q02TA"   "IC172Q01JA"  
+ [ reached getOption("max.print") -- omitted 41 entries ]</code></pre>
 </div>
 </div>
 <p>As mentioned, the columns in the tables are very much like a collection of <em>vectors</em>, to access these columns we can put a <code>$</code> [dollar sign] after the name of a table. This allows us to see all the columns that table has, using the up and down arrows to select, press the <code>Tab</code> key to complete:</p>
 <p><img src="images/dollar_fields.png" class="img-fluid"></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>PISA_2022<span class="sc">$</span>ST004D01T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>PISA_2022<span class="sc">$</span>ST038Q08NA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] Female Male   Male   Female Female Male   Male   Female Female Female
-[11] Male   Male   Male   Male   Female Female Male   Female Female Female
-[21] Male   Male   Male   Female Female Female Female Female Male   Female
-[31] Male   Male   Male   Female Female Male   Female Female Female Female
+<pre><code> [1] Never or almost never A few times a year    &lt;NA&gt;                 
+ [4] A few times a month   Never or almost never Never or almost never
+ [7] Never or almost never Never or almost never Never or almost never
+[10] &lt;NA&gt;                  Never or almost never &lt;NA&gt;                 
+[13] Once a week or more   Never or almost never Never or almost never
+[16] Never or almost never Never or almost never Never or almost never
+[19] A few times a month   Never or almost never &lt;NA&gt;                 
+[22] Never or almost never Never or almost never Never or almost never
+[25] &lt;NA&gt;                  Never or almost never Never or almost never
+[28] Never or almost never Never or almost never Never or almost never
+[31] A few times a year    Never or almost never Never or almost never
+[34] Never or almost never Never or almost never Never or almost never
+[37] Never or almost never &lt;NA&gt;                  Once a week or more  
+[40] Never or almost never
  [ reached getOption("max.print") -- omitted 613704 entries ]
 attr(,"label")
-[1] Student (Standardized) Gender
-Levels: Female Male Valid Skip Not Applicable Invalid No Response</code></pre>
+[1] In past 12 months, how often: Other students spread nasty rumours about me.
+8 Levels: Never or almost never A few times a year ... No Response</code></pre>
 </div>
 </div>
 <p>We can apply functions to the returned column/vector, for example: <code>sum</code>, <code>mean</code>, <code>median</code>, <code>max</code>, <code>min</code>, <code>sd</code>, <code>round</code>, <code>unique</code>, <code>summary</code>, <code>length</code>. To find all the different/unique values contained in a column we can write:</p>
@@ -774,7 +784,7 @@ Levels: Female Male Valid Skip Not Applicable Invalid No Response</code></pre>
 <pre><code>[1] NA</code></pre>
 </div>
 </div>
-<p>You can see the <code>NA</code>s by just loking at this column:</p>
+<p>You can see one of the <code>NA</code>s by just looking at this column:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>PISA_2022<span class="sc">$</span>ESCS <span class="co"># NAs present in data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -788,7 +798,7 @@ attr(,"label")
 [1] "Index of economic, social and cultural status"</code></pre>
 </div>
 </div>
-<p>To get around this you can tell R to remove/ignore the <code>NA</code> values when performing maths calculations:</p>
+<p>To get around this you can tell R to remove the <code>NA</code> values when performing maths calculations:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># max cultural capital score for all students</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a><span class="fu">max</span>(PISA_2022<span class="sc">$</span>ESCS, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -817,26 +827,60 @@ Tip
 <p>There is more discussion on how to use modes in R <a href="https://stackoverflow.com/questions/2547402/how-to-find-the-statistical-mode">here</a></p>
 </div>
 </div>
-<p>Calculations might also be upset when you try to perform maths on a column that is stored as another datatype. For example if you wanted to work out the mean common number of minutes spent learning the language that the PISA test was sat in, e.g.&nbsp;number of hours of weekly English lessons in England:</p>
+<p>Calculations might also be upset when you try to perform maths on a column that you think is a number but is actually stored as another datatype. For example if you wanted to work out the mean number of “How many [digital devices] with screens are there in your [home]?” - <code>ST253Q01JA</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">mean</span>(PISA_2022<span class="sc">$</span>LMINS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">mean</span>(PISA_2022<span class="sc">$</span>ST253Q01JA, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
 </div>
-<p>Looking at the structure of this column, we can see it is stored as a <code>factor</code>, not as a <code>numeric</code></p>
+<p>Looking at the structure of this column, we can see it is stored as a <code>factor</code>, not as a <code>numeric</code>. Factors are a special datatype that use numbers to link to categorical values. For <code>ST253Q01JA</code> there are 12 different <em>levels</em> that you can explore using the <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> and <code><a href="https://rdrr.io/r/base/levels.html">levels()</a></code> commands:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">str</span>(PISA_2022<span class="sc">$</span>LMINS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">str</span>(PISA_2022<span class="sc">$</span>ST253Q01JA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> NULL</code></pre>
+<pre><code> Factor w/ 12 levels "There are no &lt;digital devices&gt; with screens.",..: 8 2 8 2 7 8 7 NA 6 7 ...
+ - attr(*, "label")= chr "How many [digital devices] with screens are there in your [home]?"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">levels</span>(PISA_2022<span class="sc">$</span>ST253Q01JA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "There are no &lt;digital devices&gt; with screens."
+ [2] "One"                                         
+ [3] "Two"                                         
+ [4] "Three"                                       
+ [5] "Four"                                        
+ [6] "Five"                                        
+ [7] "6 to 10"                                     
+ [8] "More than 10"                                
+ [9] "Valid Skip"                                  
+[10] "Not Applicable"                              
+[11] "Invalid"                                     
+[12] "No Response"                                 </code></pre>
 </div>
 </div>
-<p>So we need to change the type of the column to make it work with the <code>mean</code> command, changing it to <code>as.numeric(&lt;column&gt;)</code> for the calculation, for more details on datatypes, see <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-datatypes">§Datatypes</a>).</p>
+<p>You can change the type of the column to make it work with the <code>mean</code> command, changing the column to <code>as.numeric(&lt;column&gt;)</code> for the calculation:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># this isn't ideal for proper analysis as you will need to remove all the "No Response" data</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a><span class="fu">mean</span>(<span class="fu">as.numeric</span>(PISA_2022<span class="sc">$</span>LMINS), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># note: this isn't ideal for proper analysis!</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="fu">mean</span>(<span class="fu">as.numeric</span>(PISA_2022<span class="sc">$</span>ST253Q01JA), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] NaN</code></pre>
+<pre><code>[1] 6.312233</code></pre>
+</div>
+</div>
+<p>This is far from ideal as we are now treating a categorical field as a numeric! Looking at the coding for the numbers in the field and the corresponding levels, we see that <code>1</code> is actually no digital devices. For more details on datatypes, see [<]strong[>]<a href="../chapters/02-1-Intro_to_analysis_software.html#sec-datatypes">§Datatypes</a>[<][/]strong[>].</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">paste</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(<span class="fu">levels</span>(PISA_2022<span class="sc">$</span>ST253Q01JA)), <span class="st">":"</span>, <span class="fu">levels</span>(PISA_2022<span class="sc">$</span>ST253Q01JA))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "1 : There are no &lt;digital devices&gt; with screens."
+ [2] "2 : One"                                         
+ [3] "3 : Two"                                         
+ [4] "4 : Three"                                       
+ [5] "5 : Four"                                        
+ [6] "6 : Five"                                        
+ [7] "7 : 6 to 10"                                     
+ [8] "8 : More than 10"                                
+ [9] "9 : Valid Skip"                                  
+[10] "10 : Not Applicable"                             
+[11] "11 : Invalid"                                    
+[12] "12 : No Response"                                </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -857,80 +901,87 @@ Tip
 <div class="question">
 <p>Using the <code>PISA_2022</code> dataset:</p>
 <ol type="1">
-<li>use the Environment window to view the dataset, what is the name and the label of the 100th column?</li>
+<li>use the Environment window to view the dataset, what is the name and the label of the 26th column?</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># the 100th column is ST102Q02TA</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a><span class="co"># the label is: "How often during &lt;test language lessons&gt;: The teacher asks questions to check whether we have understood what was taught"</span></span>
-<span id="cb41-3"><a href="#cb41-3"></a></span>
-<span id="cb41-4"><a href="#cb41-4"></a><span class="co"># you could use View() instead of the environment window, note the capital V</span></span>
-<span id="cb41-5"><a href="#cb41-5"></a><span class="fu">View</span>(PISA_2022)</span>
-<span id="cb41-6"><a href="#cb41-6"></a><span class="co"># use could use the vector subset to fetch the 100th name</span></span>
-<span id="cb41-7"><a href="#cb41-7"></a><span class="fu">names</span>(PISA_2022)[<span class="dv">100</span>]</span>
-<span id="cb41-8"><a href="#cb41-8"></a></span>
-<span id="cb41-9"><a href="#cb41-9"></a><span class="co"># The vector is "ST062Q02TA"</span></span>
-<span id="cb41-10"><a href="#cb41-10"></a></span>
-<span id="cb41-11"><a href="#cb41-11"></a><span class="co"># you could use the attr function to find the label</span></span>
-<span id="cb41-12"><a href="#cb41-12"></a><span class="fu">attr</span>(PISA_2022<span class="sc">$</span>ST062Q02TA, <span class="st">"label"</span>)</span>
-<span id="cb41-13"><a href="#cb41-13"></a><span class="co">#  "In the last two full weeks of school, how often: I [skipped] some classes"</span></span>
-<span id="cb41-14"><a href="#cb41-14"></a><span class="co"># or using the dollar sign to load this field will also give the label</span></span>
-<span id="cb41-15"><a href="#cb41-15"></a>PISA_2022<span class="sc">$</span>ST062Q02TA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># the 26th column is ST062Q02TA</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="co"># the label is: "In the last two full weeks of school, how often: I [skipped] some classes"</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a></span>
+<span id="cb45-4"><a href="#cb45-4"></a><span class="co"># you could use View() instead of the environment window, note the capital V</span></span>
+<span id="cb45-5"><a href="#cb45-5"></a><span class="fu">View</span>(PISA_2022)</span>
+<span id="cb45-6"><a href="#cb45-6"></a><span class="co"># use could use the vector subset to fetch the 100th name</span></span>
+<span id="cb45-7"><a href="#cb45-7"></a><span class="fu">names</span>(PISA_2022)[<span class="dv">26</span>]</span>
+<span id="cb45-8"><a href="#cb45-8"></a><span class="co"># [1] "ST062Q02TA"</span></span>
+<span id="cb45-9"><a href="#cb45-9"></a></span>
+<span id="cb45-10"><a href="#cb45-10"></a><span class="co"># you could use the attr function to find the label</span></span>
+<span id="cb45-11"><a href="#cb45-11"></a><span class="fu">attr</span>(PISA_2022<span class="sc">$</span>ST062Q02TA, <span class="st">"label"</span>)</span>
+<span id="cb45-12"><a href="#cb45-12"></a><span class="co">#  "In the last two full weeks of school, how often: I [skipped] some classes"</span></span>
+<span id="cb45-13"><a href="#cb45-13"></a></span>
+<span id="cb45-14"><a href="#cb45-14"></a><span class="co"># or using the dollar sign to load this field will also give the label</span></span>
+<span id="cb45-15"><a href="#cb45-15"></a>PISA_2022<span class="sc">$</span>ST062Q02TA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="2" type="1">
 <li>Use the dollar sign <code>$</code> to return the column <code>ST004D01T</code>. What is stored in this column?</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># Student (Standardized) Gender</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a>PISA_2022<span class="sc">$</span>ST004D01T</span>
-<span id="cb42-3"><a href="#cb42-3"></a></span>
-<span id="cb42-4"><a href="#cb42-4"></a><span class="co">#  [1] Female Male   Male   Female Female Male   Male   Female Female Female Male  </span></span>
-<span id="cb42-5"><a href="#cb42-5"></a><span class="co">#  [12] Male   Male   Male   Female Female Male   Female Female Female Male   Male  </span></span>
-<span id="cb42-6"><a href="#cb42-6"></a><span class="co">#  [23] Male   Female Female Female Female Female Male   Female Male   Male   Male  </span></span>
-<span id="cb42-7"><a href="#cb42-7"></a><span class="co">#  [34] Female Female Male   Female Female Female Female Female Male   Female Male  </span></span>
-<span id="cb42-8"><a href="#cb42-8"></a><span class="co">#   [ reached getOption("max.print") -- omitted 612744 entries ]</span></span>
-<span id="cb42-9"><a href="#cb42-9"></a><span class="co"># attr(,"label")</span></span>
-<span id="cb42-10"><a href="#cb42-10"></a><span class="co"># [1] Student (Standardized) Gender</span></span>
-<span id="cb42-11"><a href="#cb42-11"></a><span class="co"># Levels: Female Male Valid Skip Not Applicable Invalid No Response</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># Student (Standardized) Gender</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>PISA_2022<span class="sc">$</span>ST004D01T</span>
+<span id="cb46-3"><a href="#cb46-3"></a></span>
+<span id="cb46-4"><a href="#cb46-4"></a><span class="co">#  [1] Female Male   Male   Female Female Male   Male   Female Female Female Male  </span></span>
+<span id="cb46-5"><a href="#cb46-5"></a><span class="co">#  [12] Male   Male   Male   Female Female Male   Female Female Female Male   Male  </span></span>
+<span id="cb46-6"><a href="#cb46-6"></a><span class="co">#  [23] Male   Female Female Female Female Female Male   Female Male   Male   Male  </span></span>
+<span id="cb46-7"><a href="#cb46-7"></a><span class="co">#  [34] Female Female Male   Female Female Female Female Female Male   Female Male  </span></span>
+<span id="cb46-8"><a href="#cb46-8"></a><span class="co">#   [ reached getOption("max.print") -- omitted 612744 entries ]</span></span>
+<span id="cb46-9"><a href="#cb46-9"></a><span class="co"># attr(,"label")</span></span>
+<span id="cb46-10"><a href="#cb46-10"></a><span class="co"># [1] Student (Standardized) Gender</span></span>
+<span id="cb46-11"><a href="#cb46-11"></a><span class="co"># Levels: Female Male Valid Skip Not Applicable Invalid No Response</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="3" type="1">
 <li>How many students results are in the whole table?</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">nrow</span>(PISA_2022)</span>
-<span id="cb43-2"><a href="#cb43-2"></a><span class="co"># [1] 613744</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">nrow</span>(PISA_2022)</span>
+<span id="cb47-2"><a href="#cb47-2"></a><span class="co"># [1] 613744</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="4" type="1">
 <li>What <code>unique</code> values does the dataset hold for Mother’s occupation <code>OCOD1</code> and Father’s occupation <code>OCOD2</code>? Which is larger?</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD1)</span>
-<span id="cb44-2"><a href="#cb44-2"></a><span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD2)</span>
-<span id="cb44-3"><a href="#cb44-3"></a></span>
-<span id="cb44-4"><a href="#cb44-4"></a><span class="co"># you can read the length from the above, or you could use the</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a><span class="co"># length command to tell you the length of the vector</span></span>
-<span id="cb44-6"><a href="#cb44-6"></a></span>
-<span id="cb44-7"><a href="#cb44-7"></a><span class="fu">length</span>(<span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD1))</span>
-<span id="cb44-8"><a href="#cb44-8"></a><span class="co"># [1] 590</span></span>
-<span id="cb44-9"><a href="#cb44-9"></a><span class="fu">length</span>(<span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD2))</span>
-<span id="cb44-10"><a href="#cb44-10"></a><span class="co"># [1] 590</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD1)</span>
+<span id="cb48-2"><a href="#cb48-2"></a><span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD2)</span>
+<span id="cb48-3"><a href="#cb48-3"></a></span>
+<span id="cb48-4"><a href="#cb48-4"></a><span class="co"># you can read the length from the above, or you could use the</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a><span class="co"># length command to tell you the length of the vector</span></span>
+<span id="cb48-6"><a href="#cb48-6"></a></span>
+<span id="cb48-7"><a href="#cb48-7"></a><span class="fu">length</span>(<span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD1))</span>
+<span id="cb48-8"><a href="#cb48-8"></a><span class="co"># [1] 590</span></span>
+<span id="cb48-9"><a href="#cb48-9"></a><span class="fu">length</span>(<span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD2))</span>
+<span id="cb48-10"><a href="#cb48-10"></a><span class="co"># [1] 590</span></span>
+<span id="cb48-11"><a href="#cb48-11"></a></span>
+<span id="cb48-12"><a href="#cb48-12"></a><span class="co"># Both fields are the same size implying there are no jobs that women do, but men don't.</span></span>
+<span id="cb48-13"><a href="#cb48-13"></a><span class="co"># to confirm this we can use the set difference command `setdiff(vector1, vector2)`.</span></span>
+<span id="cb48-14"><a href="#cb48-14"></a></span>
+<span id="cb48-15"><a href="#cb48-15"></a><span class="fu">setdiff</span>(<span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD1),</span>
+<span id="cb48-16"><a href="#cb48-16"></a>        <span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD2))</span>
+<span id="cb48-17"><a href="#cb48-17"></a><span class="co"># character(0)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="5" type="1">
 <li>What are the <code>max</code>imum, <code>mean</code>, <code>median</code> and <code>min</code>umum science grades <code>PV1SCIE</code> achieved by any student</li>
 </ol>
 <div class="cell">
-<details><summary>answer</summary><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># remember to set the na.rm = TRUE</span></span>
-<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">max</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb45-3"><a href="#cb45-3"></a><span class="co"># [1] 895.375</span></span>
-<span id="cb45-4"><a href="#cb45-4"></a><span class="fu">mean</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb45-5"><a href="#cb45-5"></a><span class="co"># [1] 450.4625</span></span>
-<span id="cb45-6"><a href="#cb45-6"></a><span class="fu">median</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb45-7"><a href="#cb45-7"></a><span class="co"># [1] 444.464</span></span>
-<span id="cb45-8"><a href="#cb45-8"></a><span class="fu">min</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb45-9"><a href="#cb45-9"></a><span class="co"># [1] 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>answer</summary><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># remember to set the na.rm = TRUE</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="fu">max</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="co"># [1] 895.375</span></span>
+<span id="cb49-4"><a href="#cb49-4"></a><span class="fu">mean</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb49-5"><a href="#cb49-5"></a><span class="co"># [1] 450.4625</span></span>
+<span id="cb49-6"><a href="#cb49-6"></a><span class="fu">median</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb49-7"><a href="#cb49-7"></a><span class="co"># [1] 444.464</span></span>
+<span id="cb49-8"><a href="#cb49-8"></a><span class="fu">min</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb49-9"><a href="#cb49-9"></a><span class="co"># [1] 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="6" type="1">
@@ -941,7 +992,7 @@ Tip
 
 </section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 <ol>
-<li id="fn1"><p>Even in this cut down format the PISA data might take a few minutes to load. You can find the full dataset <a href="https://drive.google.com/open?id=17AYuiKXxWFY6XkJZRCFXRYRRNNmata-f&amp;usp=drive_fs">here</a>, but be warned, it might crash you machine when trying to load it! Plug your laptop into a power supply, and having 16GB of RAM highly recommended! You might also need to wrangle some of the fields to make them work for your purposes, you might enjoy the challenge!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Even in this cut down format the PISA data might take a few minutes to load. You can find the full dataset <a href="https://drive.google.com/open?id=17AYuiKXxWFY6XkJZRCFXRYRRNNmata-f&amp;usp=drive_fs">here</a>, but be warned, it might crash you machine when trying to load it! Plug your laptop into a power supply, and having 16GB of RAM is highly recommended! You might also need to wrangle some of the fields to make them work for your purposes, you might enjoy the challenge!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
