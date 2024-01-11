@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -366,31 +366,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="1"><span class="header-section-number">1</span> ggplot</h1>
 <p>The basic structure of <code>ggplot</code> code is to combine different graphing elements through the use of the <code>+</code> operator. To demonstrate this, let’s look at the relationship between a poverty indicator <code>ESCS</code> and the performance in Maths <code>PV1MATH</code>, by gender <code>ST004D01T</code> and country <code>CNT</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy"><code class="sourceCode r"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="annotated-cell-1-2"><a href="#annotated-cell-1-2"></a><span class="co"># wrangle our data</span></span>
-<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3"></a>graph_data <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3"></a>graph_data <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-1-4"><a href="#annotated-cell-1-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"France"</span>, <span class="st">"United Kingdom"</span>))</span>
 <span id="annotated-cell-1-5"><a href="#annotated-cell-1-5"></a></span>
 <span id="annotated-cell-1-6"><a href="#annotated-cell-1-6"></a><span class="co"># display a graph of the results</span></span>
-<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7"></a><span class="fu">ggplot</span>(<span class="at">data =</span> graph_data,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-7" class="code-annotation-target"><a href="#annotated-cell-1-7"></a><span class="fu">ggplot</span>(<span class="at">data =</span> graph_data,</span>
 <span id="annotated-cell-1-8"><a href="#annotated-cell-1-8"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ESCS, <span class="at">y =</span> PV1MATH, <span class="at">colour =</span> CNT)) <span class="sc">+</span></span>
-<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-1-10"><a href="#annotated-cell-1-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> ST004D01T) <span class="sc">+</span></span>
-<span id="annotated-cell-1-12"><a href="#annotated-cell-1-12"></a>  <span class="fu">ggtitle</span>(<span class="st">"Comparison of poverty indicator and Maths result, by gender and country"</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-9" class="code-annotation-target"><a href="#annotated-cell-1-9"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="fl">0.1</span>) <span class="sc">+</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-10" class="code-annotation-target"><a href="#annotated-cell-1-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>) <span class="sc">+</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-11" class="code-annotation-target"><a href="#annotated-cell-1-11"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> ST004D01T) <span class="sc">+</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-12" class="code-annotation-target"><a href="#annotated-cell-1-12"></a>  <span class="fu">ggtitle</span>(<span class="st">"Comparison of poverty indicator and Maths result, by gender and country"</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-annotation="1" data-code-lines="3,4" data-code-cell="annotated-cell-1">Hopefully you can work out what lines 1-3 do from the previous chapter, let’s focus on the <code>ggplot</code> commands</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-annotation="2" data-code-lines="7,8" data-code-cell="annotated-cell-1">line 7-8 set up the <code>ggplot</code> giving it the table object <code>graph_data</code> as its data input and setting up the aesthetics for the rest of the graph elements using columns from <code>graph_data</code>. The <code>aes(&lt;attribute&gt;, &lt;attribute&gt;, ...)</code> command allows us to specify aesthetic elements of the graph that will change dependent on the dataset we use. In the PISA_2022 data set, the variable <code>ESCS</code> refers to an index of economic status, and <code>PV1Math</code>, is the plausible value of the mathematics score. We set the x and y variables <code>x=ESCS</code> and <code>y=PV1MATH</code> , defining <code>aes()</code> inside <code>ggplot()</code> means we will pass down these values to subsequent geometric objects so we don’t have to define these <code>x</code> and <code>y</code> axis items again and again.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-annotation="3" data-code-lines="9" data-code-cell="annotated-cell-1">line 9 using the data and <code>aes</code> values defined on lines 7-8, <code>geom_point</code> uses these <code>x</code> and <code>y</code> values to draw a point for each student in our dataset. There are lots of different parameters we could give <code>geom_point</code> e.g.&nbsp;specifying size and shape, but here we are content with just setting the <code>size</code> to be 0.1 and using the defaults.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-annotation="4" data-code-lines="10" data-code-cell="annotated-cell-1">line 10 we add another geometric object on top of the points, this time we add a line of best fit <code>geom_smooth</code>, again this geometric object uses the values specified on lines 7-8, and we define the <code>method</code> as <code>lm</code>, to calculate a <em>linear model</em> line of best fit.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-annotation="5" data-code-lines="11" data-code-cell="annotated-cell-1">line 11 uses <code>facet_wrap(. ~ CNT)</code> to create a graph for each group of <code>CNT</code> in the dataset, i.e.&nbsp;a graph for each country defined on line 3.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-annotation="6" data-code-lines="12,13" data-code-cell="annotated-cell-1">lines 12 and 13, finally we customise the title of the graph, <code>ggtitle</code>, ready for display and place the legend underneath the graph</span>
+</dd>
+</dl>
+</div>
 <div class="cell-output-display">
 <p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
 </div>
-<p>Hopefully you can work out what lines 1-3 do from the previous chapter, let’s focus on the <code>ggplot</code> commands:</p>
-<ol type="1">
-<li>line 7-8 set up the <code>ggplot</code> giving it the table object <code>graph_data</code> as its data input and setting up the aesthetics for the rest of the graph elements using columns from <code>graph_data</code>. The <code>aes(&lt;attribute&gt;, &lt;attribute&gt;, ...)</code> command allows us to specify aesthetic elements of the graph that will change dependent on the dataset we use. In the PISA_2022 data set, the variable <code>ESCS</code> refers to an index of economic status, and <code>PV1Math</code>, is the plausible value of the mathematics score. We set the x and y variables <code>x=ESCS</code> and <code>y=PV1MATH</code> , defining <code>aes()</code> inside <code>ggplot()</code> means we will pass down these values to subsequent geometric objects so we don’t have to define these <code>x</code> and <code>y</code> axis items again and again.</li>
-<li>line 9 using the data and <code>aes</code> values defined on lines 7-8, <code>geom_point</code> uses these <code>x</code> and <code>y</code> values to draw a point for each student in our dataset. There are lots of different parameters we could give <code>geom_point</code> e.g.&nbsp;specifying size and shape, but here we are content with just setting the <code>size</code> to be 0.1 and using the defaults.</li>
-<li>line 10 we add another geometric object on top of the points, this time we add a line of best fit <code>geom_smooth</code>, again this geometric object uses the values specified on lines 7-8, and we define the <code>method</code> as <code>lm</code>, to calculate a <em>linear model</em> line of best fit.</li>
-<li>line 11 uses <code>facet_wrap(. ~ CNT)</code> to create a graph for each group of <code>CNT</code> in the dataset, i.e.&nbsp;a graph for each country defined on line 3.</li>
-<li>lines 12 and 13, finally we customise the title of the graph, <code>ggtitle</code>, ready for display and place the legend underneath the graph</li>
-</ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -414,6 +434,7 @@ Important
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a> for connecting points together and showing trends</li>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a> for adding text labels to data points</li>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a> for representing the range of data</li>
+<li><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a> an even better way for representing the range of data</li>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_hex.html">geom_hex</a> for creating heat maps</li>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_map.html">geom_map</a> for adding geographic maps</li>
 <li><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a> for adding lines of best fit</li>
@@ -440,27 +461,27 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-2" data-code-annotation="1">pipe the large data.frame <code>PISA_2022</code> to apply a number of functions.</span>
+<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-2">pipe the large data.frame <code>PISA_2022</code> to apply a number of functions.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-2" data-code-annotation="2">groups by <code>OECD</code> (a <code>Yes</code> or <code>No</code> indicating membership) and <code>CNT</code> (the name of the country).</span>
+<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-2">groups by <code>OECD</code> (a <code>Yes</code> or <code>No</code> indicating membership) and <code>CNT</code> (the name of the country).</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4,5" data-code-cell="annotated-cell-2" data-code-annotation="3">calculate the <code>mean</code> mathematics and reading score, and create new variables (<code>mean_maths</code>, and <code>mean_read</code>) for their values. In addition, in line 6, the variables <code>sz</code> is created which counts the number of responses per country through the <code>n()</code> command. This whole pipe is then saved to the <code>country_plot_data</code> object, using the <code>&lt;-</code> on line 2</span>
+<span data-code-annotation="3" data-code-lines="4,5" data-code-cell="annotated-cell-2">calculate the <code>mean</code> mathematics and reading score, and create new variables (<code>mean_maths</code>, and <code>mean_read</code>) for their values. In addition, in line 6, the variables <code>sz</code> is created which counts the number of responses per country through the <code>n()</code> command. This whole pipe is then saved to the <code>country_plot_data</code> object, using the <code>&lt;-</code> on line 2</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="10" data-code-cell="annotated-cell-2" data-code-annotation="4">In <code>ggplot</code> we specifiy the data that should be plotted - the new dataframe <code>country_plot_data</code></span>
+<span data-code-annotation="4" data-code-lines="10" data-code-cell="annotated-cell-2">In <code>ggplot</code> we specifiy the data that should be plotted - the new dataframe <code>country_plot_data</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="11" data-code-cell="annotated-cell-2" data-code-annotation="5">We pass the <code>x</code> and <code>y</code> variables, <code>mean_maths</code>, and <code>mean_read</code>, inside the <code>aes</code>thetic function. These values will be passed to any subsequent <code>geom_</code></span>
+<span data-code-annotation="5" data-code-lines="11" data-code-cell="annotated-cell-2">We pass the <code>x</code> and <code>y</code> variables, <code>mean_maths</code>, and <code>mean_read</code>, inside the <code>aes</code>thetic function. These values will be passed to any subsequent <code>geom_</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="12" data-code-cell="annotated-cell-2" data-code-annotation="6">We make a number of tweaks to the points: first setting the <code>aes</code>thetics - the <code>size</code> of the points is linked to the <code>sz</code> variable we created, the number of responses per country, and the <code>colour</code> is linked to <code>OECD</code> membership. Finally (and note this is outside the <code>aes</code> brackets, we set an <code>alpha</code> value which makes the point slightly transparent, which is more visually appealing where points overlap.</span>
+<span data-code-annotation="6" data-code-lines="12" data-code-cell="annotated-cell-2">We make a number of tweaks to the points: first setting the <code>aes</code>thetics - the <code>size</code> of the points is linked to the <code>sz</code> variable we created, the number of responses per country, and the <code>colour</code> is linked to <code>OECD</code> membership. Finally (and note this is outside the <code>aes</code> brackets, we set an <code>alpha</code> value which makes the point slightly transparent, which is more visually appealing where points overlap.</span>
 </dd>
 </dl>
 </div>
@@ -490,23 +511,22 @@ Important
 <p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
 </div>
+<p>However, there is an error if we put <code>size</code> outside the <code>aes()</code>, and set it a value from the dataset, it can’t find value:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># there is an error if we put size outside the aes, and set it a value from the </span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co"># dataset, it can't find value!</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">ggplot</span>(<span class="at">data=</span>PISA_2022_school) <span class="sc">+</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> SC002Q01TA,</span>
-<span id="cb2-5"><a href="#cb2-5"></a>                 <span class="at">y =</span> SC002Q02TA),</span>
-<span id="cb2-6"><a href="#cb2-6"></a>             <span class="at">size=</span>SC211Q03JA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>PISA_2022_school) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> SC002Q01TA,</span>
+<span id="cb2-3"><a href="#cb2-3"></a>                 <span class="at">y =</span> SC002Q02TA),</span>
+<span id="cb2-4"><a href="#cb2-4"></a>             <span class="at">size=</span>SC211Q03JA)  <span class="co"># this is now outside the aes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'SC211Q03JA' not found</code></pre>
+<pre><code>Error in list2(na.rm = na.rm, ...): object 'SC211Q03JA' not found</code></pre>
 </div>
 </div>
+<p>but if we set the <code>size</code> explicitly to <code>3</code>, outside the <code>aes()</code>, then all points will be that size</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># but if we set the size explicitly, outside the aes, then all points will be that size</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">ggplot</span>(<span class="at">data=</span>PISA_2022_school) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> SC002Q01TA,</span>
-<span id="cb4-4"><a href="#cb4-4"></a>                 <span class="at">y =</span> SC002Q02TA),</span>
-<span id="cb4-5"><a href="#cb4-5"></a>             <span class="at">size=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>PISA_2022_school) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> SC002Q01TA,</span>
+<span id="cb4-3"><a href="#cb4-3"></a>                 <span class="at">y =</span> SC002Q02TA),</span>
+<span id="cb4-4"><a href="#cb4-4"></a>             <span class="at">size=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -595,19 +615,19 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-3" data-code-annotation="1">get the <code>PISA_2022</code> dataset and remove all rows where <code>ST251Q01JA</code> is <code>NA</code>, storing this new dataset as <code>plot_cars</code></span>
+<span data-code-annotation="1" data-code-lines="1" data-code-cell="annotated-cell-3">get the <code>PISA_2022</code> dataset and remove all rows where <code>ST251Q01JA</code> is <code>NA</code>, storing this new dataset as <code>plot_cars</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-3" data-code-annotation="2">pass the <code>plot_cars</code> to <code>ggplot</code>, as the dataset we are going to plot</span>
+<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-3">pass the <code>plot_cars</code> to <code>ggplot</code>, as the dataset we are going to plot</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-3" data-code-annotation="3">specify the <code>x</code> values to be the values stored in <code>ST251Q01JA</code>, i.e.&nbsp;we will have a bar for each response given in <code>ST251Q01JA</code>: <code>None</code>, <code>One</code>, <code>Two</code>, <code>Three or more</code>.</span>
+<span data-code-annotation="3" data-code-lines="4" data-code-cell="annotated-cell-3">specify the <code>x</code> values to be the values stored in <code>ST251Q01JA</code>, i.e.&nbsp;we will have a bar for each response given in <code>ST251Q01JA</code>: <code>None</code>, <code>One</code>, <code>Two</code>, <code>Three or more</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-3" data-code-annotation="4"><code>geom_bar</code> tell ggplot to make bars, it uses the <code>aes</code>thetic from line 5, to plot the <code>x</code> axis, note we haven’t given it a <code>y</code> value, this is auto-calculated from the number of students in each <code>x</code> group.</span>
+<span data-code-annotation="4" data-code-lines="5" data-code-cell="annotated-cell-3"><code>geom_bar</code> tell ggplot to make bars, it uses the <code>aes</code>thetic from line 5, to plot the <code>x</code> axis, note we haven’t given it a <code>y</code> value, this is auto-calculated from the number of students in each <code>x</code> group.</span>
 </dd>
 </dl>
 </div>
@@ -649,27 +669,27 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1,2,3,4" data-code-cell="annotated-cell-5" data-code-annotation="1">creates a dataframe <code>plot_data</code> that calculates the percentage of students in each country <code>CNT</code>, that have a science grade <code>PV1SCIE</code> over <code>500</code></span>
+<span data-code-annotation="1" data-code-lines="1,2,3,4" data-code-cell="annotated-cell-5">creates a dataframe <code>plot_data</code> that calculates the percentage of students in each country <code>CNT</code>, that have a science grade <code>PV1SCIE</code> over <code>500</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="6,7" data-code-cell="annotated-cell-5" data-code-annotation="2">as we are setting the heights of the bars ourselves, we need to give the ggplot <code>aes</code> command a <code>y</code> value, in this case <code>y=upper_sci_per</code></span>
+<span data-code-annotation="2" data-code-lines="6,7" data-code-cell="annotated-cell-5">as we are setting the heights of the bars ourselves, we need to give the ggplot <code>aes</code> command a <code>y</code> value, in this case <code>y=upper_sci_per</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="8" data-code-cell="annotated-cell-5" data-code-annotation="3">the <code>geom_bar</code> is given a <code>fill</code> value of <code>OECD</code>, this will allow us to see how countries in and out of the OECD compare</span>
+<span data-code-annotation="3" data-code-lines="8" data-code-cell="annotated-cell-5">the <code>geom_bar</code> is given a <code>fill</code> value of <code>OECD</code>, this will allow us to see how countries in and out of the OECD compare</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="9" data-code-cell="annotated-cell-5" data-code-annotation="4">we use <code>position=position_dodge()</code> as we want the percentage grades of each country to be next to each other so we can look for differences in heights</span>
+<span data-code-annotation="4" data-code-lines="9" data-code-cell="annotated-cell-5">we use <code>position=position_dodge()</code> as we want the percentage grades of each country to be next to each other so we can look for differences in heights</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="10" data-code-cell="annotated-cell-5" data-code-annotation="5"><code>stat="identity"</code> tells <code>geom_bar</code> that you have defined your own bar heights in the <code>y</code> attribute and not to count the number of rows.</span>
+<span data-code-annotation="5" data-code-lines="10" data-code-cell="annotated-cell-5"><code>stat="identity"</code> tells <code>geom_bar</code> that you have defined your own bar heights in the <code>y</code> attribute and not to count the number of rows.</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="11" data-code-cell="annotated-cell-5" data-code-annotation="6">the <code>theme</code> command helps rotate the x-axis labels 90 degrees, so they don’t overlap.</span>
+<span data-code-annotation="6" data-code-lines="11" data-code-cell="annotated-cell-5">the <code>theme</code> command helps rotate the x-axis labels 90 degrees, so they don’t overlap.</span>
 </dd>
 </dl>
 </div>
@@ -817,19 +837,19 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="6" data-code-cell="annotated-cell-7" data-code-annotation="1">line 6 starts the <code>geom_text</code> command, telling the geom to use the <code>count</code> <code>stat</code>istic from ggplot, this means it will be able to fetch the number of rows in each grouping.</span>
+<span data-code-annotation="1" data-code-lines="6" data-code-cell="annotated-cell-7">line 6 starts the <code>geom_text</code> command, telling the geom to use the <code>count</code> <code>stat</code>istic from ggplot, this means it will be able to fetch the number of rows in each grouping.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="7" data-code-cell="annotated-cell-7" data-code-annotation="2">as we want the label to change for each bar element, we put <code>label=after_stat(count)</code> inside <code>aes</code>. The <code>x</code> location of the labels is inherited from line 4 and the <code>y</code> location will be calculated from the height of each bar</span>
+<span data-code-annotation="2" data-code-lines="7" data-code-cell="annotated-cell-7">as we want the label to change for each bar element, we put <code>label=after_stat(count)</code> inside <code>aes</code>. The <code>x</code> location of the labels is inherited from line 4 and the <code>y</code> location will be calculated from the height of each bar</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="8" data-code-cell="annotated-cell-7" data-code-annotation="3">we want the labels to align to the bars, so we tell the <code>geom_text</code> to also <code>position_dodge</code>, passing a <code>width=0.9</code> to the dodge function, so the labels line up above the columns,</span>
+<span data-code-annotation="3" data-code-lines="8" data-code-cell="annotated-cell-7">we want the labels to align to the bars, so we tell the <code>geom_text</code> to also <code>position_dodge</code>, passing a <code>width=0.9</code> to the dodge function, so the labels line up above the columns,</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="9" data-code-cell="annotated-cell-7" data-code-annotation="4">finally, on line 9, we vertically adjust the labels <code>vjust</code>, so they sit on top of the columns.</span>
+<span data-code-annotation="4" data-code-lines="9" data-code-cell="annotated-cell-7">finally, on line 9, we vertically adjust the labels <code>vjust</code>, so they sit on top of the columns.</span>
 </dd>
 </dl>
 </div>
@@ -917,7 +937,7 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-12" data-code-annotation="1">changes the data that is being passed to the <code>geom_text</code>, it no longer uses the data defined in the <code>ggplot</code> command, but has a new dataset, that is filtered on <code>focus == TRUE</code>, i.e.&nbsp;only containing the countries that we want.</span>
+<span data-code-annotation="1" data-code-lines="4" data-code-cell="annotated-cell-12">changes the data that is being passed to the <code>geom_text</code>, it no longer uses the data defined in the <code>ggplot</code> command, but has a new dataset, that is filtered on <code>focus == TRUE</code>, i.e.&nbsp;only containing the countries that we want.</span>
 </dd>
 </dl>
 </div>
