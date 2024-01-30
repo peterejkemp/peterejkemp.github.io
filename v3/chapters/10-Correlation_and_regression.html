@@ -263,12 +263,29 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Appendicies</span></a>
+ <span class="menu-text">Additional tests</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A7-SEM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SEM</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendicies</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
@@ -751,7 +768,7 @@ Multiple R-squared:  0.7062,    Adjusted R-squared:  0.7062
 F-statistic: 7.375e+05 on 2 and 613662 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<p>Both independent variables are significant (<code>p&lt;0.001</code>), and the <em>R<sup>2</sup></em> of the model is high at <code>0.7062</code>, this model explains 70% of the variance in Maths grade. Looking at the Estimates, we see both independent variables presented, this means we can read them as if the other factor has been <em>controlled</em> for; e.g.&nbsp;what is the impact of reading score if the impact of gender has been taken into consideration. <code>PV1READ</code> is <code>0.786</code>, meaning for an increase of 1 in this score, the <code>PV1MATH</code> grade would increase by <code>0.786</code>. Gender is different, this is a <em>nominal</em> field, being either Male or Female, and <code>genderMale</code> is shown in the coefficients table. This means that the model has taken <code>gender == Female</code> as the base state, and modeled what happens if the gender were to change to Male. Interestingly, it suggests that when controlling for the reading grade, e.g.&nbsp;comparing females and males of the same reading score, males would do <code>25.28</code> points better in their <code>PV1MATH</code> grade than females(!). We’ll be exploring these gender differences a little further in section <a href="#sec-Stoet-Geary">Section&nbsp;9.1</a>.</p>
+<p>Both independent variables are significant (<code>p&lt;0.001</code>), and the <em>R<sup>2</sup></em> of the model is high at <code>0.7062</code>, this model explains 71% of the variance in Maths grade. Looking at the Estimates, we see both independent variables presented, this means we can read them as if the other factor has been <em>controlled</em> for; e.g.&nbsp;what is the impact of reading score if the impact of gender has been taken into consideration. <code>PV1READ</code> is <code>0.786</code>, meaning for an increase of 1 in this score, the <code>PV1MATH</code> grade would increase by <code>0.786</code>. Gender is different, this is a <em>nominal</em> field, being either Male or Female, and <code>genderMale</code> is shown in the coefficients table. This means that the model has taken <code>gender == Female</code> as the base state, and modeled what happens if the gender were to change to Male. Interestingly, it suggests that when controlling for the reading grade, e.g.&nbsp;comparing females and males of the same reading score, males would do <code>25.28</code> points better in their <code>PV1MATH</code> grade than females(!). We’ll be exploring these gender differences a little further in section <a href="#sec-Stoet-Geary">Section&nbsp;9.1</a>.</p>
 </section><section id="reporting-regression" class="level1" data-number="6"><h1 data-number="6">
 <span class="header-section-number">6</span> Reporting regression</h1>
 <p>When reporting linear regression we should make note of the <em>estimate</em> (also known as beta <em>β-value</em>) of each factor along with their <em>p-values</em>. We need to know the <em>R<sup>2</sup></em> and <em>p-value</em> for the model as well as the <em>F-statistic</em> and the <em>degrees of freedom</em>. We can then construct a few sentences to explain our findings <span class="citation" data-cites="statology2021">(<a href="#ref-statology2021" role="doc-biblioref">Zach 2021</a>)</span>:</p>
@@ -1097,7 +1114,7 @@ sample estimates:
 </details>
 </div>
 <ol start="7" type="1">
-<li>Load the school level data set for 2022 (file <a href="../Users/k1765032/Library/CloudStorage/GoogleDrive-richardandrewbrock@gmail.com/.shortcut-targets-by-id/1c3CkaEBOICzepArDfjQUP34W2BYhFjM4/PISR/Data/PISA/2022/PISA_school_2022.parquet">here</a> and explore the fields.</li>
+<li>Load the school level data set for 2022 (file <a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/EaEQPEKYzR9MmiqLBYXOhmYBNXYg15UoDKGip-78kS1DvA?e=q74fyK">here</a> and explore the fields.</li>
 </ol>
 <p>Using a linear model, how do “Shortage of educational staff” <code>STAFFSHORT</code> and “Shortage of educational material” <code>EDUSHORT</code> relate to “Student behaviour hindering learning” <code>STUBEHA</code></p>
 <div class="cell">
@@ -1589,7 +1606,7 @@ Tip
 <span id="cb56-10"><a href="#cb56-10"></a>            <span class="at">colour=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
 <span id="cb56-11"><a href="#cb56-11"></a>  <span class="fu">xlab</span>(<span class="fu">paste0</span>(<span class="st">"relative difference in PV1SCIE scores (male-female)"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<p><img src="10-Correlation_and_regression_files/figure-html/unnamed-chunk-57-1.png" class="img-fluid" style="width:95.0%"></p>
+<p><img src="10-Correlation_and_regression_files/figure-html/unnamed-chunk-58-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
 </div>
 <p>The graph is pretty good recreation of what the paper presented, with the general shape the same; differences in grades for each country might be explained by the original paper using 5 plausible values rather than just <code>PV1SCIE</code>, as we have used <span class="citation" data-cites="stoet2020gender">(<a href="#ref-stoet2020gender" role="doc-biblioref">Stoet and Geary 2020</a>)</span>. Does the statistical model stand up to scrutiny? To find out we will use <em>correlation</em>. Stoet and Geary used <em>Spearman’s rho</em>, signified by the <sub><em>s</em></sub> in <em>r<sub>s</sub></em>:</p>

@@ -263,12 +263,29 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Appendicies</span></a>
+ <span class="menu-text">Additional tests</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A7-SEM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SEM</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendicies</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link active">
@@ -382,7 +399,7 @@ div.csl-indent {
 <td style="text-align: center;"><a href="https://drive.google.com/file/d/1-41Ynn4hzEL1vO2L-wIqdRotXDtDdjYh/view?usp=share_link">x</a></td>
 <td style="text-align: center;"><a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/Eb9NSm5rzm1OhtKiX6ZlPZwBm86Cd82ZAUohbzbozlkk4A?e=xofvn5" title="PISA 2015 student parquet file">x</a></td>
 <td style="text-align: center;"><a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/EZsx7bC_8jlDpsLrODivNpIBrFdwhJRezNYosyhoCyPjMA?e=7od1Dm" title="PISA 2018 student parquet file">x</a></td>
-<td style="text-align: center;"><a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/EaEQPEKYzR9MmiqLBYXOhmYBNXYg15UoDKGip-78kS1DvA?e=aN2fZ9" title="PISA 2022 student parquet file">x</a></td>
+<td style="text-align: center;"><a href="https://emckclac-my.sharepoint.com/:u:/r/personal/k1926273_kcl_ac_uk/Documents/Code/QERKCL_PISA/data/pisa/2022/PISA_student_2022.parquet?csf=1&amp;web=1&amp;e=jppggv" title="PISA 2022 student parquet file">x</a></td>
 </tr>
 <tr class="even">
 <td>School</td>
@@ -430,7 +447,7 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>PISA datasets above can be found on the <a href="https://www.oecd.org/pisa/data/">OECD website</a>. The links in the table above will allow you to download .rds versions of these files which we have created, though they might need additional editing, e.g.&nbsp;reducing the number of columns or changing the types of each column. If you want to find out more about what each field stores, take a look at the corresponding codebook,<a href="https://webfs.oecd.org/pisa2022/CY08MSP_CODEBOOK_5thDecember23.xlsx">2022</a>, <a href="https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx">2018</a>, <a href="https://webfs.oecd.org/pisa/Codebook_CMB.xlsx">2015</a>.</p>
+<p>PISA datasets above can be found on the <a href="https://www.oecd.org/pisa/data/">OECD website</a>. The links in the table above will allow you to download .rds versions of these files which we have created, though they might need additional editing, e.g.&nbsp;reducing the number of columns or changing the types of each column. If you want to find out more about what each field stores, take a look at the corresponding codebook: <a href="https://webfs.oecd.org/pisa2022/CY08MSP_CODEBOOK_5thDecember23.xlsx">2022</a>, <a href="https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx">2018</a>, <a href="https://webfs.oecd.org/pisa/Codebook_CMB.xlsx">2015</a>.</p>
 </section><section id="how-to-use-it" class="level1" data-number="2"><h1 data-number="2">
 <span class="header-section-number">2</span> How to use it</h1>
 <p>The PISA datasets come in <em>SPSS</em> or <em>SAS</em> formats. The data used in this course comes directly from downloading the SPSS <code>.sav</code> files and using the <code>haven</code> package to clean it into a native R format suitable for analysis, in most cases <code>.parquet</code> files (see: <strong><a href="../chapters/02-2-Intro_to_analysis_software.html#sec-parquet">§.parquet files</a></strong>). There are a few quirks that you need to be aware of:</p>
