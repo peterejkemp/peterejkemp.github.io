@@ -355,33 +355,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Researchers use SEM to determine the correlations between a number of variable in a data set. It allows the relationship between multiple variables to be taken into account.</p>
 <p>In the PISA data set, in the context of data related to UK students achievement in mathematics, a researcher might be interested in building a model of mathematics (<code>PV1MATH</code>) score by a number of variables in the data set, for example, reading score <code>PV1READ</code>), science score (<code>PV1SCIE</code>), family cultural capital (the index of economic, social and cultural status <code>ESCS</code>), wealth (<code>WEALTH</code>) and gender (<code>ST004D01T</code>). SEM can be used to represent the relationship between these variables and students’ mathematics achievement.</p>
 <p>To create the SEM we will use the <code>lavaan</code> package - <code>lavaan</code> is a contraction of Latent Variable Analysis and allows us to fit a number of different SEMs to data. We will also need to install the <code>semPlot</code> package. The relationships between variables in SEMs are often represented as path diagrams - representations in which variables are represented as squares or circles and arrows labelled with correlation coefficients join the variables to represent the relationships.<code>semPlot</code> allows use to draw path diagrams</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>package 'lavaan' successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    C:\Users\Peter\AppData\Local\Temp\Rtmpe2MnCa\downloaded_packages</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>package 'semPlot' successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    C:\Users\Peter\AppData\Local\Temp\Rtmpe2MnCa\downloaded_packages</code></pre>
-</div>
-</div>
 </section><section id="model-syntax" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="model-syntax">
 <span class="header-section-number">1.1</span> Model Syntax</h2>
 <p>To create the SEM of UK mathematics achievement we first create a subset <code>data.frame</code> of UK data, <code>UKdata</code>. As <code>lavaan</code> uses numeric variables we need to convert gender (<code>ST004D01T</code>) to a numeric variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Load lavaan to create the SEM and semPlot to draw path diagrams</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(lavaan)</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">library</span>(semPlot)</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Create a subset of PISA data related to the UK containing the dependent variable of interest (PV1MATH) and the independent variables we are interested in</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>UKdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH, PV1READ, ESCS, HOMEPOS, ST004D01T)<span class="sc">%&gt;%</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># lavaan requires numeric variables as input, gender is a character varibale in the data.frame so convert it.</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a>UKdata<span class="sc">$</span>ST004D01T<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST004D01T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load lavaan to create the SEM and semPlot to draw path diagrams</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(lavaan)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(semPlot)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Create a subset of PISA data related to the UK containing the dependent variable of interest (PV1MATH) and the independent variables we are interested in</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>UKdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH, PV1READ, ESCS, HOMEPOS, ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># lavaan requires numeric variables as input, gender is a character varibale in the data.frame so convert it.</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>UKdata<span class="sc">$</span>ST004D01T<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST004D01T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The first step is to create the model. Models in <code>lavaan</code> are represented as a dependent variable <code>y</code>, linked to a number of independent variables <code>x1</code>, <code>x2</code>, <code>x3</code>, etc. The <code>~</code> symbol is the regression operator. A simple regression forumla might then take the form of:</p>
 <p>y ~ x1 + x2 + x3</p>
@@ -392,9 +378,9 @@ The downloaded binary packages are in
 <p>In our case, considering UK mathematics achievement, we can set up a model that mathematics score <code>PV1MATH</code> varies with science score <code>PV1SCIE</code>, reading score <code>PV1READ</code>, cultural resources in the home <code>ESCS</code>, a wealth proxy measure, HOMEPOS and gender <code>ST004D01T</code>: <code>model&lt;-"PV1MATH ~ PV1SCIE + PV1READ + ESCS + HOMEPOS"</code></p>
 <p>We then pass the model, and the <code>data.frame</code> to the <code>sem</code> function: <code>fit&lt;-sem(model, data=UKdata)</code>. This produces a model as the ouput <code>fit</code>. To see the results we call <code>summary(fit)</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>model<span class="ot">&lt;-</span><span class="st">"PV1MATH ~ PV1SCIE + PV1READ + ESCS + HOMEPOS"</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>model<span class="ot">&lt;-</span><span class="st">"PV1MATH ~ PV1SCIE + PV1READ + ESCS + HOMEPOS"</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>lavaan 0.6.17 ended normally after 1 iteration
 
@@ -440,12 +426,12 @@ Variances:
 <p>One issue to note here is the difference in the variance for the science and mathematics scores. <code>PV1SCIE</code>, <code>PV1READ</code> and <code>PV1MATH</code> are test scores and so have a large variance (the maximum and minimum science scores, for example, are 0.0 and 895.4). The variance of the two test variables is much greater that for <code>HOMEPOS</code> (Min=-10.0741 mean=-0.4447, Max=15.240) and <code>ESCS</code> (Min=-6.841 mean=-0.310, Max=7.380).</p>
 <p>To resolve this difference, we can use the scale function to create a similar scale for <code>PV1SCIE</code>, <code>PV1MATH</code> and <code>PV1READ</code>. The <code>scale</code> function sets the mean of the variable to 0 and the variance to 1.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>UKdata<span class="sc">$</span>PV1READ<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1READ)</span>
-<span id="cb6-2"><a href="#cb6-2"></a>UKdata<span class="sc">$</span>PV1MATH<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1MATH)</span>
-<span id="cb6-3"><a href="#cb6-3"></a>UKdata<span class="sc">$</span>PV1SCIE<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1SCIE)</span>
-<span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>UKdata<span class="sc">$</span>PV1READ<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1READ)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>UKdata<span class="sc">$</span>PV1MATH<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1MATH)</span>
+<span id="cb4-3"><a href="#cb4-3"></a>UKdata<span class="sc">$</span>PV1SCIE<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1SCIE)</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>lavaan 0.6.17 ended normally after 1 iteration
 
@@ -479,7 +465,7 @@ Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
    .PV1MATH           0.222    0.003   74.441    0.000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -487,12 +473,12 @@ Variances:
 <p>Scaling the test scores gives a more balanced model.</p>
 <p>We can make the model more complex, by adding that two or our independent variables, reading (<code>PV1READ</code>) and science (<code>PV1SCIE</code>) scores may co-vary, and vary with other independent variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>model<span class="ot">&lt;-</span><span class="st">"PV1MATH ~ PV1SCIE + PV1READ + ESCS + HOMEPOS</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="st">        PV1READ ~~ PV1SCIE</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="st">        PV1READ ~ PV1SCIE + PV1MATH + ESCS + HOMEPOS</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="st">        PV1SCIE ~ PV1READ + PV1MATH + ESCS + HOMEPOS"</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>model<span class="ot">&lt;-</span><span class="st">"PV1MATH ~ PV1SCIE + PV1READ + ESCS + HOMEPOS</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="st">        PV1READ ~~ PV1SCIE</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="st">        PV1READ ~ PV1SCIE + PV1MATH + ESCS + HOMEPOS</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="st">        PV1SCIE ~ PV1READ + PV1MATH + ESCS + HOMEPOS"</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>lavaan 0.6.17 ended normally after 23 iterations
 
@@ -538,11 +524,11 @@ Variances:
    .PV1READ           0.383       NA                  
    .PV1SCIE           0.340       NA                  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">semPaths</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">semPaths</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -554,12 +540,12 @@ Variances:
 <p>model&lt;-“lv =~ PV1SCIE + PV1READ + PV1MATH”</p>
 <p>Then we run the model using <code>sem</code> in the same way as above, and plot the model using <code>semPaths</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># For a latent variable</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="co"># =~ means a latent variable</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a>model<span class="ot">&lt;-</span><span class="st">"lv =~ PV1SCIE + PV1READ + PV1MATH"</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a></span>
-<span id="cb13-5"><a href="#cb13-5"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb13-6"><a href="#cb13-6"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># For a latent variable</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="co"># =~ means a latent variable</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>model<span class="ot">&lt;-</span><span class="st">"lv =~ PV1SCIE + PV1READ + PV1MATH"</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a></span>
+<span id="cb11-5"><a href="#cb11-5"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>lavaan 0.6.17 ended normally after 18 iterations
 
@@ -594,7 +580,7 @@ Variances:
    .PV1MATH           0.119    0.003   36.723    0.000
     lv                0.855    0.013   67.872    0.000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -640,29 +626,29 @@ Variances:
 </tbody>
 </table>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Create a UK dataframe with plausible values</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>UKdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, ST007Q01JA, ST256Q02JA, ST255Q01JA,</span>
-<span id="cb16-4"><a href="#cb16-4"></a>         PV1READ, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb16-6"><a href="#cb16-6"></a></span>
-<span id="cb16-7"><a href="#cb16-7"></a><span class="co"># Make varibale numeric for lavan</span></span>
-<span id="cb16-8"><a href="#cb16-8"></a>UKdata<span class="sc">$</span>ST007Q01JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST007Q01JA)</span>
-<span id="cb16-9"><a href="#cb16-9"></a>UKdata<span class="sc">$</span>ST256Q02JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST256Q02JA)</span>
-<span id="cb16-10"><a href="#cb16-10"></a>UKdata<span class="sc">$</span>ST255Q01JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST255Q01JA)</span>
-<span id="cb16-11"><a href="#cb16-11"></a></span>
-<span id="cb16-12"><a href="#cb16-12"></a></span>
-<span id="cb16-13"><a href="#cb16-13"></a><span class="co"># Scale the test scores</span></span>
-<span id="cb16-14"><a href="#cb16-14"></a>UKdata<span class="sc">$</span>PV1READ<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1READ)</span>
-<span id="cb16-15"><a href="#cb16-15"></a>UKdata<span class="sc">$</span>PV1MATH<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1MATH)</span>
-<span id="cb16-16"><a href="#cb16-16"></a>UKdata<span class="sc">$</span>PV1SCIE<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1SCIE)</span>
-<span id="cb16-17"><a href="#cb16-17"></a><span class="co"># Propose a model with two latent variables - one related to home (lvh), the other cognitive ability (lva)</span></span>
-<span id="cb16-18"><a href="#cb16-18"></a>model<span class="ot">&lt;-</span><span class="st">"lvi =~ ESCS + HOMEPOS + ST007Q01JA + ST256Q02JA + ST255Q01JA</span></span>
-<span id="cb16-19"><a href="#cb16-19"></a><span class="st">        lvc =~ PV1MATH + PV1READ</span></span>
-<span id="cb16-20"><a href="#cb16-20"></a><span class="st">        PV1SCIE ~ lvi + lvc"</span></span>
-<span id="cb16-21"><a href="#cb16-21"></a><span class="co"># Fit the model</span></span>
-<span id="cb16-22"><a href="#cb16-22"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb16-23"><a href="#cb16-23"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Create a UK dataframe with plausible values</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>UKdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, ST007Q01JA, ST256Q02JA, ST255Q01JA,</span>
+<span id="cb14-4"><a href="#cb14-4"></a>         PV1READ, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6"></a></span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="co"># Make varibale numeric for lavan</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a>UKdata<span class="sc">$</span>ST007Q01JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST007Q01JA)</span>
+<span id="cb14-9"><a href="#cb14-9"></a>UKdata<span class="sc">$</span>ST256Q02JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST256Q02JA)</span>
+<span id="cb14-10"><a href="#cb14-10"></a>UKdata<span class="sc">$</span>ST255Q01JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST255Q01JA)</span>
+<span id="cb14-11"><a href="#cb14-11"></a></span>
+<span id="cb14-12"><a href="#cb14-12"></a></span>
+<span id="cb14-13"><a href="#cb14-13"></a><span class="co"># Scale the test scores</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a>UKdata<span class="sc">$</span>PV1READ<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1READ)</span>
+<span id="cb14-15"><a href="#cb14-15"></a>UKdata<span class="sc">$</span>PV1MATH<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1MATH)</span>
+<span id="cb14-16"><a href="#cb14-16"></a>UKdata<span class="sc">$</span>PV1SCIE<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1SCIE)</span>
+<span id="cb14-17"><a href="#cb14-17"></a><span class="co"># Propose a model with two latent variables - one related to home (lvh), the other cognitive ability (lva)</span></span>
+<span id="cb14-18"><a href="#cb14-18"></a>model<span class="ot">&lt;-</span><span class="st">"lvi =~ ESCS + HOMEPOS + ST007Q01JA + ST256Q02JA + ST255Q01JA</span></span>
+<span id="cb14-19"><a href="#cb14-19"></a><span class="st">        lvc =~ PV1MATH + PV1READ</span></span>
+<span id="cb14-20"><a href="#cb14-20"></a><span class="st">        PV1SCIE ~ lvi + lvc"</span></span>
+<span id="cb14-21"><a href="#cb14-21"></a><span class="co"># Fit the model</span></span>
+<span id="cb14-22"><a href="#cb14-22"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
+<span id="cb14-23"><a href="#cb14-23"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>lavaan 0.6.17 ended normally after 32 iterations
 
@@ -720,7 +706,7 @@ Variances:
    .PV1SCIE           0.155    0.004   36.360    0.000
  [ reached getOption("max.print") -- omitted 2 rows ]</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -732,7 +718,7 @@ Variances:
 <p>There are a number of formatting options in the <code>semPaths</code> function.</p>
 <p>Starting from this plot:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -741,7 +727,7 @@ Variances:
 <li>To rotate the plot (<code>rotation=2</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -750,7 +736,7 @@ Variances:
 <li>To change the colour of the lines (<code>edge.color="blue"</code>) and the size of the nodes (<code>sizeMan=8</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, <span class="at">sizeMan =</span><span class="dv">8</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, <span class="at">sizeMan =</span><span class="dv">8</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -759,8 +745,8 @@ Variances:
 <li>To link the thickness of lines to their value (<code>"std"</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
-<span id="cb22-2"><a href="#cb22-2"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
+<span id="cb20-2"><a href="#cb20-2"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -769,8 +755,8 @@ Variances:
 <li>To make the labels larger (<code>edge.label.cex = 0.8</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
-<span id="cb23-2"><a href="#cb23-2"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>, <span class="at">edge.label.cex =</span> <span class="fl">0.8</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
+<span id="cb21-2"><a href="#cb21-2"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>, <span class="at">edge.label.cex =</span> <span class="fl">0.8</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -779,9 +765,9 @@ Variances:
 <li>To add a title (<code>title("PISA path diagram")</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
-<span id="cb24-2"><a href="#cb24-2"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>, <span class="at">edge.label.cex =</span> <span class="fl">0.8</span>) </span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="fu">title</span>(<span class="st">"PISA path diagram"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
+<span id="cb22-2"><a href="#cb22-2"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>, <span class="at">edge.label.cex =</span> <span class="fl">0.8</span>) </span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">title</span>(<span class="st">"PISA path diagram"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -790,13 +776,13 @@ Variances:
 <li>To give longer node names (<code>nodeNames=nodenames</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>nodenames<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Economic, social and cultural status"</span>,</span>
-<span id="cb25-2"><a href="#cb25-2"></a>             <span class="st">"Wealth"</span>,<span class="st">"Maternal Schooling"</span>,<span class="st">"Paternal Schooling"</span>,</span>
-<span id="cb25-3"><a href="#cb25-3"></a>             <span class="st">"In home: classical literature"</span>,<span class="st">"Books in home"</span>,</span>
-<span id="cb25-4"><a href="#cb25-4"></a>             <span class="st">"Math score"</span>, <span class="st">"Reading score"</span>, <span class="st">"Science Score"</span>)</span>
-<span id="cb25-5"><a href="#cb25-5"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
-<span id="cb25-6"><a href="#cb25-6"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>,, <span class="at">edge.label.cex =</span> <span class="fl">0.8</span>, <span class="at">nodeNames=</span>nodenames)</span>
-<span id="cb25-7"><a href="#cb25-7"></a><span class="fu">title</span>(<span class="st">"PISA path diagram"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>nodenames<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Economic, social and cultural status"</span>,</span>
+<span id="cb23-2"><a href="#cb23-2"></a>             <span class="st">"Wealth"</span>,<span class="st">"Maternal Schooling"</span>,<span class="st">"Paternal Schooling"</span>,</span>
+<span id="cb23-3"><a href="#cb23-3"></a>             <span class="st">"In home: classical literature"</span>,<span class="st">"Books in home"</span>,</span>
+<span id="cb23-4"><a href="#cb23-4"></a>             <span class="st">"Math score"</span>, <span class="st">"Reading score"</span>, <span class="st">"Science Score"</span>)</span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
+<span id="cb23-6"><a href="#cb23-6"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>,, <span class="at">edge.label.cex =</span> <span class="fl">0.8</span>, <span class="at">nodeNames=</span>nodenames)</span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="fu">title</span>(<span class="st">"PISA path diagram"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -859,20 +845,20 @@ Variances:
 <p>Don’t forget to convert any non-numeric variables to numeric</p>
 <p>:::</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Using ST255Q01JA  How many books are there in your home?</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="co"># ST254Q02JA    How many in your home: Computers (desktop computer, portable laptop, or notebook)</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a>USdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, PV1READ, ST255Q01JA, ST254Q02JA)<span class="sc">%&gt;%</span></span>
-<span id="cb26-5"><a href="#cb26-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United States"</span>)</span>
-<span id="cb26-6"><a href="#cb26-6"></a><span class="co"># Making ST255Q01JA and ST012Q06NA numeric</span></span>
-<span id="cb26-7"><a href="#cb26-7"></a>USdata<span class="sc">$</span>ST255Q01JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(USdata<span class="sc">$</span>ST255Q01JA)</span>
-<span id="cb26-8"><a href="#cb26-8"></a>USdata<span class="sc">$</span>ST254Q02JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(USdata<span class="sc">$</span>ST254Q02JA)</span>
-<span id="cb26-9"><a href="#cb26-9"></a></span>
-<span id="cb26-10"><a href="#cb26-10"></a></span>
-<span id="cb26-11"><a href="#cb26-11"></a>model<span class="ot">&lt;-</span><span class="st">"PV1READ ~ ESCS + HOMEPOS + ST255Q01JA+ ST254Q02JA"</span></span>
-<span id="cb26-12"><a href="#cb26-12"></a></span>
-<span id="cb26-13"><a href="#cb26-13"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>USdata)</span>
-<span id="cb26-14"><a href="#cb26-14"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Using ST255Q01JA  How many books are there in your home?</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="co"># ST254Q02JA    How many in your home: Computers (desktop computer, portable laptop, or notebook)</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>USdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, PV1READ, ST255Q01JA, ST254Q02JA)<span class="sc">%&gt;%</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United States"</span>)</span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="co"># Making ST255Q01JA and ST012Q06NA numeric</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>USdata<span class="sc">$</span>ST255Q01JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(USdata<span class="sc">$</span>ST255Q01JA)</span>
+<span id="cb24-8"><a href="#cb24-8"></a>USdata<span class="sc">$</span>ST254Q02JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(USdata<span class="sc">$</span>ST254Q02JA)</span>
+<span id="cb24-9"><a href="#cb24-9"></a></span>
+<span id="cb24-10"><a href="#cb24-10"></a></span>
+<span id="cb24-11"><a href="#cb24-11"></a>model<span class="ot">&lt;-</span><span class="st">"PV1READ ~ ESCS + HOMEPOS + ST255Q01JA+ ST254Q02JA"</span></span>
+<span id="cb24-12"><a href="#cb24-12"></a></span>
+<span id="cb24-13"><a href="#cb24-13"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>USdata)</span>
+<span id="cb24-14"><a href="#cb24-14"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>lavaan 0.6.17 ended normally after 1 iteration
 
@@ -906,7 +892,7 @@ Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
    .PV1READ        9987.581  218.913   45.623    0.000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -920,18 +906,18 @@ Variances:
 <p>Don’t forget to convert any non-numeric variables to numeric</p>
 <p>:::</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Using ST251Q06JA  How many of these items are there at your [home]: Musical instruments (e.g. guitar, piano, [country-specific example])</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="co"># and ST251Q07JA    How many of these items are there at your [home]: Works of art (e.g. paintings, sculptures, [country-specific example])</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a>UKdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
-<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, ST251Q06JA, ST251Q07JA)<span class="sc">%&gt;%</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb29-6"><a href="#cb29-6"></a><span class="co"># Making variables numeric</span></span>
-<span id="cb29-7"><a href="#cb29-7"></a>UKdata<span class="sc">$</span>ST251Q06JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST251Q06JA)</span>
-<span id="cb29-8"><a href="#cb29-8"></a>UKdata<span class="sc">$</span>ST251Q07JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST251Q07JA)</span>
-<span id="cb29-9"><a href="#cb29-9"></a>model<span class="ot">&lt;-</span><span class="st">"lv =~ ESCS + HOMEPOS + ST251Q06JA + ST251Q07JA "</span></span>
-<span id="cb29-10"><a href="#cb29-10"></a></span>
-<span id="cb29-11"><a href="#cb29-11"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb29-12"><a href="#cb29-12"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Using ST251Q06JA  How many of these items are there at your [home]: Musical instruments (e.g. guitar, piano, [country-specific example])</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="co"># and ST251Q07JA    How many of these items are there at your [home]: Works of art (e.g. paintings, sculptures, [country-specific example])</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>UKdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, ST251Q06JA, ST251Q07JA)<span class="sc">%&gt;%</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="co"># Making variables numeric</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a>UKdata<span class="sc">$</span>ST251Q06JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST251Q06JA)</span>
+<span id="cb27-8"><a href="#cb27-8"></a>UKdata<span class="sc">$</span>ST251Q07JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST251Q07JA)</span>
+<span id="cb27-9"><a href="#cb27-9"></a>model<span class="ot">&lt;-</span><span class="st">"lv =~ ESCS + HOMEPOS + ST251Q06JA + ST251Q07JA "</span></span>
+<span id="cb27-10"><a href="#cb27-10"></a></span>
+<span id="cb27-11"><a href="#cb27-11"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
+<span id="cb27-12"><a href="#cb27-12"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>lavaan 0.6.17 ended normally after 23 iterations
 
@@ -970,7 +956,7 @@ Variances:
    .ST251Q07JA        1.263    0.018   71.398    0.000
     lv                0.474    0.011   44.235    0.000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
@@ -984,27 +970,27 @@ Variances:
 <p>Don’t forget to convert any non-numeric variables to numeric and consider scaling the test scores</p>
 <p>:::</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Create a UK data frame with plausible values</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>UKdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, ST005Q01JA, ST007Q01JA, PV1READ, PV1SCIE, </span>
-<span id="cb32-4"><a href="#cb32-4"></a>         PV1MATH, ST004D01T)<span class="sc">%&gt;%</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb32-6"><a href="#cb32-6"></a><span class="co"># Convert to numeric where not numeric</span></span>
-<span id="cb32-7"><a href="#cb32-7"></a>UKdata<span class="sc">$</span>ST005Q01JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST005Q01JA)</span>
-<span id="cb32-8"><a href="#cb32-8"></a>UKdata<span class="sc">$</span>ST007Q01JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST007Q01JA)</span>
-<span id="cb32-9"><a href="#cb32-9"></a>UKdata<span class="sc">$</span>ST004D01T<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST004D01T)</span>
-<span id="cb32-10"><a href="#cb32-10"></a></span>
-<span id="cb32-11"><a href="#cb32-11"></a><span class="co"># Scale the test scores</span></span>
-<span id="cb32-12"><a href="#cb32-12"></a>UKdata<span class="sc">$</span>PV1READ<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1READ)</span>
-<span id="cb32-13"><a href="#cb32-13"></a>UKdata<span class="sc">$</span>PV1MATH<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1MATH)</span>
-<span id="cb32-14"><a href="#cb32-14"></a>UKdata<span class="sc">$</span>PV1SCIE<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1SCIE)</span>
-<span id="cb32-15"><a href="#cb32-15"></a><span class="co"># Propose a model with two latent variables - one related to identity (lvi), the other ability (lva)</span></span>
-<span id="cb32-16"><a href="#cb32-16"></a>model<span class="ot">&lt;-</span><span class="st">"lvi =~ ESCS + HOMEPOS + ST005Q01JA + ST007Q01JA + ST004D01T</span></span>
-<span id="cb32-17"><a href="#cb32-17"></a><span class="st">        lva =~ PV1MATH + PV1READ</span></span>
-<span id="cb32-18"><a href="#cb32-18"></a><span class="st">        PV1SCIE ~ lvi + lva"</span></span>
-<span id="cb32-19"><a href="#cb32-19"></a><span class="co"># Fit the model</span></span>
-<span id="cb32-20"><a href="#cb32-20"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb32-21"><a href="#cb32-21"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Create a UK data frame with plausible values</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>UKdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, ST005Q01JA, ST007Q01JA, PV1READ, PV1SCIE, </span>
+<span id="cb30-4"><a href="#cb30-4"></a>         PV1MATH, ST004D01T)<span class="sc">%&gt;%</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb30-6"><a href="#cb30-6"></a><span class="co"># Convert to numeric where not numeric</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a>UKdata<span class="sc">$</span>ST005Q01JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST005Q01JA)</span>
+<span id="cb30-8"><a href="#cb30-8"></a>UKdata<span class="sc">$</span>ST007Q01JA<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST007Q01JA)</span>
+<span id="cb30-9"><a href="#cb30-9"></a>UKdata<span class="sc">$</span>ST004D01T<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST004D01T)</span>
+<span id="cb30-10"><a href="#cb30-10"></a></span>
+<span id="cb30-11"><a href="#cb30-11"></a><span class="co"># Scale the test scores</span></span>
+<span id="cb30-12"><a href="#cb30-12"></a>UKdata<span class="sc">$</span>PV1READ<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1READ)</span>
+<span id="cb30-13"><a href="#cb30-13"></a>UKdata<span class="sc">$</span>PV1MATH<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1MATH)</span>
+<span id="cb30-14"><a href="#cb30-14"></a>UKdata<span class="sc">$</span>PV1SCIE<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1SCIE)</span>
+<span id="cb30-15"><a href="#cb30-15"></a><span class="co"># Propose a model with two latent variables - one related to identity (lvi), the other ability (lva)</span></span>
+<span id="cb30-16"><a href="#cb30-16"></a>model<span class="ot">&lt;-</span><span class="st">"lvi =~ ESCS + HOMEPOS + ST005Q01JA + ST007Q01JA + ST004D01T</span></span>
+<span id="cb30-17"><a href="#cb30-17"></a><span class="st">        lva =~ PV1MATH + PV1READ</span></span>
+<span id="cb30-18"><a href="#cb30-18"></a><span class="st">        PV1SCIE ~ lvi + lva"</span></span>
+<span id="cb30-19"><a href="#cb30-19"></a><span class="co"># Fit the model</span></span>
+<span id="cb30-20"><a href="#cb30-20"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
+<span id="cb30-21"><a href="#cb30-21"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>lavaan 0.6.17 ended normally after 34 iterations
 
@@ -1062,7 +1048,7 @@ Variances:
    .PV1SCIE           0.157    0.004   37.728    0.000
  [ reached getOption("max.print") -- omitted 2 rows ]</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="A7-SEM_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" style="width:95.0%"></p>
 </div>
