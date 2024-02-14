@@ -517,31 +517,31 @@ div.csl-indent {
 <span id="annotated-cell-2-3"><a href="#annotated-cell-2-3"></a><span class="co"># First create a data frame with the gender data for the UK and US </span></span>
 <span id="annotated-cell-2-4"><a href="#annotated-cell-2-4"></a></span>
 <span id="annotated-cell-2-5"><a href="#annotated-cell-2-5"></a>UKUSgender <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"United States"</span>) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-2-8" class="code-annotation-target"><a href="#annotated-cell-2-8"></a>  <span class="fu">droplevels</span>()</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"United States"</span>) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-2-8" class="code-annotation-target"><a href="#annotated-cell-2-8"></a>  <span class="fu">droplevels</span>()</span>
 <span id="annotated-cell-2-9"><a href="#annotated-cell-2-9"></a></span>
 <span id="annotated-cell-2-10"><a href="#annotated-cell-2-10"></a><span class="co"># The use xtabs to create a contingency table by ('~') country (CNT) and gender (ST004D01T)</span></span>
 <span id="annotated-cell-2-11"><a href="#annotated-cell-2-11"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-2-12" class="code-annotation-target"><a href="#annotated-cell-2-12"></a>ContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> UKUSgender, <span class="sc">~</span> CNT <span class="sc">+</span> ST004D01T)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-2-12" class="code-annotation-target"><a href="#annotated-cell-2-12"></a>ContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> UKUSgender, <span class="sc">~</span> CNT <span class="sc">+</span> ST004D01T)</span>
 <span id="annotated-cell-2-13"><a href="#annotated-cell-2-13"></a>ContTable</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-annotation="1" data-code-lines="6"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
+</dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="6" data-code-cell="annotated-cell-2">line 2- select the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="2" data-code-lines="7"><code>filter</code> for countries of interest, the UK and the US</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="7" data-code-cell="annotated-cell-2">line 3 - filter for countries of interest, the UK and the US</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="3" data-code-lines="8"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="8" data-code-cell="annotated-cell-2">line 4 -<code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
-</dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
-<dd>
-<span data-code-annotation="5" data-code-lines="12" data-code-cell="annotated-cell-2">line 5 - use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="4" data-code-lines="12">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
 </dd>
 </dl>
 </div>
@@ -596,38 +596,38 @@ Tip
 <span id="annotated-cell-3-3"><a href="#annotated-cell-3-3"></a><span class="co"># Create a data frame of UK genders</span></span>
 <span id="annotated-cell-3-4"><a href="#annotated-cell-3-4"></a></span>
 <span id="annotated-cell-3-5"><a href="#annotated-cell-3-5"></a>UKPISAgender<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-6" class="code-annotation-target"><a href="#annotated-cell-3-6"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-7" class="code-annotation-target"><a href="#annotated-cell-3-7"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-3-8" class="code-annotation-target"><a href="#annotated-cell-3-8"></a>  <span class="fu">droplevels</span>()</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-6" class="code-annotation-target"><a href="#annotated-cell-3-6"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-7" class="code-annotation-target"><a href="#annotated-cell-3-7"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-8" class="code-annotation-target"><a href="#annotated-cell-3-8"></a>  <span class="fu">droplevels</span>()</span>
 <span id="annotated-cell-3-9"><a href="#annotated-cell-3-9"></a></span>
 <span id="annotated-cell-3-10"><a href="#annotated-cell-3-10"></a><span class="co"># Use cross tabs to create a contingency table of the dataframe, by CNT and ST004D01T (gender)</span></span>
 <span id="annotated-cell-3-11"><a href="#annotated-cell-3-11"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-3-12" class="code-annotation-target"><a href="#annotated-cell-3-12"></a>GenderContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> UKPISAgender, <span class="sc">~</span>CNT <span class="sc">+</span> ST004D01T)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-3-12" class="code-annotation-target"><a href="#annotated-cell-3-12"></a>GenderContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> UKPISAgender, <span class="sc">~</span>CNT <span class="sc">+</span> ST004D01T)</span>
 <span id="annotated-cell-3-13"><a href="#annotated-cell-3-13"></a></span>
 <span id="annotated-cell-3-14"><a href="#annotated-cell-3-14"></a><span class="co"># Perfom the chisq test, comparing against the expected probabilities of 50:50 (e.g. 1/2 to 1/2)</span></span>
 <span id="annotated-cell-3-15"><a href="#annotated-cell-3-15"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-3-16" class="code-annotation-target"><a href="#annotated-cell-3-16"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-3-16" class="code-annotation-target"><a href="#annotated-cell-3-16"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-annotation="1" data-code-lines="6"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
+</dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="6" data-code-cell="annotated-cell-3"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
+<span data-code-cell="annotated-cell-3" data-code-annotation="2" data-code-lines="7"><code>filter</code> for country of interest, the UK</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="7" data-code-cell="annotated-cell-3"><code>filter</code> for country of interest, the UK</span>
+<span data-code-cell="annotated-cell-3" data-code-annotation="3" data-code-lines="8"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="8" data-code-cell="annotated-cell-3"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
+<span data-code-cell="annotated-cell-3" data-code-annotation="4" data-code-lines="12">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="12" data-code-cell="annotated-cell-3">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
-</dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="6">6</dt>
-<dd>
-<span data-code-annotation="6" data-code-lines="16" data-code-cell="annotated-cell-3">perform the chi-sq test of goodness of fit, comparing against an expected probability of 50:50</span>
+<span data-code-cell="annotated-cell-3" data-code-annotation="5" data-code-lines="16">perform the chi-sq test of goodness of fit, comparing against an expected probability of 50:50</span>
 </dd>
 </dl>
 </div>
@@ -654,17 +654,17 @@ X-squared = 2.4425, df = 1, p-value = 0.1181</code></pre>
 <span id="annotated-cell-1-2"><a href="#annotated-cell-1-2"></a><span class="co"># to gender in the US, Japan and China</span></span>
 <span id="annotated-cell-1-3"><a href="#annotated-cell-1-3"></a></span>
 <span id="annotated-cell-1-4"><a href="#annotated-cell-1-4"></a>USPISAgender<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-5" class="code-annotation-target"><a href="#annotated-cell-1-5"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-6" class="code-annotation-target"><a href="#annotated-cell-1-6"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United States"</span>) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-7" class="code-annotation-target"><a href="#annotated-cell-1-7"></a>  <span class="fu">droplevels</span>()</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-5" class="code-annotation-target"><a href="#annotated-cell-1-5"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-6" class="code-annotation-target"><a href="#annotated-cell-1-6"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United States"</span>) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-7" class="code-annotation-target"><a href="#annotated-cell-1-7"></a>  <span class="fu">droplevels</span>()</span>
 <span id="annotated-cell-1-8"><a href="#annotated-cell-1-8"></a></span>
 <span id="annotated-cell-1-9"><a href="#annotated-cell-1-9"></a><span class="co"># produce the contingency table by country and gender</span></span>
 <span id="annotated-cell-1-10"><a href="#annotated-cell-1-10"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-11" class="code-annotation-target"><a href="#annotated-cell-1-11"></a>GenderContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> USPISAgender, <span class="sc">~</span> CNT <span class="sc">+</span> ST004D01T)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-11" class="code-annotation-target"><a href="#annotated-cell-1-11"></a>GenderContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> USPISAgender, <span class="sc">~</span> CNT <span class="sc">+</span> ST004D01T)</span>
 <span id="annotated-cell-1-12"><a href="#annotated-cell-1-12"></a></span>
 <span id="annotated-cell-1-13"><a href="#annotated-cell-1-13"></a><span class="co"># Perform the chisq test, comparing against the expected probabilities of 50:50 (e.g. 1/2 to 1/2)</span></span>
 <span id="annotated-cell-1-14"><a href="#annotated-cell-1-14"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-15" class="code-annotation-target"><a href="#annotated-cell-1-15"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-15" class="code-annotation-target"><a href="#annotated-cell-1-15"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
 <span id="annotated-cell-1-16"><a href="#annotated-cell-1-16"></a></span>
 <span id="annotated-cell-1-17"><a href="#annotated-cell-1-17"></a><span class="co"># In the US, population of M:F differs from 50:50 p= 0.2535, reject null hypothesis of equality.</span></span>
 <span id="annotated-cell-1-18"><a href="#annotated-cell-1-18"></a></span>
@@ -700,25 +700,25 @@ X-squared = 2.4425, df = 1, p-value = 0.1181</code></pre>
 </details>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-annotation="1" data-code-lines="5"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
+</dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="5" data-code-cell="annotated-cell-1">line 2- select the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
+<span data-code-cell="annotated-cell-1" data-code-annotation="2" data-code-lines="6"><code>filter</code> for country of interest, the US</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="6" data-code-cell="annotated-cell-1">line 3 - filter for country of interest, the US</span>
+<span data-code-cell="annotated-cell-1" data-code-annotation="3" data-code-lines="7"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="7" data-code-cell="annotated-cell-1">line 4 -<code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
+<span data-code-cell="annotated-cell-1" data-code-annotation="4" data-code-lines="11">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="11" data-code-cell="annotated-cell-1">line 5 - use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
-<dd>
-<span data-code-annotation="6" data-code-lines="15" data-code-cell="annotated-cell-1">line 6 - perform the chi-sq test of goodness of fit, comparing against an expected probability of 50:50</span>
+<span data-code-cell="annotated-cell-1" data-code-annotation="5" data-code-lines="15">perform the chi-sq test of goodness of fit, comparing against an expected probability of 50:50</span>
 </dd>
 </dl>
 </div>
@@ -750,13 +750,13 @@ Tip
 <div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a><span class="co"># Produce tables of counts of accomplishment for the Netherlands and the rest of the sample</span></span>
 <span id="annotated-cell-4-2"><a href="#annotated-cell-4-2"></a></span>
 <span id="annotated-cell-4-3"><a href="#annotated-cell-4-3"></a>AccompStudy<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4"></a>  <span class="fu">select</span>(CNT, WB178Q01HA) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-5" class="code-annotation-target"><a href="#annotated-cell-4-5"></a>  <span class="fu">droplevels</span>() <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6"></a>  <span class="fu">na.omit</span>()</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4"></a>  <span class="fu">select</span>(CNT, WB178Q01HA) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-5" class="code-annotation-target"><a href="#annotated-cell-4-5"></a>  <span class="fu">droplevels</span>() <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6"></a>  <span class="fu">na.omit</span>()</span>
 <span id="annotated-cell-4-7"><a href="#annotated-cell-4-7"></a></span>
 <span id="annotated-cell-4-8"><a href="#annotated-cell-4-8"></a><span class="co"># Create the contingency table for the whole sample and print it</span></span>
 <span id="annotated-cell-4-9"><a href="#annotated-cell-4-9"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-10" class="code-annotation-target"><a href="#annotated-cell-4-10"></a>AccompStudyTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> AccompStudy, <span class="sc">~</span> WB178Q01HA)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-10" class="code-annotation-target"><a href="#annotated-cell-4-10"></a>AccompStudyTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> AccompStudy, <span class="sc">~</span> WB178Q01HA)</span>
 <span id="annotated-cell-4-11"><a href="#annotated-cell-4-11"></a><span class="fu">print</span>(AccompStudyTable)</span>
 <span id="annotated-cell-4-12"><a href="#annotated-cell-4-12"></a></span>
 <span id="annotated-cell-4-13"><a href="#annotated-cell-4-13"></a><span class="co"># Create the data frame and contingency table for the Netherlands and print it</span></span>
@@ -770,21 +770,21 @@ Tip
 <span id="annotated-cell-4-21"><a href="#annotated-cell-4-21"></a><span class="fu">print</span>(NethAccompTable)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-annotation="1" data-code-lines="4"><code>select</code> the needed columns accomplishment (<code>WB178Q01HA</code>) and country (<code>CNT</code>)</span>
+</dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="4" data-code-cell="annotated-cell-4"><code>select</code> the needed columns accomplishment (<code>WB178Q01HA</code>) and country (<code>CNT</code>)</span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="2" data-code-lines="5"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="5" data-code-cell="annotated-cell-4"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="3" data-code-lines="6">remove na values</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="6" data-code-cell="annotated-cell-4">remove na values</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
-<dd>
-<span data-code-annotation="5" data-code-lines="10" data-code-cell="annotated-cell-4">use <code>xtabs</code> to create a contingency table for <code>WB178Q01HA</code></span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="4" data-code-lines="10">use <code>xtabs</code> to create a contingency table for <code>WB178Q01HA</code></span>
 </dd>
 </dl>
 </div>
@@ -804,23 +804,23 @@ WB178Q01HA
 <span id="annotated-cell-5-3"><a href="#annotated-cell-5-3"></a><span class="co"># Create a data frame of accomplishment for the whole world without the Netherlands</span></span>
 <span id="annotated-cell-5-4"><a href="#annotated-cell-5-4"></a></span>
 <span id="annotated-cell-5-5"><a href="#annotated-cell-5-5"></a>Accomp<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-5-6" class="code-annotation-target"><a href="#annotated-cell-5-6"></a>  <span class="fu">select</span>(WB178Q01HA, CNT) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-5-7" class="code-annotation-target"><a href="#annotated-cell-5-7"></a>  <span class="fu">filter</span>(CNT<span class="sc">!=</span> <span class="st">"Netherlands"</span>) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-5-8" class="code-annotation-target"><a href="#annotated-cell-5-8"></a>  <span class="fu">droplevels</span>()</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-5-6" class="code-annotation-target"><a href="#annotated-cell-5-6"></a>  <span class="fu">select</span>(WB178Q01HA, CNT) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-5-7" class="code-annotation-target"><a href="#annotated-cell-5-7"></a>  <span class="fu">filter</span>(CNT<span class="sc">!=</span> <span class="st">"Netherlands"</span>) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-5-8" class="code-annotation-target"><a href="#annotated-cell-5-8"></a>  <span class="fu">droplevels</span>()</span>
 <span id="annotated-cell-5-9"><a href="#annotated-cell-5-9"></a></span>
 <span id="annotated-cell-5-10"><a href="#annotated-cell-5-10"></a><span class="co"># turn the data frame into a contingency table - and then convert to a data frame for easier manipulation</span></span>
 <span id="annotated-cell-5-11"><a href="#annotated-cell-5-11"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-5-12" class="code-annotation-target"><a href="#annotated-cell-5-12"></a>AccompFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> Accomp, <span class="sc">~</span> WB178Q01HA)</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-5-13" class="code-annotation-target"><a href="#annotated-cell-5-13"></a>AccompFreqTable<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(AccompFreqTable)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-5-12" class="code-annotation-target"><a href="#annotated-cell-5-12"></a>AccompFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> Accomp, <span class="sc">~</span> WB178Q01HA)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-5-13" class="code-annotation-target"><a href="#annotated-cell-5-13"></a>AccompFreqTable<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(AccompFreqTable)</span>
 <span id="annotated-cell-5-14"><a href="#annotated-cell-5-14"></a></span>
 <span id="annotated-cell-5-15"><a href="#annotated-cell-5-15"></a><span class="co"># Sum to find the total count</span></span>
 <span id="annotated-cell-5-16"><a href="#annotated-cell-5-16"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-5-17" class="code-annotation-target"><a href="#annotated-cell-5-17"></a>Total<span class="ot">=</span><span class="fu">sum</span>(AccompFreqTable<span class="sc">$</span>Freq)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-5-17" class="code-annotation-target"><a href="#annotated-cell-5-17"></a>Total<span class="ot">=</span><span class="fu">sum</span>(AccompFreqTable<span class="sc">$</span>Freq)</span>
 <span id="annotated-cell-5-18"><a href="#annotated-cell-5-18"></a></span>
 <span id="annotated-cell-5-19"><a href="#annotated-cell-5-19"></a><span class="co"># Use mutate to add a new column, Perc, which is Freq/Total*100 to give the percentage</span></span>
 <span id="annotated-cell-5-20"><a href="#annotated-cell-5-20"></a></span>
 <span id="annotated-cell-5-21"><a href="#annotated-cell-5-21"></a>AccompFreqTable<span class="ot">&lt;-</span>AccompFreqTable<span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-5-22" class="code-annotation-target"><a href="#annotated-cell-5-22"></a>  <span class="fu">mutate</span>(<span class="at">Perc =</span> (Freq <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">/</span> Total)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-5-22" class="code-annotation-target"><a href="#annotated-cell-5-22"></a>  <span class="fu">mutate</span>(<span class="at">Perc =</span> (Freq <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">/</span> Total)</span>
 <span id="annotated-cell-5-23"><a href="#annotated-cell-5-23"></a><span class="fu">print</span>(AccompFreqTable)</span>
 <span id="annotated-cell-5-24"><a href="#annotated-cell-5-24"></a></span>
 <span id="annotated-cell-5-25"><a href="#annotated-cell-5-25"></a><span class="co"># Repeat for the Netherlands</span></span>
@@ -840,33 +840,33 @@ WB178Q01HA
 <span id="annotated-cell-5-39"><a href="#annotated-cell-5-39"></a><span class="fu">print</span>(NethAccompFreqTable)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-annotation="1" data-code-lines="6"><code>select</code> the needed columns accomplishment (<code>WB178Q01HA</code>)</span>
+</dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="6" data-code-cell="annotated-cell-5"><code>select</code> the needed columns accomplishment (<code>WB178Q01HA</code>)</span>
+<span data-code-cell="annotated-cell-5" data-code-annotation="2" data-code-lines="7"><code>filter</code> for all the countries but not (<code>!=</code> , note <code>!</code> means not) the Netherlands</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="7" data-code-cell="annotated-cell-5"><code>filter</code> for all the countries but not (<code>!=</code> , note <code>!</code> means not) the Netherlands</span>
+<span data-code-cell="annotated-cell-5" data-code-annotation="3" data-code-lines="8"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="8" data-code-cell="annotated-cell-5"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
+<span data-code-cell="annotated-cell-5" data-code-annotation="4" data-code-lines="12">use <code>xtabs</code> to create a contingency table for <code>WB178Q01HA</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="12" data-code-cell="annotated-cell-5">use <code>xtabs</code> to create a contingency table for <code>WB178Q01HA</code></span>
+<span data-code-cell="annotated-cell-5" data-code-annotation="5" data-code-lines="13">convert the result of <code>xtabs</code> into a data frame for easier manipulation</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-annotation="6" data-code-lines="13" data-code-cell="annotated-cell-5">convert the result of <code>xtabs</code> into a data frame for easier manipulation</span>
+<span data-code-cell="annotated-cell-5" data-code-annotation="6" data-code-lines="17">calculate the total frequency, for use in calculating the percentage</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-annotation="7" data-code-lines="17" data-code-cell="annotated-cell-5">calculate the total frequency, for use in calculating the percentage</span>
-</dd>
-<dt data-target-cell="annotated-cell-5" data-target-annotation="8">8</dt>
-<dd>
-<span data-code-annotation="8" data-code-lines="22" data-code-cell="annotated-cell-5">use <code>mutate</code> to add a new percentage column given by the calculation of the frequency divided by the total multiplied by 100 <code>(Perc = (Freq * 100) / Total)</code></span>
+<span data-code-cell="annotated-cell-5" data-code-annotation="7" data-code-lines="22">use <code>mutate</code> to add a new percentage column given by the calculation of the frequency divided by the total multiplied by 100 <code>(Perc = (Freq * 100) / Total)</code></span>
 </dd>
 </dl>
 </div>
@@ -892,27 +892,27 @@ WB178Q01HA
 <span id="annotated-cell-6-10"><a href="#annotated-cell-6-10"></a><span class="co"># plot results</span></span>
 <span id="annotated-cell-6-11"><a href="#annotated-cell-6-11"></a><span class="co"># Note that with geom_mosaic you pass the x and y variables using: aes(x = product(WB178Q01HA, CNT))</span></span>
 <span id="annotated-cell-6-12"><a href="#annotated-cell-6-12"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-6-13" class="code-annotation-target"><a href="#annotated-cell-6-13"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Accomp) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-6-14" class="code-annotation-target"><a href="#annotated-cell-6-14"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(WB178Q01HA, CNT), <span class="at">fill =</span> CNT)) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-6-15" class="code-annotation-target"><a href="#annotated-cell-6-15"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-6-16" class="code-annotation-target"><a href="#annotated-cell-6-16"></a>  <span class="fu">ylab</span>(<span class="st">"Did you accomplish something yesterday?"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-13" class="code-annotation-target"><a href="#annotated-cell-6-13"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Accomp) <span class="sc">+</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-14" class="code-annotation-target"><a href="#annotated-cell-6-14"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(WB178Q01HA, CNT), <span class="at">fill =</span> CNT)) <span class="sc">+</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-15" class="code-annotation-target"><a href="#annotated-cell-6-15"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>) <span class="sc">+</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-6-16" class="code-annotation-target"><a href="#annotated-cell-6-16"></a>  <span class="fu">ylab</span>(<span class="st">"Did you accomplish something yesterday?"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-6" data-target-annotation="5">5</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="13" data-code-cell="annotated-cell-6">set the data to be plotted <code>(data = Accomp)</code></span>
+<span data-code-cell="annotated-cell-6" data-code-annotation="1" data-code-lines="13">set the data to be plotted <code>(data = Accomp)</code></span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="6">6</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="6" data-code-lines="14" data-code-cell="annotated-cell-6">in <code>geom_mosaic</code> the x and y variables are set using <code>x= product (x, y)</code>. Here we set <code>x = product(WB178Q01HA, CNT)</code> and set the fill by country (<code>fill = CNT</code>)</span>
+<span data-code-cell="annotated-cell-6" data-code-annotation="2" data-code-lines="14">in <code>geom_mosaic</code> the x and y variables are set using <code>x= product (x, y)</code>. Here we set <code>x = product(WB178Q01HA, CNT)</code> and set the fill by country (<code>fill = CNT</code>)</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="7">7</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="7" data-code-lines="15" data-code-cell="annotated-cell-6">set the x-axis label</span>
+<span data-code-cell="annotated-cell-6" data-code-annotation="3" data-code-lines="15">set the x-axis label</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="8">8</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="8" data-code-lines="16" data-code-cell="annotated-cell-6">set the y-axis label</span>
+<span data-code-cell="annotated-cell-6" data-code-annotation="4" data-code-lines="16">set the y-axis label</span>
 </dd>
 </dl>
 </div>
@@ -930,39 +930,43 @@ WB178Q01HA
 <div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1"></a><span class="co"># Produce tables of counts of having accomplished something for Mexico and new Zealand</span></span>
 <span id="annotated-cell-7-2"><a href="#annotated-cell-7-2"></a></span>
 <span id="annotated-cell-7-3"><a href="#annotated-cell-7-3"></a>AccompNZM <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4"></a>  <span class="fu">select</span>(WB178Q01HA, CNT) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-7-5" class="code-annotation-target"><a href="#annotated-cell-7-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"New Zealand"</span><span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"Mexico"</span>) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-7-6" class="code-annotation-target"><a href="#annotated-cell-7-6"></a>  <span class="fu">droplevels</span>()</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4"></a>  <span class="fu">select</span>(WB178Q01HA, CNT) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-7-5" class="code-annotation-target"><a href="#annotated-cell-7-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"New Zealand"</span><span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"Mexico"</span>) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-7-6" class="code-annotation-target"><a href="#annotated-cell-7-6"></a>  <span class="fu">droplevels</span>()</span>
 <span id="annotated-cell-7-7"><a href="#annotated-cell-7-7"></a></span>
 <span id="annotated-cell-7-8"><a href="#annotated-cell-7-8"></a><span class="co"># Produce the contingency table for the NZ and Mexico</span></span>
 <span id="annotated-cell-7-9"><a href="#annotated-cell-7-9"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-7-10" class="code-annotation-target"><a href="#annotated-cell-7-10"></a>AccompNZMFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="sc">~</span> WB178Q01HA <span class="sc">+</span> CNT, <span class="at">data =</span> AccompNZM)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-7-10" class="code-annotation-target"><a href="#annotated-cell-7-10"></a>AccompNZMFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="sc">~</span> WB178Q01HA <span class="sc">+</span> CNT, <span class="at">data =</span> AccompNZM)</span>
 <span id="annotated-cell-7-11"><a href="#annotated-cell-7-11"></a></span>
 <span id="annotated-cell-7-12"><a href="#annotated-cell-7-12"></a><span class="co"># Print the table</span></span>
 <span id="annotated-cell-7-13"><a href="#annotated-cell-7-13"></a><span class="fu">print</span>(AccompNZMFreqTable)</span>
 <span id="annotated-cell-7-14"><a href="#annotated-cell-7-14"></a></span>
 <span id="annotated-cell-7-15"><a href="#annotated-cell-7-15"></a><span class="co"># Perform Chisq test between NZ and Mexico</span></span>
 <span id="annotated-cell-7-16"><a href="#annotated-cell-7-16"></a></span>
-<span id="annotated-cell-7-17"><a href="#annotated-cell-7-17"></a><span class="fu">chisq.test</span>(AccompNZMFreqTable)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-7-17" class="code-annotation-target"><a href="#annotated-cell-7-17"></a><span class="fu">chisq.test</span>(AccompNZMFreqTable)</span>
 <span id="annotated-cell-7-18"><a href="#annotated-cell-7-18"></a></span>
 <span id="annotated-cell-7-19"><a href="#annotated-cell-7-19"></a><span class="co"># p-value &lt; 0.5938, more than 0.05, so there are no statistically significant differences in feelings of accomplishment between NZ and Mexico, the null hypothesis is accepted</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-annotation="1" data-code-lines="4"><code>select</code> the accomplishment (<code>WB178Q01HA</code>) and country variable</span>
+</dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="4" data-code-cell="annotated-cell-7"><code>select</code> the accomplishment (<code>WB178Q01HA</code>) and country variable</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="2" data-code-lines="5"><code>filter</code> for New Zealand and Mexico</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="5" data-code-cell="annotated-cell-7"><code>filter</code> for New Zealand and Mexico</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="3" data-code-lines="6">drop levels to keep the table clean</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="6" data-code-cell="annotated-cell-7">drop levels to keep the table clean</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="4" data-code-lines="10">use <code>xtabs</code> to create the contingency table for accomplishment (<code>WB178Q01HA</code>) by country</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="10" data-code-cell="annotated-cell-7">use <code>xtabs</code> to create the contingency table for accomplishment (<code>WB178Q01HA</code>) by country</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="5" data-code-lines="17">perform the <code>chisq.test</code></span>
 </dd>
 </dl>
 </div>
@@ -990,35 +994,35 @@ X-squared = 0.28447, df = 1, p-value = 0.5938</code></pre>
 <div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1"></a><span class="co"># Create a data frame including data on cars and gender for the UK</span></span>
 <span id="annotated-cell-8-2"><a href="#annotated-cell-8-2"></a></span>
 <span id="annotated-cell-8-3"><a href="#annotated-cell-8-3"></a>CarsUKGender <span class="ot">&lt;-</span> PISA_2022<span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-8-4" class="code-annotation-target"><a href="#annotated-cell-8-4"></a>  <span class="fu">select</span>(CNT, ST004D01T, ST251Q01JA ) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-8-5" class="code-annotation-target"><a href="#annotated-cell-8-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-8-6" class="code-annotation-target"><a href="#annotated-cell-8-6"></a>  <span class="fu">select</span>(ST004D01T, ST251Q01JA ) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-8-7" class="code-annotation-target"><a href="#annotated-cell-8-7"></a>  <span class="fu">droplevels</span>()</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-8-4" class="code-annotation-target"><a href="#annotated-cell-8-4"></a>  <span class="fu">select</span>(CNT, ST004D01T, ST251Q01JA ) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-8-5" class="code-annotation-target"><a href="#annotated-cell-8-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-8-6" class="code-annotation-target"><a href="#annotated-cell-8-6"></a>  <span class="fu">select</span>(ST004D01T, ST251Q01JA ) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-8-7" class="code-annotation-target"><a href="#annotated-cell-8-7"></a>  <span class="fu">droplevels</span>()</span>
 <span id="annotated-cell-8-8"><a href="#annotated-cell-8-8"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-8-9" class="code-annotation-target"><a href="#annotated-cell-8-9"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> CarsUKGender, ST251Q01JA <span class="sc">~</span> ST004D01T)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-8-9" class="code-annotation-target"><a href="#annotated-cell-8-9"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> CarsUKGender, ST251Q01JA <span class="sc">~</span> ST004D01T)</span>
 <span id="annotated-cell-8-10"><a href="#annotated-cell-8-10"></a></span>
 <span id="annotated-cell-8-11"><a href="#annotated-cell-8-11"></a><span class="co"># The p-value is more than 0.05 (p-value=0.8736), therefore we accept the null hypothesis that the number of cars is the same for boys and girls</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-annotation="1" data-code-lines="4">choose country, no of cars and gender</span>
+</dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="4" data-code-cell="annotated-cell-8">choose country, no of cars and gender</span>
+<span data-code-cell="annotated-cell-8" data-code-annotation="2" data-code-lines="5"><code>filter</code> for the UK</span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="5" data-code-cell="annotated-cell-8"><code>filter</code> for the UK</span>
+<span data-code-cell="annotated-cell-8" data-code-annotation="3" data-code-lines="6">drop country variable now filtering is done</span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="6" data-code-cell="annotated-cell-8">drop country variable now filtering is done</span>
+<span data-code-cell="annotated-cell-8" data-code-annotation="4" data-code-lines="7">remove other countries which exist as factors (<code>WB178Q01HA</code>) by country</span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="7" data-code-cell="annotated-cell-8">remove other countries which exist as factors (<code>WB178Q01HA</code>) by country</span>
-</dd>
-<dt data-target-cell="annotated-cell-8" data-target-annotation="6">6</dt>
-<dd>
-<span data-code-annotation="6" data-code-lines="9" data-code-cell="annotated-cell-8">perform the kruskal test</span>
+<span data-code-cell="annotated-cell-8" data-code-annotation="5" data-code-lines="9">perform the kruskal test</span>
 </dd>
 </dl>
 </div>
@@ -1038,33 +1042,37 @@ Kruskal-Wallis chi-squared = 0.025303, df = 1, p-value = 0.8736</code></pre>
 <div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a><span class="co"># Create a data frame including data on 'school is a waste of time' and gender </span></span>
 <span id="annotated-cell-9-2"><a href="#annotated-cell-9-2"></a></span>
 <span id="annotated-cell-9-3"><a href="#annotated-cell-9-3"></a>GW <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-9-4" class="code-annotation-target"><a href="#annotated-cell-9-4"></a>  <span class="fu">select</span>(ST004D01T,ST324Q11JA)<span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-9-5" class="code-annotation-target"><a href="#annotated-cell-9-5"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">!=</span><span class="st">"NA"</span><span class="sc">&amp;</span>ST324Q11JA<span class="sc">!=</span><span class="st">"NA"</span>)<span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-9-6" class="code-annotation-target"><a href="#annotated-cell-9-6"></a>  <span class="fu">droplevels</span>()</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-9-4" class="code-annotation-target"><a href="#annotated-cell-9-4"></a>  <span class="fu">select</span>(ST004D01T,ST324Q11JA)<span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-9-5" class="code-annotation-target"><a href="#annotated-cell-9-5"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">!=</span><span class="st">"NA"</span><span class="sc">&amp;</span>ST324Q11JA<span class="sc">!=</span><span class="st">"NA"</span>)<span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-9-6" class="code-annotation-target"><a href="#annotated-cell-9-6"></a>  <span class="fu">droplevels</span>()</span>
 <span id="annotated-cell-9-7"><a href="#annotated-cell-9-7"></a></span>
 <span id="annotated-cell-9-8"><a href="#annotated-cell-9-8"></a>GW.recoded <span class="ot">&lt;-</span> GW <span class="sc">%&gt;%</span>                                      </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-9-9" class="code-annotation-target"><a href="#annotated-cell-9-9"></a>  <span class="fu">mutate</span>(<span class="at">ST324Q11JA =</span> <span class="fu">as.numeric</span>(ST324Q11JA))</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-9-9" class="code-annotation-target"><a href="#annotated-cell-9-9"></a>  <span class="fu">mutate</span>(<span class="at">ST324Q11JA =</span> <span class="fu">as.numeric</span>(ST324Q11JA))</span>
 <span id="annotated-cell-9-10"><a href="#annotated-cell-9-10"></a></span>
-<span id="annotated-cell-9-11"><a href="#annotated-cell-9-11"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> GW.recoded, ST004D01T <span class="sc">~</span> ST324Q11JA)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-9-11" class="code-annotation-target"><a href="#annotated-cell-9-11"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> GW.recoded, ST004D01T <span class="sc">~</span> ST324Q11JA)</span>
 <span id="annotated-cell-9-12"><a href="#annotated-cell-9-12"></a></span>
 <span id="annotated-cell-9-13"><a href="#annotated-cell-9-13"></a><span class="co"># The p-value is less than 0.05 (p-value&lt;2.2e-16), therefore we reject the null hypothesis and accept the alternative hypothesis that opinions on 'school is a waste of time' are statistically different for boys and girls.</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-annotation="1" data-code-lines="4">choose ‘waste of time’ and gender</span>
+</dd>
 <dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="4" data-code-cell="annotated-cell-9">choose ‘waste of time’ and gender</span>
+<span data-code-cell="annotated-cell-9" data-code-annotation="2" data-code-lines="5"><code>filter</code> out NA values</span>
 </dd>
 <dt data-target-cell="annotated-cell-9" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="5" data-code-cell="annotated-cell-9"><code>filter</code> out NA values</span>
+<span data-code-cell="annotated-cell-9" data-code-annotation="3" data-code-lines="6">drop country variable now filtering is done</span>
 </dd>
 <dt data-target-cell="annotated-cell-9" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="6" data-code-cell="annotated-cell-9">drop country variable now filtering is done</span>
+<span data-code-cell="annotated-cell-9" data-code-annotation="4" data-code-lines="9">recode worded responses as numerical responses</span>
 </dd>
-<dt data-target-cell="annotated-cell-9" data-target-annotation="6">6</dt>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="6" data-code-lines="9" data-code-cell="annotated-cell-9">perform the kruskal test</span>
+<span data-code-cell="annotated-cell-9" data-code-annotation="5" data-code-lines="11">perform the kruskal test</span>
 </dd>
 </dl>
 </div>
