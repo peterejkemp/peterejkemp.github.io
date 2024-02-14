@@ -315,6 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why-am-i-getting-the-error-could-not-find-function" id="toc-why-am-i-getting-the-error-could-not-find-function" class="nav-link" data-scroll-target="#why-am-i-getting-the-error-could-not-find-function"><span class="header-section-number">1.3</span> Why am I getting the error ‘could not find function “%&gt;%”’</a></li>
   <li><a href="#i-am-getting-the-error-error-mapping-should-be-created-with-aes-or-aes_.-when-using-ggplot" id="toc-i-am-getting-the-error-error-mapping-should-be-created-with-aes-or-aes_.-when-using-ggplot" class="nav-link" data-scroll-target="#i-am-getting-the-error-error-mapping-should-be-created-with-aes-or-aes_.-when-using-ggplot"><span class="header-section-number">1.4</span> I am getting the error: ‘“Error: Mapping should be created with <code>aes()</code> or <code>aes_()</code>.”’ when using ggplot</a></li>
   <li><a href="#my-axis-labels-are-too-long" id="toc-my-axis-labels-are-too-long" class="nav-link" data-scroll-target="#my-axis-labels-are-too-long"><span class="header-section-number">1.5</span> My axis labels are too long</a></li>
+  <li><a href="#how-can-i-find-out-the-full-item-labels-in-the-pisa-data-frame" id="toc-how-can-i-find-out-the-full-item-labels-in-the-pisa-data-frame" class="nav-link" data-scroll-target="#how-can-i-find-out-the-full-item-labels-in-the-pisa-data-frame"><span class="header-section-number">1.6</span> How can I find out the full item labels in the PISA data frame?</a></li>
   </ul>
 </li>
   </ul></nav>
@@ -449,6 +450,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-3"><a href="#cb12-3"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y)) <span class="sc">+</span>           </span>
 <span id="cb12-4"><a href="#cb12-4"></a>         <span class="fu">geom_col</span>()<span class="sc">+</span></span>
 <span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">ylab</span>(<span class="st">"A very long description </span><span class="sc">\n</span><span class="st"> for the y-axis label that will </span><span class="sc">\n</span><span class="st"> overflow and not look very nice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="how-can-i-find-out-the-full-item-labels-in-the-pisa-data-frame" class="level2" data-number="1.6"><h2 data-number="1.6" class="anchored" data-anchor-id="how-can-i-find-out-the-full-item-labels-in-the-pisa-data-frame">
+<span class="header-section-number">1.6</span> How can I find out the full item labels in the PISA data frame?</h2>
+<p>The code below will give you a list of all the item labels</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">lapply</span>(PISA_2022, attr, <span class="st">"label"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

@@ -411,27 +411,27 @@ Note
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">line 1 passes the whole <code>PISA_2022</code> dataset and pipes it into the next line using <code>%&gt;%</code></span>
+<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-1">line 1 passes the whole <code>PISA_2022</code> dataset and pipes it into the next line using <code>%&gt;%</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="2">line 2 <code>filters</code> out any results that are from non-OECD countries by finding all the rows where <code>OECD</code> equals <code>==</code> “Yes”, this is then piped to the next line</span>
+<span data-code-lines="2" data-code-annotation="2" data-code-cell="annotated-cell-1">line 2 <code>filters</code> out any results that are from non-OECD countries by finding all the rows where <code>OECD</code> equals <code>==</code> “Yes”, this is then piped to the next line</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="3" data-code-annotation="3">line 3 groups the data by country <code>CNT</code> and by student gender <code>ST004D01T</code>, this is then piped to the next line</span>
+<span data-code-lines="3" data-code-annotation="3" data-code-cell="annotated-cell-1">line 3 groups the data by country <code>CNT</code> and by student gender <code>ST004D01T</code>, this is then piped to the next line</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="4,5,6" data-code-annotation="4">line 4-6 the <code>summarise</code> command performs a calculation on the country and gender groupings returning three new columns, each command is described by code on a new line and separated by a comma: the mean value for maths <code>mean_maths</code>, the standard deviation <code>sd_maths</code>, and a column telling us how many students were in each grouping using the <code>n()</code> which returns the number of rows in a group. These new columns and the grouping columns are then piped to the next line, all other columns are dropped</span>
+<span data-code-lines="4,5,6" data-code-annotation="4" data-code-cell="annotated-cell-1">line 4-6 the <code>summarise</code> command performs a calculation on the country and gender groupings returning three new columns, each command is described by code on a new line and separated by a comma: the mean value for maths <code>mean_maths</code>, the standard deviation <code>sd_maths</code>, and a column telling us how many students were in each grouping using the <code>n()</code> which returns the number of rows in a group. These new columns and the grouping columns are then piped to the next line, all other columns are dropped</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="7" data-code-annotation="5">line 7 filters out any gender <code>ST004D01T</code> that is <code>NA</code>. First is finds all the students that have <code>NA</code> as their gender by using <code>is.na(ST004D01T)</code>, then it <em>NOTs</em>/flips the result using the exclamation mark <code>!</code>, giving those students who don’t have their gender set to <code>NA</code>. The filtered data is then piped to the next line</span>
+<span data-code-lines="7" data-code-annotation="5" data-code-cell="annotated-cell-1">line 7 filters out any gender <code>ST004D01T</code> that is <code>NA</code>. First is finds all the students that have <code>NA</code> as their gender by using <code>is.na(ST004D01T)</code>, then it <em>NOTs</em>/flips the result using the exclamation mark <code>!</code>, giving those students who don’t have their gender set to <code>NA</code>. The filtered data is then piped to the next line</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="8" data-code-annotation="6">line 8, finally we <code>arrange</code>/sort the results in <code>desc</code>ending order by the <code>mean_maths</code> column. The default for arrange is <em>ascending</em> order, leave out the <code>desc(  )</code> for the numbers to be ordered in the opposite way.</span>
+<span data-code-lines="8" data-code-annotation="6" data-code-cell="annotated-cell-1">line 8, finally we <code>arrange</code>/sort the results in <code>desc</code>ending order by the <code>mean_maths</code> column. The default for arrange is <em>ascending</em> order, leave out the <code>desc(  )</code> for the numbers to be ordered in the opposite way.</span>
 </dd>
 </dl>
 </div>
@@ -1075,15 +1075,15 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-15" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-15" data-code-lines="1" data-code-annotation="1">Line 1 passes the full <code>PISA_2022</code> to the pipe</span>
+<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-15">Line 1 passes the full <code>PISA_2022</code> to the pipe</span>
 </dd>
 <dt data-target-cell="annotated-cell-15" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-15" data-code-lines="2" data-code-annotation="2">Line 2 makes groups within <code>PISA_2022</code> using the unique values of <code>ST250Q05JA</code></span>
+<span data-code-lines="2" data-code-annotation="2" data-code-cell="annotated-cell-15">Line 2 makes groups within <code>PISA_2022</code> using the unique values of <code>ST250Q05JA</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-15" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-15" data-code-lines="3" data-code-annotation="3">Line 3, these groups are then passed to <code>summarise</code>, which creates a new column called <code>student_n</code> and stores the number of rows in each <code>ST250Q05JA</code> group using the <code>n()</code> command. <code>summarise</code> only returns the columns it creates, or are in the <code>group_by</code>, everything else is discarded.</span>
+<span data-code-lines="3" data-code-annotation="3" data-code-cell="annotated-cell-15">Line 3, these groups are then passed to <code>summarise</code>, which creates a new column called <code>student_n</code> and stores the number of rows in each <code>ST250Q05JA</code> group using the <code>n()</code> command. <code>summarise</code> only returns the columns it creates, or are in the <code>group_by</code>, everything else is discarded.</span>
 </dd>
 </dl>
 </div>
@@ -1220,15 +1220,15 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-18" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-18" data-code-lines="2" data-code-annotation="1"><code>mutate</code> creates a new field called <code>PV1_total</code> made up by adding together the columns for maths, science and reading. Each column acts like a vector and adding them together is the equivalent of adding each students individual grades together, row by row. See <strong><a href="../chapters/02-1-Intro_to_analysis_software.html#sec-vectors">§Vectors</a></strong> for more details on vector addition.</span>
+<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-18"><code>mutate</code> creates a new field called <code>PV1_total</code> made up by adding together the columns for maths, science and reading. Each column acts like a vector and adding them together is the equivalent of adding each students individual grades together, row by row. See <strong><a href="../chapters/02-1-Intro_to_analysis_software.html#sec-vectors">§Vectors</a></strong> for more details on vector addition.</span>
 </dd>
 <dt data-target-cell="annotated-cell-18" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-18" data-code-lines="3" data-code-annotation="2">inside the same <code>mutate</code> statement, we take the <code>PV1_total</code> calculated on line two and divide it by 3, to give us a mean value, this is then assigned to a new column, <code>PV1_mean</code>.</span>
+<span data-code-lines="3" data-code-annotation="2" data-code-cell="annotated-cell-18">inside the same <code>mutate</code> statement, we take the <code>PV1_total</code> calculated on line two and divide it by 3, to give us a mean value, this is then assigned to a new column, <code>PV1_mean</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-18" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-18" data-code-lines="4" data-code-annotation="3">this line <code>select</code>s only the fields that we are interested in, dropping the others</span>
+<span data-code-lines="4" data-code-annotation="3" data-code-cell="annotated-cell-18">this line <code>select</code>s only the fields that we are interested in, dropping the others</span>
 </dd>
 </dl>
 </div>
@@ -1259,15 +1259,15 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-19" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-19" data-code-lines="2" data-code-annotation="2">this line creates a new column called <code>PV1READ_high</code> for every students, storing a boolean value, <code>TRUE</code> or <code>FALSE</code> depending on whether their reading grates <code>PV1READ</code> &gt; 550.</span>
+<span data-code-lines="2" data-code-annotation="2" data-code-cell="annotated-cell-19">this line creates a new column called <code>PV1READ_high</code> for every students, storing a boolean value, <code>TRUE</code> or <code>FALSE</code> depending on whether their reading grates <code>PV1READ</code> &gt; 550.</span>
 </dd>
 <dt data-target-cell="annotated-cell-19" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-19" data-code-lines="3" data-code-annotation="3">a grouping is made on the country and the new field <code>PV1READ_high</code>, e.g.&nbsp;Albania + TRUE, Albania + FALSE, etc.</span>
+<span data-code-lines="3" data-code-annotation="3" data-code-cell="annotated-cell-19">a grouping is made on the country and the new field <code>PV1READ_high</code>, e.g.&nbsp;Albania + TRUE, Albania + FALSE, etc.</span>
 </dd>
 <dt data-target-cell="annotated-cell-19" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-19" data-code-lines="4" data-code-annotation="4">using summarise we can find the number of student rows in each grouping using <code>n()</code>, and drop all the other fields</span>
+<span data-code-lines="4" data-code-annotation="4" data-code-cell="annotated-cell-19">using summarise we can find the number of student rows in each grouping using <code>n()</code>, and drop all the other fields</span>
 </dd>
 </dl>
 </div>
@@ -1304,35 +1304,35 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-20" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="2" data-code-annotation="2"><code>mutate</code> creates a new field called <code>maths_better</code> made up by comparing the <code>PV1MATH</code> grade with <code>PV1READ</code> and creating a boolean/logical vector for the column.</span>
+<span data-code-lines="2" data-code-annotation="2" data-code-cell="annotated-cell-20"><code>mutate</code> creates a new field called <code>maths_better</code> made up by comparing the <code>PV1MATH</code> grade with <code>PV1READ</code> and creating a boolean/logical vector for the column.</span>
 </dd>
 <dt data-target-cell="annotated-cell-20" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="3" data-code-annotation="3"><code>select</code>s a subset of the columns</span>
+<span data-code-lines="3" data-code-annotation="3" data-code-cell="annotated-cell-20"><code>select</code>s a subset of the columns</span>
 </dd>
 <dt data-target-cell="annotated-cell-20" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="4" data-code-annotation="4"><code>filter</code>s out any students that don’t have gender data <code>ST004D01T</code> <em>and</em> where the calculation on line 2 failed, i.e.&nbsp;<code>PV1MATH</code> or <code>PV1READ</code> was <code>NA</code></span>
+<span data-code-lines="4" data-code-annotation="4" data-code-cell="annotated-cell-20"><code>filter</code>s out any students that don’t have gender data <code>ST004D01T</code> <em>and</em> where the calculation on line 2 failed, i.e.&nbsp;<code>PV1MATH</code> or <code>PV1READ</code> was <code>NA</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-20" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="5" data-code-annotation="5"><code>group</code> on the gender of the student</span>
+<span data-code-lines="5" data-code-annotation="5" data-code-cell="annotated-cell-20"><code>group</code> on the gender of the student</span>
 </dd>
 <dt data-target-cell="annotated-cell-20" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="6" data-code-annotation="6">using the <code>group</code> on line 5, use <code>mutate</code> to calculate the total number of Males and Females by looking for the number of rows in each group <code>n()</code>, store this as <code>students_n</code></span>
+<span data-code-lines="6" data-code-annotation="6" data-code-cell="annotated-cell-20">using the <code>group</code> on line 5, use <code>mutate</code> to calculate the total number of Males and Females by looking for the number of rows in each group <code>n()</code>, store this as <code>students_n</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-20" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="7" data-code-annotation="7">re-<code>group</code> the data on gender <code>ST004D01T</code> and whether the student is better at maths than reading <code>maths_better</code></span>
+<span data-code-lines="7" data-code-annotation="7" data-code-cell="annotated-cell-20">re-<code>group</code> the data on gender <code>ST004D01T</code> and whether the student is better at maths than reading <code>maths_better</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-20" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="8" data-code-annotation="8">count the number of students, <code>n</code> in each group specified by line 7.</span>
+<span data-code-lines="8" data-code-annotation="8" data-code-cell="annotated-cell-20">count the number of students, <code>n</code> in each group specified by line 7.</span>
 </dd>
 <dt data-target-cell="annotated-cell-20" data-target-annotation="9">9</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="9" data-code-annotation="9">create a percentage figure for the number of students in each grouping given by line 7. Use the <code>n</code> value from line 8 and the <code>students_n</code> value from line 6. <strong>NOTE:</strong> we need to use <code>unique(students_n)</code> to return just one value for each grouping rather than a value for every row of the line 7 grouping</span>
+<span data-code-lines="9" data-code-annotation="9" data-code-cell="annotated-cell-20">create a percentage figure for the number of students in each grouping given by line 7. Use the <code>n</code> value from line 8 and the <code>students_n</code> value from line 6. <strong>NOTE:</strong> we need to use <code>unique(students_n)</code> to return just one value for each grouping rather than a value for every row of the line 7 grouping</span>
 </dd>
 </dl>
 </div>
@@ -1419,51 +1419,51 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-23" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="1" data-code-annotation="1">uses the <code>PISA_2022</code> dataframe, note that this line includes <code>&lt;-</code> to store the result opf the piping into a new object called <code>data_repeat</code></span>
+<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-23">uses the <code>PISA_2022</code> dataframe, note that this line includes <code>&lt;-</code> to store the result opf the piping into a new object called <code>data_repeat</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-23" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="2" data-code-annotation="2"><code>filter</code> out any <code>NA</code> values in the <code>REPEAT</code> field</span>
+<span data-code-lines="2" data-code-annotation="2" data-code-cell="annotated-cell-23"><code>filter</code> out any <code>NA</code> values in the <code>REPEAT</code> field</span>
 </dd>
 <dt data-target-cell="annotated-cell-23" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="3" data-code-annotation="3">group on the country of student <code>CNT</code></span>
+<span data-code-lines="3" data-code-annotation="3" data-code-cell="annotated-cell-23">group on the country of student <code>CNT</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-23" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="4" data-code-annotation="4">create a new column <code>total</code> for total number of rows <code>n()</code> in each country <code>CNT</code> grouping</span>
+<span data-code-lines="4" data-code-annotation="4" data-code-cell="annotated-cell-23">create a new column <code>total</code> for total number of rows <code>n()</code> in each country <code>CNT</code> grouping</span>
 </dd>
 <dt data-target-cell="annotated-cell-23" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="5" data-code-annotation="5">select on the <code>CNT</code>, <code>REPEAT</code> and <code>total</code> columns</span>
+<span data-code-lines="5" data-code-annotation="5" data-code-cell="annotated-cell-23">select on the <code>CNT</code>, <code>REPEAT</code> and <code>total</code> columns</span>
 </dd>
 <dt data-target-cell="annotated-cell-23" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="6" data-code-annotation="6">regroup the data on country <code>CNT</code> and whether a student has repeated a year <code>REPEAT</code>, i.e.&nbsp;Albania+Did not repeat a grade; Albania+Repeated a grade; etc.</span>
+<span data-code-lines="6" data-code-annotation="6" data-code-cell="annotated-cell-23">regroup the data on country <code>CNT</code> and whether a student has repeated a year <code>REPEAT</code>, i.e.&nbsp;Albania+Did not repeat a grade; Albania+Repeated a grade; etc.</span>
 </dd>
 <dt data-target-cell="annotated-cell-23" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="7" data-code-annotation="7">using the above grouping, count the number of rows in each group <code>n()</code> and assign this to <code>student_n</code></span>
+<span data-code-lines="7" data-code-annotation="7" data-code-cell="annotated-cell-23">using the above grouping, count the number of rows in each group <code>n()</code> and assign this to <code>student_n</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-23" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="8" data-code-annotation="8">for each grouping keep the <code>total</code> number of students in each country, as calculated on line 4. Note: <code>unique(total)</code> is needed here to return a single value of <code>total</code>, rather than a value for each student in each country</span>
+<span data-code-lines="8" data-code-annotation="8" data-code-cell="annotated-cell-23">for each grouping keep the <code>total</code> number of students in each country, as calculated on line 4. Note: <code>unique(total)</code> is needed here to return a single value of <code>total</code>, rather than a value for each student in each country</span>
 </dd>
 <dt data-target-cell="annotated-cell-23" data-target-annotation="9">9</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="9" data-code-annotation="9">using <code>student_n</code> from line 7 and the number of students per country <code>total</code>, from line 4, create a percentage <code>per</code> for each grouping</span>
+<span data-code-lines="9" data-code-annotation="9" data-code-cell="annotated-cell-23">using <code>student_n</code> from line 7 and the number of students per country <code>total</code>, from line 4, create a percentage <code>per</code> for each grouping</span>
 </dd>
 <dt data-target-cell="annotated-cell-23" data-target-annotation="10">10</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="10" data-code-annotation="10">as we have percentages for both <code>Repeated at lease once</code> and <code>Never repeated</code>, we only need to display one of these.</span>
+<span data-code-lines="10" data-code-annotation="10" data-code-cell="annotated-cell-23">as we have percentages for both <code>Repeated at lease once</code> and <code>Never repeated</code>, we only need to display one of these.</span>
 </dd>
 <dt data-target-cell="annotated-cell-23" data-target-annotation="11">11</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="11" data-code-annotation="11">finally, we sort the data on the per/percentage column, to show the countries with the highest level of repeating a grade. This data is self-recorded by students, so might not be totally reliable!</span>
+<span data-code-lines="11" data-code-annotation="11" data-code-cell="annotated-cell-23">finally, we sort the data on the per/percentage column, to show the countries with the highest level of repeating a grade. This data is self-recorded by students, so might not be totally reliable!</span>
 </dd>
 <dt data-target-cell="annotated-cell-23" data-target-annotation="12">12</dt>
 <dd>
-<span data-code-cell="annotated-cell-23" data-code-lines="15" data-code-annotation="12">save the data to your own folder as a csv</span>
+<span data-code-lines="15" data-code-annotation="12" data-code-cell="annotated-cell-23">save the data to your own folder as a csv</span>
 </dd>
 </dl>
 </div>
