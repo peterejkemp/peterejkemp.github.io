@@ -742,7 +742,7 @@ F-statistic: 1.372e+06 on 1 and 613742 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>So far we have looked at the impact of a single independent variable on a single dependent variable. We are now going to look at building models that contain multiple independent variables, of both continuous and discrete values. For example, we might want to see how Gender (<code>ST004D01T</code>) and Reading score (<code>PV1READ</code>) help predict a maths score. To add extra independent variables, use the plus symbol <code>+</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(PV1MATH <span class="sc">~</span> PV1READ <span class="sc">+</span> gender, </span>
-<span id="cb11-2"><a href="#cb11-2"></a>          <span class="at">data=</span>PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">gender =</span> ST004D01T))</span>
+<span id="cb11-2"><a href="#cb11-2"></a>          <span class="at">data =</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">gender =</span> ST004D01T))</span>
 <span id="cb11-3"><a href="#cb11-3"></a><span class="fu">summary</span>(mdl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
