@@ -350,7 +350,12 @@ div.csl-indent {
 </li>
   <li><a href="#multiple-linear-regression" id="toc-multiple-linear-regression" class="nav-link" data-scroll-target="#multiple-linear-regression"><span class="header-section-number">5</span> Multiple linear regression</a></li>
   <li><a href="#reporting-regression" id="toc-reporting-regression" class="nav-link" data-scroll-target="#reporting-regression"><span class="header-section-number">6</span> Reporting regression</a></li>
-  <li><a href="#sec-z-values" id="toc-sec-z-values" class="nav-link" data-scroll-target="#sec-z-values"><span class="header-section-number">7</span> Standardising results with z-values</a></li>
+  <li>
+<a href="#sec-z-values" id="toc-sec-z-values" class="nav-link" data-scroll-target="#sec-z-values"><span class="header-section-number">7</span> Standardising results with z-values</a>
+  <ul class="collapse">
+<li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"><span class="header-section-number">7.1</span> Logistic regression</a></li>
+  </ul>
+</li>
   <li>
 <a href="#seminar-tasks" id="toc-seminar-tasks" class="nav-link" data-scroll-target="#seminar-tasks"><span class="header-section-number">8</span> Seminar Tasks</a>
   <ul class="collapse">
@@ -940,22 +945,11 @@ We can also try and recreate fig. 4 from @stoet2018gender, looking at how self-e
 
 :::
 
-## Logistic regression
-
-Sometimes the dependent variable will be *boolean*, that is a field that can only have two values, e.g. `True/False`, `Yes/No`, `High/Low`, etc. Unfortunately we can't use the linear model to do th
-
-
-::: {.cell}
-
-:::
-
-::: {.cell}
-
-:::
-
-
 -->
-</section><section id="seminar-tasks" class="level1" data-number="8"><h1 data-number="8">
+<section id="logistic-regression" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="logistic-regression">
+<span class="header-section-number">7.1</span> Logistic regression</h2>
+<p>Sometimes the dependent variable will be <em>boolean</em>, that is a field that can only have two values, e.g.&nbsp;<code>True/False</code>, <code>Yes/No</code>, <code>High/Low</code>, etc. Unfortunately we can’t use the linear model to do this as it assumes that the dependent variable is continuous, not binary. The model is built using the <code>glm</code> command, and the <code>family</code> parameter is set to <code>binomial</code>:</p>
+</section></section><section id="seminar-tasks" class="level1" data-number="8"><h1 data-number="8">
 <span class="header-section-number">8</span> Seminar Tasks</h1>
 <section id="task-1" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="task-1">
 <span class="header-section-number">8.1</span> Task 1</h2>
