@@ -529,19 +529,19 @@ div.csl-indent {
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="6" data-code-annotation="1"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
+<span data-code-lines="6" data-code-annotation="1" data-code-cell="annotated-cell-2"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="7" data-code-annotation="2"><code>filter</code> for countries of interest, the UK and the US</span>
+<span data-code-lines="7" data-code-annotation="2" data-code-cell="annotated-cell-2"><code>filter</code> for countries of interest, the UK and the US</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="8" data-code-annotation="3"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
+<span data-code-lines="8" data-code-annotation="3" data-code-cell="annotated-cell-2"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="12" data-code-annotation="4">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
+<span data-code-lines="12" data-code-annotation="4" data-code-cell="annotated-cell-2">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
 </dd>
 </dl>
 </div>
@@ -611,23 +611,23 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="6" data-code-annotation="1"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
+<span data-code-lines="6" data-code-annotation="1" data-code-cell="annotated-cell-3"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="7" data-code-annotation="2"><code>filter</code> for country of interest, the UK</span>
+<span data-code-lines="7" data-code-annotation="2" data-code-cell="annotated-cell-3"><code>filter</code> for country of interest, the UK</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="8" data-code-annotation="3"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
+<span data-code-lines="8" data-code-annotation="3" data-code-cell="annotated-cell-3"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="12" data-code-annotation="4">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
+<span data-code-lines="12" data-code-annotation="4" data-code-cell="annotated-cell-3">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="16" data-code-annotation="5">perform the chi-sq test of goodness of fit, comparing against an expected probability of 50:50</span>
+<span data-code-lines="16" data-code-annotation="5" data-code-cell="annotated-cell-3">perform the chi-sq test of goodness of fit, comparing against an expected probability of 50:50</span>
 </dd>
 </dl>
 </div>
@@ -702,23 +702,23 @@ X-squared = 2.4425, df = 1, p-value = 0.1181</code></pre>
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="5" data-code-annotation="1"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
+<span data-code-lines="5" data-code-annotation="1" data-code-cell="annotated-cell-1"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="6" data-code-annotation="2"><code>filter</code> for country of interest, the US</span>
+<span data-code-lines="6" data-code-annotation="2" data-code-cell="annotated-cell-1"><code>filter</code> for country of interest, the US</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="7" data-code-annotation="3"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
+<span data-code-lines="7" data-code-annotation="3" data-code-cell="annotated-cell-1"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="11" data-code-annotation="4">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
+<span data-code-lines="11" data-code-annotation="4" data-code-cell="annotated-cell-1">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="15" data-code-annotation="5">perform the chi-sq test of goodness of fit, comparing against an expected probability of 50:50</span>
+<span data-code-lines="15" data-code-annotation="5" data-code-cell="annotated-cell-1">perform the chi-sq test of goodness of fit, comparing against an expected probability of 50:50</span>
 </dd>
 </dl>
 </div>
@@ -772,19 +772,19 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="1"><code>select</code> the needed columns accomplishment (<code>WB178Q01HA</code>) and country (<code>CNT</code>)</span>
+<span data-code-lines="4" data-code-annotation="1" data-code-cell="annotated-cell-4"><code>select</code> the needed columns accomplishment (<code>WB178Q01HA</code>) and country (<code>CNT</code>)</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="5" data-code-annotation="2"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
+<span data-code-lines="5" data-code-annotation="2" data-code-cell="annotated-cell-4"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="6" data-code-annotation="3">remove na values</span>
+<span data-code-lines="6" data-code-annotation="3" data-code-cell="annotated-cell-4">remove na values</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="10" data-code-annotation="4">use <code>xtabs</code> to create a contingency table for <code>WB178Q01HA</code></span>
+<span data-code-lines="10" data-code-annotation="4" data-code-cell="annotated-cell-4">use <code>xtabs</code> to create a contingency table for <code>WB178Q01HA</code></span>
 </dd>
 </dl>
 </div>
@@ -842,31 +842,31 @@ WB178Q01HA
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="6" data-code-annotation="1"><code>select</code> the needed columns accomplishment (<code>WB178Q01HA</code>)</span>
+<span data-code-lines="6" data-code-annotation="1" data-code-cell="annotated-cell-5"><code>select</code> the needed columns accomplishment (<code>WB178Q01HA</code>)</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="7" data-code-annotation="2"><code>filter</code> for all the countries but not (<code>!=</code> , note <code>!</code> means not) the Netherlands</span>
+<span data-code-lines="7" data-code-annotation="2" data-code-cell="annotated-cell-5"><code>filter</code> for all the countries but not (<code>!=</code> , note <code>!</code> means not) the Netherlands</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="8" data-code-annotation="3"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
+<span data-code-lines="8" data-code-annotation="3" data-code-cell="annotated-cell-5"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="12" data-code-annotation="4">use <code>xtabs</code> to create a contingency table for <code>WB178Q01HA</code></span>
+<span data-code-lines="12" data-code-annotation="4" data-code-cell="annotated-cell-5">use <code>xtabs</code> to create a contingency table for <code>WB178Q01HA</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="13" data-code-annotation="5">convert the result of <code>xtabs</code> into a data frame for easier manipulation</span>
+<span data-code-lines="13" data-code-annotation="5" data-code-cell="annotated-cell-5">convert the result of <code>xtabs</code> into a data frame for easier manipulation</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="17" data-code-annotation="6">calculate the total frequency, for use in calculating the percentage</span>
+<span data-code-lines="17" data-code-annotation="6" data-code-cell="annotated-cell-5">calculate the total frequency, for use in calculating the percentage</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="22" data-code-annotation="7">use <code>mutate</code> to add a new percentage column given by the calculation of the frequency divided by the total multiplied by 100 <code>(Perc = (Freq * 100) / Total)</code></span>
+<span data-code-lines="22" data-code-annotation="7" data-code-cell="annotated-cell-5">use <code>mutate</code> to add a new percentage column given by the calculation of the frequency divided by the total multiplied by 100 <code>(Perc = (Freq * 100) / Total)</code></span>
 </dd>
 </dl>
 </div>
@@ -900,19 +900,19 @@ WB178Q01HA
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="13" data-code-annotation="1">set the data to be plotted <code>(data = Accomp)</code></span>
+<span data-code-lines="13" data-code-annotation="1" data-code-cell="annotated-cell-6">set the data to be plotted <code>(data = Accomp)</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="14" data-code-annotation="2">in <code>geom_mosaic</code> the x and y variables are set using <code>x= product (x, y)</code>. Here we set <code>x = product(WB178Q01HA, CNT)</code> and set the fill by country (<code>fill = CNT</code>)</span>
+<span data-code-lines="14" data-code-annotation="2" data-code-cell="annotated-cell-6">in <code>geom_mosaic</code> the x and y variables are set using <code>x= product (x, y)</code>. Here we set <code>x = product(WB178Q01HA, CNT)</code> and set the fill by country (<code>fill = CNT</code>)</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="15" data-code-annotation="3">set the x-axis label</span>
+<span data-code-lines="15" data-code-annotation="3" data-code-cell="annotated-cell-6">set the x-axis label</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="16" data-code-annotation="4">set the y-axis label</span>
+<span data-code-lines="16" data-code-annotation="4" data-code-cell="annotated-cell-6">set the y-axis label</span>
 </dd>
 </dl>
 </div>
@@ -950,23 +950,23 @@ WB178Q01HA
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="4" data-code-annotation="1"><code>select</code> the accomplishment (<code>WB178Q01HA</code>) and country variable</span>
+<span data-code-lines="4" data-code-annotation="1" data-code-cell="annotated-cell-7"><code>select</code> the accomplishment (<code>WB178Q01HA</code>) and country variable</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="5" data-code-annotation="2"><code>filter</code> for New Zealand and Mexico</span>
+<span data-code-lines="5" data-code-annotation="2" data-code-cell="annotated-cell-7"><code>filter</code> for New Zealand and Mexico</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="6" data-code-annotation="3">drop levels to keep the table clean</span>
+<span data-code-lines="6" data-code-annotation="3" data-code-cell="annotated-cell-7">drop levels to keep the table clean</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="10" data-code-annotation="4">use <code>xtabs</code> to create the contingency table for accomplishment (<code>WB178Q01HA</code>) by country</span>
+<span data-code-lines="10" data-code-annotation="4" data-code-cell="annotated-cell-7">use <code>xtabs</code> to create the contingency table for accomplishment (<code>WB178Q01HA</code>) by country</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="17" data-code-annotation="5">perform the <code>chisq.test</code></span>
+<span data-code-lines="17" data-code-annotation="5" data-code-cell="annotated-cell-7">perform the <code>chisq.test</code></span>
 </dd>
 </dl>
 </div>
@@ -1006,23 +1006,23 @@ X-squared = 0.28447, df = 1, p-value = 0.5938</code></pre>
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-lines="4" data-code-annotation="1">choose country, no of cars and gender</span>
+<span data-code-lines="4" data-code-annotation="1" data-code-cell="annotated-cell-8">choose country, no of cars and gender</span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-lines="5" data-code-annotation="2"><code>filter</code> for the UK</span>
+<span data-code-lines="5" data-code-annotation="2" data-code-cell="annotated-cell-8"><code>filter</code> for the UK</span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-lines="6" data-code-annotation="3">drop country variable now filtering is done</span>
+<span data-code-lines="6" data-code-annotation="3" data-code-cell="annotated-cell-8">drop country variable now filtering is done</span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-lines="7" data-code-annotation="4">remove other countries which exist as factors (<code>WB178Q01HA</code>) by country</span>
+<span data-code-lines="7" data-code-annotation="4" data-code-cell="annotated-cell-8">remove other countries which exist as factors (<code>WB178Q01HA</code>) by country</span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-lines="9" data-code-annotation="5">perform the kruskal test</span>
+<span data-code-lines="9" data-code-annotation="5" data-code-cell="annotated-cell-8">perform the kruskal test</span>
 </dd>
 </dl>
 </div>
@@ -1056,23 +1056,23 @@ Kruskal-Wallis chi-squared = 0.025303, df = 1, p-value = 0.8736</code></pre>
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="4" data-code-annotation="1">choose ‘waste of time’ and gender</span>
+<span data-code-lines="4" data-code-annotation="1" data-code-cell="annotated-cell-9">choose ‘waste of time’ and gender</span>
 </dd>
 <dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="5" data-code-annotation="2"><code>filter</code> out NA values</span>
+<span data-code-lines="5" data-code-annotation="2" data-code-cell="annotated-cell-9"><code>filter</code> out NA values</span>
 </dd>
 <dt data-target-cell="annotated-cell-9" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="6" data-code-annotation="3">drop country variable now filtering is done</span>
+<span data-code-lines="6" data-code-annotation="3" data-code-cell="annotated-cell-9">drop country variable now filtering is done</span>
 </dd>
 <dt data-target-cell="annotated-cell-9" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="9" data-code-annotation="4">recode worded responses as numerical responses</span>
+<span data-code-lines="9" data-code-annotation="4" data-code-cell="annotated-cell-9">recode worded responses as numerical responses</span>
 </dd>
 <dt data-target-cell="annotated-cell-9" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="11" data-code-annotation="5">perform the kruskal test</span>
+<span data-code-lines="11" data-code-annotation="5" data-code-cell="annotated-cell-9">perform the kruskal test</span>
 </dd>
 </dl>
 </div>
