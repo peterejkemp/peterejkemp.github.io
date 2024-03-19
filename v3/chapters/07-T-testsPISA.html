@@ -556,7 +556,7 @@ Note
 </div>
 <p>To determine the outcome of the t-test we need to decide a sufficiently low enough probability (p-value) that, if it’s below this, then it is unlikely that the null hypothesis is true and so we reject the null hypothesis. Typically, this is set to 0.05, or 5%, but in other cases it might be as high as 0.1 or as low as 0.01 or 0.001 depending on the circumstances. Therefore, if the p-value is greater than 0.05 we accept the null hypothesis and if it less than 0.05 we reject the null hypothesis and accept the alternative hypothesis.</p>
 <p>When considering the number of tails, we then need to consider the p-value here also. If we set the overall probability to be 0.05 for the threshold that we reject the null hypothesis, then for a <strong>one-tailed</strong> test we compare our result with <strong>0.05</strong>. However, with a two-tailed test, since we are looking at a <strong>two-tailed</strong> test, then the probability of each of the tails is 0.025 and therefore we compare our value with <strong>0.025</strong> instead.</p>
-<p>Conventionally, we use 0.05 (1 in 20) as the cut off for statistical significance (a convention that has been much critiqued e.g. <span class="citation" data-cites="cohen1994earth baker2016statisticians">(<a href="#ref-cohen1994earth" role="doc-biblioref">Cohen 1994</a>; <a href="#ref-baker2016statisticians" role="doc-biblioref">Baker 2016</a>)</span>).</p>
+<p>Conventionally, we use 0.05 (1 in 20) as the cut off for statistical significance (a convention that has been much critiqued e.g. <span class="citation" data-cites="cohen1994earth baker2016statisticians">(<a href="#ref-cohen1994earth" role="doc-biblioref">Jacob Cohen 1994</a>; <a href="#ref-baker2016statisticians" role="doc-biblioref">Baker 2016</a>)</span>).</p>
 </section>
 <section id="types-of-t-test" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="types-of-t-test"><span class="header-section-number">2.3</span> Types of t-test</h2>
@@ -611,23 +611,23 @@ Note
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="2" data-code-lines="3">select the variables of interest</span>
+<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-4">select the variables of interest</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="3" data-code-lines="4">filter for the UK and for girls</span>
+<span data-code-annotation="3" data-code-lines="4" data-code-cell="annotated-cell-4">filter for the UK and for girls</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="4" data-code-lines="7">pass the data to <code>ggplot</code></span>
+<span data-code-annotation="4" data-code-lines="7" data-code-cell="annotated-cell-4">pass the data to <code>ggplot</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="5" data-code-lines="8">put reading scores (<code>PV1READ</code>) on the x-axis</span>
+<span data-code-annotation="5" data-code-lines="8" data-code-cell="annotated-cell-4">put reading scores (<code>PV1READ</code>) on the x-axis</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="6" data-code-lines="9">use <code>geom_histogram</code> to create a histogram. We can define that the reading data is divided into bins of width 5 points (<code>binwidth = 5</code>) and set the colour of the bars (<code>fill = "darkseagreen4"</code>)</span>
+<span data-code-annotation="6" data-code-lines="9" data-code-cell="annotated-cell-4">use <code>geom_histogram</code> to create a histogram. We can define that the reading data is divided into bins of width 5 points (<code>binwidth = 5</code>) and set the colour of the bars (<code>fill = "darkseagreen4"</code>)</span>
 </dd>
 </dl>
 </div>
@@ -705,27 +705,27 @@ mean of x
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="2" data-code-lines="3">select the variables of interest, country, maths scores, and gender</span>
+<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-6">select the variables of interest, country, maths scores, and gender</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="3" data-code-lines="4">filter for the US</span>
+<span data-code-annotation="3" data-code-lines="4" data-code-cell="annotated-cell-6">filter for the US</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="4" data-code-lines="7">create a new data frame <code>USMATHGIRLS</code> of the data for girls</span>
+<span data-code-annotation="4" data-code-lines="7" data-code-cell="annotated-cell-6">create a new data frame <code>USMATHGIRLS</code> of the data for girls</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="6" data-code-lines="10">pass the data to <code>ggplot</code></span>
+<span data-code-annotation="6" data-code-lines="10" data-code-cell="annotated-cell-6">pass the data to <code>ggplot</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="7" data-code-lines="13">put maths scores (<code>PV1MATH</code>) on the x-axis</span>
+<span data-code-annotation="7" data-code-lines="13" data-code-cell="annotated-cell-6">put maths scores (<code>PV1MATH</code>) on the x-axis</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="8" data-code-lines="14">use <code>geom_histogram</code> to create a histogram. We can define that the reading data is divided into bins of width 5 points (<code>binwidth = 5</code>) and set the colour of the bars (<code>fill = "darkseagreen4"</code>)</span>
+<span data-code-annotation="8" data-code-lines="14" data-code-cell="annotated-cell-6">use <code>geom_histogram</code> to create a histogram. We can define that the reading data is divided into bins of width 5 points (<code>binwidth = 5</code>) and set the colour of the bars (<code>fill = "darkseagreen4"</code>)</span>
 </dd>
 </dl>
 </div>
@@ -918,20 +918,20 @@ mean in group Female   mean in group Male
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-annotation="1" data-code-lines="2">select the variables of interest, country, and maths scores</span>
+<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-12">select the variables of interest, country, and maths scores</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-annotation="2" data-code-lines="4">use <code>aov</code> to perform the anova calculation. We set the data we are passing (<code>data = ALLPISAMATH</code>) and set that we want to determine the variance in maths scores by country (<code>PV1MATH ~ CNT</code>) - we put the output into a new variable <code>resaov</code></span>
+<span data-code-annotation="2" data-code-lines="4" data-code-cell="annotated-cell-12">use <code>aov</code> to perform the anova calculation. We set the data we are passing (<code>data = ALLPISAMATH</code>) and set that we want to determine the variance in maths scores by country (<code>PV1MATH ~ CNT</code>) - we put the output into a new variable <code>resaov</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-annotation="3" data-code-lines="5">we produce a summary of the output <code>summary(resaov)</code><br>
+<span data-code-annotation="3" data-code-lines="5" data-code-cell="annotated-cell-12">we produce a summary of the output <code>summary(resaov)</code><br>
 </span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-annotation="4" data-code-lines="6">print the result</span>
+<span data-code-annotation="4" data-code-lines="6" data-code-cell="annotated-cell-12">print the result</span>
 </dd>
 </dl>
 </div>
@@ -943,8 +943,8 @@ Residuals   613664 4.554e+09     7421
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
-<p>looks to determine if there is a difference in the variance across countires. After determining any variation from those two variables, any remaining variation is associated with residuals - you can think of this as the unexplained variation that isn’t associated with the vectors we specified (i.e.&nbsp;the country).</p>
-<p>First, look at the <code>Pr(&gt;F)</code> column. This is a test of significance and reports if the groups in that row show statistically significant variation. In our case, country returns <code>Pr(&gt;F) &lt;2e-16 ***</code> - which is over <code>0.05</code>. This suggests there are significant differences across countries.</p>
+<p>looks to determine if there is a difference in the variance of means across countries. After determining any variation of means from those two variables, any remaining variation is associated with residuals - you can think of this as the unexplained variation that isn’t associated with the vectors we specified (i.e.&nbsp;the country).</p>
+<p>First, look at the <code>Pr(&gt;F)</code> column. This is a test of significance and reports if the groups in that row show statistically significant variation. In our case, country returns <code>Pr(&gt;F) &lt;2e-16 ***</code> - which is lower than <code>0.05</code>. This suggests there are significant differences across countries.</p>
 <p>This is not terribly interesting so far(!) - but we can do two post-hoc tests (i.e.&nbsp;tests after the first test, to find out the effect size and between which countries differences exist)</p>
 <section id="eta-squared" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="eta-squared"><span class="header-section-number">3.1</span> Eta-squared</h2>
@@ -973,7 +973,38 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As a rule of thumb, a percentage variance explained of 1% is considered small, 6% medium and 14% and more large</p>
+<p>Interpretations of effect size vary. In some fields, 2% - 13% is read as small, 13% -26% medium and over 26% large <span class="citation" data-cites="shevlin2000applying cohen1988statistical">(<a href="#ref-shevlin2000applying" role="doc-biblioref">Shevlin and Miles 2000</a>; <a href="#ref-cohen1988statistical" role="doc-biblioref">J. Cohen 1988</a>)</span>. In educational research, effect sizes are typically small, hence different categorisations are applied.</p>
+<table class="table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 42%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Interpretation</th>
+<th>Effect Size<span class="citation" data-cites="kraft2020interpretin">(<a href="#ref-kraft2020interpretin" role="doc-biblioref"><strong>kraft2020interpretin?</strong></a>)</span></th>
+<th>Effect Size <span class="citation" data-cites="sanders2020effect">(<a href="#ref-sanders2020effect" role="doc-biblioref">Sanders, Mitchell, and Ni Chonaire 2020</a>)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Small</td>
+<td>&lt; 5%</td>
+<td>3% - 10%</td>
+</tr>
+<tr class="even">
+<td>Medium</td>
+<td>5% to 20%</td>
+<td>10% - 20%</td>
+</tr>
+<tr class="odd">
+<td>Large</td>
+<td>&gt; 20%</td>
+<td>&gt; 20%</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
@@ -999,32 +1030,32 @@ Note
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-annotation="1" data-code-lines="2">select the variables of interest, country, and maths scores</span>
+<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-14">select the variables of interest, country, and maths scores</span>
 </dd>
 <dt data-target-cell="annotated-cell-14" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-annotation="2" data-code-lines="3">filter for countries of interest. Note a shorter way to do the filter is <code>filter(CNT %in% c("United Kingdom", "United States", "Germany", "France"))</code></span>
+<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-14">filter for countries of interest. Note a shorter way to do the filter is <code>filter(CNT %in% c("United Kingdom", "United States", "Germany", "France"))</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-14" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-annotation="3" data-code-lines="6">use <code>aov</code> to perform the anova calculation. We set the data we are passing (<code>data = ALLPISAMATH</code>) and set that we want to determine the variance in maths scores by country (<code>PV1MATH ~ CNT</code>) - we put the output into a new variable <code>resaov</code></span>
+<span data-code-annotation="3" data-code-lines="6" data-code-cell="annotated-cell-14">use <code>aov</code> to perform the anova calculation. We set the data we are passing (<code>data = ALLPISAMATH</code>) and set that we want to determine the variance in maths scores by country (<code>PV1MATH ~ CNT</code>) - we put the output into a new variable <code>resaov</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-14" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-annotation="4" data-code-lines="7">produce a summary of <code>resaov</code></span>
+<span data-code-annotation="4" data-code-lines="7" data-code-cell="annotated-cell-14">produce a summary of <code>resaov</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-14" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-annotation="5" data-code-lines="10">use <code>etaSquared(resaov)</code> to find the eta squared value. We convert this to a data frame so we can perform the next steps</span>
+<span data-code-annotation="5" data-code-lines="10" data-code-cell="annotated-cell-14">use <code>etaSquared(resaov)</code> to find the eta squared value. We convert this to a data frame so we can perform the next steps</span>
 </dd>
 <dt data-target-cell="annotated-cell-14" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-annotation="6" data-code-lines="11">to convert the eta squared value into a percentage of variance explained, we multiply by 100<br>
+<span data-code-annotation="6" data-code-lines="11" data-code-cell="annotated-cell-14">to convert the eta squared value into a percentage of variance explained, we multiply by 100<br>
 </span>
 </dd>
 <dt data-target-cell="annotated-cell-14" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-annotation="7" data-code-lines="12">print the result</span>
+<span data-code-annotation="7" data-code-lines="12" data-code-cell="annotated-cell-14">print the result</span>
 </dd>
 </dl>
 </div>
@@ -1658,8 +1689,7 @@ Upper-mid-Top       -34.92029 -41.56624 -28.27433     0</code></pre>
 <p>Looking at <span class="citation" data-cites="cook2014visiphilia">Cook (<a href="#ref-cook2014visiphilia" role="doc-biblioref">2014</a>)</span>, consider the following</p>
 <!-- -->
 <ol type="1">
-<li>Is it possible to replicate the results using the PISA 2018 data set? Make a graph showing the difference in male and female <code>PV1MATH</code> results for each country <code>CNT</code>. To do this we are going to have to:</li>
-</ol>
+<li><p>Is it possible to replicate the results using the PISA 2018 data set? Make a graph showing the difference in male and female <code>PV1MATH</code> results for each country <code>CNT</code>. To do this we are going to have to:</p>
 <ul>
 <li>work out the <code>mean()</code> maths score <code>PV1MATH</code> for each country <code>CNT</code> and gender <code>ST004D01T</code> grouping, call this <code>meanmath</code> and create a new data frame to store this</li>
 <li>from this data frame, create two new data frames, one for males only and one for females only</li>
@@ -1667,7 +1697,8 @@ Upper-mid-Top       -34.92029 -41.56624 -28.27433     0</code></pre>
 <li>bind the data frames together using using column bind function <code>cbind(&lt;male_df&gt;, &lt;female_df&gt;)</code> and store this in a new dataframe called <code>Mathgendergap</code>. <strong>NOTE:</strong> cbind only accepts tables with different names, so you’ll need to select <code>select(CNT, male_mean)</code> from the male dataframe and <code>select(female_mean)</code> from the female dataframe.</li>
 <li>use <code>mutate</code> (see <strong><a href="../chapters/02-3-Intro_to_analysis_software.html#sec-mutate">§mutate</a></strong>) to calculate the difference in male and female mean maths scores for each country</li>
 <li>plot the results for each country</li>
-</ul>
+</ul></li>
+</ol>
 <div class="cell">
 <details>
 <summary>creating difference dataset</summary>
@@ -1878,6 +1909,9 @@ Upper-mid-Top       -34.92029 -41.56624 -28.27433     0</code></pre>
 <div id="ref-baker2016statisticians" class="csl-entry" role="listitem">
 Baker, M. 2016. <span>“Statisticians Issue Warning over Misuse of p Values.”</span> <em>Nature</em>.
 </div>
+<div id="ref-cohen1988statistical" class="csl-entry" role="listitem">
+Cohen, J. 1988. <span>“Statistical Power Analysis for the Behavioral Sciences 2nd Ed.(hillsdale, NJ: L. Erlbaum Associates).”</span>
+</div>
 <div id="ref-cohen1994earth" class="csl-entry" role="listitem">
 Cohen, Jacob. 1994. <span>“The Earth Is Round (p&lt;. 05).”</span> <em>American Psychologist</em> 49 (12): 997.
 </div>
@@ -1886,6 +1920,12 @@ Cook, Di. 2014. <span>“Visiphilia: The Gender Gap in Math Is Not Universal.”
 </div>
 <div id="ref-geher2014straightforward" class="csl-entry" role="listitem">
 Geher, Glenn, and Sara Hall. 2014. <em>Straightforward Statistics: Understanding the Tools of Research</em>. Oxford University Press, USA.
+</div>
+<div id="ref-sanders2020effect" class="csl-entry" role="listitem">
+Sanders, Michael, Chris Mitchell, and Aisling Ni Chonaire. 2020. <span>“Effect Sizes in Education Trials in England.”</span> <em>Available at SSRN 3532325</em>.
+</div>
+<div id="ref-shevlin2000applying" class="csl-entry" role="listitem">
+Shevlin, Mark, and Jeremy Miles. 2000. <span>“Applying Regression and Correlation: A Guide for Students and Researchers.”</span> <em>Applying Regression and Correlation</em>, 1–272.
 </div>
 <div id="ref-wilkinson2018assessing" class="csl-entry" role="listitem">
 Wilkinson, David, Alex Bryson, and Lucy Stokes. 2018. <span>“Assessing the Variance in Pupil Attainment: How Important Is the School Attended?”</span> <em>National Institute Economic Review</em> 243 (1): R4–16. <a href="https://docs.iza.org/dp11372.pdf">https://docs.iza.org/dp11372.pdf</a>.

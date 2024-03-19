@@ -636,7 +636,7 @@ Note
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>PISA_2022</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 613,744 × 82
+<pre><code># A tibble: 613,744 × 83
    CNT     CNTSCHID CNTSTUID REGION  OECD  LANGTEST_QQQ ST003D02T ST003D03T
  * &lt;fct&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;        &lt;fct&gt;     &lt;fct&gt;    
  1 Albania   800282   800001 Albania No    Albanian     May       2006     
@@ -650,7 +650,7 @@ Note
  9 Albania   800057   800010 Albania No    Albanian     August    2006     
 10 Albania   800132   800012 Albania No    Albanian     September 2006     
 # ℹ 613,734 more rows
-# ℹ 74 more variables: ST004D01T &lt;fct&gt;, ST250Q01JA &lt;fct&gt;, ST250Q02JA &lt;fct&gt;,
+# ℹ 75 more variables: ST004D01T &lt;fct&gt;, ST250Q01JA &lt;fct&gt;, ST250Q02JA &lt;fct&gt;,
 #   ST250Q03JA &lt;fct&gt;, ST250Q05JA &lt;fct&gt;, ST251Q01JA &lt;fct&gt;, ST251Q06JA &lt;fct&gt;,
 #   ST251Q07JA &lt;fct&gt;, ST253Q01JA &lt;fct&gt;, ST254Q01JA &lt;fct&gt;, ST254Q02JA &lt;fct&gt;,
 #   ST254Q03JA &lt;fct&gt;, ST254Q04JA &lt;fct&gt;, ST254Q05JA &lt;fct&gt;, ST254Q06JA &lt;fct&gt;,
@@ -658,7 +658,7 @@ Note
 #   ST019AQ01T &lt;fct&gt;, ST019BQ01T &lt;fct&gt;, ST019CQ01T &lt;fct&gt;, ST125Q01NA &lt;fct&gt;, …</code></pre>
 </div>
 </div>
-<p>We can see from this that the <code>tibble</code> (another word for <em>dataframe</em>, basically a spreadsheet table) is 613744 rows, with 82 columns <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This is data for all the students from around the world that took part in PISA 2022. The actual PISA dataset has many more columns than this, but for the examples here we have selected 82 of the more interesting data variables. The column names might seem rather confusing and you might want to refer to the <a href="https://webfs.oecd.org/pisa2022/CY08MSP_CODEBOOK_5thDecember23.xlsx">PISA 2022 code book</a> to find out what everything means.</p>
+<p>We can see from this that the <code>tibble</code> (another word for <em>dataframe</em>, basically a spreadsheet table) is 613744 rows, with 83 columns <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This is data for all the students from around the world that took part in PISA 2022. The actual PISA dataset has many more columns than this, but for the examples here we have selected 83 of the more interesting data variables. The column names might seem rather confusing and you might want to refer to the <a href="https://webfs.oecd.org/pisa2022/CY08MSP_CODEBOOK_5thDecember23.xlsx">PISA 2022 code book</a> to find out what everything means.</p>
 <p>The data shown in the console window is only the top few rows and first few columns. To see the whole table click on the <code>Environment panel</code> and the table icon <img src="images/icon_table.png" class="img-fluid"> to explore the table:</p>
 <p><img src="images/environment_view_table.png" class="img-fluid"></p>
 <p>Alternatively, you can also hold down <code>command ⌘</code>|<code>control</code> and click on the table name in your R Script to view the table. You can also type <code>View(&lt;table_name&gt;)</code>. <strong>Note:</strong> this has a capital “V”</p>
@@ -721,7 +721,7 @@ Note
 </div>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ncol</span>(PISA_2022)  <span class="co"># how many columns are in the results table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 82</code></pre>
+<pre><code>[1] 83</code></pre>
 </div>
 </div>
 <p>If we want to know the names of the columns we can use the <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> command that returns a vector. This can be a little confusing as it’ll return the names used in the dataframe, which can be hard to interpret, e.g.&nbsp;<code>ST004D01T</code> is PISA’s way of encoding gender. You might find the labels in the view of the table available through <code>View(PISA_2022)</code> (<strong>note:</strong> the capital V in View) and the <em>Environment</em> panel easier to navigate:</p>
@@ -736,7 +736,7 @@ Note
 [26] "ST005Q01JA"   "ST007Q01JA"   "ST019AQ01T"   "ST019BQ01T"   "ST019CQ01T"  
 [31] "ST125Q01NA"   "ST261Q01JA"   "ST261Q04JA"   "ST062Q02TA"   "ST038Q08NA"  
 [36] "ST016Q01NA"   "ST337Q07JA"   "ST324Q11JA"   "ST355Q03JA"   "FL150Q02TA"  
- [ reached getOption("max.print") -- omitted 42 entries ]</code></pre>
+ [ reached getOption("max.print") -- omitted 43 entries ]</code></pre>
 </div>
 </div>
 <p>As mentioned, the columns in the tables are very much like a collection of <em>vectors</em>, to access these columns we can put a <code>$</code> [dollar sign] after the name of a table. This allows us to see all the columns that table has, using the up and down arrows to select, press the <code>Tab</code> key to complete:</p>
