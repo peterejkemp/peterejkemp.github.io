@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>body{background-color:white;}</style>
+
+
+</head>
+<body>
+<div id="joeccsgfnd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  <style>#joeccsgfnd table {
+font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+#joeccsgfnd thead, #joeccsgfnd tbody, #joeccsgfnd tfoot, #joeccsgfnd tr, #joeccsgfnd td, #joeccsgfnd th {
+border-style: none;
+}
+#joeccsgfnd p {
+margin: 0;
+padding: 0;
+}
+#joeccsgfnd .gt_table {
+display: table;
+border-collapse: collapse;
+line-height: normal;
+margin-left: auto;
+margin-right: auto;
+color: #333333;
+font-size: 16px;
+font-weight: normal;
+font-style: normal;
+background-color: #FFFFFF;
+width: auto;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #A8A8A8;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #A8A8A8;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+}
+#joeccsgfnd .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
+}
+#joeccsgfnd .gt_title {
+color: #333333;
+font-size: 125%;
+font-weight: initial;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-color: #FFFFFF;
+border-bottom-width: 0;
+}
+#joeccsgfnd .gt_subtitle {
+color: #333333;
+font-size: 85%;
+font-weight: initial;
+padding-top: 3px;
+padding-bottom: 5px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-color: #FFFFFF;
+border-top-width: 0;
+}
+#joeccsgfnd .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}
+#joeccsgfnd .gt_bottom_border {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#joeccsgfnd .gt_col_headings {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}
+#joeccsgfnd .gt_col_heading {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 6px;
+padding-left: 5px;
+padding-right: 5px;
+overflow-x: hidden;
+}
+#joeccsgfnd .gt_column_spanner_outer {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+padding-top: 0;
+padding-bottom: 0;
+padding-left: 4px;
+padding-right: 4px;
+}
+#joeccsgfnd .gt_column_spanner_outer:first-child {
+padding-left: 0;
+}
+#joeccsgfnd .gt_column_spanner_outer:last-child {
+padding-right: 0;
+}
+#joeccsgfnd .gt_column_spanner {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 5px;
+overflow-x: hidden;
+display: inline-block;
+width: 100%;
+}
+#joeccsgfnd .gt_spanner_row {
+border-bottom-style: hidden;
+}
+#joeccsgfnd .gt_group_heading {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+text-align: left;
+}
+#joeccsgfnd .gt_empty_group_heading {
+padding: 0.5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: middle;
+}
+#joeccsgfnd .gt_from_md > :first-child {
+margin-top: 0;
+}
+#joeccsgfnd .gt_from_md > :last-child {
+margin-bottom: 0;
+}
+#joeccsgfnd .gt_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+margin: 10px;
+border-top-style: solid;
+border-top-width: 1px;
+border-top-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+overflow-x: hidden;
+}
+#joeccsgfnd .gt_stub {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+}
+#joeccsgfnd .gt_stub_row_group {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+vertical-align: top;
+}
+#joeccsgfnd .gt_row_group_first td {
+border-top-width: 2px;
+}
+#joeccsgfnd .gt_row_group_first th {
+border-top-width: 2px;
+}
+#joeccsgfnd .gt_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#joeccsgfnd .gt_first_summary_row {
+border-top-style: solid;
+border-top-color: #D3D3D3;
+}
+#joeccsgfnd .gt_first_summary_row.thick {
+border-top-width: 2px;
+}
+#joeccsgfnd .gt_last_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#joeccsgfnd .gt_grand_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#joeccsgfnd .gt_first_grand_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-style: double;
+border-top-width: 6px;
+border-top-color: #D3D3D3;
+}
+#joeccsgfnd .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}
+#joeccsgfnd .gt_striped {
+background-color: rgba(128, 128, 128, 0.05);
+}
+#joeccsgfnd .gt_table_body {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#joeccsgfnd .gt_footnotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}
+#joeccsgfnd .gt_footnote {
+margin: 0px;
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#joeccsgfnd .gt_sourcenotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}
+#joeccsgfnd .gt_sourcenote {
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#joeccsgfnd .gt_left {
+text-align: left;
+}
+#joeccsgfnd .gt_center {
+text-align: center;
+}
+#joeccsgfnd .gt_right {
+text-align: right;
+font-variant-numeric: tabular-nums;
+}
+#joeccsgfnd .gt_font_normal {
+font-weight: normal;
+}
+#joeccsgfnd .gt_font_bold {
+font-weight: bold;
+}
+#joeccsgfnd .gt_font_italic {
+font-style: italic;
+}
+#joeccsgfnd .gt_super {
+font-size: 65%;
+}
+#joeccsgfnd .gt_footnote_marks {
+font-size: 75%;
+vertical-align: 0.4em;
+position: initial;
+}
+#joeccsgfnd .gt_asterisk {
+font-size: 100%;
+vertical-align: 0;
+}
+#joeccsgfnd .gt_indent_1 {
+text-indent: 5px;
+}
+#joeccsgfnd .gt_indent_2 {
+text-indent: 10px;
+}
+#joeccsgfnd .gt_indent_3 {
+text-indent: 15px;
+}
+#joeccsgfnd .gt_indent_4 {
+text-indent: 20px;
+}
+#joeccsgfnd .gt_indent_5 {
+text-indent: 25px;
+}
+#joeccsgfnd .katex-display {
+display: inline-flex !important;
+margin-bottom: 0.75em !important;
+}
+#joeccsgfnd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+height: 0px !important;
+}
+</style>
+  <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="10" class="gt_heading gt_title gt_font_normal" style>A-level computing outcome comparisons</td>
+    </tr>
+    <tr class="gt_heading">
+      <td colspan="10" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>data from: https://analytics.ofqual.gov.uk/apps/Alevel/SubjectCombinations/</td>
+    </tr>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="subject">subject</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="total">total</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="A*">A*</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="A">A</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="B">B</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="C">C</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="D">D</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="E">E</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="U">U</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="diff chart">diff chart</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Mathematics</span></td>
+<td headers="total" class="gt_row gt_right">13,375</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-11.7,<br>(7.4-19.1)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-0.7,<br>(23.1-23.8)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">6.8,<br>(25.6-18.8)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">5.5,<br>(20.9-15.4)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">2.2,<br>(14.1-11.9)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-1.3,<br>(6.6-7.9)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-1,<br>(2.3-3.3)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="51.8951612903226" x2="427.5" y2="51.8951612903226" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="51.8951612903226" width="40" height="63.1048387096774" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="51.8951612903226" width="40" height="4.03225806451613" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="15" width="40" height="36.8951612903226" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="205" y="22.0564516129032" width="40" height="29.8387096774194" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="263.333333333333" y="39.7983870967742" width="40" height="12.0967741935484" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="51.8951612903226" width="40" height="6.85483870967742" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="380" y="51.8951612903226" width="40" height="5.44354838709678" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">6.84</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−11.7</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−11.7</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−0.75</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">6.84</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">5.53</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">2.24</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.27</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.01</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Physics</span></td>
+<td headers="total" class="gt_row gt_right">7,210</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-2.6,<br>(8.9-11.6)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">4,<br>(24.8-20.8)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">5.5,<br>(25.4-19.9)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">1.8,<br>(20-18.2)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-3.1,<br>(12.9-16)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-3.8,<br>(6.2-10)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-1.8,<br>(1.8-3.6)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="73.955223880597" x2="427.5" y2="73.955223880597" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="73.955223880597" width="40" height="28.3582089552239" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="30.6716417910448" width="40" height="43.2835820895522" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="146.666666666667" y="15" width="40" height="58.955223880597" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="205" y="54.5522388059702" width="40" height="19.4029850746268" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="263.333333333333" y="73.955223880597" width="40" height="32.8358208955224" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="321.666666666667" y="73.955223880597" width="40" height="41.044776119403" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="380" y="73.955223880597" width="40" height="19.4029850746269" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">5.48</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−3.81</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−2.64</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">4.02</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">5.48</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">1.80</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−3.05</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−3.81</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.80</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Further mathematics</span></td>
+<td headers="total" class="gt_row gt_right">3,790</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-9.4,<br>(19.8-29.2)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">11.3,<br>(40.6-29.3)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">2.6,<br>(23.6-21)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-0.1,<br>(10.4-10.6)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-2,<br>(4.1-6.1)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-1.8,<br>(1.1-2.9)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-0.7,<br>(0.4-1.1)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="69.7770700636943" x2="427.5" y2="69.7770700636943" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="69.7770700636943" width="40" height="45.2229299363057" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="15" width="40" height="54.7770700636943" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="146.666666666667" y="57.0382165605095" width="40" height="12.7388535031847" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="205" y="69.7770700636943" width="40" height="0.636942675159247" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="69.7770700636943" width="40" height="9.55414012738854" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="321.666666666667" y="69.7770700636943" width="40" height="8.9171974522293" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="380" y="69.7770700636943" width="40" height="3.18471337579618" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">11.3</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−9.37</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−9.37</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">11.3</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">2.64</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−0.13</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.98</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.85</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">−0.66</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Economics</span></td>
+<td headers="total" class="gt_row gt_right">2,365</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-1.3,<br>(3.6-4.9)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-4.7,<br>(13.3-18)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-9.7,<br>(21.8-31.5)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-1.1,<br>(23.5-24.5)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">5.7,<br>(19.5-13.7)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">6.6,<br>(12.5-5.9)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">4.2,<br>(5.9-1.7)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="55.2597402597403" x2="427.5" y2="55.2597402597403" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="55.2597402597403" width="40" height="7.7922077922078" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="55.2597402597403" width="40" height="28.5714285714286" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="55.2597402597403" width="40" height="59.7402597402597" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="55.2597402597403" width="40" height="6.49350649350651" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="20.1948051948052" width="40" height="35.0649350649351" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="40.2597402597403" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="29.2857142857143" width="40" height="25.974025974026" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">6.55</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−9.73</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.27</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−4.65</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−9.73</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.06</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">5.71</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">6.55</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">4.23</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Business studies</span></td>
+<td headers="total" class="gt_row gt_right">1,740</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-2,<br>(0.6-2.6)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-4.3,<br>(6-10.3)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-15.8,<br>(14.7-30.5)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-9.5,<br>(23.3-32.8)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">11.2,<br>(27.9-16.7)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">13.2,<br>(18.4-5.2)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">7.5,<br>(9.2-1.7)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="60.5445544554455" x2="427.5" y2="60.5445544554455" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="60.5445544554455" width="40" height="6.93069306930693" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="60.5445544554455" width="40" height="14.8514851485148" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="60.5445544554455" width="40" height="54.4554455445545" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="60.5445544554455" width="40" height="32.6732673267327" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="21.9306930693069" width="40" height="38.6138613861386" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="45.5445544554455" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="34.8019801980198" width="40" height="25.7425742574257" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">13.2</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−15.8</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−2.01</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−4.31</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−15.8</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−9.48</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">11.2</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">13.2</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">7.47</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Chemistry</span></td>
+<td headers="total" class="gt_row gt_right">1,255</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-0.4,<br>(7.2-7.6)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0.4,<br>(21.5-21.1)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-0.8,<br>(22.7-23.5)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">3.2,<br>(22.3-19.1)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">1.6,<br>(16.7-15.1)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-2,<br>(7.2-9.2)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-2,<br>(2.4-4.4)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="76.5384615384615" x2="427.5" y2="76.5384615384615" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="76.5384615384615" width="40" height="7.69230769230769" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="68.8461538461539" width="40" height="7.69230769230768" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="146.666666666667" y="76.5384615384615" width="40" height="15.3846153846154" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="15" width="40" height="61.5384615384615" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="263.333333333333" y="45.7692307692308" width="40" height="30.7692307692307" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="76.5384615384615" width="40" height="38.4615384615385" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="380" y="76.5384615384615" width="40" height="38.4615384615384" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">3.19</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−1.99</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−0.40</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">0.40</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−0.80</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">3.19</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">1.59</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.99</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.99</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Psychology</span></td>
+<td headers="total" class="gt_row gt_right">1,130</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-2.2,<br>(2.2-4.4)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(10.6-10.6)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-7.1,<br>(19-26.1)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-3.1,<br>(23-26.1)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">1.8,<br>(21.2-19.5)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">4.4,<br>(15-10.6)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">5.8,<br>(8.8-3.1)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="59.8275862068966" x2="427.5" y2="59.8275862068966" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="59.8275862068966" width="40" height="17.2413793103448" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="58.8275862068966" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="146.666666666667" y="59.8275862068966" width="40" height="55.1724137931034" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="59.8275862068966" width="40" height="24.1379310344828" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="46.0344827586207" width="40" height="13.7931034482759" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="25.3448275862069" width="40" height="34.4827586206897" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="15" width="40" height="44.8275862068966" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">5.75</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−7.08</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−2.21</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−7.08</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−3.10</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">1.77</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">4.42</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">5.75</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Biology</span></td>
+<td headers="total" class="gt_row gt_right">1,050</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-1,<br>(4.3-5.2)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-1.9,<br>(13.8-15.7)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0.5,<br>(23.3-22.9)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">1,<br>(23.8-22.9)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">1.9,<br>(19.5-17.6)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(11-11)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(4.3-4.3)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="65" x2="427.5" y2="65" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="65" width="40" height="25" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="65" width="40" height="50" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="52.5000000000001" width="40" height="12.5" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="205" y="40" width="40" height="25" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="263.333333333333" y="15" width="40" height="50" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="64" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="380" y="64" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">1.90</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−1.90</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−0.95</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.90</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">0.48</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">0.95</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">1.90</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Geography</span></td>
+<td headers="total" class="gt_row gt_right">755</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-1.3,<br>(1.3-2.6)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(11.9-11.9)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-11.3,<br>(17.9-29.1)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-1.3,<br>(25.8-27.2)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">3.3,<br>(23.8-20.5)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">7.3,<br>(13.9-6.6)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">4,<br>(5.3-1.3)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="54.2857142857143" x2="427.5" y2="54.2857142857143" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="54.2857142857143" width="40" height="7.14285714285714" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="53.2857142857143" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="146.666666666667" y="54.2857142857143" width="40" height="60.7142857142857" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="54.2857142857143" width="40" height="7.14285714285714" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="36.4285714285714" width="40" height="17.8571428571429" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="39.2857142857143" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="32.8571428571428" width="40" height="21.4285714285714" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">7.28</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−11.3</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.32</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−11.3</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.32</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">3.31</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">7.28</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">3.97</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">History</span></td>
+<td headers="total" class="gt_row gt_right">730</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-0.7,<br>(2.1-2.7)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-3.4,<br>(10.3-13.7)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-8.9,<br>(20.5-29.5)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-8.2,<br>(26.7-34.9)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">7.5,<br>(21.2-13.7)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">7.5,<br>(11.6-4.1)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">6.2,<br>(7.5-1.4)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="60.8333333333333" x2="427.5" y2="60.8333333333333" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="60.8333333333333" width="40" height="4.16666666666666" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="60.8333333333333" width="40" height="20.8333333333333" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="60.8333333333333" width="40" height="54.1666666666667" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="60.8333333333333" width="40" height="50" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="15" width="40" height="45.8333333333333" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="45.8333333333333" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="23.3333333333333" width="40" height="37.5" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">7.53</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−8.90</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−0.68</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−3.42</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−8.90</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−8.22</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">7.53</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">7.53</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">6.16</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Design and technology</span></td>
+<td headers="total" class="gt_row gt_right">458</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-2.6,<br>(0.7-3.3)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-2.2,<br>(8.7-10.9)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-8.7,<br>(19.7-28.4)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-9.8,<br>(20.7-30.6)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">7.6,<br>(25.1-17.5)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">10.9,<br>(18.6-7.6)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">4.4,<br>(6.6-2.2)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="67.6315789473684" x2="427.5" y2="67.6315789473684" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="67.6315789473684" width="40" height="12.6315789473684" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="67.6315789473684" width="40" height="10.5263157894737" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="67.6315789473684" width="40" height="42.1052631578947" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="67.6315789473684" width="40" height="47.3684210526316" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="30.7894736842105" width="40" height="36.8421052631579" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="52.6315789473684" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="46.5789473684211" width="40" height="21.0526315789473" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">10.9</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−9.83</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−2.62</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−2.18</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−8.73</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−9.83</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">7.64</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">10.9</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">4.37</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Sociology</span></td>
+<td headers="total" class="gt_row gt_right">338</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-2.1,<br>(0.9-3)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-5.9,<br>(4.4-10.4)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-17.8,<br>(10.4-28.1)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-8.9,<br>(22.2-31.1)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">10.4,<br>(28.1-17.8)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">11.8,<br>(19.2-7.4)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">13.9,<br>(14.8-0.9)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="58.9252336448598" x2="427.5" y2="58.9252336448598" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="58.9252336448598" width="40" height="6.54205607476636" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="58.9252336448598" width="40" height="18.6915887850467" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="58.9252336448598" width="40" height="56.0747663551402" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="58.9252336448598" width="40" height="28.0373831775701" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="26.214953271028" width="40" height="32.7102803738318" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="21.5420560747664" width="40" height="37.3831775700935" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="15" width="40" height="43.9252336448598" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">13.9</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−17.8</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−2.07</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−5.92</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−17.8</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−8.88</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">10.4</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">11.8</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">13.9</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Media studies</span></td>
+<td headers="total" class="gt_row gt_right">305</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-1,<br>(0-1)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-1.6,<br>(4.9-6.6)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-21.3,<br>(16.4-37.7)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-16.4,<br>(19.7-36.1)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">14.8,<br>(29.5-14.8)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">18,<br>(19.7-1.6)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">8.9,<br>(9.8-1)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="60.8333333333333" x2="427.5" y2="60.8333333333333" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="60.8333333333333" width="40" height="2.5" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="60.8333333333333" width="40" height="4.16666666666667" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="60.8333333333333" width="40" height="54.1666666666667" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="60.8333333333333" width="40" height="41.6666666666667" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="23.3333333333333" width="40" height="37.5" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="45.8333333333333" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="38.3333333333333" width="40" height="22.5" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">18.0</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−21.3</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−0.98</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.64</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−21.3</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−16.4</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">14.8</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">18.0</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">8.85</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">English literature</span></td>
+<td headers="total" class="gt_row gt_right">265</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-3.8,<br>(3.8-7.5)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-5.7,<br>(11.3-17)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-11.3,<br>(20.8-32.1)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-1.9,<br>(24.5-26.4)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">11.3,<br>(20.8-9.4)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">11.3,<br>(13.2-1.9)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">4.5,<br>(5.7-1.1)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="65" x2="427.5" y2="65" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="65" width="40" height="16.6666666666667" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="65" width="40" height="25" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="65" width="40" height="50" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="65" width="40" height="8.33333333333331" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="15" width="40" height="50" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="50" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="45" width="40" height="20" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">11.3</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−11.3</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−3.77</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−5.66</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−11.3</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.89</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">11.3</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">11.3</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">4.53</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Political studies</span></td>
+<td headers="total" class="gt_row gt_right">255</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-2,<br>(2-3.9)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(15.7-15.7)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-11.8,<br>(17.6-29.4)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-5.9,<br>(21.6-27.5)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">5.9,<br>(21.6-15.7)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">9.8,<br>(15.7-5.9)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">4.7,<br>(5.9-1.2)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="60.4545454545455" x2="427.5" y2="60.4545454545455" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="60.4545454545455" width="40" height="9.09090909090907" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="59.4545454545455" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="146.666666666667" y="60.4545454545455" width="40" height="54.5454545454545" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="60.4545454545455" width="40" height="27.2727272727273" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="33.1818181818182" width="40" height="27.2727272727273" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="45.4545454545455" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="38.6363636363636" width="40" height="21.8181818181818" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">9.80</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−11.8</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.96</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−11.8</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−5.88</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">5.88</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">9.80</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">4.71</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Music</span></td>
+<td headers="total" class="gt_row gt_right">250</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(8-8)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">6,<br>(22-16)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-8,<br>(24-32)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-2,<br>(20-22)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-2,<br>(16-18)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">4,<br>(8-4)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0.8,<br>(2-1.2)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="57.8571428571429" x2="427.5" y2="57.8571428571429" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="56.8571428571429" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="88.3333333333333" y="15" width="40" height="42.8571428571429" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="146.666666666667" y="57.8571428571429" width="40" height="57.1428571428571" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="57.8571428571429" width="40" height="14.2857142857143" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="57.8571428571429" width="40" height="14.2857142857143" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="321.666666666667" y="29.2857142857143" width="40" height="28.5714285714286" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="52.1428571428571" width="40" height="5.71428571428573" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">6</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−8</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">6.00</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−8.00</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−2.00</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−2.00</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">4.00</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">0.80</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Art: Graphics</span></td>
+<td headers="total" class="gt_row gt_right">238</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-11.3,<br>(1.3-12.6)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-8.4,<br>(10.5-18.9)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-18.9,<br>(16.8-35.7)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-2.1,<br>(18.9-21)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">16.8,<br>(25.2-8.4)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">17.6,<br>(18.9-1.3)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">7.1,<br>(8.4-1.3)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="63.2758620689655" x2="427.5" y2="63.2758620689655" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="63.2758620689655" width="40" height="31.0344827586207" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="63.2758620689655" width="40" height="22.9885057471264" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="63.2758620689655" width="40" height="51.7241379310345" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="63.2758620689655" width="40" height="5.74712643678161" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="17.2988505747127" width="40" height="45.9770114942528" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="48.2758620689655" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="43.7356321839081" width="40" height="19.5402298850575" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">17.6</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−18.9</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−11.3</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−8.40</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−18.9</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−2.10</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">16.8</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">17.6</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">7.14</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Art: Fine art</span></td>
+<td headers="total" class="gt_row gt_right">230</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-8.7,<br>(2.2-10.9)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-8.7,<br>(15.2-23.9)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-10.9,<br>(21.7-32.6)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(21.7-21.7)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">10.9,<br>(21.7-10.9)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">11.7,<br>(13-1.3)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">4.3,<br>(4.3-0)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="66.9230769230769" x2="427.5" y2="66.9230769230769" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="66.9230769230769" width="40" height="38.4615384615385" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="66.9230769230769" width="40" height="38.4615384615385" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="66.9230769230769" width="40" height="48.0769230769231" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="65.9230769230769" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="263.333333333333" y="18.8461538461538" width="40" height="48.0769230769231" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="51.9230769230769" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="47.6923076923077" width="40" height="19.2307692307692" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">11.7</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−10.9</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−8.70</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−8.70</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−10.9</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">10.9</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">11.7</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">4.35</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Law</span></td>
+<td headers="total" class="gt_row gt_right">183</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-3.8,<br>(1.6-5.5)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-8.2,<br>(5.5-13.7)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-10.9,<br>(10.9-21.9)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-10.9,<br>(16.4-27.3)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">13.7,<br>(32.8-19.1)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">10.9,<br>(21.9-10.9)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">8.2,<br>(10.9-2.7)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="70.5555555555555" x2="427.5" y2="70.5555555555555" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="70.5555555555555" width="40" height="15.5555555555556" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="70.5555555555555" width="40" height="33.3333333333333" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="70.5555555555555" width="40" height="44.4444444444444" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="70.5555555555555" width="40" height="44.4444444444445" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="15" width="40" height="55.5555555555555" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="26.1111111111111" width="40" height="44.4444444444444" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="37.2222222222222" width="40" height="33.3333333333333" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">13.7</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−10.9</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−3.83</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−8.20</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−10.9</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−10.9</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">13.7</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">10.9</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">8.20</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Art: Photography</span></td>
+<td headers="total" class="gt_row gt_right">163</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-13.5,<br>(1.8-15.3)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-6.1,<br>(6.1-12.3)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-21.5,<br>(12.3-33.7)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-9.2,<br>(18.4-27.6)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">21.5,<br>(30.7-9.2)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">16.6,<br>(18.4-1.8)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">10.4,<br>(12.3-1.8)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="65" x2="427.5" y2="65" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="65" width="40" height="31.4285714285714" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="65" width="40" height="14.2857142857143" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="65" width="40" height="50" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="65" width="40" height="21.4285714285714" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="15" width="40" height="50" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="26.4285714285714" width="40" height="38.5714285714286" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="40.7142857142857" width="40" height="24.2857142857143" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">21.5</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−21.5</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−13.5</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−6.13</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−21.5</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−9.20</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">21.5</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">16.6</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">10.4</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Spanish</span></td>
+<td headers="total" class="gt_row gt_right">160</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-6.2,<br>(6.2-12.5)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-3.1,<br>(15.6-18.8)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-6.2,<br>(25-31.2)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(21.9-21.9)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">6.2,<br>(15.6-9.4)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">6.2,<br>(9.4-3.1)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">4.4,<br>(6.2-1.9)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="65" x2="427.5" y2="65" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="65" width="40" height="50" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="65" width="40" height="25" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="65" width="40" height="50" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="64" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="263.333333333333" y="15" width="40" height="50" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="50" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="30" width="40" height="35" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">6.25</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−6.25</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−6.25</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−3.12</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−6.25</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">6.25</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">6.25</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">4.38</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">English language</span></td>
+<td headers="total" class="gt_row gt_right">153</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(2-2)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-3.3,<br>(6.5-9.8)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-19.6,<br>(16.3-35.9)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-9.8,<br>(26.1-35.9)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">19.6,<br>(32.7-13.1)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">9.8,<br>(13.1-3.3)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">1.3,<br>(3.3-2)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="65" x2="427.5" y2="65" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="64" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="88.3333333333333" y="65" width="40" height="8.33333333333334" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="65" width="40" height="50" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="65" width="40" height="25" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="15" width="40" height="50" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="40" width="40" height="25" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="61.6666666666667" width="40" height="3.33333333333334" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">19.6</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−19.6</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−3.27</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−19.6</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−9.80</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">19.6</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">9.80</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">1.31</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Religious studies</span></td>
+<td headers="total" class="gt_row gt_right">128</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-1.6,<br>(2.3-3.9)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-3.9,<br>(11.7-15.6)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-15.6,<br>(19.5-35.2)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-7.8,<br>(23.4-31.2)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">11.7,<br>(23.4-11.7)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">3.9,<br>(11.7-7.8)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">7.8,<br>(7.8-0)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="57.8571428571429" x2="427.5" y2="57.8571428571429" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="57.8571428571429" width="40" height="5.71428571428572" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="57.8571428571429" width="40" height="14.2857142857143" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="57.8571428571429" width="40" height="57.1428571428571" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="57.8571428571429" width="40" height="28.5714285714286" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="15" width="40" height="42.8571428571429" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="43.5714285714286" width="40" height="14.2857142857143" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="29.2857142857143" width="40" height="28.5714285714286" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">11.7</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−15.6</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−1.56</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−3.91</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−15.6</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−7.81</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">11.7</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">3.91</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">7.81</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Film studies</span></td>
+<td headers="total" class="gt_row gt_right">125</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-2.4,<br>(0-2.4)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-12,<br>(4-16)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-28,<br>(16-44)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-16,<br>(20-36)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">24,<br>(32-8)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">17.6,<br>(20-2.4)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">8,<br>(8-0)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="61.1538461538462" x2="427.5" y2="61.1538461538462" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="61.1538461538462" width="40" height="4.61538461538462" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="61.1538461538462" width="40" height="23.0769230769231" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="61.1538461538462" width="40" height="53.8461538461538" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="61.1538461538462" width="40" height="30.7692307692308" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="15" width="40" height="46.1538461538462" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="27.3076923076923" width="40" height="33.8461538461538" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="45.7692307692308" width="40" height="15.3846153846154" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">24</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−28</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−2.40</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−12.0</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−28.0</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−16.0</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">24.0</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">17.6</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">8.00</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">French</span></td>
+<td headers="total" class="gt_row gt_right">125</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(8-8)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(24-24)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #258D1A; color: #FFFFFF;"><span class="gt_from_md">-12,<br>(20-32)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-8,<br>(20-28)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">8,<br>(16-8)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">5.6,<br>(8-2.4)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">4,<br>(4-0)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="55" x2="427.5" y2="55" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="54" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="88.3333333333333" y="54" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="146.666666666667" y="55" width="40" height="60" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="55" width="40" height="40" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="15" width="40" height="40" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="27" width="40" height="28" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="35" width="40" height="20" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">8</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−12</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−12.0</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−8.00</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">8.00</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">5.60</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">4.00</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Art</span></td>
+<td headers="total" class="gt_row gt_right">93</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-7.5,<br>(3.2-10.8)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(10.8-10.8)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-21.5,<br>(21.5-43)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">5.4,<br>(21.5-16.1)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">5.4,<br>(21.5-16.1)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">16.1,<br>(16.1-0)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">2.2,<br>(5.4-3.2)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="57.8571428571429" x2="427.5" y2="57.8571428571429" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="57.8571428571429" width="40" height="20" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="56.8571428571429" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="146.666666666667" y="57.8571428571429" width="40" height="57.1428571428571" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="43.5714285714286" width="40" height="14.2857142857143" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="263.333333333333" y="43.5714285714286" width="40" height="14.2857142857143" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="42.8571428571429" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="52.1428571428571" width="40" height="5.71428571428572" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">16.1</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−21.5</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−7.53</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−21.5</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">5.38</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">5.38</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">16.1</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">2.15</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Physical education</span></td>
+<td headers="total" class="gt_row gt_right">93</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(3.2-3.2)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">5.4,<br>(10.8-5.4)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-5.4,<br>(10.8-16.1)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-10.8,<br>(21.5-32.3)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(21.5-21.5)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">10.8,<br>(21.5-10.8)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(10.8-10.8)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="65" x2="427.5" y2="65" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="64" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="88.3333333333333" y="40" width="40" height="25" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="146.666666666667" y="65" width="40" height="25" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="65" width="40" height="50" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="64" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="321.666666666667" y="15" width="40" height="50" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="64" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">10.8</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−10.8</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">5.38</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−5.38</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−10.8</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">10.8</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Drama</span></td>
+<td headers="total" class="gt_row gt_right">83</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(3.6-3.6)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">12,<br>(18.1-6)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-6,<br>(24.1-30.1)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-30.1,<br>(12-42.2)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">6,<br>(18.1-12)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">14.5,<br>(18.1-3.6)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">2.4,<br>(6-3.6)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="47.4324324324324" x2="427.5" y2="47.4324324324324" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="46.4324324324324" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="88.3333333333333" y="20.4054054054054" width="40" height="27.027027027027" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="146.666666666667" y="47.4324324324324" width="40" height="13.5135135135135" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="47.4324324324324" width="40" height="67.5675675675676" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="33.9189189189189" width="40" height="13.5135135135135" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="15" width="40" height="32.4324324324324" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="42.027027027027" width="40" height="5.4054054054054" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">14.5</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−30.1</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">12.0</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−6.02</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−30.1</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">6.02</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">14.5</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">2.41</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Philosophy</span></td>
+<td headers="total" class="gt_row gt_right">63</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">3.2,<br>(7.9-4.8)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(23.8-23.8)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-7.9,<br>(15.9-23.8)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-7.9,<br>(15.9-23.8)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(15.9-15.9)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">11.1,<br>(15.9-4.8)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(4.8-4.8)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="73.3333333333333" x2="427.5" y2="73.3333333333333" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="56.6666666666667" width="40" height="16.6666666666667" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="88.3333333333333" y="72.3333333333333" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="146.666666666667" y="73.3333333333333" width="40" height="41.6666666666667" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="73.3333333333333" width="40" height="41.6666666666667" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="72.3333333333333" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="321.666666666667" y="15" width="40" height="58.3333333333333" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="72.3333333333333" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">11.1</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−7.94</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">3.17</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−7.94</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−7.94</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">11.1</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">Classical civilisation</span></td>
+<td headers="total" class="gt_row gt_right">56</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(5.4-5.4)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">8.9,<br>(26.8-17.9)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">-26.8,<br>(17.9-44.6)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">8.9,<br>(26.8-17.9)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">3.6,<br>(8.9-5.4)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(5.4-5.4)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">8.9,<br>(8.9-0)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="40" x2="427.5" y2="40" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="39" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="88.3333333333333" y="15" width="40" height="25" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="146.666666666667" y="40" width="40" height="75" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="15" width="40" height="25" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="263.333333333333" y="30" width="40" height="10" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="321.666666666667" y="39" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="380" y="15" width="40" height="25" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">8.93</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−26.8</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">8.93</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−26.8</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">8.93</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">3.57</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">8.93</text></g>
+</svg>
+</div></td></tr>
+    <tr><td headers="subject" class="gt_row gt_left"><span class="gt_from_md">English language and literature</span></td>
+<td headers="total" class="gt_row gt_right">53</td>
+<td headers="A*" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-5.7,<br>(0-5.7)</span></td>
+<td headers="A" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-3.8,<br>(5.7-9.4)</span></td>
+<td headers="B" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-9.4,<br>(18.9-28.3)</span></td>
+<td headers="C" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">-18.9,<br>(28.3-47.2)</span></td>
+<td headers="D" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">0,<br>(18.9-18.9)</span></td>
+<td headers="E" class="gt_row gt_center" style="background-color: #808080; color: #FFFFFF;"><span class="gt_from_md">9.4,<br>(9.4-0)</span></td>
+<td headers="U" class="gt_row gt_center" style="background-color: #00FF00; color: #000000;"><span class="gt_from_md">18.9,<br>(18.9-0)</span></td>
+<td headers="diff chart" class="gt_row gt_left" style="padding-top:0; padding-bottom:0; vertical-align: middle; overflow-x: visible;"><div>
+<svg role="img" viewBox="0 0 450 130" style="
+height:2em;
+margin-left:auto;
+margin-right:auto;
+font-size:inherit;
+overflow:visible;
+vertical-align:middle;
+position:relative;">
+<defs>
+<pattern id="area_pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+<path class="pattern-line" d="M 0,8 l 8,-8 M -1,1 l 4,-4 M 6,10 l 4,-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" shape-rendering="geometricPrecision">
+</path>
+</pattern>
+</defs>
+<style>text { font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace; stroke-width: 0.15em; paint-order: stroke; stroke-linejoin: round; cursor: default; } .vert-line:hover rect { fill: #911EB4; fill-opacity: 40%; stroke: #FFFFFF60; color: red; } .vert-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover text { stroke: white; fill: #212427; } .horizontal-line:hover rect { fill: transparent; stroke: transparent; color: blue; } .boxplot-line:hover text { stroke: white; fill: #212427; } .boxplot-line:hover rect { fill: transparent; stroke: transparent; } .horizontal-line:hover text { stroke: white; fill: #212427; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; } .y-axis-line:hover rect { fill: #EDEDED; fill-opacity: 60%; stroke: #FFFFFF60; color: red; } .y-axis-line:hover text { stroke: white; stroke-width: 0.20em; fill: #1A1C1F; } .ref-line:hover rect { stroke: #FFFFFF60; } .ref-line:hover line { stroke: #FF0000; } .ref-line:hover text { stroke: white; fill: #212427; }</style>
+<line x1="22.5" y1="65" x2="427.5" y2="65" stroke="#BFBFBF" stroke-width="2"></line>
+<rect x="30" y="65" width="40" height="15" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="88.3333333333333" y="65" width="40" height="10" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="146.666666666667" y="65" width="40" height="25" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="205" y="65" width="40" height="50" stroke="#CC3243" stroke-width="4" fill="#D75A68" />
+<rect x="263.333333333333" y="64" width="40" height="2" stroke="#808080" stroke-width="4" fill="#808080" />
+<rect x="321.666666666667" y="40" width="40" height="25" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<rect x="380" y="15" width="40" height="50" stroke="#3290CC" stroke-width="4" fill="#3FB5FF" />
+<g class="y-axis-line">
+<rect x="0" y="0" width="65" height="130" stroke="transparent" stroke-width="0" fill="transparent" />
+<text x="0" y="19" fill="transparent" stroke="transparent" font-size="25">18.9</text>
+<text x="0" y="126" fill="transparent" stroke="transparent" font-size="25">−18.9</text></g>
+<g class="vert-line">
+<rect x="40" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="60" y="20" fill="transparent" stroke="transparent" font-size="30px">−5.66</text></g>
+<g class="vert-line">
+<rect x="98.3333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="118.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">−3.77</text></g>
+<g class="vert-line">
+<rect x="156.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="176.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">−9.43</text></g>
+<g class="vert-line">
+<rect x="215" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="235" y="20" fill="transparent" stroke="transparent" font-size="30px">−18.9</text></g>
+<g class="vert-line">
+<rect x="273.333333333333" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="293.333333333333" y="20" fill="transparent" stroke="transparent" font-size="30px">0</text></g>
+<g class="vert-line">
+<rect x="331.666666666667" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="351.666666666667" y="20" fill="transparent" stroke="transparent" font-size="30px">9.43</text></g>
+<g class="vert-line">
+<rect x="390" y="0" width="20" height="130" stroke="transparent" stroke-width="12" fill="transparent" />
+<text x="410" y="20" fill="transparent" stroke="transparent" font-size="30px">18.9</text></g>
+</svg>
+</div></td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="10"> <span class="gt_from_md">Note: green cells indicate statistically significant differences between the two groups when using a z-test <code>prop.test()</code>, with p &lt; 0.05.<br>values in brackets are the percentage of students achieving the grade in each group, the leading value is the difference between the groups, e.g. B 6.84 for Mathematics means more computing students got a B grade (25.61%) than Maths students (18.77%).</span></td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+</body>
+</html>
