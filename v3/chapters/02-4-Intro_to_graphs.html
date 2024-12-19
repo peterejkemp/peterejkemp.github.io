@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MASTEMR - Making graphs</title>
+<title>Making graphs – MASTEMR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -79,7 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -102,9 +109,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="index.qmd" class="navbar-brand navbar-brand-logo">
     <img src="../images/KCL_logo.png" alt="" class="navbar-logo">
     </a>
@@ -112,20 +119,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">MASTEMR</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto">
+        <div class="quarto-navbar-tools tools-end">
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-4-Intro_to_graphs.html">Making graphs</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-4-Intro_to_graphs.html">Making graphs</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -134,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -160,9 +167,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">02 Introduction to R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -201,26 +208,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/04-Presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">04 Presentations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/05-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/04-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05 Introduction to PISA</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">06 Hypothesis testing and Chi-square tests</span></a>
+  <a href="../chapters/05-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Presentations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/07-T-testsPISA.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07 T-tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -253,24 +260,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">12 The value of quantitative methods</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/QandA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Questions and Answers</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Additional tests</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/A7-SEM.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/A8-SEM.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SEM</span></a>
   </div>
 </li>
@@ -278,9 +279,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendicies</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -315,12 +316,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Self Study Tasks</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A6-QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -355,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-4-Intro_to_graphs.html">Making graphs</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Making graphs</h1>
 </div>
@@ -370,13 +377,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p>The tidyverse includes the incredibly powerful <code>ggplot2</code> package. This package is pretty much the industry standard for making graphs for publication. <code>ggplot2</code> is built on the <em>grammar of graphics</em> where you build graphs by specifying underlying attributes and layering geometric objects on top of each other. In the diagram below you can see how a graph is built from <em>geometric objects</em> (the things that are plotted such as points and bars) a <em>scale</em>, and <em>plot annotations</em> (e.g.&nbsp;a key, title etc). You can then apply <em>faceting</em> to the graph to automatically split one graph into multiple plots, allowing you to easily compare different groupings. Publications, such as the Financial Times, make daily use of <code>ggplot2</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="http://vita.had.co.nz/papers/layered-grammar.pdf"><img src="images/grammarofgraphics.svg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Adapted from A Layered Grammar of Graphics, Wickham, 2010</figcaption>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="http://vita.had.co.nz/papers/layered-grammar.pdf"><img src="images/grammarofgraphics.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Adapted from A Layered Grammar of Graphics, Wickham, 2010"></a></p>
+</figure>
+</div>
+<figcaption>Adapted from A Layered Grammar of Graphics, Wickham, 2010</figcaption>
 </figure>
 </div>
 <section id="sec-graphing" class="level1" data-number="1">
@@ -400,32 +413,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="3,4" data-code-cell="annotated-cell-1">Hopefully you can work out what lines 1-3 do from the previous chapter, let’s focus on the <code>ggplot</code> commands</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="3,4" data-code-annotation="1">Hopefully you can work out what lines 1-3 do from the previous chapter, let’s focus on the <code>ggplot</code> commands</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="7,8" data-code-cell="annotated-cell-1">line 7-8 set up the <code>ggplot</code> giving it the table object <code>graph_data</code> as its data input and setting up the aesthetics for the rest of the graph elements using columns from <code>graph_data</code>. The <code>aes(&lt;attribute&gt;, &lt;attribute&gt;, ...)</code> command allows us to specify aesthetic elements of the graph that will change dependent on the dataset we use. In the PISA_2022 data set, the variable <code>ESCS</code> refers to an index of economic status, and <code>PV1Math</code>, is the plausible value of the mathematics score. We set the x and y variables <code>x=ESCS</code> and <code>y=PV1MATH</code> , defining <code>aes()</code> inside <code>ggplot()</code> means we will pass down these values to subsequent geometric objects so we don’t have to define these <code>x</code> and <code>y</code> axis items again and again.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="7,8" data-code-annotation="2">line 7-8 set up the <code>ggplot</code> giving it the table object <code>graph_data</code> as its data input and setting up the aesthetics for the rest of the graph elements using columns from <code>graph_data</code>. The <code>aes(&lt;attribute&gt;, &lt;attribute&gt;, ...)</code> command allows us to specify aesthetic elements of the graph that will change dependent on the dataset we use. In the PISA_2022 data set, the variable <code>ESCS</code> refers to an index of economic status, and <code>PV1Math</code>, is the plausible value of the mathematics score. We set the x and y variables <code>x=ESCS</code> and <code>y=PV1MATH</code> , defining <code>aes()</code> inside <code>ggplot()</code> means we will pass down these values to subsequent geometric objects so we don’t have to define these <code>x</code> and <code>y</code> axis items again and again.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="9" data-code-cell="annotated-cell-1">line 9 using the data and <code>aes</code> values defined on lines 7-8, <code>geom_point</code> uses these <code>x</code> and <code>y</code> values to draw a point for each student in our dataset. There are lots of different parameters we could give <code>geom_point</code> e.g.&nbsp;specifying size and shape, but here we are content with just setting the <code>size</code> to be 0.1 and using the defaults.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="9" data-code-annotation="3">line 9 using the data and <code>aes</code> values defined on lines 7-8, <code>geom_point</code> uses these <code>x</code> and <code>y</code> values to draw a point for each student in our dataset. There are lots of different parameters we could give <code>geom_point</code> e.g.&nbsp;specifying size and shape, but here we are content with just setting the <code>size</code> to be 0.1 and using the defaults.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="10" data-code-cell="annotated-cell-1">line 10 we add another geometric object on top of the points, this time we add a line of best fit <code>geom_smooth</code>, again this geometric object uses the values specified on lines 7-8, and we define the <code>method</code> as <code>lm</code>, to calculate a <em>linear model</em> line of best fit.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="10" data-code-annotation="4">line 10 we add another geometric object on top of the points, this time we add a line of best fit <code>geom_smooth</code>, again this geometric object uses the values specified on lines 7-8, and we define the <code>method</code> as <code>lm</code>, to calculate a <em>linear model</em> line of best fit.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="11" data-code-cell="annotated-cell-1">line 11 uses <code>facet_wrap(. ~ CNT)</code> to create a graph for each group of <code>CNT</code> in the dataset, i.e.&nbsp;a graph for each country defined on line 3.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="11" data-code-annotation="5">line 11 uses <code>facet_wrap(. ~ CNT)</code> to create a graph for each group of <code>CNT</code> in the dataset, i.e.&nbsp;a graph for each country defined on line 3.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-annotation="6" data-code-lines="12,13" data-code-cell="annotated-cell-1">lines 12 and 13, finally we customise the title of the graph, <code>ggtitle</code>, ready for display and place the legend underneath the graph</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="12,13" data-code-annotation="6">lines 12 and 13, finally we customise the title of the graph, <code>ggtitle</code>, ready for display and place the legend underneath the graph</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -478,32 +495,36 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-2">pipe the large data.frame <code>PISA_2022</code> to apply a number of functions.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="1">pipe the large data.frame <code>PISA_2022</code> to apply a number of functions.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-2">groups by <code>OECD</code> (a <code>Yes</code> or <code>No</code> indicating membership) and <code>CNT</code> (the name of the country).</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="2">groups by <code>OECD</code> (a <code>Yes</code> or <code>No</code> indicating membership) and <code>CNT</code> (the name of the country).</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="4,5" data-code-cell="annotated-cell-2">calculate the <code>mean</code> mathematics and reading score, and create new variables (<code>mean_maths</code>, and <code>mean_read</code>) for their values. In addition, in line 6, the variables <code>sz</code> is created which counts the number of responses per country through the <code>n()</code> command. This whole pipe is then saved to the <code>country_plot_data</code> object, using the <code>&lt;-</code> on line 2</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="4,5" data-code-annotation="3">calculate the <code>mean</code> mathematics and reading score, and create new variables (<code>mean_maths</code>, and <code>mean_read</code>) for their values. In addition, in line 6, the variables <code>sz</code> is created which counts the number of responses per country through the <code>n()</code> command. This whole pipe is then saved to the <code>country_plot_data</code> object, using the <code>&lt;-</code> on line 2</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="10" data-code-cell="annotated-cell-2">In <code>ggplot</code> we specifiy the data that should be plotted - the new dataframe <code>country_plot_data</code></span>
+<span data-code-cell="annotated-cell-2" data-code-lines="10" data-code-annotation="4">In <code>ggplot</code> we specifiy the data that should be plotted - the new dataframe <code>country_plot_data</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="11" data-code-cell="annotated-cell-2">We pass the <code>x</code> and <code>y</code> variables, <code>mean_maths</code>, and <code>mean_read</code>, inside the <code>aes</code>thetic function. These values will be passed to any subsequent <code>geom_</code></span>
+<span data-code-cell="annotated-cell-2" data-code-lines="11" data-code-annotation="5">We pass the <code>x</code> and <code>y</code> variables, <code>mean_maths</code>, and <code>mean_read</code>, inside the <code>aes</code>thetic function. These values will be passed to any subsequent <code>geom_</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-annotation="6" data-code-lines="12" data-code-cell="annotated-cell-2">We make a number of tweaks to the points: first setting the <code>aes</code>thetics - the <code>size</code> of the points is linked to the <code>sz</code> variable we created, the number of responses per country, and the <code>colour</code> is linked to <code>OECD</code> membership. Finally (and note this is outside the <code>aes</code> brackets, we set an <code>alpha</code> value which makes the point slightly transparent, which is more visually appealing where points overlap.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="12" data-code-annotation="6">We make a number of tweaks to the points: first setting the <code>aes</code>thetics - the <code>size</code> of the points is linked to the <code>sz</code> variable we created, the number of responses per country, and the <code>colour</code> is linked to <code>OECD</code> membership. Finally (and note this is outside the <code>aes</code> brackets, we set an <code>alpha</code> value which makes the point slightly transparent, which is more visually appealing where points overlap.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -525,7 +546,11 @@ Important
 <span id="cb1-5"><a href="#cb1-5"></a>                 <span class="at">y =</span> SC002Q02TA,</span>
 <span id="cb1-6"><a href="#cb1-6"></a>                 <span class="at">size=</span>SC211Q03JA))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>However, there is an error if we put <code>size</code> outside the <code>aes()</code>, and set it a value from the dataset, it can’t find value:</p>
@@ -535,7 +560,7 @@ Important
 <span id="cb2-3"><a href="#cb2-3"></a>                 <span class="at">y =</span> SC002Q02TA),</span>
 <span id="cb2-4"><a href="#cb2-4"></a>             <span class="at">size=</span>SC211Q03JA)  <span class="co"># this is now outside the aes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'SC211Q03JA' not found</code></pre>
+<pre><code>Error: object 'SC211Q03JA' not found</code></pre>
 </div>
 </div>
 <p>but if we set the <code>size</code> explicitly to <code>3</code>, outside the <code>aes()</code>, then all points will be that size</p>
@@ -545,7 +570,11 @@ Important
 <span id="cb4-3"><a href="#cb4-3"></a>                 <span class="at">y =</span> SC002Q02TA),</span>
 <span id="cb4-4"><a href="#cb4-4"></a>             <span class="at">size=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -562,7 +591,7 @@ Important
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">ggtitle</span>(<span class="st">"diamond graph"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#1 data not adta; #2 x and y need to be inside aes</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="fu">ggplot</span>(<span class="at">data=</span>diamonds, <span class="fu">aes</span>(<span class="at">x=</span>depth, <span class="at">y=</span>price)) <span class="sc">+</span></span>
@@ -574,13 +603,13 @@ Important
 <li>Using the <code>PISA_2022</code> dataset, plot a graph for students from <code>Norway</code> to look at the relationship between <em>Home Possessions (WLE)</em> <code>HOMEPOS</code> and <em>reading grade</em> <code>PV1READ</code>. Colour each point with the gender <code>ST004D01T</code> of the student. Give the graph sensible <code>x</code> and <code>y</code> labels by using <code>xlab("label")</code> and <code>ylab("label")</code></li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer dataframe</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>graph_data <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Norway"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer graph</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(graph_data,</span>
 <span id="cb8-2"><a href="#cb8-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>HOMEPOS,</span>
@@ -595,7 +624,7 @@ Important
 </ol>
 <p><strong>HINT:</strong> You’ll need create a new data frame with <code>summarise</code>d variables for <code>median_belong</code>, <code>median_discipline</code> and <code>mean_wealth</code>.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer dataframe</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>graph_data <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">group_by</span>(OECD, CNT) <span class="sc">%&gt;%</span></span>
@@ -606,7 +635,7 @@ Important
 </div>
 <p><strong>HINT:</strong> To make your colours stand out more, add <code>+ scale_color_gradientn(colours = rainbow(3))</code> to the end of your plot.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer graph</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># display a graph of the results</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> graph_data, </span>
@@ -632,24 +661,28 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="1" data-code-cell="annotated-cell-3">get the <code>PISA_2022</code> dataset and remove all rows where <code>ST251Q01JA</code> is <code>NA</code>, storing this new dataset as <code>plot_cars</code></span>
+<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1">get the <code>PISA_2022</code> dataset and remove all rows where <code>ST251Q01JA</code> is <code>NA</code>, storing this new dataset as <code>plot_cars</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-3">pass the <code>plot_cars</code> to <code>ggplot</code>, as the dataset we are going to plot</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="2">pass the <code>plot_cars</code> to <code>ggplot</code>, as the dataset we are going to plot</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="4" data-code-cell="annotated-cell-3">specify the <code>x</code> values to be the values stored in <code>ST251Q01JA</code>, i.e.&nbsp;we will have a bar for each response given in <code>ST251Q01JA</code>: <code>None</code>, <code>One</code>, <code>Two</code>, <code>Three or more</code>.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="3">specify the <code>x</code> values to be the values stored in <code>ST251Q01JA</code>, i.e.&nbsp;we will have a bar for each response given in <code>ST251Q01JA</code>: <code>None</code>, <code>One</code>, <code>Two</code>, <code>Three or more</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="5" data-code-cell="annotated-cell-3"><code>geom_bar</code> tell ggplot to make bars, it uses the <code>aes</code>thetic from line 5, to plot the <code>x</code> axis, note we haven’t given it a <code>y</code> value, this is auto-calculated from the number of students in each <code>x</code> group.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="5" data-code-annotation="4"><code>geom_bar</code> tell ggplot to make bars, it uses the <code>aes</code>thetic from line 5, to plot the <code>x</code> axis, note we haven’t given it a <code>y</code> value, this is auto-calculated from the number of students in each <code>x</code> group.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>We can choose to let ggplot split the results into different groups for us by setting a <code>fill</code> option, in this case on the <code>OECD</code> status of the country, i.e.&nbsp;do students in OECD countries have more cars than those not in OECD countries, to do this, we add <code>fill=OECD</code> to the <code>aes</code> on line 2 below:</p>
@@ -658,13 +691,21 @@ Important
 <span id="cb11-2"><a href="#cb11-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ST251Q01JA, <span class="at">fill=</span>OECD)) <span class="sc">+</span> </span>
 <span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The bars are now coloured with a key, but, annoyingly, the bars are on top of each other which makes it hard to make direct comparisons. To compare different groups we need the bars to not be <code>stacked</code>, we want them next to each other, or in <code>ggplot</code> language, we want the bars to <code>dodge</code> each other, to do this we add the <code>position=position_dodge()</code> command to line 3 below:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <section id="raising-the-bars-yourself" class="level3" data-number="2.2.1">
@@ -686,32 +727,36 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="1,2,3,4" data-code-cell="annotated-cell-5">creates a dataframe <code>plot_data</code> that calculates the percentage of students in each country <code>CNT</code>, that have a science grade <code>PV1SCIE</code> over <code>500</code></span>
+<span data-code-cell="annotated-cell-5" data-code-lines="1,2,3,4" data-code-annotation="1">creates a dataframe <code>plot_data</code> that calculates the percentage of students in each country <code>CNT</code>, that have a science grade <code>PV1SCIE</code> over <code>500</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="6,7" data-code-cell="annotated-cell-5">as we are setting the heights of the bars ourselves, we need to give the ggplot <code>aes</code> command a <code>y</code> value, in this case <code>y=upper_sci_per</code></span>
+<span data-code-cell="annotated-cell-5" data-code-lines="6,7" data-code-annotation="2">as we are setting the heights of the bars ourselves, we need to give the ggplot <code>aes</code> command a <code>y</code> value, in this case <code>y=upper_sci_per</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="8" data-code-cell="annotated-cell-5">the <code>geom_bar</code> is given a <code>fill</code> value of <code>OECD</code>, this will allow us to see how countries in and out of the OECD compare</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="8" data-code-annotation="3">the <code>geom_bar</code> is given a <code>fill</code> value of <code>OECD</code>, this will allow us to see how countries in and out of the OECD compare</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="9" data-code-cell="annotated-cell-5">we use <code>position=position_dodge()</code> as we want the percentage grades of each country to be next to each other so we can look for differences in heights</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="9" data-code-annotation="4">we use <code>position=position_dodge()</code> as we want the percentage grades of each country to be next to each other so we can look for differences in heights</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="10" data-code-cell="annotated-cell-5"><code>stat="identity"</code> tells <code>geom_bar</code> that you have defined your own bar heights in the <code>y</code> attribute and not to count the number of rows.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="10" data-code-annotation="5"><code>stat="identity"</code> tells <code>geom_bar</code> that you have defined your own bar heights in the <code>y</code> attribute and not to count the number of rows.</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-annotation="6" data-code-lines="11" data-code-cell="annotated-cell-5">the <code>theme</code> command helps rotate the x-axis labels 90 degrees, so they don’t overlap.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="11" data-code-annotation="6">the <code>theme</code> command helps rotate the x-axis labels 90 degrees, so they don’t overlap.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Alternatively, you can use the <code>geom_col()</code> function that can handle you setting the <code>y</code> values and not specifying <code>stat="identity"</code></p>
@@ -735,7 +780,7 @@ Important
 <span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill=</span>Gender) <span class="at">position=</span><span class="st">"full"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>schools <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Phase <span class="sc">==</span> <span class="st">"Secondary"</span>), </span>
 <span id="cb14-2"><a href="#cb14-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Region)) <span class="sc">+</span> <span class="co"># 1 no aes() around the x value # 2 missing close brackets</span></span>
@@ -746,7 +791,7 @@ Important
 <li>Create a bar chart showing the total number of students for each grouping of “How satisfied are you with each of the following: The way that you look” <code>WB155Q02HA</code>. Adjust this graph to see if there is a difference for this among females and males:</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>PISA_2022,</span>
 <span id="cb15-2"><a href="#cb15-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>WB155Q02HA)) <span class="sc">+</span></span>
@@ -755,7 +800,7 @@ Important
 </details>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer with gender added</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(WB155Q02HA)),</span>
 <span id="cb16-2"><a href="#cb16-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>WB155Q02HA, <span class="at">fill=</span>ST004D01T)) <span class="sc">+</span></span>
@@ -767,7 +812,7 @@ Important
 <li>Plot bars for the number of Females and Males <code>ST004D01T</code> who answer each grouping for: “Confident can do in future: : Finding learning resources online on my own” <code>ST355Q03JA</code>. Make sure that the bars <code>position_dodge()</code> each other so we can compare the heights.</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>graph_data <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(ST355Q03JA))</span>
 <span id="cb17-2"><a href="#cb17-2"></a></span>
@@ -781,7 +826,7 @@ Important
 <li>For France and the United Kingdom, plot the total number of students who gave each answer for <code>ST324Q11JA</code> “Agree/disagree: School has been a waste of time.”. Filter out all the <code>NA</code> values first <code>!is.na(...)</code></li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer dataframe</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>plot_data <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">filter</span>(CNT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"France"</span>, <span class="st">"United Kingdom"</span>),</span>
@@ -789,7 +834,7 @@ Important
 </details>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">ggplot</span>(plot_data,</span>
 <span id="cb19-2"><a href="#cb19-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>ST324Q11JA, <span class="at">fill=</span>CNT)) <span class="sc">+</span></span>
@@ -798,7 +843,7 @@ Important
 </details>
 </div>
 <ol start="5" type="1">
-<li>Using the <code>PISA_2022_school</code> dataset (available <a href="../Users/k1765032/Library/CloudStorage/GoogleDrive-richardandrewbrock@gmail.com/.shortcut-targets-by-id/1c3CkaEBOICzepArDfjQUP34W2BYhFjM4/PISR/Data/PISA/2022/PISA_school_2022.parquet">here</a> create a table that stores for each country <code>CNT</code></li>
+<li>Using the <code>PISA_2022_school</code> dataset (available <a href="..\Users/k1765032/Library/CloudStorage/GoogleDrive-richardandrewbrock@gmail.com/.shortcut-targets-by-id/1c3CkaEBOICzepArDfjQUP34W2BYhFjM4/PISR/Data/PISA/2022/PISA_school_2022.parquet">here</a> create a table that stores for each country <code>CNT</code></li>
 </ol>
 <ul>
 <li>the total number of full-time teacher, <code>SC018Q01TA01</code></li>
@@ -808,7 +853,7 @@ Important
 </ul>
 <p>Add an additional column working out the % of teachers with master’s in each country, call this <code>per_MA</code></p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>creating the dataframe</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>plot_workforce <span class="ot">&lt;-</span> PISA_2022_school <span class="sc">%&gt;%</span> </span>
 <span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span> </span>
@@ -822,7 +867,7 @@ Important
 </div>
 <p>Using this dataframe plot a bar graph for each country of the <code>per_MA</code>, use the number of schools as a <code>fill</code>:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>creating the graph</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>plot_workforce,</span>
 <span id="cb21-2"><a href="#cb21-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>CNT, <span class="at">y=</span>per_MA, <span class="at">fill=</span>schools)) <span class="sc">+</span></span>
@@ -854,24 +899,28 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="6" data-code-cell="annotated-cell-7">line 6 starts the <code>geom_text</code> command, telling the geom to use the <code>count</code> <code>stat</code>istic from ggplot, this means it will be able to fetch the number of rows in each grouping.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="6" data-code-annotation="1">line 6 starts the <code>geom_text</code> command, telling the geom to use the <code>count</code> <code>stat</code>istic from ggplot, this means it will be able to fetch the number of rows in each grouping.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="7" data-code-cell="annotated-cell-7">as we want the label to change for each bar element, we put <code>label=after_stat(count)</code> inside <code>aes</code>. The <code>x</code> location of the labels is inherited from line 4 and the <code>y</code> location will be calculated from the height of each bar</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="7" data-code-annotation="2">as we want the label to change for each bar element, we put <code>label=after_stat(count)</code> inside <code>aes</code>. The <code>x</code> location of the labels is inherited from line 4 and the <code>y</code> location will be calculated from the height of each bar</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="8" data-code-cell="annotated-cell-7">we want the labels to align to the bars, so we tell the <code>geom_text</code> to also <code>position_dodge</code>, passing a <code>width=0.9</code> to the dodge function, so the labels line up above the columns,</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="8" data-code-annotation="3">we want the labels to align to the bars, so we tell the <code>geom_text</code> to also <code>position_dodge</code>, passing a <code>width=0.9</code> to the dodge function, so the labels line up above the columns,</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="9" data-code-cell="annotated-cell-7">finally, on line 9, we vertically adjust the labels <code>vjust</code>, so they sit on top of the columns.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="9" data-code-annotation="4">finally, on line 9, we vertically adjust the labels <code>vjust</code>, so they sit on top of the columns.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Rather than adding the count, you might want to add the percentage that each bar represents, we can do this by changing the value given to label on line 5, below:</p>
@@ -885,7 +934,11 @@ Important
 <span id="cb22-7"><a href="#cb22-7"></a>            <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width=</span><span class="fl">0.9</span>),</span>
 <span id="cb22-8"><a href="#cb22-8"></a>            <span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Additionally, when we make graphs we often want to label the dataset, for example if we were to plot all the countries and their <code>PV1MATH</code> and <code>PV1READ</code> scores, we would get:</p>
@@ -899,7 +952,11 @@ Important
 <span id="cb23-7"><a href="#cb23-7"></a>       <span class="fu">aes</span>(<span class="at">x=</span>m_read, <span class="at">y=</span>m_maths, <span class="at">colour=</span>OECD)) <span class="sc">+</span></span>
 <span id="cb23-8"><a href="#cb23-8"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This looks great, but we don’t actually know which countries are which. To get this data we need to add text to the graph, using <code>geom_text</code>.</p>
@@ -911,7 +968,11 @@ Important
 <span id="cb24-5"><a href="#cb24-5"></a>            <span class="at">colour=</span><span class="st">"black"</span>, </span>
 <span id="cb24-6"><a href="#cb24-6"></a>            <span class="at">check_overlap =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Here we have used <code>colour="black"</code> outside the <code>aes</code> to define the colour for all the labels, and <code>check_overlap = TRUE</code> which removes any labels that are on top of each other. It’s still a little bit hard to understand, and maybe we want to focus on just a few of the labels for countries we are interested in. For example</p>
@@ -954,12 +1015,16 @@ Important
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="4" data-code-cell="annotated-cell-12">changes the data that is being passed to the <code>geom_text</code>, it no longer uses the data defined in the <code>ggplot</code> command, but has a new dataset, that is filtered on <code>focus == TRUE</code>, i.e.&nbsp;only containing the countries that we want.</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="4" data-code-annotation="1">changes the data that is being passed to the <code>geom_text</code>, it no longer uses the data defined in the <code>ggplot</code> command, but has a new dataset, that is filtered on <code>focus == TRUE</code>, i.e.&nbsp;only containing the countries that we want.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -985,7 +1050,11 @@ Tip
 <span id="cb27-9"><a href="#cb27-9"></a>            <span class="at">max.overlaps =</span> <span class="cn">Inf</span>,</span>
 <span id="cb27-10"><a href="#cb27-10"></a>            <span class="at">colour=</span><span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1011,7 +1080,11 @@ Tip
 <span id="cb28-9"><a href="#cb28-9"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
 <span id="cb28-10"><a href="#cb28-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>But it isn’t clear how this graph varies between countries. We could try plotting separate graphs for each country, but there is a faster way, using:</p>
@@ -1024,7 +1097,11 @@ Tip
 <span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
 <span id="cb29-5"><a href="#cb29-5"></a>  <span class="fu">facet_grid</span>(CNT <span class="sc">~</span> .)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-4-Intro_to_graphs_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>If the column you want to split on it on the left hand side of <code>facet_grid(CNT ~ .)</code>, then the graphs will be piled on top of each other, if it’s on the right hand side <code>facet_grid(. ~ CNT)</code>, then they’ll be side by side.</p>
@@ -1055,7 +1132,7 @@ Tip
 </iframe>
 <p>You can find the code used in the video below:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Introduction to plotting graphs</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a><span class="co">#</span></span>
@@ -1184,18 +1261,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1227,11 +1293,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1241,8 +1346,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1254,7 +1368,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1298,6 +1535,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1323,6 +1561,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1383,6 +1647,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

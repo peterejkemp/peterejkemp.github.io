@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MASTEMR - Piping and dplyr</title>
+<title>Piping and dplyr – MASTEMR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -79,7 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -102,9 +109,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="index.qmd" class="navbar-brand navbar-brand-logo">
     <img src="../images/KCL_logo.png" alt="" class="navbar-logo">
     </a>
@@ -112,20 +119,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">MASTEMR</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto">
+        <div class="quarto-navbar-tools tools-end">
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-3-Intro_to_analysis_software.html">Piping and dplyr</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-3-Intro_to_analysis_software.html">Piping and dplyr</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -134,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -160,9 +167,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">02 Introduction to R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -201,26 +208,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/04-Presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">04 Presentations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/05-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/04-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05 Introduction to PISA</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">06 Hypothesis testing and Chi-square tests</span></a>
+  <a href="../chapters/05-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Presentations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/07-T-testsPISA.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07 T-tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -253,24 +260,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">12 The value of quantitative methods</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/QandA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Questions and Answers</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Additional tests</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/A7-SEM.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/A8-SEM.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SEM</span></a>
   </div>
 </li>
@@ -278,9 +279,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendicies</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -315,12 +316,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Self Study Tasks</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A6-QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -359,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-3-Intro_to_analysis_software.html">Piping and dplyr</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Piping and dplyr</h1>
 </div>
@@ -374,14 +381,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p>Piping allows us to break down complex tasks into manageable chunks that can be written and tested one after another. There are several powerful commands in the tidyverse as part of the <em>dplyr</em> package that can help us <code>group</code>, <code>filter</code>, <code>select</code>, <code>mutate</code> and <code>summarise</code> datasets. With this small set of commands we can use piping to convert massive datasets into simple and useful results.</p>
 <p>Using the pipe <code>%&gt;%</code> command, we can feed the results from one command into the next command making for reusable and easy to read code.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/pipe_drawing.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">how piping works</figcaption>
+<figcaption>how piping works</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -468,7 +477,7 @@ Note
 </div>
 </div>
 <p>The commands we have just used come from a package within the <code>tidyverse</code> called <code>dplyr</code>, let’s take a look at what they do:</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -530,7 +539,7 @@ Note
 <div class="question">
 <p>Adjust the code above to find out the lowest performing countries for reading <code>PV1READ</code> by gender that are not in the OECD</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">filter</span>(OECD <span class="sc">==</span> <span class="st">"No"</span>) <span class="sc">%&gt;%</span></span>
@@ -672,7 +681,7 @@ Tip
 <span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">select</span>(CNT BELONG) <span class="sc">%&gt;%</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>PISA_2022 <span class="sc">%&gt;%</span>  <span class="co">#1 missing pipe</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">select</span>(CNT, BELONG) <span class="co">#2 no comma between column names, #3 stray pipe on end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -682,7 +691,7 @@ Tip
 <li>Write a <code>select</code> statement to display the month <code>ST003D02T</code> and year of birth <code>ST003D03T</code> and the gender <code>ST004D01T</code> of each student.</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">select</span>(ST003D02T, ST003D03T, ST004D01T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -692,7 +701,7 @@ Tip
 <li>Write a <code>select</code> statement to show all the fields that are to do with well being and health, e.g.&nbsp;<code>WB150Q01HA</code> “How is your health?”</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"WB15"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -702,7 +711,7 @@ Tip
 <li>[EXTENSION] Adjust your answer to Q3 so that you select the gender <code>ST004D01T</code> and the ID <code>CNTSTUID</code> of each student in addition to the <code>ST254____</code> fields looking at digital devices in the home:</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">select</span>(CNTSTUID, ST004D01T, <span class="fu">starts_with</span>(<span class="st">"ST254"</span>)) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -878,7 +887,7 @@ Tip
 <span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">filter</span>(<span class="at">CNT =</span> <span class="st">"Finland"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>PISA_2022 <span class="sc">%&gt;%</span>  <span class="co">#1 missing pipe command</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">select</span>(CNT, PV1READ) <span class="sc">%&gt;%</span></span>
@@ -889,7 +898,7 @@ Tip
 <li>Use <code>filter</code> to find all the students with <code>PV1READ</code> grade equal to 333.</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">filter</span>(PV1READ <span class="sc">==</span> <span class="dv">333</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -899,7 +908,7 @@ Tip
 <li>Use <code>filter</code> to find all the students with <code>PV1READ</code>, <code>PV1SCIE</code>, and <code>PV1MATH</code> grades over 800.</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">filter</span>(PV1READ <span class="sc">&gt;</span> <span class="dv">800</span>,</span>
@@ -917,7 +926,7 @@ Tip
 <span id="cb38-4"><a href="#cb38-4"></a>         ESCS <span class="sc">&lt;</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">select</span>(CNT, ESCS) <span class="sc">%&gt;%</span> <span class="co">#1 you have ESCS in the filter, it needs to be in the select as well</span></span>
@@ -931,7 +940,7 @@ Tip
 <li>Use <code>filter</code> to find all the students with <code>Three or more</code> cars in their home <code>ST251Q01JA</code>. How does this compare to those with no <code>None</code> cars?</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># cars 3+ </span></span>
 <span id="cb40-2"><a href="#cb40-2"></a>PISA_2022 <span class="sc">%&gt;%</span></span>
@@ -948,7 +957,7 @@ Tip
 <li>Adjust your code in Q2. to find the number of students with <code>Three or more</code> cars in their home <code>ST251Q01JA</code> in <code>Italy</code>, how does this compare with <code>Spain</code>?</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">select</span>(CNT, ST251Q01JA) <span class="sc">%&gt;%</span></span>
@@ -980,7 +989,7 @@ Tip
 <li>Write a <code>filter</code> to create a table for the number of <code>Female</code> students with reading <code>PV1READ</code> scores lower than 400 in the <code>United Kingdom</code>, store the result as <code>read_low_female</code>, repeat but for <code>Male</code> students and store as <code>read_low_male</code>. Use <code>nrow()</code> to work out if there are more males or females with a low reading score in the UK</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>read_low_female <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>,</span>
@@ -1007,7 +1016,7 @@ Tip
 <li>How many students in the United Kingdom had no television <code>ST254Q01JA</code> <em>OR</em> no connection to the internet <code>ST250Q05JA</code>. <strong>HINT</strong>: use <code>levels(PISA_2022$ST254Q01JA)</code> to look at the levels available for each column.</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>, </span>
 <span id="cb43-2"><a href="#cb43-2"></a>                     ST254Q01JA <span class="sc">==</span> <span class="st">"None"</span> <span class="sc">|</span></span>
@@ -1018,7 +1027,7 @@ Tip
 <li>Which countr[y|ies] had students with <code>NA</code> for Gender, remember to check for <code>NA</code> using <code>is.na()</code>?</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(ST004D01T)) <span class="sc">%&gt;%</span></span>
@@ -1170,7 +1179,7 @@ Important
 <span id="cb53-3"><a href="#cb53-3"></a>  <span class="fu">summarise</span>(<span class="at">num_stus =</span> n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb54-2"><a href="#cb54-2"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span> <span class="co">#1 group_by NOT group #2 missing pipe %&gt;%</span></span>
@@ -1181,7 +1190,7 @@ Important
 <li>Write a <code>group_by</code> and <code>summarise</code> statement to work out the <code>mean</code> and <code>median</code> cultural capital value <code>ESCS</code> for each student by country <code>CNT</code></li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb55-2"><a href="#cb55-2"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
@@ -1193,7 +1202,7 @@ Important
 <li>Using <code>summarise</code> work out, <code>Yes</code> or <code>No</code>, by country <code>CNT</code> and gender <code>ST004D01T</code>, whether students “Agree/disagree: There are enough [digital resources] for every student at my school” <code>IC172Q01JA</code>. Filter out any <code>NA</code> values on <code>IC172Q01JA</code>:</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb56-2"><a href="#cb56-2"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(IC172Q01JA)) <span class="sc">%&gt;%</span></span>
@@ -1347,7 +1356,7 @@ Important
 4 Male      TRUE         189565 0.616</code></pre>
 </div>
 </div>
-<p>For more information on how to <code>mutate</code> fields using <code>ifelse</code>, see <a href="#sec-ifelse">Section&nbsp;8.1</a></p>
+<p>For more information on how to <code>mutate</code> fields using <code>ifelse</code>, see <a href="#sec-ifelse" class="quarto-xref">Section&nbsp;8.1</a></p>
 </section>
 <section id="arrange" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> arrange</h1>
@@ -1543,7 +1552,7 @@ Important
 <div class="question">
 <p>Adjust the code above to work out the percentages of Males and Females <code>ST004D01T</code> in each group. Check to see if the pattern also exists between science <code>PV1SCIE</code> and reading <code>PV1READ</code>:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>adding percentage column</summary>
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb69-2"><a href="#cb69-2"></a>  <span class="fu">mutate</span>(<span class="at">maths_better =</span> </span>
@@ -1560,7 +1569,7 @@ Important
 </details>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>comparing science and reading</summary>
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb70-2"><a href="#cb70-2"></a>  <span class="fu">mutate</span>(<span class="at">sci_better =</span> </span>
@@ -1577,7 +1586,7 @@ Important
 </details>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>comparing science and maths</summary>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb71-2"><a href="#cb71-2"></a>  <span class="fu">mutate</span>(<span class="at">sci_better =</span> </span>
@@ -1594,7 +1603,7 @@ Important
 </details>
 </div>
 </div>
-<p><code>ifelse</code> statements can get a little complicated when using factors (see: <a href="#sec-factors">Section&nbsp;8.2</a>). Take this example. Let’s flag students who have a different home language <code>LANGN</code> to the language that is being used in the PISA assessment tool <code>LANGTEST_QQQ</code>. We make an assumption here that the assessment tool will be the language used at school, so these students will be learning in a different language to their mother tongue. <strong>if</strong> <code>LANGN</code> equals <code>LANGTEST_QQQ</code>, the <code>lang_diff</code> is <code>FALSE</code>, <strong>else</strong> <code>lang_diff</code> is <code>TRUE</code>, this raises an error:</p>
+<p><code>ifelse</code> statements can get a little complicated when using factors (see: <a href="#sec-factors" class="quarto-xref">Section&nbsp;8.2</a>). Take this example. Let’s flag students who have a different home language <code>LANGN</code> to the language that is being used in the PISA assessment tool <code>LANGTEST_QQQ</code>. We make an assumption here that the assessment tool will be the language used at school, so these students will be learning in a different language to their mother tongue. <strong>if</strong> <code>LANGN</code> equals <code>LANGTEST_QQQ</code>, the <code>lang_diff</code> is <code>FALSE</code>, <strong>else</strong> <code>lang_diff</code> is <code>TRUE</code>, this raises an error:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>lang_data <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb72-2"><a href="#cb72-2"></a>  <span class="fu">mutate</span>(<span class="at">lang_diff =</span> </span>
@@ -1832,7 +1841,11 @@ attr(,"label")
 <span id="cb93-2"><a href="#cb93-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
 <span id="cb93-3"><a href="#cb93-3"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-3-Intro_to_analysis_software_files/figure-html/unnamed-chunk-66-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-3-Intro_to_analysis_software_files/figure-html/unnamed-chunk-66-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>To re-order the columns to match the number of students in each month, we can either try to do this manually, which is rather cumbersome:</p>
@@ -1847,7 +1860,11 @@ attr(,"label")
 <span id="cb94-8"><a href="#cb94-8"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)<span class="sc">+</span></span>
 <span id="cb94-9"><a href="#cb94-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-3-Intro_to_analysis_software_files/figure-html/unnamed-chunk-67-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-3-Intro_to_analysis_software_files/figure-html/unnamed-chunk-67-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Or we can get R to do this for us:</p>
@@ -1861,7 +1878,11 @@ attr(,"label")
 <span id="cb95-7"><a href="#cb95-7"></a><span class="fu">ggplot</span>(<span class="at">data=</span>grph_data, <span class="fu">aes</span>(<span class="at">x=</span>ST003D02T, <span class="at">y=</span>n)) <span class="sc">+</span> </span>
 <span id="cb95-8"><a href="#cb95-8"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-3-Intro_to_analysis_software_files/figure-html/unnamed-chunk-68-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="02-3-Intro_to_analysis_software_files/figure-html/unnamed-chunk-68-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>To learn a lot more about factors, see <a href="https://r4ds.had.co.nz/factors.html">Hadley’s chapter</a></p>
@@ -1876,7 +1897,7 @@ attr(,"label")
 <li>How many unique values are there in the <code>OCOD3</code> field for student intended future occupation? How does the most desired career vary by gender?</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1"></a>PISA_2022<span class="sc">$</span>OCOD3 <span class="sc">%&gt;%</span> <span class="fu">unique</span>() <span class="sc">%&gt;%</span> <span class="fu">length</span>()</span>
 <span id="cb96-2"><a href="#cb96-2"></a></span>
@@ -1890,7 +1911,7 @@ attr(,"label")
 <li>write code to work out the <code>mean</code> and <code>median</code> <code>PV1MATH</code> score for each country <code>CNT</code>.</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb97-2"><a href="#cb97-2"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
@@ -1903,7 +1924,7 @@ attr(,"label")
 <li>what is the fourth most popular language at home <code>LANGN</code> spoken by students in schools in the <code>Ireland</code>, how does this compare to <code>Germany</code>?</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb98-2"><a href="#cb98-2"></a>  <span class="fu">filter</span>(CNT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Germany"</span>, <span class="st">"Ireland"</span>)) <span class="sc">%&gt;%</span></span>
@@ -1927,7 +1948,7 @@ attr(,"label")
 <span id="cb99-9"><a href="#cb99-9"></a>            <span class="at">per_scibetter =</span> <span class="dv">100</span><span class="sc">*</span>(sci_win<span class="sc">/</span>students))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1"></a><span class="co"># Work out when more time spent in language lessons than maths lessons</span></span>
 <span id="cb100-2"><a href="#cb100-2"></a>PISA_2022_scimath <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span>  <span class="co">#1 make sure you have the assignment arrow &lt;-</span></span>
@@ -1944,7 +1965,7 @@ attr(,"label")
 <li>By country and gender work out the mean, median and standard deviations of <code>STUBMI</code>, order by the descending <code>mean</code>.</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1"></a>pisa_bmi <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb101-2"><a href="#cb101-2"></a>  <span class="fu">rename</span>(<span class="at">gender =</span> ST004D01T) <span class="sc">%&gt;%</span></span>
@@ -1962,7 +1983,7 @@ attr(,"label")
 <h2 data-number="9.2" class="anchored" data-anchor-id="teacher-dataset"><span class="header-section-number">9.2</span> Teacher dataset</h2>
 <p>To further check your understanding of this section you will be attempting to analyse the 2022 teacher dataset. This dataset includes records for 68054 teachers from 18 countries, including 544 columns, covering attitudinal, demographic and workplace data. You can find the dataset <a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/EbFmgVVbQD9DlIIgOKHDhLcB8bA8lfQMDVSEkcjtByM2cQ?e=zYG4Is">here</a> in the <code>.parquet</code> format.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>example loading code</summary>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1"></a><span class="co"># download the file then</span></span>
 <span id="cb102-2"><a href="#cb102-2"></a><span class="co"># Work out when more time spent in language lessons than maths lessons</span></span>
@@ -1974,7 +1995,7 @@ attr(,"label")
 <li>Work out how many teachers are in the dataset for <code>Portugal</code></li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1"></a>PISA_2022_teacher <span class="sc">%&gt;%</span> </span>
 <span id="cb103-2"><a href="#cb103-2"></a>  <span class="fu">group_by</span>(CNTRYID) <span class="sc">%&gt;%</span></span>
@@ -1986,7 +2007,7 @@ attr(,"label")
 <li>For each country <code>CNTRYID</code> by gender <code>TC001Q01NA</code>, what is the <code>mean</code> time that a teacher has been in the teaching profession <code>TC007Q02NA</code>? Include the number of teachers in each group. Order this to show the country with the longest serving workforce:</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1"></a>PISA_2022_teacher <span class="sc">%&gt;%</span></span>
 <span id="cb104-2"><a href="#cb104-2"></a>  <span class="fu">group_by</span>(CNTRYID, TC001Q01NA) <span class="sc">%&gt;%</span></span>
@@ -1999,7 +2020,7 @@ attr(,"label")
 <li>For each country <code>CNT</code> find out which teachers report that they ‘Help students think critically’ <code>TC199Q07HA</code>. Hin: you’ll need to look at the levels of this question to find the correct filter:</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1"></a>crit_thinking <span class="ot">&lt;-</span> PISA_2022_teacher <span class="sc">%&gt;%</span> </span>
 <span id="cb105-2"><a href="#cb105-2"></a>  <span class="fu">rename</span>(<span class="at">crit_think =</span> TC199Q07HA) <span class="sc">%&gt;%</span></span>
@@ -2026,7 +2047,7 @@ attr(,"label")
 <li>Explore the data on use of technology in the classroom <code>TC169____</code></li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>answer</summary>
 <div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1"></a>PISA_2022_teacher <span class="sc">%&gt;%</span> <span class="fu">select</span>(CNT, TC001Q01NA, <span class="fu">starts_with</span>(<span class="st">"TC169"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -2077,18 +2098,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2120,11 +2130,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2134,8 +2183,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2147,7 +2205,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2191,6 +2372,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2216,6 +2398,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2276,6 +2484,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

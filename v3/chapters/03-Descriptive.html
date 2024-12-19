@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MASTEMR - 03 Descriptive Statistics</title>
+<title>03 Descriptive Statistics – MASTEMR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -98,7 +99,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -107,6 +114,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -121,9 +129,9 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="index.qmd" class="navbar-brand navbar-brand-logo">
     <img src="../images/KCL_logo.png" alt="" class="navbar-logo">
     </a>
@@ -131,20 +139,20 @@ div.csl-indent {
     <span class="navbar-title">MASTEMR</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto">
+        <div class="quarto-navbar-tools tools-end">
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-Descriptive.html">03 Descriptive Statistics</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-Descriptive.html">03 Descriptive Statistics</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -153,7 +161,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -179,9 +187,9 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">02 Introduction to R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -220,26 +228,26 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/04-Presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">04 Presentations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/05-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/04-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05 Introduction to PISA</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/06-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">06 Hypothesis testing and Chi-square tests</span></a>
+  <a href="../chapters/05-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Presentations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/07-T-testsPISA.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07 T-tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -272,24 +280,18 @@ div.csl-indent {
  <span class="menu-text">12 The value of quantitative methods</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/QandA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Questions and Answers</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Additional tests</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/A7-SEM.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/A8-SEM.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SEM</span></a>
   </div>
 </li>
@@ -297,9 +299,9 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendicies</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -334,12 +336,18 @@ div.csl-indent {
  <span class="menu-text">Self Study Tasks</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A6-QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -395,7 +403,9 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <section id="pre-reading-and-pre-seminar-task" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Pre-reading and pre-seminar task</h1>
@@ -566,23 +576,23 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-3" data-code-annotation="1">line 1 passes the whole <code>PISA_2022</code> dataset and pipes it into the next line using <code>%&gt;%</code></span>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">line 1 passes the whole <code>PISA_2022</code> dataset and pipes it into the next line using <code>%&gt;%</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-3" data-code-annotation="2">line 2 <code>filters</code> out any results that are not from the UK by finding all the rows where <code>CNT</code> equals <code>==</code> <code>"United Kingdom"</code>. Note the <code>==</code> for checking equality. The result is then piped (<code>%&gt;%</code>) to the next line</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="2">line 2 <code>filters</code> out any results that are not from the UK by finding all the rows where <code>CNT</code> equals <code>==</code> <code>"United Kingdom"</code>. Note the <code>==</code> for checking equality. The result is then piped (<code>%&gt;%</code>) to the next line</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-3" data-code-annotation="3">line 3 uses <code>summarise</code> to calculate, for the UK, the mean of <code>PV1SCIE</code> (the science score) and puts the result in a column called <code>MeanSci</code></span>
+<span data-code-cell="annotated-cell-3" data-code-lines="5" data-code-annotation="3">line 3 uses <code>summarise</code> to calculate, for the UK, the mean of <code>PV1SCIE</code> (the science score) and puts the result in a column called <code>MeanSci</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="6" data-code-cell="annotated-cell-3" data-code-annotation="4">line 4 uses <code>summarise</code> to calculate, for the UK, the mean of <code>PV1MATH</code> (the maths score) and puts the result in a column called <code>MeanMath</code></span>
+<span data-code-cell="annotated-cell-3" data-code-lines="6" data-code-annotation="4">line 4 uses <code>summarise</code> to calculate, for the UK, the mean of <code>PV1MATH</code> (the maths score) and puts the result in a column called <code>MeanMath</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="7" data-code-cell="annotated-cell-3" data-code-annotation="5">line 5 uses the <code>n()</code> function to count the number of students in the UK sample</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="7" data-code-annotation="5">line 5 uses the <code>n()</code> function to count the number of students in the UK sample</span>
 </dd>
 </dl>
 </div>
@@ -646,23 +656,23 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-4" data-code-annotation="1">line 1 passes the whole <code>PISA_2022</code> dataset and pipes it into the next line using <code>%&gt;%</code></span>
+<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="1">line 1 passes the whole <code>PISA_2022</code> dataset and pipes it into the next line using <code>%&gt;%</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-4" data-code-annotation="2">line 2 uses <code>group_by</code> to use the values in <code>CNT</code> to group the data - i.e.&nbsp;the calculate the means for each country</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="2">line 2 uses <code>group_by</code> to use the values in <code>CNT</code> to group the data - i.e.&nbsp;the calculate the means for each country</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-4" data-code-annotation="3">line 3 uses <code>summarise</code> to calculate the mean of <code>PV1SCIE</code> (the science score) and puts the result in a column called <code>MeanSci</code></span>
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="3">line 3 uses <code>summarise</code> to calculate the mean of <code>PV1SCIE</code> (the science score) and puts the result in a column called <code>MeanSci</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-4" data-code-annotation="4">line 4 uses <code>summarise</code> to calculate the mean of <code>PV1MATH</code> (the maths score) and puts the result in a column called <code>MeanMath</code></span>
+<span data-code-cell="annotated-cell-4" data-code-lines="5" data-code-annotation="4">line 4 uses <code>summarise</code> to calculate the mean of <code>PV1MATH</code> (the maths score) and puts the result in a column called <code>MeanMath</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="6" data-code-cell="annotated-cell-4" data-code-annotation="5">line 5 uses the <code>n()</code> function to count the number of students the sample</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="6" data-code-annotation="5">line 5 uses the <code>n()</code> function to count the number of students the sample</span>
 </dd>
 </dl>
 </div>
@@ -739,27 +749,27 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-5" data-code-annotation="1">line 1 creates a new data frame, <code>GenderUK</code> into which the results manipulated <code>PISA_2022</code> will be placed - <code>PISA_2022</code> is piped to the next steps</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="3" data-code-annotation="1">line 1 creates a new data frame, <code>GenderUK</code> into which the results manipulated <code>PISA_2022</code> will be placed - <code>PISA_2022</code> is piped to the next steps</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-5" data-code-annotation="2">line 2 uses <code>select</code> to select the columns of interest <code>CNT</code> (country) and <code>ST004D01T</code> (gender)</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="4" data-code-annotation="2">line 2 uses <code>select</code> to select the columns of interest <code>CNT</code> (country) and <code>ST004D01T</code> (gender)</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-5" data-code-annotation="3">line 3 uses <code>filter</code> to filter for only the entries for the UK</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="5" data-code-annotation="3">line 3 uses <code>filter</code> to filter for only the entries for the UK</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="6" data-code-cell="annotated-cell-5" data-code-annotation="4">line 4 - as we have filtered for the UK, we would get 0 entires for all the other levels (all the other countries). To stop those 0s confusing our table we use <code>droplevels()</code> to ignore the levels we don’t need</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="6" data-code-annotation="4">line 4 - as we have filtered for the UK, we would get 0 entires for all the other levels (all the other countries). To stop those 0s confusing our table we use <code>droplevels()</code> to ignore the levels we don’t need</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="9" data-code-cell="annotated-cell-5" data-code-annotation="5">line 5 - to create summary of the counts, we use <code>table</code> to create a summary table. We turn the table into a data frame with <code>as.data.frame</code> to make it easier to manipulate</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="9" data-code-annotation="5">line 5 - to create summary of the counts, we use <code>table</code> to create a summary table. We turn the table into a data frame with <code>as.data.frame</code> to make it easier to manipulate</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="10" data-code-cell="annotated-cell-5" data-code-annotation="6">line 6 - print the table</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="10" data-code-annotation="6">line 6 - print the table</span>
 </dd>
 </dl>
 </div>
@@ -782,16 +792,16 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-6" data-code-annotation="1">line 1 - to calculate a percentage, you first need to find the total of the frequency column in <code>GenderUKSummary</code>. We use <code>GenderUKSummary$Freq</code> to indicate the column and <code>sum</code> to find the total<br>
+<span data-code-cell="annotated-cell-6" data-code-lines="3" data-code-annotation="1">line 1 - to calculate a percentage, you first need to find the total of the frequency column in <code>GenderUKSummary</code>. We use <code>GenderUKSummary$Freq</code> to indicate the column and <code>sum</code> to find the total<br>
 </span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-6" data-code-annotation="2">line 2 - pipe <code>GenderUKSummary</code> so we can manipulate it</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="4" data-code-annotation="2">line 2 - pipe <code>GenderUKSummary</code> so we can manipulate it</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-6" data-code-annotation="3">line 3 - to add a new column (with the percentage in) we use <code>mutate</code>. We give the name of the new column <code>PerSch =</code> and set out the calculation we want to perform, dividing the frequency in each row, by the total and multiplying by 100: <code>100*(Freq / total)</code></span>
+<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="3">line 3 - to add a new column (with the percentage in) we use <code>mutate</code>. We give the name of the new column <code>PerSch =</code> and set out the calculation we want to perform, dividing the frequency in each row, by the total and multiplying by 100: <code>100*(Freq / total)</code></span>
 </dd>
 </dl>
 </div>
@@ -852,32 +862,36 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-7" data-code-annotation="1">line 1 - create a new dataframe for plotting <code>DDplot</code> - we pipe PISA_2022 into the new data frame</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="2" data-code-annotation="1">line 1 - create a new dataframe for plotting <code>DDplot</code> - we pipe PISA_2022 into the new data frame</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-7" data-code-annotation="2">line 2 - <code>select</code> the columns we need, <code>CNT</code> (country) and <code>ST253Q01JA</code> the item on digital devices</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="3" data-code-annotation="2">line 2 - <code>select</code> the columns we need, <code>CNT</code> (country) and <code>ST253Q01JA</code> the item on digital devices</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-7" data-code-annotation="3">line 3 - ‘filter’ for only UK entries</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="4" data-code-annotation="3">line 3 - ‘filter’ for only UK entries</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="7" data-code-cell="annotated-cell-7" data-code-annotation="4">line 4 - to plot the chart, we pass the data to the plotting function <code>ggplot</code></span>
+<span data-code-cell="annotated-cell-7" data-code-lines="7" data-code-annotation="4">line 4 - to plot the chart, we pass the data to the plotting function <code>ggplot</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="8" data-code-cell="annotated-cell-7" data-code-annotation="5">line 5 - the first step in plotting is specifying the aesthetics (<code>aes</code>) - for a bar graph it is simple, we only need to state what is on the x-axis (<code>x = ST253Q01JA</code>) - the number of digital devices</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="8" data-code-annotation="5">line 5 - the first step in plotting is specifying the aesthetics (<code>aes</code>) - for a bar graph it is simple, we only need to state what is on the x-axis (<code>x = ST253Q01JA</code>) - the number of digital devices</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="9" data-code-cell="annotated-cell-7" data-code-annotation="6">line 6 - we specify the geom we want, in this case a bar chart with <code>geom_bar()</code></span>
+<span data-code-cell="annotated-cell-7" data-code-lines="9" data-code-annotation="6">line 6 - we specify the geom we want, in this case a bar chart with <code>geom_bar()</code></span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>That is a good first attempt, but there are some aspects we will want to tidy up.</p>
@@ -895,32 +909,36 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-8" data-code-annotation="1">line 1 - to plot the chart, we pass the data to the plotting function <code>ggplot</code></span>
+<span data-code-cell="annotated-cell-8" data-code-lines="3" data-code-annotation="1">line 1 - to plot the chart, we pass the data to the plotting function <code>ggplot</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-8" data-code-annotation="2">line 2 - the first step in plotting is specifying the aesthetics (<code>aes</code>) - for a bar graph it is simple, we only need to state what is on the x-axis (<code>x = ST253Q01JA</code>) - the number of digital devices</span>
+<span data-code-cell="annotated-cell-8" data-code-lines="4" data-code-annotation="2">line 2 - the first step in plotting is specifying the aesthetics (<code>aes</code>) - for a bar graph it is simple, we only need to state what is on the x-axis (<code>x = ST253Q01JA</code>) - the number of digital devices</span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-8" data-code-annotation="3">line 3 - we specify the geom we want, in this case a bar chart with <code>geom_bar()</code></span>
+<span data-code-cell="annotated-cell-8" data-code-lines="5" data-code-annotation="3">line 3 - we specify the geom we want, in this case a bar chart with <code>geom_bar()</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="6" data-code-cell="annotated-cell-8" data-code-annotation="4">line 4 - we set the x-axis label with <code>xlab("")</code></span>
+<span data-code-cell="annotated-cell-8" data-code-lines="6" data-code-annotation="4">line 4 - we set the x-axis label with <code>xlab("")</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="7" data-code-cell="annotated-cell-8" data-code-annotation="5">line 5 - we set the y-axis label with <code>ylab("")</code></span>
+<span data-code-cell="annotated-cell-8" data-code-lines="7" data-code-annotation="5">line 5 - we set the y-axis label with <code>ylab("")</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-8" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="8" data-code-cell="annotated-cell-8" data-code-annotation="6">line 6 - we give a titleusing <code>ggtitle("")</code></span>
+<span data-code-cell="annotated-cell-8" data-code-lines="8" data-code-annotation="6">line 6 - we give a titleusing <code>ggtitle("")</code></span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>You can add colour, by specifying that the fill of the bars should be by the value of <code>IC009Q11NA</code> in the aesthetics: <code>aes(x=IC009Q11NA, fill=IC009Q11NA)</code>.</p>
@@ -937,12 +955,16 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-9" data-code-annotation="2">line 2 - to set the colour of the columns, within <code>aes</code> we specify the fill should be set by the variable <code>ST253Q01JA</code> (the number of digital devices)</span>
+<span data-code-cell="annotated-cell-9" data-code-lines="4" data-code-annotation="2">line 2 - to set the colour of the columns, within <code>aes</code> we specify the fill should be set by the variable <code>ST253Q01JA</code> (the number of digital devices)</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>To rotate the text on the x-axis you can add the text: <code>theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))</code>. Inserting <code>\n</code> into the title adds a line break to divide the long title. We can turn the legend off with <code>theme(legend.position = "none")</code></p>
@@ -961,20 +983,24 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-10" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="8" data-code-cell="annotated-cell-10" data-code-annotation="6">line 6 - note that the <code>\n</code> in the title inserts a line break</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="8" data-code-annotation="6">line 6 - note that the <code>\n</code> in the title inserts a line break</span>
 </dd>
 <dt data-target-cell="annotated-cell-10" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-lines="9" data-code-cell="annotated-cell-10" data-code-annotation="7">line 7 - to rotate the text on the x-axis we use <code>theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))</code></span>
+<span data-code-cell="annotated-cell-10" data-code-lines="9" data-code-annotation="7">line 7 - to rotate the text on the x-axis we use <code>theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-10" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-lines="10" data-code-cell="annotated-cell-10" data-code-annotation="8">line 8 - we can turn off the legend by adding: <code>theme(legend.position = "none")</code></span>
+<span data-code-cell="annotated-cell-10" data-code-lines="10" data-code-annotation="8">line 8 - we can turn off the legend by adding: <code>theme(legend.position = "none")</code></span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>You make wish to plot multiple series, for example, the interactive whiteboard data reported by boys and girls. In that case, we need to include the gender vector <code>ST004D01T</code> in the data frame to plot <code>DDplot</code>. To highlight the difference between boys and girls, in the aesthetics we set the fill colour by the gender variable: <code>fill=ST004D01T</code>. Finally, we need to tell ggplot to plot the bars side-by-side, rather than stacking them - you do this by specifying <code>position = position_dodge2()</code>.</p>
@@ -998,12 +1024,16 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-11" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-11" data-code-annotation="2">line 2 - to plot two series, we include gender (<code>ST004D01T</code>) in the filter</span>
+<span data-code-cell="annotated-cell-11" data-code-lines="4" data-code-annotation="2">line 2 - to plot two series, we include gender (<code>ST004D01T</code>) in the filter</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>If you take `<code>position = position_dodge2()</code> out, ggplot will default to stacking the bars. The long response for no devices (<code>"There are no &lt;digital devices&gt; with screens."</code>) is not terribly aesthetically pleasing. I will use <code>mutate</code> to change it - <code>recode</code> changes all the <code>"There are no &lt;digital devices&gt; with screens."</code> to <code>"None"</code> in the vector <code>ST253Q01JA</code>.</p>
@@ -1027,7 +1057,11 @@ Tip
 <span id="cb22-17"><a href="#cb22-17"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>) <span class="sc">+</span></span>
 <span id="cb22-18"><a href="#cb22-18"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>You can add text, for example the counts, to the graphs, using <code>geom_text</code>. We set the <code>label</code> to <code>after_stat(count)</code>and <code>stat=count</code>. Because the bars have been positioned using <code>position_dodge</code>, you need to do the same for the labels. <code>vjust=-0.5</code> sets the height of the label over the bar.</p>
@@ -1055,12 +1089,16 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-13" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="9" data-code-cell="annotated-cell-13" data-code-annotation="6">line 6 - the label <code>There are no &lt;digital devices&gt; with screens</code> is too long to fit on the plot. We can use the <code>recode</code> function, which switches all entries of <code>There are no &lt;digital devices&gt; with screens</code> to <code>None</code> which produces a neater plot</span>
+<span data-code-cell="annotated-cell-13" data-code-lines="9" data-code-annotation="6">line 6 - the label <code>There are no &lt;digital devices&gt; with screens</code> is too long to fit on the plot. We can use the <code>recode</code> function, which switches all entries of <code>There are no &lt;digital devices&gt; with screens</code> to <code>None</code> which produces a neater plot</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1087,28 +1125,32 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-14" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-14" data-code-annotation="2">line 2 - select the columns we need for our new <code>plotdata</code> data frame, <code>CNT</code> (country), <code>PV1SCIE</code> (science score), and <code>PV1MATH</code> (maths score).</span>
+<span data-code-cell="annotated-cell-14" data-code-lines="4" data-code-annotation="2">line 2 - select the columns we need for our new <code>plotdata</code> data frame, <code>CNT</code> (country), <code>PV1SCIE</code> (science score), and <code>PV1MATH</code> (maths score).</span>
 </dd>
 <dt data-target-cell="annotated-cell-14" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-14" data-code-annotation="3">line 3 - filer for UK data</span>
+<span data-code-cell="annotated-cell-14" data-code-lines="5" data-code-annotation="3">line 3 - filer for UK data</span>
 </dd>
 <dt data-target-cell="annotated-cell-14" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="9" data-code-cell="annotated-cell-14" data-code-annotation="4">line 4 - pass the <code>plotdata</code> we created to <code>ggplot</code></span>
+<span data-code-cell="annotated-cell-14" data-code-lines="9" data-code-annotation="4">line 4 - pass the <code>plotdata</code> we created to <code>ggplot</code></span>
 </dd>
 <dt data-target-cell="annotated-cell-14" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="10" data-code-cell="annotated-cell-14" data-code-annotation="5">line 5 - set the aesthetics, unlike the bar graph, for a scatter plot we set the variable to plot on the x and y axes (<code>aes(x = PV1MATH, y = PV1SCIE)</code>)</span>
+<span data-code-cell="annotated-cell-14" data-code-lines="10" data-code-annotation="5">line 5 - set the aesthetics, unlike the bar graph, for a scatter plot we set the variable to plot on the x and y axes (<code>aes(x = PV1MATH, y = PV1SCIE)</code>)</span>
 </dd>
 <dt data-target-cell="annotated-cell-14" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="11" data-code-cell="annotated-cell-14" data-code-annotation="6">line 6 - to plot a scatter plot, we use <code>geom_point</code></span>
+<span data-code-cell="annotated-cell-14" data-code-lines="11" data-code-annotation="6">line 6 - to plot a scatter plot, we use <code>geom_point</code></span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>We can make things more pleasing by adding more features. For example, we can add colour (<code>geom_point(colour = "blue")</code>) and rename the axes <code>labs(x = "Mathematics score", y = "Science score")</code>. Note when adding to <code>ggplot</code>, the <code>+</code> should come at the end of the line before the new addition to avoid an error.</p>
@@ -1128,16 +1170,20 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-15" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="10" data-code-cell="annotated-cell-15" data-code-annotation="6">line 6 - inside <code>geom_point</code> we set <code>colour = "blue"</code> to plot blue points</span>
+<span data-code-cell="annotated-cell-15" data-code-lines="10" data-code-annotation="6">line 6 - inside <code>geom_point</code> we set <code>colour = "blue"</code> to plot blue points</span>
 </dd>
 <dt data-target-cell="annotated-cell-15" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-lines="11" data-code-cell="annotated-cell-15" data-code-annotation="7">line 7 - we can use <code>labs()</code> to set the x and y axes labels</span>
+<span data-code-cell="annotated-cell-15" data-code-lines="11" data-code-annotation="7">line 7 - we can use <code>labs()</code> to set the x and y axes labels</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>We can also add a line using (<code>geom_smooth(method='lm')</code>) - here <code>lm</code> specifies a linear plot (i.e.&nbsp;a straight line).</p>
@@ -1159,12 +1205,16 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-16" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-lines="13" data-code-cell="annotated-cell-16" data-code-annotation="8">line 8 - <code>geom_smooth</code> is a general function for drawing lines. If we set the <code>(method - 'lm')</code> that uses the linear method (lm) giving a straight line.</span>
+<span data-code-cell="annotated-cell-16" data-code-lines="13" data-code-annotation="8">line 8 - <code>geom_smooth</code> is a general function for drawing lines. If we set the <code>(method - 'lm')</code> that uses the linear method (lm) giving a straight line.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>We can also change the colour of the points by a variable in the data frame - for example by gender (<code>aes(colour=ST004D01T</code>) - NB In order to change colour by gender, the gender variable (<code>ST0040D01T</code>) must be included in the data set to plot. We can vary the size of points and make them slightly transparent (their alpha level): <code>geom_point(alpha=0.4, size=0.6)</code>, and move the legend to the bottom (<code>theme(legend.position = "bottom")</code>)</p>
@@ -1187,12 +1237,16 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-17" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="9" data-code-cell="annotated-cell-17" data-code-annotation="6">line 6 - set the colour of the points by gender (<code>colour = ST004D01T</code>)</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="9" data-code-annotation="6">line 6 - set the colour of the points by gender (<code>colour = ST004D01T</code>)</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1247,7 +1301,7 @@ Tip
 </ol>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Using the command line</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="co"># a) Find the number of students (i.e. the number of rows) in the PISA 2022 data frame</span></span>
@@ -1289,7 +1343,7 @@ Tip
 </ol>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Using the command line</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a></span>
@@ -1324,7 +1378,7 @@ Tip
 </ul>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Summarising responses in the US and UK and finding means</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a></span>
@@ -1372,7 +1426,7 @@ Tip
 <p><code>WB171Q01HA</code> asks participants to think of the last time you had a break between classes at school: How did you feel: Happy. For students in France, find out the percentage of students who responded with the different options: Not at all A little Quite a bit Extremely Valid Skip Not Applicable Invalid No Response Missing. (Hint: don’t forget to <code>droplevels()</code>).</p>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Finding the percentage of students who feel happy between lessons in France</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a></span>
@@ -1393,7 +1447,7 @@ Tip
 <p><code>ST251Q06JA</code> asks students if they have a musical instrument in their home. What percentage of students in the UK have no instruments in their home? What is the percentage in China?</p>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Finding the percentage of students with no musical instruments in the UK and China</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="co"># Select the relevant variables, filter for the countries and group - dropping levels to cut unnecessary countries</span></span>
@@ -1438,7 +1492,7 @@ Tip
 </ul>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># Select country and question data and Filter for the UK and France</span></span>
 <span id="cb28-2"><a href="#cb28-2"></a>Rumplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
@@ -1464,7 +1518,7 @@ Tip
 </ul>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Create a data set related to books in Germany and include gender</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a>Bookplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
@@ -1500,7 +1554,7 @@ Tip
 </ul>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Create a data set of science scores, and use group_by and summarise to create mean scores by country</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a></span>
@@ -1526,7 +1580,7 @@ Tip
 </ul>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE, ESCS)<span class="sc">%&gt;%</span></span>
@@ -1548,7 +1602,7 @@ Tip
 </ul>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1READ, ST004D01T) <span class="sc">%&gt;%</span></span>
@@ -1574,7 +1628,7 @@ Tip
 </ol>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Create a data frame of ESCS scores and mathematics scores</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>plotdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
@@ -1634,7 +1688,11 @@ Tip
 <span id="cb36-13"><a href="#cb36-13"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
 <span id="cb36-14"><a href="#cb36-14"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Number of responses"</span>, <span class="at">x =</span> <span class="st">"Scores range"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="question">
@@ -1654,7 +1712,7 @@ Tip
 </div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Creates distribution of schools by size</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a>binnedsize <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with binned data</span></span>
@@ -1687,7 +1745,7 @@ Tip
 <p>Plot a binned <code>geom_bar</code> graph of the <code>HOMEPOS</code> scores in the UK and Belarus on the same axes.</p>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Creates distribution of schools by size</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a>binnedwealth <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with binned data</span></span>
@@ -1755,7 +1813,11 @@ Tip
 <span id="cb43-10"><a href="#cb43-10"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> meanSci)) <span class="sc">+</span></span>
 <span id="cb43-11"><a href="#cb43-11"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"viridis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>In ggplot, by default, the aesthetics are passed from one layer to the next. In our first <code>aes</code> call we set a grouping (<code>group=group</code>). However, when we come to the labeling function <code>geom_text_repel</code>, the data frame <code>Labels</code> is not grouped. We therefore need to use new aesthetics and want to ignore the original aesthetics (<code>aes(x=long, y=lat, group=group,label=region))</code>) we previously set.We do this with the command <code>inherit.aes = FALSE</code> (i.e.&nbsp;do not inherit the previous aesthetics).</p>
@@ -1776,14 +1838,18 @@ Tip
 <span id="cb44-13"><a href="#cb44-13"></a>                 <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb44-14"><a href="#cb44-14"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">label =</span> region))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-48-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-48-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="question">
 <p>Plot mean PISA mathematics scores on a world map, labelling the countries.</p>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># Create a data.frame of mathematics scores</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a>WorldMath <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
@@ -1847,7 +1913,11 @@ Tip
 <span id="cb46-9"><a href="#cb46-9"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>)<span class="sc">+</span></span>
 <span id="cb46-10"><a href="#cb46-10"></a>  <span class="fu">ylab</span>(<span class="st">"Science Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-50-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-50-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>You can rotate the plot using <code>+coord_flip()</code> and add black dots for the mean using: <code>stat_summary(fun = "mean", geom = "point", color = "black")</code>. You can also try <code>geom= "crossbar"</code>. Because we have two groups (male and female), we need to add <code>position = position_dodge(width=0.9)</code> to make the dots appear in the right place</p>
@@ -1870,14 +1940,18 @@ Tip
 <span id="cb47-16"><a href="#cb47-16"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> <span class="st">"mean"</span>, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">color =</span> <span class="st">"black"</span>,</span>
 <span id="cb47-17"><a href="#cb47-17"></a>               <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width=</span><span class="fl">0.9</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-51-1.png" class="img-fluid" style="width:95.0%"></p>
+<div>
+<figure class="figure">
+<p><img src="03-Descriptive_files/figure-html/unnamed-chunk-51-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="question">
 <p>Plot violin plots of PISA <code>HOMEPOS</code> scores, by gender, for the UK, US, Sweden and Finland.</p>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># Create a data frame of WEALTH scores for the 4 countries including gender</span></span>
 <span id="cb48-2"><a href="#cb48-2"></a>PISAsubset<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
@@ -1916,13 +1990,14 @@ Tip
 <ul>
 <li><p>Further useful guidance on graphing can be found at the <a href="https://github.com/cxli233/FriendsDontLetFriends#1-friends-dont-let-friends-make-bar-plots-for-means-separation">Friends Don’t Let Friends Make Bad Graphs</a> pages. For example, note the advice that: ‘Friends Don’t Let Friends Make Pie Chart’ - the eye is not very good at interpreting the angles on sections of pie charts - differences between sectors of similar sizes can be hard to judge, so <a href="https://www.data-to-viz.com/caveat/pie.html">their use has been criticized</a>. A stacked bar chart is a better option.</p></li>
 <li><p>Researchers have recently suggested journals avoid bar graphs - bar charts mask the distribution of points and can misrepresent the data <span class="citation" data-cites="weissgerber2015beyond">(<a href="#ref-weissgerber2015beyond" role="doc-biblioref">Weissgerber et al. 2015</a>)</span>. Box plots or, if samples are large enough, violin plots are recommended.</p></li>
+<li><p>See also <a href="https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/">I’ve Stopped Using Box Plots. Should You?</a></p></li>
 </ul>
 
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-davis2013introduction" class="csl-entry" role="listitem">
 Davis, Lennard J. 2013. <span>“Introduction: Normality, Power, and Culture.”</span> <em>The Disability Studies Reader</em> 4: 1–14. <a href="https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15">https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15</a>.
 </div>
@@ -1971,18 +2046,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2014,11 +2078,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2028,8 +2131,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2041,7 +2153,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2085,6 +2320,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2110,6 +2346,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2170,6 +2432,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
