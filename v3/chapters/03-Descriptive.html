@@ -132,10 +132,10 @@ div.csl-indent {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="index.qmd" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../images/KCL_logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="index.qmd">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MASTEMR</span>
     </a>
   </div>
@@ -229,7 +229,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">05 Introduction to PISA</span></a>
+ <span class="menu-text">04 Introduction to PISA</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -241,13 +241,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07 T-tests</span></a>
+ <span class="menu-text">06 T-tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">06 Hypothesis testing and Chi-square tests</span></a>
+ <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -368,7 +368,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#seminar-activities" id="toc-seminar-activities" class="nav-link" data-scroll-target="#seminar-activities"><span class="header-section-number">6</span> Seminar activities</a>
   <ul class="collapse">
-  <li><a href="#task-1---discussion" id="toc-task-1---discussion" class="nav-link" data-scroll-target="#task-1---discussion"><span class="header-section-number">6.1</span> Task 1 - Discussion</a></li>
+  <li><a href="#task-1---what-makes-a-good-graph" id="toc-task-1---what-makes-a-good-graph" class="nav-link" data-scroll-target="#task-1---what-makes-a-good-graph"><span class="header-section-number">6.1</span> Task 1 - What makes a good graph?</a></li>
   <li><a href="#task-2---using-the-command-line" id="toc-task-2---using-the-command-line" class="nav-link" data-scroll-target="#task-2---using-the-command-line"><span class="header-section-number">6.2</span> Task 2 - Using the command line</a></li>
   <li><a href="#task-3---using-the-summary-function" id="toc-task-3---using-the-summary-function" class="nav-link" data-scroll-target="#task-3---using-the-summary-function"><span class="header-section-number">6.3</span> Task 3 - Using the <code>summary</code> function</a></li>
   <li><a href="#task-4---creating-summary-tables" id="toc-task-4---creating-summary-tables" class="nav-link" data-scroll-target="#task-4---creating-summary-tables"><span class="header-section-number">6.4</span> Task 4 - Creating summary tables</a></li>
@@ -854,7 +854,7 @@ Tip
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-7-3" class="code-annotation-target"><a href="#annotated-cell-7-3"></a>  <span class="fu">select</span>(CNT, ST253Q01JA) <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
 <span id="annotated-cell-7-5"><a href="#annotated-cell-7-5"></a></span>
-<span id="annotated-cell-7-6"><a href="#annotated-cell-7-6"></a><span class="co"># use DDplot data to create a graph</span></span>
+<span id="annotated-cell-7-6"><a href="#annotated-cell-7-6"></a><span class="co"># use the DDplot data to create a graph</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-7-7" class="code-annotation-target"><a href="#annotated-cell-7-7"></a><span class="fu">ggplot</span>(<span class="at">data =</span> DDplot,</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-7-8" class="code-annotation-target"><a href="#annotated-cell-7-8"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ST253Q01JA)) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-7-9" class="code-annotation-target"><a href="#annotated-cell-7-9"></a>  <span class="fu">geom_bar</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1266,24 +1266,15 @@ Tip
 </section>
 <section id="seminar-activities" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Seminar activities</h1>
-<section id="task-1---discussion" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="task-1---discussion"><span class="header-section-number">6.1</span> Task 1 - Discussion</h2>
-<p>Thee discussion activity is based on the set reading <span class="citation" data-cites="davis2013introduction">Davis (<a href="#ref-davis2013introduction" role="doc-biblioref">2013</a>)</span> <a href="https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15">Link to chapter</a></p>
-<p><img src="images/03 Normal Curve-01.jpg" class="img-fluid"></p>
+<section id="task-1---what-makes-a-good-graph" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="task-1---what-makes-a-good-graph"><span class="header-section-number">6.1</span> Task 1 - What makes a good graph?</h2>
 <div class="question">
-<p>Consider how and why we think of things as being ‘normal’ (or not). Some suggested questions for group discussion are:</p>
+<p>Consider an example of a good and a bad graph / data representation.</p>
 <ul>
-<li>What were your immediate thoughts on reading this paper?</li>
-<li>In what ways have you yourself been aware of being compared against norms, averages or ideals in the past? How do/did you feel about that?</li>
-<li>As an education professional, have you compared individual students against any expected norms, averages, or ideals? And have you compared groups of students against each other?</li>
-<li>When and how was this useful - what was gained?</li>
-<li>When and how was this problematic - what issues arose?</li>
-<li>Thinking about the points made in the reading, consider how different students may be advantaged or disadvantaged through the use of such comparisons in education settings.</li>
-</ul>
-<p>Note that the PISA data collection protocol allows countries to exclude up to 5% of the relevant population (see the PISA 2018 technical report <span class="citation" data-cites="OECD2018technical">(<a href="#ref-OECD2018technical" role="doc-biblioref">OECD 2018</a>)</span>, Annex A2), in particular allowing the exclusion from the data of either individual students by their disability status, or whole schools which provide specialist education (e.g.&nbsp;for blind students). Permitted exclusions include: “intellectual disability, i.e.&nbsp;a mental or emotional disability resulting in the student being so cognitively delayed that he/she could not perform in the PISA testing environment”, and “functional disability, i.e.&nbsp;a moderate to severe permanent physical disability resulting in the student being unable to perform in the PISA testing environment” along with other exclusions.</p>
-<ul>
-<li>What impact might these exclusions have on the analyses produced?</li>
-<li>The exclusion and under-representation of disabled students has been challenged in the European Parliament. What do you think about this?</li>
+<li>is the type of graph appropriate for the data? Can you think of a better choice?</li>
+<li>are the data fairly represented? Are there features that skew how the data might be read? (broken axes, different scales on different sub-graphs, improper scaling, missing labels, omitted data, unhelpful 3D features, poor use of colour)</li>
+<li>are there any unnecessary features, labels or data? What could be added? What is missing?</li>
+<li>does the graph tell a clear story? What features allow or prevent a clear message about the data coming across to the reader?</li>
 </ul>
 </div>
 </section>
@@ -2000,9 +1991,6 @@ Tip
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-davis2013introduction" class="csl-entry" role="listitem">
 Davis, Lennard J. 2013. <span>“Introduction: Normality, Power, and Culture.”</span> <em>The Disability Studies Reader</em> 4: 1–14. <a href="https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15">https://ieas-szeged.hu/downtherabbithole/wp-content/uploads/2018/02/Lennard-J.-Davis-ed.-The-Disability-Studies-Reader-Routledge-2014.pdf#page=15</a>.
-</div>
-<div id="ref-OECD2018technical" class="csl-entry" role="listitem">
-OECD. 2018. <span>“Technical Report.”</span> OECD, Paris. <a href="https://www.oecd.org/pisa/data/pisa2018technicalreport/PISA2018-TecReport-Ch-01-Programme-for-International-Student-Assessment-An-Overview.pdf">https://www.oecd.org/pisa/data/pisa2018technicalreport/PISA2018-TecReport-Ch-01-Programme-for-International-Student-Assessment-An-Overview.pdf</a>.
 </div>
 <div id="ref-tufte2001visual" class="csl-entry" role="listitem">
 Tufte, Edward R. 2001. <em>The Visual Display of Quantitative Information</em>. Vol. 2. Graphics Press.

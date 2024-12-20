@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>06 Hypothesis testing and Chi-square tests – MASTEMR</title>
+<title>07 Hypothesis testing and Chi-square tests – MASTEMR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -161,10 +161,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="index.qmd" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../images/KCL_logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="index.qmd">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MASTEMR</span>
     </a>
   </div>
@@ -178,7 +178,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/07-ChisqPISA.html">06 Hypothesis testing and Chi-square tests</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/07-ChisqPISA.html">07 Hypothesis testing and Chi-square tests</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -258,7 +258,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">05 Introduction to PISA</span></a>
+ <span class="menu-text">04 Introduction to PISA</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -270,13 +270,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07 T-tests</span></a>
+ <span class="menu-text">06 T-tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">06 Hypothesis testing and Chi-square tests</span></a>
+ <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -390,7 +390,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing"><span class="header-section-number">2</span> Hypothesis testing</a>
   <ul class="collapse">
-  <li><a href="#choosing-a-hypotheis-test" id="toc-choosing-a-hypotheis-test" class="nav-link" data-scroll-target="#choosing-a-hypotheis-test"><span class="header-section-number">2.1</span> Choosing a Hypotheis Test</a></li>
+  <li><a href="#choosing-a-hypothesis-test" id="toc-choosing-a-hypothesis-test" class="nav-link" data-scroll-target="#choosing-a-hypothesis-test"><span class="header-section-number">2.1</span> Choosing a Hypothesis Test</a></li>
   <li><a href="#performing-a-hypothesis-test---fisher" id="toc-performing-a-hypothesis-test---fisher" class="nav-link" data-scroll-target="#performing-a-hypothesis-test---fisher"><span class="header-section-number">2.2</span> Performing a hypothesis test - Fisher</a></li>
   </ul></li>
   <li><a href="#chi-square-tests" id="toc-chi-square-tests" class="nav-link" data-scroll-target="#chi-square-tests"><span class="header-section-number">3</span> Chi-square tests</a>
@@ -404,7 +404,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#chi-square-goodness-of-fit-tests" id="toc-chi-square-goodness-of-fit-tests" class="nav-link" data-scroll-target="#chi-square-goodness-of-fit-tests"><span class="header-section-number">5</span> Chi-square goodness of fit tests</a>
   <ul class="collapse">
-  <li><a href="#an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" id="toc-an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="nav-link" data-scroll-target="#an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050"><span class="header-section-number">5.1</span> An example: Does the disritbution of male and female students in the UK fit the expected pattern (50:50)?</a></li>
+  <li><a href="#an-example-does-the-distribution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" id="toc-an-example-does-the-distribution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="nav-link" data-scroll-target="#an-example-does-the-distribution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050"><span class="header-section-number">5.1</span> An example: Does the distribution of male and female students in the UK fit the expected pattern (50:50)?</a></li>
   <li><a href="#an-example-gender-distribution-in-the-pisa-sample" id="toc-an-example-gender-distribution-in-the-pisa-sample" class="nav-link" data-scroll-target="#an-example-gender-distribution-in-the-pisa-sample"><span class="header-section-number">5.2</span> An example: Gender distribution in the PISA sample</a></li>
   </ul></li>
   <li><a href="#chi-square-test-of-independence" id="toc-chi-square-test-of-independence" class="nav-link" data-scroll-target="#chi-square-test-of-independence"><span class="header-section-number">6</span> Chi-square test of independence</a>
@@ -424,12 +424,11 @@ window.Quarto = {
   <li><a href="#task-4---country-differences---hypothesis-testing" id="toc-task-4---country-differences---hypothesis-testing" class="nav-link" data-scroll-target="#task-4---country-differences---hypothesis-testing"><span class="header-section-number">8.4</span> Task 4 - Country differences - hypothesis testing</a></li>
   <li><a href="#task-5---comparing-different-groups-with-likert-scale-responses" id="toc-task-5---comparing-different-groups-with-likert-scale-responses" class="nav-link" data-scroll-target="#task-5---comparing-different-groups-with-likert-scale-responses"><span class="header-section-number">8.5</span> Task 5 - Comparing different groups with Likert Scale responses</a></li>
   </ul></li>
-  <li><a href="#testing-ordinal-data-with-the-kruskal-wallis-test" id="toc-testing-ordinal-data-with-the-kruskal-wallis-test" class="nav-link" data-scroll-target="#testing-ordinal-data-with-the-kruskal-wallis-test"><span class="header-section-number">9</span> Testing ordinal data with the Kruskal-Wallis test</a></li>
-  <li><a href="#extension-tasks" id="toc-extension-tasks" class="nav-link" data-scroll-target="#extension-tasks"><span class="header-section-number">10</span> Extension tasks</a>
+  <li><a href="#extension-tasks" id="toc-extension-tasks" class="nav-link" data-scroll-target="#extension-tasks"><span class="header-section-number">9</span> Extension tasks</a></li>
+  <li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources"><span class="header-section-number">10</span> Useful resources</a>
   <ul class="collapse">
-  <li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources"><span class="header-section-number">10.1</span> Useful resources</a></li>
+  <li><a href="#doing-chi-square-tests-in-r" id="toc-doing-chi-square-tests-in-r" class="nav-link" data-scroll-target="#doing-chi-square-tests-in-r"><span class="header-section-number">10.1</span> Doing Chi-Square tests in R</a></li>
   </ul></li>
-  <li><a href="#doing-chi-square-tests-in-r" id="toc-doing-chi-square-tests-in-r" class="nav-link" data-scroll-target="#doing-chi-square-tests-in-r"><span class="header-section-number">11</span> Doing Chi-Square tests in R</a></li>
   </ul>
 </nav>
     </div>
@@ -438,7 +437,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">06 Hypothesis testing and Chi-square tests</h1>
+<h1 class="title">07 Hypothesis testing and Chi-square tests</h1>
 </div>
 
 
@@ -476,12 +475,21 @@ window.Quarto = {
 </section>
 <section id="hypothesis-testing" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Hypothesis testing</h1>
-<p>Hypothesis testing is a form of statistical inference used to draw conclusions about population distributions or parameters (such as the mean or variance). Data from a simple random sample is to test the plausibility of a hypothesis and the likelihood of it being true (or not).</p>
+<p>Hypothesis testing is a form of statistical inference used to draw conclusions about population distributions or parameters (such as the mean or variance). Data from a simple random sample is used to test the plausibility of a hypothesis and the likelihood of it being true (or not).</p>
 <p>When going about doing a hypothesis test we commonly choose what are called the null and alternative hypotheses. The null hypothesis usually refers to the hypothesis that there is no significant statistical difference in a set of observations, such as differences between expected values and observed values, differences between means, or differences between data and a distribution. The alternative hypothesis usually refers to the opposite of this, where there is a significant statistical difference in a set of observations, however, sometimes this can be of one direction, such as one mean being greater than another mean, instead of there being no difference.</p>
-<p>We assume the null hypothesis is true when conducting a hypothesis test. The test itself then measures the plausibility that the null hypothesis is true and returns what is called a p-value (the probability the null hypthesis is true). If this value is relatively large then it is likely the null hypothesis is true. However, if this value is relatively small, then it is unlikely the null hypothesis is true and therefore likely it is false and that the alternative hypothesis is true instead.</p>
+<p>For example, we might be interested in the proportion of boys and girls in a country in the sample from a country in the PISA data. We might expect the number of boys and girls to be equal. Our null hypothesis (which is given the symbol H<sub>0</sub>) would be:</p>
+<ul>
+<li>null hypothesis H<sub>0</sub>: The numbers of boys and girls in the sample are equal.</li>
+</ul>
+<p>We also propose an alternative hypothesis, the case is the null hypothesis is not true (which is given the symbol H<sub>1</sub>)</p>
+<ul>
+<li>alternative hypothesis H<sub>1</sub>: The numbers of boys and girls in the sample are <strong>not</strong> equal.</li>
+</ul>
+<p>We assume the null hypothesis is true when conducting a hypothesis test. The test itself then measures the plausibility that the null hypothesis is true and returns what is called a p-value (the probability the null hypothesis is true). If this value is relatively large then it is likely the null hypothesis is true. However, if this value is relatively small, then it is unlikely the null hypothesis is true and therefore likely it is false and that the alternative hypothesis is true instead.</p>
 <p>Typically, we use a set value such as 0.05 or 0.01 as the threshold to determine whether the null-hypothesis is true or not. So, if the null hypothesis is greater than this value then we accept that it is true, and if it is less than this value we reject that it is true and accept that the alternative hypothesis is true instead.</p>
-<section id="choosing-a-hypotheis-test" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="choosing-a-hypotheis-test"><span class="header-section-number">2.1</span> Choosing a Hypotheis Test</h2>
+<p>To continue with the example related to the boys and girls in the sample. Let us take a p-value cut off of 0.05 (this is sometimes called the alpha value or thershold of significance). The alpha value varies by field, but in this course we will assume an alpha level of 0.05. If our test returns a p-value greater than 0.05 (&lt;0.05), we accept the null hypothesis (the number of boys are girls are equal). If the test gives a p-value less than 0.05 we reject the null hypothesis and accept the alternative (the number of boys and girls are not equal).</p>
+<section id="choosing-a-hypothesis-test" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="choosing-a-hypothesis-test"><span class="header-section-number">2.1</span> Choosing a Hypothesis Test</h2>
 <p>When conducting a hypothesis test we need to choose the most appropriate test depending on the type of data we are working with, what we are trying to test and whether certain conditions are met or not. Here is a basic summary of what you may need to consider.</p>
 <p>Type(s) of data:</p>
 <ul>
@@ -560,7 +568,7 @@ window.Quarto = {
 <span id="annotated-cell-2-9"><a href="#annotated-cell-2-9"></a></span>
 <span id="annotated-cell-2-10"><a href="#annotated-cell-2-10"></a><span class="co"># The use xtabs to create a contingency table by ('~') country (CNT) and gender (ST004D01T)</span></span>
 <span id="annotated-cell-2-11"><a href="#annotated-cell-2-11"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-2-12" class="code-annotation-target"><a href="#annotated-cell-2-12"></a>ContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> UKUSgender, <span class="sc">~</span> CNT <span class="sc">+</span> ST004D01T)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-2-12" class="code-annotation-target"><a href="#annotated-cell-2-12"></a>ContTable <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(<span class="at">data =</span> UKUSgender, <span class="sc">~</span> CNT <span class="sc">+</span> ST004D01T)</span>
 <span id="annotated-cell-2-13"><a href="#annotated-cell-2-13"></a>ContTable</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
@@ -593,10 +601,10 @@ CNT              Female Male
 </section>
 <section id="chi-square-goodness-of-fit-tests" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Chi-square goodness of fit tests</h1>
-<p>If we want to determine if a sample categorical data matches the pattern of a whole population we can use a Chi-square goodness of fit test. The test is a form of hypothesis testing.</p>
-<p>Hypothesis testing is one type of statistical analysis. A researcher states an assumption that they want to test.</p>
+<p>If we want to determine if a sample of categorical data matches the pattern of a whole population we can use a Chi-square goodness of fit test. The test is a form of hypothesis testing.</p>
+<p>As described above in hypothesis testing the researcher states an assumption that they want to test.</p>
 <p>For example, they might want to examine whether the distribution of boys and girls in the UK matches the expected distribution of 50:50.</p>
-<p>A researcher typically proposes a null hypothesis - that is that there is no difference in groups. Whilst this is typical practice, and we will follow it in this course, researchers have pointed out that it is rare for the null hypothesis to be true, which impacts the validity of the test (see: <span class="citation" data-cites="cohen1994earth">Cohen (<a href="#ref-cohen1994earth" role="doc-biblioref">1994</a>)</span>) . Nonetheless, we will adopt the practice here, as it is a widely used approach.</p>
+<p>A researcher typically proposes a null hypothesis - that is that there is no difference in groups. Whilst this is typical practice, and we will follow it in this course, researchers have pointed out that it is rare for the null hypothesis to be true (there are often differences between groups), which impacts the validity of the test (see: <span class="citation" data-cites="cohen1994earth">Cohen (<a href="#ref-cohen1994earth" role="doc-biblioref">1994</a>)</span>) . Nonetheless, we will adopt the practice here, as it is a widely used approach.</p>
 <p>Our null hypothesis then is:</p>
 <blockquote class="blockquote">
 <p><em>There is no difference in the distribution of boys and girls in the UK and a random sample of 50/50 girls and boys</em>.</p>
@@ -624,8 +632,8 @@ Tip
 <p>See <span class="citation" data-cites="baker2016statisticians">Baker (<a href="#ref-baker2016statisticians" role="doc-biblioref">2016</a>)</span> for further discussion of how to interpret p-values.</p>
 </div>
 </div>
-<section id="an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="an-example-does-the-disritbution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050"><span class="header-section-number">5.1</span> An example: Does the disritbution of male and female students in the UK fit the expected pattern (50:50)?</h2>
+<section id="an-example-does-the-distribution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="an-example-does-the-distribution-of-male-and-female-students-in-the-uk-fit-the-expected-pattern-5050"><span class="header-section-number">5.1</span> An example: Does the distribution of male and female students in the UK fit the expected pattern (50:50)?</h2>
 <p>To perform the goodness of fit test, we make a subset <code>dataframe</code> of the UK data including the <code>ST004D01T</code> (gender variable).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1"></a><span class="co"># Perform a chi-square goodness of fit test on categorical data related to gender in the UK</span></span>
@@ -687,75 +695,75 @@ X-squared = 2.4425, df = 1, p-value = 0.1181</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="annotated-cell-20"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-20-1"><a href="#annotated-cell-20-1"></a><span class="co"># Perform a chi-square goodness of fit test on categorical data related </span></span>
-<span id="annotated-cell-20-2"><a href="#annotated-cell-20-2"></a><span class="co"># to gender in the US, Japan and China</span></span>
-<span id="annotated-cell-20-3"><a href="#annotated-cell-20-3"></a></span>
-<span id="annotated-cell-20-4"><a href="#annotated-cell-20-4"></a>USPISAgender<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-20-5" class="code-annotation-target"><a href="#annotated-cell-20-5"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-20-6" class="code-annotation-target"><a href="#annotated-cell-20-6"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United States"</span>) <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-20-7" class="code-annotation-target"><a href="#annotated-cell-20-7"></a>  <span class="fu">droplevels</span>()</span>
-<span id="annotated-cell-20-8"><a href="#annotated-cell-20-8"></a></span>
-<span id="annotated-cell-20-9"><a href="#annotated-cell-20-9"></a><span class="co"># produce the contingency table by country and gender</span></span>
-<span id="annotated-cell-20-10"><a href="#annotated-cell-20-10"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-20-11" class="code-annotation-target"><a href="#annotated-cell-20-11"></a>GenderContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> USPISAgender, <span class="sc">~</span> CNT <span class="sc">+</span> ST004D01T)</span>
-<span id="annotated-cell-20-12"><a href="#annotated-cell-20-12"></a></span>
-<span id="annotated-cell-20-13"><a href="#annotated-cell-20-13"></a><span class="co"># Perform the chisq test, comparing against the expected probabilities of 50:50 (e.g. 1/2 to 1/2)</span></span>
-<span id="annotated-cell-20-14"><a href="#annotated-cell-20-14"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-20-15" class="code-annotation-target"><a href="#annotated-cell-20-15"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
-<span id="annotated-cell-20-16"><a href="#annotated-cell-20-16"></a></span>
-<span id="annotated-cell-20-17"><a href="#annotated-cell-20-17"></a><span class="co"># In the US,  p= 0.2535, accept null hypothesis of equality, population of M:F does not differ from 50:50</span></span>
-<span id="annotated-cell-20-18"><a href="#annotated-cell-20-18"></a></span>
-<span id="annotated-cell-20-19"><a href="#annotated-cell-20-19"></a>JPNPISAgender<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
-<span id="annotated-cell-20-20"><a href="#annotated-cell-20-20"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span> <span class="co"># Select gender and country variables</span></span>
-<span id="annotated-cell-20-21"><a href="#annotated-cell-20-21"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Japan"</span>) <span class="sc">%&gt;%</span> <span class="co"># Filter for the Japan</span></span>
-<span id="annotated-cell-20-22"><a href="#annotated-cell-20-22"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
-<span id="annotated-cell-20-23"><a href="#annotated-cell-20-23"></a></span>
-<span id="annotated-cell-20-24"><a href="#annotated-cell-20-24"></a><span class="co"># produce the contingency table by country and gender</span></span>
-<span id="annotated-cell-20-25"><a href="#annotated-cell-20-25"></a></span>
-<span id="annotated-cell-20-26"><a href="#annotated-cell-20-26"></a>GenderContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> JPNPISAgender,<span class="sc">~</span> CNT <span class="sc">+</span> ST004D01T)</span>
-<span id="annotated-cell-20-27"><a href="#annotated-cell-20-27"></a></span>
-<span id="annotated-cell-20-28"><a href="#annotated-cell-20-28"></a><span class="co"># Perfom the chisq test, comparing against the expected probabilities of 50:50 (e.g. 1/2 to 1/2)</span></span>
-<span id="annotated-cell-20-29"><a href="#annotated-cell-20-29"></a></span>
-<span id="annotated-cell-20-30"><a href="#annotated-cell-20-30"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
-<span id="annotated-cell-20-31"><a href="#annotated-cell-20-31"></a></span>
-<span id="annotated-cell-20-32"><a href="#annotated-cell-20-32"></a><span class="co"># In Japan, p= 0.5271, accept null hypothesis of equality, population of M:F does not differ from 50:50</span></span>
-<span id="annotated-cell-20-33"><a href="#annotated-cell-20-33"></a></span>
-<span id="annotated-cell-20-34"><a href="#annotated-cell-20-34"></a>KoreaPISAgender<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
-<span id="annotated-cell-20-35"><a href="#annotated-cell-20-35"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span> <span class="co"># Select gender and country variables</span></span>
-<span id="annotated-cell-20-36"><a href="#annotated-cell-20-36"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Korea"</span>) <span class="sc">%&gt;%</span> <span class="co"># Filter for Korea</span></span>
-<span id="annotated-cell-20-37"><a href="#annotated-cell-20-37"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
-<span id="annotated-cell-20-38"><a href="#annotated-cell-20-38"></a></span>
-<span id="annotated-cell-20-39"><a href="#annotated-cell-20-39"></a></span>
-<span id="annotated-cell-20-40"><a href="#annotated-cell-20-40"></a><span class="co"># produce the contingency table by country and gender</span></span>
-<span id="annotated-cell-20-41"><a href="#annotated-cell-20-41"></a></span>
-<span id="annotated-cell-20-42"><a href="#annotated-cell-20-42"></a>GenderFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>KoreaPISAgender, <span class="sc">~</span>CNT <span class="sc">+</span> ST004D01T)</span>
-<span id="annotated-cell-20-43"><a href="#annotated-cell-20-43"></a></span>
-<span id="annotated-cell-20-44"><a href="#annotated-cell-20-44"></a><span class="co"># Perform the chisq test, comparing against the expected probabilities of 50:50 (e.g. 1/2 to 1/2)</span></span>
-<span id="annotated-cell-20-45"><a href="#annotated-cell-20-45"></a></span>
-<span id="annotated-cell-20-46"><a href="#annotated-cell-20-46"></a><span class="fu">chisq.test</span>(GenderFreqTable, <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
-<span id="annotated-cell-20-47"><a href="#annotated-cell-20-47"></a><span class="co"># In Korea, p=0.0147, reject null hypothesis of equality, population distribution differs from 50:50</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-17"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-17-1"><a href="#annotated-cell-17-1"></a><span class="co"># Perform a chi-square goodness of fit test on categorical data related </span></span>
+<span id="annotated-cell-17-2"><a href="#annotated-cell-17-2"></a><span class="co"># to gender in the US, Japan and China</span></span>
+<span id="annotated-cell-17-3"><a href="#annotated-cell-17-3"></a></span>
+<span id="annotated-cell-17-4"><a href="#annotated-cell-17-4"></a>USPISAgender<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-17-5" class="code-annotation-target"><a href="#annotated-cell-17-5"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-17-6" class="code-annotation-target"><a href="#annotated-cell-17-6"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United States"</span>) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-17-7" class="code-annotation-target"><a href="#annotated-cell-17-7"></a>  <span class="fu">droplevels</span>()</span>
+<span id="annotated-cell-17-8"><a href="#annotated-cell-17-8"></a></span>
+<span id="annotated-cell-17-9"><a href="#annotated-cell-17-9"></a><span class="co"># produce the contingency table by country and gender</span></span>
+<span id="annotated-cell-17-10"><a href="#annotated-cell-17-10"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-17-11" class="code-annotation-target"><a href="#annotated-cell-17-11"></a>GenderContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> USPISAgender, <span class="sc">~</span> CNT <span class="sc">+</span> ST004D01T)</span>
+<span id="annotated-cell-17-12"><a href="#annotated-cell-17-12"></a></span>
+<span id="annotated-cell-17-13"><a href="#annotated-cell-17-13"></a><span class="co"># Perform the chisq test, comparing against the expected probabilities of 50:50 (e.g. 1/2 to 1/2)</span></span>
+<span id="annotated-cell-17-14"><a href="#annotated-cell-17-14"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-17-15" class="code-annotation-target"><a href="#annotated-cell-17-15"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="annotated-cell-17-16"><a href="#annotated-cell-17-16"></a></span>
+<span id="annotated-cell-17-17"><a href="#annotated-cell-17-17"></a><span class="co"># In the US,  p= 0.2535, accept null hypothesis of equality, population of M:F does not differ from 50:50</span></span>
+<span id="annotated-cell-17-18"><a href="#annotated-cell-17-18"></a></span>
+<span id="annotated-cell-17-19"><a href="#annotated-cell-17-19"></a>JPNPISAgender<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="annotated-cell-17-20"><a href="#annotated-cell-17-20"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span> <span class="co"># Select gender and country variables</span></span>
+<span id="annotated-cell-17-21"><a href="#annotated-cell-17-21"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Japan"</span>) <span class="sc">%&gt;%</span> <span class="co"># Filter for the Japan</span></span>
+<span id="annotated-cell-17-22"><a href="#annotated-cell-17-22"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="annotated-cell-17-23"><a href="#annotated-cell-17-23"></a></span>
+<span id="annotated-cell-17-24"><a href="#annotated-cell-17-24"></a><span class="co"># produce the contingency table by country and gender</span></span>
+<span id="annotated-cell-17-25"><a href="#annotated-cell-17-25"></a></span>
+<span id="annotated-cell-17-26"><a href="#annotated-cell-17-26"></a>GenderContTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> JPNPISAgender,<span class="sc">~</span> CNT <span class="sc">+</span> ST004D01T)</span>
+<span id="annotated-cell-17-27"><a href="#annotated-cell-17-27"></a></span>
+<span id="annotated-cell-17-28"><a href="#annotated-cell-17-28"></a><span class="co"># Perfom the chisq test, comparing against the expected probabilities of 50:50 (e.g. 1/2 to 1/2)</span></span>
+<span id="annotated-cell-17-29"><a href="#annotated-cell-17-29"></a></span>
+<span id="annotated-cell-17-30"><a href="#annotated-cell-17-30"></a><span class="fu">chisq.test</span>(GenderContTable, <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="annotated-cell-17-31"><a href="#annotated-cell-17-31"></a></span>
+<span id="annotated-cell-17-32"><a href="#annotated-cell-17-32"></a><span class="co"># In Japan, p= 0.5271, accept null hypothesis of equality, population of M:F does not differ from 50:50</span></span>
+<span id="annotated-cell-17-33"><a href="#annotated-cell-17-33"></a></span>
+<span id="annotated-cell-17-34"><a href="#annotated-cell-17-34"></a>KoreaPISAgender<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="annotated-cell-17-35"><a href="#annotated-cell-17-35"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span> <span class="co"># Select gender and country variables</span></span>
+<span id="annotated-cell-17-36"><a href="#annotated-cell-17-36"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Korea"</span>) <span class="sc">%&gt;%</span> <span class="co"># Filter for Korea</span></span>
+<span id="annotated-cell-17-37"><a href="#annotated-cell-17-37"></a>  <span class="fu">droplevels</span>() <span class="co"># To prevent the levels for other countries confusing the table</span></span>
+<span id="annotated-cell-17-38"><a href="#annotated-cell-17-38"></a></span>
+<span id="annotated-cell-17-39"><a href="#annotated-cell-17-39"></a></span>
+<span id="annotated-cell-17-40"><a href="#annotated-cell-17-40"></a><span class="co"># produce the contingency table by country and gender</span></span>
+<span id="annotated-cell-17-41"><a href="#annotated-cell-17-41"></a></span>
+<span id="annotated-cell-17-42"><a href="#annotated-cell-17-42"></a>GenderFreqTable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data=</span>KoreaPISAgender, <span class="sc">~</span>CNT <span class="sc">+</span> ST004D01T)</span>
+<span id="annotated-cell-17-43"><a href="#annotated-cell-17-43"></a></span>
+<span id="annotated-cell-17-44"><a href="#annotated-cell-17-44"></a><span class="co"># Perform the chisq test, comparing against the expected probabilities of 50:50 (e.g. 1/2 to 1/2)</span></span>
+<span id="annotated-cell-17-45"><a href="#annotated-cell-17-45"></a></span>
+<span id="annotated-cell-17-46"><a href="#annotated-cell-17-46"></a><span class="fu">chisq.test</span>(GenderFreqTable, <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="annotated-cell-17-47"><a href="#annotated-cell-17-47"></a><span class="co"># In Korea, p=0.0147, reject null hypothesis of equality, population distribution differs from 50:50</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-20" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="5" data-code-annotation="1"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="5" data-code-annotation="1"><code>select</code> the needed columns gender (<code>ST004D01T</code>) and country (<code>CNT</code>)</span>
 </dd>
-<dt data-target-cell="annotated-cell-20" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="6" data-code-annotation="2"><code>filter</code> for country of interest, the US</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="6" data-code-annotation="2"><code>filter</code> for country of interest, the US</span>
 </dd>
-<dt data-target-cell="annotated-cell-20" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="7" data-code-annotation="3"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="7" data-code-annotation="3"><code>droplevels()</code> to avoid empty country levels (those not selecting) cluttering the table at 0 counts</span>
 </dd>
-<dt data-target-cell="annotated-cell-20" data-target-annotation="4">4</dt>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="11" data-code-annotation="4">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
+<span data-code-cell="annotated-cell-17" data-code-lines="11" data-code-annotation="4">use <code>xtabs</code> to create a contingency table comparing <code>CNT</code> with <code>ST004D01T</code></span>
 </dd>
-<dt data-target-cell="annotated-cell-20" data-target-annotation="5">5</dt>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="15" data-code-annotation="5">perform the chi-sq test of goodness of fit, comparing against an expected probability of 50:50</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="15" data-code-annotation="5">perform the chi-sq test of goodness of fit, comparing against an expected probability of 50:50</span>
 </dd>
 </dl>
 </div>
@@ -780,8 +788,8 @@ Tip
 <h1 data-number="6"><span class="header-section-number">6</span> Chi-square test of independence</h1>
 <p>Goodness of fit tests can be useful, but they rely on knowing the expected distribution (for example, assuming a 50:50 distribution of boys and girls).</p>
 <p>An alternative ways of using a Chi-square test, is the test of independence. This approach determines whether two categorical variables in a sample are related.</p>
-<p>For example, a categorical variable in the same is item - <code>WB178Q01HA</code> - Overall, did you feel that you accomplished something yesterday?. Which can be responded to with ‘yes’ or ‘no’ (or <code>&lt;NA&gt;</code>).</p>
-<p>We might want to see if students in the Netherlands respond to this question in the same way as other groups from the same sample. That is, are students in Netherlands just as likely to feel they have accomplished something as their international peers.</p>
+<p>For example, a categorical variable in the same is item - <code>WB178Q01HA</code> - Overall, did you feel that you accomplished something yesterday? The item can be responded to with <code>Yes</code> or <code>No'</code> (or <code>&lt;NA&gt;</code>).</p>
+<p>We might want to see if students in the Netherlands respond to this question in the same way as students in the whole PISA sample That is, are students in Netherlands just as likely to feel they have accomplished something as their international peers.</p>
 <p>A simple first attempt is to create frequency tables for the Netherlands and the rest of the sample and examine the responses.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a><span class="co"># Produce tables of counts of accomplishment for the Netherlands and the rest of the sample</span></span>
@@ -1023,7 +1031,7 @@ data:  AccompNZMFreqTable
 X-squared = 0.28447, df = 1, p-value = 0.5938</code></pre>
 </div>
 </div>
-<p>The test here returns a <code>p-value=0.5938</code>. This is more than 0.05 so implies there is a the null hypothesis can be accepted. The null hypothesis is that there is no difference between feelings of accomplishment in New Zealand and Mexico.</p>
+<p>The test here returns a <code>p-value=0.5938</code>. This is more than 0.05 so the null hypothesis can be accepted. The null hypothesis is that there is no difference between feelings of accomplishment in New Zealand and Mexico.</p>
 </section>
 </section>
 <section id="testing-ordinal-data---the-kruskal-wallis-test" class="level1" data-number="7">
@@ -1077,7 +1085,7 @@ Kruskal-Wallis chi-squared = 0.025303, df = 1, p-value = 0.8736</code></pre>
 </div>
 <section id="likert-scale-data" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="likert-scale-data"><span class="header-section-number">7.1</span> Likert Scale Data</h2>
-<p>One particular form of data that regularly comes up in PISA is data with responses on a Likert scale. Often, these responses are closed, with ‘strongly agree’, ‘agree’, ‘disagree’ and ‘strongly disagree’ as the most common responses. As responses on a likert scale are ordinal then we can apply a Kruskal- Wallis test when comparing different groups. As before, we use the <code>kruskal.test</code> function and pass through raw data, rather than a contingency table.</p>
+<p>One particular form of data that regularly comes up in PISA is data with responses on a Likert scale. Often, these responses are closed, with ‘strongly agree’, ‘agree’, ‘disagree’ and ‘strongly disagree’ as the most common responses. As responses on a likert scale are ordinal then we can apply a Kruskal- Wallis test when comparing different groups. As before, we use the <code>kruskal.test</code> function and pass through raw data, rather than a contingency table. There is no need to create a contingency table for the Kruskal Wallis test.</p>
 <p>For example,<code>ST324Q11JA</code> asks students to report how much they agree with the statement ‘school is a waste of time’ on a 4-point Likert scale, with responses being “strongly agree”, “agree”, “disagree” and “strongly disagree”. Let’s say we want to compare to responses from males and females in the PISA data set to see if they are statistically different from one another or not. As with the previous example, we need to create a <code>data.frame</code> of responses to <code>ST324Q11JA</code>, but this time for the whole PISA set by gender. The one key difference is that Likert scale data is not numerical, which means we need to recode the data so that it is numeric using the <code>as.numeric</code> function. This means that “strongly agree” will be recoded to “4”, “agree” will be recoded to “3” and so on.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a><span class="co"># Create a data frame including data on 'school is a waste of time' and gender </span></span>
@@ -1087,10 +1095,10 @@ Kruskal-Wallis chi-squared = 0.025303, df = 1, p-value = 0.8736</code></pre>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-9-5" class="code-annotation-target"><a href="#annotated-cell-9-5"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">!=</span><span class="st">"NA"</span><span class="sc">&amp;</span>ST324Q11JA<span class="sc">!=</span><span class="st">"NA"</span>)<span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-9-6" class="code-annotation-target"><a href="#annotated-cell-9-6"></a>  <span class="fu">droplevels</span>()</span>
 <span id="annotated-cell-9-7"><a href="#annotated-cell-9-7"></a></span>
-<span id="annotated-cell-9-8"><a href="#annotated-cell-9-8"></a>GW.recoded <span class="ot">&lt;-</span> GW <span class="sc">%&gt;%</span>                                      </span>
+<span id="annotated-cell-9-8"><a href="#annotated-cell-9-8"></a>GW_recoded <span class="ot">&lt;-</span> GW <span class="sc">%&gt;%</span>                                      </span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-9-9" class="code-annotation-target"><a href="#annotated-cell-9-9"></a>  <span class="fu">mutate</span>(<span class="at">ST324Q11JA =</span> <span class="fu">as.numeric</span>(ST324Q11JA))</span>
 <span id="annotated-cell-9-10"><a href="#annotated-cell-9-10"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-9-11" class="code-annotation-target"><a href="#annotated-cell-9-11"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> GW.recoded, ST004D01T <span class="sc">~</span> ST324Q11JA)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-9-11" class="code-annotation-target"><a href="#annotated-cell-9-11"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> GW_recoded, ST324Q11JA <span class="sc">~</span> ST004D01T)</span>
 <span id="annotated-cell-9-12"><a href="#annotated-cell-9-12"></a></span>
 <span id="annotated-cell-9-13"><a href="#annotated-cell-9-13"></a><span class="co"># The p-value is less than 0.05 (p-value&lt;2.2e-16), therefore we reject the null hypothesis and accept the alternative hypothesis that opinions on 'school is a waste of time' are statistically different for boys and girls.</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
@@ -1121,10 +1129,11 @@ Kruskal-Wallis chi-squared = 0.025303, df = 1, p-value = 0.8736</code></pre>
 <pre><code>
     Kruskal-Wallis rank sum test
 
-data:  ST004D01T by ST324Q11JA
-Kruskal-Wallis chi-squared = 4121.4, df = 3, p-value &lt; 2.2e-16</code></pre>
+data:  ST324Q11JA by ST004D01T
+Kruskal-Wallis chi-squared = 3244.5, df = 1, p-value &lt; 2.2e-16</code></pre>
 </div>
 </div>
+<p>The test is interpreted in the same way as a chi square test. The null hypothesis is that there are no differences in the ordinal data of the groups being tested. If the p-value is over 0.05 the null hypothesis is accepted, if it is below, the null hypothesis is rejected.</p>
 </section>
 </section>
 <section id="seminar-tasks" class="level1" data-number="8">
@@ -1522,17 +1531,17 @@ Tip
 <span id="cb22-16"><a href="#cb22-16"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis that the distributions are the same</span></span>
 <span id="cb22-17"><a href="#cb22-17"></a></span>
 <span id="cb22-18"><a href="#cb22-18"></a><span class="co"># Create a geom_mosaic</span></span>
-<span id="cb22-19"><a href="#cb22-19"></a><span class="fu">ggplot</span>(<span class="at">data =</span> PatEdTypes)<span class="sc">+</span></span>
-<span id="cb22-20"><a href="#cb22-20"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST007Q01JA, CNT), <span class="at">fill =</span> ST007Q01JA))<span class="sc">+</span></span>
-<span id="cb22-21"><a href="#cb22-21"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency of father's level of qualification"</span>)<span class="sc">+</span></span>
-<span id="cb22-22"><a href="#cb22-22"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>)<span class="sc">+</span></span>
+<span id="cb22-19"><a href="#cb22-19"></a><span class="fu">ggplot</span>(<span class="at">data =</span> PatEdTypes) <span class="sc">+</span></span>
+<span id="cb22-20"><a href="#cb22-20"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST007Q01JA, CNT), <span class="at">fill =</span> ST007Q01JA)) <span class="sc">+</span></span>
+<span id="cb22-21"><a href="#cb22-21"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency of father's level of qualification"</span>) <span class="sc">+</span></span>
+<span id="cb22-22"><a href="#cb22-22"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>) <span class="sc">+</span></span>
 <span id="cb22-23"><a href="#cb22-23"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="co"># Rotate x-axis labels</span></span>
 <span id="cb22-24"><a href="#cb22-24"></a></span>
 <span id="cb22-25"><a href="#cb22-25"></a><span class="co"># Follow up Question</span></span>
 <span id="cb22-26"><a href="#cb22-26"></a><span class="co"># Create a data frame of paternal education ST007Q01JA for the 3 countries</span></span>
-<span id="cb22-27"><a href="#cb22-27"></a>PatEdTypes<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
-<span id="cb22-28"><a href="#cb22-28"></a>  <span class="fu">select</span>(CNT, ST007Q01JA)<span class="sc">%&gt;%</span> <span class="co"># choose country and type of school</span></span>
-<span id="cb22-29"><a href="#cb22-29"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"France"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"Germany"</span>)<span class="sc">%&gt;%</span> </span>
+<span id="cb22-27"><a href="#cb22-27"></a>PatEdTypes<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb22-28"><a href="#cb22-28"></a>  <span class="fu">select</span>(CNT, ST007Q01JA) <span class="sc">%&gt;%</span> <span class="co"># choose country and type of school</span></span>
+<span id="cb22-29"><a href="#cb22-29"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"France"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"Germany"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb22-30"><a href="#cb22-30"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
 <span id="cb22-31"><a href="#cb22-31"></a></span>
 <span id="cb22-32"><a href="#cb22-32"></a>Conttable<span class="ot">&lt;-</span><span class="fu">xtabs</span>(<span class="at">data =</span> PatEdTypes, <span class="sc">~</span>CNT ,ST007Q01JA)</span>
@@ -1540,11 +1549,11 @@ Tip
 <span id="cb22-34"><a href="#cb22-34"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis that the distributions are the same</span></span>
 <span id="cb22-35"><a href="#cb22-35"></a></span>
 <span id="cb22-36"><a href="#cb22-36"></a><span class="co"># Create a geom_mosaic</span></span>
-<span id="cb22-37"><a href="#cb22-37"></a><span class="fu">ggplot</span>(<span class="at">data =</span> PatEdTypes)<span class="sc">+</span></span>
-<span id="cb22-38"><a href="#cb22-38"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST007Q01JA,CNT), <span class="at">fill =</span> ST007Q01JA))<span class="sc">+</span></span>
-<span id="cb22-39"><a href="#cb22-39"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency of father's level of qualification"</span>)<span class="sc">+</span></span>
-<span id="cb22-40"><a href="#cb22-40"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>)<span class="sc">+</span></span>
-<span id="cb22-41"><a href="#cb22-41"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="co"># Rotate x-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-37"><a href="#cb22-37"></a><span class="fu">ggplot</span>(<span class="at">data =</span> PatEdTypes) <span class="sc">+</span></span>
+<span id="cb22-38"><a href="#cb22-38"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST007Q01JA,CNT), <span class="at">fill =</span> ST007Q01JA)) <span class="sc">+</span></span>
+<span id="cb22-39"><a href="#cb22-39"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency of father's level of qualification"</span>) <span class="sc">+</span></span>
+<span id="cb22-40"><a href="#cb22-40"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>) <span class="sc">+</span></span>
+<span id="cb22-41"><a href="#cb22-41"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="co"># Rotate labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -1554,28 +1563,34 @@ Tip
 <div class="question">
 <p>Perform a hypothesis test to determine:</p>
 <ol type="a">
-<li>`ST355Q03JA’ asks students if they are confident in finding resources online on their own in the future. Test the hypothesis that there is no difference in confidence in finding resources online on their own and gender. Plot a mosaic plot with the different proportions.</li>
+<li>`ST355Q03JA’ asks students if they are confident in finding resources online. Test the hypothesis that there is no difference in confidence in finding resources online by gender. Plot a mosaic plot with the different proportions.</li>
 </ol>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Create a data frame of confidence in finding resources online on their own (ST355Q03JA) and gender</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a></span>
-<span id="cb23-3"><a href="#cb23-3"></a>GFLR <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a>online_res <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">select</span>(ST004D01T, ST355Q03JA)<span class="sc">%&gt;%</span></span>
 <span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">filter</span>(ST004D01T<span class="sc">!=</span><span class="st">"NA"</span><span class="sc">&amp;</span> ST355Q03JA<span class="sc">!=</span><span class="st">"NA"</span>)<span class="sc">%&gt;%</span></span>
 <span id="cb23-6"><a href="#cb23-6"></a>  <span class="fu">droplevels</span>()</span>
 <span id="cb23-7"><a href="#cb23-7"></a></span>
 <span id="cb23-8"><a href="#cb23-8"></a><span class="co">#Mosiac Plot</span></span>
-<span id="cb23-9"><a href="#cb23-9"></a><span class="fu">ggplot</span>(<span class="at">data=</span>GFLR)<span class="sc">+</span><span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST004D01T, ST355Q03JA), <span class="at">fill=</span>ST004D01T))</span>
-<span id="cb23-10"><a href="#cb23-10"></a></span>
-<span id="cb23-11"><a href="#cb23-11"></a><span class="co">#Recode data as numeric</span></span>
-<span id="cb23-12"><a href="#cb23-12"></a>GFLR.recoded <span class="ot">&lt;-</span> GFLR <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">ST355Q03JA =</span> <span class="fu">as.numeric</span>(ST355Q03JA))</span>
-<span id="cb23-13"><a href="#cb23-13"></a></span>
-<span id="cb23-14"><a href="#cb23-14"></a><span class="co"># Perform the KW test</span></span>
-<span id="cb23-15"><a href="#cb23-15"></a><span class="fu">kruskal.test</span>(<span class="at">data=</span>GFLR.recoded,ST004D01T<span class="sc">~</span>ST355Q03JA)</span>
+<span id="cb23-9"><a href="#cb23-9"></a><span class="fu">ggplot</span>(<span class="at">data =</span> online_res) <span class="sc">+</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST004D01T, ST355Q03JA), <span class="at">fill =</span> ST004D01T)) <span class="sc">+</span></span>
+<span id="cb23-11"><a href="#cb23-11"></a>  <span class="fu">ylab</span>(<span class="st">"Confidence in finding online resources"</span>) <span class="sc">+</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a>  <span class="fu">xlab</span>(<span class="st">"Gender"</span>) <span class="sc">+</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) </span>
+<span id="cb23-14"><a href="#cb23-14"></a></span>
+<span id="cb23-15"><a href="#cb23-15"></a><span class="co"># Recode as numeric</span></span>
 <span id="cb23-16"><a href="#cb23-16"></a></span>
-<span id="cb23-17"><a href="#cb23-17"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis and accept the alternative hypothesis that confidence in finding resources online on their own and gender are statistically different (dependent)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-17"><a href="#cb23-17"></a>online_res_recoded <span class="ot">&lt;-</span> online_res <span class="sc">%&gt;%</span></span>
+<span id="cb23-18"><a href="#cb23-18"></a>  <span class="fu">mutate</span>(<span class="at">ST355Q03JA =</span> <span class="fu">as.numeric</span>(ST355Q03JA))  </span>
+<span id="cb23-19"><a href="#cb23-19"></a></span>
+<span id="cb23-20"><a href="#cb23-20"></a><span class="co"># Perform the KW test</span></span>
+<span id="cb23-21"><a href="#cb23-21"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> online_res_recoded, ST355Q03JA <span class="sc">~</span> ST004D01T)</span>
+<span id="cb23-22"><a href="#cb23-22"></a></span>
+<span id="cb23-23"><a href="#cb23-23"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis and accept the alternative hypothesis that confidence in finding resources online on their own and gender are statistically different (dependent)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -1588,67 +1603,43 @@ Tip
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">#Create a data frame of there is enough digital resources in my school for every student (IC172Q01JA) and the United Kingdom and United States</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a></span>
-<span id="cb24-3"><a href="#cb24-3"></a>DRFES <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>digital_res <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">select</span>(CNT, IC172Q01JA) <span class="sc">%&gt;%</span> </span>
 <span id="cb24-5"><a href="#cb24-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span><span class="sc">|</span>CNT <span class="sc">==</span> <span class="st">"United States"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb24-6"><a href="#cb24-6"></a>  <span class="fu">filter</span>(IC172Q01JA<span class="sc">!=</span><span class="st">"NA"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="fu">filter</span>(IC172Q01JA <span class="sc">!=</span> <span class="st">"NA"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb24-7"><a href="#cb24-7"></a>  <span class="fu">droplevels</span>()</span>
 <span id="cb24-8"><a href="#cb24-8"></a></span>
 <span id="cb24-9"><a href="#cb24-9"></a><span class="co">#Mosiac Plot</span></span>
-<span id="cb24-10"><a href="#cb24-10"></a><span class="fu">ggplot</span>(<span class="at">data=</span>DRFES)<span class="sc">+</span><span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(CNT, IC172Q01JA), <span class="at">fill=</span>CNT))</span>
-<span id="cb24-11"><a href="#cb24-11"></a></span>
-<span id="cb24-12"><a href="#cb24-12"></a><span class="co">#Recode data as numeric</span></span>
-<span id="cb24-13"><a href="#cb24-13"></a>DRFES.recoded <span class="ot">&lt;-</span> DRFES <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">IC172Q01JA =</span> <span class="fu">as.numeric</span>(IC172Q01JA))</span>
-<span id="cb24-14"><a href="#cb24-14"></a></span>
-<span id="cb24-15"><a href="#cb24-15"></a><span class="co"># Perform the KW test</span></span>
-<span id="cb24-16"><a href="#cb24-16"></a><span class="fu">kruskal.test</span>(<span class="at">data=</span>DRFES.recoded,CNT<span class="sc">~</span>IC172Q01JA)</span>
-<span id="cb24-17"><a href="#cb24-17"></a></span>
-<span id="cb24-18"><a href="#cb24-18"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis and accept the alternative hypothesis that there is enough digital resources in my school are statistically different in the United Kingdom and United States (dependent)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-10"><a href="#cb24-10"></a><span class="fu">ggplot</span>(<span class="at">data =</span> digital_res) <span class="sc">+</span></span>
+<span id="cb24-11"><a href="#cb24-11"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(CNT, IC172Q01JA), <span class="at">fill=</span>CNT))</span>
+<span id="cb24-12"><a href="#cb24-12"></a></span>
+<span id="cb24-13"><a href="#cb24-13"></a><span class="co"># Convert to numeric</span></span>
+<span id="cb24-14"><a href="#cb24-14"></a>digital_res_recoded <span class="ot">&lt;-</span> digital_res <span class="sc">%&gt;%</span></span>
+<span id="cb24-15"><a href="#cb24-15"></a>  <span class="fu">mutate</span>(<span class="at">IC172Q01JA =</span> <span class="fu">as.numeric</span>(IC172Q01JA))</span>
+<span id="cb24-16"><a href="#cb24-16"></a></span>
+<span id="cb24-17"><a href="#cb24-17"></a><span class="co"># Perform the KW test</span></span>
+<span id="cb24-18"><a href="#cb24-18"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> digital_res_recoded, IC172Q01JA <span class="sc">~</span> CNT)</span>
+<span id="cb24-19"><a href="#cb24-19"></a></span>
+<span id="cb24-20"><a href="#cb24-20"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis and accept the alternative hypothesis that there is enough digital resources in my school are statistically different in the United Kingdom and United States (dependent)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
-</section>
-</section>
-<section id="testing-ordinal-data-with-the-kruskal-wallis-test" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Testing ordinal data with the Kruskal-Wallis test</h1>
-<p>The chi square test assumes the data is categorical - that is, there is no defined order to the data (for example, type of school (vocational, technical, general)). Ordinal data have a defined rank - for example, categories of the number of books in a home (e.g.&nbsp;0-5, 6-10, 11-15, etc.) have a numerical order.</p>
-<p>When testing hypotheses related to ordinal data, an alternative test to the chi square test is used, the Kruskal Wallis test. This works in the same way as the chi square tests, but uses a data frame that includes ordinal data.</p>
-<p>For example, item <code>ST254Q03JA</code> asks how many laptops participants have in their homes. The data here will will be ordinal (the response values are: <code>1</code>,<code>2</code>,<code>3</code>,<code>4</code>,<code>5</code>). Therefore, rather than performing a Chi Square test we use the <code>kruskal.test</code> function. To perform a <code>kruskal.test</code> you set the data frame you want to test <code>kruskal.test(data=UKUSphones, ST254Q03JA ~ CNT)</code> in our case, <code>UKUSphoness</code> and indicate the variables you want to compare <code>ST254Q03JA ~ CNT</code> in our case difference in the possession of phones <code>ST254Q03JA</code> by <code>~</code> country <code>CNT</code>.</p>
-<p>There is no need to create a contingency table for the Kruskal Wallis test</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Create a data frame for US and UK phones</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a>UKUSphones<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">select</span>(CNT, ST254Q03JA) <span class="sc">%&gt;%</span> <span class="co"># choose country and no of phones</span></span>
-<span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span><span class="sc">|</span>CNT <span class="sc">==</span> <span class="st">"United States"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-5"><a href="#cb25-5"></a>  <span class="co"># filter for the UK and US</span></span>
-<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a></span>
-<span id="cb25-8"><a href="#cb25-8"></a></span>
-<span id="cb25-9"><a href="#cb25-9"></a><span class="fu">kruskal.test</span>(<span class="at">data=</span>UKUSphones, ST254Q03JA <span class="sc">~</span> CNT) <span class="co"># Perform the test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Kruskal-Wallis rank sum test
-
-data:  ST254Q03JA by CNT
-Kruskal-Wallis chi-squared = 99.839, df = 1, p-value &lt; 2.2e-16</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># The p-value is less than 0.05 (p-value= 2.2e-16), therefore we reject the null hypothesis that the number of phones is the same for respondents in the UK and the US</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The test is interpreted in the same way as a chi square test. The null hypothesis is that there are no differences in the ordinal data of the groups being tested. If the p-value is over 0.05 the null hypothesis is accepted, if it is below, the null hypothesis is rejected.</p>
 <div class="question">
-<p>Are there differences in the number of televisions in the home <code>ST254Q01JA</code> in the UK and the United States? Create a mosaic plot</p>
+<ol start="3" type="a">
+<li>Are there differences in the number of televisions in the home <code>ST254Q01JA</code> in the UK and the United States? Create a mosaic plot</li>
+</ol>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>UKUSTV<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">select</span>(CNT, ST254Q01JA ) <span class="sc">%&gt;%</span> <span class="co"># choose country and no of TVs</span></span>
-<span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span><span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"United States"</span>)<span class="sc">%&gt;%</span> </span>
-<span id="cb28-4"><a href="#cb28-4"></a>  <span class="co"># filter for the UK and US</span></span>
-<span id="cb28-5"><a href="#cb28-5"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
-<span id="cb28-6"><a href="#cb28-6"></a></span>
-<span id="cb28-7"><a href="#cb28-7"></a><span class="co"># Perform the test</span></span>
-<span id="cb28-8"><a href="#cb28-8"></a></span>
-<span id="cb28-9"><a href="#cb28-9"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> UKUSTV,ST254Q01JA <span class="sc">~</span> CNT) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>UKUSTV<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">select</span>(CNT, ST254Q01JA ) <span class="sc">%&gt;%</span> <span class="co"># choose country and no of TVs</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span><span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"United States"</span>)<span class="sc">%&gt;%</span> </span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="co"># filter for the UK and US</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a></span>
+<span id="cb25-7"><a href="#cb25-7"></a><span class="co"># Perform the test</span></span>
+<span id="cb25-8"><a href="#cb25-8"></a></span>
+<span id="cb25-9"><a href="#cb25-9"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> UKUSTV,ST254Q01JA <span class="sc">~</span> CNT) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -1659,46 +1650,50 @@ Kruskal-Wallis chi-squared = 11.157, df = 1, p-value = 0.000837</code></pre>
 </div>
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># The p-value is less than 0.05 (p-value=2.2e-16), therefore we reject the null hypothesis that the number of books is the same for respondents in the UK and the US</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a></span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="co"># Create a geom_mosaic</span></span>
-<span id="cb30-4"><a href="#cb30-4"></a></span>
-<span id="cb30-5"><a href="#cb30-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> UKUSTV)<span class="sc">+</span></span>
-<span id="cb30-6"><a href="#cb30-6"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST254Q01JA,CNT), <span class="at">fill =</span> ST254Q01JA))<span class="sc">+</span></span>
-<span id="cb30-7"><a href="#cb30-7"></a>  <span class="fu">ylab</span>(<span class="st">"Number of TVs in the home"</span>)<span class="sc">+</span></span>
-<span id="cb30-8"><a href="#cb30-8"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>)<span class="sc">+</span></span>
-<span id="cb30-9"><a href="#cb30-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># The p-value is less than 0.05 (p-value=2.2e-16), therefore we reject the null hypothesis that the number of books is the same for respondents in the UK and the US</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="co"># Create a geom_mosaic</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> UKUSTV)<span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST254Q01JA,CNT), <span class="at">fill =</span> ST254Q01JA))<span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a>  <span class="fu">ylab</span>(<span class="st">"Number of TVs in the home"</span>)<span class="sc">+</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>)<span class="sc">+</span></span>
+<span id="cb27-9"><a href="#cb27-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07-ChisqPISA_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<p><img src="07-ChisqPISA_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Rotate x-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># Rotate x-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>In the UK, are there differences for boys and girls for the number of instruments in the home (<code>ST251Q06JA</code>)? Create a mosaic plot.</p>
+</div>
+<div class="question">
+<ol start="4" type="a">
+<li>In the UK, are there differences for boys and girls for the number of instruments in the home (<code>ST251Q06JA</code>)? Create a mosaic plot.</li>
+</ol>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Create a data frame of instruments in the UK including gender</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a></span>
-<span id="cb32-3"><a href="#cb32-3"></a>UKInstruments<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
-<span id="cb32-4"><a href="#cb32-4"></a>  <span class="fu">select</span>(CNT, ST251Q06JA, ST004D01T ) <span class="sc">%&gt;%</span> </span>
-<span id="cb32-5"><a href="#cb32-5"></a>  <span class="co"># choose CNT, no of instruments, gender</span></span>
-<span id="cb32-6"><a href="#cb32-6"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span> <span class="co"># filter for the UK</span></span>
-<span id="cb32-7"><a href="#cb32-7"></a>  <span class="fu">select</span>(ST251Q06JA, ST004D01T) <span class="sc">%&gt;%</span> </span>
-<span id="cb32-8"><a href="#cb32-8"></a>  <span class="co">#drop the country variable now filtering is done</span></span>
-<span id="cb32-9"><a href="#cb32-9"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
-<span id="cb32-10"><a href="#cb32-10"></a></span>
-<span id="cb32-11"><a href="#cb32-11"></a></span>
-<span id="cb32-12"><a href="#cb32-12"></a><span class="co"># Perform the test</span></span>
-<span id="cb32-13"><a href="#cb32-13"></a></span>
-<span id="cb32-14"><a href="#cb32-14"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> UKInstruments, ST251Q06JA <span class="sc">~</span> ST004D01T) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Create a data frame of instruments in the UK including gender</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a></span>
+<span id="cb29-3"><a href="#cb29-3"></a>UKInstruments<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">select</span>(CNT, ST251Q06JA, ST004D01T ) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-5"><a href="#cb29-5"></a>  <span class="co"># choose CNT, no of instruments, gender</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span> <span class="co"># filter for the UK</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>  <span class="fu">select</span>(ST251Q06JA, ST004D01T) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-8"><a href="#cb29-8"></a>  <span class="co">#drop the country variable now filtering is done</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a></span>
+<span id="cb29-11"><a href="#cb29-11"></a></span>
+<span id="cb29-12"><a href="#cb29-12"></a><span class="co"># Perform the test</span></span>
+<span id="cb29-13"><a href="#cb29-13"></a></span>
+<span id="cb29-14"><a href="#cb29-14"></a><span class="fu">kruskal.test</span>(<span class="at">data =</span> UKInstruments, ST251Q06JA <span class="sc">~</span> ST004D01T) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -1709,40 +1704,44 @@ Kruskal-Wallis chi-squared = 15.366, df = 1, p-value = 8.859e-05</code></pre>
 </div>
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># The p-value is less than 0.05 (p-value = 6.146e-07), therefore we reject the null hypothesis. Girls and boys have different access to instruments in the home.</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a></span>
-<span id="cb34-3"><a href="#cb34-3"></a><span class="co"># Create a geom_mosaic</span></span>
-<span id="cb34-4"><a href="#cb34-4"></a></span>
-<span id="cb34-5"><a href="#cb34-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> UKInstruments)<span class="sc">+</span></span>
-<span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST251Q06JA, ST004D01T), <span class="at">fill =</span> ST251Q06JA))<span class="sc">+</span></span>
-<span id="cb34-7"><a href="#cb34-7"></a>  <span class="fu">ylab</span>(<span class="st">"Number of instruments in the home for UK young people"</span>)<span class="sc">+</span></span>
-<span id="cb34-8"><a href="#cb34-8"></a>  <span class="fu">xlab</span>(<span class="st">"Gender"</span>)<span class="sc">+</span></span>
-<span id="cb34-9"><a href="#cb34-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="co"># Rotate x-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># The p-value is less than 0.05 (p-value = 6.146e-07), therefore we reject the null hypothesis. Girls and boys have different access to instruments in the home.</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a></span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="co"># Create a geom_mosaic</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a></span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> UKInstruments)<span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(ST251Q06JA, ST004D01T), <span class="at">fill =</span> ST251Q06JA))<span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a>  <span class="fu">ylab</span>(<span class="st">"Number of instruments in the home for UK young people"</span>)<span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a>  <span class="fu">xlab</span>(<span class="st">"Gender"</span>)<span class="sc">+</span></span>
+<span id="cb31-9"><a href="#cb31-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="co"># Rotate x-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="07-ChisqPISA_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<p><img src="07-ChisqPISA_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>In the UK, are there differences for boys and girls working for pay in the UK (<code>WORKPAY</code>)? Plot the data as a mosaic plot.</p>
+</div>
+<div class="question">
+<ol start="5" type="a">
+<li>In the UK, are there differences for boys and girls working for pay in the UK (<code>WORKPAY</code>)? Plot the data as a mosaic plot.</li>
+</ol>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># Create a data frame of working in the Uk with gender</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a></span>
-<span id="cb35-3"><a href="#cb35-3"></a>UKWork<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
-<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">select</span>(CNT, WORKPAY, ST004D01T) <span class="sc">%&gt;%</span> <span class="co"># choose CNT, WORKPAY, gender</span></span>
-<span id="cb35-5"><a href="#cb35-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span> <span class="co"># filter for the UK</span></span>
-<span id="cb35-6"><a href="#cb35-6"></a>  <span class="fu">select</span>(WORKPAY, ST004D01T)<span class="sc">%&gt;%</span> </span>
-<span id="cb35-7"><a href="#cb35-7"></a>  <span class="co">#drop the country variable now filtering is done</span></span>
-<span id="cb35-8"><a href="#cb35-8"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
-<span id="cb35-9"><a href="#cb35-9"></a></span>
-<span id="cb35-10"><a href="#cb35-10"></a><span class="co"># Perform the test</span></span>
-<span id="cb35-11"><a href="#cb35-11"></a></span>
-<span id="cb35-12"><a href="#cb35-12"></a><span class="fu">kruskal.test</span>(UKWork, WORKPAY <span class="sc">~</span> ST004D01T) <span class="co"># Perform the test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Create a data frame of working in the Uk with gender</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a></span>
+<span id="cb32-3"><a href="#cb32-3"></a>UKWork<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a>  <span class="fu">select</span>(CNT, WORKPAY, ST004D01T) <span class="sc">%&gt;%</span> <span class="co"># choose CNT, WORKPAY, gender</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span> <span class="co"># filter for the UK</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a>  <span class="fu">select</span>(WORKPAY, ST004D01T)<span class="sc">%&gt;%</span> </span>
+<span id="cb32-7"><a href="#cb32-7"></a>  <span class="co">#drop the country variable now filtering is done</span></span>
+<span id="cb32-8"><a href="#cb32-8"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb32-9"><a href="#cb32-9"></a></span>
+<span id="cb32-10"><a href="#cb32-10"></a><span class="co"># Perform the test</span></span>
+<span id="cb32-11"><a href="#cb32-11"></a></span>
+<span id="cb32-12"><a href="#cb32-12"></a><span class="fu">kruskal.test</span>(UKWork, WORKPAY <span class="sc">~</span> ST004D01T) <span class="co"># Perform the test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -1753,17 +1752,48 @@ Kruskal-Wallis chi-squared = 19522, df = 1, p-value &lt; 2.2e-16</code></pre>
 </div>
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis. Girls and boys have different levels of work</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a></span>
-<span id="cb37-3"><a href="#cb37-3"></a><span class="co"># Create a geom_mosaic</span></span>
-<span id="cb37-4"><a href="#cb37-4"></a></span>
-<span id="cb37-5"><a href="#cb37-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> UKWork)<span class="sc">+</span></span>
-<span id="cb37-6"><a href="#cb37-6"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(WORKPAY, ST004D01T), <span class="at">fill =</span> WORKPAY))<span class="sc">+</span></span>
-<span id="cb37-7"><a href="#cb37-7"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency of work"</span>)<span class="sc">+</span></span>
-<span id="cb37-8"><a href="#cb37-8"></a>  <span class="fu">xlab</span>(<span class="st">"Gender"</span>)<span class="sc">+</span></span>
-<span id="cb37-9"><a href="#cb37-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span> <span class="dv">1</span>))<span class="sc">+</span></span>
-<span id="cb37-10"><a href="#cb37-10"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="fu">rel</span>(<span class="fl">0.5</span>))) <span class="co"># Reduce y-axis font size</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># The p-value is less than 0.05 (p-value &lt; 2.2e-16), therefore we reject the null hypothesis. Girls and boys have different levels of work</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a></span>
+<span id="cb34-3"><a href="#cb34-3"></a><span class="co"># Create a geom_mosaic</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a></span>
+<span id="cb34-5"><a href="#cb34-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> UKWork)<span class="sc">+</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(WORKPAY, ST004D01T), <span class="at">fill =</span> WORKPAY))<span class="sc">+</span></span>
+<span id="cb34-7"><a href="#cb34-7"></a>  <span class="fu">ylab</span>(<span class="st">"Frequency of work"</span>)<span class="sc">+</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a>  <span class="fu">xlab</span>(<span class="st">"Gender"</span>)<span class="sc">+</span></span>
+<span id="cb34-9"><a href="#cb34-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span> <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb34-10"><a href="#cb34-10"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="fu">rel</span>(<span class="fl">0.5</span>))) <span class="co"># Reduce y-axis font size</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="07-ChisqPISA_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># Rotate x-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</section>
+</section>
+<section id="extension-tasks" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Extension tasks</h1>
+<p>Whilst chi-square tests are useful for reporting whether there are significant differences between the distribution of values in a contingency table, they don’t, by themselves tell you which cells in the contingency table differ from the expected values. To find out this information, you can do a post-hoc analysis. For example, imagine we are interested in if there are differences in the distribution of frequency of working for pay (<code>WORKPAY</code> ) in different countries. We create a subset of PISA data for the the UK, US, France and Germany (<code>PISAsub</code>), create a contingency table, plot the data, and perform the <code>chisq.test</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>PISAsub <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">select</span>(CNT, WORKPAY)<span class="sc">%&gt;%</span> <span class="co"># choose country and type of school</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"United Kingdom"</span>, <span class="st">"United States"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>))<span class="sc">%&gt;%</span> <span class="co"># filter by four countries</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a></span>
+<span id="cb36-6"><a href="#cb36-6"></a>ContTab <span class="ot">&lt;-</span> (<span class="fu">xtabs</span>(<span class="sc">~</span>CNT <span class="sc">+</span> WORKPAY, PISAsub)) <span class="co"># Create contingency table by CNT and school type</span></span>
+<span id="cb36-7"><a href="#cb36-7"></a></span>
+<span id="cb36-8"><a href="#cb36-8"></a><span class="co"># Plot the data</span></span>
+<span id="cb36-9"><a href="#cb36-9"></a><span class="fu">ggplot</span>(<span class="at">data =</span> PISAsub)<span class="sc">+</span></span>
+<span id="cb36-10"><a href="#cb36-10"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(WORKPAY, CNT), <span class="at">fill =</span> WORKPAY))<span class="sc">+</span></span>
+<span id="cb36-11"><a href="#cb36-11"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb36-12"><a href="#cb36-12"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="fu">rel</span>(<span class="fl">0.5</span>))) <span class="co"># Reduce y-axis font size</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1771,38 +1801,8 @@ Kruskal-Wallis chi-squared = 19522, df = 1, p-value &lt; 2.2e-16</code></pre>
 </figure>
 </div>
 </div>
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Rotate x-axis labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-</section>
-<section id="extension-tasks" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Extension tasks</h1>
-<p>Whilst chi-square tests are useful for reporting whether there are significant differences between the distribution of values in a contingency table, they don’t, by themselves tell you which cells in the contingency table differ from the expected values. To find out this information, you can do a post-hoc analysis. For example, imagine we are interested in if there are differences in the distribution of frequency of working for pay (<code>WORKPAY</code> ) in different countries. We create a subset of PISA data for the the UK, US, France and Germany (<code>PISAsub</code>), create a contingency table, plot the data, and perform the <code>chisq.test</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>PISAsub <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">select</span>(CNT, WORKPAY)<span class="sc">%&gt;%</span> <span class="co"># choose country and type of school</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"United Kingdom"</span>, <span class="st">"United States"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>))<span class="sc">%&gt;%</span> <span class="co"># filter by four countries</span></span>
-<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">droplevels</span>() <span class="co"># Remove other countries which exist as factors</span></span>
-<span id="cb39-5"><a href="#cb39-5"></a></span>
-<span id="cb39-6"><a href="#cb39-6"></a>ContTab <span class="ot">&lt;-</span> (<span class="fu">xtabs</span>(<span class="sc">~</span>CNT <span class="sc">+</span> WORKPAY, PISAsub)) <span class="co"># Create contingency table by CNT and school type</span></span>
-<span id="cb39-7"><a href="#cb39-7"></a></span>
-<span id="cb39-8"><a href="#cb39-8"></a><span class="co"># Plot the data</span></span>
-<span id="cb39-9"><a href="#cb39-9"></a><span class="fu">ggplot</span>(<span class="at">data =</span> PISAsub)<span class="sc">+</span></span>
-<span id="cb39-10"><a href="#cb39-10"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">product</span>(WORKPAY, CNT), <span class="at">fill =</span> WORKPAY))<span class="sc">+</span></span>
-<span id="cb39-11"><a href="#cb39-11"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
-<span id="cb39-12"><a href="#cb39-12"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="fu">rel</span>(<span class="fl">0.5</span>))) <span class="co"># Reduce y-axis font size</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07-ChisqPISA_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># perform the chi square test</span></span>
-<span id="cb40-2"><a href="#cb40-2"></a><span class="fu">chisq.test</span>(ContTab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># perform the chi square test</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">chisq.test</span>(ContTab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test
@@ -1810,8 +1810,9 @@ Kruskal-Wallis chi-squared = 19522, df = 1, p-value &lt; 2.2e-16</code></pre>
 data:  ContTab
 X-squared = 534.25, df = 30, p-value &lt; 2.2e-16</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># perform the post hoc text</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a><span class="fu">chisq.theo.multcomp</span>(ContTab, <span class="at">p.method =</span> <span class="st">"bonferroni"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this case, the chi square test returns a p-value &lt; 2.2e-16 suggesting significant differences between the countries. We can use the package <code>RVAideMemoire</code> to use the function <code>chisq.theo.multcomp</code> to perform the additional test.</p>
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
         Pairwise comparisons using chi-squared tests
@@ -1835,60 +1836,59 @@ data:  ContTab and bonferroni
 P value adjustment method: bonferroni</code></pre>
 </div>
 </div>
-<p>In this case, the chi square test returns a p-value &lt; 2.2e-16 suggesting significant differences between the countries. We can use the package <code>RVAideMemoire</code> to use the function <code>chisq.theo.multcomp</code> to perform the additional test.</p>
 <p>The posthoc test returns a table of residuals and p-values for each cell in the contingency table The residuals give a sense how much each cell contributes to the total chi-squared value. The right most column (<code>Pr(&gt;Chi)</code>) reports whether this deviation is statistically significant. All of the columns return a p-value below 0.05, as would be expected from the overall result, except for working for one time per week in the UK which has a p-value of 1.</p>
-<section id="useful-resources" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="useful-resources"><span class="header-section-number">10.1</span> Useful resources</h2>
 </section>
-</section>
-<section id="doing-chi-square-tests-in-r" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Doing Chi-Square tests in R</h1>
+<section id="useful-resources" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Useful resources</h1>
+<section id="doing-chi-square-tests-in-r" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="doing-chi-square-tests-in-r"><span class="header-section-number">10.1</span> Doing Chi-Square tests in R</h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qnZX0G1M29E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 <p>You can find the code used in the video below</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># Introduction to Chi-square</span></span>
-<span id="cb44-2"><a href="#cb44-2"></a><span class="co">#</span></span>
-<span id="cb44-3"><a href="#cb44-3"></a><span class="co"># Download data from /Users/k1765032/Library/CloudStorage/GoogleDrive-richardandrewbrock@gmail.com/.shortcut-targets-by-id/1c3CkaEBOICzepArDfjQUP34W2BYhFjM4/PISR/Data/PISA/subset/Students_2018_RBDP_none_levels.rds</span></span>
-<span id="cb44-4"><a href="#cb44-4"></a><span class="co"># You want the file: Students_2018_RBDP_none_levels.rds</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a><span class="co"># and place in your own file system</span></span>
-<span id="cb44-6"><a href="#cb44-6"></a><span class="co"># change loc to load the data directly. Loading into R might take a few minutes</span></span>
-<span id="cb44-7"><a href="#cb44-7"></a></span>
-<span id="cb44-8"><a href="#cb44-8"></a>loc <span class="ot">&lt;-</span> <span class="st">"https://drive.google.com/open?id=14pL2Bz677Kk5_nn9BTmEuuUGY9S09bDb&amp;authuser=richardandrewbrock%40gmail.com&amp;usp=drive_fs"</span></span>
-<span id="cb44-9"><a href="#cb44-9"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(loc)</span>
-<span id="cb44-10"><a href="#cb44-10"></a></span>
-<span id="cb44-11"><a href="#cb44-11"></a><span class="co"># Are there differences between how often students change school?</span></span>
-<span id="cb44-12"><a href="#cb44-12"></a><span class="co"># ST004D01T is the gender variable (Male, Female)</span></span>
-<span id="cb44-13"><a href="#cb44-13"></a><span class="co"># SCCHANGE is a categorical variable (No change / One change / Two or more changes)</span></span>
-<span id="cb44-14"><a href="#cb44-14"></a></span>
-<span id="cb44-15"><a href="#cb44-15"></a>chidata <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb44-16"><a href="#cb44-16"></a>  <span class="fu">select</span>(CNT,ST004D01T,SCCHANGE) <span class="sc">%&gt;%</span></span>
-<span id="cb44-17"><a href="#cb44-17"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb44-18"><a href="#cb44-18"></a></span>
-<span id="cb44-19"><a href="#cb44-19"></a>chidata<span class="ot">&lt;-</span>chidata[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
-<span id="cb44-20"><a href="#cb44-20"></a>chidata<span class="ot">&lt;-</span><span class="fu">drop_na</span>(chidata)</span>
-<span id="cb44-21"><a href="#cb44-21"></a></span>
-<span id="cb44-22"><a href="#cb44-22"></a> chidata <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb44-23"><a href="#cb44-23"></a>   <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
-<span id="cb44-24"><a href="#cb44-24"></a>   <span class="fu">select</span>(ST004D01T,SCCHANGE) <span class="sc">%&gt;%</span> </span>
-<span id="cb44-25"><a href="#cb44-25"></a>   <span class="fu">drop_na</span>()</span>
-<span id="cb44-26"><a href="#cb44-26"></a><span class="co"># Above is the approiach I took in the video</span></span>
-<span id="cb44-27"><a href="#cb44-27"></a><span class="co"># An alternative, Pete suggests, which is more elegant, is below</span></span>
-<span id="cb44-28"><a href="#cb44-28"></a><span class="co"># Note he drops the country varibale, within the piped section</span></span>
-<span id="cb44-29"><a href="#cb44-29"></a><span class="co"># using: elect(-CNT)</span></span>
-<span id="cb44-30"><a href="#cb44-30"></a><span class="co">#    </span></span>
-<span id="cb44-31"><a href="#cb44-31"></a><span class="co"># chidata &lt;- PISA_2018 %&gt;%</span></span>
-<span id="cb44-32"><a href="#cb44-32"></a><span class="co">#   select(CNT,ST004D01T,SCCHANGE) %&gt;%</span></span>
-<span id="cb44-33"><a href="#cb44-33"></a><span class="co">#   filter(CNT=="United Kingdom") %&gt;%</span></span>
-<span id="cb44-34"><a href="#cb44-34"></a><span class="co">#   select(-CNT) %&gt;% </span></span>
-<span id="cb44-35"><a href="#cb44-35"></a><span class="co">#   drop_na()</span></span>
-<span id="cb44-36"><a href="#cb44-36"></a></span>
-<span id="cb44-37"><a href="#cb44-37"></a><span class="co"># run the test</span></span>
-<span id="cb44-38"><a href="#cb44-38"></a><span class="fu">chisq.test</span>(chidata<span class="sc">$</span>ST004D01T, chidata<span class="sc">$</span>SCCHANGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Introduction to Chi-square</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="co">#</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a><span class="co"># Download data from /Users/k1765032/Library/CloudStorage/GoogleDrive-richardandrewbrock@gmail.com/.shortcut-targets-by-id/1c3CkaEBOICzepArDfjQUP34W2BYhFjM4/PISR/Data/PISA/subset/Students_2018_RBDP_none_levels.rds</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="co"># You want the file: Students_2018_RBDP_none_levels.rds</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a><span class="co"># and place in your own file system</span></span>
+<span id="cb40-6"><a href="#cb40-6"></a><span class="co"># change loc to load the data directly. Loading into R might take a few minutes</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a></span>
+<span id="cb40-8"><a href="#cb40-8"></a>loc <span class="ot">&lt;-</span> <span class="st">"https://drive.google.com/open?id=14pL2Bz677Kk5_nn9BTmEuuUGY9S09bDb&amp;authuser=richardandrewbrock%40gmail.com&amp;usp=drive_fs"</span></span>
+<span id="cb40-9"><a href="#cb40-9"></a>PISA_2018 <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(loc)</span>
+<span id="cb40-10"><a href="#cb40-10"></a></span>
+<span id="cb40-11"><a href="#cb40-11"></a><span class="co"># Are there differences between how often students change school?</span></span>
+<span id="cb40-12"><a href="#cb40-12"></a><span class="co"># ST004D01T is the gender variable (Male, Female)</span></span>
+<span id="cb40-13"><a href="#cb40-13"></a><span class="co"># SCCHANGE is a categorical variable (No change / One change / Two or more changes)</span></span>
+<span id="cb40-14"><a href="#cb40-14"></a></span>
+<span id="cb40-15"><a href="#cb40-15"></a>chidata <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb40-16"><a href="#cb40-16"></a>  <span class="fu">select</span>(CNT,ST004D01T,SCCHANGE) <span class="sc">%&gt;%</span></span>
+<span id="cb40-17"><a href="#cb40-17"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb40-18"><a href="#cb40-18"></a></span>
+<span id="cb40-19"><a href="#cb40-19"></a>chidata<span class="ot">&lt;-</span>chidata[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)]</span>
+<span id="cb40-20"><a href="#cb40-20"></a>chidata<span class="ot">&lt;-</span><span class="fu">drop_na</span>(chidata)</span>
+<span id="cb40-21"><a href="#cb40-21"></a></span>
+<span id="cb40-22"><a href="#cb40-22"></a> chidata <span class="ot">&lt;-</span> PISA_2018 <span class="sc">%&gt;%</span></span>
+<span id="cb40-23"><a href="#cb40-23"></a>   <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
+<span id="cb40-24"><a href="#cb40-24"></a>   <span class="fu">select</span>(ST004D01T,SCCHANGE) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-25"><a href="#cb40-25"></a>   <span class="fu">drop_na</span>()</span>
+<span id="cb40-26"><a href="#cb40-26"></a><span class="co"># Above is the approiach I took in the video</span></span>
+<span id="cb40-27"><a href="#cb40-27"></a><span class="co"># An alternative, Pete suggests, which is more elegant, is below</span></span>
+<span id="cb40-28"><a href="#cb40-28"></a><span class="co"># Note he drops the country varibale, within the piped section</span></span>
+<span id="cb40-29"><a href="#cb40-29"></a><span class="co"># using: elect(-CNT)</span></span>
+<span id="cb40-30"><a href="#cb40-30"></a><span class="co">#    </span></span>
+<span id="cb40-31"><a href="#cb40-31"></a><span class="co"># chidata &lt;- PISA_2018 %&gt;%</span></span>
+<span id="cb40-32"><a href="#cb40-32"></a><span class="co">#   select(CNT,ST004D01T,SCCHANGE) %&gt;%</span></span>
+<span id="cb40-33"><a href="#cb40-33"></a><span class="co">#   filter(CNT=="United Kingdom") %&gt;%</span></span>
+<span id="cb40-34"><a href="#cb40-34"></a><span class="co">#   select(-CNT) %&gt;% </span></span>
+<span id="cb40-35"><a href="#cb40-35"></a><span class="co">#   drop_na()</span></span>
+<span id="cb40-36"><a href="#cb40-36"></a></span>
+<span id="cb40-37"><a href="#cb40-37"></a><span class="co"># run the test</span></span>
+<span id="cb40-38"><a href="#cb40-38"></a><span class="fu">chisq.test</span>(chidata<span class="sc">$</span>ST004D01T, chidata<span class="sc">$</span>SCCHANGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">

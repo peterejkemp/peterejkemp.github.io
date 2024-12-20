@@ -51,7 +51,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -101,9 +121,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="index.qmd" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../images/KCL_logo.png" alt="" class="navbar-logo"></a>
-    <a class="navbar-brand" href="index.qmd">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MASTEMR</span>
     </a>
   </div>
@@ -191,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">05 Introduction to PISA</span></a>
+ <span class="menu-text">04 Introduction to PISA</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -203,13 +223,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">07 T-tests</span></a>
+ <span class="menu-text">06 T-tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">06 Hypothesis testing and Chi-square tests</span></a>
+ <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -608,9 +628,9 @@ Variances:
 </div>
 </div>
 </div>
-<p>The mode raises the question of how strong does correlation between independent variables and a proposed latent variable need to be. Cho and colleagues <span class="citation" data-cites="cho2020">(<a href="#ref-cho2020" role="doc-biblioref"><strong>cho2020?</strong></a>)</span> suggest that:</p>
+<p>The mode raises the question of how strong does correlation between independent variables and a proposed latent variable need to be. Cho and colleagues <span class="citation" data-cites="cho2020">Cho et al. (<a href="#ref-cho2020" role="doc-biblioref">2020</a>)</span> suggest that:</p>
 <blockquote class="blockquote">
-<p>“When N = 100, researchers may choose a GFI [Meaning Goodness-of-Fit Index] cutoff value of .89 …When N &gt; 100, researchers may choose a GFI cutoff value of .93” <span class="citation" data-cites="cho2020">(<a href="#ref-cho2020" role="doc-biblioref"><strong>cho2020?</strong></a>)</span></p>
+<p>“When N = 100, researchers may choose a GFI [Meaning Goodness-of-Fit Index] cutoff value of .89 …When N &gt; 100, researchers may choose a GFI cutoff value of .93” <span class="citation" data-cites="cho2020">(<a href="#ref-cho2020" role="doc-biblioref">Cho et al. 2020, 197</a>)</span></p>
 </blockquote>
 <p>We can develop a more complex latent variable model. Let us assume that UK students reading scores depend on two latent variables, home environment (e.g.&nbsp;number of books, parental level of education etc) and cognitive ability (e.g.&nbsp;as reported by science and mathematics scores). Here are some relevant variables:</p>
 <table class="caption-top table">
@@ -1111,7 +1131,12 @@ Variances:
 </div>
 
 
-</section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+
+</section></section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-cho2020" class="csl-entry" role="listitem">
+Cho, Gyeongcheol, Heungsun Hwang, Marko Sarstedt, and Christian M. Ringle. 2020. <span>“Cutoff Criteria for Overall Model Fit Indexes in Generalized Structured Component Analysis.”</span> <em>Journal of Marketing Analytics</em> 8 (4): 189–202. <a href="https://doi.org/10.1057/s41270-020-00089-1">https://doi.org/10.1057/s41270-020-00089-1</a>.
+</div>
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
