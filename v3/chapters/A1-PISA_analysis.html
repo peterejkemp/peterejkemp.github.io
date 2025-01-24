@@ -573,6 +573,18 @@ div.csl-indent {
 </div>
 <p>Finally, we calculated the mean of the <code>PV1MATH_weighted_mean</code>, <code>PV2MATH_weighted_mean</code>, … <code>PV10MATH_weighted_mean</code> columns. I have arranged the results in descending order.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">select</span>(CNT, W_FSTUWT, PV1MATH<span class="sc">:</span>PV10MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(PV1MATH<span class="sc">:</span>PV10MATH, <span class="sc">~</span> .x <span class="sc">*</span> W_FSTUWT, <span class="at">.names =</span> <span class="st">"{.col}_weighted"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="at">total_weight =</span> <span class="fu">sum</span>(W_FSTUWT, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-7"><a href="#cb6-7"></a>    <span class="fu">across</span>(PV1MATH_weighted<span class="sc">:</span>PV10MATH_weighted, <span class="sc">~</span> <span class="fu">sum</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> total_weight, <span class="at">.names =</span> <span class="st">"{.col}_mean"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">mutate</span>(<span class="at">PV_mean_weighted =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">ends_with</span>(<span class="st">"_mean"</span>)), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">select</span>(CNT, PV_mean_weighted) <span class="sc">%&gt;%</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">mutate</span>(<span class="at">PV_mean_weighted =</span> <span class="fu">round</span>(PV_mean_weighted, <span class="at">digits =</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(PV_mean_weighted))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 80 × 2
 # Rowwise: 
@@ -593,18 +605,18 @@ div.csl-indent {
 </div>
 <p>This output matches the PISA published values for 2022.</p>
 <p>When performing tests (for example, t-tests or linear regressions) the recommended approach is to:Rubin’s rules for multiple imputation as recommended by the OECD <span class="citation" data-cites="rubin1987multiple">OECD (<a href="#ref-OECD2009tech" role="doc-biblioref">2009a</a>)</span> : a) estimate a statistic multiple times, once each for each plausible value; b) average the values produced; c) estimate the magnitude of the imputation error; and d) calculate the final standard error from the sampling error and the imputation error.</p>
-<p>Hence, if you were performing a linear model you should a) weight the raw scores you intend to use; b) run the model ten times, once each for each of the plausible values; c) calculate the average value.</p>
+<p>Hence, if you were performing a linear model you should a) weight the raw scores you intend to use; b) run the model ten times, once each for each of the plausible values; c) calculate the average outcome metrics. For example, your code might look like this:</p>
 </section><section id="why-are-some-countries-oecd-countries-and-others-arent" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="why-are-some-countries-oecd-countries-and-others-arent">
 <span class="header-section-number">4.3</span> Why are some countries OECD countries and others aren’t?</h2>
 <p>The Organisation for Economic Co-operation and Development (OECD) has 38 member states. PISA is run by the OECD and its member states normally take part in each PISA cycle, but other countries are allowed to take part as <em>Partners</em>. You can find more details on participation <a href="https://www.oecd.org/pisa/aboutpisa/pisa-participants.htm">here</a>.</p>
 <p>Results for OECD members are generally higher than for Partner countries:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">group_by</span>(OECD) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">summarise</span>(<span class="at">country_n =</span> <span class="fu">length</span>(<span class="fu">unique</span>(CNT)),</span>
-<span id="cb7-4"><a href="#cb7-4"></a>            <span class="at">math_mean =</span> <span class="fu">mean</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb7-5"><a href="#cb7-5"></a>            <span class="at">math_sd =</span> <span class="fu">sd</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb7-6"><a href="#cb7-6"></a>            <span class="at">students_n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">group_by</span>(OECD) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">summarise</span>(<span class="at">country_n =</span> <span class="fu">length</span>(<span class="fu">unique</span>(CNT)),</span>
+<span id="cb8-4"><a href="#cb8-4"></a>            <span class="at">math_mean =</span> <span class="fu">mean</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb8-5"><a href="#cb8-5"></a>            <span class="at">math_sd =</span> <span class="fu">sd</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb8-6"><a href="#cb8-6"></a>            <span class="at">students_n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
   OECD  country_n math_mean math_sd students_n
@@ -617,14 +629,14 @@ div.csl-indent {
 <span class="header-section-number">4.4</span> Why are the PV grades pivoting around the ~500 mark?</h2>
 <p>The scores for students in mathematics, reading and science are scaled so that the mean of students in OECD countries is roughly 500 points with a standard deviation of 100 points. To see this, run the following code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">filter</span>(OECD<span class="sc">==</span><span class="st">"Yes"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">summarise</span>(<span class="at">math_mean =</span> <span class="fu">mean</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb9-4"><a href="#cb9-4"></a>            <span class="at">math_sd =</span> <span class="fu">sd</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb9-5"><a href="#cb9-5"></a>            <span class="at">scie_mean =</span> <span class="fu">mean</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb9-6"><a href="#cb9-6"></a>            <span class="at">scie_sd =</span> <span class="fu">sd</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb9-7"><a href="#cb9-7"></a>            <span class="at">read_mean =</span> <span class="fu">mean</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb9-8"><a href="#cb9-8"></a>            <span class="at">read_sd =</span> <span class="fu">sd</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">filter</span>(OECD<span class="sc">==</span><span class="st">"Yes"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">summarise</span>(<span class="at">math_mean =</span> <span class="fu">mean</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb10-4"><a href="#cb10-4"></a>            <span class="at">math_sd =</span> <span class="fu">sd</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb10-5"><a href="#cb10-5"></a>            <span class="at">scie_mean =</span> <span class="fu">mean</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb10-6"><a href="#cb10-6"></a>            <span class="at">scie_sd =</span> <span class="fu">sd</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb10-7"><a href="#cb10-7"></a>            <span class="at">read_mean =</span> <span class="fu">mean</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb10-8"><a href="#cb10-8"></a>            <span class="at">read_sd =</span> <span class="fu">sd</span>(PV1READ, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 6
   math_mean math_sd scie_mean scie_sd read_mean read_sd
@@ -640,16 +652,16 @@ div.csl-indent {
 </section><section id="how-do-i-find-fields-that-are-numeric" class="level2" data-number="4.7"><h2 data-number="4.7" class="anchored" data-anchor-id="how-do-i-find-fields-that-are-numeric">
 <span class="header-section-number">4.7</span> How do I find fields that are numeric?</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># using the following code!</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a></span>
-<span id="cb11-3"><a href="#cb11-3"></a>nms <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> <span class="fu">names</span>()</span>
-<span id="cb11-4"><a href="#cb11-4"></a>lbls <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(nms,\(nme){</span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">message</span>(nme)</span>
-<span id="cb11-6"><a href="#cb11-6"></a>  lbl <span class="ot">&lt;-</span> <span class="fu">attr</span>(PISA_2022[[nme]], <span class="st">"label"</span>)</span>
-<span id="cb11-7"><a href="#cb11-7"></a>  row <span class="ot">&lt;-</span> <span class="fu">c</span>(nme, lbl)</span>
-<span id="cb11-8"><a href="#cb11-8"></a>  <span class="fu">names</span>(row) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"label"</span>)</span>
-<span id="cb11-9"><a href="#cb11-9"></a>  <span class="fu">return</span>(row)</span>
-<span id="cb11-10"><a href="#cb11-10"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># using the following code!</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a></span>
+<span id="cb12-3"><a href="#cb12-3"></a>nms <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> <span class="fu">names</span>()</span>
+<span id="cb12-4"><a href="#cb12-4"></a>lbls <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(nms,\(nme){</span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">message</span>(nme)</span>
+<span id="cb12-6"><a href="#cb12-6"></a>  lbl <span class="ot">&lt;-</span> <span class="fu">attr</span>(PISA_2022[[nme]], <span class="st">"label"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7"></a>  row <span class="ot">&lt;-</span> <span class="fu">c</span>(nme, lbl)</span>
+<span id="cb12-8"><a href="#cb12-8"></a>  <span class="fu">names</span>(row) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"label"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9"></a>  <span class="fu">return</span>(row)</span>
+<span id="cb12-10"><a href="#cb12-10"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="how-are-students-selected-to-take-part-in-pisa" class="level2" data-number="4.8"><h2 data-number="4.8" class="anchored" data-anchor-id="how-are-students-selected-to-take-part-in-pisa">
 <span class="header-section-number">4.8</span> How are students selected to take part in PISA?</h2>
@@ -667,14 +679,14 @@ div.csl-indent {
 <p>Add Christian Bokhove papers https://bokhove.net/r-materials/</p>
 <p>From the data, you can see that 50% of schools entered fewer than 30 students into PISA.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">summarise</span>(<span class="at">size =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">mutate</span>(<span class="at">quartile =</span> <span class="fu">ntile</span>(size, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">group_by</span>(quartile) <span class="sc">%&gt;%</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">summarise</span>(<span class="at">Qmax =</span> <span class="fu">max</span>(size),</span>
-<span id="cb12-7"><a href="#cb12-7"></a>            <span class="at">Qmedian =</span> <span class="fu">median</span>(size),</span>
-<span id="cb12-8"><a href="#cb12-8"></a>            <span class="at">Qmean =</span> <span class="fu">mean</span>(size))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">summarise</span>(<span class="at">size =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">mutate</span>(<span class="at">quartile =</span> <span class="fu">ntile</span>(size, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">group_by</span>(quartile) <span class="sc">%&gt;%</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">summarise</span>(<span class="at">Qmax =</span> <span class="fu">max</span>(size),</span>
+<span id="cb13-7"><a href="#cb13-7"></a>            <span class="at">Qmedian =</span> <span class="fu">median</span>(size),</span>
+<span id="cb13-8"><a href="#cb13-8"></a>            <span class="at">Qmean =</span> <span class="fu">mean</span>(size))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 4
   quartile  Qmax Qmedian Qmean
@@ -684,10 +696,10 @@ div.csl-indent {
 3        3    37      34  33.8
 4        4   475      40  44.4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(PISA_2022 <span class="sc">%&gt;%</span> </span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">summarise</span>(<span class="at">size =</span> <span class="fu">n</span>()), <span class="fu">aes</span>(<span class="at">x=</span>size)) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(PISA_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">group_by</span>(CNTSCHID) <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">summarise</span>(<span class="at">size =</span> <span class="fu">n</span>()), <span class="fu">aes</span>(<span class="at">x=</span>size)) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="A1-PISA_analysis_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
@@ -774,42 +786,42 @@ div.csl-indent {
 <span class="header-section-number">4.14</span> How do I calculate weighted means of the PV scores?</h2>
 <p>You can use a function written by Miguel Diaz Kusztrick, here is his slightly tidied function for calculating weighted means and standard deviations (<a href="https://web.archive.org/web/20230208113351/http://software-tecnico-libre.es/en/article-by-topic/all-sections/all-topics/all-articles/pisa-database-plausible-values-r-code">original link</a>):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Copyright Miguel Diaz Kusztrick</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>wght_meansd_pv <span class="ot">&lt;-</span> <span class="cf">function</span>(sdata, pv, weight, brr) {</span>
-<span id="cb15-3"><a href="#cb15-3"></a>    mmeans  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb15-4"><a href="#cb15-4"></a>    <span class="fu">names</span>(mmeans) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MEAN"</span>,<span class="st">"SE-MEAN"</span>,<span class="st">"STDEV"</span>,<span class="st">"SE-STDEV"</span>)</span>
-<span id="cb15-5"><a href="#cb15-5"></a>    </span>
-<span id="cb15-6"><a href="#cb15-6"></a>    mmeanspv <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
-<span id="cb15-7"><a href="#cb15-7"></a>    stdspv   <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
-<span id="cb15-8"><a href="#cb15-8"></a>    mmeansbr <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
-<span id="cb15-9"><a href="#cb15-9"></a>    stdsbr   <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
-<span id="cb15-10"><a href="#cb15-10"></a>    sum_weight <span class="ot">&lt;-</span> <span class="fu">sum</span>(sdata[,weight])</span>
-<span id="cb15-11"><a href="#cb15-11"></a>    </span>
-<span id="cb15-12"><a href="#cb15-12"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pv)) {</span>
-<span id="cb15-13"><a href="#cb15-13"></a>        mmeanspv[i] <span class="ot">&lt;-</span> <span class="fu">sum</span>(sdata[,weight]<span class="sc">*</span>sdata[,pv[i]])<span class="sc">/</span>sum_weight</span>
-<span id="cb15-14"><a href="#cb15-14"></a>        stdspv[i]   <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="fu">sum</span>(sdata[,weight]<span class="sc">*</span>(sdata[,pv[i]]<span class="sc">^</span><span class="dv">2</span>))<span class="sc">/</span>swght)<span class="sc">-</span>mmeanspv[i]<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb15-15"><a href="#cb15-15"></a>        <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(brr)) {</span>
-<span id="cb15-16"><a href="#cb15-16"></a>            sbrr<span class="ot">&lt;-</span><span class="fu">sum</span>(sdata[,brr[j]])</span>
-<span id="cb15-17"><a href="#cb15-17"></a>            mbrrj<span class="ot">&lt;-</span><span class="fu">sum</span>(sdata[,brr[j]]<span class="sc">*</span>sdata[,pv[i]])<span class="sc">/</span>sbrr</span>
-<span id="cb15-18"><a href="#cb15-18"></a>            mmeansbr[i]<span class="ot">&lt;-</span>mmeansbr[i] <span class="sc">+</span> (mbrrj <span class="sc">-</span> mmeanspv[i])<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb15-19"><a href="#cb15-19"></a>            stdsbr[i]<span class="ot">&lt;-</span>stdsbr[i] <span class="sc">+</span> (<span class="fu">sqrt</span>((<span class="fu">sum</span>(sdata[,brr[j]]<span class="sc">*</span>(sdata[,pv[i]]<span class="sc">^</span><span class="dv">2</span>))<span class="sc">/</span>sbrr)<span class="sc">-</span>mbrrj<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> stdspv[i])<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb15-20"><a href="#cb15-20"></a>        }       </span>
-<span id="cb15-21"><a href="#cb15-21"></a>    }</span>
-<span id="cb15-22"><a href="#cb15-22"></a>    mmeans[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>(mmeanspv) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
-<span id="cb15-23"><a href="#cb15-23"></a>    mmeans[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>((mmeansbr <span class="sc">*</span> <span class="dv">4</span>) <span class="sc">/</span> <span class="fu">length</span>(brr)) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
-<span id="cb15-24"><a href="#cb15-24"></a>    mmeans[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>(stdspv) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
-<span id="cb15-25"><a href="#cb15-25"></a>    mmeans[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>((stdsbr <span class="sc">*</span> <span class="dv">4</span>) <span class="sc">/</span> <span class="fu">length</span>(brr)) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
-<span id="cb15-26"><a href="#cb15-26"></a>    ivar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
-<span id="cb15-27"><a href="#cb15-27"></a>    </span>
-<span id="cb15-28"><a href="#cb15-28"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pv)) {</span>
-<span id="cb15-29"><a href="#cb15-29"></a>        ivar[<span class="dv">1</span>] <span class="ot">&lt;-</span> ivar[<span class="dv">1</span>] <span class="sc">+</span> (mmeanspv[i] <span class="sc">-</span> mmeans[<span class="dv">1</span>])<span class="sc">^</span><span class="dv">2</span>;</span>
-<span id="cb15-30"><a href="#cb15-30"></a>        ivar[<span class="dv">2</span>] <span class="ot">&lt;-</span> ivar[<span class="dv">2</span>] <span class="sc">+</span> (stdspv[i] <span class="sc">-</span> mmeans[<span class="dv">3</span>])<span class="sc">^</span><span class="dv">2</span>;</span>
-<span id="cb15-31"><a href="#cb15-31"></a>    }</span>
-<span id="cb15-32"><a href="#cb15-32"></a>    ivar <span class="ot">=</span> (<span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="fu">length</span>(pv))) <span class="sc">*</span> (ivar <span class="sc">/</span> (<span class="fu">length</span>(pv) <span class="sc">-</span> <span class="dv">1</span>));</span>
-<span id="cb15-33"><a href="#cb15-33"></a>    mmeans[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(mmeans[<span class="dv">2</span>] <span class="sc">+</span> ivar[<span class="dv">1</span>]);</span>
-<span id="cb15-34"><a href="#cb15-34"></a>    mmeans[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(mmeans[<span class="dv">4</span>] <span class="sc">+</span> ivar[<span class="dv">2</span>]);</span>
-<span id="cb15-35"><a href="#cb15-35"></a>    <span class="fu">return</span>(mmeans);</span>
-<span id="cb15-36"><a href="#cb15-36"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Copyright Miguel Diaz Kusztrick</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>wght_meansd_pv <span class="ot">&lt;-</span> <span class="cf">function</span>(sdata, pv, weight, brr) {</span>
+<span id="cb16-3"><a href="#cb16-3"></a>    mmeans  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb16-4"><a href="#cb16-4"></a>    <span class="fu">names</span>(mmeans) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MEAN"</span>,<span class="st">"SE-MEAN"</span>,<span class="st">"STDEV"</span>,<span class="st">"SE-STDEV"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5"></a>    </span>
+<span id="cb16-6"><a href="#cb16-6"></a>    mmeanspv <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
+<span id="cb16-7"><a href="#cb16-7"></a>    stdspv   <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
+<span id="cb16-8"><a href="#cb16-8"></a>    mmeansbr <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
+<span id="cb16-9"><a href="#cb16-9"></a>    stdsbr   <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(pv))</span>
+<span id="cb16-10"><a href="#cb16-10"></a>    sum_weight <span class="ot">&lt;-</span> <span class="fu">sum</span>(sdata[,weight])</span>
+<span id="cb16-11"><a href="#cb16-11"></a>    </span>
+<span id="cb16-12"><a href="#cb16-12"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pv)) {</span>
+<span id="cb16-13"><a href="#cb16-13"></a>        mmeanspv[i] <span class="ot">&lt;-</span> <span class="fu">sum</span>(sdata[,weight]<span class="sc">*</span>sdata[,pv[i]])<span class="sc">/</span>sum_weight</span>
+<span id="cb16-14"><a href="#cb16-14"></a>        stdspv[i]   <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((<span class="fu">sum</span>(sdata[,weight]<span class="sc">*</span>(sdata[,pv[i]]<span class="sc">^</span><span class="dv">2</span>))<span class="sc">/</span>swght)<span class="sc">-</span>mmeanspv[i]<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb16-15"><a href="#cb16-15"></a>        <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(brr)) {</span>
+<span id="cb16-16"><a href="#cb16-16"></a>            sbrr<span class="ot">&lt;-</span><span class="fu">sum</span>(sdata[,brr[j]])</span>
+<span id="cb16-17"><a href="#cb16-17"></a>            mbrrj<span class="ot">&lt;-</span><span class="fu">sum</span>(sdata[,brr[j]]<span class="sc">*</span>sdata[,pv[i]])<span class="sc">/</span>sbrr</span>
+<span id="cb16-18"><a href="#cb16-18"></a>            mmeansbr[i]<span class="ot">&lt;-</span>mmeansbr[i] <span class="sc">+</span> (mbrrj <span class="sc">-</span> mmeanspv[i])<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb16-19"><a href="#cb16-19"></a>            stdsbr[i]<span class="ot">&lt;-</span>stdsbr[i] <span class="sc">+</span> (<span class="fu">sqrt</span>((<span class="fu">sum</span>(sdata[,brr[j]]<span class="sc">*</span>(sdata[,pv[i]]<span class="sc">^</span><span class="dv">2</span>))<span class="sc">/</span>sbrr)<span class="sc">-</span>mbrrj<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> stdspv[i])<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb16-20"><a href="#cb16-20"></a>        }       </span>
+<span id="cb16-21"><a href="#cb16-21"></a>    }</span>
+<span id="cb16-22"><a href="#cb16-22"></a>    mmeans[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>(mmeanspv) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
+<span id="cb16-23"><a href="#cb16-23"></a>    mmeans[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>((mmeansbr <span class="sc">*</span> <span class="dv">4</span>) <span class="sc">/</span> <span class="fu">length</span>(brr)) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
+<span id="cb16-24"><a href="#cb16-24"></a>    mmeans[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>(stdspv) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
+<span id="cb16-25"><a href="#cb16-25"></a>    mmeans[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>((stdsbr <span class="sc">*</span> <span class="dv">4</span>) <span class="sc">/</span> <span class="fu">length</span>(brr)) <span class="sc">/</span> <span class="fu">length</span>(pv)</span>
+<span id="cb16-26"><a href="#cb16-26"></a>    ivar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb16-27"><a href="#cb16-27"></a>    </span>
+<span id="cb16-28"><a href="#cb16-28"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(pv)) {</span>
+<span id="cb16-29"><a href="#cb16-29"></a>        ivar[<span class="dv">1</span>] <span class="ot">&lt;-</span> ivar[<span class="dv">1</span>] <span class="sc">+</span> (mmeanspv[i] <span class="sc">-</span> mmeans[<span class="dv">1</span>])<span class="sc">^</span><span class="dv">2</span>;</span>
+<span id="cb16-30"><a href="#cb16-30"></a>        ivar[<span class="dv">2</span>] <span class="ot">&lt;-</span> ivar[<span class="dv">2</span>] <span class="sc">+</span> (stdspv[i] <span class="sc">-</span> mmeans[<span class="dv">3</span>])<span class="sc">^</span><span class="dv">2</span>;</span>
+<span id="cb16-31"><a href="#cb16-31"></a>    }</span>
+<span id="cb16-32"><a href="#cb16-32"></a>    ivar <span class="ot">=</span> (<span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="fu">length</span>(pv))) <span class="sc">*</span> (ivar <span class="sc">/</span> (<span class="fu">length</span>(pv) <span class="sc">-</span> <span class="dv">1</span>));</span>
+<span id="cb16-33"><a href="#cb16-33"></a>    mmeans[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(mmeans[<span class="dv">2</span>] <span class="sc">+</span> ivar[<span class="dv">1</span>]);</span>
+<span id="cb16-34"><a href="#cb16-34"></a>    mmeans[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(mmeans[<span class="dv">4</span>] <span class="sc">+</span> ivar[<span class="dv">2</span>]);</span>
+<span id="cb16-35"><a href="#cb16-35"></a>    <span class="fu">return</span>(mmeans);</span>
+<span id="cb16-36"><a href="#cb16-36"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section><section id="pisa-quirks" class="level1" data-number="5"><h1 data-number="5">
 <span class="header-section-number">5</span> PISA quirks</h1>
@@ -817,58 +829,66 @@ div.csl-indent {
 <span class="header-section-number">5.1</span> Empty fields</h2>
 <p>All 2022 school responses to questions about the clubs and extra curricular activities run in a school <code>SC053Q____</code> are coded as <code>NA</code>, as are <code>SC207____</code>. It’s not clear why this data is included in the dataset or whether this data should have values but doesn’t. These (albeit empty) fields are included in the full <code>PISA_school_2022.parquet</code> file linked above.</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>club_flds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"SC053Q01TA"</span>,<span class="st">"SC053Q02TA"</span>,<span class="st">"SC053Q03TA"</span>,<span class="st">"SC053Q04TA"</span>,<span class="st">"SC053Q05NA"</span>,</span>
-<span id="cb16-2"><a href="#cb16-2"></a>               <span class="st">"SC053Q06NA"</span>,<span class="st">"SC053Q07TA"</span>,<span class="st">"SC053Q08TA"</span>,<span class="st">"SC053Q09TA"</span>,<span class="st">"SC053Q10TA"</span>)</span>
-<span id="cb16-3"><a href="#cb16-3"></a></span>
-<span id="cb16-4"><a href="#cb16-4"></a>PISA_2022_school <span class="sc">%&gt;%</span> </span>
-<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"CNT"</span>, <span class="fu">starts_with</span>(<span class="st">"SC053Q"</span>), <span class="fu">starts_with</span>(<span class="st">"SC207"</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
-<span id="cb16-7"><a href="#cb16-7"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>CNT, </span>
-<span id="cb16-8"><a href="#cb16-8"></a>               <span class="at">names_to =</span> <span class="st">"club"</span>,</span>
-<span id="cb16-9"><a href="#cb16-9"></a>               <span class="at">values_to =</span> <span class="st">"present"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(present)) <span class="sc">%&gt;%</span></span>
-<span id="cb16-11"><a href="#cb16-11"></a>  <span class="fu">pull</span>(club) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-12"><a href="#cb16-12"></a>  <span class="fu">unique</span>()</span>
-<span id="cb16-13"><a href="#cb16-13"></a></span>
-<span id="cb16-14"><a href="#cb16-14"></a><span class="co"># Note: SC053D11TA is present:</span></span>
-<span id="cb16-15"><a href="#cb16-15"></a><span class="co"># &lt;This academic year&gt;,follow. activities/school offers&lt;national modal grade for 15-year-olds&gt;? &lt;country specific item&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>club_flds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"SC053Q01TA"</span>,<span class="st">"SC053Q02TA"</span>,<span class="st">"SC053Q03TA"</span>,<span class="st">"SC053Q04TA"</span>,<span class="st">"SC053Q05NA"</span>,</span>
+<span id="cb17-2"><a href="#cb17-2"></a>               <span class="st">"SC053Q06NA"</span>,<span class="st">"SC053Q07TA"</span>,<span class="st">"SC053Q08TA"</span>,<span class="st">"SC053Q09TA"</span>,<span class="st">"SC053Q10TA"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a>PISA_2022_school <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"CNT"</span>, <span class="fu">starts_with</span>(<span class="st">"SC053Q"</span>), <span class="fu">starts_with</span>(<span class="st">"SC207"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-6"><a href="#cb17-6"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>CNT, </span>
+<span id="cb17-8"><a href="#cb17-8"></a>               <span class="at">names_to =</span> <span class="st">"club"</span>,</span>
+<span id="cb17-9"><a href="#cb17-9"></a>               <span class="at">values_to =</span> <span class="st">"present"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(present)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a>  <span class="fu">pull</span>(club) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-12"><a href="#cb17-12"></a>  <span class="fu">unique</span>()</span>
+<span id="cb17-13"><a href="#cb17-13"></a></span>
+<span id="cb17-14"><a href="#cb17-14"></a><span class="co"># Note: SC053D11TA is present:</span></span>
+<span id="cb17-15"><a href="#cb17-15"></a><span class="co"># &lt;This academic year&gt;,follow. activities/school offers&lt;national modal grade for 15-year-olds&gt;? &lt;country specific item&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Additionally, <em>creativity</em> fields stored in <code>ST334_____</code>, <code>ST340_____</code>, <code>ST341_____</code>, <code>PA185_____</code> and <code>CREA____</code> on the student questionnaire are missing answers for all countries:</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"CNT"</span>, <span class="st">"IMAGINE"</span>, </span>
-<span id="cb17-3"><a href="#cb17-3"></a>           <span class="fu">starts_with</span>(<span class="st">"ST334"</span>),</span>
-<span id="cb17-4"><a href="#cb17-4"></a>           <span class="fu">starts_with</span>(<span class="st">"ST340"</span>), </span>
-<span id="cb17-5"><a href="#cb17-5"></a>           <span class="fu">starts_with</span>(<span class="st">"ST341"</span>),</span>
-<span id="cb17-6"><a href="#cb17-6"></a>           <span class="fu">starts_with</span>(<span class="st">"PA185"</span>),</span>
-<span id="cb17-7"><a href="#cb17-7"></a>           <span class="fu">starts_with</span>(<span class="st">"CREA"</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-8"><a href="#cb17-8"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), as.numeric)) <span class="sc">%&gt;%</span></span>
-<span id="cb17-9"><a href="#cb17-9"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
-<span id="cb17-10"><a href="#cb17-10"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>CNT, </span>
-<span id="cb17-11"><a href="#cb17-11"></a>               <span class="at">names_to =</span> <span class="st">"creativity"</span>,</span>
-<span id="cb17-12"><a href="#cb17-12"></a>               <span class="at">values_to =</span> <span class="st">"present"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb17-13"><a href="#cb17-13"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(present)) <span class="sc">%&gt;%</span></span>
-<span id="cb17-14"><a href="#cb17-14"></a>  <span class="fu">pull</span>(creativity) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-15"><a href="#cb17-15"></a>  <span class="fu">unique</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"CNT"</span>, <span class="st">"IMAGINE"</span>, </span>
+<span id="cb18-3"><a href="#cb18-3"></a>           <span class="fu">starts_with</span>(<span class="st">"ST334"</span>),</span>
+<span id="cb18-4"><a href="#cb18-4"></a>           <span class="fu">starts_with</span>(<span class="st">"ST340"</span>), </span>
+<span id="cb18-5"><a href="#cb18-5"></a>           <span class="fu">starts_with</span>(<span class="st">"ST341"</span>),</span>
+<span id="cb18-6"><a href="#cb18-6"></a>           <span class="fu">starts_with</span>(<span class="st">"PA185"</span>),</span>
+<span id="cb18-7"><a href="#cb18-7"></a>           <span class="fu">starts_with</span>(<span class="st">"CREA"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-8"><a href="#cb18-8"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), as.numeric)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
+<span id="cb18-10"><a href="#cb18-10"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>CNT, </span>
+<span id="cb18-11"><a href="#cb18-11"></a>               <span class="at">names_to =</span> <span class="st">"creativity"</span>,</span>
+<span id="cb18-12"><a href="#cb18-12"></a>               <span class="at">values_to =</span> <span class="st">"present"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-13"><a href="#cb18-13"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(present)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-14"><a href="#cb18-14"></a>  <span class="fu">pull</span>(creativity) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-15"><a href="#cb18-15"></a>  <span class="fu">unique</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="cyprus-present-but-missing" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="cyprus-present-but-missing">
 <span class="header-section-number">5.2</span> Cyprus present but missing</h2>
 <p>Cyprus is still present in the levels of <code>CNT</code> even though PISA hasn’t recorded <a href="https://www.oecd.org/pisa/aboutpisa/cyprus-pisa.htm">data on Cyprus</a> since 2012. Other countries that didn’t participate in the 2022 round have been removed from the levels, e.g.&nbsp;China.</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>countries <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">pull</span>(CNT) <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span>
-<span id="cb18-2"><a href="#cb18-2"></a>country_lvls <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">pull</span>(CNT) <span class="sc">%&gt;%</span> <span class="fu">levels</span>()</span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="fu">setdiff</span>(country_lvls, countries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>countries <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">pull</span>(CNT) <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span>
+<span id="cb19-2"><a href="#cb19-2"></a>country_lvls <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">pull</span>(CNT) <span class="sc">%&gt;%</span> <span class="fu">levels</span>()</span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="fu">setdiff</span>(country_lvls, countries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="great-britain-vs-the-united-kingdom" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="great-britain-vs-the-united-kingdom">
 <span class="header-section-number">5.3</span> Great Britain vs the United Kingdom</h2>
-<p>The <em>United Kingdom</em> is the country referred to when correctly combining the results of England, Scotland, Wales and Northern Ireland. However, the <em>regions</em> of the United Kingdom listed by the OECD are <em>“Great Britain:”</em> England, Scotland, Wales and Northern Ireland. Northern Ireland isn’t part of Great Britain.</p>
+<p>The <em>United Kingdom</em> is the country referred to when correctly combining the results of England, Scotland, Wales and Northern Ireland. However, the <em>regions</em> of the United Kingdom listed by the OECD are <em>“Great Britain:”</em> followed by England, Scotland, Wales and Northern Ireland. Northern Ireland isn’t part of <a href="https://en.wikipedia.org/wiki/Great_Britain">Great Britain</a>.</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">select</span>(CNT, REGION) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Great Britain"</span>, REGION)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">select</span>(CNT, REGION) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Great Britain"</span>, REGION)) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  CNT            REGION                         
+  &lt;fct&gt;          &lt;fct&gt;                          
+1 United Kingdom Great Britain: Wales           
+2 United Kingdom Great Britain: Northern Ireland
+3 United Kingdom Great Britain: England         
+4 United Kingdom Great Britain: Scotland        </code></pre>
+</div>
 </div>
 </section></section><section id="interesting-papers-and-reading-on-pisa" class="level1" data-number="6"><h1 data-number="6">
 <span class="header-section-number">6</span> Interesting papers and reading on PISA</h1>
