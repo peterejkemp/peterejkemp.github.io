@@ -323,10 +323,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#i-am-getting-the-error-error-mapping-should-be-created-with-aes-or-aes_.-when-using-ggplot" id="toc-i-am-getting-the-error-error-mapping-should-be-created-with-aes-or-aes_.-when-using-ggplot" class="nav-link" data-scroll-target="#i-am-getting-the-error-error-mapping-should-be-created-with-aes-or-aes_.-when-using-ggplot"><span class="header-section-number">1.4</span> I am getting the error: ‘“Error: Mapping should be created with <code>aes()</code> or <code>aes_()</code>.”’ when using ggplot</a></li>
   <li><a href="#my-axis-labels-are-too-long" id="toc-my-axis-labels-are-too-long" class="nav-link" data-scroll-target="#my-axis-labels-are-too-long"><span class="header-section-number">1.5</span> My axis labels are too long</a></li>
   <li><a href="#how-can-i-find-out-the-full-item-labels-in-the-pisa-data-frame" id="toc-how-can-i-find-out-the-full-item-labels-in-the-pisa-data-frame" class="nav-link" data-scroll-target="#how-can-i-find-out-the-full-item-labels-in-the-pisa-data-frame"><span class="header-section-number">1.6</span> How can I find out the full item labels in the PISA data frame?</a></li>
-  <li><a href="#how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assingment-or-paper" id="toc-how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assingment-or-paper" class="nav-link" data-scroll-target="#how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assingment-or-paper"><span class="header-section-number">1.7</span> How do I turn a data frame into a form I can put into an assingment or paper?</a></li>
+  <li><a href="#how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper" id="toc-how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper" class="nav-link" data-scroll-target="#how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper"><span class="header-section-number">1.7</span> How do I turn a data frame into a form I can put into an assignment or paper?</a></li>
   <li><a href="#how-do-i-report-the-results-of-tests-in-apa-format" id="toc-how-do-i-report-the-results-of-tests-in-apa-format" class="nav-link" data-scroll-target="#how-do-i-report-the-results-of-tests-in-apa-format"><span class="header-section-number">1.8</span> How do I report the results of tests in APA format?</a></li>
   <li><a href="#how-do-i-add-the-results-from-statistical-tests-to-ggplot" id="toc-how-do-i-add-the-results-from-statistical-tests-to-ggplot" class="nav-link" data-scroll-target="#how-do-i-add-the-results-from-statistical-tests-to-ggplot"><span class="header-section-number">1.9</span> How do I add the results from statistical tests to ggplot?</a></li>
-  <li><a href="#how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper" id="toc-how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper" class="nav-link" data-scroll-target="#how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper"><span class="header-section-number">1.10</span> How do I turn a data frame into a form I can put into an assignment or paper?</a></li>
+  <li><a href="#how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper-1" id="toc-how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper-1" class="nav-link" data-scroll-target="#how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper-1"><span class="header-section-number">1.10</span> How do I turn a data frame into a form I can put into an assignment or paper?</a></li>
   <li><a href="#how-can-i-change-the-colours-of-a-plot-if-i-dont-want-the-default-colours" id="toc-how-can-i-change-the-colours-of-a-plot-if-i-dont-want-the-default-colours" class="nav-link" data-scroll-target="#how-can-i-change-the-colours-of-a-plot-if-i-dont-want-the-default-colours"><span class="header-section-number">1.11</span> How can I change the colours of a plot if I don’t want the default colours?</a></li>
   </ul>
 </li>
@@ -450,19 +450,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">1.5</span> My axis labels are too long</h2>
 <p>If you want to use long axis titles you may find they overrun the space available</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>,</span>
-<span id="cb11-2"><a href="#cb11-2"></a>                 <span class="at">y=</span><span class="dv">10</span><span class="sc">:</span><span class="dv">6</span>)</span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y)) <span class="sc">+</span>           </span>
-<span id="cb11-4"><a href="#cb11-4"></a>         <span class="fu">geom_col</span>()<span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">ylab</span>(<span class="st">"A very long description for the y-axis label that will overflow and not look very nice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Make a sample data frame</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>,</span>
+<span id="cb11-3"><a href="#cb11-3"></a>                 <span class="at">y=</span><span class="dv">10</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb11-4"><a href="#cb11-4"></a></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="co"># plot the data</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y)) <span class="sc">+</span>           </span>
+<span id="cb11-7"><a href="#cb11-7"></a>         <span class="fu">geom_col</span>()<span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>  <span class="fu">ylab</span>(<span class="st">"A very long description for the y-axis label that will overflow and not look very nice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="A6-QandA_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>To insert a line break in the axis label, add <code>\n</code> to the text where you want line breaks.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>,</span>
-<span id="cb12-2"><a href="#cb12-2"></a>                 <span class="at">y=</span><span class="dv">10</span><span class="sc">:</span><span class="dv">6</span>)</span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y)) <span class="sc">+</span>           </span>
-<span id="cb12-4"><a href="#cb12-4"></a>         <span class="fu">geom_col</span>()<span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">ylab</span>(<span class="st">"A very long description </span><span class="sc">\n</span><span class="st"> for the y-axis label that will </span><span class="sc">\n</span><span class="st"> overflow and not look very nice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Make a sample data frame</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>,</span>
+<span id="cb12-3"><a href="#cb12-3"></a>                 <span class="at">y=</span><span class="dv">10</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="co"># plot the data</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y)) <span class="sc">+</span>           </span>
+<span id="cb12-7"><a href="#cb12-7"></a>         <span class="fu">geom_col</span>()<span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a>  <span class="fu">ylab</span>(<span class="st">"A very long description </span><span class="sc">\n</span><span class="st"> for the y-axis label that will </span><span class="sc">\n</span><span class="st"> overflow and not look very nice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="A6-QandA_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
+</div>
 </div>
 </section><section id="how-can-i-find-out-the-full-item-labels-in-the-pisa-data-frame" class="level2" data-number="1.6"><h2 data-number="1.6" class="anchored" data-anchor-id="how-can-i-find-out-the-full-item-labels-in-the-pisa-data-frame">
 <span class="header-section-number">1.6</span> How can I find out the full item labels in the PISA data frame?</h2>
@@ -473,8 +491,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-3"><a href="#cb13-3"></a></span>
 <span id="cb13-4"><a href="#cb13-4"></a><span class="fu">lapply</span>(PISA_2022, attr, <span class="st">"label"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assingment-or-paper" class="level2" data-number="1.7"><h2 data-number="1.7" class="anchored" data-anchor-id="how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assingment-or-paper">
-<span class="header-section-number">1.7</span> How do I turn a data frame into a form I can put into an assingment or paper?</h2>
+</section><section id="how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper" class="level2" data-number="1.7"><h2 data-number="1.7" class="anchored" data-anchor-id="how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper">
+<span class="header-section-number">1.7</span> How do I turn a data frame into a form I can put into an assignment or paper?</h2>
 <p>You can use the <code>gt</code> package to convert data frames to aesthetically pleasing outputs.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># load the gt package - you will need to run install.packages("gt") the first time</span></span>
@@ -492,23 +510,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-13"><a href="#cb14-13"></a></span>
 <span id="cb14-14"><a href="#cb14-14"></a><span class="fu">gt</span>(science_mean_scores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="uhlqrxdizm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uhlqrxdizm table {
+<div id="adcciaovre" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#adcciaovre table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uhlqrxdizm thead, #uhlqrxdizm tbody, #uhlqrxdizm tfoot, #uhlqrxdizm tr, #uhlqrxdizm td, #uhlqrxdizm th {
+#adcciaovre thead, #adcciaovre tbody, #adcciaovre tfoot, #adcciaovre tr, #adcciaovre td, #adcciaovre th {
   border-style: none;
 }
 
-#uhlqrxdizm p {
+#adcciaovre p {
   margin: 0;
   padding: 0;
 }
 
-#uhlqrxdizm .gt_table {
+#adcciaovre .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -534,12 +552,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#uhlqrxdizm .gt_caption {
+#adcciaovre .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uhlqrxdizm .gt_title {
+#adcciaovre .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -551,7 +569,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#uhlqrxdizm .gt_subtitle {
+#adcciaovre .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -563,7 +581,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#uhlqrxdizm .gt_heading {
+#adcciaovre .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -575,13 +593,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#uhlqrxdizm .gt_bottom_border {
+#adcciaovre .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uhlqrxdizm .gt_col_headings {
+#adcciaovre .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -596,7 +614,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#uhlqrxdizm .gt_col_heading {
+#adcciaovre .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -616,7 +634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#uhlqrxdizm .gt_column_spanner_outer {
+#adcciaovre .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -628,15 +646,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#uhlqrxdizm .gt_column_spanner_outer:first-child {
+#adcciaovre .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uhlqrxdizm .gt_column_spanner_outer:last-child {
+#adcciaovre .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uhlqrxdizm .gt_column_spanner {
+#adcciaovre .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -648,11 +666,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#uhlqrxdizm .gt_spanner_row {
+#adcciaovre .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uhlqrxdizm .gt_group_heading {
+#adcciaovre .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -678,7 +696,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#uhlqrxdizm .gt_empty_group_heading {
+#adcciaovre .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -693,15 +711,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#uhlqrxdizm .gt_from_md > :first-child {
+#adcciaovre .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uhlqrxdizm .gt_from_md > :last-child {
+#adcciaovre .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uhlqrxdizm .gt_row {
+#adcciaovre .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -720,7 +738,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#uhlqrxdizm .gt_stub {
+#adcciaovre .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -733,7 +751,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#uhlqrxdizm .gt_stub_row_group {
+#adcciaovre .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -747,15 +765,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#uhlqrxdizm .gt_row_group_first td {
+#adcciaovre .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uhlqrxdizm .gt_row_group_first th {
+#adcciaovre .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uhlqrxdizm .gt_summary_row {
+#adcciaovre .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -765,16 +783,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#uhlqrxdizm .gt_first_summary_row {
+#adcciaovre .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uhlqrxdizm .gt_first_summary_row.thick {
+#adcciaovre .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uhlqrxdizm .gt_last_summary_row {
+#adcciaovre .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -784,7 +802,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#uhlqrxdizm .gt_grand_summary_row {
+#adcciaovre .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -794,7 +812,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#uhlqrxdizm .gt_first_grand_summary_row {
+#adcciaovre .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -804,7 +822,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#uhlqrxdizm .gt_last_grand_summary_row_top {
+#adcciaovre .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -814,11 +832,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#uhlqrxdizm .gt_striped {
+#adcciaovre .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uhlqrxdizm .gt_table_body {
+#adcciaovre .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -827,7 +845,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#uhlqrxdizm .gt_footnotes {
+#adcciaovre .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -841,7 +859,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#uhlqrxdizm .gt_footnote {
+#adcciaovre .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -850,7 +868,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#uhlqrxdizm .gt_sourcenotes {
+#adcciaovre .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -864,7 +882,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#uhlqrxdizm .gt_sourcenote {
+#adcciaovre .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -872,72 +890,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#uhlqrxdizm .gt_left {
+#adcciaovre .gt_left {
   text-align: left;
 }
 
-#uhlqrxdizm .gt_center {
+#adcciaovre .gt_center {
   text-align: center;
 }
 
-#uhlqrxdizm .gt_right {
+#adcciaovre .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uhlqrxdizm .gt_font_normal {
+#adcciaovre .gt_font_normal {
   font-weight: normal;
 }
 
-#uhlqrxdizm .gt_font_bold {
+#adcciaovre .gt_font_bold {
   font-weight: bold;
 }
 
-#uhlqrxdizm .gt_font_italic {
+#adcciaovre .gt_font_italic {
   font-style: italic;
 }
 
-#uhlqrxdizm .gt_super {
+#adcciaovre .gt_super {
   font-size: 65%;
 }
 
-#uhlqrxdizm .gt_footnote_marks {
+#adcciaovre .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uhlqrxdizm .gt_asterisk {
+#adcciaovre .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uhlqrxdizm .gt_indent_1 {
+#adcciaovre .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uhlqrxdizm .gt_indent_2 {
+#adcciaovre .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uhlqrxdizm .gt_indent_3 {
+#adcciaovre .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uhlqrxdizm .gt_indent_4 {
+#adcciaovre .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uhlqrxdizm .gt_indent_5 {
+#adcciaovre .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uhlqrxdizm .katex-display {
+#adcciaovre .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uhlqrxdizm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#adcciaovre div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1359,23 +1377,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-5"><a href="#cb15-5"></a>    <span class="at">title =</span> <span class="st">"Mean science scores"</span>,</span>
 <span id="cb15-6"><a href="#cb15-6"></a>    <span class="at">subtitle =</span> <span class="st">"PISA 2022 data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="jkvvbrrqxm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jkvvbrrqxm table {
+<div id="wznjcdksqc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wznjcdksqc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jkvvbrrqxm thead, #jkvvbrrqxm tbody, #jkvvbrrqxm tfoot, #jkvvbrrqxm tr, #jkvvbrrqxm td, #jkvvbrrqxm th {
+#wznjcdksqc thead, #wznjcdksqc tbody, #wznjcdksqc tfoot, #wznjcdksqc tr, #wznjcdksqc td, #wznjcdksqc th {
   border-style: none;
 }
 
-#jkvvbrrqxm p {
+#wznjcdksqc p {
   margin: 0;
   padding: 0;
 }
 
-#jkvvbrrqxm .gt_table {
+#wznjcdksqc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1401,12 +1419,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#jkvvbrrqxm .gt_caption {
+#wznjcdksqc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jkvvbrrqxm .gt_title {
+#wznjcdksqc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1418,7 +1436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#jkvvbrrqxm .gt_subtitle {
+#wznjcdksqc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1430,7 +1448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#jkvvbrrqxm .gt_heading {
+#wznjcdksqc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1442,13 +1460,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#jkvvbrrqxm .gt_bottom_border {
+#wznjcdksqc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jkvvbrrqxm .gt_col_headings {
+#wznjcdksqc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1463,7 +1481,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#jkvvbrrqxm .gt_col_heading {
+#wznjcdksqc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1483,7 +1501,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#jkvvbrrqxm .gt_column_spanner_outer {
+#wznjcdksqc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1495,15 +1513,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#jkvvbrrqxm .gt_column_spanner_outer:first-child {
+#wznjcdksqc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jkvvbrrqxm .gt_column_spanner_outer:last-child {
+#wznjcdksqc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jkvvbrrqxm .gt_column_spanner {
+#wznjcdksqc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1515,11 +1533,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#jkvvbrrqxm .gt_spanner_row {
+#wznjcdksqc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jkvvbrrqxm .gt_group_heading {
+#wznjcdksqc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1545,7 +1563,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#jkvvbrrqxm .gt_empty_group_heading {
+#wznjcdksqc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1560,15 +1578,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#jkvvbrrqxm .gt_from_md > :first-child {
+#wznjcdksqc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jkvvbrrqxm .gt_from_md > :last-child {
+#wznjcdksqc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jkvvbrrqxm .gt_row {
+#wznjcdksqc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1587,7 +1605,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#jkvvbrrqxm .gt_stub {
+#wznjcdksqc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1600,7 +1618,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#jkvvbrrqxm .gt_stub_row_group {
+#wznjcdksqc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1614,15 +1632,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#jkvvbrrqxm .gt_row_group_first td {
+#wznjcdksqc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jkvvbrrqxm .gt_row_group_first th {
+#wznjcdksqc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jkvvbrrqxm .gt_summary_row {
+#wznjcdksqc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1632,16 +1650,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#jkvvbrrqxm .gt_first_summary_row {
+#wznjcdksqc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jkvvbrrqxm .gt_first_summary_row.thick {
+#wznjcdksqc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jkvvbrrqxm .gt_last_summary_row {
+#wznjcdksqc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1651,7 +1669,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#jkvvbrrqxm .gt_grand_summary_row {
+#wznjcdksqc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1661,7 +1679,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#jkvvbrrqxm .gt_first_grand_summary_row {
+#wznjcdksqc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1671,7 +1689,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#jkvvbrrqxm .gt_last_grand_summary_row_top {
+#wznjcdksqc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1681,11 +1699,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#jkvvbrrqxm .gt_striped {
+#wznjcdksqc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jkvvbrrqxm .gt_table_body {
+#wznjcdksqc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1694,7 +1712,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#jkvvbrrqxm .gt_footnotes {
+#wznjcdksqc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1708,7 +1726,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#jkvvbrrqxm .gt_footnote {
+#wznjcdksqc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1717,7 +1735,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#jkvvbrrqxm .gt_sourcenotes {
+#wznjcdksqc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1731,7 +1749,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#jkvvbrrqxm .gt_sourcenote {
+#wznjcdksqc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1739,72 +1757,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#jkvvbrrqxm .gt_left {
+#wznjcdksqc .gt_left {
   text-align: left;
 }
 
-#jkvvbrrqxm .gt_center {
+#wznjcdksqc .gt_center {
   text-align: center;
 }
 
-#jkvvbrrqxm .gt_right {
+#wznjcdksqc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jkvvbrrqxm .gt_font_normal {
+#wznjcdksqc .gt_font_normal {
   font-weight: normal;
 }
 
-#jkvvbrrqxm .gt_font_bold {
+#wznjcdksqc .gt_font_bold {
   font-weight: bold;
 }
 
-#jkvvbrrqxm .gt_font_italic {
+#wznjcdksqc .gt_font_italic {
   font-style: italic;
 }
 
-#jkvvbrrqxm .gt_super {
+#wznjcdksqc .gt_super {
   font-size: 65%;
 }
 
-#jkvvbrrqxm .gt_footnote_marks {
+#wznjcdksqc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jkvvbrrqxm .gt_asterisk {
+#wznjcdksqc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jkvvbrrqxm .gt_indent_1 {
+#wznjcdksqc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jkvvbrrqxm .gt_indent_2 {
+#wznjcdksqc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jkvvbrrqxm .gt_indent_3 {
+#wznjcdksqc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jkvvbrrqxm .gt_indent_4 {
+#wznjcdksqc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jkvvbrrqxm .gt_indent_5 {
+#wznjcdksqc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jkvvbrrqxm .katex-display {
+#wznjcdksqc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jkvvbrrqxm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wznjcdksqc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2235,23 +2253,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(mean_science_score , sd_science), <span class="at">decimals =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb16-7"><a href="#cb16-7"></a>  <span class="fu">cols_label</span>(<span class="st">"CNT"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**Country**"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="ckskeufgft" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ckskeufgft table {
+<div id="aiezmbffzz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aiezmbffzz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ckskeufgft thead, #ckskeufgft tbody, #ckskeufgft tfoot, #ckskeufgft tr, #ckskeufgft td, #ckskeufgft th {
+#aiezmbffzz thead, #aiezmbffzz tbody, #aiezmbffzz tfoot, #aiezmbffzz tr, #aiezmbffzz td, #aiezmbffzz th {
   border-style: none;
 }
 
-#ckskeufgft p {
+#aiezmbffzz p {
   margin: 0;
   padding: 0;
 }
 
-#ckskeufgft .gt_table {
+#aiezmbffzz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2277,12 +2295,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#ckskeufgft .gt_caption {
+#aiezmbffzz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ckskeufgft .gt_title {
+#aiezmbffzz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2294,7 +2312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#ckskeufgft .gt_subtitle {
+#aiezmbffzz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2306,7 +2324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#ckskeufgft .gt_heading {
+#aiezmbffzz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2318,13 +2336,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ckskeufgft .gt_bottom_border {
+#aiezmbffzz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ckskeufgft .gt_col_headings {
+#aiezmbffzz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2339,7 +2357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ckskeufgft .gt_col_heading {
+#aiezmbffzz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2359,7 +2377,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ckskeufgft .gt_column_spanner_outer {
+#aiezmbffzz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2371,15 +2389,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#ckskeufgft .gt_column_spanner_outer:first-child {
+#aiezmbffzz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ckskeufgft .gt_column_spanner_outer:last-child {
+#aiezmbffzz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ckskeufgft .gt_column_spanner {
+#aiezmbffzz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2391,11 +2409,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#ckskeufgft .gt_spanner_row {
+#aiezmbffzz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ckskeufgft .gt_group_heading {
+#aiezmbffzz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2421,7 +2439,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#ckskeufgft .gt_empty_group_heading {
+#aiezmbffzz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2436,15 +2454,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#ckskeufgft .gt_from_md > :first-child {
+#aiezmbffzz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ckskeufgft .gt_from_md > :last-child {
+#aiezmbffzz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ckskeufgft .gt_row {
+#aiezmbffzz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2463,7 +2481,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ckskeufgft .gt_stub {
+#aiezmbffzz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2476,7 +2494,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ckskeufgft .gt_stub_row_group {
+#aiezmbffzz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2490,15 +2508,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#ckskeufgft .gt_row_group_first td {
+#aiezmbffzz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ckskeufgft .gt_row_group_first th {
+#aiezmbffzz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ckskeufgft .gt_summary_row {
+#aiezmbffzz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2508,16 +2526,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ckskeufgft .gt_first_summary_row {
+#aiezmbffzz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ckskeufgft .gt_first_summary_row.thick {
+#aiezmbffzz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ckskeufgft .gt_last_summary_row {
+#aiezmbffzz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2527,7 +2545,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ckskeufgft .gt_grand_summary_row {
+#aiezmbffzz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2537,7 +2555,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ckskeufgft .gt_first_grand_summary_row {
+#aiezmbffzz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2547,7 +2565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#ckskeufgft .gt_last_grand_summary_row_top {
+#aiezmbffzz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2557,11 +2575,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ckskeufgft .gt_striped {
+#aiezmbffzz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ckskeufgft .gt_table_body {
+#aiezmbffzz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2570,7 +2588,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ckskeufgft .gt_footnotes {
+#aiezmbffzz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2584,7 +2602,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ckskeufgft .gt_footnote {
+#aiezmbffzz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2593,7 +2611,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ckskeufgft .gt_sourcenotes {
+#aiezmbffzz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2607,7 +2625,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ckskeufgft .gt_sourcenote {
+#aiezmbffzz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2615,72 +2633,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ckskeufgft .gt_left {
+#aiezmbffzz .gt_left {
   text-align: left;
 }
 
-#ckskeufgft .gt_center {
+#aiezmbffzz .gt_center {
   text-align: center;
 }
 
-#ckskeufgft .gt_right {
+#aiezmbffzz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ckskeufgft .gt_font_normal {
+#aiezmbffzz .gt_font_normal {
   font-weight: normal;
 }
 
-#ckskeufgft .gt_font_bold {
+#aiezmbffzz .gt_font_bold {
   font-weight: bold;
 }
 
-#ckskeufgft .gt_font_italic {
+#aiezmbffzz .gt_font_italic {
   font-style: italic;
 }
 
-#ckskeufgft .gt_super {
+#aiezmbffzz .gt_super {
   font-size: 65%;
 }
 
-#ckskeufgft .gt_footnote_marks {
+#aiezmbffzz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ckskeufgft .gt_asterisk {
+#aiezmbffzz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ckskeufgft .gt_indent_1 {
+#aiezmbffzz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ckskeufgft .gt_indent_2 {
+#aiezmbffzz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ckskeufgft .gt_indent_3 {
+#aiezmbffzz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ckskeufgft .gt_indent_4 {
+#aiezmbffzz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ckskeufgft .gt_indent_5 {
+#aiezmbffzz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ckskeufgft .katex-display {
+#aiezmbffzz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ckskeufgft div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#aiezmbffzz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3126,25 +3144,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-21"><a href="#cb17-21"></a></span>
 <span id="cb17-22"><a href="#cb17-22"></a><span class="co"># pass to gt to produce nice output</span></span>
 <span id="cb17-23"><a href="#cb17-23"></a></span>
-<span id="cb17-24"><a href="#cb17-24"></a><span class="fu">gt</span>(uk_mod_tidy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-24"><a href="#cb17-24"></a><span class="fu">gt</span>(uk_mod_tidy) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-25"><a href="#cb17-25"></a>  <span class="fu">fmt_number</span>(<span class="at">columns=</span><span class="fu">c</span>(<span class="st">"p.value"</span>), </span>
+<span id="cb17-26"><a href="#cb17-26"></a>              <span class="at">decimals =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-27"><a href="#cb17-27"></a>  <span class="fu">fmt_number</span>(<span class="at">columns=</span><span class="fu">c</span>(<span class="st">"estimate"</span>, <span class="st">"std.error"</span>, <span class="st">"statistic"</span>), </span>
+<span id="cb17-28"><a href="#cb17-28"></a>              <span class="at">decimals =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="yxstxklthg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yxstxklthg table {
+<div id="ognxbyobav" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ognxbyobav table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yxstxklthg thead, #yxstxklthg tbody, #yxstxklthg tfoot, #yxstxklthg tr, #yxstxklthg td, #yxstxklthg th {
+#ognxbyobav thead, #ognxbyobav tbody, #ognxbyobav tfoot, #ognxbyobav tr, #ognxbyobav td, #ognxbyobav th {
   border-style: none;
 }
 
-#yxstxklthg p {
+#ognxbyobav p {
   margin: 0;
   padding: 0;
 }
 
-#yxstxklthg .gt_table {
+#ognxbyobav .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3170,12 +3192,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#yxstxklthg .gt_caption {
+#ognxbyobav .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yxstxklthg .gt_title {
+#ognxbyobav .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3187,7 +3209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#yxstxklthg .gt_subtitle {
+#ognxbyobav .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3199,7 +3221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#yxstxklthg .gt_heading {
+#ognxbyobav .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3211,13 +3233,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yxstxklthg .gt_bottom_border {
+#ognxbyobav .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yxstxklthg .gt_col_headings {
+#ognxbyobav .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3232,7 +3254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yxstxklthg .gt_col_heading {
+#ognxbyobav .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3252,7 +3274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#yxstxklthg .gt_column_spanner_outer {
+#ognxbyobav .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3264,15 +3286,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#yxstxklthg .gt_column_spanner_outer:first-child {
+#ognxbyobav .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yxstxklthg .gt_column_spanner_outer:last-child {
+#ognxbyobav .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yxstxklthg .gt_column_spanner {
+#ognxbyobav .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3284,11 +3306,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#yxstxklthg .gt_spanner_row {
+#ognxbyobav .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yxstxklthg .gt_group_heading {
+#ognxbyobav .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3314,7 +3336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#yxstxklthg .gt_empty_group_heading {
+#ognxbyobav .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3329,15 +3351,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#yxstxklthg .gt_from_md > :first-child {
+#ognxbyobav .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yxstxklthg .gt_from_md > :last-child {
+#ognxbyobav .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yxstxklthg .gt_row {
+#ognxbyobav .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3356,7 +3378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#yxstxklthg .gt_stub {
+#ognxbyobav .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3369,7 +3391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yxstxklthg .gt_stub_row_group {
+#ognxbyobav .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3383,15 +3405,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#yxstxklthg .gt_row_group_first td {
+#ognxbyobav .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yxstxklthg .gt_row_group_first th {
+#ognxbyobav .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yxstxklthg .gt_summary_row {
+#ognxbyobav .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3401,16 +3423,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yxstxklthg .gt_first_summary_row {
+#ognxbyobav .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yxstxklthg .gt_first_summary_row.thick {
+#ognxbyobav .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yxstxklthg .gt_last_summary_row {
+#ognxbyobav .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3420,7 +3442,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yxstxklthg .gt_grand_summary_row {
+#ognxbyobav .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3430,7 +3452,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yxstxklthg .gt_first_grand_summary_row {
+#ognxbyobav .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3440,7 +3462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#yxstxklthg .gt_last_grand_summary_row_top {
+#ognxbyobav .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3450,11 +3472,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yxstxklthg .gt_striped {
+#ognxbyobav .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yxstxklthg .gt_table_body {
+#ognxbyobav .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3463,7 +3485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yxstxklthg .gt_footnotes {
+#ognxbyobav .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3477,7 +3499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yxstxklthg .gt_footnote {
+#ognxbyobav .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3486,7 +3508,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yxstxklthg .gt_sourcenotes {
+#ognxbyobav .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3500,7 +3522,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yxstxklthg .gt_sourcenote {
+#ognxbyobav .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3508,72 +3530,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yxstxklthg .gt_left {
+#ognxbyobav .gt_left {
   text-align: left;
 }
 
-#yxstxklthg .gt_center {
+#ognxbyobav .gt_center {
   text-align: center;
 }
 
-#yxstxklthg .gt_right {
+#ognxbyobav .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yxstxklthg .gt_font_normal {
+#ognxbyobav .gt_font_normal {
   font-weight: normal;
 }
 
-#yxstxklthg .gt_font_bold {
+#ognxbyobav .gt_font_bold {
   font-weight: bold;
 }
 
-#yxstxklthg .gt_font_italic {
+#ognxbyobav .gt_font_italic {
   font-style: italic;
 }
 
-#yxstxklthg .gt_super {
+#ognxbyobav .gt_super {
   font-size: 65%;
 }
 
-#yxstxklthg .gt_footnote_marks {
+#ognxbyobav .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yxstxklthg .gt_asterisk {
+#ognxbyobav .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yxstxklthg .gt_indent_1 {
+#ognxbyobav .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yxstxklthg .gt_indent_2 {
+#ognxbyobav .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yxstxklthg .gt_indent_3 {
+#ognxbyobav .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yxstxklthg .gt_indent_4 {
+#ognxbyobav .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yxstxklthg .gt_indent_5 {
+#ognxbyobav .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yxstxklthg .katex-display {
+#ognxbyobav .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yxstxklthg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ognxbyobav div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3588,17 +3610,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="term">(Intercept)</td>
-<td class="gt_row gt_right" headers="estimate">42.3335278</td>
-<td class="gt_row gt_right" headers="std.error">2.304412214</td>
-<td class="gt_row gt_right" headers="statistic">18.37064</td>
-<td class="gt_row gt_right" headers="p.value">1.978594e-74</td>
+<td class="gt_row gt_right" headers="estimate">42.33</td>
+<td class="gt_row gt_right" headers="std.error">2.30</td>
+<td class="gt_row gt_right" headers="statistic">18.37</td>
+<td class="gt_row gt_right" headers="p.value">0.000</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="term">PV1MATH</td>
-<td class="gt_row gt_right" headers="estimate">0.9324181</td>
-<td class="gt_row gt_right" headers="std.error">0.004685464</td>
-<td class="gt_row gt_right" headers="statistic">199.00232</td>
-<td class="gt_row gt_right" headers="p.value">0.000000e+00</td>
+<td class="gt_row gt_right" headers="estimate">0.93</td>
+<td class="gt_row gt_right" headers="std.error">0.00</td>
+<td class="gt_row gt_right" headers="statistic">199.00</td>
+<td class="gt_row gt_right" headers="p.value">0.000</td>
 </tr>
 </tbody>
 </table>
@@ -3816,23 +3838,23 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 <span id="cb36-11"><a href="#cb36-11"></a></span>
 <span id="cb36-12"><a href="#cb36-12"></a><span class="fu">gt</span>(tidied_aov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="ehshshrnyj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ehshshrnyj table {
+<div id="oihzkulsmc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#oihzkulsmc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ehshshrnyj thead, #ehshshrnyj tbody, #ehshshrnyj tfoot, #ehshshrnyj tr, #ehshshrnyj td, #ehshshrnyj th {
+#oihzkulsmc thead, #oihzkulsmc tbody, #oihzkulsmc tfoot, #oihzkulsmc tr, #oihzkulsmc td, #oihzkulsmc th {
   border-style: none;
 }
 
-#ehshshrnyj p {
+#oihzkulsmc p {
   margin: 0;
   padding: 0;
 }
 
-#ehshshrnyj .gt_table {
+#oihzkulsmc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3858,12 +3880,12 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-left-color: #D3D3D3;
 }
 
-#ehshshrnyj .gt_caption {
+#oihzkulsmc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ehshshrnyj .gt_title {
+#oihzkulsmc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3875,7 +3897,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-width: 0;
 }
 
-#ehshshrnyj .gt_subtitle {
+#oihzkulsmc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3887,7 +3909,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-width: 0;
 }
 
-#ehshshrnyj .gt_heading {
+#oihzkulsmc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3899,13 +3921,13 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#ehshshrnyj .gt_bottom_border {
+#oihzkulsmc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ehshshrnyj .gt_col_headings {
+#oihzkulsmc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3920,7 +3942,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#ehshshrnyj .gt_col_heading {
+#oihzkulsmc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3940,7 +3962,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#ehshshrnyj .gt_column_spanner_outer {
+#oihzkulsmc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3952,15 +3974,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 4px;
 }
 
-#ehshshrnyj .gt_column_spanner_outer:first-child {
+#oihzkulsmc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ehshshrnyj .gt_column_spanner_outer:last-child {
+#oihzkulsmc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ehshshrnyj .gt_column_spanner {
+#oihzkulsmc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3972,11 +3994,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   width: 100%;
 }
 
-#ehshshrnyj .gt_spanner_row {
+#oihzkulsmc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ehshshrnyj .gt_group_heading {
+#oihzkulsmc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4002,7 +4024,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   text-align: left;
 }
 
-#ehshshrnyj .gt_empty_group_heading {
+#oihzkulsmc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4017,15 +4039,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: middle;
 }
 
-#ehshshrnyj .gt_from_md > :first-child {
+#oihzkulsmc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ehshshrnyj .gt_from_md > :last-child {
+#oihzkulsmc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ehshshrnyj .gt_row {
+#oihzkulsmc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4044,7 +4066,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#ehshshrnyj .gt_stub {
+#oihzkulsmc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4057,7 +4079,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#ehshshrnyj .gt_stub_row_group {
+#oihzkulsmc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4071,15 +4093,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: top;
 }
 
-#ehshshrnyj .gt_row_group_first td {
+#oihzkulsmc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ehshshrnyj .gt_row_group_first th {
+#oihzkulsmc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ehshshrnyj .gt_summary_row {
+#oihzkulsmc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4089,16 +4111,16 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#ehshshrnyj .gt_first_summary_row {
+#oihzkulsmc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ehshshrnyj .gt_first_summary_row.thick {
+#oihzkulsmc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ehshshrnyj .gt_last_summary_row {
+#oihzkulsmc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4108,7 +4130,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#ehshshrnyj .gt_grand_summary_row {
+#oihzkulsmc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4118,7 +4140,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#ehshshrnyj .gt_first_grand_summary_row {
+#oihzkulsmc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4128,7 +4150,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-color: #D3D3D3;
 }
 
-#ehshshrnyj .gt_last_grand_summary_row_top {
+#oihzkulsmc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4138,11 +4160,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#ehshshrnyj .gt_striped {
+#oihzkulsmc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ehshshrnyj .gt_table_body {
+#oihzkulsmc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4151,7 +4173,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#ehshshrnyj .gt_footnotes {
+#oihzkulsmc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4165,7 +4187,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#ehshshrnyj .gt_footnote {
+#oihzkulsmc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4174,7 +4196,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#ehshshrnyj .gt_sourcenotes {
+#oihzkulsmc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4188,7 +4210,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#ehshshrnyj .gt_sourcenote {
+#oihzkulsmc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4196,72 +4218,72 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#ehshshrnyj .gt_left {
+#oihzkulsmc .gt_left {
   text-align: left;
 }
 
-#ehshshrnyj .gt_center {
+#oihzkulsmc .gt_center {
   text-align: center;
 }
 
-#ehshshrnyj .gt_right {
+#oihzkulsmc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ehshshrnyj .gt_font_normal {
+#oihzkulsmc .gt_font_normal {
   font-weight: normal;
 }
 
-#ehshshrnyj .gt_font_bold {
+#oihzkulsmc .gt_font_bold {
   font-weight: bold;
 }
 
-#ehshshrnyj .gt_font_italic {
+#oihzkulsmc .gt_font_italic {
   font-style: italic;
 }
 
-#ehshshrnyj .gt_super {
+#oihzkulsmc .gt_super {
   font-size: 65%;
 }
 
-#ehshshrnyj .gt_footnote_marks {
+#oihzkulsmc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ehshshrnyj .gt_asterisk {
+#oihzkulsmc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ehshshrnyj .gt_indent_1 {
+#oihzkulsmc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ehshshrnyj .gt_indent_2 {
+#oihzkulsmc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ehshshrnyj .gt_indent_3 {
+#oihzkulsmc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ehshshrnyj .gt_indent_4 {
+#oihzkulsmc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ehshshrnyj .gt_indent_5 {
+#oihzkulsmc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ehshshrnyj .katex-display {
+#oihzkulsmc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ehshshrnyj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#oihzkulsmc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4299,23 +4321,23 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 <span id="cb37-2"><a href="#cb37-2"></a></span>
 <span id="cb37-3"><a href="#cb37-3"></a><span class="fu">gt</span>(tidied_mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="gpcgpaikmi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gpcgpaikmi table {
+<div id="dfskebewsi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dfskebewsi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gpcgpaikmi thead, #gpcgpaikmi tbody, #gpcgpaikmi tfoot, #gpcgpaikmi tr, #gpcgpaikmi td, #gpcgpaikmi th {
+#dfskebewsi thead, #dfskebewsi tbody, #dfskebewsi tfoot, #dfskebewsi tr, #dfskebewsi td, #dfskebewsi th {
   border-style: none;
 }
 
-#gpcgpaikmi p {
+#dfskebewsi p {
   margin: 0;
   padding: 0;
 }
 
-#gpcgpaikmi .gt_table {
+#dfskebewsi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4341,12 +4363,12 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-left-color: #D3D3D3;
 }
 
-#gpcgpaikmi .gt_caption {
+#dfskebewsi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gpcgpaikmi .gt_title {
+#dfskebewsi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4358,7 +4380,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-width: 0;
 }
 
-#gpcgpaikmi .gt_subtitle {
+#dfskebewsi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4370,7 +4392,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-width: 0;
 }
 
-#gpcgpaikmi .gt_heading {
+#dfskebewsi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4382,13 +4404,13 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#gpcgpaikmi .gt_bottom_border {
+#dfskebewsi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gpcgpaikmi .gt_col_headings {
+#dfskebewsi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4403,7 +4425,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#gpcgpaikmi .gt_col_heading {
+#dfskebewsi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4423,7 +4445,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#gpcgpaikmi .gt_column_spanner_outer {
+#dfskebewsi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4435,15 +4457,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 4px;
 }
 
-#gpcgpaikmi .gt_column_spanner_outer:first-child {
+#dfskebewsi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gpcgpaikmi .gt_column_spanner_outer:last-child {
+#dfskebewsi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gpcgpaikmi .gt_column_spanner {
+#dfskebewsi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4455,11 +4477,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   width: 100%;
 }
 
-#gpcgpaikmi .gt_spanner_row {
+#dfskebewsi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gpcgpaikmi .gt_group_heading {
+#dfskebewsi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4485,7 +4507,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   text-align: left;
 }
 
-#gpcgpaikmi .gt_empty_group_heading {
+#dfskebewsi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4500,15 +4522,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: middle;
 }
 
-#gpcgpaikmi .gt_from_md > :first-child {
+#dfskebewsi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gpcgpaikmi .gt_from_md > :last-child {
+#dfskebewsi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gpcgpaikmi .gt_row {
+#dfskebewsi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4527,7 +4549,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#gpcgpaikmi .gt_stub {
+#dfskebewsi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4540,7 +4562,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#gpcgpaikmi .gt_stub_row_group {
+#dfskebewsi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4554,15 +4576,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: top;
 }
 
-#gpcgpaikmi .gt_row_group_first td {
+#dfskebewsi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gpcgpaikmi .gt_row_group_first th {
+#dfskebewsi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gpcgpaikmi .gt_summary_row {
+#dfskebewsi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4572,16 +4594,16 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#gpcgpaikmi .gt_first_summary_row {
+#dfskebewsi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gpcgpaikmi .gt_first_summary_row.thick {
+#dfskebewsi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gpcgpaikmi .gt_last_summary_row {
+#dfskebewsi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4591,7 +4613,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#gpcgpaikmi .gt_grand_summary_row {
+#dfskebewsi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4601,7 +4623,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#gpcgpaikmi .gt_first_grand_summary_row {
+#dfskebewsi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4611,7 +4633,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-color: #D3D3D3;
 }
 
-#gpcgpaikmi .gt_last_grand_summary_row_top {
+#dfskebewsi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4621,11 +4643,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#gpcgpaikmi .gt_striped {
+#dfskebewsi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gpcgpaikmi .gt_table_body {
+#dfskebewsi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4634,7 +4656,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#gpcgpaikmi .gt_footnotes {
+#dfskebewsi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4648,7 +4670,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#gpcgpaikmi .gt_footnote {
+#dfskebewsi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4657,7 +4679,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#gpcgpaikmi .gt_sourcenotes {
+#dfskebewsi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4671,7 +4693,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#gpcgpaikmi .gt_sourcenote {
+#dfskebewsi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4679,72 +4701,72 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#gpcgpaikmi .gt_left {
+#dfskebewsi .gt_left {
   text-align: left;
 }
 
-#gpcgpaikmi .gt_center {
+#dfskebewsi .gt_center {
   text-align: center;
 }
 
-#gpcgpaikmi .gt_right {
+#dfskebewsi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gpcgpaikmi .gt_font_normal {
+#dfskebewsi .gt_font_normal {
   font-weight: normal;
 }
 
-#gpcgpaikmi .gt_font_bold {
+#dfskebewsi .gt_font_bold {
   font-weight: bold;
 }
 
-#gpcgpaikmi .gt_font_italic {
+#dfskebewsi .gt_font_italic {
   font-style: italic;
 }
 
-#gpcgpaikmi .gt_super {
+#dfskebewsi .gt_super {
   font-size: 65%;
 }
 
-#gpcgpaikmi .gt_footnote_marks {
+#dfskebewsi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gpcgpaikmi .gt_asterisk {
+#dfskebewsi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gpcgpaikmi .gt_indent_1 {
+#dfskebewsi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gpcgpaikmi .gt_indent_2 {
+#dfskebewsi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gpcgpaikmi .gt_indent_3 {
+#dfskebewsi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gpcgpaikmi .gt_indent_4 {
+#dfskebewsi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gpcgpaikmi .gt_indent_5 {
+#dfskebewsi .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gpcgpaikmi .katex-display {
+#dfskebewsi .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gpcgpaikmi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dfskebewsi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4863,7 +4885,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 </div>
 </div>
 </div>
-</section><section id="how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper" class="level2" data-number="1.10"><h2 data-number="1.10" class="anchored" data-anchor-id="how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper">
+</section><section id="how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper-1" class="level2" data-number="1.10"><h2 data-number="1.10" class="anchored" data-anchor-id="how-do-i-turn-a-data-frame-into-a-form-i-can-put-into-an-assignment-or-paper-1">
 <span class="header-section-number">1.10</span> How do I turn a data frame into a form I can put into an assignment or paper?</h2>
 <p>You can use the <code>gt</code> package to convert data frames to aesthetically pleasing outputs.</p>
 <div class="cell">
@@ -4883,23 +4905,23 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 <span id="cb41-14"><a href="#cb41-14"></a></span>
 <span id="cb41-15"><a href="#cb41-15"></a><span class="fu">gt</span>(science_mean_scores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fvuofmkspr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fvuofmkspr table {
+<div id="wqrbomxtyy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wqrbomxtyy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fvuofmkspr thead, #fvuofmkspr tbody, #fvuofmkspr tfoot, #fvuofmkspr tr, #fvuofmkspr td, #fvuofmkspr th {
+#wqrbomxtyy thead, #wqrbomxtyy tbody, #wqrbomxtyy tfoot, #wqrbomxtyy tr, #wqrbomxtyy td, #wqrbomxtyy th {
   border-style: none;
 }
 
-#fvuofmkspr p {
+#wqrbomxtyy p {
   margin: 0;
   padding: 0;
 }
 
-#fvuofmkspr .gt_table {
+#wqrbomxtyy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4925,12 +4947,12 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-left-color: #D3D3D3;
 }
 
-#fvuofmkspr .gt_caption {
+#wqrbomxtyy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fvuofmkspr .gt_title {
+#wqrbomxtyy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4942,7 +4964,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-width: 0;
 }
 
-#fvuofmkspr .gt_subtitle {
+#wqrbomxtyy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4954,7 +4976,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-width: 0;
 }
 
-#fvuofmkspr .gt_heading {
+#wqrbomxtyy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4966,13 +4988,13 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#fvuofmkspr .gt_bottom_border {
+#wqrbomxtyy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fvuofmkspr .gt_col_headings {
+#wqrbomxtyy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4987,7 +5009,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#fvuofmkspr .gt_col_heading {
+#wqrbomxtyy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5007,7 +5029,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#fvuofmkspr .gt_column_spanner_outer {
+#wqrbomxtyy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5019,15 +5041,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 4px;
 }
 
-#fvuofmkspr .gt_column_spanner_outer:first-child {
+#wqrbomxtyy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fvuofmkspr .gt_column_spanner_outer:last-child {
+#wqrbomxtyy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fvuofmkspr .gt_column_spanner {
+#wqrbomxtyy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5039,11 +5061,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   width: 100%;
 }
 
-#fvuofmkspr .gt_spanner_row {
+#wqrbomxtyy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fvuofmkspr .gt_group_heading {
+#wqrbomxtyy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5069,7 +5091,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   text-align: left;
 }
 
-#fvuofmkspr .gt_empty_group_heading {
+#wqrbomxtyy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5084,15 +5106,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: middle;
 }
 
-#fvuofmkspr .gt_from_md > :first-child {
+#wqrbomxtyy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fvuofmkspr .gt_from_md > :last-child {
+#wqrbomxtyy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fvuofmkspr .gt_row {
+#wqrbomxtyy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5111,7 +5133,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#fvuofmkspr .gt_stub {
+#wqrbomxtyy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5124,7 +5146,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#fvuofmkspr .gt_stub_row_group {
+#wqrbomxtyy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5138,15 +5160,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: top;
 }
 
-#fvuofmkspr .gt_row_group_first td {
+#wqrbomxtyy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fvuofmkspr .gt_row_group_first th {
+#wqrbomxtyy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fvuofmkspr .gt_summary_row {
+#wqrbomxtyy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5156,16 +5178,16 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#fvuofmkspr .gt_first_summary_row {
+#wqrbomxtyy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fvuofmkspr .gt_first_summary_row.thick {
+#wqrbomxtyy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fvuofmkspr .gt_last_summary_row {
+#wqrbomxtyy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5175,7 +5197,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#fvuofmkspr .gt_grand_summary_row {
+#wqrbomxtyy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5185,7 +5207,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#fvuofmkspr .gt_first_grand_summary_row {
+#wqrbomxtyy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5195,7 +5217,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-color: #D3D3D3;
 }
 
-#fvuofmkspr .gt_last_grand_summary_row_top {
+#wqrbomxtyy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5205,11 +5227,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#fvuofmkspr .gt_striped {
+#wqrbomxtyy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fvuofmkspr .gt_table_body {
+#wqrbomxtyy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5218,7 +5240,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#fvuofmkspr .gt_footnotes {
+#wqrbomxtyy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5232,7 +5254,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#fvuofmkspr .gt_footnote {
+#wqrbomxtyy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5241,7 +5263,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#fvuofmkspr .gt_sourcenotes {
+#wqrbomxtyy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5255,7 +5277,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#fvuofmkspr .gt_sourcenote {
+#wqrbomxtyy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5263,72 +5285,72 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#fvuofmkspr .gt_left {
+#wqrbomxtyy .gt_left {
   text-align: left;
 }
 
-#fvuofmkspr .gt_center {
+#wqrbomxtyy .gt_center {
   text-align: center;
 }
 
-#fvuofmkspr .gt_right {
+#wqrbomxtyy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fvuofmkspr .gt_font_normal {
+#wqrbomxtyy .gt_font_normal {
   font-weight: normal;
 }
 
-#fvuofmkspr .gt_font_bold {
+#wqrbomxtyy .gt_font_bold {
   font-weight: bold;
 }
 
-#fvuofmkspr .gt_font_italic {
+#wqrbomxtyy .gt_font_italic {
   font-style: italic;
 }
 
-#fvuofmkspr .gt_super {
+#wqrbomxtyy .gt_super {
   font-size: 65%;
 }
 
-#fvuofmkspr .gt_footnote_marks {
+#wqrbomxtyy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fvuofmkspr .gt_asterisk {
+#wqrbomxtyy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fvuofmkspr .gt_indent_1 {
+#wqrbomxtyy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fvuofmkspr .gt_indent_2 {
+#wqrbomxtyy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fvuofmkspr .gt_indent_3 {
+#wqrbomxtyy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fvuofmkspr .gt_indent_4 {
+#wqrbomxtyy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fvuofmkspr .gt_indent_5 {
+#wqrbomxtyy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fvuofmkspr .katex-display {
+#wqrbomxtyy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fvuofmkspr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wqrbomxtyy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5365,23 +5387,23 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 <span id="cb42-5"><a href="#cb42-5"></a>    <span class="at">title =</span> <span class="st">"Mean science scores"</span>,</span>
 <span id="cb42-6"><a href="#cb42-6"></a>    <span class="at">subtitle =</span> <span class="st">"PISA 2022 data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="mlqdbysrlq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mlqdbysrlq table {
+<div id="nrhaqneyue" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nrhaqneyue table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mlqdbysrlq thead, #mlqdbysrlq tbody, #mlqdbysrlq tfoot, #mlqdbysrlq tr, #mlqdbysrlq td, #mlqdbysrlq th {
+#nrhaqneyue thead, #nrhaqneyue tbody, #nrhaqneyue tfoot, #nrhaqneyue tr, #nrhaqneyue td, #nrhaqneyue th {
   border-style: none;
 }
 
-#mlqdbysrlq p {
+#nrhaqneyue p {
   margin: 0;
   padding: 0;
 }
 
-#mlqdbysrlq .gt_table {
+#nrhaqneyue .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5407,12 +5429,12 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-left-color: #D3D3D3;
 }
 
-#mlqdbysrlq .gt_caption {
+#nrhaqneyue .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mlqdbysrlq .gt_title {
+#nrhaqneyue .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5424,7 +5446,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-width: 0;
 }
 
-#mlqdbysrlq .gt_subtitle {
+#nrhaqneyue .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5436,7 +5458,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-width: 0;
 }
 
-#mlqdbysrlq .gt_heading {
+#nrhaqneyue .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5448,13 +5470,13 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#mlqdbysrlq .gt_bottom_border {
+#nrhaqneyue .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mlqdbysrlq .gt_col_headings {
+#nrhaqneyue .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5469,7 +5491,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#mlqdbysrlq .gt_col_heading {
+#nrhaqneyue .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5489,7 +5511,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#mlqdbysrlq .gt_column_spanner_outer {
+#nrhaqneyue .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5501,15 +5523,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 4px;
 }
 
-#mlqdbysrlq .gt_column_spanner_outer:first-child {
+#nrhaqneyue .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mlqdbysrlq .gt_column_spanner_outer:last-child {
+#nrhaqneyue .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mlqdbysrlq .gt_column_spanner {
+#nrhaqneyue .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5521,11 +5543,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   width: 100%;
 }
 
-#mlqdbysrlq .gt_spanner_row {
+#nrhaqneyue .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mlqdbysrlq .gt_group_heading {
+#nrhaqneyue .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5551,7 +5573,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   text-align: left;
 }
 
-#mlqdbysrlq .gt_empty_group_heading {
+#nrhaqneyue .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5566,15 +5588,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: middle;
 }
 
-#mlqdbysrlq .gt_from_md > :first-child {
+#nrhaqneyue .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mlqdbysrlq .gt_from_md > :last-child {
+#nrhaqneyue .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mlqdbysrlq .gt_row {
+#nrhaqneyue .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5593,7 +5615,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#mlqdbysrlq .gt_stub {
+#nrhaqneyue .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5606,7 +5628,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#mlqdbysrlq .gt_stub_row_group {
+#nrhaqneyue .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5620,15 +5642,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: top;
 }
 
-#mlqdbysrlq .gt_row_group_first td {
+#nrhaqneyue .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mlqdbysrlq .gt_row_group_first th {
+#nrhaqneyue .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mlqdbysrlq .gt_summary_row {
+#nrhaqneyue .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5638,16 +5660,16 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#mlqdbysrlq .gt_first_summary_row {
+#nrhaqneyue .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mlqdbysrlq .gt_first_summary_row.thick {
+#nrhaqneyue .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mlqdbysrlq .gt_last_summary_row {
+#nrhaqneyue .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5657,7 +5679,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#mlqdbysrlq .gt_grand_summary_row {
+#nrhaqneyue .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5667,7 +5689,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#mlqdbysrlq .gt_first_grand_summary_row {
+#nrhaqneyue .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5677,7 +5699,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-color: #D3D3D3;
 }
 
-#mlqdbysrlq .gt_last_grand_summary_row_top {
+#nrhaqneyue .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5687,11 +5709,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#mlqdbysrlq .gt_striped {
+#nrhaqneyue .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mlqdbysrlq .gt_table_body {
+#nrhaqneyue .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5700,7 +5722,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#mlqdbysrlq .gt_footnotes {
+#nrhaqneyue .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5714,7 +5736,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#mlqdbysrlq .gt_footnote {
+#nrhaqneyue .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5723,7 +5745,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#mlqdbysrlq .gt_sourcenotes {
+#nrhaqneyue .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5737,7 +5759,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#mlqdbysrlq .gt_sourcenote {
+#nrhaqneyue .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5745,72 +5767,72 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#mlqdbysrlq .gt_left {
+#nrhaqneyue .gt_left {
   text-align: left;
 }
 
-#mlqdbysrlq .gt_center {
+#nrhaqneyue .gt_center {
   text-align: center;
 }
 
-#mlqdbysrlq .gt_right {
+#nrhaqneyue .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mlqdbysrlq .gt_font_normal {
+#nrhaqneyue .gt_font_normal {
   font-weight: normal;
 }
 
-#mlqdbysrlq .gt_font_bold {
+#nrhaqneyue .gt_font_bold {
   font-weight: bold;
 }
 
-#mlqdbysrlq .gt_font_italic {
+#nrhaqneyue .gt_font_italic {
   font-style: italic;
 }
 
-#mlqdbysrlq .gt_super {
+#nrhaqneyue .gt_super {
   font-size: 65%;
 }
 
-#mlqdbysrlq .gt_footnote_marks {
+#nrhaqneyue .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mlqdbysrlq .gt_asterisk {
+#nrhaqneyue .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mlqdbysrlq .gt_indent_1 {
+#nrhaqneyue .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mlqdbysrlq .gt_indent_2 {
+#nrhaqneyue .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mlqdbysrlq .gt_indent_3 {
+#nrhaqneyue .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mlqdbysrlq .gt_indent_4 {
+#nrhaqneyue .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mlqdbysrlq .gt_indent_5 {
+#nrhaqneyue .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mlqdbysrlq .katex-display {
+#nrhaqneyue .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mlqdbysrlq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nrhaqneyue div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5856,23 +5878,23 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 <span id="cb43-6"><a href="#cb43-6"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(mean_science_score , sd_science), <span class="at">decimals =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb43-7"><a href="#cb43-7"></a>  <span class="fu">cols_label</span>(<span class="st">"CNT"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**Country**"</span>)) <span class="co"># Here the **Country** makes Country bold</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="wtghqauhjf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wtghqauhjf table {
+<div id="rdczqeqxti" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rdczqeqxti table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wtghqauhjf thead, #wtghqauhjf tbody, #wtghqauhjf tfoot, #wtghqauhjf tr, #wtghqauhjf td, #wtghqauhjf th {
+#rdczqeqxti thead, #rdczqeqxti tbody, #rdczqeqxti tfoot, #rdczqeqxti tr, #rdczqeqxti td, #rdczqeqxti th {
   border-style: none;
 }
 
-#wtghqauhjf p {
+#rdczqeqxti p {
   margin: 0;
   padding: 0;
 }
 
-#wtghqauhjf .gt_table {
+#rdczqeqxti .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5898,12 +5920,12 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-left-color: #D3D3D3;
 }
 
-#wtghqauhjf .gt_caption {
+#rdczqeqxti .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wtghqauhjf .gt_title {
+#rdczqeqxti .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5915,7 +5937,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-width: 0;
 }
 
-#wtghqauhjf .gt_subtitle {
+#rdczqeqxti .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5927,7 +5949,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-width: 0;
 }
 
-#wtghqauhjf .gt_heading {
+#rdczqeqxti .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5939,13 +5961,13 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#wtghqauhjf .gt_bottom_border {
+#rdczqeqxti .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wtghqauhjf .gt_col_headings {
+#rdczqeqxti .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5960,7 +5982,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#wtghqauhjf .gt_col_heading {
+#rdczqeqxti .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5980,7 +6002,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#wtghqauhjf .gt_column_spanner_outer {
+#rdczqeqxti .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5992,15 +6014,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 4px;
 }
 
-#wtghqauhjf .gt_column_spanner_outer:first-child {
+#rdczqeqxti .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wtghqauhjf .gt_column_spanner_outer:last-child {
+#rdczqeqxti .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wtghqauhjf .gt_column_spanner {
+#rdczqeqxti .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6012,11 +6034,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   width: 100%;
 }
 
-#wtghqauhjf .gt_spanner_row {
+#rdczqeqxti .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wtghqauhjf .gt_group_heading {
+#rdczqeqxti .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6042,7 +6064,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   text-align: left;
 }
 
-#wtghqauhjf .gt_empty_group_heading {
+#rdczqeqxti .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6057,15 +6079,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: middle;
 }
 
-#wtghqauhjf .gt_from_md > :first-child {
+#rdczqeqxti .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wtghqauhjf .gt_from_md > :last-child {
+#rdczqeqxti .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wtghqauhjf .gt_row {
+#rdczqeqxti .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6084,7 +6106,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#wtghqauhjf .gt_stub {
+#rdczqeqxti .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6097,7 +6119,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#wtghqauhjf .gt_stub_row_group {
+#rdczqeqxti .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6111,15 +6133,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: top;
 }
 
-#wtghqauhjf .gt_row_group_first td {
+#rdczqeqxti .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wtghqauhjf .gt_row_group_first th {
+#rdczqeqxti .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wtghqauhjf .gt_summary_row {
+#rdczqeqxti .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6129,16 +6151,16 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#wtghqauhjf .gt_first_summary_row {
+#rdczqeqxti .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wtghqauhjf .gt_first_summary_row.thick {
+#rdczqeqxti .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wtghqauhjf .gt_last_summary_row {
+#rdczqeqxti .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6148,7 +6170,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#wtghqauhjf .gt_grand_summary_row {
+#rdczqeqxti .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6158,7 +6180,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#wtghqauhjf .gt_first_grand_summary_row {
+#rdczqeqxti .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6168,7 +6190,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-color: #D3D3D3;
 }
 
-#wtghqauhjf .gt_last_grand_summary_row_top {
+#rdczqeqxti .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6178,11 +6200,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#wtghqauhjf .gt_striped {
+#rdczqeqxti .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wtghqauhjf .gt_table_body {
+#rdczqeqxti .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6191,7 +6213,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#wtghqauhjf .gt_footnotes {
+#rdczqeqxti .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6205,7 +6227,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#wtghqauhjf .gt_footnote {
+#rdczqeqxti .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6214,7 +6236,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#wtghqauhjf .gt_sourcenotes {
+#rdczqeqxti .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6228,7 +6250,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#wtghqauhjf .gt_sourcenote {
+#rdczqeqxti .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6236,72 +6258,72 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#wtghqauhjf .gt_left {
+#rdczqeqxti .gt_left {
   text-align: left;
 }
 
-#wtghqauhjf .gt_center {
+#rdczqeqxti .gt_center {
   text-align: center;
 }
 
-#wtghqauhjf .gt_right {
+#rdczqeqxti .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wtghqauhjf .gt_font_normal {
+#rdczqeqxti .gt_font_normal {
   font-weight: normal;
 }
 
-#wtghqauhjf .gt_font_bold {
+#rdczqeqxti .gt_font_bold {
   font-weight: bold;
 }
 
-#wtghqauhjf .gt_font_italic {
+#rdczqeqxti .gt_font_italic {
   font-style: italic;
 }
 
-#wtghqauhjf .gt_super {
+#rdczqeqxti .gt_super {
   font-size: 65%;
 }
 
-#wtghqauhjf .gt_footnote_marks {
+#rdczqeqxti .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wtghqauhjf .gt_asterisk {
+#rdczqeqxti .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wtghqauhjf .gt_indent_1 {
+#rdczqeqxti .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wtghqauhjf .gt_indent_2 {
+#rdczqeqxti .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wtghqauhjf .gt_indent_3 {
+#rdczqeqxti .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wtghqauhjf .gt_indent_4 {
+#rdczqeqxti .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wtghqauhjf .gt_indent_5 {
+#rdczqeqxti .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wtghqauhjf .katex-display {
+#rdczqeqxti .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wtghqauhjf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rdczqeqxti div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6366,23 +6388,23 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 <span id="cb44-23"><a href="#cb44-23"></a></span>
 <span id="cb44-24"><a href="#cb44-24"></a><span class="fu">gt</span>(uk_mod_tidy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="sngwmttjgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sngwmttjgw table {
+<div id="rlqcylvghs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rlqcylvghs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sngwmttjgw thead, #sngwmttjgw tbody, #sngwmttjgw tfoot, #sngwmttjgw tr, #sngwmttjgw td, #sngwmttjgw th {
+#rlqcylvghs thead, #rlqcylvghs tbody, #rlqcylvghs tfoot, #rlqcylvghs tr, #rlqcylvghs td, #rlqcylvghs th {
   border-style: none;
 }
 
-#sngwmttjgw p {
+#rlqcylvghs p {
   margin: 0;
   padding: 0;
 }
 
-#sngwmttjgw .gt_table {
+#rlqcylvghs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6408,12 +6430,12 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-left-color: #D3D3D3;
 }
 
-#sngwmttjgw .gt_caption {
+#rlqcylvghs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sngwmttjgw .gt_title {
+#rlqcylvghs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -6425,7 +6447,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-width: 0;
 }
 
-#sngwmttjgw .gt_subtitle {
+#rlqcylvghs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6437,7 +6459,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-width: 0;
 }
 
-#sngwmttjgw .gt_heading {
+#rlqcylvghs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6449,13 +6471,13 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#sngwmttjgw .gt_bottom_border {
+#rlqcylvghs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sngwmttjgw .gt_col_headings {
+#rlqcylvghs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6470,7 +6492,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#sngwmttjgw .gt_col_heading {
+#rlqcylvghs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6490,7 +6512,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#sngwmttjgw .gt_column_spanner_outer {
+#rlqcylvghs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6502,15 +6524,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 4px;
 }
 
-#sngwmttjgw .gt_column_spanner_outer:first-child {
+#rlqcylvghs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sngwmttjgw .gt_column_spanner_outer:last-child {
+#rlqcylvghs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sngwmttjgw .gt_column_spanner {
+#rlqcylvghs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6522,11 +6544,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   width: 100%;
 }
 
-#sngwmttjgw .gt_spanner_row {
+#rlqcylvghs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sngwmttjgw .gt_group_heading {
+#rlqcylvghs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6552,7 +6574,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   text-align: left;
 }
 
-#sngwmttjgw .gt_empty_group_heading {
+#rlqcylvghs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6567,15 +6589,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: middle;
 }
 
-#sngwmttjgw .gt_from_md > :first-child {
+#rlqcylvghs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sngwmttjgw .gt_from_md > :last-child {
+#rlqcylvghs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sngwmttjgw .gt_row {
+#rlqcylvghs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6594,7 +6616,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   overflow-x: hidden;
 }
 
-#sngwmttjgw .gt_stub {
+#rlqcylvghs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6607,7 +6629,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#sngwmttjgw .gt_stub_row_group {
+#rlqcylvghs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6621,15 +6643,15 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   vertical-align: top;
 }
 
-#sngwmttjgw .gt_row_group_first td {
+#rlqcylvghs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sngwmttjgw .gt_row_group_first th {
+#rlqcylvghs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sngwmttjgw .gt_summary_row {
+#rlqcylvghs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6639,16 +6661,16 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#sngwmttjgw .gt_first_summary_row {
+#rlqcylvghs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sngwmttjgw .gt_first_summary_row.thick {
+#rlqcylvghs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sngwmttjgw .gt_last_summary_row {
+#rlqcylvghs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6658,7 +6680,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#sngwmttjgw .gt_grand_summary_row {
+#rlqcylvghs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6668,7 +6690,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#sngwmttjgw .gt_first_grand_summary_row {
+#rlqcylvghs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6678,7 +6700,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-top-color: #D3D3D3;
 }
 
-#sngwmttjgw .gt_last_grand_summary_row_top {
+#rlqcylvghs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6688,11 +6710,11 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#sngwmttjgw .gt_striped {
+#rlqcylvghs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sngwmttjgw .gt_table_body {
+#rlqcylvghs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6701,7 +6723,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-bottom-color: #D3D3D3;
 }
 
-#sngwmttjgw .gt_footnotes {
+#rlqcylvghs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6715,7 +6737,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#sngwmttjgw .gt_footnote {
+#rlqcylvghs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6724,7 +6746,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#sngwmttjgw .gt_sourcenotes {
+#rlqcylvghs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6738,7 +6760,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   border-right-color: #D3D3D3;
 }
 
-#sngwmttjgw .gt_sourcenote {
+#rlqcylvghs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6746,72 +6768,72 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   padding-right: 5px;
 }
 
-#sngwmttjgw .gt_left {
+#rlqcylvghs .gt_left {
   text-align: left;
 }
 
-#sngwmttjgw .gt_center {
+#rlqcylvghs .gt_center {
   text-align: center;
 }
 
-#sngwmttjgw .gt_right {
+#rlqcylvghs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sngwmttjgw .gt_font_normal {
+#rlqcylvghs .gt_font_normal {
   font-weight: normal;
 }
 
-#sngwmttjgw .gt_font_bold {
+#rlqcylvghs .gt_font_bold {
   font-weight: bold;
 }
 
-#sngwmttjgw .gt_font_italic {
+#rlqcylvghs .gt_font_italic {
   font-style: italic;
 }
 
-#sngwmttjgw .gt_super {
+#rlqcylvghs .gt_super {
   font-size: 65%;
 }
 
-#sngwmttjgw .gt_footnote_marks {
+#rlqcylvghs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sngwmttjgw .gt_asterisk {
+#rlqcylvghs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sngwmttjgw .gt_indent_1 {
+#rlqcylvghs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sngwmttjgw .gt_indent_2 {
+#rlqcylvghs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sngwmttjgw .gt_indent_3 {
+#rlqcylvghs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sngwmttjgw .gt_indent_4 {
+#rlqcylvghs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sngwmttjgw .gt_indent_5 {
+#rlqcylvghs .gt_indent_5 {
   text-indent: 25px;
 }
 
-#sngwmttjgw .katex-display {
+#rlqcylvghs .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#sngwmttjgw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rlqcylvghs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6855,6 +6877,12 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 <span id="cb45-5"><a href="#cb45-5"></a><span class="fu">ggplot</span>(UK_PISA, <span class="fu">aes</span>(<span class="at">x =</span> ST004D01T, <span class="at">fill =</span> ST004D01T)) <span class="sc">+</span></span>
 <span id="cb45-6"><a href="#cb45-6"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb45-7"><a href="#cb45-7"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"orange"</span>, <span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"lightblue"</span>))  <span class="co"># manually set the values for male and female</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="A6-QandA_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>You need to match the scale manual command to the aesthetic you want to change. For example, when using <code>geom_point</code> you use the <code>colour</code> aesthetic to change the colour of points. In that case, you use <code>scale_colour_manual</code>.</p>
 <div class="cell">
@@ -6865,6 +6893,12 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 <span id="cb46-5"><a href="#cb46-5"></a><span class="fu">ggplot</span>(UK_PISA, <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">y =</span> PV1SCIE, <span class="at">colour =</span> ST004D01T)) <span class="sc">+</span></span>
 <span id="cb46-6"><a href="#cb46-6"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
 <span id="cb46-7"><a href="#cb46-7"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"lightgreen"</span>, <span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"red"</span>)) <span class="co"># manually set the colour values for male and female</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="A6-QandA_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+</figure>
+</div>
+</div>
 </div>
 
 
