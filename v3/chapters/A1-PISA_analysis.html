@@ -534,22 +534,22 @@ div.csl-indent {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">mutate</span>(<span class="at">PV1SCIE_z =</span> <span class="fu">scale</span>(PV1SCIE),</span>
 <span id="cb1-3"><a href="#cb1-3"></a>         <span class="at">PV2SCIE_z =</span> <span class="fu">scale</span>(PV2SCIE)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">select</span>(PV1SCIE_z,</span>
-<span id="cb1-5"><a href="#cb1-5"></a>         PV2SCIE_z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">select</span>(PV1SCIE, PV2SCIE,</span>
+<span id="cb1-5"><a href="#cb1-5"></a>         PV1SCIE_z, PV2SCIE_z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 613,744 × 2
-   PV1SCIE_z[,1] PV2SCIE_z[,1]
-           &lt;dbl&gt;         &lt;dbl&gt;
- 1        -1.09         -1.47 
- 2        -1.29         -1.17 
- 3        -0.872        -1.00 
- 4        -2.24         -2.45 
- 5        -0.147         1.10 
- 6         0.272         0.298
- 7        -1.03         -1.52 
- 8        -1.22         -0.865
- 9        -0.854        -0.840
-10        -0.614        -0.221
+<pre><code># A tibble: 613,744 × 4
+   PV1SCIE PV2SCIE PV1SCIE_z[,1] PV2SCIE_z[,1]
+     &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+ 1    335.    296.        -1.09         -1.47 
+ 2    315.    327.        -1.29         -1.17 
+ 3    359.    345.        -0.872        -1.00 
+ 4    215.    192.        -2.24         -2.45 
+ 5    435.    566.        -0.147         1.10 
+ 6    479.    482.         0.272         0.298
+ 7    342.    290.        -1.03         -1.52 
+ 8    323.    359.        -1.22         -0.865
+ 9    361.    362.        -0.854        -0.840
+10    386.    427.        -0.614        -0.221
 # ℹ 613,734 more rows</code></pre>
 </div>
 </div>
@@ -557,11 +557,11 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">mutate</span>(<span class="at">PV_SCIE_z =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">matches</span>(<span class="st">"PV[0-9]+SCIE"</span>))),</span>
-<span id="cb3-4"><a href="#cb3-4"></a>         <span class="at">PV_MATH_z =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">matches</span>(<span class="st">"PV[0-9]+MATH"</span>))),</span>
-<span id="cb3-5"><a href="#cb3-5"></a>         <span class="at">PV_READ_z =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">matches</span>(<span class="st">"PV[0-9]+READ"</span>)))) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">mutate</span>(<span class="at">PV_SCIE_m =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">matches</span>(<span class="st">"PV[0-9]+SCIE"</span>))),</span>
+<span id="cb3-4"><a href="#cb3-4"></a>         <span class="at">PV_MATH_m =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">matches</span>(<span class="st">"PV[0-9]+MATH"</span>))),</span>
+<span id="cb3-5"><a href="#cb3-5"></a>         <span class="at">PV_READ_m =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">matches</span>(<span class="st">"PV[0-9]+READ"</span>)))) <span class="sc">%&gt;%</span></span>
 <span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> <span class="co"># to get rid of the rowwise operator</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>  <span class="fu">select</span>(PV_SCIE_z, PV_MATH_z, PV_READ_z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7"></a>  <span class="fu">select</span>(PV_SCIE_m, PV_MATH_m, PV_READ_m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="what-are-weights" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="what-are-weights">
 <span class="header-section-number">4.2</span> What are weights</h2>
@@ -580,23 +580,23 @@ div.csl-indent {
 <span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="st">"W_FSTUWT_mean"</span>, <span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb4-9"><a href="#cb4-9"></a>  <span class="fu">cols_align</span>(<span class="at">columns =</span> <span class="st">"REGION"</span>, <span class="at">align=</span><span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
-<div id="hgxnazwqjj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hgxnazwqjj table {
+<div id="ltanmuuiam" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ltanmuuiam table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hgxnazwqjj thead, #hgxnazwqjj tbody, #hgxnazwqjj tfoot, #hgxnazwqjj tr, #hgxnazwqjj td, #hgxnazwqjj th {
+#ltanmuuiam thead, #ltanmuuiam tbody, #ltanmuuiam tfoot, #ltanmuuiam tr, #ltanmuuiam td, #ltanmuuiam th {
   border-style: none;
 }
 
-#hgxnazwqjj p {
+#ltanmuuiam p {
   margin: 0;
   padding: 0;
 }
 
-#hgxnazwqjj .gt_table {
+#ltanmuuiam .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -622,12 +622,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#hgxnazwqjj .gt_caption {
+#ltanmuuiam .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hgxnazwqjj .gt_title {
+#ltanmuuiam .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -639,7 +639,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#hgxnazwqjj .gt_subtitle {
+#ltanmuuiam .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -651,7 +651,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#hgxnazwqjj .gt_heading {
+#ltanmuuiam .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -663,13 +663,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hgxnazwqjj .gt_bottom_border {
+#ltanmuuiam .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hgxnazwqjj .gt_col_headings {
+#ltanmuuiam .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -684,7 +684,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hgxnazwqjj .gt_col_heading {
+#ltanmuuiam .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -704,7 +704,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#hgxnazwqjj .gt_column_spanner_outer {
+#ltanmuuiam .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -716,15 +716,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#hgxnazwqjj .gt_column_spanner_outer:first-child {
+#ltanmuuiam .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hgxnazwqjj .gt_column_spanner_outer:last-child {
+#ltanmuuiam .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hgxnazwqjj .gt_column_spanner {
+#ltanmuuiam .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -736,11 +736,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#hgxnazwqjj .gt_spanner_row {
+#ltanmuuiam .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hgxnazwqjj .gt_group_heading {
+#ltanmuuiam .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -766,7 +766,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#hgxnazwqjj .gt_empty_group_heading {
+#ltanmuuiam .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -781,15 +781,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#hgxnazwqjj .gt_from_md > :first-child {
+#ltanmuuiam .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hgxnazwqjj .gt_from_md > :last-child {
+#ltanmuuiam .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hgxnazwqjj .gt_row {
+#ltanmuuiam .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -808,7 +808,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#hgxnazwqjj .gt_stub {
+#ltanmuuiam .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -821,7 +821,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hgxnazwqjj .gt_stub_row_group {
+#ltanmuuiam .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -835,15 +835,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#hgxnazwqjj .gt_row_group_first td {
+#ltanmuuiam .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hgxnazwqjj .gt_row_group_first th {
+#ltanmuuiam .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hgxnazwqjj .gt_summary_row {
+#ltanmuuiam .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -853,16 +853,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hgxnazwqjj .gt_first_summary_row {
+#ltanmuuiam .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hgxnazwqjj .gt_first_summary_row.thick {
+#ltanmuuiam .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hgxnazwqjj .gt_last_summary_row {
+#ltanmuuiam .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -872,7 +872,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#hgxnazwqjj .gt_grand_summary_row {
+#ltanmuuiam .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -882,7 +882,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hgxnazwqjj .gt_first_grand_summary_row {
+#ltanmuuiam .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -892,7 +892,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#hgxnazwqjj .gt_last_grand_summary_row_top {
+#ltanmuuiam .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -902,11 +902,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#hgxnazwqjj .gt_striped {
+#ltanmuuiam .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hgxnazwqjj .gt_table_body {
+#ltanmuuiam .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -915,7 +915,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#hgxnazwqjj .gt_footnotes {
+#ltanmuuiam .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -929,7 +929,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hgxnazwqjj .gt_footnote {
+#ltanmuuiam .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -938,7 +938,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hgxnazwqjj .gt_sourcenotes {
+#ltanmuuiam .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -952,7 +952,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#hgxnazwqjj .gt_sourcenote {
+#ltanmuuiam .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -960,72 +960,72 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#hgxnazwqjj .gt_left {
+#ltanmuuiam .gt_left {
   text-align: left;
 }
 
-#hgxnazwqjj .gt_center {
+#ltanmuuiam .gt_center {
   text-align: center;
 }
 
-#hgxnazwqjj .gt_right {
+#ltanmuuiam .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hgxnazwqjj .gt_font_normal {
+#ltanmuuiam .gt_font_normal {
   font-weight: normal;
 }
 
-#hgxnazwqjj .gt_font_bold {
+#ltanmuuiam .gt_font_bold {
   font-weight: bold;
 }
 
-#hgxnazwqjj .gt_font_italic {
+#ltanmuuiam .gt_font_italic {
   font-style: italic;
 }
 
-#hgxnazwqjj .gt_super {
+#ltanmuuiam .gt_super {
   font-size: 65%;
 }
 
-#hgxnazwqjj .gt_footnote_marks {
+#ltanmuuiam .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hgxnazwqjj .gt_asterisk {
+#ltanmuuiam .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hgxnazwqjj .gt_indent_1 {
+#ltanmuuiam .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hgxnazwqjj .gt_indent_2 {
+#ltanmuuiam .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hgxnazwqjj .gt_indent_3 {
+#ltanmuuiam .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hgxnazwqjj .gt_indent_4 {
+#ltanmuuiam .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hgxnazwqjj .gt_indent_5 {
+#ltanmuuiam .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hgxnazwqjj .katex-display {
+#ltanmuuiam .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hgxnazwqjj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ltanmuuiam div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
