@@ -824,19 +824,19 @@ Tip
     Welch Two Sample t-test
 
 data:  country_a$scores and country_b$scores
-t = -2.816, df = 1995, p-value = 0.004911
+t = -2.9893, df = 1990.5, p-value = 0.00283
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -2.0900140 -0.3739848
+ -2.199412 -0.456791
 sample estimates:
 mean of x mean of y 
- 99.77623 101.00823 </code></pre>
+ 99.28241 100.61051 </code></pre>
 </div>
 </div>
 <p>Note that, even though the difference in means is relatively small (country_a: 100; country_b: 101), the p_value is below 0.05. It can therefore also be useful to report an effect size, a measure of the magnitude of the difference. A number of effect sizes exist, but a common choice is Cohen’s d.&nbsp;A function to calculate Cohen’s d is available in the <code>lsr</code> package.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1259338</code></pre>
+<pre><code>[1] 0.1336859</code></pre>
 </div>
 </div>
 <p>Here the effect size is 0.1. Given Cohen’s classification of effect sizes that is a small effect. In educational research, effect sizes are typically small, hence different categorisations (for example Kraft’s <span class="citation" data-cites="kraft2020interpreting">(<a href="#ref-kraft2020interpreting" role="doc-biblioref">2020</a>)</span> classification) are applied.</p>
