@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -89,10 +89,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-baa83ea22f7c85f46c9cbd6ff4810be6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -824,19 +824,19 @@ Tip
     Welch Two Sample t-test
 
 data:  country_a$scores and country_b$scores
-t = -2.9893, df = 1990.5, p-value = 0.00283
+t = -2.5381, df = 1996, p-value = 0.01122
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -2.199412 -0.456791
+ -2.0130731 -0.2581452
 sample estimates:
 mean of x mean of y 
- 99.28241 100.61051 </code></pre>
+ 100.1094  101.2450 </code></pre>
 </div>
 </div>
 <p>Note that, even though the difference in means is relatively small (country_a: 100; country_b: 101), the p_value is below 0.05. It can therefore also be useful to report an effect size, a measure of the magnitude of the difference. A number of effect sizes exist, but a common choice is Cohen’s d.&nbsp;A function to calculate Cohen’s d is available in the <code>lsr</code> package.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1336859</code></pre>
+<pre><code>[1] 0.1135079</code></pre>
 </div>
 </div>
 <p>Here the effect size is 0.1. Given Cohen’s classification of effect sizes that is a small effect. In educational research, effect sizes are typically small, hence different categorisations (for example Kraft’s <span class="citation" data-cites="kraft2020interpreting">(<a href="#ref-kraft2020interpreting" role="doc-biblioref">2020</a>)</span> classification) are applied.</p>
@@ -2204,8 +2204,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -2316,7 +2314,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

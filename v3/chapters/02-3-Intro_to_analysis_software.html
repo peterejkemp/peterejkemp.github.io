@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,10 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-baa83ea22f7c85f46c9cbd6ff4810be6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -579,7 +579,7 @@ Note
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>CNT, <span class="sc">-</span>OECD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 613,744 × 81
+<pre><code># A tibble: 613,744 × 82
    CNTSCHID CNTSTUID REGION  LANGTEST_QQQ ST003D02T ST003D03T ST004D01T
       &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;        &lt;fct&gt;     &lt;fct&gt;     &lt;fct&gt;    
  1   800282   800001 Albania Albanian     May       2006      Female   
@@ -593,7 +593,7 @@ Note
  9   800057   800010 Albania Albanian     August    2006      Female   
 10   800132   800012 Albania Albanian     September 2006      Female   
 # ℹ 613,734 more rows
-# ℹ 74 more variables: ST250Q01JA &lt;fct&gt;, ST250Q02JA &lt;fct&gt;, ST250Q03JA &lt;fct&gt;,
+# ℹ 75 more variables: ST250Q01JA &lt;fct&gt;, ST250Q02JA &lt;fct&gt;, ST250Q03JA &lt;fct&gt;,
 #   ST250Q05JA &lt;fct&gt;, ST251Q01JA &lt;fct&gt;, ST251Q06JA &lt;fct&gt;, ST251Q07JA &lt;fct&gt;,
 #   ST253Q01JA &lt;fct&gt;, ST254Q01JA &lt;fct&gt;, ST254Q02JA &lt;fct&gt;, ST254Q03JA &lt;fct&gt;,
 #   ST254Q04JA &lt;fct&gt;, ST254Q05JA &lt;fct&gt;, ST254Q06JA &lt;fct&gt;, ST255Q01JA &lt;fct&gt;,
@@ -650,7 +650,7 @@ Note
 <pre><code> [1] "CNTSCHID"   "CNTSTUID"   "ST016Q01NA" "WB151Q01HA" "WB152Q01HA"
  [6] "WB156Q01HA" "BELONG"     "BULLIED"    "DISCLIM"    "HOMEPOS"   
 [11] "ESCS"       "ATTCONFM"   "ICTEFFIC"   "STUBMI"     "PQMIMP"    
-[16] "PARINVOL"   "PV1MATH"    "PV1READ"    "PV1SCIE"   </code></pre>
+[16] "PARINVOL"   "W_FSTUWT"   "PV1MATH"    "PV1READ"    "PV1SCIE"   </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -2145,8 +2145,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -2257,7 +2255,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

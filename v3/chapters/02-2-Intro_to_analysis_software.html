@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>Loading packages and exploring data – MASTEMR</title>
 <style>
 code{white-space: pre-wrap;}
@@ -53,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -65,10 +69,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-baa83ea22f7c85f46c9cbd6ff4810be6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -94,15 +99,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="../css/mastemr.css">
+}</script>
+
+
+<link rel="stylesheet" href="../css/mastemr.css">
 </head>
+
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/KCL_logo.png" alt="" class="navbar-logo"></a>
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MASTEMR</span>
     </a>
@@ -111,7 +123,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -122,16 +136,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
@@ -155,8 +173,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to R</span></a>
@@ -181,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-Descriptive.html" class="sidebar-item-text sidebar-link">
@@ -250,15 +268,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A8-SEM.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SEM</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -267,8 +285,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">PISA</span></a>
@@ -305,37 +323,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#sec-loading" id="toc-sec-loading" class="nav-link active" data-scroll-target="#sec-loading"><span class="header-section-number">1</span> Loading data</a></li>
+  <li><a href="#sec-loading" id="toc-sec-loading" class="nav-link active" data-scroll-target="#sec-loading"><span class="header-section-number">1</span> Loading data</a></li>
   <li><a href="#dataframes" id="toc-dataframes" class="nav-link" data-scroll-target="#dataframes"><span class="header-section-number">2</span> Dataframes</a></li>
   <li><a href="#loading-data-from-the-web" id="toc-loading-data-from-the-web" class="nav-link" data-scroll-target="#loading-data-from-the-web"><span class="header-section-number">3</span> Loading data from the web</a></li>
   <li><a href="#sec-loading-computer" id="toc-sec-loading-computer" class="nav-link" data-scroll-target="#sec-loading-computer"><span class="header-section-number">4</span> Loading data from your computer</a></li>
-  <li>
-<a href="#setting-working-directories" id="toc-setting-working-directories" class="nav-link" data-scroll-target="#setting-working-directories"><span class="header-section-number">5</span> Setting working directories</a>
+  <li><a href="#setting-working-directories" id="toc-setting-working-directories" class="nav-link" data-scroll-target="#setting-working-directories"><span class="header-section-number">5</span> Setting working directories</a>
   <ul class="collapse">
-<li><a href="#proper-addresses" id="toc-proper-addresses" class="nav-link" data-scroll-target="#proper-addresses"><span class="header-section-number">5.1</span> Proper addresses</a></li>
-  </ul>
-</li>
+  <li><a href="#proper-addresses" id="toc-proper-addresses" class="nav-link" data-scroll-target="#proper-addresses"><span class="header-section-number">5.1</span> Proper addresses</a></li>
+  </ul></li>
   <li><a href="#sec-parquet" id="toc-sec-parquet" class="nav-link" data-scroll-target="#sec-parquet"><span class="header-section-number">6</span> .parquet files</a></li>
   <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files"><span class="header-section-number">7</span> .csv files</a></li>
-  <li>
-<a href="#exploring-data" id="toc-exploring-data" class="nav-link" data-scroll-target="#exploring-data"><span class="header-section-number">8</span> Exploring data</a>
+  <li><a href="#exploring-data" id="toc-exploring-data" class="nav-link" data-scroll-target="#exploring-data"><span class="header-section-number">8</span> Exploring data</a>
   <ul class="collapse">
-<li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">8.1</span> Questions</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">8.1</span> Questions</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-2-Intro_to_analysis_software.html">Loading packages and exploring data</a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-2-Intro_to_analysis_software.html">Loading packages and exploring data</a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title">Loading packages and exploring data</h1>
 </div>
 
@@ -350,10 +370,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>This course focuses on using the <em>tidyverse</em>; a free collection of programming <em>packages</em> that will allow you to write code that imports data, tidys it, transforms it into useful datasets, visualises findings, creates statistical models and communicates findings to others data using a standardised set of commands.</p>
+</header>
+
+
+<p>This course focuses on using the <em>tidyverse</em>; a free collection of programming <em>packages</em> that will allow you to write code that imports data, tidys it, transforms it into useful datasets, visualises findings, creates statistical models and communicates findings to others data using a standardised set of commands.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/data-science-workflow.png" class="img-fluid figure-img"></p>
-<figcaption>Data science workflow - RStudio</figcaption></figure>
+<figure class="figure">
+<p><img src="images/data-science-workflow.png" class="img-fluid figure-img"></p>
+<figcaption>Data science workflow - RStudio</figcaption>
+</figure>
 </div>
 <p>For many people the tidyverse is the main reason that they use R. The tidyverse is used widely in government, academia, NGOs and industry, notable examples include the <a href="https://johnburnmurdoch.github.io/slides/r-ggplot/#/">Financial Times</a> and the <a href="https://bbc.github.io/rcookbook/">BBC</a>. Code in the tidyverse can be (relatively) easily understood by others and <em>you</em>, when you come back to a project after several months.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -370,18 +395,20 @@ Note
 <p>The code above transforms data and converts it into a graph. It doesn’t have any comments, but you should hopefully be able to understand what a lot of the code does by just reading it. Can you guess what each line does? Try running the code by selecting parts of it and pressing <code>control</code> | <code>command ⌘</code> and <code>Enter</code></p>
 </div>
 </div>
-<section id="sec-loading" class="level1" data-number="1"><h1 data-number="1">
-<span class="header-section-number">1</span> Loading data</h1>
+<section id="sec-loading" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Loading data</h1>
 <p>We can’t do much with R without loading data from elsewhere. Data will come in many formats and R should be able to deal with all of them. Some of the datasets you access will be a few rows and columns; others, like the ones we are going to use on this course, might run into hundreds of thousands or even millions of rows and hundreds or thousands of columns. Depending on the format you are using, you might need to use specific packages. A few of the data file types you might meet are described below:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 30%">
 <col style="width: 69%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>File type</th>
 <th>Description</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>Comma separated values [.csv]</td>
@@ -405,13 +432,11 @@ Note
 </tr>
 <tr class="even">
 <td>Stata [.dta]</td>
-<td>
-<code>haven</code> or <code>foreign</code> packages to read data into R</td>
+<td><code>haven</code> or <code>foreign</code> packages to read data into R</td>
 </tr>
 <tr class="odd">
 <td>SAS [.sas]</td>
-<td>
-<code>haven</code> or <code>foreign</code> packages to read data into R</td>
+<td><code>haven</code> or <code>foreign</code> packages to read data into R</td>
 </tr>
 <tr class="even">
 <td>Structured Query Language [.sql]</td>
@@ -419,14 +444,14 @@ Note
 </tr>
 <tr class="odd">
 <td>JavaScript Object Notation [.json]</td>
-<td>
-<code>.json</code> is a popular format for sharing data on the web. You can use <code>jsonlite</code> and <code>rjson</code> to access this type of data</td>
+<td><code>.json</code> is a popular format for sharing data on the web. You can use <code>jsonlite</code> and <code>rjson</code> to access this type of data</td>
 </tr>
 </tbody>
 </table>
 <p>For this course we will be looking at <code>.csv</code>, <code>excel</code>, <code>.rds</code> and <code>parquet</code> files.</p>
-</section><section id="dataframes" class="level1" data-number="2"><h1 data-number="2">
-<span class="header-section-number">2</span> Dataframes</h1>
+</section>
+<section id="dataframes" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Dataframes</h1>
 <p>Loading datasets into R will normally store them as <em>dataframes</em> (also known as <em>tibbles</em> when using the tidyverse). Dataframes are the equivalent of tables in a spreadsheet, with rows, columns and datatypes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
@@ -458,13 +483,15 @@ Tip
 <p>Core to the <em>tidyverse</em> is the idea of <em>tidy data</em>, a rule of thumb for creating data sets that can be easily manipulated, modeled and presented. <em>Tidy data</em> are data sets where each variable is a column and each observation a row.</p>
 <p>This data isn’t tidy data as each row has contains multiple exam results (observations):</p>
 <table class="caption-top table">
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>ID</th>
 <th>Exam 1</th>
 <th>Grade 1</th>
 <th>Exam 2</th>
 <th>Grade 2</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>R2341</td>
@@ -484,11 +511,13 @@ Tip
 </table>
 <p>This dataframe is tidy data as each student has one entry for each exam:</p>
 <table class="caption-top table">
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>ID</th>
 <th>Exam</th>
 <th>Grade</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>R2341</td>
@@ -510,8 +539,9 @@ Tip
 </div>
 </div>
 <p>First we need to get some data into R so we can start analysing them. We can load large datatables into R by either providing the online web address, or by loading it from a local file directory on your hard drive. Both methods are covered below:</p>
-</section><section id="loading-data-from-the-web" class="level1" data-number="3"><h1 data-number="3">
-<span class="header-section-number">3</span> Loading data from the web</h1>
+</section>
+<section id="loading-data-from-the-web" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Loading data from the web</h1>
 <p>To download files from the web you’ll need to find the exact location of the file you are using. For example below we will need another package, <code>openxlsx</code>, which you need to <em>install</em> before you load it (see: <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-packages">§Setting up RStudio and the tidyverse</a>, or use line 1 below). The code shown will download the files from an online Google drive directly into objects in R using <code>read.xlsx(&lt;file_web_address&gt;, &lt;sheet_name&gt;)</code>:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -535,8 +565,9 @@ Tip
 <span id="cb3-6"><a href="#cb3-6"></a>schools <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"https://drive.google.com/uc?export=download&amp;id=1tp9xe3dS__eg7RrXf0T_oMxcrz_TbMdM"</span>,</span>
 <span id="cb3-7"><a href="#cb3-7"></a>                      <span class="at">sheet=</span><span class="st">"Schools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="sec-loading-computer" class="level1" data-number="4"><h1 data-number="4">
-<span class="header-section-number">4</span> Loading data from your computer</h1>
+</section>
+<section id="sec-loading-computer" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Loading data from your computer</h1>
 <p>Downloading files directly from web addresses can be slow and you might want to prefer to use files saved to your computer’s hard drive. You can do this by following the steps below:</p>
 <p>Download the <code>PISA_student_2022_subset.parquet</code> file from <a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/EUT13jrQxKJCp64WnH1MG3MBHoDqkzx1NJZIoVpUFHUYvg?e=pi2ZoD">here</a> and save it to your computer where your R code file is.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -554,32 +585,22 @@ Note
 </div>
 <p>Copy the location of the file (see next step for help)</p>
 <ul>
-<li>
-<p>To find the location of a file in <strong><em>Windows</em></strong> do the following:</p>
+<li><p>To find the location of a file in <strong><em>Windows</em></strong> do the following:</p>
 <ol type="1">
-<li>
-<p>Navigate to the location of the file in <em>Windows Explorer</em>:</p>
-<p><img src="images/navigate_file_location.png" class="img-fluid"></p>
-</li>
-<li>
-<p>Click on the address bar</p>
-<p><img src="images/select_file_location.png" class="img-fluid"></p>
-</li>
+<li><p>Navigate to the location of the file in <em>Windows Explorer</em>:</p>
+<p><img src="images/navigate_file_location.png" class="img-fluid"></p></li>
+<li><p>Click on the address bar</p>
+<p><img src="images/select_file_location.png" class="img-fluid"></p></li>
 <li><p>Copy the location</p></li>
-</ol>
-</li>
-<li>
-<p>To find the location of a file in <strong><em>Mac OSX</em></strong> do the following:</p>
+</ol></li>
+<li><p>To find the location of a file in <strong><em>Mac OSX</em></strong> do the following:</p>
 <ol type="1">
 <li><p>Open <em>Finder</em></p></li>
 <li><p>Navigate to the folder where you saved the file</p></li>
-<li>
-<p>Right click on the name of the file, then press the <strong>option</strong> <code>⌥</code> (or <code>Alt</code>) button and select <code>Copy &lt;name of file&gt; as Pathname</code></p>
-<p><img src="images/mac_pathnames.png" class="img-fluid"></p>
-</li>
+<li><p>Right click on the name of the file, then press the <strong>option</strong> <code>⌥</code> (or <code>Alt</code>) button and select <code>Copy &lt;name of file&gt; as Pathname</code></p>
+<p><img src="images/mac_pathnames.png" class="img-fluid"></p></li>
 <li><p>Alternatively, follow <a href="https://support.apple.com/en-gb/guide/mac-help/mchlp1774/mac">this</a></p></li>
-</ol>
-</li>
+</ol></li>
 </ul>
 <p>To load this particular data into R we need to use the <code>read_parquet</code> command from the <code>arrow</code> package, specifying the location and name of the file we are loading. See the following code:</p>
 <div class="cell">
@@ -588,28 +609,29 @@ Note
 <span id="cb4-3"><a href="#cb4-3"></a></span>
 <span id="cb4-4"><a href="#cb4-4"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[C:/Users/Peter/code/PISA_2022_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="setting-working-directories" class="level1" data-number="5"><h1 data-number="5">
-<span class="header-section-number">5</span> Setting working directories</h1>
+</section>
+<section id="setting-working-directories" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Setting working directories</h1>
 <p>Using the <code>setwd(&lt;location&gt;)</code> you can specify where R will look by default for any datasets. In the example below, the <code>dfe_data.xlsx</code> will have been downloaded and stored in <code>C:/Users/Peter/code</code>. By running <code>setwd("C:/Users/Peter/code")</code> R will always look in that location when trying to load files, meaning that <code>read_parquet(r"[C:/Users/Peter/code/PISA_student_2022.parquet]")</code> will be treated the same as <code>read_parquet(r"[PISA_student_2022.parquet]")</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># context: setup</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">setwd</span>(r<span class="st">"[C:/Users/Peter/code/]"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[PISA_student_2022.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>To work out what your current working directory is, you can use <code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code>.</p>
-<section id="proper-addresses" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="proper-addresses">
-<span class="header-section-number">5.1</span> Proper addresses</h2>
+<p>To work out what your current working directory is, you can use <code>getwd()</code>.</p>
+<section id="proper-addresses" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="proper-addresses"><span class="header-section-number">5.1</span> Proper addresses</h2>
 <p>You might have found that you get an error if you don’t convert your backslashes <code>\</code> into forwardslashes <code>/</code>. It’s common mistake and very annoying. In most programming languages a backslash signifies the start of a special command, for example <code>\n</code> signifies a <code>newline</code>.</p>
 <p>With R there are three ways to get around the problem of backslashes in file locations, for the location:<code>"C:\myfolder\"</code> we could:</p>
 <ul>
-<li>replace them with forwardslashes (as shown above):<code>"C:/myfolder/"</code>
-</li>
-<li>replace them with double backslashes (the special character specified by two backslashes is one backslash!):<code>"C:\\myfolder\\"</code>
-</li>
-<li>use the inbuilt R command to deal with filenames: <code>r"[C:\myfolder\]"</code>
-</li>
-</ul></section></section><section id="sec-parquet" class="level1" data-number="6"><h1 data-number="6">
-<span class="header-section-number">6</span> .parquet files</h1>
+<li>replace them with forwardslashes (as shown above):<code>"C:/myfolder/"</code></li>
+<li>replace them with double backslashes (the special character specified by two backslashes is one backslash!):<code>"C:\\myfolder\\"</code></li>
+<li>use the inbuilt R command to deal with filenames: <code>r"[C:\myfolder\]"</code></li>
+</ul>
+</section>
+</section>
+<section id="sec-parquet" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> .parquet files</h1>
 <p>For the majority of this workbook you will be using a cutdown version of the <code>PISA_2022</code> student table. This dataset is huge and we have loaded it into R, selected fields we think are useful, converted column types to work with R and saved in the <code>.parquet</code> format. <code>.parquet</code> files are quick to load and small in size. To load a <code>.parquet</code> file you can use the <code>read_parquet(&lt;location&gt;)</code> command from the <code>arrow</code> package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(arrow)</span>
@@ -620,8 +642,9 @@ Note
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="fu">write_parquet</span>(PISA_2022 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"France"</span>), <span class="st">"&lt;yourfolder&gt;/pisa_france_2022.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="csv-files" class="level1" data-number="7"><h1 data-number="7">
-<span class="header-section-number">7</span> .csv files</h1>
+</section>
+<section id="csv-files" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> .csv files</h1>
 <p>A very common way of distributing data is through <code>.csv</code> files. These files can be easily compressed and opened in common office spreadsheet tools such as Excel. To load a <code>.csv</code> we can use <code>read_csv("&lt;file_location&gt;")</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -637,14 +660,15 @@ Note
 <span id="cb9-2"><a href="#cb9-2"></a><span class="co"># saving your results to a file called `summary_stats.csv`</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a><span class="fu">write_csv</span>(my_results, <span class="st">"summary_stats.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="exploring-data" class="level1" data-number="8"><h1 data-number="8">
-<span class="header-section-number">8</span> Exploring data</h1>
+</section>
+<section id="exploring-data" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Exploring data</h1>
 <p>Now that we have loaded the <code>PISA_2022</code> dataset we can start to explore it.</p>
 <p>You can check that the tables have loaded correctly by typing the object name and ‘<em>running</em>’ the line (<code>control</code>|<code>command ⌘</code> and <code>Enter</code>)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>PISA_2022</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 613,744 × 83
+<pre><code># A tibble: 613,744 × 84
    CNT     CNTSCHID CNTSTUID REGION  OECD  LANGTEST_QQQ ST003D02T ST003D03T
  * &lt;fct&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;        &lt;fct&gt;     &lt;fct&gt;    
  1 Albania   800282   800001 Albania No    Albanian     May       2006     
@@ -658,7 +682,7 @@ Note
  9 Albania   800057   800010 Albania No    Albanian     August    2006     
 10 Albania   800132   800012 Albania No    Albanian     September 2006     
 # ℹ 613,734 more rows
-# ℹ 75 more variables: ST004D01T &lt;fct&gt;, ST250Q01JA &lt;fct&gt;, ST250Q02JA &lt;fct&gt;,
+# ℹ 76 more variables: ST004D01T &lt;fct&gt;, ST250Q01JA &lt;fct&gt;, ST250Q02JA &lt;fct&gt;,
 #   ST250Q03JA &lt;fct&gt;, ST250Q05JA &lt;fct&gt;, ST251Q01JA &lt;fct&gt;, ST251Q06JA &lt;fct&gt;,
 #   ST251Q07JA &lt;fct&gt;, ST253Q01JA &lt;fct&gt;, ST254Q01JA &lt;fct&gt;, ST254Q02JA &lt;fct&gt;,
 #   ST254Q03JA &lt;fct&gt;, ST254Q04JA &lt;fct&gt;, ST254Q05JA &lt;fct&gt;, ST254Q06JA &lt;fct&gt;,
@@ -666,7 +690,7 @@ Note
 #   ST019AQ01T &lt;fct&gt;, ST019BQ01T &lt;fct&gt;, ST019CQ01T &lt;fct&gt;, ST125Q01NA &lt;fct&gt;, …</code></pre>
 </div>
 </div>
-<p>We can see from this that the <code>tibble</code> (another word for <em>dataframe</em>, basically a spreadsheet table) is 613744 rows, with 83 columns <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This is data for all the students from around the world that took part in PISA 2022. The actual PISA dataset has many more columns than this, but for the examples here we have selected 83 of the more interesting data variables. The column names might seem rather confusing and you might want to refer to the <a href="https://webfs.oecd.org/pisa2022/CY08MSP_CODEBOOK_5thDecember23.xlsx">PISA 2022 code book</a> to find out what everything means.</p>
+<p>We can see from this that the <code>tibble</code> (another word for <em>dataframe</em>, basically a spreadsheet table) is 613744 rows, with 84 columns <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This is data for all the students from around the world that took part in PISA 2022. The actual PISA dataset has many more columns than this, but for the examples here we have selected 84 of the more interesting data variables. The column names might seem rather confusing and you might want to refer to the <a href="https://webfs.oecd.org/pisa2022/CY08MSP_CODEBOOK_5thDecember23.xlsx">PISA 2022 code book</a> to find out what everything means.</p>
 <p>The data shown in the console window is only the top few rows and first few columns. To see the whole table click on the <code>Environment panel</code> and the table icon <img src="images/icon_table.png" class="img-fluid"> to explore the table:</p>
 <p><img src="images/environment_view_table.png" class="img-fluid"></p>
 <p>Alternatively, you can also hold down <code>command ⌘</code>|<code>control</code> and click on the table name in your R Script to view the table. You can also type <code>View(&lt;table_name&gt;)</code>. <strong>Note:</strong> this has a capital “V”</p>
@@ -729,10 +753,10 @@ Note
 </div>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ncol</span>(PISA_2022)  <span class="co"># how many columns are in the results table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 83</code></pre>
+<pre><code>[1] 84</code></pre>
 </div>
 </div>
-<p>If we want to know the names of the columns we can use the <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> command that returns a vector. This can be a little confusing as it’ll return the names used in the dataframe, which can be hard to interpret, e.g.&nbsp;<code>ST004D01T</code> is PISA’s way of encoding gender. You might find the labels in the view of the table available through <code>View(PISA_2022)</code> (<strong>note:</strong> the capital V in View) and the <em>Environment</em> panel easier to navigate:</p>
+<p>If we want to know the names of the columns we can use the <code>names()</code> command that returns a vector. This can be a little confusing as it’ll return the names used in the dataframe, which can be hard to interpret, e.g.&nbsp;<code>ST004D01T</code> is PISA’s way of encoding gender. You might find the labels in the view of the table available through <code>View(PISA_2022)</code> (<strong>note:</strong> the capital V in View) and the <em>Environment</em> panel easier to navigate:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">names</span>(PISA_2022) <span class="co"># the column names of a table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -744,7 +768,7 @@ Note
 [26] "ST005Q01JA"   "ST007Q01JA"   "ST019AQ01T"   "ST019BQ01T"   "ST019CQ01T"  
 [31] "ST125Q01NA"   "ST261Q01JA"   "ST261Q04JA"   "ST062Q02TA"   "ST038Q08NA"  
 [36] "ST016Q01NA"   "ST337Q07JA"   "ST324Q11JA"   "ST355Q03JA"   "FL150Q02TA"  
- [ reached getOption("max.print") -- omitted 43 entries ]</code></pre>
+ [ reached getOption("max.print") -- omitted 44 entries ]</code></pre>
 </div>
 </div>
 <p>As mentioned, the columns in the tables are very much like a collection of <em>vectors</em>, to access these columns we can put a <code>$</code> [dollar sign] after the name of a table. This allows us to see all the columns that table has, using the up and down arrows to select, press the <code>Tab</code> key to complete:</p>
@@ -859,7 +883,7 @@ Tip
 <pre><code>[1] NA</code></pre>
 </div>
 </div>
-<p>Looking at the structure of this column, we can see it is stored as a <code>factor</code>, not as a <code>numeric</code>. Factors are a special datatype that use numbers to link to categorical values. For <code>ST253Q01JA</code> there are 12 different <em>levels</em> that you can explore using the <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> and <code><a href="https://rdrr.io/r/base/levels.html">levels()</a></code> commands:</p>
+<p>Looking at the structure of this column, we can see it is stored as a <code>factor</code>, not as a <code>numeric</code>. Factors are a special datatype that use numbers to link to categorical values. For <code>ST253Q01JA</code> there are 12 different <em>levels</em> that you can explore using the <code>str()</code> and <code>levels()</code> commands:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">str</span>(PISA_2022<span class="sc">$</span>ST253Q01JA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -921,15 +945,17 @@ Tip
 <p>To get a good overview of what a table contains, you can use the <code>str(&lt;table_name&gt;)</code> and <code>summary(&lt;table_name&gt;)</code> commands.</p>
 </div>
 </div>
-<section id="questions" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="questions">
-<span class="header-section-number">8.1</span> Questions</h2>
+<section id="questions" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="questions"><span class="header-section-number">8.1</span> Questions</h2>
 <div class="question">
 <p>Using the <code>PISA_2022</code> dataset:</p>
 <ol type="1">
 <li>use the Environment window to view the dataset, what is the name and the label of the 26th column?</li>
 </ol>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># the 26th column is ST062Q02TA</span></span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># the 26th column is ST062Q02TA</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a><span class="co"># the label is: "In the last two full weeks of school, how often: I [skipped] some classes"</span></span>
 <span id="cb45-3"><a href="#cb45-3"></a></span>
 <span id="cb45-4"><a href="#cb45-4"></a><span class="co"># you could use View() instead of the environment window, note the capital V</span></span>
@@ -950,7 +976,9 @@ Tip
 <li>Use the dollar sign <code>$</code> to return the column <code>ST004D01T</code>. What is stored in this column?</li>
 </ol>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># Student (Standardized) Gender</span></span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># Student (Standardized) Gender</span></span>
 <span id="cb46-2"><a href="#cb46-2"></a>PISA_2022<span class="sc">$</span>ST004D01T</span>
 <span id="cb46-3"><a href="#cb46-3"></a></span>
 <span id="cb46-4"><a href="#cb46-4"></a><span class="co">#  [1] Female Male   Male   Female Female Male   Male   Female Female Female Male  </span></span>
@@ -967,7 +995,9 @@ Tip
 <li>How many students results are in the whole table?</li>
 </ol>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">nrow</span>(PISA_2022)</span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">nrow</span>(PISA_2022)</span>
 <span id="cb47-2"><a href="#cb47-2"></a><span class="co"># [1] 613744</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
@@ -975,7 +1005,9 @@ Tip
 <li>What <code>unique</code> values does the dataset hold for Mother’s occupation <code>OCOD1</code> and Father’s occupation <code>OCOD2</code>? Which is larger?</li>
 </ol>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD1)</span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD1)</span>
 <span id="cb48-2"><a href="#cb48-2"></a><span class="fu">unique</span>(PISA_2022<span class="sc">$</span>OCOD2)</span>
 <span id="cb48-3"><a href="#cb48-3"></a></span>
 <span id="cb48-4"><a href="#cb48-4"></a><span class="co"># you can read the length from the above, or you could use the</span></span>
@@ -998,7 +1030,9 @@ Tip
 <li>What are the <code>max</code>imum, <code>mean</code>, <code>median</code> and <code>min</code>umum science grades <code>PV1SCIE</code> achieved by any student</li>
 </ol>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># remember to set the na.rm = TRUE</span></span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># remember to set the na.rm = TRUE</span></span>
 <span id="cb49-2"><a href="#cb49-2"></a><span class="fu">max</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
 <span id="cb49-3"><a href="#cb49-3"></a><span class="co"># [1] 895.375</span></span>
 <span id="cb49-4"><a href="#cb49-4"></a><span class="fu">mean</span>(PISA_2022<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
@@ -1015,10 +1049,17 @@ Tip
 </div>
 
 
-</section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
 <ol>
 <li id="fn1"><p>Even in this cut down format the PISA data might take a few minutes to load. You can find the full dataset <a href="https://drive.google.com/open?id=17AYuiKXxWFY6XkJZRCFXRYRRNNmata-f&amp;usp=drive_fs">here</a>, but be warned, it might crash you machine when trying to load it! Plug your laptop into a power supply, and having 16GB of RAM is highly recommended! You might also need to wrangle some of the fields to make them work for your purposes, you might enjoy the challenge!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1100,8 +1141,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1212,7 +1251,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1439,6 +1477,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

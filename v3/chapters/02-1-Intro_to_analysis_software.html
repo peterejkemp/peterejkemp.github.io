@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>Introduction to R – MASTEMR</title>
 <style>
 code{white-space: pre-wrap;}
@@ -53,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -65,10 +69,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-baa83ea22f7c85f46c9cbd6ff4810be6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -94,15 +99,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="../css/mastemr.css">
+}</script>
+
+
+<link rel="stylesheet" href="../css/mastemr.css">
 </head>
+
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/KCL_logo.png" alt="" class="navbar-logo"></a>
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MASTEMR</span>
     </a>
@@ -111,7 +123,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -122,16 +136,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
@@ -155,8 +173,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introduction to R</span></a>
@@ -181,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-Descriptive.html" class="sidebar-item-text sidebar-link">
@@ -250,15 +268,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A8-SEM.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SEM</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -267,8 +285,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">PISA</span></a>
@@ -305,64 +323,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li>
-<a href="#getting-set-up" id="toc-getting-set-up" class="nav-link active" data-scroll-target="#getting-set-up"><span class="header-section-number">1</span> Getting set up</a>
+  <li><a href="#getting-set-up" id="toc-getting-set-up" class="nav-link active" data-scroll-target="#getting-set-up"><span class="header-section-number">1</span> Getting set up</a>
   <ul class="collapse">
-<li><a href="#sec-installation" id="toc-sec-installation" class="nav-link" data-scroll-target="#sec-installation"><span class="header-section-number">1.1</span> Installation (on your own machine)</a></li>
+  <li><a href="#sec-installation" id="toc-sec-installation" class="nav-link" data-scroll-target="#sec-installation"><span class="header-section-number">1.1</span> Installation (on your own machine)</a></li>
   <li><a href="#sec-packages" id="toc-sec-packages" class="nav-link" data-scroll-target="#sec-packages"><span class="header-section-number">1.2</span> Setting up RStudio and the tidyverse</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#starting-to-code" id="toc-starting-to-code" class="nav-link" data-scroll-target="#starting-to-code"><span class="header-section-number">2</span> Starting to code</a></li>
-  <li>
-<a href="#your-first-program" id="toc-your-first-program" class="nav-link" data-scroll-target="#your-first-program"><span class="header-section-number">3</span> Your first program</a>
+  <li><a href="#your-first-program" id="toc-your-first-program" class="nav-link" data-scroll-target="#your-first-program"><span class="header-section-number">3</span> Your first program</a>
   <ul class="collapse">
-<li>
-<a href="#objects-and-instructions" id="toc-objects-and-instructions" class="nav-link" data-scroll-target="#objects-and-instructions"><span class="header-section-number">3.1</span> Objects and instructions</a>
+  <li><a href="#objects-and-instructions" id="toc-objects-and-instructions" class="nav-link" data-scroll-target="#objects-and-instructions"><span class="header-section-number">3.1</span> Objects and instructions</a>
   <ul class="collapse">
-<li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">3.1.1</span> Questions</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#naming-objects" id="toc-naming-objects" class="nav-link" data-scroll-target="#naming-objects"><span class="header-section-number">3.2</span> Naming objects</a>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">3.1.1</span> Questions</a></li>
+  </ul></li>
+  <li><a href="#naming-objects" id="toc-naming-objects" class="nav-link" data-scroll-target="#naming-objects"><span class="header-section-number">3.2</span> Naming objects</a>
   <ul class="collapse">
-<li><a href="#questions-1" id="toc-questions-1" class="nav-link" data-scroll-target="#questions-1"><span class="header-section-number">3.2.1</span> Questions</a></li>
-  </ul>
-</li>
+  <li><a href="#questions-1" id="toc-questions-1" class="nav-link" data-scroll-target="#questions-1"><span class="header-section-number">3.2.1</span> Questions</a></li>
+  </ul></li>
   <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments"><span class="header-section-number">3.3</span> Comments</a></li>
-  <li>
-<a href="#sec-datatypes" id="toc-sec-datatypes" class="nav-link" data-scroll-target="#sec-datatypes"><span class="header-section-number">3.4</span> Datatypes</a>
+  <li><a href="#sec-datatypes" id="toc-sec-datatypes" class="nav-link" data-scroll-target="#sec-datatypes"><span class="header-section-number">3.4</span> Datatypes</a>
   <ul class="collapse">
-<li><a href="#questions-2" id="toc-questions-2" class="nav-link" data-scroll-target="#questions-2"><span class="header-section-number">3.4.1</span> Questions</a></li>
-  </ul>
-</li>
-  </ul>
-</li>
-  <li>
-<a href="#sec-vectors" id="toc-sec-vectors" class="nav-link" data-scroll-target="#sec-vectors"><span class="header-section-number">4</span> Vectors</a>
+  <li><a href="#questions-2" id="toc-questions-2" class="nav-link" data-scroll-target="#questions-2"><span class="header-section-number">3.4.1</span> Questions</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sec-vectors" id="toc-sec-vectors" class="nav-link" data-scroll-target="#sec-vectors"><span class="header-section-number">4</span> Vectors</a>
   <ul class="collapse">
-<li><a href="#questions-3" id="toc-questions-3" class="nav-link" data-scroll-target="#questions-3"><span class="header-section-number">4.1</span> Questions</a></li>
-  </ul>
-</li>
+  <li><a href="#questions-3" id="toc-questions-3" class="nav-link" data-scroll-target="#questions-3"><span class="header-section-number">4.1</span> Questions</a></li>
+  </ul></li>
   <li><a href="#summary-questions" id="toc-summary-questions" class="nav-link" data-scroll-target="#summary-questions"><span class="header-section-number">5</span> Summary questions</a></li>
-  <li>
-<a href="#packages-and-libraries" id="toc-packages-and-libraries" class="nav-link" data-scroll-target="#packages-and-libraries"><span class="header-section-number">6</span> Packages and libraries</a>
+  <li><a href="#packages-and-libraries" id="toc-packages-and-libraries" class="nav-link" data-scroll-target="#packages-and-libraries"><span class="header-section-number">6</span> Packages and libraries</a>
   <ul class="collapse">
-<li><a href="#sec-load-run-pckges" id="toc-sec-load-run-pckges" class="nav-link" data-scroll-target="#sec-load-run-pckges"><span class="header-section-number">6.1</span> Installing and loading packages</a></li>
+  <li><a href="#sec-load-run-pckges" id="toc-sec-load-run-pckges" class="nav-link" data-scroll-target="#sec-load-run-pckges"><span class="header-section-number">6.1</span> Installing and loading packages</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">Introduction to R</a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">Introduction to R</a></li></ol></nav>
+<div class="quarto-title">
 <h1 class="title">Introduction to R</h1>
 </div>
 
@@ -377,7 +387,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>This short course aims to take you through the process of writing your first programs in the <strong>R statistical programming language</strong> to analyse national and international educational datasets. To do this we will be using the <strong>R Studio</strong> integrated development environment (IDE), a desktop application to support you in writing R scripts. R Studio supports your programming by flagging up errors in your code as you write it, and helping you manage your analysis environment by giving you quick access to tables, objects and graphs as you develop them. In addition, we will be looking at data analysis using the <strong>tidyverse</strong> code packages. The tidyverse is a standardised collection of supporting code that helps you read data, tidy it into a usable format, analyse it and present your findings.</p>
+</header>
+
+
+<p>This short course aims to take you through the process of writing your first programs in the <strong>R statistical programming language</strong> to analyse national and international educational datasets. To do this we will be using the <strong>R Studio</strong> integrated development environment (IDE), a desktop application to support you in writing R scripts. R Studio supports your programming by flagging up errors in your code as you write it, and helping you manage your analysis environment by giving you quick access to tables, objects and graphs as you develop them. In addition, we will be looking at data analysis using the <strong>tidyverse</strong> code packages. The tidyverse is a standardised collection of supporting code that helps you read data, tidy it into a usable format, analyse it and present your findings.</p>
 <p>The R programming language offers similar functionality to an application based statistical tool such as SPSS, with more of a focus on you writing code to solve your problems, rather than using prebuilt tools. R is open source, meaning that it is free to use and that lots of people have written code in R that they have shared with others. R statistical libraries are some of the most comprehensive in existence. R is popular<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> in academia and industry, being used for everything from sales modelling to cancer detection.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># This example shows how R can pull data directly from the internet</span></span>
@@ -395,7 +408,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-13"><a href="#cb1-13"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="02-1-Intro_to_analysis_software_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure">
+<p><img src="02-1-Intro_to_analysis_software_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -468,49 +482,35 @@ Tip
 <span id="cb3-2"><a href="#cb3-2"></a>code <span class="sc">==</span> <span class="st">"do"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<section id="getting-set-up" class="level1" data-number="1"><h1 data-number="1">
-<span class="header-section-number">1</span> Getting set up</h1>
-<section id="sec-installation" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="sec-installation">
-<span class="header-section-number">1.1</span> Installation (on your own machine)</h2>
+<section id="getting-set-up" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Getting set up</h1>
+<section id="sec-installation" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-installation"><span class="header-section-number">1.1</span> Installation (on your own machine)</h2>
 <ol type="1">
-<li>
-<p>Install R (default settings should be fine)</p>
+<li><p>Install R (default settings should be fine)</p>
 <ol type="a">
-<li>
-<strong>Windows</strong> users visit: <a href="https://cran.r-project.org/bin/windows/base/">here</a>
-</li>
-<li>
-<strong>Mac</strong> users visit: <a href="https://cran.r-project.org/bin/macosx/">here</a> and make sure you get the correct version of R for M1/2 Macs (~November 2020 onwards), or Intel Macs (~up to November 2020)</li>
-</ol>
-</li>
+<li><strong>Windows</strong> users visit: <a href="https://cran.r-project.org/bin/windows/base/">here</a></li>
+<li><strong>Mac</strong> users visit: <a href="https://cran.r-project.org/bin/macosx/">here</a> and make sure you get the correct version of R for M1/2 Macs (~November 2020 onwards), or Intel Macs (~up to November 2020)</li>
+</ol></li>
 <li><p>Install <strong>RStudio</strong>, visit <a href="https://rstudio.com/products/rstudio/download/#download">here</a> and it should present you with the version suitable for your operating system.</p></li>
 </ol>
 <p>(If the above doesn’t work follow the instructions <a href="https://www.rstudio.com/products/rstudio/download/#download">here</a>)</p>
-</section><section id="sec-packages" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="sec-packages">
-<span class="header-section-number">1.2</span> Setting up RStudio and the tidyverse</h2>
+</section>
+<section id="sec-packages" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-packages"><span class="header-section-number">1.2</span> Setting up RStudio and the tidyverse</h2>
 <ol type="1">
 <li><p>Open RStudio</p></li>
-<li>
-<p>On the bottom right-hand side, select <strong>Packages</strong>, then select <strong>Install</strong>, then type <strong>“tidyverse”</strong> into the Packages field of the new window:</p>
-<p><img src="images/tidyverse_install.png" class="img-fluid"></p>
-</li>
+<li><p>On the bottom right-hand side, select <strong>Packages</strong>, then select <strong>Install</strong>, then type <strong>“tidyverse”</strong> into the Packages field of the new window:</p>
+<p><img src="images/tidyverse_install.png" class="img-fluid"></p></li>
 <li><p>Click Install and you should see things happening in the console (bottom left). Wait for the console activity to finish (it’ll be downloading and checking packages). If it asks any questions, type <code>N</code> for no and press enter.</p></li>
-<li>
-<p>Add a new R Script using the <img src="images/RStudio_new_button.png" class="img-fluid"> button</p>
-<p><img src="images/RStudio_new_button_RScript.png" width="210" height="74"></p>
-</li>
-<li>
-<p>In the new R script, write the following:</p>
-<p><img src="images/code_starwars.png" class="img-fluid" width="514"></p>
-</li>
-<li>
-<p>Select all the lines and press <code>Control</code> or <code>Command ⌘</code> and <code>Enter</code> on your keyboard at the same time. Alternatively, press the <img src="images/RStudio-run.png" class="img-fluid" width="36"> button</p>
-<p><img src="images/code_starwars_select.png" class="img-fluid" width="585"></p>
-</li>
-<li>
-<p>Check that you have the following in the console window (depending on your screen size you might have fewer columns):</p>
-<p><img src="images/output_data_starwars.png" class="img-fluid"></p>
-</li>
+<li><p>Add a new R Script using the <img src="images/RStudio_new_button.png" class="img-fluid"> button</p>
+<p><img src="images/RStudio_new_button_RScript.png" width="210" height="74"></p></li>
+<li><p>In the new R script, write the following:</p>
+<p><img src="images/code_starwars.png" class="img-fluid" width="514"></p></li>
+<li><p>Select all the lines and press <code>Control</code> or <code>Command ⌘</code> and <code>Enter</code> on your keyboard at the same time. Alternatively, press the <img src="images/RStudio-run.png" class="img-fluid" width="36"> button</p>
+<p><img src="images/code_starwars_select.png" class="img-fluid" width="585"></p></li>
+<li><p>Check that you have the following in the console window (depending on your screen size you might have fewer columns):</p>
+<p><img src="images/output_data_starwars.png" class="img-fluid"></p></li>
 <li><p>Install the <code>arrow</code> package, repeat step 2, above.</p></li>
 <li><p>Download the <code>PISA_student_2022_subset.parquet</code> dataset from <a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/EUT13jrQxKJCp64WnH1MG3MBHoDqkzx1NJZIoVpUFHUYvg?e=pi2ZoD">here</a> and <strong>download</strong> it on your computer, make a note of the <strong>full folder location</strong> where you have saved this!</p></li>
 </ol>
@@ -531,7 +531,9 @@ Note
 <li>Copy the following code and replace <code>&lt;folder&gt;</code> with the full folder location of where your dataset was saved, make sure that you have <code>.parquet</code> on the end. And keep the <code>(r"[  ]")</code>!</li>
 </ol>
 <div class="cell">
-<details class="code-fold"><summary>examples of what this should look like for PC and Mac</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># For Pete (PC) the address format was:</span></span>
+<details class="code-fold">
+<summary>examples of what this should look like for PC and Mac</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># For Pete (PC) the address format was:</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[C:\Users\Peter\KCL\MASTEMR\PISA_student_2022_subset.parquet]"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3"></a></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="co"># For Richard (Mac) the address format was:</span></span>
@@ -563,14 +565,18 @@ Note
 <ol start="12" type="1">
 <li><p>That’s it, you should be set up!</p></li>
 <li><p>Any issues, please drop a message on the Teams group, or mail <a href="mailto:peter.kemp@kcl.ac.uk">peter.kemp@kcl.ac.uk</a> and <a href="mailto:richard.brock@kcl.ac.uk">richard.brock@kcl.ac.uk</a></p></li>
-</ol></section></section><section id="starting-to-code" class="level1" data-number="2"><h1 data-number="2">
-<span class="header-section-number">2</span> Starting to code</h1>
+</ol>
+</section>
+</section>
+<section id="starting-to-code" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Starting to code</h1>
 <p>After adding a new R Script using the button <img src="images/RStudio_new_button.png" width="27" height="29">, there are four parts to R Studio’s interface. For the moment we are most interested in the Script file section, top left.</p>
 <p><img src="images/RStudio_interface.png" class="img-fluid" width="600"></p>
-</section><section id="your-first-program" class="level1" data-number="3"><h1 data-number="3">
-<span class="header-section-number">3</span> Your first program</h1>
-<section id="objects-and-instructions" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="objects-and-instructions">
-<span class="header-section-number">3.1</span> Objects and instructions</h2>
+</section>
+<section id="your-first-program" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Your first program</h1>
+<section id="objects-and-instructions" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="objects-and-instructions"><span class="header-section-number">3.1</span> Objects and instructions</h2>
 <p>In programming languages we can attach data to a name, this is called assigning a value to an object (you might also call them <em>variables</em>). To do this in R we use the <code>&lt;-</code> arrow command. For example, I want to put the word <code>"Pete"</code> into an object called <code>myname</code> (note that words and sentences such as <code>"Pete"</code> need speech marks):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>myname <span class="ot">&lt;-</span> <span class="st">"Pete"</span></span>
@@ -632,11 +638,10 @@ Tip
 <li>line 1 sets <code>a</code> to equal 2000 (note: don’t use commas in writing numbers <code>a &lt;- 2,000</code> would bring up an error),</li>
 <li>line 2 sets <code>b</code> to equal 5,</li>
 <li>line 4 overwrites the value of <code>a</code> with the value stored in <code>b</code>, making object <code>a</code> now equal to 5</li>
-<li>line six is now <code>5 * 5</code>
-</li>
+<li>line six is now <code>5 * 5</code></li>
 </ul>
-<section id="questions" class="level3" data-number="3.1.1"><h3 data-number="3.1.1" class="anchored" data-anchor-id="questions">
-<span class="header-section-number">3.1.1</span> Questions</h3>
+<section id="questions" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="questions"><span class="header-section-number">3.1.1</span> Questions</h3>
 <div class="question">
 <p>what are the outputs of the following code snippets/what do they do? One of the examples might not output anything, why is that? Type the code into your script file to check your answers:</p>
 <p>code example 1</p>
@@ -648,7 +653,9 @@ Tip
 <span id="cb15-5"><a href="#cb15-5"></a><span class="fu">print</span>(totalfeet)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="dv">200</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="dv">200</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>code example 2</p>
@@ -659,7 +666,9 @@ Tip
 <span id="cb17-4"><a href="#cb17-4"></a><span class="fu">print</span>(p <span class="sc">*</span> r<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="dv">75</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="dv">75</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>code example 3</p>
@@ -672,28 +681,28 @@ Tip
 <span id="cb19-6"><a href="#cb19-6"></a>income <span class="ot">&lt;-</span> (sales <span class="sc">*</span> price) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> (tax<span class="sc">/</span><span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># prints nothing! there isn't a print statement</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># prints nothing! there isn't a print statement</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
-</section></section><section id="naming-objects" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="naming-objects">
-<span class="header-section-number">3.2</span> Naming objects</h2>
+</section>
+</section>
+<section id="naming-objects" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="naming-objects"><span class="header-section-number">3.2</span> Naming objects</h2>
 <p>Correctly naming objects is very important. You can give an object almost any name, but there are a few rules to follow:</p>
 <ul>
 <li>Name them something sensible</li>
-<li>R is case sensitive, <code>myName</code> is not equal to (<code>!=</code>) <code>myname</code>
-</li>
+<li>R is case sensitive, <code>myName</code> is not equal to (<code>!=</code>) <code>myname</code></li>
 <li>Don’t use spaces in names</li>
 <li>Don’t start a name with a number</li>
 <li>Keep punctuation in object names to underscore (<code>_</code> and full stop <code>.</code>) e.g.&nbsp;<code>my_name</code>, <code>my.name</code>.</li>
 <li>Stick to a convention for all your objects, it’ll make your code easier to read, e.g.
 <ul>
-<li>
-<code>myName</code>, <code>yourName</code>, <code>ourName</code> (this is <em>camelCase</em> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>)</li>
-<li>
-<code>my_name</code>, <code>your_name</code>, <code>our_name</code> (this is <em>snake case</em>)</li>
-</ul>
-</li>
+<li><code>myName</code>, <code>yourName</code>, <code>ourName</code> (this is <em>camelCase</em> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>)</li>
+<li><code>my_name</code>, <code>your_name</code>, <code>our_name</code> (this is <em>snake case</em>)</li>
+</ul></li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -708,8 +717,8 @@ Important
 <p>The actual name of an object has no effect on what it does (other than invalid names breaking your program!). For example <code>age &lt;- "Barry"</code> is perfectly valid to R, it’s just a real pain for a human to read.</p>
 </div>
 </div>
-<section id="questions-1" class="level3" data-number="3.2.1"><h3 data-number="3.2.1" class="anchored" data-anchor-id="questions-1">
-<span class="header-section-number">3.2.1</span> Questions</h3>
+<section id="questions-1" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="questions-1"><span class="header-section-number">3.2.1</span> Questions</h3>
 <div class="question">
 <p>Which of these are valid R object names:</p>
 <ul>
@@ -723,7 +732,9 @@ Important
 <li><code>names3</code></li>
 </ul>
 <div class="cell">
-<details class="code-fold"><summary>answers</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># my_Number  (VALID)</span></span>
+<details class="code-fold">
+<summary>answers</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># my_Number  (VALID)</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a><span class="co"># my-Number  (INVALID due to -)</span></span>
 <span id="cb21-3"><a href="#cb21-3"></a><span class="co"># myNumber!  (INVALID due to !)</span></span>
 <span id="cb21-4"><a href="#cb21-4"></a><span class="co"># first name (INVALID due to space)</span></span>
@@ -747,8 +758,10 @@ Note
 <p>For more information on the R programming style guide, see <a href="https://style.tidyverse.org/">this</a></p>
 </div>
 </div>
-</section></section><section id="comments" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="comments">
-<span class="header-section-number">3.3</span> Comments</h2>
+</section>
+</section>
+<section id="comments" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="comments"><span class="header-section-number">3.3</span> Comments</h2>
 <p>Code can often look confusing and it’s a good idea to add <code># comments</code> to your code to make it more understandable for you and others. The computer ignores comments when running your code:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># this calculates the average sales per shop</span></span>
@@ -772,8 +785,9 @@ Note
 <pre><code>[1] 557.5</code></pre>
 </div>
 </div>
-</section><section id="sec-datatypes" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="sec-datatypes">
-<span class="header-section-number">3.4</span> Datatypes</h2>
+</section>
+<section id="sec-datatypes" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="sec-datatypes"><span class="header-section-number">3.4</span> Datatypes</h2>
 <p>We have already met two different <em>datatypes</em>, the <em>character</em> datatype for words and letters (e.g.&nbsp;<code>"Peter"</code>) and the <em>numeric</em> datatype for numbers (e.g.&nbsp;<code>12</code>). Datatypes tell R how to handle data in certain circumstances. Sometimes data will be of the wrong datatype and you will need to convert between datatypes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>weeks <span class="ot">&lt;-</span> <span class="dv">4</span></span>
@@ -809,8 +823,8 @@ Note
 </div>
 <p>There are actually three datatypes for numbers in R, <code>numeric</code> for most of your work, the rarer <code>integer</code> specifically for whole numbers and the even rarer <code>complex</code> for complex numbers. When you are looking at categorical data, <code>factors</code> are used on top of the underlying datatype to store the different values, for example you might have a field of <code>character</code> to store <code>countries</code>, factors would then list the different countries stored in this character field.</p>
 <p>To change from one datatype to another we use the <code>as.____</code> command: <code>as.numeric(&lt;text&gt;)</code>, <code>as.logical(&lt;data&gt;)</code>, <code>as.character(&lt;numeric&gt;)</code>.</p>
-<section id="questions-2" class="level3" data-number="3.4.1"><h3 data-number="3.4.1" class="anchored" data-anchor-id="questions-2">
-<span class="header-section-number">3.4.1</span> Questions</h3>
+<section id="questions-2" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="questions-2"><span class="header-section-number">3.4.1</span> Questions</h3>
 <div class="question">
 <ol type="1">
 <li>Can you spot the error(s) in this code and fix them so it outputs: “July is month 7”?</li>
@@ -825,7 +839,9 @@ Note
 <span id="cb29-7"><a href="#cb29-7"></a><span class="fu">print</span>(<span class="st">"order"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>month <span class="ot">&lt;-</span> <span class="st">"July"</span></span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>month <span class="ot">&lt;-</span> <span class="st">"July"</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a>order <span class="ot">&lt;-</span> <span class="dv">7</span></span>
 <span id="cb30-3"><a href="#cb30-3"></a>  </span>
 <span id="cb30-4"><a href="#cb30-4"></a><span class="fu">print</span>(month)    </span>
@@ -845,7 +861,9 @@ Note
 <span id="cb31-5"><a href="#cb31-5"></a><span class="fu">print</span>(a <span class="sc">+</span> b <span class="sc">+</span> c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>a <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>a <span class="ot">&lt;-</span> <span class="dv">7</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a>b <span class="ot">&lt;-</span> <span class="dv">8</span> <span class="co">#1 b is numeric so drop the speech marks</span></span>
 <span id="cb32-3"><a href="#cb32-3"></a>c <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co">#2 the arrow needs to be together, remove the space</span></span>
 <span id="cb32-4"><a href="#cb32-4"></a>  </span>
@@ -863,7 +881,9 @@ Note
 <span id="cb33-5"><a href="#cb33-5"></a><span class="fu">print</span>(exam_grade <span class="sc">&gt;</span> pass_mark)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>pass_mark <span class="ot">&lt;-</span> <span class="dv">50</span> <span class="co">#1 the variable name can't have any spaces</span></span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>pass_mark <span class="ot">&lt;-</span> <span class="dv">50</span> <span class="co">#1 the variable name can't have any spaces</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a>exam_grade <span class="ot">&lt;-</span> <span class="dv">50</span></span>
 <span id="cb34-3"><a href="#cb34-3"></a></span>
 <span id="cb34-4"><a href="#cb34-4"></a><span class="co"># did the student pass?</span></span>
@@ -896,8 +916,11 @@ Tip
 </div>
 </div>
 </div>
-</section></section></section><section id="sec-vectors" class="level1" data-number="4"><h1 data-number="4">
-<span class="header-section-number">4</span> Vectors</h1>
+</section>
+</section>
+</section>
+<section id="sec-vectors" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Vectors</h1>
 <p>So far we have seen how R does simple calculations and prints out the results. Underlying all of this are <em>vectors</em>. Vectors are data structures that bring together one or data elements of the <em>same</em> datatype. E.g. we might have a <code>numeric</code> vector recording the grades of a class, or a <code>character</code> vector storing the gender of a set of students. To define a vector we use <code>c(&lt;item&gt;, &lt;item&gt;, ...)</code>, where <code>c</code> stands for <em>combine</em>. Vectors are very important to R<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, even declaring a single object, <code>x &lt;- 6</code>, is creating a vector of size one. Larger vectors look like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>maths_grade <span class="ot">&lt;-</span>   <span class="fu">c</span>(<span class="dv">5</span>,    <span class="dv">4</span>,    <span class="dv">4</span>,    <span class="dv">1</span>,     <span class="dv">7</span>,     <span class="dv">5</span>,     <span class="dv">8</span>)</span>
@@ -1038,8 +1061,8 @@ Tip
 </div>
 </div>
 </div>
-<section id="questions-3" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="questions-3">
-<span class="header-section-number">4.1</span> Questions</h2>
+<section id="questions-3" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="questions-3"><span class="header-section-number">4.1</span> Questions</h2>
 <div class="question">
 <ol type="1">
 <li>Can you spot the <em>three</em> problems with this code:</li>
@@ -1052,7 +1075,9 @@ Tip
 <span id="cb67-5"><a href="#cb67-5"></a><span class="fu">nums</span>(nums <span class="sc">&gt;=</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r none number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>nums <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">2</span>) </span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r none number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>nums <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">2</span>) </span>
 <span id="cb68-2"><a href="#cb68-2"></a><span class="co">#1 a vector is declared using c(), not v()</span></span>
 <span id="cb68-3"><a href="#cb68-3"></a><span class="co">#2 3 should be numeric, so no need for speech marks</span></span>
 <span id="cb68-4"><a href="#cb68-4"></a><span class="co"># (though technically R would do this conversion for you!)</span></span>
@@ -1069,11 +1094,12 @@ Tip
 <li>the mean average number of glasses for the week,</li>
 <li>the total number of glasses,</li>
 <li>the number of days where you drank less than 2 glasses (feel free to replace water with your own tipple: wine, coffee, tea, coke, etc.)</li>
-</ul>
-</li>
+</ul></li>
 </ol>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a>glasses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">3</span>)</span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a>glasses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">3</span>)</span>
 <span id="cb69-2"><a href="#cb69-2"></a><span class="fu">mean</span>(glasses)</span>
 <span id="cb69-3"><a href="#cb69-3"></a><span class="fu">sum</span>(glasses)</span>
 <span id="cb69-4"><a href="#cb69-4"></a><span class="fu">sum</span>(glasses <span class="sc">&lt;</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1087,21 +1113,27 @@ Tip
 <span id="cb70-2"><a href="#cb70-2"></a>genders <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>english_grade <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">9</span>)</span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>english_grade <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">9</span>)</span>
 <span id="cb71-2"><a href="#cb71-2"></a>genders <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>)</span>
 <span id="cb71-3"><a href="#cb71-3"></a><span class="fu">mean</span>(english_grade[genders <span class="sc">==</span> <span class="st">"F"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
-</section></section><section id="summary-questions" class="level1" data-number="5"><h1 data-number="5">
-<span class="header-section-number">5</span> Summary questions</h1>
+</section>
+</section>
+<section id="summary-questions" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Summary questions</h1>
 <p>Now you have covered the basics of R, it’s time for some questions to check your understanding. These questions will cover all the material you have read so far and don’t be worried if you need to go back and check something. Exemplar answers are provided, but don’t worry if your solution looks a little different, there are often multiple ways to achieve the same outcome.</p>
 <div class="question">
 <ol type="1">
 <li>Describe three datatypes that you can use in your program?</li>
 </ol>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="fu">print</span>(<span class="st">"numeric for numbers"</span>)</span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="fu">print</span>(<span class="st">"numeric for numbers"</span>)</span>
 <span id="cb72-2"><a href="#cb72-2"></a><span class="fu">print</span>(<span class="st">"character for words/strings"</span>)</span>
 <span id="cb72-3"><a href="#cb72-3"></a><span class="fu">print</span>(<span class="st">"logical for boolean values"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -1110,23 +1142,25 @@ Tip
 <li>What are two reasons that you might use comments?</li>
 </ol>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="co"># to make your code more understandable</span></span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="co"># to make your code more understandable</span></span>
 <span id="cb73-2"><a href="#cb73-2"></a><span class="co"># to disable bits of code that you might want to reenable later</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="3" type="1">
-<li>
-<p>Which object names are valid?</p>
+<li><p>Which object names are valid?</p>
 <ul>
 <li><code>my_name</code></li>
 <li><code>your name</code></li>
 <li><code>our-name</code></li>
 <li><code>THYname</code></li>
-</ul>
-</li>
+</ul></li>
 </ol>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="co"># my_name - VALID</span></span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="co"># my_name - VALID</span></span>
 <span id="cb74-2"><a href="#cb74-2"></a><span class="co"># your name - INVALID use of space</span></span>
 <span id="cb74-3"><a href="#cb74-3"></a><span class="co"># our-name - INVALID use of hyphen</span></span>
 <span id="cb74-4"><a href="#cb74-4"></a><span class="co"># THYname - VALID</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1145,7 +1179,9 @@ Tip
 <span id="cb75-7"><a href="#cb75-7"></a><span class="fu">print</span>(avg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>stu1 <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>stu1 <span class="ot">&lt;-</span> <span class="dv">12</span></span>
 <span id="cb76-2"><a href="#cb76-2"></a>stu2 <span class="ot">&lt;-</span> <span class="dv">13</span> <span class="co">#1 2stu to stu2, cannot start name with a number</span></span>
 <span id="cb76-3"><a href="#cb76-3"></a>stu3 <span class="ot">&lt;-</span> <span class="dv">15</span> <span class="co">#2 no need for speech marks on "15"</span></span>
 <span id="cb76-4"><a href="#cb76-4"></a></span>
@@ -1158,18 +1194,21 @@ Tip
 <li>[Extension] Calculate the number of seconds since 1970.</li>
 </ol>
 <div class="cell">
-<details class="code-fold"><summary>answer</summary><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a>this_year <span class="ot">&lt;-</span> <span class="dv">2022</span></span>
+<details class="code-fold">
+<summary>answer</summary>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a>this_year <span class="ot">&lt;-</span> <span class="dv">2022</span></span>
 <span id="cb77-2"><a href="#cb77-2"></a>focus_year <span class="ot">&lt;-</span> <span class="dv">1970</span></span>
 <span id="cb77-3"><a href="#cb77-3"></a></span>
 <span id="cb77-4"><a href="#cb77-4"></a>(this_year <span class="sc">-</span> focus_year) <span class="sc">*</span> <span class="dv">365</span> <span class="sc">*</span> <span class="dv">24</span> <span class="sc">*</span> <span class="dv">60</span> <span class="sc">*</span> <span class="dv">60</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
-</section><section id="packages-and-libraries" class="level1" data-number="6"><h1 data-number="6">
-<span class="header-section-number">6</span> Packages and libraries</h1>
+</section>
+<section id="packages-and-libraries" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Packages and libraries</h1>
 <p>R comes with some excellent statistical tools, but often you will need to supplement them with packages<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> . Packages contain functionality that isn’t built into R by default, but you can choose to load or install them to meet the needs of your tasks. For example you have code packages to deal with SPSS data, and other packages to run machine learning algorithms. Nearly all R packages are free to use!</p>
-<section id="sec-load-run-pckges" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="sec-load-run-pckges">
-<span class="header-section-number">6.1</span> Installing and loading packages</h2>
+<section id="sec-load-run-pckges" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="sec-load-run-pckges"><span class="header-section-number">6.1</span> Installing and loading packages</h2>
 <p>To install a package you can use the package tab in the bottom right-hand panel of RStudio and follow the steps from <a href="#sec-packages" class="quarto-xref">Section&nbsp;1.2</a>. Alternatively you can install things by typing:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1197,13 +1236,20 @@ Important
 </div>
 
 
-</section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
 <ol>
 <li id="fn1"><p>As of December 2022, <a href="https://www.tiobe.com/tiobe-index/">Tiobe</a> has R as the 11th most popular programming language. Many other, contradictory, ranking systems exist.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p><code>camelCase</code> has a capital letter in the front or front and middle forming the camel’s hump(s), there are multiple <a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)">naming conventions</a>, it doesn’t matter which you pick, just stick to one of them.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>R was created to allow for <a href="https://en.wikipedia.org/wiki/Array_programming"><em>vector programming</em></a>, that is a programming language where you can apply operations to entire sets of values (vectors) at the same time, rather than having to cycle through them individually. Vector languages work in a way that is close to how mathematical notation works, making them well suited for performing mathematical functions.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>You’ll sometimes see the words package and library used interchangeably, technically the <em>library</em> is the place where the <em>packages</em> are stored.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1285,8 +1331,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1397,7 +1441,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1624,6 +1667,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
