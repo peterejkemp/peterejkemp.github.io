@@ -570,7 +570,7 @@ Note
 </div>
 </div>
 <p>To determine the outcome of the t-test we need to decide a sufficiently low enough probability (p-value) that, if it’s below this, then it is unlikely that the null hypothesis is true and so we reject the null hypothesis. Typically, this is set to 0.05, or 5%, but in other cases it might be as high as 0.1 or as low as 0.01 or 0.001 depending on the circumstances. Therefore, if the p-value is greater than 0.05 we accept the null hypothesis and if it less than 0.05 we reject the null hypothesis and accept the alternative hypothesis.</p>
-<p>When considering the number of tails, we then need to consider the p-value here also. If we set the overall probability to be 0.05 for the threshold that we reject the null hypothesis, then for a <strong>one-tailed</strong> test we compare our result with <strong>0.05</strong>. However, with a two-tailed test, since we are looking at a <strong>two-tailed</strong> test, then the probability of each of the tails is 0.025 and therefore we compare our value with <strong>0.025</strong> instead.</p>
+<p>When considering the number of tails, we then need to consider the p-value here also. If we set the overall probability to be 0.05 for the threshold that we reject the null hypothesis, then for a <strong>one-tailed</strong> test we compare our result with <strong>0.05</strong>. However, with a two-tailed test, since we are looking at a <strong>two-tailed</strong> test, then the probability of each of the tails is 0.025 and therefore we compare our value with <strong>0.025</strong> instead. Fortunately, the <code>t.test()</code> function in R automatically scales the output so we don’t need to make the adjustment ourselves - we can just compare to <strong>0.05</strong>. R automatically calculates the correct critical t-value or p-value corresponding to a single tail having an area of α.</p>
 <p>Conventionally, we use 0.05 (1 in 20) as the cut off for statistical significance (a convention that has been much critiqued e.g. <span class="citation" data-cites="cohen1994earth baker2016statisticians">(<a href="#ref-cohen1994earth" role="doc-biblioref">Jacob Cohen 1994</a>; <a href="#ref-baker2016statisticians" role="doc-biblioref">Baker 2016</a>)</span>).</p>
 </section>
 <section id="types-of-t-test" class="level2" data-number="2.3">
@@ -678,7 +678,7 @@ mean of x
   500.203 </code></pre>
 </div>
 </div>
-<p>We can see from the result that we get a p-value of &lt; 2.2e-16, which is very small. As this is lower than 0.025 (for a two-tailed test) we reject the null hypothesis.</p>
+<p>We can see from the result that we get a p-value of &lt; 2.2e-16, which is very small. As this is lower than 0.05 we reject the null hypothesis.</p>
 <p>Therefore, we accept the null hypothesis that the average reading score for females in the UK is different to the overall average reading score in the UK. Looking at the average stated in the t-test, the average score is higher for girls, at 500.23.</p>
 </section>
 <section id="unpaired-two-sample-t-tests" class="level2" data-number="2.5">
@@ -797,7 +797,7 @@ mean in group Female   mean in group Male
             456.1248             467.2109 </code></pre>
 </div>
 </div>
-<p>We can see from the t-test result that the p-value returned is 8.086e-05. As this is lower than 0.025 (for a two-tailed test) we reject the null hypothesis.</p>
+<p>We can see from the t-test result that the p-value returned is 8.086e-05. As this is lower than 0.05 we reject the null hypothesis.</p>
 <p>As such, we accept the alternative hypothesis that the average scores for males and females in the US are statistically different, with the average score for males being higher than average score for females.</p>
 </section>
 <section id="paired-two-sample-t-tests" class="level2" data-number="2.6">
@@ -880,7 +880,7 @@ mean difference
       -9.722388 </code></pre>
 </div>
 </div>
-<p>We return a p-value of &lt; 2.2e-16, which is less than 0.025 (for a two-tailed test), meaning we reject the null hypothesis that there is no difference between the average score in maths and science.</p>
+<p>We return a p-value of &lt; 2.2e-16, which is less than 0.05, meaning we reject the null hypothesis that there is no difference between the average score in maths and science.</p>
 <p>Therefore, we accept the alternative hypothesis that there is a difference in scores in maths and science in the UK. This difference is approximately 1.5 points.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1384,7 +1384,7 @@ Note
 <span id="cb28-38"><a href="#cb28-38"></a><span class="fu">t.test</span>(MaleJapan<span class="sc">$</span>PV1MATH, FemaleJapan<span class="sc">$</span>PV1MATH,  </span>
 <span id="cb28-39"><a href="#cb28-39"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
 <span id="cb28-40"><a href="#cb28-40"></a></span>
-<span id="cb28-41"><a href="#cb28-41"></a><span class="co"># The p-value is &lt;0.025 (0.0004128) suggesting there are statistically</span></span>
+<span id="cb28-41"><a href="#cb28-41"></a><span class="co"># The p-value is &lt;0.05 (0.0004128) suggesting there are statistically</span></span>
 <span id="cb28-42"><a href="#cb28-42"></a><span class="co"># differences between boys and girls in mathematics in Japan</span></span>
 <span id="cb28-43"><a href="#cb28-43"></a></span>
 <span id="cb28-44"><a href="#cb28-44"></a><span class="co"># Calculate the effect size using Cohen's d</span></span>
