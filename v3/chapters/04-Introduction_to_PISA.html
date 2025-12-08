@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -84,15 +85,17 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-baa83ea22f7c85f46c9cbd6ff4810be6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-408f44cb79879323703c9e228b025f96.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,7 +128,7 @@ div.csl-indent {
 <link rel="stylesheet" href="../css/mastemr.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -133,7 +136,8 @@ div.csl-indent {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/KCL_logo.png" alt="" class="navbar-logo">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MASTEMR</span>
@@ -149,7 +153,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-Introduction_to_PISA.html">04 Introduction to PISA</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/04-Introduction_to_PISA.html">04 Introduction to PISA</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -162,6 +166,10 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -176,24 +184,29 @@ div.csl-indent {
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Sessions</span></span>
-  </li>
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Sessions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01 Introduction</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">02 Introduction to R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
@@ -220,66 +233,56 @@ div.csl-indent {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-Descriptive.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">03 Descriptive Statistics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">04 Introduction to PISA</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-Presentations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05 Presentations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">06 T-tests</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/08-Writing_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">08 Writing a quantitative report</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">09 Assignment 3 tutorials</span></a>
+ <span class="menu-text">08 Assignment 3 tutorials</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/10-Correlation_and_regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10 Correlation and regression</span></a>
+ <span class="menu-text">09 Correlation and regression</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11 Selecting statistical tools</span></a>
+ <span class="menu-text">10 Selecting statistical tools</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/12-value_of_quant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 The value of quantitative methods</span></a>
-  </div>
-</li>
+      </ul>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -391,7 +394,7 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/04-Introduction_to_PISA.html">04 Introduction to PISA</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">04 Introduction to PISA</h1>
 </div>
@@ -422,10 +425,10 @@ div.csl-indent {
 <h3 data-number="1.1.2" class="anchored" data-anchor-id="getting-set-up"><span class="header-section-number">1.1.2</span> Getting set up</h3>
 <p>Remember to load the PISA 2022 data set</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(arrow)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(arrow)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_2022_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_2022_student_subset.parquet]"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -503,7 +506,7 @@ Tip
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="summarising-data"><span class="header-section-number">1.3.1</span> Summarising data</h3>
 <p>Recall you can use <code>group_by</code> and <code>summarise</code> to group individual student measures and find means and standard deviations for countries. For example, to find the mean wealth scores for the countries, and rank in descending order, we first select the variables of interest <code>CNT</code> and <code>HOMEPOS</code> (home possessions, a proxy for wealth), then <code>group_by</code> <code>CNT</code> and <code>summarise</code> to get the mean. As there are some NA values, we need to include <code>na.rm=TRUE</code> to tell <code>summarise</code> to ignore the missing values. Finally, we <code>arrange</code> in descending order by the new variable we create <code>meanwealth</code>. We can do the same and add a calculation to get the standard deviation.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1"></a><span class="co"># Create a data frame of PISA 2022 data of country mean wealth</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1"></a><span class="co"># Create a data frame of PISA 2022 data of country mean wealth</span></span>
 <span id="annotated-cell-2-2"><a href="#annotated-cell-2-2"></a></span>
 <span id="annotated-cell-2-3"><a href="#annotated-cell-2-3"></a>PISA2022WealthRank <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4"></a>  <span class="fu">select</span>(CNT, HOMEPOS) <span class="sc">%&gt;%</span></span>
@@ -522,7 +525,7 @@ Tip
 <span id="annotated-cell-2-17"><a href="#annotated-cell-2-17"></a>            <span class="at">sdwealth=</span><span class="fu">sd</span>(HOMEPOS, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-2-18"><a href="#annotated-cell-2-18"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(meanwealth)) </span>
 <span id="annotated-cell-2-19"><a href="#annotated-cell-2-19"></a></span>
-<span id="annotated-cell-2-20"><a href="#annotated-cell-2-20"></a>PISA2022WealthRank</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-2-20"><a href="#annotated-cell-2-20"></a>PISA2022WealthRank</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
@@ -545,33 +548,171 @@ Tip
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 80 × 2
-   CNT         meanwealth
-   &lt;fct&gt;            &lt;dbl&gt;
- 1 Norway           0.547
- 2 Australia        0.483
- 3 Korea            0.371
- 4 New Zealand      0.367
- 5 Canada           0.348
- 6 Iceland          0.346
- 7 Sweden           0.327
- 8 Ireland          0.318
- 9 Malta            0.308
-10 Austria          0.280
-# ℹ 70 more rows
+   CNT                          meanwealth
+   &lt;fct&gt;                             &lt;dbl&gt;
+ 1 Norway                          0.547  
+ 2 Australia                       0.483  
+ 3 Korea                           0.371  
+ 4 New Zealand                     0.367  
+ 5 Canada                          0.348  
+ 6 Iceland                         0.346  
+ 7 Sweden                          0.327  
+ 8 Ireland                         0.318  
+ 9 Malta                           0.308  
+10 Austria                         0.280  
+11 Netherlands                     0.255  
+12 Denmark                         0.237  
+13 Switzerland                     0.221  
+14 Czech Republic                  0.194  
+15 Slovenia                        0.186  
+16 Estonia                         0.178  
+17 Finland                         0.162  
+18 Germany                         0.149  
+19 Singapore                       0.124  
+20 United Kingdom                  0.116  
+21 United States                   0.115  
+22 Hungary                         0.104  
+23 Italy                           0.0887 
+24 Belgium                         0.0866 
+25 Poland                          0.0825 
+26 Portugal                        0.0755 
+27 Spain                           0.0739 
+28 Israel                          0.0499 
+29 Latvia                          0.00480
+30 Lithuania                      -0.0451 
+31 Croatia                        -0.117  
+32 France                         -0.139  
+33 United Arab Emirates           -0.157  
+34 Slovak Republic                -0.187  
+35 Hong Kong (China)              -0.198  
+36 Japan                          -0.226  
+37 Serbia                         -0.229  
+38 Macao (China)                  -0.253  
+39 Greece                         -0.264  
+40 Montenegro                     -0.276  
+41 Brunei Darussalam              -0.356  
+42 Bulgaria                       -0.368  
+43 Chile                          -0.388  
+44 Chinese Taipei                 -0.395  
+45 Romania                        -0.399  
+46 Qatar                          -0.442  
+47 North Macedonia                -0.490  
+48 Ukrainian regions (18 of 27)   -0.550  
+49 Kosovo                         -0.621  
+50 Saudi Arabia                   -0.689  
+51 Uruguay                        -0.747  
+52 Argentina                      -0.806  
+53 Georgia                        -0.809  
+54 Jamaica                        -0.834  
+55 Republic of Moldova            -0.846  
+56 Albania                        -0.859  
+57 Kazakhstan                     -0.870  
+58 Malaysia                       -0.908  
+59 Costa Rica                     -0.979  
+60 Baku (Azerbaijan)              -0.980  
+61 Mexico                         -1.07   
+62 Türkiye                        -1.08   
+63 Thailand                       -1.17   
+64 Brazil                         -1.22   
+65 Colombia                       -1.26   
+66 Viet Nam                       -1.29   
+67 Uzbekistan                     -1.30   
+68 Dominican Republic             -1.31   
+69 Mongolia                       -1.31   
+70 Panama                         -1.32   
+71 Jordan                         -1.38   
+72 Peru                           -1.40   
+73 Palestinian Authority          -1.49   
+74 Paraguay                       -1.52   
+75 Guatemala                      -1.52   
+76 El Salvador                    -1.57   
+77 Indonesia                      -1.58   
+78 Philippines                    -1.75   
+79 Morocco                        -1.77   
+80 Cambodia                       -2.41   
 # A tibble: 80 × 3
-   CNT         meanwealth sdwealth
-   &lt;fct&gt;            &lt;dbl&gt;    &lt;dbl&gt;
- 1 Norway           0.547    0.970
- 2 Australia        0.483    0.861
- 3 Korea            0.371    1.01 
- 4 New Zealand      0.367    0.862
- 5 Canada           0.348    0.867
- 6 Iceland          0.346    0.805
- 7 Sweden           0.327    0.878
- 8 Ireland          0.318    0.818
- 9 Malta            0.308    0.857
-10 Austria          0.280    0.938
-# ℹ 70 more rows</code></pre>
+   CNT                          meanwealth sdwealth
+   &lt;fct&gt;                             &lt;dbl&gt;    &lt;dbl&gt;
+ 1 Norway                          0.547      0.970
+ 2 Australia                       0.483      0.861
+ 3 Korea                           0.371      1.01 
+ 4 New Zealand                     0.367      0.862
+ 5 Canada                          0.348      0.867
+ 6 Iceland                         0.346      0.805
+ 7 Sweden                          0.327      0.878
+ 8 Ireland                         0.318      0.818
+ 9 Malta                           0.308      0.857
+10 Austria                         0.280      0.938
+11 Netherlands                     0.255      0.802
+12 Denmark                         0.237      0.815
+13 Switzerland                     0.221      0.895
+14 Czech Republic                  0.194      0.852
+15 Slovenia                        0.186      0.833
+16 Estonia                         0.178      0.740
+17 Finland                         0.162      0.862
+18 Germany                         0.149      0.946
+19 Singapore                       0.124      0.840
+20 United Kingdom                  0.116      0.919
+21 United States                   0.115      0.927
+22 Hungary                         0.104      0.914
+23 Italy                           0.0887     0.803
+24 Belgium                         0.0866     0.869
+25 Poland                          0.0825     0.794
+26 Portugal                        0.0755     0.901
+27 Spain                           0.0739     0.805
+28 Israel                          0.0499     1.03 
+29 Latvia                          0.00480    0.774
+30 Lithuania                      -0.0451     0.832
+31 Croatia                        -0.117      0.719
+32 France                         -0.139      0.972
+33 United Arab Emirates           -0.157      1.04 
+34 Slovak Republic                -0.187      0.990
+35 Hong Kong (China)              -0.198      0.881
+36 Japan                          -0.226      0.761
+37 Serbia                         -0.229      0.768
+38 Macao (China)                  -0.253      0.845
+39 Greece                         -0.264      0.820
+40 Montenegro                     -0.276      0.917
+41 Brunei Darussalam              -0.356      1.01 
+42 Bulgaria                       -0.368      1.04 
+43 Chile                          -0.388      0.959
+44 Chinese Taipei                 -0.395      0.985
+45 Romania                        -0.399      0.991
+46 Qatar                          -0.442      1.07 
+47 North Macedonia                -0.490      0.915
+48 Ukrainian regions (18 of 27)   -0.550      0.785
+49 Kosovo                         -0.621      0.941
+50 Saudi Arabia                   -0.689      1.04 
+51 Uruguay                        -0.747      0.924
+52 Argentina                      -0.806      1.01 
+53 Georgia                        -0.809      0.972
+54 Jamaica                        -0.834      1.12 
+55 Republic of Moldova            -0.846      0.890
+56 Albania                        -0.859      1.01 
+57 Kazakhstan                     -0.870      0.832
+58 Malaysia                       -0.908      0.962
+59 Costa Rica                     -0.979      1.27 
+60 Baku (Azerbaijan)              -0.980      0.971
+61 Mexico                         -1.07       1.00 
+62 Türkiye                        -1.08       1.02 
+63 Thailand                       -1.17       1.13 
+64 Brazil                         -1.22       0.956
+65 Colombia                       -1.26       1.12 
+66 Viet Nam                       -1.29       0.922
+67 Uzbekistan                     -1.30       0.960
+68 Dominican Republic             -1.31       0.977
+69 Mongolia                       -1.31       0.949
+70 Panama                         -1.32       1.21 
+71 Jordan                         -1.38       1.18 
+72 Peru                           -1.40       1.20 
+73 Palestinian Authority          -1.49       1.25 
+74 Paraguay                       -1.52       1.13 
+75 Guatemala                      -1.52       1.31 
+76 El Salvador                    -1.57       1.08 
+77 Indonesia                      -1.58       0.911
+78 Philippines                    -1.75       1.13 
+79 Morocco                        -1.77       1.19 
+80 Cambodia                       -2.41       1.08 </code></pre>
 </div>
 </div>
 </section>
@@ -580,11 +721,11 @@ Tip
 <p>Recall you can use <code>geom_bar</code> to plot a bar graph. For example, if we wanted to plot the <code>PISA2022WealthRank</code> data frame we just created, we pass the data to <code>ggplot</code>. Recall that if you are passing <code>geom_bar</code> the exact values you want to plot, rather than making it count (for example, by including the original dataset with all student entries), you need to specify <code>geom_bar(stat='identity')</code></p>
 <p>I have added <code>+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))</code> which rotates the text on the x-axis.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1"></a><span class="co"># Plot a bar graph of wealth by country</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1"></a><span class="co"># Plot a bar graph of wealth by country</span></span>
 <span id="annotated-cell-3-2"><a href="#annotated-cell-3-2"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3"></a><span class="fu">ggplot</span>(PISA2022WealthRank, <span class="fu">aes</span>(<span class="at">x =</span> CNT, <span class="at">y =</span> meanwealth)) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">'identity'</span>) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-5" class="code-annotation-target"><a href="#annotated-cell-3-5"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-5" class="code-annotation-target"><a href="#annotated-cell-3-5"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
@@ -611,11 +752,11 @@ Tip
 </div>
 <p>We can improve this plot by reordering the x-axis to rank the countries - we switch <code>x=CNT</code> to <code>x=reorder(CNT, -meanwealth)</code> that is we reorder the x axis based on descending (indicated by the minus sign <code>-meanwealth</code>) meanwealth.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a><span class="co"># Plot the wealth data frame as a bar graph, reordering the x axis by wealth</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a><span class="co"># Plot the wealth data frame as a bar graph, reordering the x axis by wealth</span></span>
 <span id="annotated-cell-4-2"><a href="#annotated-cell-4-2"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3"></a><span class="fu">ggplot</span>(PISA2022WealthRank, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(CNT, <span class="sc">-</span>meanwealth), <span class="at">y =</span> meanwealth)) <span class="sc">+</span></span>
 <span id="annotated-cell-4-4"><a href="#annotated-cell-4-4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">'identity'</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))       </span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))       </span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
@@ -634,7 +775,7 @@ Tip
 </div>
 <p>If you like, you can add colour, tidy up the axis labels, and give a title:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1"></a><span class="co"># Plot the wealth data frame as a bar graph, reordering the x axis by wealth</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1"></a><span class="co"># Plot the wealth data frame as a bar graph, reordering the x axis by wealth</span></span>
 <span id="annotated-cell-5-2"><a href="#annotated-cell-5-2"></a></span>
 <span id="annotated-cell-5-3"><a href="#annotated-cell-5-3"></a><span class="fu">ggplot</span>(PISA2022WealthRank, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(CNT, <span class="sc">-</span>meanwealth), </span>
 <span id="annotated-cell-5-4"><a href="#annotated-cell-5-4"></a>                               <span class="at">y =</span> meanwealth)) <span class="sc">+</span></span>
@@ -642,7 +783,7 @@ Tip
 <span id="annotated-cell-5-6"><a href="#annotated-cell-5-6"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-5-7" class="code-annotation-target"><a href="#annotated-cell-5-7"></a>  <span class="fu">ggtitle</span>(<span class="st">"Countries ranked by HOMEPOS"</span>) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-5-8" class="code-annotation-target"><a href="#annotated-cell-5-8"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-5-9"><a href="#annotated-cell-5-9"></a>  <span class="fu">ylab</span>(<span class="st">"Mean HOMEPOS"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-5-9"><a href="#annotated-cell-5-9"></a>  <span class="fu">ylab</span>(<span class="st">"Mean HOMEPOS"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
@@ -672,7 +813,7 @@ Tip
 <h3 data-number="1.3.3" class="anchored" data-anchor-id="scatter-plots"><span class="header-section-number">1.3.3</span> Scatter plots</h3>
 <p>To plot a scatter plot, recall we use <code>geom_point</code>. For example, to plot reading scores against mathematics scores in the UK we: a) create a data set of reading and science scores after filtering for UK; b) pass the data to <code>ggplot</code>; c) use <code>aes</code> to specify the x and y variables and d) plot with <code>geom_point()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Create a data.frame of the UK's science and reading scores</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Create a data.frame of the UK's science and reading scores</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
 <span id="cb3-3"><a href="#cb3-3"></a>UKplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">select</span>(CNT, PV1READ, PV1SCIE) <span class="sc">%&gt;%</span></span>
@@ -681,7 +822,7 @@ Tip
 <span id="cb3-7"><a href="#cb3-7"></a><span class="co"># Plot the data on a scatter graph using geom_point</span></span>
 <span id="cb3-8"><a href="#cb3-8"></a></span>
 <span id="cb3-9"><a href="#cb3-9"></a><span class="fu">ggplot</span>(UKplot, <span class="fu">aes</span>(<span class="at">x =</span> PV1READ, <span class="at">y =</span> PV1SCIE)) <span class="sc">+</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-10"><a href="#cb3-10"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -692,7 +833,7 @@ Tip
 </div>
 <p>That graph is quite dense, so we can use the <code>alpha</code> function to make the points slightly transparent, <code>size</code> to make them smaller, and set their colour. I will also tidy up the axis names and add a line (note that in: <code>geom_smooth(method = "lm", colour = "black")</code> <code>method = "lm"</code> sets the line to a straight (i.e., linear model, lm) line).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1"></a><span class="co"># Create a data.frame of the UK's science and reading scores</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1"></a><span class="co"># Create a data.frame of the UK's science and reading scores</span></span>
 <span id="annotated-cell-7-2"><a href="#annotated-cell-7-2"></a></span>
 <span id="annotated-cell-7-3"><a href="#annotated-cell-7-3"></a>UKplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-7-4"><a href="#annotated-cell-7-4"></a>  <span class="fu">select</span>(CNT, PV1READ, PV1SCIE) <span class="sc">%&gt;%</span></span>
@@ -704,7 +845,7 @@ Tip
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-7-10" class="code-annotation-target"><a href="#annotated-cell-7-10"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-7-11" class="code-annotation-target"><a href="#annotated-cell-7-11"></a>  <span class="fu">xlab</span>(<span class="st">"Reading score"</span>) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-7-12" class="code-annotation-target"><a href="#annotated-cell-7-12"></a>  <span class="fu">ylab</span>(<span class="st">"Science score"</span>) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-7-13" class="code-annotation-target"><a href="#annotated-cell-7-13"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-7-13" class="code-annotation-target"><a href="#annotated-cell-7-13"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
@@ -755,7 +896,7 @@ Tip
 </div>
 </div>
 <div class="cell" data-eva="true">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Create a data.frame of US Math data including gender</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Create a data.frame of US Math data including gender</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a>USMathplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">select</span>(CNT, PV1MATH, ST004D01T) <span class="sc">%&gt;%</span></span>
@@ -766,7 +907,7 @@ Tip
 <span id="cb4-9"><a href="#cb4-9"></a><span class="co"># 0.6 to show both gender plots</span></span>
 <span id="cb4-10"><a href="#cb4-10"></a></span>
 <span id="cb4-11"><a href="#cb4-11"></a><span class="fu">ggplot</span>(USMathplot, <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">fill =</span> ST004D01T)) <span class="sc">+</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-12"><a href="#cb4-12"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -780,7 +921,7 @@ Tip
 <h3 data-number="1.3.5" class="anchored" data-anchor-id="facet-wrapping---producing-the-same-graph-for-multiple-countries."><span class="header-section-number">1.3.5</span> Facet wrapping - producing the same graph for multiple countries.</h3>
 <p>A powerful feature of ggplot is being able to produce the same graph for multiple values of a variable, for example, for multiple countries. For example, we may want to produce the density graph of <code>PV1MATH</code> score by gender, for several countries in the data set. To do that, we produce a data set of <code>PV1MATH</code> scores, and gender (<code>ST004D01T</code>) and filter for four countries (Philippines, UK, Bulgaria and Germany). We use the same code as above to plot the graphs but add <code>+facet_wrap(.~CNT)</code> - <code>facet_wrap</code> tells ggplot to produce a multi-panel plot and <code>.~CNT</code> means do the same as above (the <code>.</code> means, as above), but vary across countries (<code>~CNT</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a><span class="co"># Create a data.frame of the maths scores for the 4 countries</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a><span class="co"># Create a data.frame of the maths scores for the 4 countries</span></span>
 <span id="annotated-cell-9-2"><a href="#annotated-cell-9-2"></a>Mathplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-9-3"><a href="#annotated-cell-9-3"></a>  <span class="fu">select</span>(CNT, PV1MATH, ST004D01T) <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-9-4"><a href="#annotated-cell-9-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Philippines"</span><span class="sc">|</span>CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span><span class="sc">|</span>CNT <span class="sc">==</span> <span class="st">"Bulgaria"</span> <span class="sc">|</span></span>
@@ -790,7 +931,7 @@ Tip
 <span id="annotated-cell-9-8"><a href="#annotated-cell-9-8"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-9-9" class="code-annotation-target"><a href="#annotated-cell-9-9"></a><span class="fu">ggplot</span>(Mathplot, <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">fill =</span> ST004D01T)) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-9-10" class="code-annotation-target"><a href="#annotated-cell-9-10"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-9-11" class="code-annotation-target"><a href="#annotated-cell-9-11"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> CNT)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-9-11" class="code-annotation-target"><a href="#annotated-cell-9-11"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> CNT)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-9" data-target-annotation="5">5</dt>
@@ -822,14 +963,14 @@ Tip
 <p>To do this, first calculate the mean <code>mean(HOMEPOS)</code>. Then we add a new vector, which we will call <code>wealthclass</code> using the <code>mutate</code> function. We set the value of <code>wealthclass</code> using <code>case_when</code>. If <code>HOMEPOS</code> is more than the mean score, we set <code>wealthclass</code> to <code>High</code>, and if it is less than the mean, we set it to <code>Low</code>. We do that using <code>mutate(wealthclass =  case_when(HOMEPOS &gt; mean(HOMEPOS, na.rm =TRUE) ~ "High", HOMEPOS &lt; mean(HOMEPOS, na.rm =TRUE) ~ "Low", .default = NA))</code>. This means that in the case when <code>HOMEPOS</code> is more than the mean (note the <code>na.rm =TRUE</code> to remove missing values) the value of the new column <code>wealthclass</code> is set to <code>High</code>. When <code>HOMEPOS</code> is less than <code>mean(HOMEPOS, na.rm =TRUE)</code>, <code>weatlthclass</code> is set to <code>Low</code>. The <code>.default</code> sets what to return if neither of those conditions are met.</p>
 <p>For example, create a data frame of UK participants <code>HOMEPOS</code> sorted into <code>HIGH</code> and <code>LOW</code> categories.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1"></a><span class="co"># Create a data frame of UK responses</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1"></a><span class="co"># Create a data frame of UK responses</span></span>
 <span id="annotated-cell-10-2"><a href="#annotated-cell-10-2"></a>UKPISA2022 <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-10-3"><a href="#annotated-cell-10-3"></a>  <span class="fu">select</span>(CNT, HOMEPOS) <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-10-4"><a href="#annotated-cell-10-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-10-5" class="code-annotation-target"><a href="#annotated-cell-10-5"></a>  <span class="fu">mutate</span>(<span class="at">wealthclass =</span>  <span class="fu">case_when</span>(HOMEPOS <span class="sc">&gt;</span> <span class="fu">mean</span>(HOMEPOS, <span class="at">na.rm =</span><span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"High"</span>,</span>
 <span id="annotated-cell-10-6"><a href="#annotated-cell-10-6"></a>                                  HOMEPOS <span class="sc">&lt;</span> <span class="fu">mean</span>(HOMEPOS, <span class="at">na.rm =</span><span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"Low"</span>,</span>
 <span id="annotated-cell-10-7"><a href="#annotated-cell-10-7"></a>                                   <span class="at">.default =</span> <span class="cn">NA</span>)) </span>
-<span id="annotated-cell-10-8"><a href="#annotated-cell-10-8"></a>UKPISA2022</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-10-8"><a href="#annotated-cell-10-8"></a>UKPISA2022</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-10" data-target-annotation="4">4</dt>
@@ -840,19 +981,509 @@ Tip
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12,972 × 3
-   CNT            HOMEPOS wealthclass
-   &lt;fct&gt;            &lt;dbl&gt; &lt;chr&gt;      
- 1 United Kingdom  -1.09  Low        
- 2 United Kingdom  -0.418 Low        
- 3 United Kingdom   1.13  High       
- 4 United Kingdom  -0.829 Low        
- 5 United Kingdom  -0.274 Low        
- 6 United Kingdom  NA     &lt;NA&gt;       
- 7 United Kingdom  -0.606 Low        
- 8 United Kingdom  NA     &lt;NA&gt;       
- 9 United Kingdom   0.425 High       
-10 United Kingdom   0.998 High       
-# ℹ 12,962 more rows</code></pre>
+    CNT            HOMEPOS wealthclass
+    &lt;fct&gt;            &lt;dbl&gt; &lt;chr&gt;      
+  1 United Kingdom -1.09   Low        
+  2 United Kingdom -0.418  Low        
+  3 United Kingdom  1.13   High       
+  4 United Kingdom -0.829  Low        
+  5 United Kingdom -0.274  Low        
+  6 United Kingdom NA      &lt;NA&gt;       
+  7 United Kingdom -0.606  Low        
+  8 United Kingdom NA      &lt;NA&gt;       
+  9 United Kingdom  0.425  High       
+ 10 United Kingdom  0.998  High       
+ 11 United Kingdom  1.73   High       
+ 12 United Kingdom -1.20   Low        
+ 13 United Kingdom  1.81   High       
+ 14 United Kingdom NA      &lt;NA&gt;       
+ 15 United Kingdom -0.452  Low        
+ 16 United Kingdom -0.626  Low        
+ 17 United Kingdom -0.171  Low        
+ 18 United Kingdom  1.40   High       
+ 19 United Kingdom -0.720  Low        
+ 20 United Kingdom -0.930  Low        
+ 21 United Kingdom -0.517  Low        
+ 22 United Kingdom -0.840  Low        
+ 23 United Kingdom -0.741  Low        
+ 24 United Kingdom -1.66   Low        
+ 25 United Kingdom  0.42   High       
+ 26 United Kingdom -0.637  Low        
+ 27 United Kingdom  1.94   High       
+ 28 United Kingdom NA      &lt;NA&gt;       
+ 29 United Kingdom  0.964  High       
+ 30 United Kingdom -0.259  Low        
+ 31 United Kingdom -0.599  Low        
+ 32 United Kingdom -0.088  Low        
+ 33 United Kingdom  0.553  High       
+ 34 United Kingdom -0.168  Low        
+ 35 United Kingdom  0.158  High       
+ 36 United Kingdom  1.28   High       
+ 37 United Kingdom -0.312  Low        
+ 38 United Kingdom -0.434  Low        
+ 39 United Kingdom  0.420  High       
+ 40 United Kingdom  0.149  High       
+ 41 United Kingdom  0.855  High       
+ 42 United Kingdom -0.700  Low        
+ 43 United Kingdom  0.606  High       
+ 44 United Kingdom  0.233  High       
+ 45 United Kingdom -0.518  Low        
+ 46 United Kingdom  0.0376 Low        
+ 47 United Kingdom  1.50   High       
+ 48 United Kingdom NA      &lt;NA&gt;       
+ 49 United Kingdom  0.488  High       
+ 50 United Kingdom -0.266  Low        
+ 51 United Kingdom -0.0388 Low        
+ 52 United Kingdom NA      &lt;NA&gt;       
+ 53 United Kingdom -1.28   Low        
+ 54 United Kingdom  0.473  High       
+ 55 United Kingdom  0.415  High       
+ 56 United Kingdom  0.831  High       
+ 57 United Kingdom  0.033  Low        
+ 58 United Kingdom -0.190  Low        
+ 59 United Kingdom -0.885  Low        
+ 60 United Kingdom  2.75   High       
+ 61 United Kingdom  0.323  High       
+ 62 United Kingdom  1.62   High       
+ 63 United Kingdom  0.861  High       
+ 64 United Kingdom  1.20   High       
+ 65 United Kingdom -0.332  Low        
+ 66 United Kingdom NA      &lt;NA&gt;       
+ 67 United Kingdom -0.0787 Low        
+ 68 United Kingdom -0.414  Low        
+ 69 United Kingdom  0.243  High       
+ 70 United Kingdom -1.01   Low        
+ 71 United Kingdom -0.910  Low        
+ 72 United Kingdom NA      &lt;NA&gt;       
+ 73 United Kingdom NA      &lt;NA&gt;       
+ 74 United Kingdom  0.866  High       
+ 75 United Kingdom -0.481  Low        
+ 76 United Kingdom  1.22   High       
+ 77 United Kingdom  0.921  High       
+ 78 United Kingdom  1.56   High       
+ 79 United Kingdom NA      &lt;NA&gt;       
+ 80 United Kingdom NA      &lt;NA&gt;       
+ 81 United Kingdom -0.168  Low        
+ 82 United Kingdom -0.137  Low        
+ 83 United Kingdom -0.0073 Low        
+ 84 United Kingdom -1.35   Low        
+ 85 United Kingdom -0.656  Low        
+ 86 United Kingdom  1.09   High       
+ 87 United Kingdom  0.131  High       
+ 88 United Kingdom  0.806  High       
+ 89 United Kingdom -0.508  Low        
+ 90 United Kingdom  2.08   High       
+ 91 United Kingdom  1.10   High       
+ 92 United Kingdom NA      &lt;NA&gt;       
+ 93 United Kingdom  0.870  High       
+ 94 United Kingdom NA      &lt;NA&gt;       
+ 95 United Kingdom -0.392  Low        
+ 96 United Kingdom NA      &lt;NA&gt;       
+ 97 United Kingdom  0.781  High       
+ 98 United Kingdom -0.765  Low        
+ 99 United Kingdom -0.680  Low        
+100 United Kingdom -0.505  Low        
+101 United Kingdom  0.124  High       
+102 United Kingdom NA      &lt;NA&gt;       
+103 United Kingdom  1.67   High       
+104 United Kingdom -0.468  Low        
+105 United Kingdom -0.266  Low        
+106 United Kingdom NA      &lt;NA&gt;       
+107 United Kingdom  0.609  High       
+108 United Kingdom -1.34   Low        
+109 United Kingdom  0.422  High       
+110 United Kingdom  0.732  High       
+111 United Kingdom -0.119  Low        
+112 United Kingdom  1.04   High       
+113 United Kingdom  1.27   High       
+114 United Kingdom -0.408  Low        
+115 United Kingdom  1.12   High       
+116 United Kingdom -0.652  Low        
+117 United Kingdom  0.130  High       
+118 United Kingdom -0.888  Low        
+119 United Kingdom -0.219  Low        
+120 United Kingdom  0.884  High       
+121 United Kingdom  0.682  High       
+122 United Kingdom  1.02   High       
+123 United Kingdom NA      &lt;NA&gt;       
+124 United Kingdom  1.21   High       
+125 United Kingdom -0.452  Low        
+126 United Kingdom -1.06   Low        
+127 United Kingdom  0.230  High       
+128 United Kingdom  0.594  High       
+129 United Kingdom  0.837  High       
+130 United Kingdom -0.455  Low        
+131 United Kingdom -0.608  Low        
+132 United Kingdom -0.367  Low        
+133 United Kingdom -1.44   Low        
+134 United Kingdom  0.356  High       
+135 United Kingdom NA      &lt;NA&gt;       
+136 United Kingdom -1.44   Low        
+137 United Kingdom  0.800  High       
+138 United Kingdom  1.12   High       
+139 United Kingdom -0.121  Low        
+140 United Kingdom -0.862  Low        
+141 United Kingdom  0.357  High       
+142 United Kingdom  0.0831 Low        
+143 United Kingdom -0.754  Low        
+144 United Kingdom  1.68   High       
+145 United Kingdom  0.608  High       
+146 United Kingdom -0.184  Low        
+147 United Kingdom -0.431  Low        
+148 United Kingdom -1.32   Low        
+149 United Kingdom  1.21   High       
+150 United Kingdom -0.0912 Low        
+151 United Kingdom -0.0866 Low        
+152 United Kingdom  0.818  High       
+153 United Kingdom  0.764  High       
+154 United Kingdom -0.111  Low        
+155 United Kingdom  1.45   High       
+156 United Kingdom -0.936  Low        
+157 United Kingdom  1.56   High       
+158 United Kingdom -0.0655 Low        
+159 United Kingdom  0.163  High       
+160 United Kingdom -0.0348 Low        
+161 United Kingdom  0.672  High       
+162 United Kingdom NA      &lt;NA&gt;       
+163 United Kingdom  0.799  High       
+164 United Kingdom -0.0587 Low        
+165 United Kingdom -1.14   Low        
+166 United Kingdom -0.991  Low        
+167 United Kingdom -0.468  Low        
+168 United Kingdom NA      &lt;NA&gt;       
+169 United Kingdom -1.15   Low        
+170 United Kingdom  0.0185 Low        
+171 United Kingdom  1.87   High       
+172 United Kingdom  1.61   High       
+173 United Kingdom NA      &lt;NA&gt;       
+174 United Kingdom  0.553  High       
+175 United Kingdom  1.38   High       
+176 United Kingdom  1.65   High       
+177 United Kingdom  1.31   High       
+178 United Kingdom -2.19   Low        
+179 United Kingdom -1.39   Low        
+180 United Kingdom  0.461  High       
+181 United Kingdom -1.28   Low        
+182 United Kingdom -0.0547 Low        
+183 United Kingdom  1.35   High       
+184 United Kingdom -0.285  Low        
+185 United Kingdom -0.558  Low        
+186 United Kingdom  0.165  High       
+187 United Kingdom  0.0727 Low        
+188 United Kingdom  0.380  High       
+189 United Kingdom  0.832  High       
+190 United Kingdom  0.306  High       
+191 United Kingdom  0.475  High       
+192 United Kingdom -0.0706 Low        
+193 United Kingdom  1.24   High       
+194 United Kingdom -1.42   Low        
+195 United Kingdom  0.0354 Low        
+196 United Kingdom -0.311  Low        
+197 United Kingdom  0.234  High       
+198 United Kingdom -0.838  Low        
+199 United Kingdom -1.17   Low        
+200 United Kingdom NA      &lt;NA&gt;       
+201 United Kingdom -0.303  Low        
+202 United Kingdom  0.927  High       
+203 United Kingdom  0.257  High       
+204 United Kingdom  0.281  High       
+205 United Kingdom  0.903  High       
+206 United Kingdom  1.17   High       
+207 United Kingdom -1.14   Low        
+208 United Kingdom  1.16   High       
+209 United Kingdom  0.768  High       
+210 United Kingdom -0.0763 Low        
+211 United Kingdom  0.337  High       
+212 United Kingdom -0.324  Low        
+213 United Kingdom  0.435  High       
+214 United Kingdom -0.592  Low        
+215 United Kingdom  0.167  High       
+216 United Kingdom NA      &lt;NA&gt;       
+217 United Kingdom -1.37   Low        
+218 United Kingdom -0.238  Low        
+219 United Kingdom NA      &lt;NA&gt;       
+220 United Kingdom  0.202  High       
+221 United Kingdom -0.623  Low        
+222 United Kingdom -1.01   Low        
+223 United Kingdom -1.42   Low        
+224 United Kingdom -0.487  Low        
+225 United Kingdom  0.0919 Low        
+226 United Kingdom  1.91   High       
+227 United Kingdom  0.368  High       
+228 United Kingdom NA      &lt;NA&gt;       
+229 United Kingdom  0.0909 Low        
+230 United Kingdom -1.50   Low        
+231 United Kingdom  0.161  High       
+232 United Kingdom NA      &lt;NA&gt;       
+233 United Kingdom -0.818  Low        
+234 United Kingdom  1.33   High       
+235 United Kingdom -1.01   Low        
+236 United Kingdom -0.671  Low        
+237 United Kingdom -0.161  Low        
+238 United Kingdom -0.0321 Low        
+239 United Kingdom NA      &lt;NA&gt;       
+240 United Kingdom -0.340  Low        
+241 United Kingdom -0.426  Low        
+242 United Kingdom  0.0556 Low        
+243 United Kingdom -0.436  Low        
+244 United Kingdom  0.524  High       
+245 United Kingdom NA      &lt;NA&gt;       
+246 United Kingdom -1.12   Low        
+247 United Kingdom NA      &lt;NA&gt;       
+248 United Kingdom -0.394  Low        
+249 United Kingdom -0.202  Low        
+250 United Kingdom  1.29   High       
+251 United Kingdom -0.810  Low        
+252 United Kingdom -0.782  Low        
+253 United Kingdom  0.632  High       
+254 United Kingdom NA      &lt;NA&gt;       
+255 United Kingdom -0.576  Low        
+256 United Kingdom  1.08   High       
+257 United Kingdom  0.795  High       
+258 United Kingdom NA      &lt;NA&gt;       
+259 United Kingdom  0.991  High       
+260 United Kingdom NA      &lt;NA&gt;       
+261 United Kingdom  0.400  High       
+262 United Kingdom  0.243  High       
+263 United Kingdom -1.31   Low        
+264 United Kingdom -0.614  Low        
+265 United Kingdom  0.533  High       
+266 United Kingdom  0.0851 Low        
+267 United Kingdom  0.257  High       
+268 United Kingdom -0.746  Low        
+269 United Kingdom  0.818  High       
+270 United Kingdom  0.0313 Low        
+271 United Kingdom  0.418  High       
+272 United Kingdom  0.526  High       
+273 United Kingdom  1.66   High       
+274 United Kingdom  0.788  High       
+275 United Kingdom  0.0385 Low        
+276 United Kingdom -0.163  Low        
+277 United Kingdom -1.19   Low        
+278 United Kingdom  0.0895 Low        
+279 United Kingdom -0.765  Low        
+280 United Kingdom -1.27   Low        
+281 United Kingdom  0.0851 Low        
+282 United Kingdom  0.834  High       
+283 United Kingdom  1.02   High       
+284 United Kingdom -0.779  Low        
+285 United Kingdom -0.268  Low        
+286 United Kingdom  0.221  High       
+287 United Kingdom  0.160  High       
+288 United Kingdom  0.111  Low        
+289 United Kingdom  0.920  High       
+290 United Kingdom NA      &lt;NA&gt;       
+291 United Kingdom  1.49   High       
+292 United Kingdom -0.748  Low        
+293 United Kingdom -0.0714 Low        
+294 United Kingdom NA      &lt;NA&gt;       
+295 United Kingdom  0.197  High       
+296 United Kingdom  1.47   High       
+297 United Kingdom  1.25   High       
+298 United Kingdom -1.14   Low        
+299 United Kingdom NA      &lt;NA&gt;       
+300 United Kingdom  0.320  High       
+301 United Kingdom -0.204  Low        
+302 United Kingdom  0.179  High       
+303 United Kingdom  1.94   High       
+304 United Kingdom NA      &lt;NA&gt;       
+305 United Kingdom  0.350  High       
+306 United Kingdom -0.842  Low        
+307 United Kingdom  0.308  High       
+308 United Kingdom -0.722  Low        
+309 United Kingdom NA      &lt;NA&gt;       
+310 United Kingdom -0.809  Low        
+311 United Kingdom -0.0455 Low        
+312 United Kingdom  1.14   High       
+313 United Kingdom  0.161  High       
+314 United Kingdom -0.858  Low        
+315 United Kingdom  0.128  High       
+316 United Kingdom -0.610  Low        
+317 United Kingdom  0.513  High       
+318 United Kingdom NA      &lt;NA&gt;       
+319 United Kingdom -0.227  Low        
+320 United Kingdom  1.20   High       
+321 United Kingdom -0.762  Low        
+322 United Kingdom -1.91   Low        
+323 United Kingdom NA      &lt;NA&gt;       
+324 United Kingdom -0.300  Low        
+325 United Kingdom  1.21   High       
+326 United Kingdom NA      &lt;NA&gt;       
+327 United Kingdom  1.21   High       
+328 United Kingdom -0.368  Low        
+329 United Kingdom  0.712  High       
+330 United Kingdom  0.908  High       
+331 United Kingdom NA      &lt;NA&gt;       
+332 United Kingdom NA      &lt;NA&gt;       
+333 United Kingdom -0.530  Low        
+334 United Kingdom -1.22   Low        
+335 United Kingdom NA      &lt;NA&gt;       
+336 United Kingdom -0.510  Low        
+337 United Kingdom -0.511  Low        
+338 United Kingdom NA      &lt;NA&gt;       
+339 United Kingdom NA      &lt;NA&gt;       
+340 United Kingdom  0.728  High       
+341 United Kingdom  0.993  High       
+342 United Kingdom -1.33   Low        
+343 United Kingdom -0.743  Low        
+344 United Kingdom -0.238  Low        
+345 United Kingdom  1.85   High       
+346 United Kingdom  0.931  High       
+347 United Kingdom NA      &lt;NA&gt;       
+348 United Kingdom  0.563  High       
+349 United Kingdom  0.0552 Low        
+350 United Kingdom -0.901  Low        
+351 United Kingdom NA      &lt;NA&gt;       
+352 United Kingdom NA      &lt;NA&gt;       
+353 United Kingdom NA      &lt;NA&gt;       
+354 United Kingdom NA      &lt;NA&gt;       
+355 United Kingdom -0.0691 Low        
+356 United Kingdom NA      &lt;NA&gt;       
+357 United Kingdom  0.705  High       
+358 United Kingdom -0.087  Low        
+359 United Kingdom  0.488  High       
+360 United Kingdom -0.887  Low        
+361 United Kingdom  1.32   High       
+362 United Kingdom  0.840  High       
+363 United Kingdom -0.972  Low        
+364 United Kingdom -0.581  Low        
+365 United Kingdom  0.383  High       
+366 United Kingdom -0.202  Low        
+367 United Kingdom  0.600  High       
+368 United Kingdom  0.256  High       
+369 United Kingdom -1.19   Low        
+370 United Kingdom  1.13   High       
+371 United Kingdom  0.246  High       
+372 United Kingdom  2.65   High       
+373 United Kingdom -0.517  Low        
+374 United Kingdom  0.500  High       
+375 United Kingdom  0.252  High       
+376 United Kingdom  0.301  High       
+377 United Kingdom -0.719  Low        
+378 United Kingdom  0.227  High       
+379 United Kingdom -0.114  Low        
+380 United Kingdom  0.105  Low        
+381 United Kingdom  0.0123 Low        
+382 United Kingdom -1.17   Low        
+383 United Kingdom NA      &lt;NA&gt;       
+384 United Kingdom  0.217  High       
+385 United Kingdom  0.348  High       
+386 United Kingdom  0.559  High       
+387 United Kingdom -0.0607 Low        
+388 United Kingdom NA      &lt;NA&gt;       
+389 United Kingdom NA      &lt;NA&gt;       
+390 United Kingdom  0.355  High       
+391 United Kingdom -0.621  Low        
+392 United Kingdom  0.121  High       
+393 United Kingdom  0.765  High       
+394 United Kingdom  0.0722 Low        
+395 United Kingdom -0.795  Low        
+396 United Kingdom -0.439  Low        
+397 United Kingdom -1.44   Low        
+398 United Kingdom -0.0748 Low        
+399 United Kingdom -0.514  Low        
+400 United Kingdom  2.14   High       
+401 United Kingdom -1.23   Low        
+402 United Kingdom  0.297  High       
+403 United Kingdom  0.704  High       
+404 United Kingdom  0.336  High       
+405 United Kingdom -1.00   Low        
+406 United Kingdom  1.12   High       
+407 United Kingdom  0.407  High       
+408 United Kingdom  1.10   High       
+409 United Kingdom -0.366  Low        
+410 United Kingdom NA      &lt;NA&gt;       
+411 United Kingdom  1.82   High       
+412 United Kingdom  1.68   High       
+413 United Kingdom  1.05   High       
+414 United Kingdom -0.0146 Low        
+415 United Kingdom  0.406  High       
+416 United Kingdom -0.428  Low        
+417 United Kingdom  0.264  High       
+418 United Kingdom -0.584  Low        
+419 United Kingdom -0.932  Low        
+420 United Kingdom -0.972  Low        
+421 United Kingdom  0.671  High       
+422 United Kingdom -0.0961 Low        
+423 United Kingdom  0.562  High       
+424 United Kingdom  2.07   High       
+425 United Kingdom  0.328  High       
+426 United Kingdom -0.420  Low        
+427 United Kingdom -0.682  Low        
+428 United Kingdom  1.23   High       
+429 United Kingdom NA      &lt;NA&gt;       
+430 United Kingdom -0.111  Low        
+431 United Kingdom -1.35   Low        
+432 United Kingdom  0.335  High       
+433 United Kingdom -1.17   Low        
+434 United Kingdom  0.334  High       
+435 United Kingdom  0.777  High       
+436 United Kingdom  0.531  High       
+437 United Kingdom  0.394  High       
+438 United Kingdom  1.28   High       
+439 United Kingdom -0.849  Low        
+440 United Kingdom  0.952  High       
+441 United Kingdom  1.66   High       
+442 United Kingdom  0.0159 Low        
+443 United Kingdom -0.660  Low        
+444 United Kingdom  0.595  High       
+445 United Kingdom -0.425  Low        
+446 United Kingdom -1.93   Low        
+447 United Kingdom -0.501  Low        
+448 United Kingdom -0.761  Low        
+449 United Kingdom  0.513  High       
+450 United Kingdom NA      &lt;NA&gt;       
+451 United Kingdom  1.05   High       
+452 United Kingdom -0.758  Low        
+453 United Kingdom -0.451  Low        
+454 United Kingdom -0.249  Low        
+455 United Kingdom -0.485  Low        
+456 United Kingdom  1.18   High       
+457 United Kingdom NA      &lt;NA&gt;       
+458 United Kingdom -0.0599 Low        
+459 United Kingdom -0.817  Low        
+460 United Kingdom -0.337  Low        
+461 United Kingdom NA      &lt;NA&gt;       
+462 United Kingdom -0.122  Low        
+463 United Kingdom  1.67   High       
+464 United Kingdom -0.0447 Low        
+465 United Kingdom -1.15   Low        
+466 United Kingdom -0.134  Low        
+467 United Kingdom -0.109  Low        
+468 United Kingdom -0.393  Low        
+469 United Kingdom  0.121  High       
+470 United Kingdom -0.910  Low        
+471 United Kingdom NA      &lt;NA&gt;       
+472 United Kingdom  0.0138 Low        
+473 United Kingdom -0.744  Low        
+474 United Kingdom  1.02   High       
+475 United Kingdom -0.916  Low        
+476 United Kingdom -0.0975 Low        
+477 United Kingdom  0.139  High       
+478 United Kingdom NA      &lt;NA&gt;       
+479 United Kingdom  0.604  High       
+480 United Kingdom NA      &lt;NA&gt;       
+481 United Kingdom  0.316  High       
+482 United Kingdom NA      &lt;NA&gt;       
+483 United Kingdom -0.176  Low        
+484 United Kingdom -0.491  Low        
+485 United Kingdom  1.32   High       
+486 United Kingdom -0.213  Low        
+487 United Kingdom  0.289  High       
+488 United Kingdom  1.29   High       
+489 United Kingdom NA      &lt;NA&gt;       
+490 United Kingdom -0.175  Low        
+491 United Kingdom -0.0729 Low        
+492 United Kingdom  2.28   High       
+493 United Kingdom  0.721  High       
+494 United Kingdom  0.915  High       
+495 United Kingdom -0.107  Low        
+496 United Kingdom  0.173  High       
+497 United Kingdom -1.39   Low        
+498 United Kingdom  0.195  High       
+499 United Kingdom NA      &lt;NA&gt;       
+500 United Kingdom  1.88   High       
+# ℹ 12,472 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -903,7 +1534,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Create a ranked data data frame for science</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Create a ranked data data frame for science</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
 <span id="cb6-3"><a href="#cb6-3"></a>PISA2022SciRank <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">select</span>(CNT, PV1SCIE) <span class="sc">%&gt;%</span> <span class="co"># Select variables of interest</span></span>
@@ -912,27 +1543,96 @@ Tip
 <span id="cb6-7"><a href="#cb6-7"></a>     <span class="co"># summarise  country data to find the mean Sci score</span></span>
 <span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(meansci)) <span class="co"># arrange in descending order based on the meansci score</span></span>
 <span id="cb6-9"><a href="#cb6-9"></a></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="fu">print</span>(PISA2022SciRank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="fu">print</span>(PISA2022SciRank)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 80 × 2
-   CNT               meansci
-   &lt;fct&gt;               &lt;dbl&gt;
- 1 Singapore            561.
- 2 Japan                546.
- 3 Macao (China)        543.
- 4 Korea                531.
- 5 Estonia              527.
- 6 Chinese Taipei       527.
- 7 Hong Kong (China)    525.
- 8 Czech Republic       511.
- 9 Australia            508.
-10 Poland               505.
-# ℹ 70 more rows</code></pre>
+   CNT                          meansci
+   &lt;fct&gt;                          &lt;dbl&gt;
+ 1 Singapore                       561.
+ 2 Japan                           546.
+ 3 Macao (China)                   543.
+ 4 Korea                           531.
+ 5 Estonia                         527.
+ 6 Chinese Taipei                  527.
+ 7 Hong Kong (China)               525.
+ 8 Czech Republic                  511.
+ 9 Australia                       508.
+10 Poland                          505.
+11 New Zealand                     505.
+12 Ireland                         504.
+13 Switzerland                     501.
+14 Canada                          499.
+15 United States                   498.
+16 Finland                         498.
+17 Germany                         495.
+18 Belgium                         495.
+19 Sweden                          494.
+20 Austria                         494.
+21 Spain                           493.
+22 Latvia                          493.
+23 United Kingdom                  492.
+24 Hungary                         492.
+25 Portugal                        488.
+26 Slovenia                        487.
+27 Netherlands                     487.
+28 Croatia                         483.
+29 France                          481.
+30 Italy                           481.
+31 Denmark                         480.
+32 Lithuania                       480.
+33 Norway                          479.
+34 Türkiye                         476.
+35 Viet Nam                        473.
+36 Malta                           470.
+37 Slovak Republic                 467.
+38 Israel                          464.
+39 Chile                           463.
+40 Ukrainian regions (18 of 27)    454.
+41 Iceland                         448.
+42 Serbia                          447.
+43 Greece                          445.
+44 Brunei Darussalam               445.
+45 Kazakhstan                      441.
+46 Romania                         436.
+47 United Arab Emirates            436.
+48 Uruguay                         433.
+49 Thailand                        429.
+50 Qatar                           429.
+51 Bulgaria                        422.
+52 Colombia                        421.
+53 Malaysia                        417.
+54 Republic of Moldova             417.
+55 Argentina                       415.
+56 Mongolia                        411.
+57 Costa Rica                      411.
+58 Peru                            411.
+59 Mexico                          411.
+60 Brazil                          406.
+61 Montenegro                      405.
+62 Jamaica                         396.
+63 Indonesia                       395.
+64 Saudi Arabia                    390.
+65 Georgia                         386.
+66 Panama                          385.
+67 North Macedonia                 382.
+68 Baku (Azerbaijan)               382.
+69 Albania                         376.
+70 El Salvador                     375.
+71 Jordan                          375.
+72 Guatemala                       375.
+73 Paraguay                        372.
+74 Palestinian Authority           367.
+75 Morocco                         363.
+76 Dominican Republic              362.
+77 Uzbekistan                      355.
+78 Philippines                     354.
+79 Kosovo                          354.
+80 Cambodia                        340.</code></pre>
 </div>
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># And repeat the ranking for wealth</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># And repeat the ranking for wealth</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a></span>
 <span id="cb8-3"><a href="#cb8-3"></a>PISA2022WealthRank <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">select</span>(CNT, HOMEPOS) <span class="sc">%&gt;%</span> <span class="co"># Select variables of interest</span></span>
@@ -941,27 +1641,96 @@ Tip
 <span id="cb8-7"><a href="#cb8-7"></a>     <span class="co"># summarise  country data to find the mean Sci score</span></span>
 <span id="cb8-8"><a href="#cb8-8"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(meanwel)) <span class="co"># arrange in descending order based on the meansci score</span></span>
 <span id="cb8-9"><a href="#cb8-9"></a></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="fu">print</span>(PISA2022WealthRank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="fu">print</span>(PISA2022WealthRank)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 80 × 2
-   CNT         meanwel
-   &lt;fct&gt;         &lt;dbl&gt;
- 1 Norway        0.547
- 2 Australia     0.483
- 3 Korea         0.371
- 4 New Zealand   0.367
- 5 Canada        0.348
- 6 Iceland       0.346
- 7 Sweden        0.327
- 8 Ireland       0.318
- 9 Malta         0.308
-10 Austria       0.280
-# ℹ 70 more rows</code></pre>
+   CNT                           meanwel
+   &lt;fct&gt;                           &lt;dbl&gt;
+ 1 Norway                        0.547  
+ 2 Australia                     0.483  
+ 3 Korea                         0.371  
+ 4 New Zealand                   0.367  
+ 5 Canada                        0.348  
+ 6 Iceland                       0.346  
+ 7 Sweden                        0.327  
+ 8 Ireland                       0.318  
+ 9 Malta                         0.308  
+10 Austria                       0.280  
+11 Netherlands                   0.255  
+12 Denmark                       0.237  
+13 Switzerland                   0.221  
+14 Czech Republic                0.194  
+15 Slovenia                      0.186  
+16 Estonia                       0.178  
+17 Finland                       0.162  
+18 Germany                       0.149  
+19 Singapore                     0.124  
+20 United Kingdom                0.116  
+21 United States                 0.115  
+22 Hungary                       0.104  
+23 Italy                         0.0887 
+24 Belgium                       0.0866 
+25 Poland                        0.0825 
+26 Portugal                      0.0755 
+27 Spain                         0.0739 
+28 Israel                        0.0499 
+29 Latvia                        0.00480
+30 Lithuania                    -0.0451 
+31 Croatia                      -0.117  
+32 France                       -0.139  
+33 United Arab Emirates         -0.157  
+34 Slovak Republic              -0.187  
+35 Hong Kong (China)            -0.198  
+36 Japan                        -0.226  
+37 Serbia                       -0.229  
+38 Macao (China)                -0.253  
+39 Greece                       -0.264  
+40 Montenegro                   -0.276  
+41 Brunei Darussalam            -0.356  
+42 Bulgaria                     -0.368  
+43 Chile                        -0.388  
+44 Chinese Taipei               -0.395  
+45 Romania                      -0.399  
+46 Qatar                        -0.442  
+47 North Macedonia              -0.490  
+48 Ukrainian regions (18 of 27) -0.550  
+49 Kosovo                       -0.621  
+50 Saudi Arabia                 -0.689  
+51 Uruguay                      -0.747  
+52 Argentina                    -0.806  
+53 Georgia                      -0.809  
+54 Jamaica                      -0.834  
+55 Republic of Moldova          -0.846  
+56 Albania                      -0.859  
+57 Kazakhstan                   -0.870  
+58 Malaysia                     -0.908  
+59 Costa Rica                   -0.979  
+60 Baku (Azerbaijan)            -0.980  
+61 Mexico                       -1.07   
+62 Türkiye                      -1.08   
+63 Thailand                     -1.17   
+64 Brazil                       -1.22   
+65 Colombia                     -1.26   
+66 Viet Nam                     -1.29   
+67 Uzbekistan                   -1.30   
+68 Dominican Republic           -1.31   
+69 Mongolia                     -1.31   
+70 Panama                       -1.32   
+71 Jordan                       -1.38   
+72 Peru                         -1.40   
+73 Palestinian Authority        -1.49   
+74 Paraguay                     -1.52   
+75 Guatemala                    -1.52   
+76 El Salvador                  -1.57   
+77 Indonesia                    -1.58   
+78 Philippines                  -1.75   
+79 Morocco                      -1.77   
+80 Cambodia                     -2.41   </code></pre>
 </div>
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># With standard deviations</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># With standard deviations</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a></span>
 <span id="cb10-3"><a href="#cb10-3"></a>PISA2022SciRank <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">select</span>(CNT, PV1SCIE) <span class="sc">%&gt;%</span> <span class="co"># Select variables of interest</span></span>
@@ -971,27 +1740,96 @@ Tip
 <span id="cb10-8"><a href="#cb10-8"></a>  <span class="co"># summarise  country data to find the mean Sci score</span></span>
 <span id="cb10-9"><a href="#cb10-9"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(meansci)) <span class="co"># arrange in descending order based on the meansci score</span></span>
 <span id="cb10-10"><a href="#cb10-10"></a></span>
-<span id="cb10-11"><a href="#cb10-11"></a><span class="fu">print</span>(PISA2022SciRank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="fu">print</span>(PISA2022SciRank)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 80 × 3
-   CNT               meansci sdsci
-   &lt;fct&gt;               &lt;dbl&gt; &lt;dbl&gt;
- 1 Singapore            561.  99.6
- 2 Japan                546.  92.7
- 3 Macao (China)        543.  86.6
- 4 Korea                531. 104. 
- 5 Estonia              527.  87.7
- 6 Chinese Taipei       527. 102. 
- 7 Hong Kong (China)    525.  91.1
- 8 Czech Republic       511. 103. 
- 9 Australia            508. 107. 
-10 Poland               505.  94.2
-# ℹ 70 more rows</code></pre>
+   CNT                          meansci sdsci
+   &lt;fct&gt;                          &lt;dbl&gt; &lt;dbl&gt;
+ 1 Singapore                       561.  99.6
+ 2 Japan                           546.  92.7
+ 3 Macao (China)                   543.  86.6
+ 4 Korea                           531. 104. 
+ 5 Estonia                         527.  87.7
+ 6 Chinese Taipei                  527. 102. 
+ 7 Hong Kong (China)               525.  91.1
+ 8 Czech Republic                  511. 103. 
+ 9 Australia                       508. 107. 
+10 Poland                          505.  94.2
+11 New Zealand                     505. 108. 
+12 Ireland                         504.  92.0
+13 Switzerland                     501.  97.9
+14 Canada                          499.  98.8
+15 United States                   498. 109. 
+16 Finland                         498. 111. 
+17 Germany                         495. 105. 
+18 Belgium                         495.  99.9
+19 Sweden                          494. 108. 
+20 Austria                         494.  99.1
+21 Spain                           493.  90.1
+22 Latvia                          493.  84.6
+23 United Kingdom                  492. 102. 
+24 Hungary                         492.  94.7
+25 Portugal                        488.  89.7
+26 Slovenia                        487.  93.9
+27 Netherlands                     487. 112. 
+28 Croatia                         483.  92.0
+29 France                          481. 106. 
+30 Italy                           481.  92.0
+31 Denmark                         480.  96.9
+32 Lithuania                       480.  92.5
+33 Norway                          479. 106. 
+34 Türkiye                         476.  89.1
+35 Viet Nam                        473.  78.4
+36 Malta                           470. 102. 
+37 Slovak Republic                 467. 103. 
+38 Israel                          464. 109. 
+39 Chile                           463.  94.9
+40 Ukrainian regions (18 of 27)    454.  88.7
+41 Iceland                         448.  94.8
+42 Serbia                          447.  88.3
+43 Greece                          445.  89.0
+44 Brunei Darussalam               445.  93.5
+45 Kazakhstan                      441.  84.4
+46 Romania                         436.  96.2
+47 United Arab Emirates            436. 108. 
+48 Uruguay                         433.  92.4
+49 Thailand                        429.  93.1
+50 Qatar                           429.  96.3
+51 Bulgaria                        422.  94.7
+52 Colombia                        421.  88.2
+53 Malaysia                        417.  77.9
+54 Republic of Moldova             417.  82.5
+55 Argentina                       415.  86.3
+56 Mongolia                        411.  77.7
+57 Costa Rica                      411.  80.4
+58 Peru                            411.  85.4
+59 Mexico                          411.  75.0
+60 Brazil                          406.  93.3
+61 Montenegro                      405.  83.4
+62 Jamaica                         396.  92.0
+63 Indonesia                       395.  69.9
+64 Saudi Arabia                    390.  72.2
+65 Georgia                         386.  81.6
+66 Panama                          385.  84.9
+67 North Macedonia                 382.  82.8
+68 Baku (Azerbaijan)               382.  78.7
+69 Albania                         376.  81.2
+70 El Salvador                     375.  73.4
+71 Jordan                          375.  73.7
+72 Guatemala                       375.  65.4
+73 Paraguay                        372.  74.5
+74 Palestinian Authority           367.  70.9
+75 Morocco                         363.  66.2
+76 Dominican Republic              362.  68.7
+77 Uzbekistan                      355.  63.3
+78 Philippines                     354.  77.0
+79 Kosovo                          354.  64.8
+80 Cambodia                        340.  50.3</code></pre>
 </div>
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>PISA2022WealthRank <span class="ot">&lt;-</span> PISA_2022<span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>PISA2022WealthRank <span class="ot">&lt;-</span> PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">select</span>(CNT, HOMEPOS)<span class="sc">%&gt;%</span> <span class="co"># Select variables of interest</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span> <span class="co"># group by country</span></span>
 <span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">summarise</span>(<span class="at">meanwel =</span> <span class="fu">mean</span>(HOMEPOS, <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
@@ -999,23 +1837,92 @@ Tip
 <span id="cb12-6"><a href="#cb12-6"></a>  <span class="co"># summarise  country data to find  mean wealth score</span></span>
 <span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(meanwel)) </span>
 <span id="cb12-8"><a href="#cb12-8"></a>  <span class="co"># arrange in descending order based on the meanwel score</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="fu">print</span>(PISA2022WealthRank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="fu">print</span>(PISA2022WealthRank)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 80 × 3
-   CNT         meanwel sdwel
-   &lt;fct&gt;         &lt;dbl&gt; &lt;dbl&gt;
- 1 Norway        0.547 0.970
- 2 Australia     0.483 0.861
- 3 Korea         0.371 1.01 
- 4 New Zealand   0.367 0.862
- 5 Canada        0.348 0.867
- 6 Iceland       0.346 0.805
- 7 Sweden        0.327 0.878
- 8 Ireland       0.318 0.818
- 9 Malta         0.308 0.857
-10 Austria       0.280 0.938
-# ℹ 70 more rows</code></pre>
+   CNT                           meanwel sdwel
+   &lt;fct&gt;                           &lt;dbl&gt; &lt;dbl&gt;
+ 1 Norway                        0.547   0.970
+ 2 Australia                     0.483   0.861
+ 3 Korea                         0.371   1.01 
+ 4 New Zealand                   0.367   0.862
+ 5 Canada                        0.348   0.867
+ 6 Iceland                       0.346   0.805
+ 7 Sweden                        0.327   0.878
+ 8 Ireland                       0.318   0.818
+ 9 Malta                         0.308   0.857
+10 Austria                       0.280   0.938
+11 Netherlands                   0.255   0.802
+12 Denmark                       0.237   0.815
+13 Switzerland                   0.221   0.895
+14 Czech Republic                0.194   0.852
+15 Slovenia                      0.186   0.833
+16 Estonia                       0.178   0.740
+17 Finland                       0.162   0.862
+18 Germany                       0.149   0.946
+19 Singapore                     0.124   0.840
+20 United Kingdom                0.116   0.919
+21 United States                 0.115   0.927
+22 Hungary                       0.104   0.914
+23 Italy                         0.0887  0.803
+24 Belgium                       0.0866  0.869
+25 Poland                        0.0825  0.794
+26 Portugal                      0.0755  0.901
+27 Spain                         0.0739  0.805
+28 Israel                        0.0499  1.03 
+29 Latvia                        0.00480 0.774
+30 Lithuania                    -0.0451  0.832
+31 Croatia                      -0.117   0.719
+32 France                       -0.139   0.972
+33 United Arab Emirates         -0.157   1.04 
+34 Slovak Republic              -0.187   0.990
+35 Hong Kong (China)            -0.198   0.881
+36 Japan                        -0.226   0.761
+37 Serbia                       -0.229   0.768
+38 Macao (China)                -0.253   0.845
+39 Greece                       -0.264   0.820
+40 Montenegro                   -0.276   0.917
+41 Brunei Darussalam            -0.356   1.01 
+42 Bulgaria                     -0.368   1.04 
+43 Chile                        -0.388   0.959
+44 Chinese Taipei               -0.395   0.985
+45 Romania                      -0.399   0.991
+46 Qatar                        -0.442   1.07 
+47 North Macedonia              -0.490   0.915
+48 Ukrainian regions (18 of 27) -0.550   0.785
+49 Kosovo                       -0.621   0.941
+50 Saudi Arabia                 -0.689   1.04 
+51 Uruguay                      -0.747   0.924
+52 Argentina                    -0.806   1.01 
+53 Georgia                      -0.809   0.972
+54 Jamaica                      -0.834   1.12 
+55 Republic of Moldova          -0.846   0.890
+56 Albania                      -0.859   1.01 
+57 Kazakhstan                   -0.870   0.832
+58 Malaysia                     -0.908   0.962
+59 Costa Rica                   -0.979   1.27 
+60 Baku (Azerbaijan)            -0.980   0.971
+61 Mexico                       -1.07    1.00 
+62 Türkiye                      -1.08    1.02 
+63 Thailand                     -1.17    1.13 
+64 Brazil                       -1.22    0.956
+65 Colombia                     -1.26    1.12 
+66 Viet Nam                     -1.29    0.922
+67 Uzbekistan                   -1.30    0.960
+68 Dominican Republic           -1.31    0.977
+69 Mongolia                     -1.31    0.949
+70 Panama                       -1.32    1.21 
+71 Jordan                       -1.38    1.18 
+72 Peru                         -1.40    1.20 
+73 Palestinian Authority        -1.49    1.25 
+74 Paraguay                     -1.52    1.13 
+75 Guatemala                    -1.52    1.31 
+76 El Salvador                  -1.57    1.08 
+77 Indonesia                    -1.58    0.911
+78 Philippines                  -1.75    1.13 
+79 Morocco                      -1.77    1.19 
+80 Cambodia                     -2.41    1.08 </code></pre>
 </div>
 </div>
 </section>
@@ -1040,7 +1947,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Create a data frame with the ESCS, gender (ST004D01T) and HOMEPOS variables for the 4 countries </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Create a data frame with the ESCS, gender (ST004D01T) and HOMEPOS variables for the 4 countries </span></span>
 <span id="cb14-2"><a href="#cb14-2"></a></span>
 <span id="cb14-3"><a href="#cb14-3"></a>WealthcompPISA<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, ST004D01T)<span class="sc">%&gt;%</span></span>
@@ -1053,7 +1960,7 @@ Tip
 <span id="cb14-11"><a href="#cb14-11"></a></span>
 <span id="cb14-12"><a href="#cb14-12"></a><span class="fu">ggplot</span>(WealthcompPISA, <span class="fu">aes</span>(<span class="at">x =</span> ESCS, <span class="at">y =</span> HOMEPOS, <span class="at">colour=</span>ST004D01T))<span class="sc">+</span></span>
 <span id="cb14-13"><a href="#cb14-13"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="fl">0.1</span>, <span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb14-14"><a href="#cb14-14"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>CNT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-14"><a href="#cb14-14"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>CNT)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1084,7 +1991,7 @@ Tip
 <p>To plot a distribution, you can use <code>geom_density</code> to plot a distribution curve. In <code>ggplot</code> you specify the data, and then in <code>aes</code> set the x-value (the variable of interest, and set the fill to change by different groups). Within the <code>geom_density</code> call you can specify the <code>alpha</code>, the opacity of the plot.</p>
 <p>For example, to plot science scores in the UK by gender, you would use the code below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Create a data frame of UK science scores including gender</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Create a data frame of UK science scores including gender</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a></span>
 <span id="cb15-3"><a href="#cb15-3"></a>UKSci<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">select</span>(CNT, PV1SCIE, ST004D01T) <span class="sc">%&gt;%</span></span>
@@ -1093,7 +2000,7 @@ Tip
 <span id="cb15-7"><a href="#cb15-7"></a><span class="co"># Plot the density chart, changing colour by gender, and setting the alpha (opacity) to 0.5</span></span>
 <span id="cb15-8"><a href="#cb15-8"></a><span class="fu">ggplot</span>(<span class="at">data =</span> UKSci,</span>
 <span id="cb15-9"><a href="#cb15-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PV1SCIE, <span class="at">fill =</span> ST004D01T)) <span class="sc">+</span></span>
-<span id="cb15-10"><a href="#cb15-10"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-10"><a href="#cb15-10"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1107,7 +2014,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Create a data frame of UK and Japanese mathematics scores</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Create a data frame of UK and Japanese mathematics scores</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a></span>
 <span id="cb16-3"><a href="#cb16-3"></a>JPUKMath<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">select</span>(CNT, PV1MATH) <span class="sc">%&gt;%</span></span>
@@ -1116,7 +2023,7 @@ Tip
 <span id="cb16-7"><a href="#cb16-7"></a><span class="co"># Plot the density chart, changing colour by country, and setting the alpha (opacity) to 0.5</span></span>
 <span id="cb16-8"><a href="#cb16-8"></a><span class="fu">ggplot</span>(<span class="at">data =</span> JPUKMath,</span>
 <span id="cb16-9"><a href="#cb16-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">fill =</span> CNT)) <span class="sc">+</span></span>
-<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1137,13 +2044,13 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>UKMathGender <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>UKMathGender <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">select</span>(CNT, PV1MATH, ST004D01T) <span class="sc">%&gt;%</span></span>
 <span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
 <span id="cb17-4"><a href="#cb17-4"></a></span>
 <span id="cb17-5"><a href="#cb17-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> UKMathGender,</span>
 <span id="cb17-6"><a href="#cb17-6"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">fill =</span> ST004D01T)) <span class="sc">+</span></span>
-<span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1162,7 +2069,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Create a data frame of mathematics scores, gender and country</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Create a data frame of mathematics scores, gender and country</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="co"># Filter by the five countries of interest</span></span>
 <span id="cb18-3"><a href="#cb18-3"></a></span>
 <span id="cb18-4"><a href="#cb18-4"></a>MathGender <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
@@ -1175,7 +2082,7 @@ Tip
 <span id="cb18-11"><a href="#cb18-11"></a><span class="fu">ggplot</span>(<span class="at">data =</span> MathGender,</span>
 <span id="cb18-12"><a href="#cb18-12"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">fill =</span> ST004D01T)) <span class="sc">+</span></span>
 <span id="cb18-13"><a href="#cb18-13"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb18-14"><a href="#cb18-14"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>CNT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-14"><a href="#cb18-14"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>CNT)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1207,7 +2114,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Create a summary data frame</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Create a summary data frame</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a><span class="co"># Group by country, and then summarise the mean meath and wealth scores</span></span>
 <span id="cb19-3"><a href="#cb19-3"></a></span>
 <span id="cb19-4"><a href="#cb19-4"></a>Wealthdata <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
@@ -1223,7 +2130,7 @@ Tip
 <span id="cb19-14"><a href="#cb19-14"></a>       <span class="fu">aes</span>(<span class="at">x =</span> MeanWealth, <span class="at">y =</span> MeanMath)) <span class="sc">+</span></span>
 <span id="cb19-15"><a href="#cb19-15"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
 <span id="cb19-16"><a href="#cb19-16"></a>  <span class="fu">xlab</span>(<span class="st">"Home Possessions (Wealth proxy)"</span>) <span class="sc">+</span></span>
-<span id="cb19-17"><a href="#cb19-17"></a>  <span class="fu">ylab</span>(<span class="st">"Mathematics score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-17"><a href="#cb19-17"></a>  <span class="fu">ylab</span>(<span class="st">"Mathematics score"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1239,7 +2146,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Create a summary data frame</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Create a summary data frame</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a><span class="co"># Group by country, and then summarise the mean math and wealth scores</span></span>
 <span id="cb20-3"><a href="#cb20-3"></a></span>
 <span id="cb20-4"><a href="#cb20-4"></a>Wealthdata <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
@@ -1257,7 +2164,7 @@ Tip
 <span id="cb20-16"><a href="#cb20-16"></a>       <span class="fu">aes</span>(<span class="at">x =</span> MeanWealth, <span class="at">y =</span> MeanMath, <span class="at">colour =</span> label)) <span class="sc">+</span></span>
 <span id="cb20-17"><a href="#cb20-17"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb20-18"><a href="#cb20-18"></a>  <span class="fu">xlab</span>(<span class="st">"Wealth"</span>) <span class="sc">+</span></span>
-<span id="cb20-19"><a href="#cb20-19"></a>  <span class="fu">ylab</span>(<span class="st">"Mathematics score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-19"><a href="#cb20-19"></a>  <span class="fu">ylab</span>(<span class="st">"Mathematics score"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1273,7 +2180,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Mutate to give a new column labelname, set to the country name (CNT) if Meanmath is over 500, or NA if not.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Mutate to give a new column labelname, set to the country name (CNT) if Meanmath is over 500, or NA if not.</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>Wealthdata <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">select</span>(CNT, HOMEPOS, PV1MATH) <span class="sc">%&gt;%</span></span>
 <span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
@@ -1291,7 +2198,7 @@ Tip
 <span id="cb21-16"><a href="#cb21-16"></a>            <span class="at">colour =</span> <span class="st">"black"</span>, </span>
 <span id="cb21-17"><a href="#cb21-17"></a>            <span class="at">check_overlap =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
 <span id="cb21-18"><a href="#cb21-18"></a>  <span class="fu">xlab</span>(<span class="st">"Wealth"</span>) <span class="sc">+</span></span>
-<span id="cb21-19"><a href="#cb21-19"></a>  <span class="fu">ylab</span>(<span class="st">"Mathematics score"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-19"><a href="#cb21-19"></a>  <span class="fu">ylab</span>(<span class="st">"Mathematics score"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1312,7 +2219,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Create a data frame of childhood education data for the whole data frame </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Create a data frame of childhood education data for the whole data frame </span></span>
 <span id="cb22-2"><a href="#cb22-2"></a>ChildhoodEd<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">select</span>(CNT, ST125Q01NA) <span class="sc">%&gt;%</span></span>
 <span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">group_by</span>(CNT)</span>
@@ -1323,7 +2230,7 @@ Tip
 <span id="cb22-9"><a href="#cb22-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ST125Q01NA, <span class="at">fill =</span> ST125Q01NA)) <span class="sc">+</span></span>
 <span id="cb22-10"><a href="#cb22-10"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb22-11"><a href="#cb22-11"></a>  <span class="fu">xlab</span>(<span class="st">"How old were you when you started early childhood education?"</span>) <span class="sc">+</span></span>
-<span id="cb22-12"><a href="#cb22-12"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-12"><a href="#cb22-12"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1337,7 +2244,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Repeat filtering for UK, Germany, Belgium, Austria, France, Poland, Estonia, Finland and Italy</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Repeat filtering for UK, Germany, Belgium, Austria, France, Poland, Estonia, Finland and Italy</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a></span>
 <span id="cb23-3"><a href="#cb23-3"></a>ChildhoodEd <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">select</span>(CNT, ST125Q01NA) <span class="sc">%&gt;%</span></span>
@@ -1352,7 +2259,7 @@ Tip
 <span id="cb23-13"><a href="#cb23-13"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
 <span id="cb23-14"><a href="#cb23-14"></a>  <span class="fu">xlab</span>(<span class="st">"How old were you when you started early childhood education?"</span>) <span class="sc">+</span></span>
 <span id="cb23-15"><a href="#cb23-15"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb23-16"><a href="#cb23-16"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> CNT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-16"><a href="#cb23-16"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> CNT)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1397,7 +2304,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Create a data frame for the UK and Germany</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Create a data frame for the UK and Germany</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a><span class="co"># Mutate the wealth_cat (wealth category) column by the boundaries of wealth categories</span></span>
 <span id="cb24-3"><a href="#cb24-3"></a>Wealth <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">select</span>(CNT, HOMEPOS) <span class="sc">%&gt;%</span></span>
@@ -1420,7 +2327,7 @@ Tip
 <span id="cb24-21"><a href="#cb24-21"></a>       <span class="fu">aes</span>(<span class="at">x =</span> wealth_cat, <span class="at">fill =</span> wealth_cat))<span class="sc">+</span></span>
 <span id="cb24-22"><a href="#cb24-22"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
 <span id="cb24-23"><a href="#cb24-23"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>CNT)<span class="sc">+</span></span>
-<span id="cb24-24"><a href="#cb24-24"></a>  <span class="fu">xlab</span>(<span class="st">"Wealth grouping"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-24"><a href="#cb24-24"></a>  <span class="fu">xlab</span>(<span class="st">"Wealth grouping"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1439,7 +2346,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Create a data frame of science and mathematics scores, across the countries Including gender)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Create a data frame of science and mathematics scores, across the countries Including gender)</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a></span>
 <span id="cb25-3"><a href="#cb25-3"></a>SciMaths <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">select</span>(CNT, PV1MATH, PV1SCIE, ST004D01T) <span class="sc">%&gt;%</span></span>
@@ -1452,7 +2359,7 @@ Tip
 <span id="cb25-11"><a href="#cb25-11"></a><span class="fu">ggplot</span>(<span class="at">data =</span> SciMaths, </span>
 <span id="cb25-12"><a href="#cb25-12"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">y =</span> PV1SCIE, <span class="at">colour =</span> ST004D01T))<span class="sc">+</span></span>
 <span id="cb25-13"><a href="#cb25-13"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb25-14"><a href="#cb25-14"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>CNT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-14"><a href="#cb25-14"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>CNT)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1463,7 +2370,7 @@ Tip
 </div>
 <details class="code-fold">
 <summary>Show the answer</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Low achieving (filter for scores less than 400)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Low achieving (filter for scores less than 400)</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a></span>
 <span id="cb26-3"><a href="#cb26-3"></a>SciMaths <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">select</span>(CNT, PV1MATH, PV1SCIE, ST004D01T) <span class="sc">%&gt;%</span></span>
@@ -1476,7 +2383,7 @@ Tip
 <span id="cb26-11"><a href="#cb26-11"></a><span class="fu">ggplot</span>(<span class="at">data =</span> SciMaths, </span>
 <span id="cb26-12"><a href="#cb26-12"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">y =</span> PV1SCIE, <span class="at">colour =</span> ST004D01T))<span class="sc">+</span></span>
 <span id="cb26-13"><a href="#cb26-13"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb26-14"><a href="#cb26-14"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>CNT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-14"><a href="#cb26-14"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>CNT)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1535,236 +2442,243 @@ Zieger, Laura Raffaella, John Jerrim, Jake Anders, and Nikki Shure. 2022. <span>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1772,185 +2686,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 

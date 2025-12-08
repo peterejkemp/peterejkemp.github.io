@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
-
+<meta name="generator" content="quarto-1.8.25">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>SEM – MASTEMR</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,8 +18,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +31,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -76,7 +74,6 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -84,16 +81,17 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-baa83ea22f7c85f46c9cbd6ff4810be6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-408f44cb79879323703c9e228b025f96.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -119,22 +117,15 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../css/mastemr.css">
+}</script><link rel="stylesheet" href="../css/mastemr.css">
 </head>
-
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/KCL_logo.png" alt="" class="navbar-logo">
-    </a>
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo light-content"><img src="../images/KCL_logo.png" alt="" class="navbar-logo dark-content"></a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MASTEMR</span>
     </a>
@@ -143,9 +134,7 @@ div.csl-indent {
 </div>
           <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -156,12 +145,12 @@ div.csl-indent {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -169,32 +158,37 @@ div.csl-indent {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Sessions</span></span>
-  </li>
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Sessions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01 Introduction</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">02 Introduction to R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to R</span></a>
@@ -219,66 +213,56 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
-        <li class="sidebar-item">
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-Descriptive.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">03 Descriptive Statistics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">04 Introduction to PISA</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-Presentations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05 Presentations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">06 T-tests</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/08-Writing_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">08 Writing a quantitative report</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">09 Assignment 3 tutorials</span></a>
+ <span class="menu-text">08 Assignment 3 tutorials</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/10-Correlation_and_regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10 Correlation and regression</span></a>
+ <span class="menu-text">09 Correlation and regression</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11 Selecting statistical tools</span></a>
+ <span class="menu-text">10 Selecting statistical tools</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/12-value_of_quant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 The value of quantitative methods</span></a>
-  </div>
+      </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -288,15 +272,15 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A8-SEM.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">SEM</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -305,8 +289,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">PISA</span></a>
@@ -343,40 +327,40 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#structural-equation-modelling" id="toc-structural-equation-modelling" class="nav-link active" data-scroll-target="#structural-equation-modelling"><span class="header-section-number">1</span> Structural Equation Modelling</a>
+<li>
+<a href="#structural-equation-modelling" id="toc-structural-equation-modelling" class="nav-link active" data-scroll-target="#structural-equation-modelling"><span class="header-section-number">1</span> Structural Equation Modelling</a>
   <ul class="collapse">
-  <li><a href="#a-simple-structural-model" id="toc-a-simple-structural-model" class="nav-link" data-scroll-target="#a-simple-structural-model"><span class="header-section-number">1.0.1</span> A simple structural model</a></li>
-  <li><a href="#model-syntax" id="toc-model-syntax" class="nav-link" data-scroll-target="#model-syntax"><span class="header-section-number">1.1</span> Model Syntax</a>
+<li><a href="#a-simple-structural-model" id="toc-a-simple-structural-model" class="nav-link" data-scroll-target="#a-simple-structural-model"><span class="header-section-number">1.0.1</span> A simple structural model</a></li>
+  <li>
+<a href="#model-syntax" id="toc-model-syntax" class="nav-link" data-scroll-target="#model-syntax"><span class="header-section-number">1.1</span> Model Syntax</a>
   <ul class="collapse">
-  <li><a href="#modelling-a-latent-variable" id="toc-modelling-a-latent-variable" class="nav-link" data-scroll-target="#modelling-a-latent-variable"><span class="header-section-number">1.1.1</span> Modelling a latent variable</a></li>
+<li><a href="#modelling-a-latent-variable" id="toc-modelling-a-latent-variable" class="nav-link" data-scroll-target="#modelling-a-latent-variable"><span class="header-section-number">1.1.1</span> Modelling a latent variable</a></li>
   <li><a href="#formatting-a-path-diagram" id="toc-formatting-a-path-diagram" class="nav-link" data-scroll-target="#formatting-a-path-diagram"><span class="header-section-number">1.1.2</span> Formatting a path diagram</a></li>
-  </ul></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">1.2</span> Tasks</a>
+  </ul>
+</li>
+  <li>
+<a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">1.2</span> Tasks</a>
   <ul class="collapse">
-  <li><a href="#task-1---create-a-model-of-reading-score" id="toc-task-1---create-a-model-of-reading-score" class="nav-link" data-scroll-target="#task-1---create-a-model-of-reading-score"><span class="header-section-number">1.2.1</span> Task 1 - create a model of reading score</a></li>
+<li><a href="#task-1---create-a-model-of-reading-score" id="toc-task-1---create-a-model-of-reading-score" class="nav-link" data-scroll-target="#task-1---create-a-model-of-reading-score"><span class="header-section-number">1.2.1</span> Task 1 - create a model of reading score</a></li>
   <li><a href="#task-2---modelling-a-latent-variable-for-the-home-environment" id="toc-task-2---modelling-a-latent-variable-for-the-home-environment" class="nav-link" data-scroll-target="#task-2---modelling-a-latent-variable-for-the-home-environment"><span class="header-section-number">1.2.2</span> Task 2 - Modelling a latent variable for the home environment</a></li>
   <li><a href="#task-3---building-a-more-complex-latent-varibale-sem" id="toc-task-3---building-a-more-complex-latent-varibale-sem" class="nav-link" data-scroll-target="#task-3---building-a-more-complex-latent-varibale-sem"><span class="header-section-number">1.2.3</span> Task 3 - building a more complex latent varibale SEM</a></li>
-  </ul></li>
-  </ul></li>
   </ul>
-</nav>
+</li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/A8-SEM.html">Additional tests</a></li><li class="breadcrumb-item"><a href="../chapters/A8-SEM.html">SEM</a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/A8-SEM.html">Additional tests</a></li><li class="breadcrumb-item"><a href="../chapters/A8-SEM.html">SEM</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">SEM</h1>
 </div>
 
@@ -391,25 +375,21 @@ div.csl-indent {
   
 
 
-</header>
-
-
-<section id="structural-equation-modelling" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Structural Equation Modelling</h1>
+</header><section id="structural-equation-modelling" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Structural Equation Modelling</h1>
 <p>Structural Equation Modelling (SEM) is an approach to represent the correlations between a number of variables linked to some phenomenon. A dependent variable (for example, scores on some test) might be linked to a number of independent variables (for example, hours of study, teacher’s level of experience, etc.). A powerful aspect of SEM is that it can be used to construct latent variables - variables which have explanatory usefulness but can’t be measured directly.</p>
 <p>For example, a researcher might wish to investigate how home environment impacts students’ mathematics achievement. There is no single variable, no single score, that can be measured to say a young person’s home environment is a 7/10 or a 3/10. We might then consider their home environment a latent variable. We imagine that the nature of the circumstances in their home impacts their learning, but we cannot directly report the level of the home environment as a variable.</p>
 <p>SEM allows us to propose a latent variable, like home environment, and calculate the contribution of a number of variables we can measure (e.g.&nbsp;the number of books in the home, parents’ occupation and level of education, family wealth, etc.) to the latent variable.</p>
-<section id="a-simple-structural-model" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="a-simple-structural-model"><span class="header-section-number">1.0.1</span> A simple structural model</h3>
+<section id="a-simple-structural-model" class="level3" data-number="1.0.1"><h3 data-number="1.0.1" class="anchored" data-anchor-id="a-simple-structural-model">
+<span class="header-section-number">1.0.1</span> A simple structural model</h3>
 <p>Researchers use SEM to determine the correlations between a number of variable in a data set. It allows the relationship between multiple variables to be taken into account.</p>
 <p>In the PISA data set, in the context of data related to UK students achievement in mathematics, a researcher might be interested in building a model of mathematics (<code>PV1MATH</code>) score by a number of variables in the data set, for example, reading score <code>PV1READ</code>), science score (<code>PV1SCIE</code>), family cultural capital (the index of economic, social and cultural status <code>ESCS</code>), wealth (<code>WEALTH</code>) and gender (<code>ST004D01T</code>). SEM can be used to represent the relationship between these variables and students’ mathematics achievement.</p>
 <p>To create the SEM we will use the <code>lavaan</code> package - <code>lavaan</code> is a contraction of Latent Variable Analysis and allows us to fit a number of different SEMs to data. We will also need to install the <code>semPlot</code> package. The relationships between variables in SEMs are often represented as path diagrams - representations in which variables are represented as squares or circles and arrows labelled with correlation coefficients join the variables to represent the relationships.<code>semPlot</code> allows use to draw path diagrams</p>
-</section>
-<section id="model-syntax" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="model-syntax"><span class="header-section-number">1.1</span> Model Syntax</h2>
+</section><section id="model-syntax" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="model-syntax">
+<span class="header-section-number">1.1</span> Model Syntax</h2>
 <p>To create the SEM of UK mathematics achievement we first create a subset <code>data.frame</code> of UK data, <code>UKdata</code>. As <code>lavaan</code> uses numeric variables we need to convert gender (<code>ST004D01T</code>) to a numeric variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load lavaan to create the SEM and semPlot to draw path diagrams</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load lavaan to create the SEM and semPlot to draw path diagrams</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(lavaan)</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(semPlot)</span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Create a subset of PISA data related to the UK containing the dependent variable of interest (PV1MATH) and the independent variables we are interested in</span></span>
@@ -417,7 +397,7 @@ div.csl-indent {
 <span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH, PV1READ, ESCS, HOMEPOS, ST004D01T)<span class="sc">%&gt;%</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a>  <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"United Kingdom"</span>)</span>
 <span id="cb1-8"><a href="#cb1-8"></a><span class="co"># lavaan requires numeric variables as input, gender is a character varibale in the data.frame so convert it.</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a>UKdata<span class="sc">$</span>ST004D01T<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST004D01T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9"></a>UKdata<span class="sc">$</span>ST004D01T<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(UKdata<span class="sc">$</span>ST004D01T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The first step is to create the model. Models in <code>lavaan</code> are represented as a dependent variable <code>y</code>, linked to a number of independent variables <code>x1</code>, <code>x2</code>, <code>x3</code>, etc. The <code>~</code> symbol is the regression operator. A simple regression forumla might then take the form of:</p>
 <p>y ~ x1 + x2 + x3</p>
@@ -428,11 +408,11 @@ div.csl-indent {
 <p>In our case, considering UK mathematics achievement, we can set up a model that mathematics score <code>PV1MATH</code> varies with science score <code>PV1SCIE</code>, reading score <code>PV1READ</code>, cultural resources in the home <code>ESCS</code>, a wealth proxy measure, HOMEPOS and gender <code>ST004D01T</code>: <code>model&lt;-"PV1MATH ~ PV1SCIE + PV1READ + ESCS + HOMEPOS"</code></p>
 <p>We then pass the model, and the <code>data.frame</code> to the <code>sem</code> function: <code>fit&lt;-sem(model, data=UKdata)</code>. This produces a model as the ouput <code>fit</code>. To see the results we call <code>summary(fit)</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>model<span class="ot">&lt;-</span><span class="st">"PV1MATH ~ PV1SCIE + PV1READ + ESCS + HOMEPOS"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>model<span class="ot">&lt;-</span><span class="st">"PV1MATH ~ PV1SCIE + PV1READ + ESCS + HOMEPOS"</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>lavaan 0.6-19 ended normally after 1 iteration
+<pre><code>lavaan 0.6-20 ended normally after 1 iteration
 
   Estimator                                         ML
   Optimization method                           NLMINB
@@ -470,8 +450,7 @@ Variances:
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -480,14 +459,14 @@ Variances:
 <p>One issue to note here is the difference in the variance for the science and mathematics scores. <code>PV1SCIE</code>, <code>PV1READ</code> and <code>PV1MATH</code> are test scores and so have a large variance (the maximum and minimum science scores, for example, are 0.0 and 895.4). The variance of the two test variables is much greater that for <code>HOMEPOS</code> (Min=-10.0741 mean=-0.4447, Max=15.240) and <code>ESCS</code> (Min=-6.841 mean=-0.310, Max=7.380).</p>
 <p>To resolve this difference, we can use the scale function to create a similar scale for <code>PV1SCIE</code>, <code>PV1MATH</code> and <code>PV1READ</code>. The <code>scale</code> function sets the mean of the variable to 0 and the variance to 1.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>UKdata<span class="sc">$</span>PV1READ<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1READ)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>UKdata<span class="sc">$</span>PV1READ<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1READ)</span>
 <span id="cb4-2"><a href="#cb4-2"></a>UKdata<span class="sc">$</span>PV1MATH<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1MATH)</span>
 <span id="cb4-3"><a href="#cb4-3"></a>UKdata<span class="sc">$</span>PV1SCIE<span class="ot">&lt;-</span><span class="fu">scale</span>(UKdata<span class="sc">$</span>PV1SCIE)</span>
 <span id="cb4-4"><a href="#cb4-4"></a></span>
 <span id="cb4-5"><a href="#cb4-5"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>lavaan 0.6-19 ended normally after 1 iteration
+<pre><code>lavaan 0.6-20 ended normally after 1 iteration
 
   Estimator                                         ML
   Optimization method                           NLMINB
@@ -519,11 +498,10 @@ Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
    .PV1MATH           0.222    0.003   74.441    0.000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -531,14 +509,14 @@ Variances:
 <p>Scaling the test scores gives a more balanced model.</p>
 <p>We can make the model more complex, by adding that two or our independent variables, reading (<code>PV1READ</code>) and science (<code>PV1SCIE</code>) scores may co-vary, and vary with other independent variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>model<span class="ot">&lt;-</span><span class="st">"PV1MATH ~ PV1SCIE + PV1READ + ESCS + HOMEPOS</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>model<span class="ot">&lt;-</span><span class="st">"PV1MATH ~ PV1SCIE + PV1READ + ESCS + HOMEPOS</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="st">        PV1READ ~~ PV1SCIE</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="st">        PV1READ ~ PV1SCIE + PV1MATH + ESCS + HOMEPOS</span></span>
 <span id="cb7-4"><a href="#cb7-4"></a><span class="st">        PV1SCIE ~ PV1READ + PV1MATH + ESCS + HOMEPOS"</span></span>
 <span id="cb7-5"><a href="#cb7-5"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>lavaan 0.6-19 ended normally after 23 iterations
+<pre><code>lavaan 0.6-20 ended normally after 23 iterations
 
   Estimator                                         ML
   Optimization method                           NLMINB
@@ -569,7 +547,7 @@ Regressions:
   PV1READ ~                                           
     PV1SCIE           0.242       NA                  
     PV1MATH           0.386       NA                  
- [ reached getOption("max.print") -- omitted 7 rows ]
+ [ reached 'max' / getOption("max.print") -- omitted 7 rows ]
 
 Covariances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
@@ -582,38 +560,36 @@ Variances:
    .PV1READ           0.383       NA                  
    .PV1SCIE           0.340       NA                  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">semPaths</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">semPaths</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="modelling-a-latent-variable" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="modelling-a-latent-variable"><span class="header-section-number">1.1.1</span> Modelling a latent variable</h3>
+<section id="modelling-a-latent-variable" class="level3" data-number="1.1.1"><h3 data-number="1.1.1" class="anchored" data-anchor-id="modelling-a-latent-variable">
+<span class="header-section-number">1.1.1</span> Modelling a latent variable</h3>
 <p>As introduced above, we can use SEM to model a latent variable. For example, we might assume that students have some underlying variable linked to their general intelligence. However, we have no way to directly measure their general intelligence. We do have data on their achievement in science (<code>PV1SCIE</code>), mathematics (<code>PV1MATH</code>) and reading (<code>PV1READ</code>) we might assume that as the latent variable of general achievement increases so does achievement in science, mathematics and reading.</p>
 <p>To perform the analysis, we use the <code>=~</code> operator in our model, which indicates a latent variable. This time, our model then sets out that we are interested in a <code>lv</code> (latent variable) which varies with science (<code>PV1SCIE</code>), mathematics (<code>PV1MATH</code>) and reading (<code>PV1READ</code>) scores:</p>
 <p>model&lt;-“lv =~ PV1SCIE + PV1READ + PV1MATH”</p>
 <p>Then we run the model using <code>sem</code> in the same way as above, and plot the model using <code>semPaths</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># For a latent variable</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># For a latent variable</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="co"># =~ means a latent variable</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a>model<span class="ot">&lt;-</span><span class="st">"lv =~ PV1SCIE + PV1READ + PV1MATH"</span></span>
 <span id="cb11-4"><a href="#cb11-4"></a></span>
 <span id="cb11-5"><a href="#cb11-5"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb11-6"><a href="#cb11-6"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>lavaan 0.6-19 ended normally after 18 iterations
+<pre><code>lavaan 0.6-20 ended normally after 18 iterations
 
   Estimator                                         ML
   Optimization method                           NLMINB
@@ -646,11 +622,10 @@ Variances:
    .PV1MATH           0.119    0.003   36.723    0.000
     lv                0.855    0.013   67.872    0.000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -665,24 +640,25 @@ Variances:
 <col style="width: 20%">
 <col style="width: 79%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Item name</th>
 <th>Description</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td>ST005Q01JA</td>
-<td>What is the <highest level="" of="" schooling=""> completed by your mother?</highest></td>
+<td>What is the <highest level="" of="" schooling=""> completed by your mother?</highest>
+</td>
 </tr>
 <tr class="even">
 <td>ST007Q01JA</td>
-<td>What is the <highest level="" of="" schooling=""> completed by your father?</highest></td>
+<td>What is the <highest level="" of="" schooling=""> completed by your father?</highest>
+</td>
 </tr>
 <tr class="odd">
 <td>ST256Q02JA</td>
-<td>In your home: Classic literature (e.g.&nbsp;<shakespeare>)</shakespeare></td>
+<td>In your home: Classic literature (e.g.&nbsp;<shakespeare>)</shakespeare>
+</td>
 </tr>
 <tr class="even">
 <td>ST255Q01JA</td>
@@ -695,7 +671,7 @@ Variances:
 </tbody>
 </table>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Create a UK dataframe with plausible values</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Create a UK dataframe with plausible values</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>UKdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, ST007Q01JA, ST256Q02JA, ST255Q01JA,</span>
 <span id="cb14-4"><a href="#cb14-4"></a>         PV1READ, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
@@ -717,9 +693,9 @@ Variances:
 <span id="cb14-20"><a href="#cb14-20"></a><span class="st">        PV1SCIE ~ lvi + lvc"</span></span>
 <span id="cb14-21"><a href="#cb14-21"></a><span class="co"># Fit the model</span></span>
 <span id="cb14-22"><a href="#cb14-22"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb14-23"><a href="#cb14-23"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-23"><a href="#cb14-23"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>lavaan 0.6-19 ended normally after 32 iterations
+<pre><code>lavaan 0.6-20 ended normally after 32 iterations
 
   Estimator                                         ML
   Optimization method                           NLMINB
@@ -750,7 +726,7 @@ Latent Variables:
     ST255Q01JA        1.381    0.019   72.078    0.000
   lvc =~                                              
     PV1MATH           1.000                           
- [ reached getOption("max.print") -- omitted 1 row ]
+ [ reached 'max' / getOption("max.print") -- omitted 1 row ]
 
 Regressions:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
@@ -773,30 +749,27 @@ Variances:
    .PV1MATH           0.122    0.004   30.114    0.000
    .PV1READ           0.293    0.005   56.485    0.000
    .PV1SCIE           0.155    0.004   36.360    0.000
- [ reached getOption("max.print") -- omitted 2 rows ]</code></pre>
+ [ reached 'max' / getOption("max.print") -- omitted 2 rows ]</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Interesting features to note are a) the much higher loading of the cognitive latent variable (lvc has a loading of 0.71) than the home environment (liv, loading 0.02); b) the roughly equal contribution of mathematics and reading scores to lvb (the cognitive ability latent variable); c) and interesting to note the negative loadings of parental education (ST005, and ST007) on the home enviroment latent variable.</p>
 <p>Note the dotted line from the ESCS variable (truncated here to ESC) indicates that ESCS is acting as a marker variable, that is, it is fixed at 1.0, and the other variables determined relative to it. The same is true for <code>PV1MATH</code> for the ability latent variable.</p>
-</section>
-<section id="formatting-a-path-diagram" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="formatting-a-path-diagram"><span class="header-section-number">1.1.2</span> Formatting a path diagram</h3>
+</section><section id="formatting-a-path-diagram" class="level3" data-number="1.1.2"><h3 data-number="1.1.2" class="anchored" data-anchor-id="formatting-a-path-diagram">
+<span class="header-section-number">1.1.2</span> Formatting a path diagram</h3>
 <p>There are a number of formatting options in the <code>semPaths</code> function.</p>
 <p>Starting from this plot:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -805,11 +778,10 @@ Variances:
 <li>To rotate the plot (<code>rotation=2</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -818,11 +790,10 @@ Variances:
 <li>To change the colour of the lines (<code>edge.color="blue"</code>) and the size of the nodes (<code>sizeMan=8</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, <span class="at">sizeMan =</span><span class="dv">8</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, <span class="at">sizeMan =</span><span class="dv">8</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -831,12 +802,11 @@ Variances:
 <li>To link the thickness of lines to their value (<code>"std"</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
-<span id="cb20-2"><a href="#cb20-2"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
+<span id="cb20-2"><a href="#cb20-2"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -845,12 +815,11 @@ Variances:
 <li>To make the labels larger (<code>edge.label.cex = 0.8</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
-<span id="cb21-2"><a href="#cb21-2"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>, <span class="at">edge.label.cex =</span> <span class="fl">0.8</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
+<span id="cb21-2"><a href="#cb21-2"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>, <span class="at">edge.label.cex =</span> <span class="fl">0.8</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -859,13 +828,12 @@ Variances:
 <li>To add a title (<code>title("PISA path diagram")</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
 <span id="cb22-2"><a href="#cb22-2"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>, <span class="at">edge.label.cex =</span> <span class="fl">0.8</span>) </span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">title</span>(<span class="st">"PISA path diagram"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">title</span>(<span class="st">"PISA path diagram"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -874,27 +842,24 @@ Variances:
 <li>To give longer node names (<code>nodeNames=nodenames</code>):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>nodenames<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Economic, social and cultural status"</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>nodenames<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Economic, social and cultural status"</span>,</span>
 <span id="cb23-2"><a href="#cb23-2"></a>             <span class="st">"Wealth"</span>,<span class="st">"Maternal Schooling"</span>,<span class="st">"Paternal Schooling"</span>,</span>
 <span id="cb23-3"><a href="#cb23-3"></a>             <span class="st">"In home: classical literature"</span>,<span class="st">"Books in home"</span>,</span>
 <span id="cb23-4"><a href="#cb23-4"></a>             <span class="st">"Math score"</span>, <span class="st">"Reading score"</span>, <span class="st">"Science Score"</span>)</span>
 <span id="cb23-5"><a href="#cb23-5"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.color=</span><span class="st">"blue"</span>, </span>
 <span id="cb23-6"><a href="#cb23-6"></a>         <span class="at">sizeMan =</span><span class="dv">5</span>, <span class="st">"std"</span>,, <span class="at">edge.label.cex =</span> <span class="fl">0.8</span>, <span class="at">nodeNames=</span>nodenames)</span>
-<span id="cb23-7"><a href="#cb23-7"></a><span class="fu">title</span>(<span class="st">"PISA path diagram"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="fu">title</span>(<span class="st">"PISA path diagram"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="tasks" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="tasks"><span class="header-section-number">1.2</span> Tasks</h2>
-<section id="task-1---create-a-model-of-reading-score" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="task-1---create-a-model-of-reading-score"><span class="header-section-number">1.2.1</span> Task 1 - create a model of reading score</h3>
+</section></section><section id="tasks" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="tasks">
+<span class="header-section-number">1.2</span> Tasks</h2>
+<section id="task-1---create-a-model-of-reading-score" class="level3" data-number="1.2.1"><h3 data-number="1.2.1" class="anchored" data-anchor-id="task-1---create-a-model-of-reading-score">
+<span class="header-section-number">1.2.1</span> Task 1 - create a model of reading score</h3>
 <div class="question">
 <p>Make a SEM of reading scores in the PISA data for students in the United States. Consider co-variation between independent variables. First consider what independent variables in the data set might influence reading scores. Some potential items of interest include:</p>
 <table class="caption-top table">
@@ -902,24 +867,25 @@ Variances:
 <col style="width: 20%">
 <col style="width: 79%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Item name</th>
 <th>Description</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td>ST005Q01JA</td>
-<td>What is the <highest level="" of="" schooling=""> completed by your mother?</highest></td>
+<td>What is the <highest level="" of="" schooling=""> completed by your mother?</highest>
+</td>
 </tr>
 <tr class="even">
 <td>ST007Q01JA</td>
-<td>What is the <highest level="" of="" schooling=""> completed by your father?</highest></td>
+<td>What is the <highest level="" of="" schooling=""> completed by your father?</highest>
+</td>
 </tr>
 <tr class="odd">
 <td>ST256Q02JA</td>
-<td>In your home: Classic literature (e.g.&nbsp;<shakespeare>)</shakespeare></td>
+<td>In your home: Classic literature (e.g.&nbsp;<shakespeare>)</shakespeare>
+</td>
 </tr>
 <tr class="even">
 <td>ST255Q01JA</td>
@@ -948,7 +914,7 @@ Variances:
 <p>Don’t forget to convert any non-numeric variables to numeric</p>
 <p>:::</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Using ST255Q01JA  How many books are there in your home?</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Using ST255Q01JA  How many books are there in your home?</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a><span class="co"># ST254Q02JA    How many in your home: Computers (desktop computer, portable laptop, or notebook)</span></span>
 <span id="cb24-3"><a href="#cb24-3"></a>USdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, PV1READ, ST255Q01JA, ST254Q02JA)<span class="sc">%&gt;%</span></span>
@@ -961,9 +927,9 @@ Variances:
 <span id="cb24-11"><a href="#cb24-11"></a>model<span class="ot">&lt;-</span><span class="st">"PV1READ ~ ESCS + HOMEPOS + ST255Q01JA+ ST254Q02JA"</span></span>
 <span id="cb24-12"><a href="#cb24-12"></a></span>
 <span id="cb24-13"><a href="#cb24-13"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>USdata)</span>
-<span id="cb24-14"><a href="#cb24-14"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-14"><a href="#cb24-14"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>lavaan 0.6-19 ended normally after 1 iteration
+<pre><code>lavaan 0.6-20 ended normally after 1 iteration
 
   Estimator                                         ML
   Optimization method                           NLMINB
@@ -995,18 +961,16 @@ Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
    .PV1READ        9987.581  218.913   45.623    0.000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="task-2---modelling-a-latent-variable-for-the-home-environment" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="task-2---modelling-a-latent-variable-for-the-home-environment"><span class="header-section-number">1.2.2</span> Task 2 - Modelling a latent variable for the home environment</h3>
+</section><section id="task-2---modelling-a-latent-variable-for-the-home-environment" class="level3" data-number="1.2.2"><h3 data-number="1.2.2" class="anchored" data-anchor-id="task-2---modelling-a-latent-variable-for-the-home-environment">
+<span class="header-section-number">1.2.2</span> Task 2 - Modelling a latent variable for the home environment</h3>
 <div class="question">
 <p>There are a number of variables in the PISA data set that could be used to model the home environment (e.g.&nbsp;Number of books in the home, number of computers, etc.). Using the home environment for UK students as a latent variable, create a model of the home environment.</p>
 </div>
@@ -1014,7 +978,7 @@ Variances:
 <p>Don’t forget to convert any non-numeric variables to numeric</p>
 <p>:::</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Using ST251Q06JA  How many of these items are there at your [home]: Musical instruments (e.g. guitar, piano, [country-specific example])</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Using ST251Q06JA  How many of these items are there at your [home]: Musical instruments (e.g. guitar, piano, [country-specific example])</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="co"># and ST251Q07JA    How many of these items are there at your [home]: Works of art (e.g. paintings, sculptures, [country-specific example])</span></span>
 <span id="cb27-3"><a href="#cb27-3"></a>UKdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb27-4"><a href="#cb27-4"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, ST251Q06JA, ST251Q07JA)<span class="sc">%&gt;%</span></span>
@@ -1025,9 +989,9 @@ Variances:
 <span id="cb27-9"><a href="#cb27-9"></a>model<span class="ot">&lt;-</span><span class="st">"lv =~ ESCS + HOMEPOS + ST251Q06JA + ST251Q07JA "</span></span>
 <span id="cb27-10"><a href="#cb27-10"></a></span>
 <span id="cb27-11"><a href="#cb27-11"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb27-12"><a href="#cb27-12"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-12"><a href="#cb27-12"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>lavaan 0.6-19 ended normally after 23 iterations
+<pre><code>lavaan 0.6-20 ended normally after 23 iterations
 
   Estimator                                         ML
   Optimization method                           NLMINB
@@ -1064,18 +1028,16 @@ Variances:
    .ST251Q07JA        1.263    0.018   71.398    0.000
     lv                0.474    0.011   44.235    0.000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="task-3---building-a-more-complex-latent-varibale-sem" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="task-3---building-a-more-complex-latent-varibale-sem"><span class="header-section-number">1.2.3</span> Task 3 - building a more complex latent varibale SEM</h3>
+</section><section id="task-3---building-a-more-complex-latent-varibale-sem" class="level3" data-number="1.2.3"><h3 data-number="1.2.3" class="anchored" data-anchor-id="task-3---building-a-more-complex-latent-varibale-sem">
+<span class="header-section-number">1.2.3</span> Task 3 - building a more complex latent varibale SEM</h3>
 <div class="question">
 <p>You believe that there are two latent variables underlying UK students’ performance in science - a science self-identity variable (related to the home environment, for example, gender, parents’ level of education) and a cognitive ability variable (indicated by performance in other subjects). Propose a model of science performance based on these two latent variables - linking each latent variable to multiple independent variables. Determine how much variance your model explains</p>
 </div>
@@ -1083,7 +1045,7 @@ Variances:
 <p>Don’t forget to convert any non-numeric variables to numeric and consider scaling the test scores</p>
 <p>:::</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Create a UK data frame with plausible values</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Create a UK data frame with plausible values</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a>UKdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">select</span>(CNT, ESCS, HOMEPOS, ST005Q01JA, ST007Q01JA, PV1READ, PV1SCIE, </span>
 <span id="cb30-4"><a href="#cb30-4"></a>         PV1MATH, ST004D01T)<span class="sc">%&gt;%</span></span>
@@ -1103,9 +1065,9 @@ Variances:
 <span id="cb30-18"><a href="#cb30-18"></a><span class="st">        PV1SCIE ~ lvi + lva"</span></span>
 <span id="cb30-19"><a href="#cb30-19"></a><span class="co"># Fit the model</span></span>
 <span id="cb30-20"><a href="#cb30-20"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>UKdata)</span>
-<span id="cb30-21"><a href="#cb30-21"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-21"><a href="#cb30-21"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>lavaan 0.6-19 ended normally after 34 iterations
+<pre><code>lavaan 0.6-20 ended normally after 34 iterations
 
   Estimator                                         ML
   Optimization method                           NLMINB
@@ -1136,7 +1098,7 @@ Latent Variables:
     ST004D01T         0.001    0.006    0.175    0.861
   lva =~                                              
     PV1MATH           1.000                           
- [ reached getOption("max.print") -- omitted 1 row ]
+ [ reached 'max' / getOption("max.print") -- omitted 1 row ]
 
 Regressions:
                    Estimate  Std.Err  z-value  P(&gt;|z|)
@@ -1159,13 +1121,12 @@ Variances:
    .PV1MATH           0.122    0.004   30.788    0.000
    .PV1READ           0.296    0.005   57.937    0.000
    .PV1SCIE           0.157    0.004   37.728    0.000
- [ reached getOption("max.print") -- omitted 2 rows ]</code></pre>
+ [ reached 'max' / getOption("max.print") -- omitted 2 rows ]</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="A8-SEM_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figure class="figure"><p><img src="A8-SEM_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -1173,246 +1134,248 @@ Variances:
 
 
 
-</section>
-</section>
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+</section></section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-cho2020" class="csl-entry" role="listitem">
 Cho, Gyeongcheol, Heungsun Hwang, Marko Sarstedt, and Christian M. Ringle. 2020. <span>“Cutoff Criteria for Overall Model Fit Indexes in Generalized Structured Component Analysis.”</span> <em>Journal of Marketing Analytics</em> 8 (4): 189–202. <a href="https://doi.org/10.1057/s41270-020-00089-1">https://doi.org/10.1057/s41270-020-00089-1</a>.
 </div>
-</div></section></div></main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1420,187 +1383,162 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
-
 
 
 

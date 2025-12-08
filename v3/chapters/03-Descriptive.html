@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -84,15 +85,17 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-baa83ea22f7c85f46c9cbd6ff4810be6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-408f44cb79879323703c9e228b025f96.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,7 +128,7 @@ div.csl-indent {
 <link rel="stylesheet" href="../css/mastemr.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -133,7 +136,8 @@ div.csl-indent {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/KCL_logo.png" alt="" class="navbar-logo">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MASTEMR</span>
@@ -149,7 +153,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-Descriptive.html">03 Descriptive Statistics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/03-Descriptive.html">03 Descriptive Statistics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -162,6 +166,10 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -176,24 +184,29 @@ div.csl-indent {
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Sessions</span></span>
-  </li>
-        <li class="sidebar-item">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Sessions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01 Introduction</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">02 Introduction to R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
@@ -220,66 +233,56 @@ div.csl-indent {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-Descriptive.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">03 Descriptive Statistics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">04 Introduction to PISA</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-Presentations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05 Presentations</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">06 T-tests</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/08-Writing_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">08 Writing a quantitative report</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">09 Assignment 3 tutorials</span></a>
+ <span class="menu-text">08 Assignment 3 tutorials</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/10-Correlation_and_regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10 Correlation and regression</span></a>
+ <span class="menu-text">09 Correlation and regression</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11 Selecting statistical tools</span></a>
+ <span class="menu-text">10 Selecting statistical tools</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/12-value_of_quant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 The value of quantitative methods</span></a>
-  </div>
-</li>
+      </ul>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -388,7 +391,7 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/03-Descriptive.html">03 Descriptive Statistics</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">03 Descriptive Statistics</h1>
 </div>
@@ -413,12 +416,12 @@ div.csl-indent {
 <p><strong>Getting set up</strong></p>
 <p>Ensure you have the PISA 2022 data frame loaded. If you can see the <code>PISA_2022</code> data frame in your environment window (at the top right of your screen), there is no need to reload.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load the PISA data.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load the PISA data.</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(arrow)</span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_2022_student_subset.parquet]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6"></a>PISA_2022 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[&lt;folder&gt;PISA_2022_student_subset.parquet]"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="descriptive-statistics" class="level1" data-number="2">
@@ -484,7 +487,7 @@ Tip
 <div class="callout-body-container callout-body">
 <p>Maybe surprisingly, there is no function to calculate the <em>mode</em> in the <code>tidyverse</code> package. However, you can get one by loading the <code>modeest</code> package and using the most frequent value (<code>mfv</code>) function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Install the modeest package to calculate a mode</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Install the modeest package to calculate a mode</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="fu">library</span>(modeest)</span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="fu">library</span>(tidyverse)</span>
@@ -493,12 +496,12 @@ Tip
 <span id="cb2-7"><a href="#cb2-7"></a><span class="co"># We can look at about number of books in the home (ST255Q01JA)</span></span>
 <span id="cb2-8"><a href="#cb2-8"></a><span class="co"># Then use mfv to find the mode value (note the na.rm=TRUE to avoid NAs)</span></span>
 <span id="cb2-9"><a href="#cb2-9"></a></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="fu">mfv</span>(PISA_2022<span class="sc">$</span>ST255Q01JA, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="fu">mfv</span>(PISA_2022<span class="sc">$</span>ST255Q01JA, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 26-100 books
 11 Levels: There are no books. 1-10 books 11-25 books ... No Response</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># In the whole dataframe, the mode number of books is 26-100 books</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># In the whole dataframe, the mode number of books is 26-100 books</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -517,7 +520,7 @@ Tip
 </div>
 <p>A useful way to get a quick summary of what is in a <code>data.frame</code> is, the <code>summary</code> command. This command outputs the minimum, median, mean, maximum (and 1st and 3rd quartile values, i.e.&nbsp;the values at 25% and 75% of the range). For example, to get a sense of the science score variable (<code>PV1SCIE</code>) we can use:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">summary</span>(PISA_2022<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">summary</span>(PISA_2022<span class="sc">$</span>PV1SCIE)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
     0.0   371.7   444.5   450.5   524.7   895.4 </code></pre>
@@ -540,21 +543,21 @@ Tip
 <div class="callout-body-container callout-body">
 <p>Note, in R the <code>=</code> and <code>==</code> operators have slightly different meanings. <code>=</code> can be used to assign a value, for example to set x to 10.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>x <span class="ot">=</span> <span class="dv">10</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>x <span class="ot">=</span> <span class="dv">10</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10</code></pre>
 </div>
 </div>
 <p>By contrast, when checking is two items are equal, use <code>==</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Colour=</span><span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Green"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Colour=</span><span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Green"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>))</span>
 <span id="cb9-2"><a href="#cb9-2"></a>                <span class="co"># Create a data frame of colours</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a></span>
 <span id="cb9-4"><a href="#cb9-4"></a>x <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span></span>
 <span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">filter</span>(Colour<span class="sc">==</span><span class="st">"Red"</span>) <span class="co"># Check if x is equalt to "Red" not the use of ==</span></span>
 <span id="cb9-6"><a href="#cb9-6"></a></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="fu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Colour
 1    Red</code></pre>
@@ -565,13 +568,13 @@ Tip
 <p>In line 4 below, we <code>filter</code> for UK responses. Note that, in <code>filter</code> we use <code>==</code> rather than <code>=</code>.</p>
 <p>Then we use <code>summarise</code> to calculate the means of the variables we are interested in, for example, students science (<code>PV1SCIE</code>), mathematics (<code>PV1MATH</code>) and reading scores. We can also find the total number of students entered in the UK, using <code>n()</code>, which counts the number of rows.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1"></a><span class="co"># Selecting only UK responses and finding the mean of various variables</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1"></a><span class="co"># Selecting only UK responses and finding the mean of various variables</span></span>
 <span id="annotated-cell-3-2"><a href="#annotated-cell-3-2"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3"></a>PISA_2022 <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-5" class="code-annotation-target"><a href="#annotated-cell-3-5"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci =</span> <span class="fu">mean</span>(PV1SCIE),</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-3-6" class="code-annotation-target"><a href="#annotated-cell-3-6"></a>            <span class="at">MeanMath =</span> <span class="fu">mean</span>(PV1MATH),</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-3-7" class="code-annotation-target"><a href="#annotated-cell-3-7"></a>            <span class="at">Total =</span> <span class="fu">n</span>())</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-3-7" class="code-annotation-target"><a href="#annotated-cell-3-7"></a>            <span class="at">Total =</span> <span class="fu">n</span>())</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
@@ -616,11 +619,11 @@ Tip
 <p>If you want to filter by a different vector (that is, a different column in the table), don’t forget to change the name of the vector in the filter command, for example, to find the mean mathematics and science scores, and total number of pupils who are girls (using the gender variable <code>ST004D01T</code>). We change the vector to filer on to <code>ST004D01T</code> and the condition to <code>Female</code>.</p>
 <p>Don’t forget to use the <code>%&gt;%</code> and the <code>==</code> in <code>filter</code>!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb12-2"><a href="#cb12-2"></a> <span class="fu">filter</span>(ST004D01T <span class="sc">==</span> <span class="st">"Female"</span>)<span class="sc">%&gt;%</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci=</span> <span class="fu">mean</span>(PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>), </span>
 <span id="cb12-4"><a href="#cb12-4"></a>            <span class="at">MeanMath =</span> <span class="fu">mean</span>(PV1MATH, <span class="at">na.rm=</span><span class="cn">TRUE</span>), </span>
-<span id="cb12-5"><a href="#cb12-5"></a>            <span class="at">Total=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-5"><a href="#cb12-5"></a>            <span class="at">Total=</span><span class="fu">n</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   MeanSci MeanMath  Total
@@ -630,11 +633,11 @@ Tip
 </div>
 <p>You can add multiple filters by using the <code>&amp;</code> operator which means AND. Later on we will also meet <code>|</code> (the vertical line symbol), which means OR. So if you want to find the scores of male students in the UK you would use:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb14-2"><a href="#cb14-2"></a> <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span> <span class="sc">&amp;</span> ST004D01T <span class="sc">==</span> <span class="st">"Male"</span>)<span class="sc">%&gt;%</span></span>
 <span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci =</span> <span class="fu">mean</span>(PV1SCIE), </span>
 <span id="cb14-4"><a href="#cb14-4"></a>            <span class="at">MeanMath =</span> <span class="fu">mean</span>(PV1MATH), </span>
-<span id="cb14-5"><a href="#cb14-5"></a>            <span class="at">Total =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-5"><a href="#cb14-5"></a>            <span class="at">Total =</span> <span class="fu">n</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   MeanSci MeanMath Total
@@ -646,12 +649,12 @@ Tip
 </div>
 <p>Often we are interested in summary data across multiple subgroups. We can then tell R to <code>group_by</code>, for example, <code>group_by(CNT)</code>, to get a summary of data for subgroups.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a><span class="co"># Grouping by country and summarising</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a><span class="co"># Grouping by country and summarising</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2"></a>PISA_2022 <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3"></a> <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci =</span> <span class="fu">mean</span>(PV1SCIE),</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-5" class="code-annotation-target"><a href="#annotated-cell-4-5"></a>            <span class="at">MeanMath =</span> <span class="fu">mean</span>(PV1MATH),</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6"></a>            <span class="at">Total =</span> <span class="fu">n</span>())</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6"></a>            <span class="at">Total =</span> <span class="fu">n</span>())</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
@@ -678,19 +681,88 @@ Tip
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 80 × 4
-   CNT                  MeanSci MeanMath Total
-   &lt;fct&gt;                  &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
- 1 Albania                 376.     368.  6129
- 2 United Arab Emirates    436.     434. 24600
- 3 Argentina               415.     389. 12111
- 4 Australia               508.     487. 13437
- 5 Austria                 494.     491.  6151
- 6 Belgium                 495.     494.  8286
- 7 Bulgaria                422.     418.  6107
- 8 Brazil                  406.     380. 10798
- 9 Brunei Darussalam       445.     440.  5576
-10 Canada                  499.     484. 23073
-# ℹ 70 more rows</code></pre>
+   CNT                          MeanSci MeanMath Total
+   &lt;fct&gt;                          &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
+ 1 Albania                         376.     368.  6129
+ 2 United Arab Emirates            436.     434. 24600
+ 3 Argentina                       415.     389. 12111
+ 4 Australia                       508.     487. 13437
+ 5 Austria                         494.     491.  6151
+ 6 Belgium                         495.     494.  8286
+ 7 Bulgaria                        422.     418.  6107
+ 8 Brazil                          406.     380. 10798
+ 9 Brunei Darussalam               445.     440.  5576
+10 Canada                          499.     484. 23073
+11 Switzerland                     501.     507.  6829
+12 Chile                           463.     429.  6488
+13 Colombia                        421.     391.  7804
+14 Costa Rica                      411.     384.  6113
+15 Czech Republic                  511.     500.  8460
+16 Germany                         495.     478.  6116
+17 Denmark                         480.     478.  6200
+18 Dominican Republic              362.     340.  6868
+19 Spain                           493.     481. 30800
+20 Estonia                         527.     513.  6392
+21 Finland                         498.     475. 10239
+22 France                          481.     468.  6770
+23 United Kingdom                  492.     483. 12972
+24 Georgia                         386.     390.  6583
+25 Greece                          445.     434.  6403
+26 Guatemala                       375.     346.  5190
+27 Hong Kong (China)               525.     545.  5907
+28 Croatia                         483.     463.  6135
+29 Hungary                         492.     481.  6198
+30 Indonesia                       395.     379. 13439
+31 Ireland                         504.     493.  5569
+32 Iceland                         448.     458.  3360
+33 Israel                          464.     457.  6251
+34 Italy                           481.     475. 10552
+35 Jamaica                         396.     370.  3873
+36 Jordan                          375.     359.  7799
+37 Japan                           546.     536.  5760
+38 Kazakhstan                      441.     446. 19769
+39 Cambodia                        340.     326.  5279
+40 Korea                           531.     531.  6454
+41 Kosovo                          354.     353.  6027
+42 Lithuania                       480.     472.  7257
+43 Latvia                          493.     482.  5373
+44 Macao (China)                   543.     552.  4384
+45 Morocco                         363.     364.  6867
+46 Republic of Moldova             417.     416.  6235
+47 Mexico                          411.     395.  6288
+48 North Macedonia                 382.     390.  6610
+49 Malta                           470.     469.  3127
+50 Montenegro                      405.     406.  5793
+51 Mongolia                        411.     425.  6999
+52 Malaysia                        417.     409.  7069
+53 Netherlands                     487.     491.  5046
+54 Norway                          479.     468.  6611
+55 New Zealand                     505.     478.  4682
+56 Panama                          385.     354.  4544
+57 Peru                            411.     394.  6968
+58 Philippines                     354.     354.  7193
+59 Poland                          505.     495.  6011
+60 Portugal                        488.     476.  6793
+61 Paraguay                        372.     341.  5084
+62 Palestinian Authority           367.     364.  7905
+63 Qatar                           429.     411.  7676
+64 Baku (Azerbaijan)               382.     399.  7720
+65 Ukrainian regions (18 of 27)    454.     444.  3876
+66 Romania                         436.     435.  7364
+67 Saudi Arabia                    390.     390.  6928
+68 Singapore                       561.     574.  6606
+69 El Salvador                     375.     346.  6705
+70 Serbia                          447.     439.  6413
+71 Slovak Republic                 467.     469.  5824
+72 Slovenia                        487.     472.  6721
+73 Sweden                          494.     482.  6072
+74 Chinese Taipei                  527.     534.  5857
+75 Thailand                        429.     415.  8495
+76 Türkiye                         476.     452.  7250
+77 Uruguay                         433.     409.  6618
+78 United States                   498.     462.  4552
+79 Uzbekistan                      355.     364.  7293
+80 Viet Nam                        473.     469.  6068</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -705,12 +777,12 @@ Tip
 <div class="callout-body-container callout-body">
 <p>In the console, R will truncate tables, so you might only see the first 10 countries of 80 in the data frame using the code above. One solution to this is to put the results of the summarising into a new data frame (e.g.&nbsp;<code>summarydata</code>) which you can then view from the environment window (and use for future processing). To do this you use the assign operator <code>&lt;-</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Grouping by country and summarising, and asigning to a new data frame</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Grouping by country and summarising, and asigning to a new data frame</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>summarydata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb17-3"><a href="#cb17-3"></a> <span class="fu">group_by</span>(CNT)<span class="sc">%&gt;%</span> </span>
 <span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">summarise</span>(<span class="at">MeanSci =</span> <span class="fu">mean</span>(PV1SCIE), </span>
 <span id="cb17-5"><a href="#cb17-5"></a>            <span class="at">MeanMath =</span> <span class="fu">mean</span>(PV1MATH), </span>
-<span id="cb17-6"><a href="#cb17-6"></a>            <span class="at">Total =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-6"><a href="#cb17-6"></a>            <span class="at">Total =</span> <span class="fu">n</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -735,7 +807,7 @@ Tip
 <p>In the example below, we will use <code>select</code> which creates a subset of a table by columns. For example, if I want to create a table of gender type by country, we need only include two columns from the PISA_2022 data frame: country (<code>CNT</code>) and gender (<code>ST004D01T</code>). We use the command <code>select</code> to focus on those two: <code>select(CNT, ST004D01T)</code>.</p>
 <p>To create a summary table, intuitively, we use the table function. There are two additional actions we need to do. First, because we piped the whole PISA_2022 data frame, if we apply table, then even though we have filtered by the UK, the data frame retains levels for all the other countries. If we don’t remove these levels, we will get a large data frame with many zero entries for the countries we have filtered out. The function droplevels() removes the levels for other countries (i.e.&nbsp;everything other than the United Kingdom). Finally, the output of table is a datatype called (appropriately) a table. Data frames are more easily manipulated so we convert the table into a data frame using as.data.frame(table(SchoolType)).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1"></a><span class="co"># Creating a summary data frame</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1"></a><span class="co"># Creating a summary data frame</span></span>
 <span id="annotated-cell-5-2"><a href="#annotated-cell-5-2"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-5-3" class="code-annotation-target"><a href="#annotated-cell-5-3"></a>GenderUK <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-5-4" class="code-annotation-target"><a href="#annotated-cell-5-4"></a>  <span class="fu">select</span>(CNT, ST004D01T) <span class="sc">%&gt;%</span></span>
@@ -744,7 +816,7 @@ Tip
 <span id="annotated-cell-5-7"><a href="#annotated-cell-5-7"></a></span>
 <span id="annotated-cell-5-8"><a href="#annotated-cell-5-8"></a><span class="co"># Create a summary table</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-5-9" class="code-annotation-target"><a href="#annotated-cell-5-9"></a>GenderUKSummary <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(GenderUK))</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-5-10" class="code-annotation-target"><a href="#annotated-cell-5-10"></a>GenderUKSummary</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-5-10" class="code-annotation-target"><a href="#annotated-cell-5-10"></a>GenderUKSummary</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
@@ -783,11 +855,11 @@ Tip
 <p>It might now be interesting to know what percentage the counts of genders represent. To achieve that, first we create a variable that is the total number of genders (to calculate the percentage). This variable is total, and we perform a simple sum on the count column - GenderUKSummary$Freq.</p>
 <p>We then use the mutate function. mutate allows you to add a new column to a table. You pipe the data frame to mutate, and begin by giving the name of the new column you want, in this case the percentage of schools of each type, we will call this PerSch mutate(PerSch=. Then we set the value of that column to the percentage calculation: 100*(Freq/total). The Frequency count for each column will be multiplied by 100 and divided by the total.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1"></a><span class="co"># Adding a percentage column</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1"></a><span class="co"># Adding a percentage column</span></span>
 <span id="annotated-cell-6-2"><a href="#annotated-cell-6-2"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3"></a>total <span class="ot">&lt;-</span> <span class="fu">sum</span>(GenderUKSummary<span class="sc">$</span>Freq)</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4"></a>GenderUKSummary <span class="sc">%&gt;%</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5"></a>  <span class="fu">mutate</span>(<span class="at">PerSch =</span> <span class="dv">100</span><span class="sc">*</span>(Freq <span class="sc">/</span> total))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5"></a>  <span class="fu">mutate</span>(<span class="at">PerSch =</span> <span class="dv">100</span><span class="sc">*</span>(Freq <span class="sc">/</span> total))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
@@ -824,10 +896,10 @@ Tip
 <div class="callout-body-container callout-body">
 <p>You can use the <code>round</code> function to display a given number of decimal places. Here, I have used <code>round( ,2)</code> to limit the percentage calculation to two significant figures.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Calculating Percentages of students on EHC plans</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Calculating Percentages of students on EHC plans</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>total<span class="ot">=</span><span class="fu">sum</span>(GenderUKSummary<span class="sc">$</span>Freq)</span>
 <span id="cb20-3"><a href="#cb20-3"></a>GenderUKSummary<span class="sc">%&gt;%</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">mutate</span>(<span class="at">PerSch =</span> <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>(Freq <span class="sc">/</span> total),<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">mutate</span>(<span class="at">PerSch =</span> <span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span>(Freq <span class="sc">/</span> total),<span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             CNT ST004D01T Freq PerSch
 1 United Kingdom    Female 6397  49.31
@@ -839,7 +911,7 @@ Tip
 </section>
 <section id="graphing" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Graphing</h1>
-<p>For more details on graphing, see <a href="../chapters/02-4-Intro_to_graphs.html#sec-graphing">§ggplot</a></p>
+<p>For more details on graphing, see <strong>?@sec-graphing</strong></p>
 <section id="bar-graphs" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="bar-graphs"><span class="header-section-number">5.1</span> Bar graphs</h2>
 <p>Imagine we want to plot a graph of how many digital devices with screens students report in their home <code>ST253Q01JA</code> in the UK.</p>
@@ -849,7 +921,7 @@ Tip
 <p>To plot a graph, you call ggplot and specify the data you want to use for the graph (in our case, the new <code>data.frame</code> we have created, <code>DDplot</code>).</p>
 <p>The next layer of ggplot is the aesthetics (<code>aes</code>), i.e., what our graph will look like. First, we tell ggplot what data we want our <code>y</code> axis to represent, in this case the number of digital devices students have in their home <code>ST253Q01JA</code> . Finally, we specify we want a bar graph using <code>geom_bar()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1"></a><span class="co"># Graphing the numbers of digital devices students have</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1"></a><span class="co"># Graphing the numbers of digital devices students have</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2"></a>DDplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-7-3" class="code-annotation-target"><a href="#annotated-cell-7-3"></a>  <span class="fu">select</span>(CNT, ST253Q01JA) <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
@@ -857,7 +929,7 @@ Tip
 <span id="annotated-cell-7-6"><a href="#annotated-cell-7-6"></a><span class="co"># use the DDplot data to create a graph</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-7-7" class="code-annotation-target"><a href="#annotated-cell-7-7"></a><span class="fu">ggplot</span>(<span class="at">data =</span> DDplot,</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-7-8" class="code-annotation-target"><a href="#annotated-cell-7-8"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ST253Q01JA)) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-7-9" class="code-annotation-target"><a href="#annotated-cell-7-9"></a>  <span class="fu">geom_bar</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-7-9" class="code-annotation-target"><a href="#annotated-cell-7-9"></a>  <span class="fu">geom_bar</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
@@ -897,14 +969,14 @@ Tip
 <p>That is a good first attempt, but there are some aspects we will want to tidy up.</p>
 <p>You can modify the graph by adding axis labels and titles using <code>xlab("label")</code>, <code>ylab("label")</code>, and <code>ggtitle("title")</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1"></a><span class="co"># use digital device data to create a graph</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1"></a><span class="co"># use digital device data to create a graph</span></span>
 <span id="annotated-cell-8-2"><a href="#annotated-cell-8-2"></a><span class="co"># Adding axis labels and a title</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-8-3" class="code-annotation-target"><a href="#annotated-cell-8-3"></a><span class="fu">ggplot</span>(<span class="at">data =</span> DDplot,</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-8-4" class="code-annotation-target"><a href="#annotated-cell-8-4"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ST253Q01JA)) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-8-5" class="code-annotation-target"><a href="#annotated-cell-8-5"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-8-6" class="code-annotation-target"><a href="#annotated-cell-8-6"></a>  <span class="fu">xlab</span>(<span class="st">"How many digital devices do you have?"</span>) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-8-7" class="code-annotation-target"><a href="#annotated-cell-8-7"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-8-8" class="code-annotation-target"><a href="#annotated-cell-8-8"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-8-8" class="code-annotation-target"><a href="#annotated-cell-8-8"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
@@ -943,14 +1015,14 @@ Tip
 </div>
 <p>You can add colour, by specifying that the fill of the bars should be by the value of <code>IC009Q11NA</code> in the aesthetics: <code>aes(x=IC009Q11NA, fill=IC009Q11NA)</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a><span class="co"># Adding axis labels and a title</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a><span class="co"># Adding axis labels and a title</span></span>
 <span id="annotated-cell-9-2"><a href="#annotated-cell-9-2"></a><span class="co"># And adding colour</span></span>
 <span id="annotated-cell-9-3"><a href="#annotated-cell-9-3"></a><span class="fu">ggplot</span>(<span class="at">data =</span> DDplot,</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-9-4" class="code-annotation-target"><a href="#annotated-cell-9-4"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ST253Q01JA, <span class="at">fill =</span> ST253Q01JA)) <span class="sc">+</span></span>
 <span id="annotated-cell-9-5"><a href="#annotated-cell-9-5"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="annotated-cell-9-6"><a href="#annotated-cell-9-6"></a>  <span class="fu">xlab</span>(<span class="st">"How many digital devices do you have?"</span>) <span class="sc">+</span></span>
 <span id="annotated-cell-9-7"><a href="#annotated-cell-9-7"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-9-8"><a href="#annotated-cell-9-8"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-9-8"><a href="#annotated-cell-9-8"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
@@ -969,7 +1041,7 @@ Tip
 </div>
 <p>To rotate the text on the x-axis you can add the text: <code>theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))</code>. Inserting <code>\n</code> into the title adds a line break to divide the long title. We can turn the legend off with <code>theme(legend.position = "none")</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1"></a><span class="co"># Rotating axis text and removing legend</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1"></a><span class="co"># Rotating axis text and removing legend</span></span>
 <span id="annotated-cell-10-2"><a href="#annotated-cell-10-2"></a></span>
 <span id="annotated-cell-10-3"><a href="#annotated-cell-10-3"></a><span class="fu">ggplot</span>(<span class="at">data =</span> DDplot,</span>
 <span id="annotated-cell-10-4"><a href="#annotated-cell-10-4"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ST253Q01JA, <span class="at">fill =</span> ST253Q01JA)) <span class="sc">+</span></span>
@@ -978,7 +1050,7 @@ Tip
 <span id="annotated-cell-10-7"><a href="#annotated-cell-10-7"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-10-8" class="code-annotation-target"><a href="#annotated-cell-10-8"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability </span><span class="sc">\n</span><span class="st"> of digital devices in the UK"</span>) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-10-9" class="code-annotation-target"><a href="#annotated-cell-10-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-10-10" class="code-annotation-target"><a href="#annotated-cell-10-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-10-10" class="code-annotation-target"><a href="#annotated-cell-10-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-10" data-target-annotation="6">6</dt>
@@ -1005,7 +1077,7 @@ Tip
 </div>
 <p>You make wish to plot multiple series, for example, the interactive whiteboard data reported by boys and girls. In that case, we need to include the gender vector <code>ST004D01T</code> in the data frame to plot <code>DDplot</code>. To highlight the difference between boys and girls, in the aesthetics we set the fill colour by the gender variable: <code>fill=ST004D01T</code>. Finally, we need to tell ggplot to plot the bars side-by-side, rather than stacking them - you do this by specifying <code>position = position_dodge2()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-11"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-11-1"><a href="#annotated-cell-11-1"></a><span class="co"># Graphing the number of digital devices students have by gender</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-11"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-11-1"><a href="#annotated-cell-11-1"></a><span class="co"># Graphing the number of digital devices students have by gender</span></span>
 <span id="annotated-cell-11-2"><a href="#annotated-cell-11-2"></a></span>
 <span id="annotated-cell-11-3"><a href="#annotated-cell-11-3"></a>DDplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-11-4" class="code-annotation-target"><a href="#annotated-cell-11-4"></a>  <span class="fu">select</span>(CNT, ST253Q01JA, ST004D01T) <span class="sc">%&gt;%</span></span>
@@ -1019,7 +1091,7 @@ Tip
 <span id="annotated-cell-11-12"><a href="#annotated-cell-11-12"></a>  <span class="fu">xlab</span>(<span class="st">"How many digital devices do you have?"</span>) <span class="sc">+</span></span>
 <span id="annotated-cell-11-13"><a href="#annotated-cell-11-13"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>) <span class="sc">+</span></span>
 <span id="annotated-cell-11-14"><a href="#annotated-cell-11-14"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability </span><span class="sc">\n</span><span class="st"> of digital devices in the UK"</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-11-15"><a href="#annotated-cell-11-15"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-11-15"><a href="#annotated-cell-11-15"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-11" data-target-annotation="2">2</dt>
@@ -1038,7 +1110,7 @@ Tip
 </div>
 <p>If you take `<code>position = position_dodge2()</code> out, ggplot will default to stacking the bars. The long response for no devices (<code>"There are no &lt;digital devices&gt; with screens."</code>) is not terribly aesthetically pleasing. I will use <code>mutate</code> to change it - <code>recode</code> changes all the <code>"There are no &lt;digital devices&gt; with screens."</code> to <code>"None"</code> in the vector <code>ST253Q01JA</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Graphing the number of digital devices students have</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Graphing the number of digital devices students have</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a>DDplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">select</span>(CNT, ST253Q01JA, ST004D01T) <span class="sc">%&gt;%</span></span>
 <span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
@@ -1055,7 +1127,7 @@ Tip
 <span id="cb22-15"><a href="#cb22-15"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb22-16"><a href="#cb22-16"></a>  <span class="fu">xlab</span>(<span class="st">"How many digital devices do you have"</span>) <span class="sc">+</span></span>
 <span id="cb22-17"><a href="#cb22-17"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>) <span class="sc">+</span></span>
-<span id="cb22-18"><a href="#cb22-18"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-18"><a href="#cb22-18"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1066,7 +1138,7 @@ Tip
 </div>
 <p>You can add text, for example the counts, to the graphs, using <code>geom_text</code>. We set the <code>label</code> to <code>after_stat(count)</code>and <code>stat=count</code>. Because the bars have been positioned using <code>position_dodge</code>, you need to do the same for the labels. <code>vjust=-0.5</code> sets the height of the label over the bar.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-13-1"><a href="#annotated-cell-13-1"></a><span class="co"># Graphing the number of students who have digital devices by gender</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-13-1"><a href="#annotated-cell-13-1"></a><span class="co"># Graphing the number of students who have digital devices by gender</span></span>
 <span id="annotated-cell-13-2"><a href="#annotated-cell-13-2"></a>DDplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-13-3"><a href="#annotated-cell-13-3"></a>  <span class="fu">select</span>(CNT, ST253Q01JA, ST004D01T) <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-13-4"><a href="#annotated-cell-13-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
@@ -1084,7 +1156,7 @@ Tip
 <span id="annotated-cell-13-16"><a href="#annotated-cell-13-16"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>) <span class="sc">+</span></span>
 <span id="annotated-cell-13-17"><a href="#annotated-cell-13-17"></a>  <span class="fu">ggtitle</span>(<span class="st">"Counts of availability of digital devices in the UK"</span>) <span class="sc">+</span></span>
 <span id="annotated-cell-13-18"><a href="#annotated-cell-13-18"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">after_stat</span>(count)), <span class="at">stat =</span> <span class="st">"count"</span>,</span>
-<span id="annotated-cell-13-19"><a href="#annotated-cell-13-19"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.9</span>), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">3</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-13-19"><a href="#annotated-cell-13-19"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.9</span>), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">3</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-13" data-target-annotation="6">6</dt>
@@ -1110,7 +1182,7 @@ Tip
 <p>A above, we first want to create a <code>data.frame</code> to plot - in this case we have called it <code>plotdata</code>. We <code>select</code> only the columns we need (<code>PV1MATH</code>, <code>PV1SCIE</code>, and <code>CNT</code> to <code>filter</code> for the UK), and then <code>filter</code> for the UK.</p>
 <p>We use the ggplot function, specifying <code>data = plotdata</code> (i.e.&nbsp;we want to plot the data in the specified data frame). As with <code>geom_bar</code>, we can use <code>ggplot</code> and first specify the data we want to plot (<code>ggplot(data = plotdata,</code>). Next, we set the aesthetic variables (<code>aes</code>) - to keep things simple, we will set only the <code>x</code> and <code>y</code> variables. Then we call <code>geom_point</code> to plot the points as a scatter graph.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1"></a><span class="co"># Filter to create a data frame of UK scores in science and mathematics</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-14-1"><a href="#annotated-cell-14-1"></a><span class="co"># Filter to create a data frame of UK scores in science and mathematics</span></span>
 <span id="annotated-cell-14-2"><a href="#annotated-cell-14-2"></a></span>
 <span id="annotated-cell-14-3"><a href="#annotated-cell-14-3"></a>plotdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-14-4" class="code-annotation-target"><a href="#annotated-cell-14-4"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
@@ -1120,7 +1192,7 @@ Tip
 <span id="annotated-cell-14-8"><a href="#annotated-cell-14-8"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-14-9" class="code-annotation-target"><a href="#annotated-cell-14-9"></a><span class="fu">ggplot</span>(<span class="at">data =</span> plotdata,</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-14-10" class="code-annotation-target"><a href="#annotated-cell-14-10"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">y =</span> PV1SCIE)) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-14-11" class="code-annotation-target"><a href="#annotated-cell-14-11"></a>  <span class="fu">geom_point</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-14-11" class="code-annotation-target"><a href="#annotated-cell-14-11"></a>  <span class="fu">geom_point</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-14" data-target-annotation="2">2</dt>
@@ -1155,7 +1227,7 @@ Tip
 </div>
 <p>We can make things more pleasing by adding more features. For example, we can add colour (<code>geom_point(colour = "blue")</code>) and rename the axes <code>labs(x = "Mathematics score", y = "Science score")</code>. Note when adding to <code>ggplot</code>, the <code>+</code> should come at the end of the line before the new addition to avoid an error.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-15"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-15-1"><a href="#annotated-cell-15-1"></a><span class="co"># Filter to create a data frame of UK scores in science and mathematics</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-15"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-15-1"><a href="#annotated-cell-15-1"></a><span class="co"># Filter to create a data frame of UK scores in science and mathematics</span></span>
 <span id="annotated-cell-15-2"><a href="#annotated-cell-15-2"></a>plotdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-15-3"><a href="#annotated-cell-15-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-15-4"><a href="#annotated-cell-15-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
@@ -1165,7 +1237,7 @@ Tip
 <span id="annotated-cell-15-8"><a href="#annotated-cell-15-8"></a><span class="fu">ggplot</span>(<span class="at">data =</span> plotdata,</span>
 <span id="annotated-cell-15-9"><a href="#annotated-cell-15-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">y =</span> PV1SCIE)) <span class="sc">+</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-15" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-15-10" class="code-annotation-target"><a href="#annotated-cell-15-10"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-15" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-15-11" class="code-annotation-target"><a href="#annotated-cell-15-11"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Mathematics Score"</span>, <span class="at">y =</span> <span class="st">"Science Score"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-15" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-15-11" class="code-annotation-target"><a href="#annotated-cell-15-11"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Mathematics Score"</span>, <span class="at">y =</span> <span class="st">"Science Score"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-15" data-target-annotation="6">6</dt>
@@ -1188,7 +1260,7 @@ Tip
 </div>
 <p>We can also add a line using (<code>geom_smooth(method='lm')</code>) - here <code>lm</code> specifies a linear plot (i.e.&nbsp;a straight line).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-16"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-16-1"><a href="#annotated-cell-16-1"></a><span class="co"># Filter to create a data frame of UK scores in science and mathematics</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-16"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-16-1"><a href="#annotated-cell-16-1"></a><span class="co"># Filter to create a data frame of UK scores in science and mathematics</span></span>
 <span id="annotated-cell-16-2"><a href="#annotated-cell-16-2"></a></span>
 <span id="annotated-cell-16-3"><a href="#annotated-cell-16-3"></a>plotdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-16-4"><a href="#annotated-cell-16-4"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH)<span class="sc">%&gt;%</span></span>
@@ -1200,7 +1272,7 @@ Tip
 <span id="annotated-cell-16-10"><a href="#annotated-cell-16-10"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PV1MATH, <span class="at">y =</span> PV1SCIE)) <span class="sc">+</span></span>
 <span id="annotated-cell-16-11"><a href="#annotated-cell-16-11"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
 <span id="annotated-cell-16-12"><a href="#annotated-cell-16-12"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Mathematics Score"</span>, <span class="at">y =</span> <span class="st">"Science Score"</span>) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-16" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-16-13" class="code-annotation-target"><a href="#annotated-cell-16-13"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-16" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-16-13" class="code-annotation-target"><a href="#annotated-cell-16-13"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-16" data-target-annotation="8">8</dt>
@@ -1219,7 +1291,7 @@ Tip
 </div>
 <p>We can also change the colour of the points by a variable in the data frame - for example by gender (<code>aes(colour=ST004D01T</code>) - NB In order to change colour by gender, the gender variable (<code>ST0040D01T</code>) must be included in the data set to plot. We can vary the size of points and make them slightly transparent (their alpha level): <code>geom_point(alpha=0.4, size=0.6)</code>, and move the legend to the bottom (<code>theme(legend.position = "bottom")</code>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-17"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-17-1"><a href="#annotated-cell-17-1"></a><span class="co"># Create a data set of UK maths and science scores including gender</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-17"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-17-1"><a href="#annotated-cell-17-1"></a><span class="co"># Create a data set of UK maths and science scores including gender</span></span>
 <span id="annotated-cell-17-2"><a href="#annotated-cell-17-2"></a></span>
 <span id="annotated-cell-17-3"><a href="#annotated-cell-17-3"></a>plotdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="annotated-cell-17-4"><a href="#annotated-cell-17-4"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1MATH, ST004D01T) <span class="sc">%&gt;%</span></span>
@@ -1232,7 +1304,7 @@ Tip
 <span id="annotated-cell-17-11"><a href="#annotated-cell-17-11"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Mathematics Score"</span>, <span class="at">y=</span><span class="st">"Science Score"</span>) <span class="sc">+</span></span>
 <span id="annotated-cell-17-12"><a href="#annotated-cell-17-12"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>)) <span class="sc">+</span></span>
 <span id="annotated-cell-17-13"><a href="#annotated-cell-17-13"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-17-14"><a href="#annotated-cell-17-14"></a>  <span class="fu">theme</span>(<span class="at">legend.title =</span> <span class="fu">element_blank</span>())</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-17-14"><a href="#annotated-cell-17-14"></a>  <span class="fu">theme</span>(<span class="at">legend.title =</span> <span class="fu">element_blank</span>())</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-17" data-target-annotation="6">6</dt>
@@ -1294,7 +1366,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Using the command line</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Using the command line</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="co"># a) Find the number of students (i.e. the number of rows) in the PISA 2022 data frame</span></span>
 <span id="cb23-3"><a href="#cb23-3"></a></span>
 <span id="cb23-4"><a href="#cb23-4"></a><span class="fu">nrow</span>(PISA_2022)</span>
@@ -1316,7 +1388,7 @@ Tip
 <span id="cb23-20"><a href="#cb23-20"></a><span class="co"># This column contains students' birth months</span></span>
 <span id="cb23-21"><a href="#cb23-21"></a><span class="co"># You can find out the subtitle of columns using</span></span>
 <span id="cb23-22"><a href="#cb23-22"></a></span>
-<span id="cb23-23"><a href="#cb23-23"></a><span class="fu">attributes</span>(PISA_2022<span class="sc">$</span>ST003D02T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-23"><a href="#cb23-23"></a><span class="fu">attributes</span>(PISA_2022<span class="sc">$</span>ST003D02T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1336,13 +1408,13 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Using the command line</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Using the command line</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a></span>
 <span id="cb24-3"><a href="#cb24-3"></a><span class="fu">summary</span>(PISA_2022<span class="sc">$</span>HOMEPOS)</span>
 <span id="cb24-4"><a href="#cb24-4"></a></span>
 <span id="cb24-5"><a href="#cb24-5"></a><span class="fu">summary</span>(PISA_2022<span class="sc">$</span>PV1READ)</span>
 <span id="cb24-6"><a href="#cb24-6"></a></span>
-<span id="cb24-7"><a href="#cb24-7"></a><span class="fu">summary</span>(PISA_2022<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-7"><a href="#cb24-7"></a><span class="fu">summary</span>(PISA_2022<span class="sc">$</span>PV1SCIE)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1371,7 +1443,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Summarising responses in the US and UK and finding means</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Summarising responses in the US and UK and finding means</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a></span>
 <span id="cb25-3"><a href="#cb25-3"></a>PISA_2022 <span class="sc">%&gt;%</span> </span>
 <span id="cb25-4"><a href="#cb25-4"></a> <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"United States"</span>)<span class="sc">%&gt;%</span></span>
@@ -1397,7 +1469,7 @@ Tip
 <span id="cb25-24"><a href="#cb25-24"></a>  <span class="fu">group_by</span>(ST004D01T, CNT)<span class="sc">%&gt;%</span></span>
 <span id="cb25-25"><a href="#cb25-25"></a>  <span class="fu">summarise</span>(<span class="at">MeanMath =</span> <span class="fu">mean</span>(PV1MATH),</span>
 <span id="cb25-26"><a href="#cb25-26"></a>            <span class="at">MaxMath =</span> <span class="fu">max</span>(PV1MATH),</span>
-<span id="cb25-27"><a href="#cb25-27"></a>            <span class="at">MinMath =</span> <span class="fu">min</span>(PV1MATH))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-27"><a href="#cb25-27"></a>            <span class="at">MinMath =</span> <span class="fu">min</span>(PV1MATH))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1419,7 +1491,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Finding the percentage of students who feel happy between lessons in France</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Finding the percentage of students who feel happy between lessons in France</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a></span>
 <span id="cb26-3"><a href="#cb26-3"></a>WellData<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">select</span>(CNT, WB171Q01HA)<span class="sc">%&gt;%</span></span>
@@ -1431,7 +1503,7 @@ Tip
 <span id="cb26-10"><a href="#cb26-10"></a>WellData<span class="ot">&lt;-</span>WellData<span class="sc">%&gt;%</span></span>
 <span id="cb26-11"><a href="#cb26-11"></a>  <span class="fu">mutate</span>(<span class="at">WellData=</span><span class="fu">round</span>((Freq<span class="sc">*</span><span class="dv">100</span> <span class="sc">/</span> Total),<span class="dv">1</span>))</span>
 <span id="cb26-12"><a href="#cb26-12"></a></span>
-<span id="cb26-13"><a href="#cb26-13"></a>WellData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-13"><a href="#cb26-13"></a>WellData</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="question">
@@ -1440,7 +1512,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Finding the percentage of students with no musical instruments in the UK and China</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Finding the percentage of students with no musical instruments in the UK and China</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="co"># Select the relevant variables, filter for the countries and group - dropping levels to cut unnecessary countries</span></span>
 <span id="cb27-3"><a href="#cb27-3"></a>MusicData<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb27-4"><a href="#cb27-4"></a>  <span class="fu">select</span>(CNT, ST251Q06JA)<span class="sc">%&gt;%</span></span>
@@ -1458,7 +1530,7 @@ Tip
 <span id="cb27-16"><a href="#cb27-16"></a><span class="co"># Mutate to add a column with the percentage calculation</span></span>
 <span id="cb27-17"><a href="#cb27-17"></a>MusicData<span class="ot">&lt;-</span>MusicData<span class="sc">%&gt;%</span></span>
 <span id="cb27-18"><a href="#cb27-18"></a>  <span class="fu">mutate</span>(<span class="at">PercComp =</span> <span class="fu">round</span>((Freq<span class="sc">*</span><span class="dv">100</span> <span class="sc">/</span> Total), <span class="dv">1</span>))</span>
-<span id="cb27-19"><a href="#cb27-19"></a>MusicData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-19"><a href="#cb27-19"></a>MusicData</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1485,7 +1557,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># Select country and question data and Filter for the UK and France</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># Select country and question data and Filter for the UK and France</span></span>
 <span id="cb28-2"><a href="#cb28-2"></a>Rumplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">select</span>(CNT, ST038Q08NA) <span class="sc">%&gt;%</span></span>
 <span id="cb28-4"><a href="#cb28-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span><span class="sc">|</span>CNT <span class="sc">==</span> <span class="st">"France"</span>)</span>
@@ -1500,7 +1572,7 @@ Tip
 <span id="cb28-13"><a href="#cb28-13"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
 <span id="cb28-14"><a href="#cb28-14"></a>  <span class="fu">ggtitle</span>(<span class="st">"Spreading rumours: France vs. the UK"</span>)<span class="sc">+</span></span>
 <span id="cb28-15"><a href="#cb28-15"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span>
-<span id="cb28-16"><a href="#cb28-16"></a>  <span class="co"># Rotate axis text</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-16"><a href="#cb28-16"></a>  <span class="co"># Rotate axis text</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="question">
@@ -1511,7 +1583,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Create a data set related to books in Germany and include gender</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Create a data set related to books in Germany and include gender</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a>Bookplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">select</span>(CNT, PA195Q01JA, ST004D01T) <span class="sc">%&gt;%</span></span>
 <span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Germany"</span>)</span>
@@ -1534,7 +1606,7 @@ Tip
 <span id="cb29-21"><a href="#cb29-21"></a>  <span class="co"># To rotate the x-axis text</span></span>
 <span id="cb29-22"><a href="#cb29-22"></a>  <span class="fu">xlab</span>(<span class="st">"Number of books in the home"</span>)<span class="sc">+</span></span>
 <span id="cb29-23"><a href="#cb29-23"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>)<span class="sc">+</span></span>
-<span id="cb29-24"><a href="#cb29-24"></a>  <span class="fu">ggtitle</span>(<span class="st">"Number of books in the home for German students by gender"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-24"><a href="#cb29-24"></a>  <span class="fu">ggtitle</span>(<span class="st">"Number of books in the home for German students by gender"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="question">
@@ -1547,7 +1619,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Create a data set of science scores, and use group_by and summarise to create mean scores by country</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Create a data set of science scores, and use group_by and summarise to create mean scores by country</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a></span>
 <span id="cb30-3"><a href="#cb30-3"></a>Sciplot <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb30-4"><a href="#cb30-4"></a>  <span class="fu">select</span>(CNT, PV1SCIE) <span class="sc">%&gt;%</span></span>
@@ -1559,7 +1631,7 @@ Tip
 <span id="cb30-10"><a href="#cb30-10"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Sciplot,</span>
 <span id="cb30-11"><a href="#cb30-11"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(CNT, <span class="sc">-</span>MeanSci), <span class="at">y =</span> MeanSci, <span class="at">fill =</span> MeanSci)) <span class="sc">+</span></span>
 <span id="cb30-12"><a href="#cb30-12"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb30-13"><a href="#cb30-13"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-13"><a href="#cb30-13"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1573,7 +1645,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE, ESCS)<span class="sc">%&gt;%</span></span>
 <span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span><span class="sc">|</span>CNT <span class="sc">==</span> <span class="st">"Brazil"</span>)</span>
 <span id="cb31-4"><a href="#cb31-4"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
@@ -1584,7 +1656,7 @@ Tip
 <span id="cb31-9"><a href="#cb31-9"></a>       <span class="at">y =</span> <span class="st">"Science Score"</span>)<span class="sc">+</span></span>
 <span id="cb31-10"><a href="#cb31-10"></a>  (<span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>))<span class="sc">+</span></span>
 <span id="cb31-11"><a href="#cb31-11"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)<span class="sc">+</span></span>
-<span id="cb31-12"><a href="#cb31-12"></a>  <span class="fu">labs</span>(<span class="at">CNT =</span> <span class="st">"Country"</span>) <span class="co"># Changes ST004D01T to gender for the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-12"><a href="#cb31-12"></a>  <span class="fu">labs</span>(<span class="at">CNT =</span> <span class="st">"Country"</span>) <span class="co"># Changes ST004D01T to gender for the plot</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="question">
@@ -1595,7 +1667,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>plotdata<span class="ot">&lt;-</span>PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">select</span>(CNT, PV1SCIE, PV1READ, ST004D01T) <span class="sc">%&gt;%</span></span>
 <span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)</span>
 <span id="cb32-4"><a href="#cb32-4"></a><span class="co"># Plot the data as a scatter graph with geom_point()</span></span>
@@ -1605,7 +1677,7 @@ Tip
 <span id="cb32-8"><a href="#cb32-8"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Reading Score"</span>, <span class="at">y =</span> <span class="st">"Science Score"</span>) <span class="sc">+</span></span>
 <span id="cb32-9"><a href="#cb32-9"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>) <span class="sc">+</span></span>
 <span id="cb32-10"><a href="#cb32-10"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)<span class="sc">+</span></span>
-<span id="cb32-11"><a href="#cb32-11"></a>  <span class="fu">labs</span>(<span class="at">colour =</span> <span class="st">"Gender"</span>) <span class="co"># Changes ST004D01T to gender for the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-11"><a href="#cb32-11"></a>  <span class="fu">labs</span>(<span class="at">colour =</span> <span class="st">"Gender"</span>) <span class="co"># Changes ST004D01T to gender for the plot</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="question">
@@ -1621,7 +1693,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Create a data frame of ESCS scores and mathematics scores</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Create a data frame of ESCS scores and mathematics scores</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>plotdata<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">select</span>(CNT, ESCS, PV1MATH)<span class="sc">%&gt;%</span></span>
 <span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">group_by</span>(CNT)<span class="sc">%&gt;%</span> <span class="co"># group_by country</span></span>
@@ -1641,7 +1713,7 @@ Tip
 <span id="cb33-18"><a href="#cb33-18"></a>  <span class="fu">xlab</span>(<span class="st">"Mean ESCS score"</span>)<span class="sc">+</span></span>
 <span id="cb33-19"><a href="#cb33-19"></a>  <span class="fu">ylab</span>(<span class="st">"Mean mathematics score"</span>)<span class="sc">+</span></span>
 <span id="cb33-20"><a href="#cb33-20"></a>  <span class="fu">ggtitle</span>(<span class="st">"Comparison of mean mathematics and mean ESCS score"</span>)<span class="sc">+</span> </span>
-<span id="cb33-21"><a href="#cb33-21"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co"># Hide the legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-21"><a href="#cb33-21"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co"># Hide the legend</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p>:::</p>
@@ -1654,8 +1726,8 @@ Tip
 <p>Frequency plots are often used to show data following a normal distribution, To produce a frequency plot, we need to divide data into counts, each covering a range of data. This is called ‘binning’. There is a choice to be made here, in how large or small to make the divisions (‘bins’) - this can affect how the data looks when graphed.</p>
 <p>For example, to produce a frequency plot of science scores in the UK, we can first run a <code>summary</code> command on <code>PV1SCIE</code> to find the minimum and maximum score:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Find the range of science score</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">summary</span>(PISA_2022<span class="sc">$</span>PV1SCIE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Find the range of science score</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">summary</span>(PISA_2022<span class="sc">$</span>PV1SCIE)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
     0.0   371.7   444.5   450.5   524.7   895.4 </code></pre>
@@ -1664,7 +1736,7 @@ Tip
 <p>If we wanted to plot a frequency chart of heights, we might divide the range of scores (from 0-895.4) into bins of 20 points. To do this we can use the <code>cut(&lt;field&gt;,&lt;breaks&gt;)</code> function within the <code>mutate</code> command on a ‘data.frame’. The <code>&lt;field&gt;</code> specifies the range (i.e.&nbsp;from around 0-900) and <code>&lt;breaks&gt;</code> the size of bins.</p>
 <p>In the example below, we use <code>cut(PV1SCIE, breaks=seq(0,900,20))</code> to create a new vector (column in the table) with the science scores divided up into bins. The specification <code>breaks=seq(0,900,20))</code> sets how the data are divided up - into bins (i.e.&nbsp;groups of respondents) of scores starting at 0 and rising to 900 in steps of 20.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># Creates distribution of science scores</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># Creates distribution of science scores</span></span>
 <span id="cb36-2"><a href="#cb36-2"></a></span>
 <span id="cb36-3"><a href="#cb36-3"></a>binnedsize <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with binned data</span></span>
 <span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">select</span>(PV1SCIE, CNT)<span class="sc">%&gt;%</span> <span class="co"># Select the columns needed</span></span>
@@ -1677,7 +1749,7 @@ Tip
 <span id="cb36-11"><a href="#cb36-11"></a>       <span class="fu">aes</span>(<span class="at">x =</span> BinnedPV1SCIE)) <span class="sc">+</span></span>
 <span id="cb36-12"><a href="#cb36-12"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"dark green"</span>) <span class="sc">+</span></span>
 <span id="cb36-13"><a href="#cb36-13"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb36-14"><a href="#cb36-14"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Number of responses"</span>, <span class="at">x =</span> <span class="st">"Scores range"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-14"><a href="#cb36-14"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Number of responses"</span>, <span class="at">x =</span> <span class="st">"Scores range"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1705,7 +1777,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Creates distribution of schools by size</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Creates distribution of schools by size</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a>binnedsize <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with binned data</span></span>
 <span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">select</span>(PV1MATH, CNT)<span class="sc">%&gt;%</span> <span class="co"># Select the column I need</span></span>
 <span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Malta"</span>)<span class="sc">%&gt;%</span></span>
@@ -1716,7 +1788,7 @@ Tip
 <span id="cb37-9"><a href="#cb37-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> BinnedPV1MATH)) <span class="sc">+</span></span>
 <span id="cb37-10"><a href="#cb37-10"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"orange"</span>) <span class="sc">+</span></span>
 <span id="cb37-11"><a href="#cb37-11"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb37-12"><a href="#cb37-12"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Number of schools"</span>, <span class="at">x =</span> <span class="st">"Pupil range"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-12"><a href="#cb37-12"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Number of schools"</span>, <span class="at">x =</span> <span class="st">"Pupil range"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1738,7 +1810,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Creates distribution of schools by size</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Creates distribution of schools by size</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a>binnedwealth <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span> <span class="co"># Creates a new data frame with binned data</span></span>
 <span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">select</span>(HOMEPOS, CNT)<span class="sc">%&gt;%</span> <span class="co"># Select the column I need</span></span>
 <span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Belarus"</span><span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span>)<span class="sc">%&gt;%</span></span>
@@ -1749,7 +1821,7 @@ Tip
 <span id="cb38-9"><a href="#cb38-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> BinnedHOMEPOS, <span class="at">fill =</span> CNT)) <span class="sc">+</span></span>
 <span id="cb38-10"><a href="#cb38-10"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb38-11"><a href="#cb38-11"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb38-12"><a href="#cb38-12"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Frequency"</span>, <span class="at">x =</span> <span class="st">"Wealth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-12"><a href="#cb38-12"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Frequency"</span>, <span class="at">x =</span> <span class="st">"Wealth"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1758,41 +1830,41 @@ Tip
 <p>As well as graphs, R can also plot data onto maps. The <code>geom_map</code> function will plot a map of a region and you can either plot points (using <code>geom_point</code>) or fill regions by drawing a polygon of the shape of that region (using <code>geom_polygon</code>).</p>
 <p>For example, imagine we created a data frame of the mean science scores of countries in the PISA data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Pipe the total data frame and calculate the mean science scores</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Pipe the total data frame and calculate the mean science scores</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a><span class="co"># To match with another data frame we will use, we will rename CNT to region</span></span>
 <span id="cb39-3"><a href="#cb39-3"></a>WorldSci <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">select</span>(CNT, PV1SCIE) <span class="sc">%&gt;%</span></span>
 <span id="cb39-5"><a href="#cb39-5"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
 <span id="cb39-6"><a href="#cb39-6"></a>  <span class="fu">summarise</span>(<span class="at">meanSci =</span> <span class="fu">mean</span>(PV1SCIE)) <span class="sc">%&gt;%</span></span>
-<span id="cb39-7"><a href="#cb39-7"></a>  <span class="fu">rename</span>(<span class="at">region =</span> CNT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-7"><a href="#cb39-7"></a>  <span class="fu">rename</span>(<span class="at">region =</span> CNT)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In order to plot the data onto a map, colouring the countries by science scores, we need data which gives the coordinates of the edges of the countries. This data is available from the <code>map_data</code> function in <code>ggplot</code>. First we load the latitude and longitude data into a new data frame <code>world_data</code>. In the next steps we will then use <code>left_join</code> to combine it with the science data, but we need to tidy the data to match the PISA data, before we can join the two data sets.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Create a data frame of country latitude and longitude data</span></span>
-<span id="cb40-2"><a href="#cb40-2"></a>world_data <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="at">map =</span> <span class="st">"world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Create a data frame of country latitude and longitude data</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>world_data <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="at">map =</span> <span class="st">"world"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>One quirk of the two data frames (<code>world_data</code> and the PISA data) is that some countries have different names. For example, PISA uses ‘United Kingdom’, but the <code>rworldmap</code> package uses ‘UK’. We can change the names of countries in the PISA <code>data.frame</code> to match those in <code>rworldmap</code>, using the <code>case_when</code> function with <code>mutate</code>. For example, if we want to change all <code>United Kingdom</code> entries to <code>UK</code> we use: <code>mutate(region = case_when(region == "United Kingdom" ~ "UK"</code>. The final part of the <code>case_when</code> sets the default - <code>.default = region</code> - that means if none of the matches are found, then <code>region</code> is set to <code>region</code> - i.e.&nbsp;it is left unchanged.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># The names of two countries in the PISA data frame and world_data data frame don't match (UK/United Kingdom and US/United States). Change the level names in the PISA data to match the world_data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># The names of two countries in the PISA data frame and world_data data frame don't match (UK/United Kingdom and US/United States). Change the level names in the PISA data to match the world_data</span></span>
 <span id="cb41-2"><a href="#cb41-2"></a></span>
 <span id="cb41-3"><a href="#cb41-3"></a> WorldSci <span class="ot">&lt;-</span> WorldSci <span class="sc">%&gt;%</span></span>
 <span id="cb41-4"><a href="#cb41-4"></a>   <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">case_when</span>(</span>
 <span id="cb41-5"><a href="#cb41-5"></a>                       region <span class="sc">==</span> <span class="st">"United Kingdom"</span> <span class="sc">~</span> <span class="st">"UK"</span>,</span>
 <span id="cb41-6"><a href="#cb41-6"></a>                       region <span class="sc">==</span> <span class="st">"United States"</span>  <span class="sc">~</span> <span class="st">"USA"</span>,</span>
-<span id="cb41-7"><a href="#cb41-7"></a>                       <span class="at">.default =</span> region))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-7"><a href="#cb41-7"></a>                       <span class="at">.default =</span> region))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now that the country names in the two data frames match, we can use <code>left_join</code> to combine them.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># Add the country latitude and longitude data to the PISA scores</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># Add the country latitude and longitude data to the PISA scores</span></span>
 <span id="cb42-2"><a href="#cb42-2"></a></span>
-<span id="cb42-3"><a href="#cb42-3"></a>WorldSci <span class="ot">&lt;-</span> <span class="fu">left_join</span>(WorldSci, world_data, <span class="at">by =</span> <span class="st">"region"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-3"><a href="#cb42-3"></a>WorldSci <span class="ot">&lt;-</span> <span class="fu">left_join</span>(WorldSci, world_data, <span class="at">by =</span> <span class="st">"region"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To add labels, you can create a <code>data.frame</code>, with only the country names, and their longitudes and latitudes (the mean of the country longitude and latitude), to use as the labels. You can then add <code>geom_text_repel</code>to add the labels. The <code>repel</code> means the labels won’t overlap. Given the number of countries, using <code>geom_text_repel</code> creates a warning that some labels won’t fit.</p>
 <p>To plot the data, we use <code>ggplot</code>, with the data frame to <code>WorldSci</code>, and the x and y variables set to <code>long</code> and <code>lat</code>, the longitudes and latitudes. We specify that we want to keep the grouping of the data frame (i.e.&nbsp;by country).</p>
 <p>First we use <code>geom_map</code> to plot a blank map using the data - this will be the base for the highlighted countries. In the <code>aes</code> we give the longitudes and latitudes, and, as we want a blank map, set the <code>fill</code> to white and the line <code>colour</code> to black.</p>
 <p>Finally, we use <code>geom_polygon</code> to draw coloured shapes, with the <code>fill</code> changing by the value of <code>meanSci</code>. To make the map look nice, I have used a pre-defined colour scale.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Use geom_map to plot the basic world map (fill is white, line colour is black)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Use geom_map to plot the basic world map (fill is white, line colour is black)</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a><span class="co"># Use geom_polygon to plot the PISA data</span></span>
 <span id="cb43-3"><a href="#cb43-3"></a><span class="co"># Add a colour scale</span></span>
 <span id="cb43-4"><a href="#cb43-4"></a><span class="fu">ggplot</span>(<span class="at">data =</span> WorldSci, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group=</span>group)) <span class="sc">+</span></span>
@@ -1802,7 +1874,7 @@ Tip
 <span id="cb43-8"><a href="#cb43-8"></a>           <span class="at">fill =</span> <span class="st">"white"</span>, </span>
 <span id="cb43-9"><a href="#cb43-9"></a>           <span class="at">colour =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
 <span id="cb43-10"><a href="#cb43-10"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> meanSci)) <span class="sc">+</span></span>
-<span id="cb43-11"><a href="#cb43-11"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"viridis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-11"><a href="#cb43-11"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"viridis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1812,9 +1884,9 @@ Tip
 </div>
 </div>
 <p>In ggplot, by default, the aesthetics are passed from one layer to the next. In our first <code>aes</code> call we set a grouping (<code>group=group</code>). However, when we come to the labeling function <code>geom_text_repel</code>, the data frame <code>Labels</code> is not grouped. We therefore need to use new aesthetics and want to ignore the original aesthetics (<code>aes(x=long, y=lat, group=group,label=region))</code>) we previously set.We do this with the command <code>inherit.aes = FALSE</code> (i.e.&nbsp;do not inherit the previous aesthetics).</p>
-<p>To neaten up the labels we use the <code>ggrepel</code> package to get the <code>geom_text_repel</code> function. You’ll need to make sure that you have installed the <code>ggrepel</code> package, for a reminder on how to install packages see <a href="../chapters/02-1-Intro_to_analysis_software.html#sec-installation">§Installation (on your own machine)</a>. This ensures that text labels don’t overlap. Then in <code>geom_text_repel(data=Labels, inherit.aes = FALSE, aes(x=long, y=lat,label=region))</code> we specify the label <code>data.frame</code>, and in <code>aes</code> pass the positions of the labels (<code>x=long, y=lat</code>) and specify that the labels are in the <code>region</code> vector.</p>
+<p>To neaten up the labels we use the <code>ggrepel</code> package to get the <code>geom_text_repel</code> function. You’ll need to make sure that you have installed the <code>ggrepel</code> package, for a reminder on how to install packages see <strong>?@sec-installation</strong>. This ensures that text labels don’t overlap. Then in <code>geom_text_repel(data=Labels, inherit.aes = FALSE, aes(x=long, y=lat,label=region))</code> we specify the label <code>data.frame</code>, and in <code>aes</code> pass the positions of the labels (<code>x=long, y=lat</code>) and specify that the labels are in the <code>region</code> vector.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">library</span>(ggrepel)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">library</span>(ggrepel)</span>
 <span id="cb44-2"><a href="#cb44-2"></a></span>
 <span id="cb44-3"><a href="#cb44-3"></a><span class="fu">ggplot</span>(<span class="at">data =</span> WorldSci, </span>
 <span id="cb44-4"><a href="#cb44-4"></a>       <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group,<span class="at">label =</span> region)) <span class="sc">+</span></span>
@@ -1827,7 +1899,7 @@ Tip
 <span id="cb44-11"><a href="#cb44-11"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"viridis"</span>) <span class="sc">+</span></span>
 <span id="cb44-12"><a href="#cb44-12"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data =</span> Labels,</span>
 <span id="cb44-13"><a href="#cb44-13"></a>                 <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb44-14"><a href="#cb44-14"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">label =</span> region))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-14"><a href="#cb44-14"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">label =</span> region))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1842,7 +1914,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># Create a data.frame of mathematics scores</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># Create a data.frame of mathematics scores</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a>WorldMath <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
 <span id="cb45-3"><a href="#cb45-3"></a>  <span class="fu">select</span>(CNT, PV1MATH) <span class="sc">%&gt;%</span></span>
 <span id="cb45-4"><a href="#cb45-4"></a>  <span class="fu">group_by</span>(CNT) <span class="sc">%&gt;%</span></span>
@@ -1885,7 +1957,7 @@ Tip
 <span id="cb45-41"><a href="#cb45-41"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"viridis"</span>) <span class="sc">+</span></span>
 <span id="cb45-42"><a href="#cb45-42"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data =</span> Labels,</span>
 <span id="cb45-43"><a href="#cb45-43"></a>                 <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb45-44"><a href="#cb45-44"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">label =</span> region))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-44"><a href="#cb45-44"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">label =</span> region))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -1893,7 +1965,7 @@ Tip
 <h2 data-number="7.3" class="anchored" data-anchor-id="task-3-violin-plots"><span class="header-section-number">7.3</span> Task 3 Violin plots</h2>
 <p>Violin plots are a useful way of showing the distribution of scores across different items. They can make distributions easy to compare, at a glance, and to give a sense of the relative frequency of different scores. In <code>ggplot</code> you can use <code>geom_violin</code> to produce plots. For example, you can compare the distribution of science scores in Spain and Portugal by gender (note the relatively long tail at the bottom of #####):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># Create a data frame of Spain and Portugal science scores including gender</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># Create a data frame of Spain and Portugal science scores including gender</span></span>
 <span id="cb46-2"><a href="#cb46-2"></a>PISAsubset <span class="ot">&lt;-</span> PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb46-3"><a href="#cb46-3"></a>  <span class="fu">select</span>(CNT, PV1SCIE, ST004D01T)<span class="sc">%&gt;%</span></span>
 <span id="cb46-4"><a href="#cb46-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Spain"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"Portugal"</span>)</span>
@@ -1902,7 +1974,7 @@ Tip
 <span id="cb46-7"><a href="#cb46-7"></a><span class="fu">ggplot</span>(PISAsubset, <span class="fu">aes</span>(<span class="at">x=</span>CNT, <span class="at">y=</span>PV1SCIE, <span class="at">fill=</span>ST004D01T))<span class="sc">+</span></span>
 <span id="cb46-8"><a href="#cb46-8"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
 <span id="cb46-9"><a href="#cb46-9"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>)<span class="sc">+</span></span>
-<span id="cb46-10"><a href="#cb46-10"></a>  <span class="fu">ylab</span>(<span class="st">"Science Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-10"><a href="#cb46-10"></a>  <span class="fu">ylab</span>(<span class="st">"Science Score"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1913,7 +1985,7 @@ Tip
 </div>
 <p>You can rotate the plot using <code>+coord_flip()</code> and add black dots for the mean using: <code>stat_summary(fun = "mean", geom = "point", color = "black")</code>. You can also try <code>geom= "crossbar"</code>. Because we have two groups (male and female), we need to add <code>position = position_dodge(width=0.9)</code> to make the dots appear in the right place</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># Create a data frame of country science scores including gender</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># Create a data frame of country science scores including gender</span></span>
 <span id="cb47-2"><a href="#cb47-2"></a></span>
 <span id="cb47-3"><a href="#cb47-3"></a>PISAsubset<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb47-4"><a href="#cb47-4"></a>  <span class="fu">select</span>(CNT, PV1SCIE, ST004D01T)<span class="sc">%&gt;%</span></span>
@@ -1929,7 +2001,7 @@ Tip
 <span id="cb47-14"><a href="#cb47-14"></a>  <span class="fu">ylab</span>(<span class="st">"Science Score"</span>)<span class="sc">+</span></span>
 <span id="cb47-15"><a href="#cb47-15"></a>  <span class="fu">coord_flip</span>()<span class="sc">+</span></span>
 <span id="cb47-16"><a href="#cb47-16"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> <span class="st">"mean"</span>, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb47-17"><a href="#cb47-17"></a>               <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width=</span><span class="fl">0.9</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-17"><a href="#cb47-17"></a>               <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width=</span><span class="fl">0.9</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1944,7 +2016,7 @@ Tip
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># Create a data frame of WEALTH scores for the 4 countries including gender</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># Create a data frame of WEALTH scores for the 4 countries including gender</span></span>
 <span id="cb48-2"><a href="#cb48-2"></a>PISAsubset<span class="ot">&lt;-</span>PISA_2022<span class="sc">%&gt;%</span></span>
 <span id="cb48-3"><a href="#cb48-3"></a>  <span class="fu">select</span>(CNT, HOMEPOS, ST004D01T)<span class="sc">%&gt;%</span></span>
 <span id="cb48-4"><a href="#cb48-4"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"United Kingdom"</span> <span class="sc">|</span> CNT <span class="sc">==</span> <span class="st">"Sweden"</span> <span class="sc">|</span> </span>
@@ -1954,7 +2026,7 @@ Tip
 <span id="cb48-8"><a href="#cb48-8"></a><span class="fu">ggplot</span>(PISAsubset, <span class="fu">aes</span>(<span class="at">x=</span>CNT, <span class="at">y=</span>HOMEPOS, <span class="at">fill=</span>ST004D01T))<span class="sc">+</span></span>
 <span id="cb48-9"><a href="#cb48-9"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
 <span id="cb48-10"><a href="#cb48-10"></a>  <span class="fu">xlab</span>(<span class="st">"Country"</span>)<span class="sc">+</span></span>
-<span id="cb48-11"><a href="#cb48-11"></a>  <span class="fu">ylab</span>(<span class="st">"PISA Wealth measure"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-11"><a href="#cb48-11"></a>  <span class="fu">ylab</span>(<span class="st">"PISA Wealth measure"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -2000,236 +2072,243 @@ Weissgerber, Tracey L, Natasa M Milic, Stacey J Winham, and Vesna D Garovic. 201
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2237,185 +2316,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 
