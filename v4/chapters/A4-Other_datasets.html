@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Other datasets – MASTEMR</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-408f44cb79879323703c9e228b025f96.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="../css/mastemr.css">
+</head>
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo light-content"><img src="../images/KCL_logo.png" alt="" class="navbar-logo dark-content"></a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">MASTEMR</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/A1-PISA_analysis.html">Appendicies</a></li><li class="breadcrumb-item"><a href="../chapters/A4-Other_datasets.html">Other datasets</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Sessions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">02 Introduction to R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-2-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Loading packages and exploring data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-3-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piping and dplyr</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making graphs</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-Descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Descriptive Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Introduction to PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Presentations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 T-tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08 Assignment 3 tutorials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-Correlation_and_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09 Correlation and regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 Selecting statistical tools</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Additional tests</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show"></ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendicies</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A2-DfE_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DfE England</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A3-TIMSS_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TIMSS, PIRLS and ICILS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A4-Other_datasets.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Other datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A5-Self_Study_Tasks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Self Study Tasks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A6-QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#what-other-datasets-are-there" id="toc-what-other-datasets-are-there" class="nav-link active" data-scroll-target="#what-other-datasets-are-there"><span class="header-section-number">1</span> What other datasets are there?</a></li>
+  <li>
+<a href="#gender-equality-indices" id="toc-gender-equality-indices" class="nav-link" data-scroll-target="#gender-equality-indices"><span class="header-section-number">2</span> Gender equality indices</a>
+  <ul class="collapse">
+<li><a href="#global-gender-gap-index-gggi" id="toc-global-gender-gap-index-gggi" class="nav-link" data-scroll-target="#global-gender-gap-index-gggi"><span class="header-section-number">2.1</span> Global Gender Gap Index (GGGI)</a></li>
+  <li><a href="#united-nations" id="toc-united-nations" class="nav-link" data-scroll-target="#united-nations"><span class="header-section-number">2.2</span> United Nations</a></li>
+  </ul>
+</li>
+  <li><a href="#unesco" id="toc-unesco" class="nav-link" data-scroll-target="#unesco"><span class="header-section-number">3</span> UNESCO</a></li>
+  <li><a href="#world-bank" id="toc-world-bank" class="nav-link" data-scroll-target="#world-bank"><span class="header-section-number">4</span> World bank</a></li>
+  <li><a href="#lana---literacy-and-numeracy-assessment" id="toc-lana---literacy-and-numeracy-assessment" class="nav-link" data-scroll-target="#lana---literacy-and-numeracy-assessment"><span class="header-section-number">5</span> LaNA - Literacy and Numeracy Assessment</a></li>
+  <li><a href="#china-family-panel-studies" id="toc-china-family-panel-studies" class="nav-link" data-scroll-target="#china-family-panel-studies"><span class="header-section-number">6</span> China Family Panel Studies</a></li>
+  <li><a href="#unicef" id="toc-unicef" class="nav-link" data-scroll-target="#unicef"><span class="header-section-number">7</span> UNICEF</a></li>
+  <li><a href="#office-of-national-statistics-in-the-uk" id="toc-office-of-national-statistics-in-the-uk" class="nav-link" data-scroll-target="#office-of-national-statistics-in-the-uk"><span class="header-section-number">8</span> Office of National Statistics (in the UK)</a></li>
+  <li><a href="#oecd" id="toc-oecd" class="nav-link" data-scroll-target="#oecd"><span class="header-section-number">9</span> OECD</a></li>
+  <li><a href="#the-office-for-standards-in-education-childrens-services-and-skills-ofsted" id="toc-the-office-for-standards-in-education-childrens-services-and-skills-ofsted" class="nav-link" data-scroll-target="#the-office-for-standards-in-education-childrens-services-and-skills-ofsted"><span class="header-section-number">10</span> The Office for Standards in Education, Children’s Services and Skills (Ofsted)</a></li>
+  <li><a href="#uk-data-service" id="toc-uk-data-service" class="nav-link" data-scroll-target="#uk-data-service"><span class="header-section-number">11</span> UK Data Service</a></li>
+  <li><a href="#data.gov.uk" id="toc-data.gov.uk" class="nav-link" data-scroll-target="#data.gov.uk"><span class="header-section-number">12</span> data.gov.uk</a></li>
+  <li><a href="#world-values-survey" id="toc-world-values-survey" class="nav-link" data-scroll-target="#world-values-survey"><span class="header-section-number">13</span> World Values Survey</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/A1-PISA_analysis.html">Appendicies</a></li><li class="breadcrumb-item"><a href="../chapters/A4-Other_datasets.html">Other datasets</a></li></ol></nav><div class="quarto-title">
+<h1 class="title">Other datasets</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><section id="what-other-datasets-are-there" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> What other datasets are there?</h1>
+<p>There exist thousands of data sets that you can freely analyse. This section covers a few of the major ones for education, or that might fruitfully be combined with educational data sets such as PISA.</p>
+</section><section id="gender-equality-indices" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> Gender equality indices</h1>
+<p>There are several international datasets for studying gender equality. These have been used by researchers to look at the impact of gender equality on student attitudes and outcomes. For example <span class="citation" data-cites="stoet2018gender">Stoet and Geary (<a href="#ref-stoet2018gender" role="doc-biblioref">2018</a>)</span> use the Global Gender Gap Index (GGGI) too look at PISA science self-efficacy and science outcomes for females.</p>
+<section id="global-gender-gap-index-gggi" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="global-gender-gap-index-gggi">
+<span class="header-section-number">2.1</span> Global Gender Gap Index (GGGI)</h2>
+<p>The world economic forum produces the Global Gender Gap Index (GGGI), this index combines female and male outcomes on Economic participation and opportunity, educational attainment, health and survival, and political empowerment.</p>
+<p>Reports for: <a href="https://www.weforum.org/reports/global-gender-gap-report-2022/">2022</a>, <a href="https://www.weforum.org/reports/global-gender-gap-report-2021">2021</a>, <a href="https://www.weforum.org/reports/gender-gap-2020-report-100-years-pay-equality">2020</a>,<a href="https://www.weforum.org/reports/the-global-gender-gap-report-2018">2018</a>,<a href="https://www.weforum.org/reports/the-global-gender-gap-report-2017">2017</a>,<a href="https://www.weforum.org/reports/the-global-gender-gap-report-2016">2016</a>, <a href="https://www.weforum.org/reports/global-gender-gap-report-2015/">2015</a></p>
+<p>It has proven difficult to find the 2015 dataset used by Stoet &amp; Geary, the 2013 dataset is <a href="https://data.humdata.org/dataset/29f2f52f-a9c2-4ff9-a99e-42b894dc18e9/resource/a8fe8c72-1359-4ce3-b8cc-03d9e5e85875/download/table-3b-detailed-rankings-2013.csv">here</a></p>
+</section><section id="united-nations" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="united-nations">
+<span class="header-section-number">2.2</span> United Nations</h2>
+<p>The UN reports on two gender specific indexes:</p>
+<p><strong>Gender Inequality Index (GII)</strong></p>
+<p>The <a href="https://hdr.undp.org/data-center/thematic-composite-indices/gender-inequality-index#/indicies/GII">Gender Inequality Index</a> is a index incorporating data on reproductive health, empowerment and the labour market. Values range from 0 - full equality for men and women, to 0, full inequality.</p>
+<p><strong>Gender Development Index (GDI)</strong></p>
+<p>The <a href="https://hdr.undp.org/gender-development-index#/indicies/GDI">Gender Development Index</a> measures inequalities in human development, combining data on female and male life expectancy, years of schooling and earned income. Values of 1 indicate equality, with values of less than 1 showing males performing better, and values over 1 showing females doing better.</p>
+<p>Downloads for the GII and GDI are <a href="https://hdr.undp.org/data-center/documentation-and-downloads">here</a></p>
+</section></section><section id="unesco" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> UNESCO</h1>
+<p>UNESCO produces a number of open data sets of relevance to education:</p>
+<ul>
+<li><a href="http://data.uis.unesco.org" title="Distribution of tertiary graduates">STEM degree entry by country</a></li>
+</ul>
+<p>The UNESCO Institute of Statistics <a href="http://data.uis.unesco.org">data browser</a> allows you to create data sets including:</p>
+<ul>
+<li>Demographics of teachers</li>
+<li>Mean years of schooling</li>
+<li>Graduation ratios</li>
+<li>Out of school children and adolescents</li>
+<li>Educational expenditure</li>
+<li>Illiteracy rates</li>
+<li>Survival (in schooling) rate by grade</li>
+</ul></section><section id="world-bank" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> World bank</h1>
+<p>Lower middle income country mapping from the <a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups">world ba nk</a>, including historical mappings</p>
+<p>STEM and other graduate course <a href="https://genderdata.worldbank.org/en/indicator/se-ter-grad-fe-zs">uptake by gender</a></p>
+</section><section id="lana---literacy-and-numeracy-assessment" class="level1" data-number="5"><h1 data-number="5">
+<span class="header-section-number">5</span> LaNA - Literacy and Numeracy Assessment</h1>
+<p>“Rooted in the comprehensive assessment frameworks of TIMSS and PIRLS, IEA’s LaNA is designed to produce national data for monitoring foundational reading and mathematics and learning goals in participating countries at the end of primary school” - <a href="https://www.iea.nl/studies/iea/LaNA">https://www.iea.nl/studies/iea/LaNA</a></p>
+</section><section id="china-family-panel-studies" class="level1" data-number="6"><h1 data-number="6">
+<span class="header-section-number">6</span> China Family Panel Studies</h1>
+<p>Run by Peking University, the <a href="https://www.isss.pku.edu.cn/cfps/en/">CFPS</a> focuses on China and includes data on social, economic, education and health. You must register to access the data sets.</p>
+</section><section id="unicef" class="level1" data-number="7"><h1 data-number="7">
+<span class="header-section-number">7</span> UNICEF</h1>
+<p>Multiple Indicator Cluster Surveys, Household survey, looking at education and social characteristics of children and adults around the world. To access the data you need to register with UNICEF, and approval for data access can take several days <a href="https://mics.unicef.org/surveys">https://mics.unicef.org/surveys</a></p>
+</section><section id="office-of-national-statistics-in-the-uk" class="level1" data-number="8"><h1 data-number="8">
+<span class="header-section-number">8</span> Office of National Statistics (in the UK)</h1>
+<p>The UK ONS site contains a number of general data sets related to the UK, for example, <a href="https://www.ons.gov.uk/census">census data</a>, including</p>
+<p>The site includes a number of education related data sets including:</p>
+<ul>
+<li><a href="https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork">Numbers of young people not in education, employment or training (NEETs)</a></li>
+<li><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/covid19schoolsinfectionsurveyenglandpandemicresponsemeasuresinschools/januarytofebruary2022">Covid in schools surveys</a></li>
+</ul></section><section id="oecd" class="level1" data-number="9"><h1 data-number="9">
+<span class="header-section-number">9</span> OECD</h1>
+<p>The OECD offers over 1,600 data sets on the countries that it covers, including data on patents, education, mortality and the environment. You can combine these data sets with PISA etc, to explore national trends.</p>
+<p>Of interest might be the <a href="https://www.oecd.org/en/about/programmes/oecd-survey-on-social-and-emotional-skills.html">Survey on Social and Emotional Skills (SSES)</a> which is taken by children aged 10 and 15.</p>
+<p>To access the OECD database collection use <a href="https://stats.oecd.org/" class="uri">https://stats.oecd.org/</a>. There is <a href="https://data.oecd.org/searchresults/?hf=20&amp;b=0&amp;r=f/type/datasets/api+access&amp;l=en">catalogue of datasets</a></p>
+<p>Whilst it is possible to access the data sets <a href="https://data.oecd.org/api/sdmx-json-documentation/#d.en.330346">directly</a> you might find it easier to use the R <code>OECD</code> <a href="https://cran.r-project.org/web/packages/OECD/OECD.pdf">package</a> that converts the <code>sdmx</code> files in R dataframes:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># installing and loading OECD</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># install OECD library</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">install.packages</span>(<span class="st">"OECD"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(<span class="st">"OECD"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">get_dataset</span>(<span class="st">"EPL_OV"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>list datasets and load one</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># list all the datasets available</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>datasets <span class="ot">&lt;-</span> <span class="fu">get_datasets</span>()</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a>datasets</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co"># download a dataset</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>df <span class="ot">&lt;-</span> <span class="fu">get_dataset</span>(<span class="st">"EPL_OV"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>The OECD R package currently has a bug in it and you need to overwrite the <code>get_data_structure</code>, by running all the code below:</p>
+<div class="cell">
+<details class="code-fold"><summary>fix the get_data_structure function</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">install.packages</span>(<span class="st">"rsdmx"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(rsdmx) <span class="co"># loads the sdmx reader</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">library</span>(OECD)</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># get the fields in a dataset</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co"># current implementation broken</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>get_data_structure <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">dataset=</span><span class="st">"DUR_D"</span>){</span>
+<span id="cb3-8"><a href="#cb3-8"></a>    url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://stats.oecd.org/restsdmx/sdmx.ashx/GetDataStructure/"</span>, </span>
+<span id="cb3-9"><a href="#cb3-9"></a>        dataset)</span>
+<span id="cb3-10"><a href="#cb3-10"></a>    <span class="co"># data_structure &lt;- readsdmx::read_sdmx(url)</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>    data_structure <span class="ot">&lt;-</span> rsdmx<span class="sc">::</span><span class="fu">readSDMX</span>(url)</span>
+<span id="cb3-12"><a href="#cb3-12"></a>    variable_desc <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(data_structure<span class="sc">@</span>concepts)</span>
+<span id="cb3-13"><a href="#cb3-13"></a>    variable_desc[] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(variable_desc, as.character)</span>
+<span id="cb3-14"><a href="#cb3-14"></a>    variable_desc<span class="sc">$</span>en[<span class="fu">is.na</span>(variable_desc<span class="sc">$</span>en)] <span class="ot">&lt;-</span> variable_desc<span class="sc">$</span>Name.en[<span class="sc">!</span><span class="fu">is.na</span>(variable_desc<span class="sc">$</span>Name.en)]</span>
+<span id="cb3-15"><a href="#cb3-15"></a>    <span class="fu">names</span>(variable_desc)[<span class="fu">length</span>(<span class="fu">names</span>(variable_desc))] <span class="ot">&lt;-</span> <span class="st">"description"</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a>    variable_desc <span class="ot">&lt;-</span> variable_desc[, <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"description"</span>)]</span>
+<span id="cb3-17"><a href="#cb3-17"></a>    code_names <span class="ot">&lt;-</span> data_structure<span class="sc">@</span>codelists<span class="sc">@</span>codelists</span>
+<span id="cb3-18"><a href="#cb3-18"></a>    code_names <span class="ot">&lt;-</span> <span class="fu">vapply</span>(code_names, <span class="cf">function</span>(x) x<span class="sc">@</span>id, <span class="st">"character"</span>)</span>
+<span id="cb3-19"><a href="#cb3-19"></a>    code_list <span class="ot">&lt;-</span> <span class="fu">lapply</span>(code_names, <span class="cf">function</span>(x) {</span>
+<span id="cb3-20"><a href="#cb3-20"></a>        df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(data_structure<span class="sc">@</span>codelists, <span class="at">codelistId =</span> x)</span>
+<span id="cb3-21"><a href="#cb3-21"></a>        <span class="fu">try</span>({</span>
+<span id="cb3-22"><a href="#cb3-22"></a>            df <span class="ot">&lt;-</span> df[, <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"label.en"</span>)]</span>
+<span id="cb3-23"><a href="#cb3-23"></a>            <span class="fu">names</span>(df)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"label"</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a>        }, <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-25"><a href="#cb3-25"></a>        df</span>
+<span id="cb3-26"><a href="#cb3-26"></a>    })</span>
+<span id="cb3-27"><a href="#cb3-27"></a>    <span class="fu">names</span>(code_list) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="fu">paste0</span>(<span class="st">"CL_"</span>, dataset, <span class="st">"_"</span>), <span class="st">""</span>, </span>
+<span id="cb3-28"><a href="#cb3-28"></a>        code_names)</span>
+<span id="cb3-29"><a href="#cb3-29"></a>    full_df_list <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">VAR_DESC =</span> <span class="fu">list</span>(variable_desc), code_list)</span>
+<span id="cb3-30"><a href="#cb3-30"></a>    full_df_list</span>
+<span id="cb3-31"><a href="#cb3-31"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>You can then list the field descriptors for each dataset by running:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">get_data_structure</span>(<span class="st">"EPL_OV"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<details class="code-fold"><summary>load OECD datasets</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># http://stats.oecd.org/SDMX-JSON/data/&lt;dataset identifier&gt;/&lt;filter expression&gt;/&lt;agency name&gt;[ ?&lt;additional parameters&gt;]</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># install OECD library</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">library</span>(<span class="st">"OECD"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">library</span>(rsdmx)</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># list all the datasets available</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>datasets <span class="ot">&lt;-</span> <span class="fu">get_datasets</span>()</span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co"># download a dataset</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>df <span class="ot">&lt;-</span> <span class="fu">get_dataset</span>(<span class="st">"EPL_OV"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12"></a></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="co"># get the fields in a dataset</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="co"># current implementation broken</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a>get_data_structure <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">dataset=</span><span class="st">"DUR_D"</span>){</span>
+<span id="cb5-16"><a href="#cb5-16"></a>    url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://stats.oecd.org/restsdmx/sdmx.ashx/GetDataStructure/"</span>, </span>
+<span id="cb5-17"><a href="#cb5-17"></a>        dataset)</span>
+<span id="cb5-18"><a href="#cb5-18"></a>    <span class="co"># data_structure &lt;- readsdmx::read_sdmx(url)</span></span>
+<span id="cb5-19"><a href="#cb5-19"></a>    data_structure <span class="ot">&lt;-</span> rsdmx<span class="sc">::</span><span class="fu">readSDMX</span>(url)</span>
+<span id="cb5-20"><a href="#cb5-20"></a>    variable_desc <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(data_structure<span class="sc">@</span>concepts)</span>
+<span id="cb5-21"><a href="#cb5-21"></a>    variable_desc[] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(variable_desc, as.character)</span>
+<span id="cb5-22"><a href="#cb5-22"></a>    variable_desc<span class="sc">$</span>en[<span class="fu">is.na</span>(variable_desc<span class="sc">$</span>en)] <span class="ot">&lt;-</span> variable_desc<span class="sc">$</span>Name.en[<span class="sc">!</span><span class="fu">is.na</span>(variable_desc<span class="sc">$</span>Name.en)]</span>
+<span id="cb5-23"><a href="#cb5-23"></a>    <span class="fu">names</span>(variable_desc)[<span class="fu">length</span>(<span class="fu">names</span>(variable_desc))] <span class="ot">&lt;-</span> <span class="st">"description"</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a>    variable_desc <span class="ot">&lt;-</span> variable_desc[, <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"description"</span>)]</span>
+<span id="cb5-25"><a href="#cb5-25"></a>    code_names <span class="ot">&lt;-</span> data_structure<span class="sc">@</span>codelists<span class="sc">@</span>codelists</span>
+<span id="cb5-26"><a href="#cb5-26"></a>    code_names <span class="ot">&lt;-</span> <span class="fu">vapply</span>(code_names, <span class="cf">function</span>(x) x<span class="sc">@</span>id, <span class="st">"character"</span>)</span>
+<span id="cb5-27"><a href="#cb5-27"></a>    code_list <span class="ot">&lt;-</span> <span class="fu">lapply</span>(code_names, <span class="cf">function</span>(x) {</span>
+<span id="cb5-28"><a href="#cb5-28"></a>        df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(data_structure<span class="sc">@</span>codelists, <span class="at">codelistId =</span> x)</span>
+<span id="cb5-29"><a href="#cb5-29"></a>        <span class="fu">try</span>({</span>
+<span id="cb5-30"><a href="#cb5-30"></a>            df <span class="ot">&lt;-</span> df[, <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"label.en"</span>)]</span>
+<span id="cb5-31"><a href="#cb5-31"></a>            <span class="fu">names</span>(df)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"label"</span></span>
+<span id="cb5-32"><a href="#cb5-32"></a>        }, <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-33"><a href="#cb5-33"></a>        df</span>
+<span id="cb5-34"><a href="#cb5-34"></a>    })</span>
+<span id="cb5-35"><a href="#cb5-35"></a>    <span class="fu">names</span>(code_list) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="fu">paste0</span>(<span class="st">"CL_"</span>, dataset, <span class="st">"_"</span>), <span class="st">""</span>, </span>
+<span id="cb5-36"><a href="#cb5-36"></a>        code_names)</span>
+<span id="cb5-37"><a href="#cb5-37"></a>    full_df_list <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">VAR_DESC =</span> <span class="fu">list</span>(variable_desc), code_list)</span>
+<span id="cb5-38"><a href="#cb5-38"></a>    full_df_list</span>
+<span id="cb5-39"><a href="#cb5-39"></a>}</span>
+<span id="cb5-40"><a href="#cb5-40"></a><span class="co"># get_data_structure &lt;- function(dataset="DUR_D"){</span></span>
+<span id="cb5-41"><a href="#cb5-41"></a>  <span class="co"># url &lt;- paste0("https://stats.oecd.org/restsdmx/sdmx.ashx/GetDataStructure/",</span></span>
+<span id="cb5-42"><a href="#cb5-42"></a>  <span class="co">#   dataset)</span></span>
+<span id="cb5-43"><a href="#cb5-43"></a>  <span class="co"># data_structure &lt;- readsdmx::read_sdmx(url)</span></span>
+<span id="cb5-44"><a href="#cb5-44"></a><span class="co">#   # data_structure &lt;- rsdmx::readSDMX(url)</span></span>
+<span id="cb5-45"><a href="#cb5-45"></a><span class="co">#   return(data_structure)</span></span>
+<span id="cb5-46"><a href="#cb5-46"></a><span class="co"># }</span></span>
+<span id="cb5-47"><a href="#cb5-47"></a>df_struct <span class="ot">&lt;-</span> <span class="fu">get_data_structure</span>(<span class="st">"DUR_D"</span>)</span>
+<span id="cb5-48"><a href="#cb5-48"></a></span>
+<span id="cb5-49"><a href="#cb5-49"></a><span class="do">#############################</span></span>
+<span id="cb5-50"><a href="#cb5-50"></a><span class="do">#############################</span></span>
+<span id="cb5-51"><a href="#cb5-51"></a></span>
+<span id="cb5-52"><a href="#cb5-52"></a><span class="co"># Database names</span></span>
+<span id="cb5-53"><a href="#cb5-53"></a><span class="co"># CWB - children wellbeing</span></span>
+<span id="cb5-54"><a href="#cb5-54"></a><span class="do">### B2_1 - Children (0- to 2-year-olds) participating in early childhood education and care (%)</span></span>
+<span id="cb5-55"><a href="#cb5-55"></a><span class="co"># NCC - Net childcare costs for parents using childcare facilities</span></span>
+<span id="cb5-56"><a href="#cb5-56"></a><span class="co"># RPERS - Educational personnel</span></span>
+<span id="cb5-57"><a href="#cb5-57"></a><span class="co"># EAG_FIN_NATURE - Educational expenditure by Nature</span></span>
+<span id="cb5-58"><a href="#cb5-58"></a><span class="co"># EAG_FIN_SOURCE - Educational expenditure by Source and destination</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section><section id="the-office-for-standards-in-education-childrens-services-and-skills-ofsted" class="level1" data-number="10"><h1 data-number="10">
+<span class="header-section-number">10</span> The Office for Standards in Education, Children’s Services and Skills (Ofsted)</h1>
+<p>Ofsted is the English body responsible for inspecting state schools, some independent schools, childcare, adoption and fostering agencies and initial teacher training. It has some interesting open <a href="https://www.gov.uk/government/organisations/ofsted/about/statistics">data sets</a>.</p>
+<p>Christian Bokhove has scraped the Ofsted pdf reports since 1997, you can find the text files <a href="https://github.com/christianbokhove/nuffieldofsted?tab=readme-ov-file">here</a></p>
+</section><section id="uk-data-service" class="level1" data-number="11"><h1 data-number="11">
+<span class="header-section-number">11</span> UK Data Service</h1>
+<p>https://ukdataservice.ac.uk/find-data/browse/</p>
+<!--
+Traffic dataset for London/Bolton/Birmingham/Manchester https://utd19.ethz.ch/
+- the data will be used only for academic and/or non-commercial purposes: Accepted
+- for any publication that utilizes the UTD19 dataset, authors should include a reference to https://doi.org/10.1038/s41598-019-51539-5: Accepted
+- that you are going to include the data source as UTD19 (utd19.ethz.ch) in the acknowledgment section of your publication: Accepted
+-->
+</section><section id="data.gov.uk" class="level1" data-number="12"><h1 data-number="12">
+<span class="header-section-number">12</span> data.gov.uk</h1>
+<p>https://www.data.gov.uk/</p>
+</section><section id="world-values-survey" class="level1" data-number="13"><h1 data-number="13">
+<span class="header-section-number">13</span> World Values Survey</h1>
+<p>https://www.worldvaluessurvey.org/wvs.jsp</p>
+
+
+
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-stoet2018gender" class="csl-entry" role="listitem">
+Stoet, Gijsbert, and David C Geary. 2018. <span>“The Gender-Equality Paradox in Science, Technology, Engineering, and Mathematics Education.”</span> <em>Psychological Science</em> 29 (4): 581–93. <a href="https://eprints.leedsbeckett.ac.uk/id/eprint/4753/6/symplectic-version.pdf">https://eprints.leedsbeckett.ac.uk/id/eprint/4753/6/symplectic-version.pdf</a>.
+</div>
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+</body></html>
