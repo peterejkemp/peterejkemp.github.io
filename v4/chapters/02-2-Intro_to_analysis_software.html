@@ -1,0 +1,2446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Loading packages and exploring data – MASTEMR</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-408f44cb79879323703c9e228b025f96.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="../css/mastemr.css">
+</head>
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/KCL_logo.png" alt="" class="navbar-logo light-content"><img src="../images/KCL_logo.png" alt="" class="navbar-logo dark-content"></a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">MASTEMR</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-2-Intro_to_analysis_software.html">Loading packages and exploring data</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Sessions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-Intro_to_quant_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">02 Introduction to R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-1-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-2-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Loading packages and exploring data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-3-Intro_to_analysis_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Piping and dplyr</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-4-Intro_to_graphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making graphs</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-Descriptive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Descriptive Statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-Introduction_to_PISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Introduction to PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-Presentations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05 Presentations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-T-testsPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06 T-tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-ChisqPISA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07 Hypothesis testing and Chi-square tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-Assignment_3_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08 Assignment 3 tutorials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-Correlation_and_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">09 Correlation and regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-selecting_statistical_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 Selecting statistical tools</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Additional tests</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show"></ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendicies</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A1-PISA_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PISA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A2-DfE_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DfE England</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A3-TIMSS_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TIMSS, PIRLS and ICILS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A4-Other_datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A5-Self_Study_Tasks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Self Study Tasks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/A6-QandA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Questions and Answers</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#sec-loading" id="toc-sec-loading" class="nav-link active" data-scroll-target="#sec-loading"><span class="header-section-number">1</span> Loading data</a></li>
+  <li><a href="#dataframes" id="toc-dataframes" class="nav-link" data-scroll-target="#dataframes"><span class="header-section-number">2</span> Dataframes</a></li>
+  <li><a href="#loading-data-from-the-web" id="toc-loading-data-from-the-web" class="nav-link" data-scroll-target="#loading-data-from-the-web"><span class="header-section-number">3</span> Loading data from the web</a></li>
+  <li><a href="#sec-loading-computer" id="toc-sec-loading-computer" class="nav-link" data-scroll-target="#sec-loading-computer"><span class="header-section-number">4</span> Loading data from your computer</a></li>
+  <li>
+<a href="#setting-working-directories" id="toc-setting-working-directories" class="nav-link" data-scroll-target="#setting-working-directories"><span class="header-section-number">5</span> Setting working directories</a>
+  <ul class="collapse">
+<li><a href="#proper-addresses" id="toc-proper-addresses" class="nav-link" data-scroll-target="#proper-addresses"><span class="header-section-number">5.1</span> Proper addresses</a></li>
+  </ul>
+</li>
+  <li><a href="#sec-parquet" id="toc-sec-parquet" class="nav-link" data-scroll-target="#sec-parquet"><span class="header-section-number">6</span> .parquet files</a></li>
+  <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files"><span class="header-section-number">7</span> .csv files</a></li>
+  <li>
+<a href="#exploring-data" id="toc-exploring-data" class="nav-link" data-scroll-target="#exploring-data"><span class="header-section-number">8</span> Exploring data</a>
+  <ul class="collapse">
+<li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">8.1</span> Questions</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-Intro_to_quant_methods.html">Sessions</a></li><li class="breadcrumb-item"><a href="../chapters/02-1-Intro_to_analysis_software.html">02 Introduction to R</a></li><li class="breadcrumb-item"><a href="../chapters/02-2-Intro_to_analysis_software.html">Loading packages and exploring data</a></li></ol></nav><div class="quarto-title">
+<h1 class="title">Loading packages and exploring data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><p>This course focuses on using the <em>tidyverse</em>; a free collection of programming <em>packages</em> that will allow you to write code that imports data, tidys it, transforms it into useful datasets, visualises findings, creates statistical models and communicates findings to others data using a standardised set of commands.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/data-science-workflow.png" class="img-fluid figure-img"></p>
+<figcaption>Data science workflow - RStudio</figcaption></figure>
+</div>
+<p>For many people the tidyverse is the main reason that they use R. The tidyverse is used widely in government, academia, NGOs and industry, notable examples include the <a href="https://johnburnmurdoch.github.io/slides/r-ggplot/#/">Financial Times</a> and the <a href="https://bbc.github.io/rcookbook/">BBC</a>. Code in the tidyverse can be (relatively) easily understood by others and <em>you</em>, when you come back to a project after several months.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Try this out</strong></p>
+<p>The code above transforms data and converts it into a graph. It doesn’t have any comments, but you should hopefully be able to understand what a lot of the code does by just reading it. Can you guess what each line does? Try running the code by selecting parts of it and pressing <code>control</code> | <code>command ⌘</code> and <code>Enter</code></p>
+</div>
+</div>
+<section id="sec-loading" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Loading data</h1>
+<p>We can’t do much with R without loading data from elsewhere. Data will come in many formats and R should be able to deal with all of them. Some of the datasets you access will be a few rows and columns; others, like the ones we are going to use on this course, might run into hundreds of thousands or even millions of rows and hundreds or thousands of columns. Depending on the format you are using, you might need to use specific packages. A few of the data file types you might meet are described below:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 69%">
+</colgroup>
+<thead><tr class="header">
+<th>File type</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Comma separated values [.csv]</td>
+<td>As it says in the name, <code>.csv</code> files store data by separating data items with commas. They are a common way of transferring data and can be easily created and read by Excel, Google spreadsheets and text editors (in addition to R). CSVs aren’t compressed so will generally be larger than other file types. They don’t store information on the types of data stored in the file so you might find yourself having to specify that a date column is a date, rather than a string of text. You can read and write csv files without the need to load any packages, but if you do use <code>readr</code> you might find things go much faster.</td>
+</tr>
+<tr class="even">
+<td>Excel [.xls | .xlsx | .xlsxm]</td>
+<td>Excel files store data in a compressed custom format. This means files will generally be smaller than CSVs and will also contain information on the types of data stored in different columns. R can read and write these files using the <code>openxlsx</code> package, but you can also use the tidyverse’s <code>readxl</code> for reading, and <code>writexl</code> for writing for excel formats.</td>
+</tr>
+<tr class="odd">
+<td>R Data [.rds]</td>
+<td>R has it’s own data format, <code>.rds</code>. Saving to this format means that you will make perfect copies of your R data, including data types and factors. When you load <code>.rds</code> files they will look exactly the same as when you saved them. Data can be highly compressed and it’s one of the fastest formats for getting data into R. You can read and write <code>.rds</code> files without the need to load any packages, but using the functions in <code>readr</code> might speed things up a bit. You won’t be able to look at <code>.rds</code> files in other programs such as Excel</td>
+</tr>
+<tr class="even">
+<td>Arrow [.parquet]</td>
+<td>Apache Arrow <code>.parquet</code> is a relatively new format that allows for the transfer of files between different systems. Files are small and incredibly fast to load, whilst looking exactly the same as when you save them. The PISA dataset used here, that takes ~20 seconds to load in <code>.rds</code> format, will load in less than 2 seconds in <code>.parquet</code> format. Because of the way that data is stored you won’t be able to open these files in programs such as Excel. You will need the <code>arrow</code> package to read and write <code>.parquet</code> files.</td>
+</tr>
+<tr class="odd">
+<td>SPSS [.sav]</td>
+<td>SPSS is a common analysis tool in the world of social science. The native format for SPSS data is <code>.sav</code>. These files are compressed and include information on column labels and column datatypes. You will need either the <code>haven</code> or <code>foreign</code> packages to read data into R. Once you have loaded the .sav you will probably want to convert the data into a format that is more suitable for R, normally this will involve converting columns into factors. We cover <em>factors</em> in more detail below.</td>
+</tr>
+<tr class="even">
+<td>Stata [.dta]</td>
+<td>
+<code>haven</code> or <code>foreign</code> packages to read data into R</td>
+</tr>
+<tr class="odd">
+<td>SAS [.sas]</td>
+<td>
+<code>haven</code> or <code>foreign</code> packages to read data into R</td>
+</tr>
+<tr class="even">
+<td>Structured Query Language [.sql]</td>
+<td>a common format for data stored in large databases. Normally SQL code would be used to query these, you can use the tidyverse to help construct SQL this through the package <code>dbplyr</code> which will convert your tidyverse pipe code into SQL. R can be set up to communicate directly with databases using the <code>DBI</code> package.</td>
+</tr>
+<tr class="odd">
+<td>JavaScript Object Notation [.json]</td>
+<td>
+<code>.json</code> is a popular format for sharing data on the web. You can use <code>jsonlite</code> and <code>rjson</code> to access this type of data</td>
+</tr>
+</tbody>
+</table>
+<p>For this course we will be looking at <code>.csv</code>, <code>excel</code>, <code>.rds</code> and <code>parquet</code> files.</p>
+</section><section id="dataframes" class="level1" data-number="2"><h1 data-number="2">
+<span class="header-section-number">2</span> Dataframes</h1>
+<p>Loading datasets into R will normally store them as <em>dataframes</em> (also known as <em>tibbles</em> when using the tidyverse). Dataframes are the equivalent of tables in a spreadsheet, with rows, columns and datatypes.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>PISA_2025 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">select</span>(CNT, PV1MATH, ESCS, ST251Q01JA) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">mutate</span>(<span class="at">CNT =</span> CNT <span class="sc">%&gt;%</span> <span class="fu">as.character</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  CNT     PV1MATH    ESCS ST251Q01JA   
+  &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;fct&gt;        
+1 Albania    329. -1.10   Two          
+2 Albania    384. -1.93   None         
+3 Albania    438. -1.08   One          
+4 Albania    344. -0.0182 Three or more
+5 Albania    376. -1.07   Three or more</code></pre>
+</div>
+</div>
+<p>The table above has 4 columns, each column has a datatype, <code>CNT</code> is a character vector, PV1MATH is a double (numeric) vector, ESCS is a double (numeric) vector and <code>ST251Q01JA</code> is a factor. For more about datatypes, see <strong>?@sec-datatypes</strong></p>
+<p>Dataframes are made from a collection of vectors, each column can be treated as if it was a vector, for example you can add one column to another:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>PISA_2025 <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">select</span>(CNT, PV1MATH, PV1SCIE, PV1READ) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">mutate</span>(<span class="at">overall_grade =</span> PV1MATH <span class="sc">+</span> PV1SCIE <span class="sc">+</span> PV1READ)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 755,721 × 5
+    CNT     PV1MATH PV1SCIE PV1READ overall_grade
+    &lt;fct&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;
+  1 Albania    329.    290.    283.          902.
+  2 Albania    384.    416.    410.         1211.
+  3 Albania    438.    489.    423.         1350.
+  4 Albania    344.    326.    421.         1091.
+  5 Albania    376.    349.    332.         1057.
+  6 Albania    274.    238.    191.          703.
+  7 Albania    359.    335.    317.         1011.
+  8 Albania    285.    342.    340.          967.
+  9 Albania    315.    315.    246.          877.
+ 10 Albania    457.    470.    451.         1378.
+ 11 Albania    388.    303.    300.          991.
+ 12 Albania    282.    293.    297.          872.
+ 13 Albania    383.    449.    309.         1141.
+ 14 Albania    281.    360.    295.          936.
+ 15 Albania    382.    299.    267.          947.
+ 16 Albania    378.    302.    286.          966.
+ 17 Albania    339.    396.    352.         1087.
+ 18 Albania    403.    367.    381.         1151.
+ 19 Albania    485.    334.    347.         1167.
+ 20 Albania    313.    264.    297.          874.
+ 21 Albania    438.    486.    436.         1360.
+ 22 Albania    229.    240.    300.          769.
+ 23 Albania    350.    292.    250.          892.
+ 24 Albania    368.    362.    317.         1047.
+ 25 Albania    232.    197.    277.          706.
+ 26 Albania    393.    331.    261.          985.
+ 27 Albania    371.    298.    361.         1030.
+ 28 Albania    343.    272.    269.          884.
+ 29 Albania    486.    468.    356.         1310.
+ 30 Albania    274.    311.    284.          869.
+ 31 Albania    234.    223.    229.          686.
+ 32 Albania    325.    295.    247.          867.
+ 33 Albania    360.    375.    370.         1106.
+ 34 Albania    376.    263.    382.         1022.
+ 35 Albania    370.    375.    362.         1108.
+ 36 Albania    298.    346.    309.          953.
+ 37 Albania    421.    418.    405.         1244.
+ 38 Albania    315.    311.    276.          902.
+ 39 Albania    455.    359.    363.         1178.
+ 40 Albania    418.    417.    419.         1254.
+ 41 Albania    455.    396.    297.         1149.
+ 42 Albania    353.    388.    312.         1053.
+ 43 Albania    349.    333.    340.         1021.
+ 44 Albania    345.    326.    300.          971.
+ 45 Albania    390.    400.    331.         1121.
+ 46 Albania    337.    326.    217.          880.
+ 47 Albania    374.    370.    368.         1112.
+ 48 Albania    479.    585.    536.         1601.
+ 49 Albania    456.    489.    419.         1365.
+ 50 Albania    278.    342.    268.          888.
+ 51 Albania    418.    458.    379.         1256.
+ 52 Albania    418.    391.    401.         1210.
+ 53 Albania    441.    524.    548.         1513.
+ 54 Albania    314.    401.    290.         1005.
+ 55 Albania    346.    265.    320.          932.
+ 56 Albania    478.    431.    349.         1258.
+ 57 Albania    308.    394.    381.         1082.
+ 58 Albania    401.    358.    446.         1204.
+ 59 Albania    290.    315.    286.          891.
+ 60 Albania    420.    421.    337.         1177.
+ 61 Albania    398.    324.    301.         1024.
+ 62 Albania    346.    358.    358.         1062.
+ 63 Albania    270.    367.    337.          974.
+ 64 Albania    408.    426.    391.         1225.
+ 65 Albania    342.    338.    349.         1029.
+ 66 Albania    333.    304.    262.          899.
+ 67 Albania    220.    242.    291.          752.
+ 68 Albania    456.    425.    410.         1291.
+ 69 Albania    389.    334.    358.         1081.
+ 70 Albania    362.    312.    299.          973.
+ 71 Albania    294.    248.    146.          688.
+ 72 Albania    454.    473.    423.         1350.
+ 73 Albania    320.    399.    323.         1042.
+ 74 Albania    365.    417.    374.         1156.
+ 75 Albania    575.    522.    460.         1557.
+ 76 Albania    516.    611.    454.         1581.
+ 77 Albania    347.    266.    221.          834.
+ 78 Albania    294.    229.    210.          732.
+ 79 Albania    436.    338.    284.         1058.
+ 80 Albania    363.    376.    297.         1036.
+ 81 Albania    485.    454.    461.         1399.
+ 82 Albania    502.    430.    390.         1321.
+ 83 Albania    365.    364.    333.         1062.
+ 84 Albania    432.    445.    349.         1226.
+ 85 Albania    371.    366.    314.         1050.
+ 86 Albania    420.    415.    362.         1196.
+ 87 Albania    407.    423.    354.         1184.
+ 88 Albania    452.    399.    287.         1138.
+ 89 Albania    401.    325.    299.         1025.
+ 90 Albania    398.    435.    294.         1128.
+ 91 Albania    455.    381.    285.         1120.
+ 92 Albania    399.    476.    343.         1218.
+ 93 Albania    404.    423.    369.         1196.
+ 94 Albania    472.    420.    421.         1313.
+ 95 Albania    415.    433.    424.         1272.
+ 96 Albania    591.    582.    578.         1752.
+ 97 Albania    334.    361.    332.         1028.
+ 98 Albania    484.    408.    328.         1220.
+ 99 Albania    390.    321.    217.          928.
+100 Albania    501.    445.    296.         1242.
+101 Albania    479.    471.    387.         1337.
+102 Albania    377.    340.    228.          944.
+103 Albania    333.    359.    330.         1022.
+104 Albania    390.    417.    321.         1128.
+105 Albania    427.    462.    422.         1311.
+106 Albania    396.    412.    384.         1191.
+107 Albania    453.    419.    325.         1196.
+108 Albania    441.    458.    378.         1277.
+109 Albania    468.    484.    436.         1388.
+110 Albania    394.    412.    384.         1190.
+111 Albania    570.    559.    441.         1570.
+112 Albania    498.    492.    433.         1422.
+113 Albania    470.    361.    392.         1223.
+114 Albania    375.    367.    347.         1090.
+115 Albania    391.    457.    253.         1101.
+116 Albania    473.    429.    391.         1293.
+117 Albania    538.    515.    454.         1507.
+118 Albania    454.    405.    341.         1200.
+119 Albania    473.    423.    303.         1198.
+120 Albania    372.    425.    381.         1178.
+121 Albania    408.    412.    351.         1172.
+122 Albania    500.    503.    414.         1416.
+123 Albania    402.    438.    359.         1199.
+124 Albania    426.    344.    264.         1034.
+125 Albania    383.    396.    350.         1129.
+126 Albania    426.    469.    406.         1301.
+127 Albania    467.    411.    342.         1220.
+128 Albania    381.    382.    348.         1111.
+129 Albania    493.    317.    328.         1137.
+130 Albania    408.    493.    489.         1390.
+131 Albania    461.    497.    473.         1431.
+132 Albania    387.    427.    409.         1223.
+133 Albania    494.    468.    468.         1431.
+134 Albania    548.    449.    425.         1422.
+135 Albania    307.    326.    348.          981.
+136 Albania    356.    340.    356.         1051.
+137 Albania    600.    571.    514.         1684.
+138 Albania    391.    424.    309.         1124.
+139 Albania    409.    463.    489.         1361.
+140 Albania    517.    496.    533.         1546.
+141 Albania    374.    425.    330.         1129.
+142 Albania    375.    399.    403.         1177.
+143 Albania    484.    542.    483.         1508.
+144 Albania    518.    512.    382.         1412.
+145 Albania    498.    376.    443.         1317.
+146 Albania    543.    531.    478.         1552.
+147 Albania    421.    397.    414.         1232.
+148 Albania    419.    398.    390.         1207.
+149 Albania    276.    282.    297.          855.
+150 Albania    428.    378.    401.         1207.
+151 Albania    423.    480.    448.         1351.
+152 Albania    524.    519.    424.         1467.
+153 Albania    395.    387.    368.         1151.
+154 Albania    486.    376.    369.         1231.
+155 Albania    366.    399.    388.         1153.
+156 Albania    426.    424.    333.         1183.
+157 Albania    362.    404.    361.         1127.
+158 Albania    501.    438.    432.         1371.
+159 Albania    512.    516.    495.         1523.
+160 Albania    420.    312.    306.         1039.
+161 Albania    461.    398.    409.         1268.
+162 Albania    529.    496.    597.         1622.
+163 Albania    472.    482.    404.         1359.
+164 Albania    446.    442.    520.         1407.
+165 Albania    488.    558.    546.         1592.
+166 Albania    610.    603.    537.         1749.
+167 Albania    374.    333.    369.         1076.
+168 Albania    498.    409.    396.         1304.
+169 Albania    331.    424.    294.         1048.
+170 Albania    443.    497.    410.         1350.
+171 Albania    532.    528.    402.         1462.
+172 Albania    470.    353.    362.         1185.
+173 Albania    468.    479.    379.         1326.
+174 Albania    529.    552.    508.         1589.
+175 Albania    336.    284.    266.          886.
+176 Albania    335.    395.    381.         1112.
+177 Albania    478.    455.    369.         1302.
+178 Albania    327.    288.    297.          912.
+179 Albania    440.    547.    508.         1494.
+180 Albania    460.    406.    345.         1211.
+181 Albania    487.    376.    327.         1191.
+182 Albania    349.    378.    420.         1148.
+183 Albania    339.    385.    371.         1095.
+184 Albania    448.    534.    445.         1426.
+185 Albania    441.    357.    265.         1064.
+186 Albania    457.    448.    417.         1322.
+187 Albania    411.    461.    381.         1253.
+188 Albania    471.    419.    348.         1238.
+189 Albania    477.    512.    410.         1399.
+190 Albania    392.    434.    372.         1198.
+191 Albania    413.    442.    488.         1343.
+192 Albania    538.    563.    523.         1623.
+193 Albania    472.    457.    426.         1356.
+194 Albania    375.    439.    487.         1300.
+195 Albania    378.    367.    364.         1108.
+196 Albania    449.    443.    430.         1322.
+197 Albania    515.    498.    513.         1526.
+198 Albania    342.    342.    264.          948.
+199 Albania    469.    534.    452.         1454.
+200 Albania    498.    508.    493.         1499.
+201 Albania    347.    324.    288.          959.
+202 Albania    365.    341.    328.         1034.
+203 Albania    556.    470.    427.         1453.
+204 Albania    404.    392.    356.         1152.
+205 Albania    309.    415.    374.         1098.
+206 Albania    430.    490.    410.         1330.
+207 Albania    344.    290.    222.          855.
+208 Albania    383.    503.    465.         1351.
+209 Albania    450.    541.    483.         1474.
+210 Albania    376.    399.    404.         1179.
+211 Albania    365.    393.    357.         1115.
+212 Albania    439.    421.    361.         1221.
+213 Albania    375.    353.    254.          981.
+214 Albania    311.    295.    270.          876.
+215 Albania    438.    532.    562.         1533.
+216 Albania    530.    592.    482.         1604.
+217 Albania    469.    368.    380.         1217.
+218 Albania    434.    530.    445.         1410.
+219 Albania    429.    406.    379.         1215.
+220 Albania    323.    340.    359.         1022.
+221 Albania    421.    328.    338.         1087.
+222 Albania    512.    435.    428.         1375.
+223 Albania    503.    519.    439.         1461.
+224 Albania    444.    415.    390.         1250.
+225 Albania    487.    493.    456.         1436.
+226 Albania    461.    476.    470.         1407.
+227 Albania    439.    453.    435.         1327.
+228 Albania    366.    387.    345.         1098.
+229 Albania    529.    503.    490.         1522.
+230 Albania    450.    441.    451.         1342.
+231 Albania    397.    425.    398.         1220.
+232 Albania    507.    470.    408.         1385.
+233 Albania    407.    371.    290.         1068.
+234 Albania    430.    523.    439.         1392.
+235 Albania    173.    278.    335.          786.
+236 Albania    422.    462.    302.         1186.
+237 Albania    325.    389.    328.         1042.
+238 Albania    324.    329.    321.          975.
+239 Albania    401.    511.    417.         1329.
+240 Albania    431.    448.    376.         1255.
+241 Albania    485.    496.    458.         1439.
+242 Albania    371.    500.    390.         1260.
+243 Albania    500.    461.    439.         1400.
+244 Albania    443.    463.    351.         1256.
+245 Albania    487.    480.    447.         1414.
+246 Albania    410.    401.    330.         1141.
+247 Albania    384.    475.    359.         1218.
+248 Albania    407.    433.    365.         1205.
+249 Albania    525.    471.    499.         1495.
+250 Albania    495.    510.    427.         1433.
+251 Albania    468.    479.    452.         1399.
+252 Albania    376.    465.    397.         1239.
+253 Albania    420.    442.    380.         1241.
+254 Albania    426.    458.    459.         1342.
+255 Albania    378.    388.    368.         1134.
+256 Albania    446.    420.    423.         1289.
+257 Albania    440.    481.    470.         1391.
+258 Albania    371.    408.    437.         1217.
+259 Albania    392.    474.    433.         1299.
+260 Albania    534.    530.    439.         1503.
+261 Albania    606.    602.    519.         1727.
+262 Albania    489.    494.    458.         1441.
+263 Albania    513.    483.    498.         1494.
+264 Albania    399.    433.    372.         1204.
+265 Albania    483.    485.    482.         1450.
+266 Albania    450.    420.    404.         1275.
+267 Albania    418.    428.    354.         1200.
+268 Albania    412.    387.    407.         1207.
+269 Albania    469.    491.    468.         1428.
+270 Albania    455.    466.    442.         1364.
+271 Albania    457.    434.    416.         1307.
+272 Albania    460.    462.    425.         1347.
+273 Albania    553.    496.    457.         1505.
+274 Albania    372.    384.    430.         1186.
+275 Albania    477.    459.    415.         1352.
+276 Albania    494.    383.    413.         1290.
+277 Albania    478.    456.    456.         1390.
+278 Albania    544.    552.    541.         1636.
+279 Albania    458.    492.    450.         1400.
+280 Albania    484.    528.    434.         1445.
+281 Albania    549.    422.    395.         1366.
+282 Albania    551.    492.    533.         1576.
+283 Albania    526.    500.    493.         1518.
+284 Albania    488.    517.    464.         1470.
+285 Albania    455.    544.    562.         1561.
+286 Albania    495.    621.    555.         1671.
+287 Albania    399.    403.    326.         1128.
+288 Albania    433.    452.    541.         1426.
+289 Albania    432.    484.    436.         1352.
+290 Albania    511.    528.    476.         1515.
+291 Albania    527.    539.    561.         1626.
+292 Albania    601.    538.    583.         1722.
+293 Albania    379.    417.    426.         1222.
+294 Albania    520.    516.    520.         1557.
+295 Albania    442.    401.    450.         1292.
+296 Albania    563.    485.    439.         1488.
+297 Albania    478.    475.    455.         1409.
+298 Albania    294.    364.    370.         1028.
+299 Albania    524.    526.    495.         1545.
+300 Albania    423.    454.    495.         1372.
+301 Albania    403.    453.    447.         1302.
+302 Albania    466.    481.    426.         1373.
+303 Albania    536.    547.    449.         1532.
+304 Albania    537.    573.    482.         1592.
+305 Albania    523.    442.    436.         1401.
+306 Albania    592.    596.    541.         1730.
+307 Albania    408.    455.    510.         1372.
+308 Albania    550.    555.    465.         1570.
+309 Albania    527.    534.    577.         1637.
+310 Albania    436.    453.    495.         1385.
+311 Albania    589.    544.    493.         1626.
+312 Albania    484.    467.    450.         1400.
+313 Albania    439.    486.    519.         1444.
+314 Albania    376.    399.    422.         1197.
+315 Albania    527.    505.    498.         1529.
+316 Albania    435.    418.    379.         1232.
+317 Albania    414.    480.    409.         1302.
+318 Albania    456.    503.    503.         1462.
+319 Albania    438.    423.    425.         1286.
+320 Albania    386.    392.    445.         1224.
+321 Albania    427.    396.    396.         1218.
+322 Albania    412.    426.    380.         1218.
+323 Albania    365.    479.    453.         1297.
+324 Albania    594.    582.    490.         1666.
+325 Albania    569.    517.    480.         1566.
+326 Albania    517.    488.    446.         1451.
+327 Albania    552.    496.    428.         1476.
+328 Albania    562.    580.    528.         1670.
+329 Albania    590.    614.    508.         1712.
+330 Albania    448.    434.    412.         1295.
+331 Albania    503.    456.    388.         1347.
+332 Albania    540.    550.    517.         1607.
+333 Albania    546.    534.    473.         1553.
+334 Albania    558.    565.    532.         1655.
+335 Albania    366.    455.    456.         1277.
+336 Albania    493.    427.    394.         1313.
+337 Albania    534.    552.    478.         1564.
+338 Albania    442.    455.    442.         1339.
+339 Albania    579.    481.    465.         1525.
+340 Albania    505.    535.    527.         1567.
+341 Albania    500.    450.    450.         1400.
+342 Albania    350.    367.    340.         1056.
+343 Albania    466.    557.    482.         1505.
+344 Albania    440.    413.    423.         1275.
+345 Albania    477.    420.    320.         1217.
+346 Albania    382.    426.    429.         1236.
+347 Albania    434.    451.    403.         1288.
+348 Albania    559.    588.    508.         1654.
+349 Albania    455.    529.    447.         1431.
+350 Albania    418.    459.    420.         1297.
+351 Albania    482.    501.    417.         1400.
+352 Albania    503.    481.    465.         1449.
+353 Albania    586.    530.    522.         1638.
+354 Albania    493.    415.    396.         1304.
+355 Albania    604.    598.    481.         1682.
+356 Albania    558.    499.    472.         1530.
+357 Albania    445.    490.    484.         1418.
+358 Albania    525.    518.    531.         1574.
+359 Albania    457.    456.    371.         1285.
+360 Albania    546.    483.    469.         1498.
+361 Albania    632.    502.    450.         1584.
+362 Albania    620.    583.    547.         1750.
+363 Albania    447.    536.    518.         1502.
+364 Albania    657.    604.    494.         1756.
+365 Albania    610.    515.    501.         1626.
+366 Albania    526.    546.    561.         1634.
+367 Albania    484.    490.    473.         1446.
+368 Albania    610.    654.    505.         1768.
+369 Albania    495.    594.    485.         1575.
+370 Albania    453.    513.    496.         1462.
+371 Albania    446.    425.    468.         1339.
+372 Albania    508.    452.    466.         1426.
+373 Albania    446.    458.    412.         1316.
+374 Albania    472.    514.    475.         1461.
+375 Albania    444.    496.    487.         1427.
+376 Albania    537.    541.    517.         1595.
+377 Albania    421.    440.    466.         1327.
+378 Albania    277.    343.    385.         1005.
+379 Albania    446.    481.    455.         1382.
+380 Albania    455.    435.    489.         1379.
+381 Albania    622.    576.    517.         1716.
+382 Albania    493.    515.    562.         1570.
+383 Albania    378.    504.    442.         1323.
+384 Albania    415.    468.    491.         1375.
+385 Albania    396.    405.    317.         1119.
+386 Albania    303.    407.    432.         1142.
+387 Albania    335.    437.    443.         1215.
+388 Albania    480.    510.    404.         1394.
+389 Albania    467.    535.    487.         1489.
+390 Albania    400.    451.    465.         1316.
+391 Albania    496.    508.    536.         1540.
+392 Albania    462.    475.    438.         1375.
+393 Albania    480.    549.    486.         1515.
+394 Albania    472.    456.    327.         1255.
+395 Albania    456.    404.    382.         1242.
+396 Albania    366.    395.    395.         1155.
+397 Albania    481.    490.    386.         1357.
+398 Albania    356.    390.    405.         1150.
+399 Albania    390.    497.    385.         1271.
+400 Albania    516.    515.    496.         1528.
+401 Albania    338.    382.    288.         1008.
+402 Albania    462.    495.    416.         1373.
+403 Albania    405.    472.    426.         1304.
+404 Albania    450.    522.    477.         1449.
+405 Albania    297.    313.    355.          965.
+406 Albania    371.    436.    380.         1187.
+407 Albania    507.    441.    419.         1367.
+408 Albania    478.    446.    436.         1359.
+409 Albania    499.    412.    341.         1251.
+410 Albania    453.    492.    475.         1420.
+411 Albania    487.    519.    498.         1505.
+412 Albania    381.    355.    370.         1107.
+413 Albania    458.    462.    441.         1361.
+414 Albania    341.    328.    327.          996.
+415 Albania    379.    408.    423.         1211.
+416 Albania    506.    524.    473.         1503.
+417 Albania    383.    517.    472.         1372.
+418 Albania    384.    301.    324.         1009.
+419 Albania    409.    429.    356.         1193.
+420 Albania    401.    419.    388.         1208.
+421 Albania    382.    423.    440.         1245.
+422 Albania    456.    453.    446.         1355.
+423 Albania    560.    606.    535.         1702.
+424 Albania    420.    494.    441.         1354.
+425 Albania    405.    431.    415.         1251.
+426 Albania    373.    348.    343.         1064.
+427 Albania    533.    582.    507.         1622.
+428 Albania    503.    488.    483.         1473.
+429 Albania    402.    426.    383.         1211.
+430 Albania    478.    515.    457.         1450.
+431 Albania    481.    544.    429.         1454.
+432 Albania    448.    523.    547.         1518.
+433 Albania    609.    646.    577.         1832.
+434 Albania    453.    517.    444.         1414.
+435 Albania    448.    554.    492.         1493.
+436 Albania    543.    531.    467.         1540.
+437 Albania    437.    449.    327.         1213.
+438 Albania    438.    482.    418.         1339.
+439 Albania    499.    566.    464.         1529.
+440 Albania    457.    471.    455.         1383.
+441 Albania    514.    373.    412.         1298.
+442 Albania    425.    426.    389.         1240.
+443 Albania    391.    401.    398.         1190.
+444 Albania    531.    502.    467.         1501.
+445 Albania    417.    421.    358.         1196.
+446 Albania    479.    484.    404.         1367.
+447 Albania    460.    425.    391.         1275.
+448 Albania    483.    387.    440.         1310.
+449 Albania    405.    407.    412.         1225.
+450 Albania    460.    386.    372.         1217.
+451 Albania    542.    438.    471.         1451.
+452 Albania    344.    418.    410.         1171.
+453 Albania    396.    386.    408.         1190.
+454 Albania    445.    316.    303.         1064.
+455 Albania    445.    433.    414.         1291.
+456 Albania    454.    404.    398.         1256.
+457 Albania    484.    366.    396.         1246.
+458 Albania    454.    500.    425.         1379.
+459 Albania    387.    433.    375.         1195.
+460 Albania    550.    515.    505.         1571.
+461 Albania    440.    485.    384.         1309.
+462 Albania    386.    447.    379.         1212.
+463 Albania    339.    326.    384.         1049.
+464 Albania    508.    472.    420.         1399.
+465 Albania    526.    563.    484.         1573.
+466 Albania    401.    361.    439.         1200.
+467 Albania    490.    394.    422.         1305.
+468 Albania    409.    417.    458.         1283.
+469 Albania    488.    395.    350.         1232.
+470 Albania    495.    551.    583.         1629.
+471 Albania    510.    483.    453.         1446.
+472 Albania    329.    330.    366.         1024.
+473 Albania    483.    489.    513.         1484.
+474 Albania    428.    424.    437.         1289.
+475 Albania    421.    365.    420.         1206.
+476 Albania    396.    389.    433.         1219.
+477 Albania    556.    480.    479.         1514.
+478 Albania    385.    403.    411.         1198.
+479 Albania    425.    386.    345.         1157.
+480 Albania    232.    225.    253.          711.
+481 Albania    520.    493.    408.         1420.
+482 Albania    506.    482.    420.         1409.
+483 Albania    355.    456.    475.         1286.
+484 Albania    453.    457.    388.         1298.
+485 Albania    523.    464.    399.         1386.
+486 Albania    525.    425.    318.         1268.
+487 Albania    574.    500.    441.         1515.
+488 Albania    381.    367.    371.         1119.
+489 Albania    388.    430.    334.         1152.
+490 Albania    486.    471.    405.         1361.
+491 Albania    451.    458.    491.         1399.
+492 Albania    345.    366.    354.         1065.
+493 Albania    398.    512.    347.         1256.
+494 Albania    455.    490.    354.         1299.
+495 Albania    529.    562.    436.         1528.
+496 Albania    485.    463.    371.         1319.
+497 Albania    568.    511.    429.         1507.
+498 Albania    300.    419.    335.         1054.
+499 Albania    542.    496.    420.         1458.
+500 Albania    423.    383.    345.         1151.
+# ℹ 755,221 more rows</code></pre>
+</div>
+</div>
+<p>You can also create your own dataframes by combining vectors, note you have to use an equals sign to do this, rather than the arrow assignment:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>my_class_list <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="at">maths_grade =</span> <span class="fu">c</span>(<span class="dv">5</span>,    <span class="dv">4</span>,    <span class="dv">4</span>,    <span class="dv">1</span>,     <span class="dv">7</span>,     <span class="dv">5</span>,     <span class="dv">8</span>),</span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="at">english_grade =</span> <span class="fu">c</span>(<span class="dv">8</span>,    <span class="dv">5</span>,    <span class="dv">3</span>,    <span class="dv">2</span>,     <span class="dv">3</span>,     <span class="dv">6</span>,     <span class="dv">9</span>),</span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="at">genders =</span> <span class="fu">c</span>(<span class="st">"F"</span>,  <span class="st">"M"</span>,  <span class="st">"M"</span>,  <span class="st">"F"</span>,   <span class="st">"M"</span>,   <span class="st">"F"</span>,   <span class="st">"M"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="at">students =</span> <span class="fu">c</span>(<span class="st">"Joe"</span>, <span class="st">"Al"</span>, <span class="st">"Mo"</span>, <span class="st">"Flo"</span>, <span class="st">"Olu"</span>, <span class="st">"Sam"</span>, <span class="st">"Jimmy"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>  )</span>
+<span id="cb5-7"><a href="#cb5-7"></a>  </span>
+<span id="cb5-8"><a href="#cb5-8"></a>my_class_list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  maths_grade english_grade genders students
+1           5             8       F      Joe
+2           4             5       M       Al
+3           4             3       M       Mo
+4           1             2       F      Flo
+5           7             3       M      Olu
+6           5             6       F      Sam
+7           8             9       M    Jimmy</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Core to the <em>tidyverse</em> is the idea of <em>tidy data</em>, a rule of thumb for creating data sets that can be easily manipulated, modeled and presented. <em>Tidy data</em> are data sets where each variable is a column and each observation a row.</p>
+<p>This data isn’t tidy data as each row has contains multiple exam results (observations):</p>
+<table class="caption-top table">
+<thead><tr class="header">
+<th>ID</th>
+<th>Exam 1</th>
+<th>Grade 1</th>
+<th>Exam 2</th>
+<th>Grade 2</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>R2341</td>
+<td>English</td>
+<td>4</td>
+<td>Maths</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>R8842</td>
+<td>English</td>
+<td>5</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>This dataframe is tidy data as each student has one entry for each exam:</p>
+<table class="caption-top table">
+<thead><tr class="header">
+<th>ID</th>
+<th>Exam</th>
+<th>Grade</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>R2341</td>
+<td>English</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>R2341</td>
+<td>Maths</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>R8842</td>
+<td>English</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>First we need to get some data into R so we can start analysing them. We can load large datatables into R by either providing the online web address, or by loading it from a local file directory on your hard drive. Both methods are covered below:</p>
+</section><section id="loading-data-from-the-web" class="level1" data-number="3"><h1 data-number="3">
+<span class="header-section-number">3</span> Loading data from the web</h1>
+<p>To download files from the web you’ll need to find the exact location of the file you are using. For example below we will need another package, <code>openxlsx</code>, which you need to <em>install</em> before you load it (see: <strong>?@sec-packages</strong>, or use line 1 below). The code shown will download the files from an online Google drive directly into objects in R using <code>read.xlsx(&lt;file_web_address&gt;, &lt;sheet_name&gt;)</code>:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To convert data on your google drive into a link that works in R, you can use the following website: <a href="https://sites.google.com/site/gdocs2direct/" class="uri">https://sites.google.com/site/gdocs2direct/</a>. Note that not all read/load commands in R will work with web addresses and some will require you have to copies of the datasets on your disk drive. Additionally, downloading large datasets from the web directly into R can be very slow, loading the dataset from your harddrive will nearly always be <em>much</em> faster.</p>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">install.packages</span>(<span class="st">"openxlsx"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>results <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"https://drive.google.com/uc?export=download&amp;id=1tp9xe3dS__eg7RrXf0T_oMxcrz_TbMdM"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5"></a>                      <span class="at">sheet=</span><span class="st">"Results"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>schools <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"https://drive.google.com/uc?export=download&amp;id=1tp9xe3dS__eg7RrXf0T_oMxcrz_TbMdM"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7"></a>                      <span class="at">sheet=</span><span class="st">"Schools"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section><section id="sec-loading-computer" class="level1" data-number="4"><h1 data-number="4">
+<span class="header-section-number">4</span> Loading data from your computer</h1>
+<p>Downloading files directly from web addresses can be slow and you might want to prefer to use files saved to your computer’s hard drive. You can do this by following the steps below:</p>
+<p>Download the <code>PISA_student_2025_subset.parquet</code> file from <a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/IQCMwx0XKIIOTIacuqWX4xXVAd4zhyc-vUpxLSjKn0tSVBI?e=2sGSad">here</a> and save it to your computer where your R code file is.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The PISA student dataset is huge, with over 1,200 pieces of information stored on 600,000+ students. This book uses a subset of this data, but if you do want the full dataset, you can download it from <a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/IQDIeo6oO1uxS5b3A_JTsyZHAVtu7lgi1GxUOXsJpXJeJeg?e=j6Mxi2">here</a></p>
+</div>
+</div>
+<p>Copy the location of the file (see next step for help)</p>
+<ul>
+<li>
+<p>To find the location of a file in <strong><em>Windows</em></strong> do the following:</p>
+<ol type="1">
+<li>
+<p>Navigate to the location of the file in <em>Windows Explorer</em>:</p>
+<p><img src="images/navigate_file_location.png" class="img-fluid"></p>
+</li>
+<li>
+<p>Click on the address bar</p>
+<p><img src="images/select_file_location.png" class="img-fluid"></p>
+</li>
+<li><p>Copy the location</p></li>
+</ol>
+</li>
+<li>
+<p>To find the location of a file in <strong><em>Mac OSX</em></strong> do the following:</p>
+<ol type="1">
+<li><p>Open <em>Finder</em></p></li>
+<li><p>Navigate to the folder where you saved the file</p></li>
+<li>
+<p>Right click on the name of the file, then press the <strong>option</strong> <code>⌥</code> (or <code>Alt</code>) button and select <code>Copy &lt;name of file&gt; as Pathname</code></p>
+<p><img src="images/mac_pathnames.png" class="img-fluid"></p>
+</li>
+<li><p>Alternatively, follow <a href="https://support.apple.com/en-gb/guide/mac-help/mchlp1774/mac">this</a></p></li>
+</ol>
+</li>
+</ul>
+<p>To load this particular data into R we need to use the <code>read_parquet</code> command from the <code>arrow</code> package, specifying the location and name of the file we are loading. See the following code:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">install.packages</span>(<span class="st">"arrow"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a>PISA_2025 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[C:/Users/Peter/code/PISA_2025_student_subset.parquet]"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section><section id="setting-working-directories" class="level1" data-number="5"><h1 data-number="5">
+<span class="header-section-number">5</span> Setting working directories</h1>
+<p>Using the <code>setwd(&lt;location&gt;)</code> you can specify where R will look by default for any datasets. In the example below, the <code>dfe_data.xlsx</code> will have been downloaded and stored in <code>C:/Users/Peter/code</code>. By running <code>setwd("C:/Users/Peter/code")</code> R will always look in that location when trying to load files, meaning that <code>read_parquet(r"[C:/Users/Peter/code/PISA_student_2025.parquet]")</code> will be treated the same as <code>read_parquet(r"[PISA_student_2025.parquet]")</code></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># context: setup</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">setwd</span>(r<span class="st">"[C:/Users/Peter/code/]"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>PISA_2025 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(r<span class="st">"[PISA_student_2025.parquet]"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>To work out what your current working directory is, you can use <code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code>.</p>
+<section id="proper-addresses" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="proper-addresses">
+<span class="header-section-number">5.1</span> Proper addresses</h2>
+<p>You might have found that you get an error if you don’t convert your backslashes <code>\</code> into forwardslashes <code>/</code>. It’s common mistake and very annoying. In most programming languages a backslash signifies the start of a special command, for example <code>\n</code> signifies a <code>newline</code>.</p>
+<p>With R there are three ways to get around the problem of backslashes in file locations, for the location:<code>"C:\myfolder\"</code> we could:</p>
+<ul>
+<li>replace them with forwardslashes (as shown above):<code>"C:/myfolder/"</code>
+</li>
+<li>replace them with double backslashes (the special character specified by two backslashes is one backslash!):<code>"C:\\myfolder\\"</code>
+</li>
+<li>use the inbuilt R command to deal with filenames: <code>r"[C:\myfolder\]"</code>
+</li>
+</ul></section></section><section id="sec-parquet" class="level1" data-number="6"><h1 data-number="6">
+<span class="header-section-number">6</span> .parquet files</h1>
+<p>For the majority of this workbook you will be using a cutdown version of the <code>PISA_2025</code> student table. This dataset is huge and we have loaded it into R, selected fields we think are useful, converted column types to work with R and saved in the <code>.parquet</code> format. <code>.parquet</code> files are quick to load and small in size. To load a <code>.parquet</code> file you can use the <code>read_parquet(&lt;location&gt;)</code> command from the <code>arrow</code> package.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>PISA_2025 <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">"&lt;yourfolder&gt;/PISA_student_2025_subset.parquet"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>If you want to save out any of your findings, you can use <code>write_parquet(&lt;object&gt;, &lt;location&gt;)</code>, where <code>object</code> is the table you are working on and <code>location</code> is where you want to save it.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">write_parquet</span>(PISA_2025 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(CNT<span class="sc">==</span><span class="st">"France"</span>), <span class="st">"&lt;yourfolder&gt;/pisa_france_2022.parquet"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section><section id="csv-files" class="level1" data-number="7"><h1 data-number="7">
+<span class="header-section-number">7</span> .csv files</h1>
+<p>A very common way of distributing data is through <code>.csv</code> files. These files can be easily compressed and opened in common office spreadsheet tools such as Excel. To load a <code>.csv</code> we can use <code>read_csv("&lt;file_location&gt;")</code></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="co"># loading from a website</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://barrolee.github.io/BarroLeeDataSet/BLData/BL_v3_MF.csv"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="co"># loading from your hard drive</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"&lt;your_folder&gt;/BL_v3_MF.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You might want to save your own work as a <code>.csv</code> for use later or for manipulation in another tool e.g.&nbsp;Excel. To do this we can use <code>write_csv(&lt;your_data&gt;, "&lt;your_folder&gt;&lt;name&gt;.csv")</code>. <strong>NOTE</strong>: don’t forget to add <code>.csv</code> to the end of your “<your_folder><name><strong>.csv</strong>”, otherwise you might struggle to open the file in another program.</name></your_folder></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="co"># saving your results to a file called `summary_stats.csv`</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="fu">write_csv</span>(my_results, <span class="st">"summary_stats.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section><section id="exploring-data" class="level1" data-number="8"><h1 data-number="8">
+<span class="header-section-number">8</span> Exploring data</h1>
+<p>Now that we have loaded the <code>PISA_2025</code> dataset we can start to explore it.</p>
+<p>You can check that the tables have loaded correctly by typing the object name and ‘<em>running</em>’ the line (<code>control</code>|<code>command ⌘</code> and <code>Enter</code>)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>PISA_2025</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 755,721 × 80
+    CNT     CNTSCHID CNTSTUID REGION  OECD  LANGTEST_QQQ ST003D02T ST003D03T
+  * &lt;fct&gt;   &lt;fct&gt;    &lt;chr&gt;    &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;            &lt;dbl&gt; &lt;fct&gt;    
+  1 Albania 00800001 00800001 Albania No    Albanian             6 2009     
+  2 Albania 00800001 00800002 Albania No    Albanian             5 2009     
+  3 Albania 00800001 00800003 Albania No    Albanian             6 2009     
+  4 Albania 00800001 00800004 Albania No    Albanian             1 2009     
+  5 Albania 00800001 00800005 Albania No    Albanian            10 2009     
+  6 Albania 00800001 00800006 Albania No    Albanian             2 2009     
+  7 Albania 00800001 00800007 Albania No    Albanian             4 2009     
+  8 Albania 00800001 00800008 Albania No    Albanian             6 2009     
+  9 Albania 00800001 00800009 Albania No    Albanian            12 2009     
+ 10 Albania 00800001 00800010 Albania No    Albanian             9 2009     
+ 11 Albania 00800001 00800011 Albania No    Albanian             2 2009     
+ 12 Albania 00800001 00800012 Albania No    Albanian             1 2009     
+ 13 Albania 00800001 00800013 Albania No    Albanian             1 2009     
+ 14 Albania 00800001 00800014 Albania No    Albanian            10 2009     
+ 15 Albania 00800001 00800015 Albania No    Albanian             8 2009     
+ 16 Albania 00800001 00800016 Albania No    Albanian             4 2009     
+ 17 Albania 00800001 00800017 Albania No    Albanian             3 2009     
+ 18 Albania 00800001 00800018 Albania No    Albanian             5 2009     
+ 19 Albania 00800001 00800019 Albania No    Albanian             7 2009     
+ 20 Albania 00800001 00800020 Albania No    Albanian             2 2009     
+ 21 Albania 00800001 00800021 Albania No    Albanian             4 2009     
+ 22 Albania 00800001 00800022 Albania No    Albanian            10 2009     
+ 23 Albania 00800001 00800023 Albania No    Albanian            10 2009     
+ 24 Albania 00800001 00800024 Albania No    Albanian             3 2009     
+ 25 Albania 00800001 00800025 Albania No    Albanian             2 2009     
+ 26 Albania 00800001 00800026 Albania No    Albanian             2 2009     
+ 27 Albania 00800001 00800027 Albania No    Albanian            11 2009     
+ 28 Albania 00800001 00800028 Albania No    Albanian             8 2009     
+ 29 Albania 00800001 00800029 Albania No    Albanian             2 2009     
+ 30 Albania 00800001 00800030 Albania No    Albanian             1 2009     
+ 31 Albania 00800001 00800031 Albania No    Albanian             3 2009     
+ 32 Albania 00800001 00800032 Albania No    Albanian             7 2009     
+ 33 Albania 00800001 00800033 Albania No    Albanian             1 2009     
+ 34 Albania 00800001 00800034 Albania No    Albanian             5 2009     
+ 35 Albania 00800001 00800035 Albania No    Albanian             3 2009     
+ 36 Albania 00800001 00800036 Albania No    Albanian             6 2009     
+ 37 Albania 00800001 00800037 Albania No    Albanian             2 2009     
+ 38 Albania 00800001 00800038 Albania No    Albanian             4 2009     
+ 39 Albania 00800001 00800039 Albania No    Albanian             7 2009     
+ 40 Albania 00800001 00800040 Albania No    Albanian             7 2009     
+ 41 Albania 00800001 00800041 Albania No    Albanian             9 2009     
+ 42 Albania 00800001 00800042 Albania No    Albanian             7 2009     
+ 43 Albania 00800001 00800043 Albania No    Albanian             4 2009     
+ 44 Albania 00800001 00800044 Albania No    Albanian            11 2009     
+ 45 Albania 00800001 00800045 Albania No    Albanian            11 2009     
+ 46 Albania 00800002 00800046 Albania No    Albanian             9 2009     
+ 47 Albania 00800002 00800047 Albania No    Albanian             2 2009     
+ 48 Albania 00800002 00800048 Albania No    Albanian             5 2009     
+ 49 Albania 00800002 00800049 Albania No    Albanian             4 2009     
+ 50 Albania 00800002 00800050 Albania No    Albanian            11 2009     
+ 51 Albania 00800002 00800051 Albania No    Albanian            11 2009     
+ 52 Albania 00800002 00800052 Albania No    Albanian             3 2009     
+ 53 Albania 00800002 00800053 Albania No    Albanian             9 2009     
+ 54 Albania 00800002 00800054 Albania No    Albanian            11 2009     
+ 55 Albania 00800002 00800055 Albania No    Albanian             3 2009     
+ 56 Albania 00800002 00800056 Albania No    Albanian            10 2009     
+ 57 Albania 00800002 00800057 Albania No    Albanian            12 2009     
+ 58 Albania 00800002 00800058 Albania No    Albanian             7 2009     
+ 59 Albania 00800002 00800059 Albania No    Albanian             9 2009     
+ 60 Albania 00800002 00800060 Albania No    Albanian             5 2009     
+ 61 Albania 00800002 00800061 Albania No    Albanian            10 2009     
+ 62 Albania 00800002 00800062 Albania No    Albanian             8 2009     
+ 63 Albania 00800002 00800063 Albania No    Albanian             9 2009     
+ 64 Albania 00800002 00800064 Albania No    Albanian             5 2009     
+ 65 Albania 00800002 00800065 Albania No    Albanian            10 2009     
+ 66 Albania 00800002 00800066 Albania No    Albanian             8 2009     
+ 67 Albania 00800002 00800067 Albania No    Albanian             6 2009     
+ 68 Albania 00800002 00800068 Albania No    Albanian             1 2009     
+ 69 Albania 00800002 00800069 Albania No    Albanian            10 2009     
+ 70 Albania 00800003 00800070 Albania No    Albanian             5 2009     
+ 71 Albania 00800003 00800071 Albania No    Albanian             1 2009     
+ 72 Albania 00800003 00800072 Albania No    Albanian            10 2009     
+ 73 Albania 00800003 00800073 Albania No    Albanian             7 2009     
+ 74 Albania 00800003 00800074 Albania No    Albanian             3 2009     
+ 75 Albania 00800003 00800075 Albania No    Albanian             3 2009     
+ 76 Albania 00800003 00800076 Albania No    Albanian            12 2009     
+ 77 Albania 00800003 00800077 Albania No    Albanian             9 2009     
+ 78 Albania 00800003 00800078 Albania No    Albanian             4 2009     
+ 79 Albania 00800003 00800079 Albania No    Albanian            11 2009     
+ 80 Albania 00800003 00800080 Albania No    Albanian             2 2009     
+ 81 Albania 00800003 00800081 Albania No    Albanian             9 2009     
+ 82 Albania 00800003 00800082 Albania No    Albanian             4 2009     
+ 83 Albania 00800003 00800083 Albania No    Albanian            10 2009     
+ 84 Albania 00800003 00800084 Albania No    Albanian             5 2009     
+ 85 Albania 00800003 00800085 Albania No    Albanian             7 2009     
+ 86 Albania 00800003 00800086 Albania No    Albanian             7 2009     
+ 87 Albania 00800003 00800087 Albania No    Albanian             9 2009     
+ 88 Albania 00800003 00800088 Albania No    Albanian             2 2009     
+ 89 Albania 00800003 00800089 Albania No    Albanian             1 2009     
+ 90 Albania 00800003 00800090 Albania No    Albanian             9 2009     
+ 91 Albania 00800003 00800091 Albania No    Albanian             5 2009     
+ 92 Albania 00800003 00800092 Albania No    Albanian             3 2009     
+ 93 Albania 00800003 00800093 Albania No    Albanian             6 2009     
+ 94 Albania 00800003 00800094 Albania No    Albanian             2 2009     
+ 95 Albania 00800003 00800095 Albania No    Albanian             5 2009     
+ 96 Albania 00800004 00800096 Albania No    Albanian             9 2009     
+ 97 Albania 00800004 00800097 Albania No    Albanian             7 2009     
+ 98 Albania 00800004 00800098 Albania No    Albanian             3 2009     
+ 99 Albania 00800004 00800099 Albania No    Albanian             1 2009     
+100 Albania 00800004 00800100 Albania No    Albanian             6 2009     
+101 Albania 00800004 00800101 Albania No    Albanian             7 2009     
+102 Albania 00800004 00800102 Albania No    Albanian             8 2009     
+103 Albania 00800004 00800103 Albania No    Albanian             4 2009     
+104 Albania 00800004 00800104 Albania No    Albanian            11 2009     
+105 Albania 00800004 00800105 Albania No    Albanian            11 2009     
+106 Albania 00800004 00800106 Albania No    Albanian            10 2009     
+107 Albania 00800004 00800107 Albania No    Albanian            12 2009     
+108 Albania 00800004 00800108 Albania No    Albanian             4 2009     
+109 Albania 00800004 00800109 Albania No    Albanian             1 2009     
+110 Albania 00800004 00800110 Albania No    Albanian             2 2009     
+111 Albania 00800004 00800111 Albania No    Albanian            10 2009     
+112 Albania 00800004 00800112 Albania No    Albanian             7 2009     
+113 Albania 00800004 00800113 Albania No    Albanian             7 2009     
+114 Albania 00800004 00800114 Albania No    Albanian            11 2009     
+115 Albania 00800004 00800115 Albania No    Albanian             5 2009     
+116 Albania 00800004 00800116 Albania No    Albanian             7 2009     
+117 Albania 00800004 00800117 Albania No    Albanian             8 2009     
+118 Albania 00800004 00800118 Albania No    Albanian             3 2009     
+119 Albania 00800004 00800119 Albania No    Albanian             7 2009     
+120 Albania 00800004 00800120 Albania No    Albanian            10 2009     
+121 Albania 00800004 00800121 Albania No    Albanian             8 2009     
+122 Albania 00800004 00800122 Albania No    Albanian             2 2009     
+123 Albania 00800004 00800123 Albania No    Albanian             6 2009     
+124 Albania 00800004 00800124 Albania No    Albanian             1 2009     
+125 Albania 00800004 00800125 Albania No    Albanian            10 2009     
+126 Albania 00800004 00800126 Albania No    Albanian             7 2009     
+127 Albania 00800004 00800127 Albania No    Albanian             6 2009     
+128 Albania 00800005 00800128 Albania No    Albanian             8 2009     
+129 Albania 00800005 00800129 Albania No    Albanian             8 2009     
+130 Albania 00800005 00800130 Albania No    Albanian             4 2009     
+131 Albania 00800005 00800131 Albania No    Albanian             5 2009     
+132 Albania 00800005 00800132 Albania No    Albanian             4 2009     
+133 Albania 00800005 00800133 Albania No    Albanian             1 2009     
+134 Albania 00800005 00800134 Albania No    Albanian             2 2009     
+135 Albania 00800005 00800135 Albania No    Albanian             8 2009     
+136 Albania 00800005 00800136 Albania No    Albanian             1 2009     
+137 Albania 00800005 00800137 Albania No    Albanian             3 2009     
+138 Albania 00800005 00800138 Albania No    Albanian             2 2009     
+139 Albania 00800005 00800139 Albania No    Albanian             5 2009     
+140 Albania 00800005 00800140 Albania No    Albanian             8 2009     
+141 Albania 00800005 00800141 Albania No    Albanian             6 2009     
+142 Albania 00800005 00800142 Albania No    Albanian             9 2009     
+143 Albania 00800005 00800143 Albania No    Albanian             5 2009     
+144 Albania 00800005 00800144 Albania No    Albanian             4 2009     
+145 Albania 00800005 00800145 Albania No    Albanian             5 2009     
+146 Albania 00800005 00800146 Albania No    Albanian             1 2009     
+147 Albania 00800005 00800147 Albania No    Albanian             3 2009     
+148 Albania 00800005 00800148 Albania No    Albanian             7 2009     
+149 Albania 00800005 00800149 Albania No    Albanian             9 2009     
+150 Albania 00800005 00800150 Albania No    Albanian             6 2009     
+151 Albania 00800005 00800151 Albania No    Albanian             2 2009     
+152 Albania 00800005 00800152 Albania No    Albanian             2 2009     
+153 Albania 00800005 00800153 Albania No    Albanian             6 2009     
+154 Albania 00800005 00800154 Albania No    Albanian             5 2009     
+155 Albania 00800005 00800155 Albania No    Albanian             8 2009     
+156 Albania 00800005 00800156 Albania No    Albanian             7 2009     
+157 Albania 00800005 00800157 Albania No    Albanian             1 2009     
+158 Albania 00800005 00800158 Albania No    Albanian             4 2009     
+159 Albania 00800005 00800159 Albania No    Albanian             4 2009     
+160 Albania 00800005 00800160 Albania No    Albanian             9 2009     
+161 Albania 00800005 00800161 Albania No    Albanian             3 2009     
+162 Albania 00800005 00800162 Albania No    Albanian             2 2009     
+163 Albania 00800005 00800163 Albania No    Albanian             6 2009     
+164 Albania 00800005 00800164 Albania No    Albanian             5 2009     
+165 Albania 00800005 00800165 Albania No    Albanian             7 2009     
+166 Albania 00800005 00800166 Albania No    Albanian             2 2009     
+167 Albania 00800005 00800167 Albania No    Albanian             1 2009     
+168 Albania 00800005 00800168 Albania No    Albanian             8 2009     
+169 Albania 00800005 00800169 Albania No    Albanian             8 2009     
+170 Albania 00800005 00800170 Albania No    Albanian            10 2009     
+171 Albania 00800005 00800171 Albania No    Albanian             3 2009     
+172 Albania 00800006 00800172 Albania No    Albanian            12 2009     
+173 Albania 00800006 00800173 Albania No    Albanian            11 2009     
+174 Albania 00800006 00800174 Albania No    Albanian             6 2009     
+175 Albania 00800006 00800175 Albania No    Albanian             8 2009     
+176 Albania 00800006 00800176 Albania No    Albanian            12 2009     
+177 Albania 00800006 00800177 Albania No    Albanian             9 2009     
+178 Albania 00800006 00800178 Albania No    Albanian            11 2009     
+179 Albania 00800006 00800179 Albania No    Albanian            10 2009     
+180 Albania 00800006 00800180 Albania No    Albanian             8 2009     
+181 Albania 00800006 00800181 Albania No    Albanian            11 2009     
+182 Albania 00800006 00800182 Albania No    Albanian             7 2009     
+183 Albania 00800006 00800183 Albania No    Albanian            10 2009     
+184 Albania 00800006 00800184 Albania No    Albanian             9 2009     
+185 Albania 00800006 00800185 Albania No    Albanian            10 2009     
+186 Albania 00800006 00800186 Albania No    Albanian             3 2009     
+187 Albania 00800006 00800187 Albania No    Albanian            10 2009     
+188 Albania 00800006 00800188 Albania No    Albanian             9 2009     
+189 Albania 00800006 00800189 Albania No    Albanian             9 2009     
+190 Albania 00800006 00800190 Albania No    Albanian            11 2009     
+191 Albania 00800006 00800191 Albania No    Albanian             7 2009     
+192 Albania 00800006 00800192 Albania No    Albanian             7 2009     
+193 Albania 00800006 00800193 Albania No    Albanian            11 2009     
+194 Albania 00800006 00800194 Albania No    Albanian            10 2009     
+195 Albania 00800006 00800195 Albania No    Albanian             9 2009     
+196 Albania 00800006 00800196 Albania No    Albanian            12 2009     
+197 Albania 00800006 00800197 Albania No    Albanian             5 2009     
+198 Albania 00800006 00800198 Albania No    Albanian            10 2009     
+199 Albania 00800006 00800199 Albania No    Albanian            11 2009     
+200 Albania 00800006 00800200 Albania No    Albanian            10 2009     
+201 Albania 00800006 00800201 Albania No    Albanian            10 2009     
+202 Albania 00800006 00800202 Albania No    Albanian             5 2009     
+203 Albania 00800006 00800203 Albania No    Albanian             7 2009     
+204 Albania 00800006 00800204 Albania No    Albanian            11 2009     
+205 Albania 00800006 00800205 Albania No    Albanian            11 2009     
+206 Albania 00800006 00800206 Albania No    Albanian            10 2009     
+207 Albania 00800006 00800207 Albania No    Albanian            10 2009     
+208 Albania 00800007 00800208 Albania No    Albanian             4 2009     
+209 Albania 00800007 00800209 Albania No    Albanian             1 2009     
+210 Albania 00800007 00800210 Albania No    Albanian             9 2009     
+211 Albania 00800007 00800211 Albania No    Albanian             7 2009     
+212 Albania 00800007 00800212 Albania No    Albanian             4 2009     
+213 Albania 00800007 00800213 Albania No    Albanian             7 2009     
+214 Albania 00800007 00800214 Albania No    Albanian             3 2009     
+215 Albania 00800007 00800215 Albania No    Albanian             6 2009     
+216 Albania 00800007 00800216 Albania No    Albanian             6 2009     
+217 Albania 00800007 00800217 Albania No    Albanian             2 2009     
+218 Albania 00800007 00800218 Albania No    Albanian             7 2009     
+219 Albania 00800007 00800219 Albania No    Albanian            11 2009     
+220 Albania 00800007 00800220 Albania No    Albanian             5 2009     
+221 Albania 00800007 00800221 Albania No    Albanian             1 2009     
+222 Albania 00800007 00800222 Albania No    Albanian             2 2009     
+223 Albania 00800007 00800223 Albania No    Albanian             8 2009     
+224 Albania 00800007 00800224 Albania No    Albanian             3 2009     
+225 Albania 00800007 00800225 Albania No    Albanian             9 2009     
+226 Albania 00800007 00800226 Albania No    Albanian             6 2009     
+227 Albania 00800007 00800227 Albania No    Albanian             9 2009     
+228 Albania 00800007 00800228 Albania No    Albanian             2 2009     
+229 Albania 00800007 00800229 Albania No    Albanian             2 2009     
+230 Albania 00800007 00800230 Albania No    Albanian             6 2009     
+231 Albania 00800007 00800231 Albania No    Albanian             9 2009     
+232 Albania 00800007 00800232 Albania No    Albanian             5 2009     
+233 Albania 00800007 00800233 Albania No    Albanian             9 2009     
+234 Albania 00800007 00800234 Albania No    Albanian             2 2009     
+235 Albania 00800007 00800235 Albania No    Albanian             6 2009     
+236 Albania 00800007 00800236 Albania No    Albanian            12 2009     
+237 Albania 00800007 00800237 Albania No    Albanian            11 2009     
+238 Albania 00800007 00800238 Albania No    Albanian             1 2009     
+239 Albania 00800007 00800239 Albania No    Albanian             6 2009     
+240 Albania 00800007 00800240 Albania No    Albanian             1 2009     
+241 Albania 00800007 00800241 Albania No    Albanian             3 2009     
+242 Albania 00800007 00800242 Albania No    Albanian             9 2009     
+243 Albania 00800007 00800243 Albania No    Albanian             1 2009     
+244 Albania 00800007 00800244 Albania No    Albanian            11 2009     
+245 Albania 00800007 00800245 Albania No    Albanian             5 2009     
+246 Albania 00800007 00800246 Albania No    Albanian            11 2009     
+247 Albania 00800007 00800247 Albania No    Albanian             7 2009     
+248 Albania 00800007 00800248 Albania No    Albanian             6 2009     
+249 Albania 00800007 00800249 Albania No    Albanian             1 2009     
+250 Albania 00800007 00800250 Albania No    Albanian             9 2009     
+251 Albania 00800007 00800251 Albania No    Albanian             4 2009     
+252 Albania 00800007 00800252 Albania No    Albanian             7 2009     
+253 Albania 00800007 00800253 Albania No    Albanian             2 2009     
+254 Albania 00800008 00800254 Albania No    Albanian            10 2009     
+255 Albania 00800008 00800255 Albania No    Albanian            11 2009     
+256 Albania 00800008 00800256 Albania No    Albanian            11 2009     
+257 Albania 00800008 00800257 Albania No    Albanian             9 2009     
+258 Albania 00800008 00800258 Albania No    Albanian            10 2009     
+259 Albania 00800008 00800259 Albania No    Albanian            11 2009     
+260 Albania 00800008 00800260 Albania No    Albanian            12 2009     
+261 Albania 00800008 00800261 Albania No    Albanian            12 2009     
+262 Albania 00800008 00800262 Albania No    Albanian             8 2009     
+263 Albania 00800008 00800263 Albania No    Albanian             9 2009     
+264 Albania 00800008 00800264 Albania No    Albanian            11 2009     
+265 Albania 00800008 00800265 Albania No    Albanian            12 2009     
+266 Albania 00800008 00800266 Albania No    Albanian            11 2009     
+267 Albania 00800008 00800267 Albania No    Albanian            12 2009     
+268 Albania 00800008 00800268 Albania No    Albanian            12 2009     
+269 Albania 00800008 00800269 Albania No    Albanian            11 2009     
+270 Albania 00800008 00800270 Albania No    Albanian            10 2009     
+271 Albania 00800008 00800271 Albania No    Albanian            12 2009     
+272 Albania 00800008 00800272 Albania No    Albanian             9 2009     
+273 Albania 00800008 00800273 Albania No    Albanian            10 2009     
+274 Albania 00800008 00800274 Albania No    Albanian            10 2009     
+275 Albania 00800008 00800275 Albania No    Albanian            10 2009     
+276 Albania 00800008 00800276 Albania No    Albanian            10 2009     
+277 Albania 00800008 00800277 Albania No    Albanian            11 2009     
+278 Albania 00800009 00800278 Albania No    Albanian             9 2009     
+279 Albania 00800009 00800279 Albania No    Albanian             4 2009     
+280 Albania 00800009 00800280 Albania No    Albanian             3 2009     
+281 Albania 00800009 00800281 Albania No    Albanian             5 2009     
+282 Albania 00800009 00800282 Albania No    Albanian             1 2009     
+283 Albania 00800009 00800283 Albania No    Albanian             5 2009     
+284 Albania 00800009 00800284 Albania No    Albanian             8 2009     
+285 Albania 00800009 00800285 Albania No    Albanian             2 2009     
+286 Albania 00800009 00800286 Albania No    Albanian             2 2009     
+287 Albania 00800009 00800287 Albania No    Albanian             9 2009     
+288 Albania 00800009 00800288 Albania No    Albanian             7 2009     
+289 Albania 00800009 00800289 Albania No    Albanian             8 2009     
+290 Albania 00800009 00800290 Albania No    Albanian             8 2009     
+291 Albania 00800009 00800291 Albania No    Albanian             8 2009     
+292 Albania 00800009 00800292 Albania No    Albanian             3 2009     
+293 Albania 00800009 00800293 Albania No    Albanian             3 2009     
+294 Albania 00800009 00800294 Albania No    Albanian             3 2009     
+295 Albania 00800009 00800295 Albania No    Albanian             9 2009     
+296 Albania 00800009 00800296 Albania No    Albanian             9 2009     
+297 Albania 00800009 00800297 Albania No    Albanian             7 2009     
+298 Albania 00800009 00800298 Albania No    Albanian             6 2009     
+299 Albania 00800009 00800299 Albania No    Albanian             8 2009     
+300 Albania 00800009 00800300 Albania No    Albanian             4 2009     
+301 Albania 00800009 00800301 Albania No    Albanian             1 2009     
+302 Albania 00800009 00800302 Albania No    Albanian             2 2009     
+303 Albania 00800009 00800303 Albania No    Albanian             2 2009     
+304 Albania 00800009 00800304 Albania No    Albanian             9 2009     
+305 Albania 00800009 00800305 Albania No    Albanian             1 2009     
+306 Albania 00800009 00800306 Albania No    Albanian             1 2009     
+307 Albania 00800009 00800307 Albania No    Albanian             9 2009     
+308 Albania 00800009 00800308 Albania No    Albanian             1 2009     
+309 Albania 00800009 00800309 Albania No    Albanian             4 2009     
+310 Albania 00800009 00800310 Albania No    Albanian             1 2009     
+311 Albania 00800009 00800311 Albania No    Albanian             3 2009     
+312 Albania 00800009 00800312 Albania No    Albanian             6 2009     
+313 Albania 00800009 00800313 Albania No    Albanian             5 2009     
+314 Albania 00800009 00800314 Albania No    Albanian             2 2009     
+315 Albania 00800009 00800315 Albania No    Albanian             4 2009     
+316 Albania 00800009 00800316 Albania No    Albanian             1 2009     
+317 Albania 00800009 00800317 Albania No    Albanian             7 2009     
+318 Albania 00800009 00800318 Albania No    Albanian             7 2009     
+319 Albania 00800009 00800319 Albania No    Albanian             6 2009     
+320 Albania 00800009 00800320 Albania No    Albanian             4 2009     
+321 Albania 00800009 00800321 Albania No    Albanian             6 2009     
+322 Albania 00800009 00800322 Albania No    Albanian             6 2009     
+323 Albania 00800009 00800323 Albania No    Albanian             7 2009     
+324 Albania 00800010 00800324 Albania No    Albanian            11 2009     
+325 Albania 00800010 00800325 Albania No    Albanian             9 2009     
+326 Albania 00800010 00800326 Albania No    Albanian            11 2009     
+327 Albania 00800010 00800327 Albania No    Albanian            12 2009     
+328 Albania 00800010 00800328 Albania No    Albanian             9 2009     
+329 Albania 00800010 00800329 Albania No    Albanian            12 2009     
+330 Albania 00800010 00800330 Albania No    Albanian             5 2009     
+331 Albania 00800010 00800331 Albania No    Albanian            11 2009     
+332 Albania 00800010 00800332 Albania No    Albanian            10 2009     
+333 Albania 00800010 00800333 Albania No    Albanian             9 2009     
+334 Albania 00800010 00800334 Albania No    Albanian             6 2009     
+335 Albania 00800010 00800335 Albania No    Albanian             7 2009     
+336 Albania 00800010 00800336 Albania No    Albanian            11 2009     
+337 Albania 00800010 00800337 Albania No    Albanian            12 2009     
+338 Albania 00800010 00800338 Albania No    Albanian             9 2009     
+339 Albania 00800010 00800339 Albania No    Albanian             7 2009     
+340 Albania 00800010 00800340 Albania No    Albanian             9 2009     
+341 Albania 00800010 00800341 Albania No    Albanian            11 2009     
+342 Albania 00800010 00800342 Albania No    Albanian            11 2009     
+343 Albania 00800010 00800343 Albania No    Albanian            11 2009     
+344 Albania 00800010 00800344 Albania No    Albanian            12 2009     
+345 Albania 00800010 00800345 Albania No    Albanian            11 2009     
+346 Albania 00800010 00800346 Albania No    Albanian             8 2009     
+347 Albania 00800010 00800347 Albania No    Albanian            12 2009     
+348 Albania 00800010 00800348 Albania No    Albanian             8 2009     
+349 Albania 00800010 00800349 Albania No    Albanian            10 2009     
+350 Albania 00800010 00800350 Albania No    Albanian             9 2009     
+351 Albania 00800010 00800351 Albania No    Albanian            10 2009     
+352 Albania 00800010 00800352 Albania No    Albanian            10 2009     
+353 Albania 00800010 00800353 Albania No    Albanian            12 2009     
+354 Albania 00800010 00800354 Albania No    Albanian             5 2009     
+355 Albania 00800010 00800355 Albania No    Albanian            10 2009     
+356 Albania 00800010 00800356 Albania No    Albanian            10 2009     
+357 Albania 00800010 00800357 Albania No    Albanian             9 2009     
+358 Albania 00800010 00800358 Albania No    Albanian            10 2009     
+359 Albania 00800010 00800359 Albania No    Albanian            10 2009     
+360 Albania 00800010 00800360 Albania No    Albanian            10 2009     
+361 Albania 00800010 00800361 Albania No    Albanian             8 2009     
+362 Albania 00800010 00800362 Albania No    Albanian            12 2009     
+363 Albania 00800010 00800363 Albania No    Albanian            10 2009     
+364 Albania 00800010 00800364 Albania No    Albanian             9 2009     
+365 Albania 00800010 00800365 Albania No    Albanian            11 2009     
+366 Albania 00800010 00800366 Albania No    Albanian             9 2009     
+367 Albania 00800010 00800367 Albania No    Albanian             7 2009     
+368 Albania 00800010 00800368 Albania No    Albanian            12 2009     
+369 Albania 00800010 00800369 Albania No    Albanian            12 2009     
+370 Albania 00800011 00800370 Albania No    Albanian             3 2009     
+371 Albania 00800011 00800371 Albania No    Albanian             7 2009     
+372 Albania 00800011 00800372 Albania No    Albanian             5 2009     
+373 Albania 00800011 00800373 Albania No    Albanian            10 2009     
+374 Albania 00800011 00800374 Albania No    Albanian             4 2009     
+375 Albania 00800011 00800375 Albania No    Albanian             7 2009     
+376 Albania 00800011 00800376 Albania No    Albanian             7 2009     
+377 Albania 00800011 00800377 Albania No    Albanian             4 2009     
+378 Albania 00800011 00800378 Albania No    Albanian             8 2009     
+379 Albania 00800011 00800379 Albania No    Albanian             1 2009     
+380 Albania 00800011 00800380 Albania No    Albanian             8 2009     
+381 Albania 00800011 00800381 Albania No    Albanian             6 2009     
+382 Albania 00800011 00800382 Albania No    Albanian             8 2009     
+383 Albania 00800011 00800383 Albania No    Albanian             6 2009     
+384 Albania 00800011 00800384 Albania No    Albanian             2 2009     
+385 Albania 00800011 00800385 Albania No    Albanian             8 2009     
+386 Albania 00800011 00800386 Albania No    Albanian             1 2009     
+387 Albania 00800011 00800387 Albania No    Albanian             4 2009     
+388 Albania 00800011 00800388 Albania No    Albanian             5 2009     
+389 Albania 00800011 00800389 Albania No    Albanian             5 2009     
+390 Albania 00800011 00800390 Albania No    Albanian             5 2009     
+391 Albania 00800011 00800391 Albania No    Albanian             4 2009     
+392 Albania 00800011 00800392 Albania No    Albanian             4 2009     
+393 Albania 00800011 00800393 Albania No    Albanian             7 2009     
+394 Albania 00800011 00800394 Albania No    Albanian             6 2009     
+395 Albania 00800012 00800395 Albania No    Albanian             8 2009     
+396 Albania 00800012 00800396 Albania No    Albanian             4 2009     
+397 Albania 00800012 00800397 Albania No    Albanian             3 2009     
+398 Albania 00800012 00800398 Albania No    Albanian             6 2009     
+399 Albania 00800012 00800399 Albania No    Albanian             9 2009     
+400 Albania 00800012 00800400 Albania No    Albanian             7 2009     
+401 Albania 00800012 00800401 Albania No    Albanian            10 2009     
+402 Albania 00800012 00800402 Albania No    Albanian             6 2009     
+403 Albania 00800012 00800403 Albania No    Albanian            10 2009     
+404 Albania 00800012 00800404 Albania No    Albanian             8 2009     
+405 Albania 00800012 00800405 Albania No    Albanian             7 2009     
+406 Albania 00800012 00800406 Albania No    Albanian             1 2009     
+407 Albania 00800012 00800407 Albania No    Albanian             5 2009     
+408 Albania 00800012 00800408 Albania No    Albanian             1 2009     
+409 Albania 00800012 00800409 Albania No    Albanian             6 2009     
+410 Albania 00800012 00800410 Albania No    Albanian             3 2009     
+411 Albania 00800012 00800411 Albania No    Albanian             1 2009     
+412 Albania 00800012 00800412 Albania No    Albanian             8 2009     
+413 Albania 00800012 00800413 Albania No    Albanian             9 2009     
+414 Albania 00800012 00800414 Albania No    Albanian             9 2009     
+415 Albania 00800012 00800415 Albania No    Albanian             1 2009     
+416 Albania 00800012 00800416 Albania No    Albanian             8 2009     
+417 Albania 00800012 00800417 Albania No    Albanian             1 2009     
+418 Albania 00800012 00800418 Albania No    Albanian             3 2009     
+419 Albania 00800012 00800419 Albania No    Albanian             5 2009     
+420 Albania 00800012 00800420 Albania No    Albanian             8 2009     
+421 Albania 00800012 00800421 Albania No    Albanian             5 2009     
+422 Albania 00800012 00800422 Albania No    Albanian             1 2009     
+423 Albania 00800012 00800423 Albania No    Albanian             7 2009     
+424 Albania 00800012 00800424 Albania No    Albanian             9 2009     
+425 Albania 00800012 00800425 Albania No    Albanian             8 2009     
+426 Albania 00800012 00800426 Albania No    Albanian             9 2009     
+427 Albania 00800012 00800427 Albania No    Albanian             2 2009     
+428 Albania 00800012 00800428 Albania No    Albanian             8 2009     
+429 Albania 00800012 00800429 Albania No    Albanian            10 2009     
+430 Albania 00800012 00800430 Albania No    Albanian             4 2009     
+431 Albania 00800012 00800431 Albania No    Albanian             3 2009     
+432 Albania 00800012 00800432 Albania No    Albanian             1 2009     
+433 Albania 00800012 00800433 Albania No    Albanian             3 2009     
+434 Albania 00800012 00800434 Albania No    Albanian             9 2009     
+435 Albania 00800012 00800435 Albania No    Albanian             2 2009     
+436 Albania 00800012 00800436 Albania No    Albanian             9 2009     
+437 Albania 00800012 00800437 Albania No    Albanian             1 2009     
+438 Albania 00800012 00800438 Albania No    Albanian             8 2009     
+439 Albania 00800012 00800439 Albania No    Albanian             7 2009     
+440 Albania 00800013 00800440 Albania No    Albanian             8 2009     
+441 Albania 00800013 00800441 Albania No    Albanian             2 2009     
+442 Albania 00800013 00800442 Albania No    Albanian             4 2009     
+443 Albania 00800013 00800443 Albania No    Albanian             9 2009     
+444 Albania 00800013 00800444 Albania No    Albanian             7 2009     
+445 Albania 00800013 00800445 Albania No    Albanian             4 2009     
+446 Albania 00800013 00800446 Albania No    Albanian             4 2009     
+447 Albania 00800013 00800447 Albania No    Albanian             5 2009     
+448 Albania 00800013 00800448 Albania No    Albanian             7 2009     
+449 Albania 00800013 00800449 Albania No    Albanian             6 2009     
+450 Albania 00800013 00800450 Albania No    Albanian             2 2009     
+451 Albania 00800013 00800451 Albania No    Albanian             4 2009     
+452 Albania 00800013 00800452 Albania No    Albanian             4 2009     
+453 Albania 00800013 00800453 Albania No    Albanian            12 2009     
+454 Albania 00800013 00800454 Albania No    Albanian             5 2009     
+455 Albania 00800013 00800455 Albania No    Albanian             2 2009     
+456 Albania 00800013 00800456 Albania No    Albanian             2 2009     
+457 Albania 00800013 00800457 Albania No    Albanian             5 2009     
+458 Albania 00800013 00800458 Albania No    Albanian            11 2009     
+459 Albania 00800013 00800459 Albania No    Albanian             8 2009     
+460 Albania 00800013 00800460 Albania No    Albanian             6 2009     
+461 Albania 00800013 00800461 Albania No    Albanian             5 2009     
+462 Albania 00800013 00800462 Albania No    Albanian             5 2009     
+463 Albania 00800013 00800463 Albania No    Albanian             7 2009     
+464 Albania 00800013 00800464 Albania No    Albanian             3 2009     
+465 Albania 00800013 00800465 Albania No    Albanian             9 2009     
+466 Albania 00800013 00800466 Albania No    Albanian             1 2009     
+467 Albania 00800013 00800467 Albania No    Albanian             1 2009     
+468 Albania 00800013 00800468 Albania No    Albanian             1 2009     
+469 Albania 00800013 00800469 Albania No    Albanian             8 2009     
+470 Albania 00800013 00800470 Albania No    Albanian             9 2009     
+471 Albania 00800013 00800471 Albania No    Albanian             5 2009     
+472 Albania 00800013 00800472 Albania No    Albanian             7 2009     
+473 Albania 00800013 00800473 Albania No    Albanian             5 2009     
+474 Albania 00800013 00800474 Albania No    Albanian             5 2009     
+475 Albania 00800013 00800475 Albania No    Albanian             3 2009     
+476 Albania 00800013 00800476 Albania No    Albanian             1 2009     
+477 Albania 00800013 00800477 Albania No    Albanian             3 2009     
+478 Albania 00800013 00800478 Albania No    Albanian             9 2009     
+479 Albania 00800013 00800479 Albania No    Albanian             6 2009     
+480 Albania 00800013 00800480 Albania No    Albanian             1 2009     
+481 Albania 00800013 00800481 Albania No    Albanian             1 2009     
+482 Albania 00800013 00800482 Albania No    Albanian             9 2009     
+483 Albania 00800013 00800483 Albania No    Albanian             2 2009     
+484 Albania 00800013 00800484 Albania No    Albanian             6 2009     
+485 Albania 00800014 00800485 Albania No    Albanian            11 2009     
+486 Albania 00800014 00800486 Albania No    Albanian             9 2009     
+487 Albania 00800014 00800487 Albania No    Albanian            12 2009     
+488 Albania 00800014 00800488 Albania No    Albanian            12 2009     
+489 Albania 00800014 00800489 Albania No    Albanian            12 2009     
+490 Albania 00800014 00800490 Albania No    Albanian            10 2009     
+491 Albania 00800014 00800491 Albania No    Albanian            10 2009     
+492 Albania 00800014 00800492 Albania No    Albanian             8 2009     
+493 Albania 00800014 00800493 Albania No    Albanian            12 2009     
+494 Albania 00800014 00800494 Albania No    Albanian            11 2009     
+495 Albania 00800014 00800495 Albania No    Albanian             9 2009     
+496 Albania 00800014 00800496 Albania No    Albanian            12 2009     
+497 Albania 00800014 00800497 Albania No    Albanian            11 2009     
+498 Albania 00800014 00800498 Albania No    Albanian             7 2009     
+499 Albania 00800014 00800499 Albania No    Albanian             8 2009     
+500 Albania 00800014 00800500 Albania No    Albanian            12 2009     
+# ℹ 755,221 more rows
+# ℹ 72 more variables: ST004D01T &lt;fct&gt;, ST250Q01JA &lt;fct&gt;, ST250Q02JA &lt;fct&gt;,
+#   ST250Q03JA &lt;fct&gt;, ST250Q04JA &lt;fct&gt;, ST250Q05JA &lt;fct&gt;, ST251Q01JA &lt;fct&gt;,
+#   ST251Q06JA &lt;fct&gt;, ST254Q01JA &lt;fct&gt;, ST254Q02JA &lt;fct&gt;, ST254Q03JA &lt;fct&gt;,
+#   ST254Q04JA &lt;fct&gt;, ST254Q05JA &lt;fct&gt;, ST255Q01JA &lt;fct&gt;, ST488Q01DA &lt;fct&gt;,
+#   ST488Q02DA &lt;fct&gt;, ST488Q08DA &lt;fct&gt;, ST488Q09DA &lt;fct&gt;, ST401Q05DA &lt;fct&gt;,
+#   ST403Q01DA &lt;fct&gt;, ST125Q01NA &lt;fct&gt;, ST127Q02TA &lt;fct&gt;, ST062Q03TA &lt;fct&gt;, …</code></pre>
+</div>
+</div>
+<p>We can see from this that the <code>tibble</code> (another word for <em>dataframe</em>, basically a spreadsheet table) is 755721 rows, with 80 columns <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This is data for all the students from around the world that took part in PISA 2022. The actual PISA dataset has many more columns than this, but for the examples here we have selected 80 of the more interesting data variables. The column names might seem rather confusing and you might want to refer to the <a href="https://emckclac-my.sharepoint.com/:x:/g/personal/k1926273_kcl_ac_uk/IQC70q6ekFdZRriL_epzhzYqAUr2GUZGD2vIyKcsU8Tswjg?e=c9YMxH">PISA 2025 code book</a> to find out what everything means.</p>
+<p>The data shown in the console window is only the top few rows and first few columns. To see the whole table click on the <code>Environment panel</code> and the table icon <img src="images/icon_table.png" class="img-fluid"> to explore the table:</p>
+<p><img src="images/environment_view_table.png" class="img-fluid"></p>
+<p>Alternatively, you can also hold down <code>command ⌘</code>|<code>control</code> and click on the table name in your R Script to view the table. You can also type <code>View(&lt;table_name&gt;)</code>. <strong>Note:</strong> this has a capital “V”</p>
+<p>In the table view mode you can read the label attached to each column, this will give you more detail about what the column stores. If you hover over columns it will display the label:</p>
+<p><img src="images/environment_col_label.png" class="img-fluid"></p>
+<p>Alternatively, to read the full label of a column, the following code can be used:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># You might also want to read the label of a field</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">attr</span>(PISA_2025<span class="sc">$</span>ST324Q11JA, <span class="st">"label"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "To what extent do you agree or disagree with the following statements? - School has been a waste of time"</code></pre>
+</div>
+</div>
+<p>Each view only shows you 50 columns, to see more use the navigation panel:</p>
+<p><img src="images/navigation_panel.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To learn more about loading data from in other formats, e.g.&nbsp;SPSS and STATA, look at the tidyverse documentation for <a href="https://haven.tidyverse.org/">haven</a>.</p>
+</div>
+</div>
+<p>The <code>PISA_2025</code> dataframe is made up of multiple columns, with each column acting like a <em>vector</em>, which means each column stores values of only one datatype. If we look at the first four columns of the schools table, you can see the <code>CNTSTUID</code>, <code>ESCS</code> and <code>PV1MATH</code> columns are <code>&lt;dbl&gt;</code> (<code>numeric</code>) and the other three columns are of <code>&lt;fctr&gt;</code> (<code>factor</code>), a special datatype in R that helps store categorical and ordinal variables, see <strong>?@sec-factors</strong> for more information on how factors work.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  CNTSTUID ST004D01T CNT        ESCS PV1MATH
+  &lt;chr&gt;    &lt;fct&gt;     &lt;fct&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 00800001 Male      Albania -1.10      329.
+2 00800002 Female    Albania -1.93      384.
+3 00800003 Female    Albania -1.08      438.
+4 00800004 Female    Albania -0.0182    344.
+5 00800005 Female    Albania -1.07      376.</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vectors are data structures that bring together one or more data elements of the same datatype. E.g. we might have a numeric vector recording the grades of a class, or a character vector storing the gender of a set of students. To define a vector we use <code>c(item, item, ...)</code>, where <code>c</code> stands for combine. Vectors are very important to R, even declaring a single object, <code>x &lt;- 6</code>, is creating a vector of size one. To find out more about vectors see: <strong>?@sec-vectors</strong></p>
+</div>
+</div>
+<p>We can find out some general information about the table we have loaded. <code>nrow</code> and <code>ncol</code> tell you about the dimensions of the table</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">nrow</span>(PISA_2025)  <span class="co"># how many rows are in the results table</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 755721</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ncol</span>(PISA_2025)  <span class="co"># how many columns are in the results table</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 80</code></pre>
+</div>
+</div>
+<p>If we want to know the names of the columns we can use the <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> command that returns a vector. This can be a little confusing as it’ll return the names used in the dataframe, which can be hard to interpret, e.g.&nbsp;<code>ST004D01T</code> is PISA’s way of encoding gender. You might find the labels in the view of the table available through <code>View(PISA_2025)</code> (<strong>note:</strong> the capital V in View) and the <em>Environment</em> panel easier to navigate:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">names</span>(PISA_2025) <span class="co"># the column names of a table</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "CNT"          "CNTSCHID"     "CNTSTUID"     "REGION"       "OECD"        
+ [6] "LANGTEST_QQQ" "ST003D02T"    "ST003D03T"    "ST004D01T"    "ST250Q01JA"  
+[11] "ST250Q02JA"   "ST250Q03JA"   "ST250Q04JA"   "ST250Q05JA"   "ST251Q01JA"  
+[16] "ST251Q06JA"   "ST254Q01JA"   "ST254Q02JA"   "ST254Q03JA"   "ST254Q04JA"  
+[21] "ST254Q05JA"   "ST255Q01JA"   "ST488Q01DA"   "ST488Q02DA"   "ST488Q08DA"  
+[26] "ST488Q09DA"   "ST401Q05DA"   "ST403Q01DA"   "ST125Q01NA"   "ST127Q02TA"  
+[31] "ST062Q03TA"   "ST034Q01TA"   "ST038Q08NA"   "ST265Q01JA"   "ST495Q03DA"  
+[36] "ST324Q11JA"   "ST016Q01NA"   "ST493Q01DA"   "ST420Q01DA"   "ST420Q02DA"  
+ [ reached 'max' / getOption("max.print") -- omitted 40 entries ]</code></pre>
+</div>
+</div>
+<p>As mentioned, the columns in the tables are very much like a collection of <em>vectors</em>, to access these columns we can put a <code>$</code> [dollar sign] after the name of a table. This allows us to see all the columns that table has, using the up and down arrows to select, press the <code>Tab</code> key to complete:</p>
+<p><img src="images/dollar_fields.png" class="img-fluid"></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>PISA_2025<span class="sc">$</span>ST038Q08NA</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Never or almost never Never or almost never Never or almost never
+ [4] Never or almost never A few times a year    Never or almost never
+ [7] &lt;NA&gt;                  Never or almost never Never or almost never
+[10] Never or almost never Never or almost never Never or almost never
+[13] Never or almost never Never or almost never A few times a year   
+[16] Never or almost never Never or almost never A few times a year   
+[19] Never or almost never Once a week or more   A few times a year   
+[22] Never or almost never Never or almost never Never or almost never
+[25] Never or almost never A few times a year    Never or almost never
+[28] Never or almost never Never or almost never Never or almost never
+[31] Never or almost never &lt;NA&gt;                  Never or almost never
+[34] A few times a year    Never or almost never A few times a year   
+[37] Never or almost never Never or almost never Never or almost never
+[40] Never or almost never
+ [ reached 'max' / getOption("max.print") -- omitted 755681 entries ]
+attr(,"label")
+[1] During the past 12 months, how often have you had the following experiences in school? - Other students spread nasty rumours about me.
+9 Levels: Never or almost never A few times a year ... no response</code></pre>
+</div>
+</div>
+<p>We can apply functions to the returned column/vector, for example: <code>sum</code>, <code>mean</code>, <code>median</code>, <code>max</code>, <code>min</code>, <code>sd</code>, <code>round</code>, <code>unique</code>, <code>summary</code>, <code>length</code>. To find all the different/unique values contained in a column we can write:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">unique</span>(PISA_2025<span class="sc">$</span>CNT) <span class="co"># the unique values in this column</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Albania                 Azerbaijan              Argentina              
+ [4] Australia               Austria                 Armenia                
+ [7] Belgium                 Brazil                  Brunei Darussalam      
+[10] Bulgaria                Cambodia                Canada                 
+[13] Chile                   B-S-J-Z (China)         Chinese Taipei         
+[16] Colombia                Costa Rica              Croatia                
+[19] Czechia                 Denmark                 Dominican Republic     
+[22] Ecuador                 El Salvador             Estonia                
+[25] Finland                 France                  Georgia                
+[28] Palestinian Authority   Germany                 Greece                 
+[31] Guatemala               Hong Kong (China)       Hungary                
+[34] Iceland                 Indonesia               Kurdistan Region (Iraq)
+[37] Ireland                 Israel                  Italy                  
+[40] Kosovo                 
+ [ reached 'max' / getOption("max.print") -- omitted 50 entries ]
+90 Levels: Albania United Arab Emirates Argentina Armenia Australia ... Zambia</code></pre>
+</div>
+</div>
+<p>We can also combine commands, with <code>length(&lt;vector&gt;)</code> telling you how many items are in the <code>unique(PISA_2025$CNT)</code> command</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># tells you the number of countries in PISA 2022</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">length</span>(<span class="fu">unique</span>(PISA_2025<span class="sc">$</span>CNT))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 90</code></pre>
+</div>
+</div>
+<p>You might meet errors when you try and run some of the commands because a field has missing data, recorded as <code>NA</code>. In the case below it doesn’t know what to do with the <code>NA</code> values in <code>ESCS</code>, so it gives up and returns <code>NA</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">max</span>(PISA_2025<span class="sc">$</span>ESCS) <span class="co"># max cultural capital value for all students</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>You can see one of the <code>NA</code>s by just looking at this column:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>PISA_2025<span class="sc">$</span>ESCS <span class="co"># NAs present in data</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] -1.10067437 -1.93078658 -1.07851752 -0.01820368 -1.07164800 -0.08558142
+ [7]          NA -1.23616657 -2.17680732 -0.73564282 -0.19181851          NA
+[13] -0.66559248 -0.28831090 -0.96546262 -1.56388531  0.33290502          NA
+[19] -1.33835089 -1.02455873 -1.19486942 -0.46564672          NA -1.37449057
+[25]          NA          NA -0.97866627          NA -0.88738920  0.04735698
+[31] -2.95360507          NA -1.14540715 -1.57288053 -1.03452546 -1.58126680
+[37] -1.62822217 -1.42874253 -2.24658361 -1.53846385
+ [ reached 'max' / getOption("max.print") -- omitted 755681 entries ]
+attr(,"label")
+[1] "Economic, Social and Cultural Status Index"</code></pre>
+</div>
+</div>
+<p>To get around this you can tell R to remove the <code>NA</code> values when performing maths calculations:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># max cultural capital score for all students</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">max</span>(PISA_2025<span class="sc">$</span>ESCS, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.549236</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>R’s inbuilt <code>mode</code> function doesn’t calculate the mathematical <em>mode</em>, instead it tells you what type of data you are dealing with. You can work out the mode of data by using the <code>modeest</code> package:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">library</span>(modeest)</span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">mlv</span>(PISA_2025<span class="sc">$</span>PV1MATH, <span class="at">method =</span> <span class="st">"mfv"</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 379.7674 450.7332</code></pre>
+</div>
+</div>
+<p>There is more discussion on how to use modes in R <a href="https://stackoverflow.com/questions/2547402/how-to-find-the-statistical-mode">here</a></p>
+</div>
+</div>
+<p>Calculations might also be upset when you try to perform maths on a column that you think is a number but is actually stored as another datatype. For example if you wanted to work out the mean number of “How many [digital devices] with screens are there in your [home]?” - <code>ST253Q01JA</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">mean</span>(PISA_2025<span class="sc">$</span>ST253Q01JA, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>Looking at the structure of this column, we can see it is stored as a <code>factor</code>, not as a <code>numeric</code>. Factors are a special datatype that use numbers to link to categorical values. For <code>ST253Q01JA</code> there are 12 different <em>levels</em> that you can explore using the <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> and <code><a href="https://rdrr.io/r/base/levels.html">levels()</a></code> commands:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">str</span>(PISA_2025<span class="sc">$</span>ST253Q01JA)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Factor w/ 13 levels "There are no &lt;digital devices&gt; with screens",..: NA NA NA NA NA NA NA NA NA NA ...
+ - attr(*, "label")= chr "How many &lt;digital devices&gt; with screens are there in your &lt;home&gt;?"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">levels</span>(PISA_2025<span class="sc">$</span>ST253Q01JA)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "There are no &lt;digital devices&gt; with screens"
+ [2] "One"                                        
+ [3] "Two"                                        
+ [4] "Three"                                      
+ [5] "Four"                                       
+ [6] "Five"                                       
+ [7] "6 to 10"                                    
+ [8] "More than 10"                               
+ [9] "valid skip (filter rule)"                   
+[10] "system missing"                             
+[11] "not administered/not applicable"            
+[12] "invalid"                                    
+[13] "no response"                                </code></pre>
+</div>
+</div>
+<p>You can change the type of the column to make it work with the <code>mean</code> command, changing the column to <code>as.numeric(&lt;column&gt;)</code> for the calculation:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># note: this isn't ideal for proper analysis!</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">mean</span>(<span class="fu">as.numeric</span>(PISA_2025<span class="sc">$</span>ST253Q01JA), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.458576</code></pre>
+</div>
+</div>
+<p>This is far from ideal as we are now treating a categorical field as a numeric! Looking at the coding for the numbers in the field and the corresponding levels, we see that <code>1</code> is actually no digital devices. For more details on datatypes, see <strong>?@sec-datatypes</strong>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">paste</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(<span class="fu">levels</span>(PISA_2025<span class="sc">$</span>ST253Q01JA)), <span class="st">":"</span>, <span class="fu">levels</span>(PISA_2025<span class="sc">$</span>ST253Q01JA))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "1 : There are no &lt;digital devices&gt; with screens"
+ [2] "2 : One"                                        
+ [3] "3 : Two"                                        
+ [4] "4 : Three"                                      
+ [5] "5 : Four"                                       
+ [6] "6 : Five"                                       
+ [7] "7 : 6 to 10"                                    
+ [8] "8 : More than 10"                               
+ [9] "9 : valid skip (filter rule)"                   
+[10] "10 : system missing"                            
+[11] "11 : not administered/not applicable"           
+[12] "12 : invalid"                                   
+[13] "13 : no response"                               </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To get a good overview of what a table contains, you can use the <code>str(&lt;table_name&gt;)</code> and <code>summary(&lt;table_name&gt;)</code> commands.</p>
+</div>
+</div>
+<section id="questions" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="questions">
+<span class="header-section-number">8.1</span> Questions</h2>
+<div class="question">
+<p>Using the <code>PISA_2025</code> dataset:</p>
+<ol type="1">
+<li>use the Environment window to view the dataset, what is the name and the label of the 26th column?</li>
+</ol>
+<div class="cell">
+<details class="code-fold"><summary>answer</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># the 26th column is ST062Q02TA</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="co"># the label is: "In the last two full weeks of school, how often: I [skipped] some classes"</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a></span>
+<span id="cb49-4"><a href="#cb49-4"></a><span class="co"># you could use View() instead of the environment window, note the capital V</span></span>
+<span id="cb49-5"><a href="#cb49-5"></a><span class="fu">View</span>(PISA_2025)</span>
+<span id="cb49-6"><a href="#cb49-6"></a><span class="co"># use could use the vector subset to fetch the 100th name</span></span>
+<span id="cb49-7"><a href="#cb49-7"></a><span class="fu">names</span>(PISA_2025)[<span class="dv">26</span>]</span>
+<span id="cb49-8"><a href="#cb49-8"></a><span class="co"># [1] "ST488Q09DA"</span></span>
+<span id="cb49-9"><a href="#cb49-9"></a></span>
+<span id="cb49-10"><a href="#cb49-10"></a><span class="co"># you could use the attr function to find the label</span></span>
+<span id="cb49-11"><a href="#cb49-11"></a><span class="fu">attr</span>(PISA_2025<span class="sc">$</span>ST488Q09DA, <span class="st">"label"</span>)</span>
+<span id="cb49-12"><a href="#cb49-12"></a><span class="co">#  ""Do you possess the following items for your own personal use? - Indoor games (e.g. &lt;board games, videogame console&gt;)</span></span>
+<span id="cb49-13"><a href="#cb49-13"></a></span>
+<span id="cb49-14"><a href="#cb49-14"></a><span class="co"># or using the dollar sign to load this field will also give the label</span></span>
+<span id="cb49-15"><a href="#cb49-15"></a>PISA_2025<span class="sc">$</span>ST488Q09DA</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ol start="2" type="1">
+<li>Use the dollar sign <code>$</code> to return the column <code>ST004D01T</code>. What is stored in this column?</li>
+</ol>
+<div class="cell">
+<details class="code-fold"><summary>answer</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># Student (Standardized) Gender</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a>PISA_2025<span class="sc">$</span>ST004D01T</span>
+<span id="cb50-3"><a href="#cb50-3"></a></span>
+<span id="cb50-4"><a href="#cb50-4"></a><span class="co">#  [1] Male   Female Female Female Female Male   Male   Male   Male   Male   Male   Male   Female Female Male   Male   Female</span></span>
+<span id="cb50-5"><a href="#cb50-5"></a><span class="co"># [18] Female Male   Female Female Male   Male   Male   Male   Male   Female Male   Male   Male   Male   Male   Male   Female</span></span>
+<span id="cb50-6"><a href="#cb50-6"></a><span class="co"># [35] Female Male   Male   Male   Female Female</span></span>
+<span id="cb50-7"><a href="#cb50-7"></a><span class="co">#  [ reached 'max' / getOption("max.print") -- omitted 755681 entries ]</span></span>
+<span id="cb50-8"><a href="#cb50-8"></a><span class="co"># attr(,"label")</span></span>
+<span id="cb50-9"><a href="#cb50-9"></a><span class="co"># [1] Students' gender from sampling data (Female/Male)</span></span>
+<span id="cb50-10"><a href="#cb50-10"></a><span class="co"># Levels: Female Male valid skip (filter rule) system missing not administered/not applicable invalid no response</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ol start="3" type="1">
+<li>How many students results are in the whole table?</li>
+</ol>
+<div class="cell">
+<details class="code-fold"><summary>answer</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">nrow</span>(PISA_2025)</span>
+<span id="cb51-2"><a href="#cb51-2"></a><span class="co"># [1] 755721</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ol start="4" type="1">
+<li>What <code>unique</code> values does the dataset hold for parent 1 occupation <code>OCOP1</code> and parent s occupation <code>OCOP2</code>? Which is larger?</li>
+</ol>
+<div class="cell">
+<details class="code-fold"><summary>answer</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">unique</span>(PISA_2025<span class="sc">$</span>OCOP1)</span>
+<span id="cb52-2"><a href="#cb52-2"></a><span class="fu">unique</span>(PISA_2025<span class="sc">$</span>OCOP2)</span>
+<span id="cb52-3"><a href="#cb52-3"></a></span>
+<span id="cb52-4"><a href="#cb52-4"></a><span class="co"># you can read the length from the above, or you could use the</span></span>
+<span id="cb52-5"><a href="#cb52-5"></a><span class="co"># length command to tell you the length of the vector</span></span>
+<span id="cb52-6"><a href="#cb52-6"></a></span>
+<span id="cb52-7"><a href="#cb52-7"></a><span class="fu">length</span>(<span class="fu">unique</span>(PISA_2025<span class="sc">$</span>OCOP1))</span>
+<span id="cb52-8"><a href="#cb52-8"></a><span class="co"># [1] 59</span></span>
+<span id="cb52-9"><a href="#cb52-9"></a><span class="fu">length</span>(<span class="fu">unique</span>(PISA_2025<span class="sc">$</span>OCOP2))</span>
+<span id="cb52-10"><a href="#cb52-10"></a><span class="co"># [1] 59</span></span>
+<span id="cb52-11"><a href="#cb52-11"></a></span>
+<span id="cb52-12"><a href="#cb52-12"></a><span class="co"># Both fields are the same size implying there are no jobs that women do, but men don't.</span></span>
+<span id="cb52-13"><a href="#cb52-13"></a><span class="co"># to confirm this we can use the set difference command `setdiff(vector1, vector2)`.</span></span>
+<span id="cb52-14"><a href="#cb52-14"></a></span>
+<span id="cb52-15"><a href="#cb52-15"></a><span class="fu">setdiff</span>(<span class="fu">unique</span>(PISA_2025<span class="sc">$</span>OCOP1),</span>
+<span id="cb52-16"><a href="#cb52-16"></a>        <span class="fu">unique</span>(PISA_2025<span class="sc">$</span>OCOP1))</span>
+<span id="cb52-17"><a href="#cb52-17"></a><span class="co"># character(0)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ol start="5" type="1">
+<li>What are the <code>max</code>imum, <code>mean</code>, <code>median</code> and <code>min</code>umum science grades <code>PV1SCIE</code> achieved by any student</li>
+</ol>
+<div class="cell">
+<details class="code-fold"><summary>answer</summary><div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># remember to set the na.rm = TRUE</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="fu">max</span>(PISA_2025<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb53-3"><a href="#cb53-3"></a><span class="co"># [1] 893.3101</span></span>
+<span id="cb53-4"><a href="#cb53-4"></a><span class="fu">mean</span>(PISA_2025<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb53-5"><a href="#cb53-5"></a><span class="co"># [1] 447.2183</span></span>
+<span id="cb53-6"><a href="#cb53-6"></a><span class="fu">median</span>(PISA_2025<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb53-7"><a href="#cb53-7"></a><span class="co"># [1] 441.5629</span></span>
+<span id="cb53-8"><a href="#cb53-8"></a><span class="fu">min</span>(PISA_2025<span class="sc">$</span>PV1SCIE, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb53-9"><a href="#cb53-9"></a><span class="co"># [1] 70.4801</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ol start="6" type="1">
+<li>Explore the dataset and makes notes about the range of values of 2 other columns</li>
+</ol>
+</div>
+
+
+</section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<ol>
+<li id="fn1"><p>Even in this cut down format the PISA data might take a few minutes to load. You can find the full dataset <a href="https://emckclac-my.sharepoint.com/:u:/g/personal/k1926273_kcl_ac_uk/IQDIeo6oO1uxS5b3A_JTsyZHAVtu7lgi1GxUOXsJpXJeJeg?e=8irciK">here</a>, but be warned, it might crash you machine when trying to load it! Plug your laptop into a power supply, and having 16GB of RAM is highly recommended! You might also need to wrangle some of the fields to make them work for your purposes, you might enjoy the challenge!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+</body></html>
