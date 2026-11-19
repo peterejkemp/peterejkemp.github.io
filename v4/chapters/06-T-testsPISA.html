@@ -519,8 +519,8 @@ div.csl-indent {
 <span id="cb1-65"><a href="#cb1-65"></a><span class="st">      }"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-b2daf1bced0cb186fb54" style="width:95%;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b2daf1bced0cb186fb54">{"x":{"diagram":"\n      digraph Random{\n      graph [layout = dot,\n      overlap =T,\n      bgcolor=\"white\",\n      splines=line]#controls l type setup\n      node [shape = box,style=\"filled\",\n      fillcolor=\"skyblue\",\n      fontSize=20,fontcolor=\"darkgrey\",\n      fontname=\"Arial\"]\n     a [label = \"What do you want to do?\"]\n     b [label = \"Test a hypothesis - on what kind of data?\"]\n     c [label = \"Examine a relationship\"]\n     d [label = \"Continuous\"];\n     e [label = \"Normally Distribured/Parametric\"];\n     f [label = \"1 Group\"];\n     g [label = \"One sample t-test\", fillcolor=\"lightyellow\"];\n     h [label = \"Do a test of normality\"];\n     i [label = \"qqplot\", fillcolor=\"lightyellow\"];\n     j [label = \"Tests on skewed distributions\", fillcolor=\"lightyellow\"];\n     k [label = \"Discrete / Categorical\"];\n     l [label = \"2 Groups\"];\n     m [label = \"Unpaired groups\"];\n     n [label = \"Expected counts more than 5\nin more than 75 per cent of cells\"];\n     o [label = \"Chi-squared\", fillcolor=\"lightyellow\"];\n     p [label = \"Expected counts more than 5\n in less than 75 per cent of cells\"];\n     q [label = \"Fisher exact test\", fillcolor=\"lightyellow\"];\n     r [label = \"Continuous variables\"];\n     s [label = \"Linear Regression\", fillcolor=\"lightyellow\"];\n     t [label = \"2 groups\"]\n     u [label = \"Paired groups\"]\n     v [label = \"Unpaired groups\"]\n     w [label = \"Paired t-test\", fillcolor=\"lightyellow\"]\n     x [label = \"Unpaired t-test\", fillcolor=\"lightyellow\"]\n     y [label = \"3 groups or more\"]\n     z [label = \"anova\", fillcolor=\"lightyellow\"]\n     aa [label = \"Not normally distributed\"] \n     a -> b\n     a -> c\n     b -> d\n     d -> h\n     h -> i\n     i -> aa\n     aa -> j\n     i -> e\n     e -> f\n     f -> g\n     b -> k\n     k -> l\n     l -> m\n     m -> n\n     n -> o\n     m -> p\n     p -> q\n     c -> r\n     r -> s\n     e -> t\n     t -> u\n     t -> v\n     u -> w\n     v -> x\n     e -> y\n     y -> z\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-6b843cc8e2c5b5486ddc" style="width:95%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-6b843cc8e2c5b5486ddc">{"x":{"diagram":"\n      digraph Random{\n      graph [layout = dot,\n      overlap =T,\n      bgcolor=\"white\",\n      splines=line]#controls l type setup\n      node [shape = box,style=\"filled\",\n      fillcolor=\"skyblue\",\n      fontSize=20,fontcolor=\"darkgrey\",\n      fontname=\"Arial\"]\n     a [label = \"What do you want to do?\"]\n     b [label = \"Test a hypothesis - on what kind of data?\"]\n     c [label = \"Examine a relationship\"]\n     d [label = \"Continuous\"];\n     e [label = \"Normally Distribured/Parametric\"];\n     f [label = \"1 Group\"];\n     g [label = \"One sample t-test\", fillcolor=\"lightyellow\"];\n     h [label = \"Do a test of normality\"];\n     i [label = \"qqplot\", fillcolor=\"lightyellow\"];\n     j [label = \"Tests on skewed distributions\", fillcolor=\"lightyellow\"];\n     k [label = \"Discrete / Categorical\"];\n     l [label = \"2 Groups\"];\n     m [label = \"Unpaired groups\"];\n     n [label = \"Expected counts more than 5\nin more than 75 per cent of cells\"];\n     o [label = \"Chi-squared\", fillcolor=\"lightyellow\"];\n     p [label = \"Expected counts more than 5\n in less than 75 per cent of cells\"];\n     q [label = \"Fisher exact test\", fillcolor=\"lightyellow\"];\n     r [label = \"Continuous variables\"];\n     s [label = \"Linear Regression\", fillcolor=\"lightyellow\"];\n     t [label = \"2 groups\"]\n     u [label = \"Paired groups\"]\n     v [label = \"Unpaired groups\"]\n     w [label = \"Paired t-test\", fillcolor=\"lightyellow\"]\n     x [label = \"Unpaired t-test\", fillcolor=\"lightyellow\"]\n     y [label = \"3 groups or more\"]\n     z [label = \"anova\", fillcolor=\"lightyellow\"]\n     aa [label = \"Not normally distributed\"] \n     a -> b\n     a -> c\n     b -> d\n     d -> h\n     h -> i\n     i -> aa\n     aa -> j\n     i -> e\n     e -> f\n     f -> g\n     b -> k\n     k -> l\n     l -> m\n     m -> n\n     n -> o\n     m -> p\n     p -> q\n     c -> r\n     r -> s\n     e -> t\n     t -> u\n     t -> v\n     u -> w\n     v -> x\n     e -> y\n     y -> z\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1441,52 +1441,67 @@ Note
 <span id="cb28-2"><a href="#cb28-2"></a></span>
 <span id="cb28-3"><a href="#cb28-3"></a><span class="fu">library</span>(effsize) <span class="co"># for cohen's d</span></span>
 <span id="cb28-4"><a href="#cb28-4"></a></span>
-<span id="cb28-5"><a href="#cb28-5"></a><span class="co"># Select the gender (ST004D01T) and maths score columns (PV1MATH)</span></span>
-<span id="cb28-6"><a href="#cb28-6"></a><span class="co"># Filter the data to select UK responses</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a></span>
-<span id="cb28-8"><a href="#cb28-8"></a>MaleUK <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
-<span id="cb28-9"><a href="#cb28-9"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
-<span id="cb28-10"><a href="#cb28-10"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'United Kingdom'</span>,</span>
-<span id="cb28-11"><a href="#cb28-11"></a>         ST004D01T <span class="sc">==</span> <span class="st">'Male'</span>)</span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="co"># Create a UK data set</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a></span>
+<span id="cb28-7"><a href="#cb28-7"></a>UK_data <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'United Kingdom'</span>)</span>
+<span id="cb28-10"><a href="#cb28-10"></a></span>
+<span id="cb28-11"><a href="#cb28-11"></a><span class="co"># perform the test</span></span>
 <span id="cb28-12"><a href="#cb28-12"></a></span>
-<span id="cb28-13"><a href="#cb28-13"></a>FemaleUK <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
-<span id="cb28-14"><a href="#cb28-14"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
-<span id="cb28-15"><a href="#cb28-15"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'United Kingdom'</span>,</span>
-<span id="cb28-16"><a href="#cb28-16"></a>         ST004D01T <span class="sc">==</span> <span class="st">'Female'</span>)</span>
-<span id="cb28-17"><a href="#cb28-17"></a></span>
-<span id="cb28-18"><a href="#cb28-18"></a><span class="co"># The conditions to do a t-test include that the data are normally distributed</span></span>
-<span id="cb28-19"><a href="#cb28-19"></a><span class="co"># and there is homogeneity (similarity) of the variances (the squared standard deviations)</span></span>
-<span id="cb28-20"><a href="#cb28-20"></a><span class="co"># Let us check the conditions are met by calculating first if the data sets are normally</span></span>
-<span id="cb28-21"><a href="#cb28-21"></a><span class="co"># distributed using a qq plot</span></span>
+<span id="cb28-13"><a href="#cb28-13"></a><span class="fu">t.test</span>(<span class="at">data =</span> UK_data, PV1MATH <span class="sc">~</span> ST004D01T)</span>
+<span id="cb28-14"><a href="#cb28-14"></a></span>
+<span id="cb28-15"><a href="#cb28-15"></a><span class="co"># calculate effect size</span></span>
+<span id="cb28-16"><a href="#cb28-16"></a></span>
+<span id="cb28-17"><a href="#cb28-17"></a><span class="fu">cohen.d</span>(<span class="at">data =</span> UK_data, PV1MATH <span class="sc">~</span> ST004D01T)</span>
+<span id="cb28-18"><a href="#cb28-18"></a></span>
+<span id="cb28-19"><a href="#cb28-19"></a><span class="co"># an alternative approach</span></span>
+<span id="cb28-20"><a href="#cb28-20"></a><span class="co"># Select the gender (ST004D01T) and maths score columns (PV1MATH)</span></span>
+<span id="cb28-21"><a href="#cb28-21"></a><span class="co"># Filter the data to select UK responses</span></span>
 <span id="cb28-22"><a href="#cb28-22"></a></span>
-<span id="cb28-23"><a href="#cb28-23"></a><span class="fu">qqnorm</span>(MaleUK<span class="sc">$</span>PV1MATH)</span>
-<span id="cb28-24"><a href="#cb28-24"></a><span class="fu">qqline</span>(MaleUK<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
-<span id="cb28-25"><a href="#cb28-25"></a></span>
-<span id="cb28-26"><a href="#cb28-26"></a><span class="fu">qqnorm</span>(FemaleUK<span class="sc">$</span>PV1MATH)</span>
-<span id="cb28-27"><a href="#cb28-27"></a><span class="fu">qqline</span>(FemaleUK<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
-<span id="cb28-28"><a href="#cb28-28"></a></span>
-<span id="cb28-29"><a href="#cb28-29"></a><span class="co"># The plots produces relatively straight lines so the distributions can be assumed to be normal</span></span>
-<span id="cb28-30"><a href="#cb28-30"></a><span class="co">#</span></span>
-<span id="cb28-31"><a href="#cb28-31"></a><span class="co"># We will then check the variances of the two data sets</span></span>
+<span id="cb28-23"><a href="#cb28-23"></a>MaleUK <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
+<span id="cb28-24"><a href="#cb28-24"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb28-25"><a href="#cb28-25"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'United Kingdom'</span>,</span>
+<span id="cb28-26"><a href="#cb28-26"></a>         ST004D01T <span class="sc">==</span> <span class="st">'Male'</span>)</span>
+<span id="cb28-27"><a href="#cb28-27"></a></span>
+<span id="cb28-28"><a href="#cb28-28"></a>FemaleUK <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
+<span id="cb28-29"><a href="#cb28-29"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb28-30"><a href="#cb28-30"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'United Kingdom'</span>,</span>
+<span id="cb28-31"><a href="#cb28-31"></a>         ST004D01T <span class="sc">==</span> <span class="st">'Female'</span>)</span>
 <span id="cb28-32"><a href="#cb28-32"></a></span>
-<span id="cb28-33"><a href="#cb28-33"></a>VarM <span class="ot">&lt;-</span> <span class="fu">var</span>(MaleUK<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb28-34"><a href="#cb28-34"></a>VarF <span class="ot">&lt;-</span> <span class="fu">var</span>(FemaleUK<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb28-35"><a href="#cb28-35"></a>VarM <span class="sc">/</span> VarF</span>
-<span id="cb28-36"><a href="#cb28-36"></a></span>
-<span id="cb28-37"><a href="#cb28-37"></a><span class="co"># The variance ratio is close to 1 (1.1)</span></span>
-<span id="cb28-38"><a href="#cb28-38"></a><span class="co"># So our two conditions are met and can we can perform the t-test</span></span>
-<span id="cb28-39"><a href="#cb28-39"></a></span>
+<span id="cb28-33"><a href="#cb28-33"></a><span class="co"># The conditions to do a t-test include that the data are normally distributed</span></span>
+<span id="cb28-34"><a href="#cb28-34"></a><span class="co"># and there is homogeneity (similarity) of the variances (the squared standard deviations)</span></span>
+<span id="cb28-35"><a href="#cb28-35"></a><span class="co"># Let us check the conditions are met by calculating first if the data sets are normally</span></span>
+<span id="cb28-36"><a href="#cb28-36"></a><span class="co"># distributed using a qq plot</span></span>
+<span id="cb28-37"><a href="#cb28-37"></a></span>
+<span id="cb28-38"><a href="#cb28-38"></a><span class="fu">qqnorm</span>(MaleUK<span class="sc">$</span>PV1MATH)</span>
+<span id="cb28-39"><a href="#cb28-39"></a><span class="fu">qqline</span>(MaleUK<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
 <span id="cb28-40"><a href="#cb28-40"></a></span>
-<span id="cb28-41"><a href="#cb28-41"></a><span class="co"># Plot a two-sided, unpaired t-test</span></span>
-<span id="cb28-42"><a href="#cb28-42"></a><span class="fu">t.test</span>(MaleUK<span class="sc">$</span>PV1MATH, FemaleUK<span class="sc">$</span>PV1MATH, </span>
-<span id="cb28-43"><a href="#cb28-43"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
-<span id="cb28-44"><a href="#cb28-44"></a></span>
-<span id="cb28-45"><a href="#cb28-45"></a><span class="co"># The p-value is &lt;0.05 (4.061e-08) suggesting there are statistically</span></span>
-<span id="cb28-46"><a href="#cb28-46"></a><span class="co"># differences between boys and girls</span></span>
+<span id="cb28-41"><a href="#cb28-41"></a><span class="fu">qqnorm</span>(FemaleUK<span class="sc">$</span>PV1MATH)</span>
+<span id="cb28-42"><a href="#cb28-42"></a><span class="fu">qqline</span>(FemaleUK<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb28-43"><a href="#cb28-43"></a></span>
+<span id="cb28-44"><a href="#cb28-44"></a><span class="co"># The plots produces relatively straight lines so the distributions can be assumed to be normal</span></span>
+<span id="cb28-45"><a href="#cb28-45"></a><span class="co">#</span></span>
+<span id="cb28-46"><a href="#cb28-46"></a><span class="co"># We will then check the variances of the two data sets</span></span>
 <span id="cb28-47"><a href="#cb28-47"></a></span>
-<span id="cb28-48"><a href="#cb28-48"></a><span class="co"># Calculate the effect size using Cohen's d</span></span>
-<span id="cb28-49"><a href="#cb28-49"></a><span class="fu">cohen.d</span>(MaleUK<span class="sc">$</span>PV1MATH, FemaleUK<span class="sc">$</span>PV1MATH)</span>
-<span id="cb28-50"><a href="#cb28-50"></a><span class="co"># The effect size is 0.152 which is negligible in Cohen's terms (&lt;0.2) but medium in Kraft and colleagues; terms (0.05-0.2)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb28-48"><a href="#cb28-48"></a>VarM <span class="ot">&lt;-</span> <span class="fu">var</span>(MaleUK<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-49"><a href="#cb28-49"></a>VarF <span class="ot">&lt;-</span> <span class="fu">var</span>(FemaleUK<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-50"><a href="#cb28-50"></a>VarM <span class="sc">/</span> VarF</span>
+<span id="cb28-51"><a href="#cb28-51"></a></span>
+<span id="cb28-52"><a href="#cb28-52"></a><span class="co"># The variance ratio is close to 1 (1.1)</span></span>
+<span id="cb28-53"><a href="#cb28-53"></a><span class="co"># So our two conditions are met and can we can perform the t-test</span></span>
+<span id="cb28-54"><a href="#cb28-54"></a></span>
+<span id="cb28-55"><a href="#cb28-55"></a></span>
+<span id="cb28-56"><a href="#cb28-56"></a><span class="co"># Plot a two-sided, unpaired t-test</span></span>
+<span id="cb28-57"><a href="#cb28-57"></a><span class="fu">t.test</span>(MaleUK<span class="sc">$</span>PV1MATH, FemaleUK<span class="sc">$</span>PV1MATH, </span>
+<span id="cb28-58"><a href="#cb28-58"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
+<span id="cb28-59"><a href="#cb28-59"></a></span>
+<span id="cb28-60"><a href="#cb28-60"></a><span class="co"># The p-value is &lt;0.05 (4.061e-08) suggesting there are statistically</span></span>
+<span id="cb28-61"><a href="#cb28-61"></a><span class="co"># differences between boys and girls</span></span>
+<span id="cb28-62"><a href="#cb28-62"></a></span>
+<span id="cb28-63"><a href="#cb28-63"></a><span class="co"># Calculate the effect size using Cohen's d</span></span>
+<span id="cb28-64"><a href="#cb28-64"></a><span class="fu">cohen.d</span>(MaleUK<span class="sc">$</span>PV1MATH, FemaleUK<span class="sc">$</span>PV1MATH)</span>
+<span id="cb28-65"><a href="#cb28-65"></a><span class="co"># The effect size is 0.152 which is negligible in Cohen's terms (&lt;0.2) but medium in Kraft and colleagues; terms (0.05-0.2)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1499,52 +1514,68 @@ Note
 <summary>Answer</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Are there differences between the mean scores of boys and girls in Japan PISA mathematics?</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a><span class="co">#</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a><span class="co"># Select the gender (ST004D01T) and math score columns (PV1MATH)</span></span>
-<span id="cb29-4"><a href="#cb29-4"></a><span class="co"># Filter the data to select UK responses</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a></span>
-<span id="cb29-6"><a href="#cb29-6"></a>MaleJapan <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
-<span id="cb29-7"><a href="#cb29-7"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
-<span id="cb29-8"><a href="#cb29-8"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'Japan'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Male'</span>)</span>
-<span id="cb29-9"><a href="#cb29-9"></a></span>
-<span id="cb29-10"><a href="#cb29-10"></a>FemaleJapan <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
-<span id="cb29-11"><a href="#cb29-11"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
-<span id="cb29-12"><a href="#cb29-12"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'Japan'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Female'</span>)</span>
-<span id="cb29-13"><a href="#cb29-13"></a></span>
-<span id="cb29-14"><a href="#cb29-14"></a><span class="co"># The conditions to do a t-test include that the data are normally distributed</span></span>
-<span id="cb29-15"><a href="#cb29-15"></a><span class="fu">qqnorm</span>(MaleJapan<span class="sc">$</span>PV1MATH)</span>
-<span id="cb29-16"><a href="#cb29-16"></a><span class="fu">qqline</span>(MaleJapan<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="co"># Create a Japan data set</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a></span>
+<span id="cb29-5"><a href="#cb29-5"></a>Japan_data <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'Japan'</span>)</span>
+<span id="cb29-8"><a href="#cb29-8"></a></span>
+<span id="cb29-9"><a href="#cb29-9"></a><span class="co"># perform the test</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a></span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="fu">t.test</span>(<span class="at">data =</span> Japan_data, PV1MATH <span class="sc">~</span> ST004D01T)</span>
+<span id="cb29-12"><a href="#cb29-12"></a></span>
+<span id="cb29-13"><a href="#cb29-13"></a><span class="co"># calculate effect size</span></span>
+<span id="cb29-14"><a href="#cb29-14"></a></span>
+<span id="cb29-15"><a href="#cb29-15"></a><span class="fu">cohen.d</span>(<span class="at">data =</span> Japan_data, PV1MATH <span class="sc">~</span> ST004D01T)</span>
+<span id="cb29-16"><a href="#cb29-16"></a></span>
 <span id="cb29-17"><a href="#cb29-17"></a></span>
-<span id="cb29-18"><a href="#cb29-18"></a><span class="fu">qqnorm</span>(FemaleJapan<span class="sc">$</span>PV1MATH)</span>
-<span id="cb29-19"><a href="#cb29-19"></a><span class="fu">qqline</span>(FemaleJapan<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
-<span id="cb29-20"><a href="#cb29-20"></a></span>
+<span id="cb29-18"><a href="#cb29-18"></a></span>
+<span id="cb29-19"><a href="#cb29-19"></a><span class="co"># Select the gender (ST004D01T) and math score columns (PV1MATH)</span></span>
+<span id="cb29-20"><a href="#cb29-20"></a><span class="co"># Filter the data to select UK responses</span></span>
 <span id="cb29-21"><a href="#cb29-21"></a></span>
-<span id="cb29-22"><a href="#cb29-22"></a><span class="co"># The plots produces relatively straight lines so the distributions can be # assumed to be normal</span></span>
-<span id="cb29-23"><a href="#cb29-23"></a><span class="co">#</span></span>
-<span id="cb29-24"><a href="#cb29-24"></a><span class="co"># We will then check the variances of the two data sets</span></span>
+<span id="cb29-22"><a href="#cb29-22"></a>MaleJapan <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
+<span id="cb29-23"><a href="#cb29-23"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb29-24"><a href="#cb29-24"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'Japan'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Male'</span>)</span>
 <span id="cb29-25"><a href="#cb29-25"></a></span>
-<span id="cb29-26"><a href="#cb29-26"></a>VarM<span class="ot">&lt;-</span><span class="fu">var</span>(MaleJapan<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb29-27"><a href="#cb29-27"></a>VarF<span class="ot">&lt;-</span><span class="fu">var</span>(FemaleJapan<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb29-28"><a href="#cb29-28"></a>VarM<span class="sc">/</span>VarF</span>
+<span id="cb29-26"><a href="#cb29-26"></a>FemaleJapan <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
+<span id="cb29-27"><a href="#cb29-27"></a>  <span class="fu">select</span>(CNT, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb29-28"><a href="#cb29-28"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'Japan'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Female'</span>)</span>
 <span id="cb29-29"><a href="#cb29-29"></a></span>
-<span id="cb29-30"><a href="#cb29-30"></a><span class="co"># The variance ratio is close to 1 (1.14)</span></span>
-<span id="cb29-31"><a href="#cb29-31"></a><span class="co"># So our two conditions are met and can we can perform the t-test</span></span>
-<span id="cb29-32"><a href="#cb29-32"></a></span>
-<span id="cb29-33"><a href="#cb29-33"></a><span class="co"># Create a Japan Math subset</span></span>
-<span id="cb29-34"><a href="#cb29-34"></a>CHIMATH <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
-<span id="cb29-35"><a href="#cb29-35"></a>  <span class="fu">select</span>(CNT, PV1MATH, ST004D01T) <span class="sc">%&gt;%</span></span>
-<span id="cb29-36"><a href="#cb29-36"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Japan"</span>)</span>
-<span id="cb29-37"><a href="#cb29-37"></a><span class="co"># Plot a two-sided, unpaired t-test</span></span>
-<span id="cb29-38"><a href="#cb29-38"></a><span class="fu">t.test</span>(MaleJapan<span class="sc">$</span>PV1MATH, FemaleJapan<span class="sc">$</span>PV1MATH,  </span>
-<span id="cb29-39"><a href="#cb29-39"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
-<span id="cb29-40"><a href="#cb29-40"></a></span>
-<span id="cb29-41"><a href="#cb29-41"></a><span class="co"># The p-value is &lt;0.05 (2.39e-10) suggesting there are statistically</span></span>
-<span id="cb29-42"><a href="#cb29-42"></a><span class="co"># differences between boys and girls in mathematics in Japan</span></span>
-<span id="cb29-43"><a href="#cb29-43"></a></span>
-<span id="cb29-44"><a href="#cb29-44"></a><span class="co"># Calculate the effect size using Cohen's d</span></span>
+<span id="cb29-30"><a href="#cb29-30"></a><span class="co"># The conditions to do a t-test include that the data are normally distributed</span></span>
+<span id="cb29-31"><a href="#cb29-31"></a><span class="fu">qqnorm</span>(MaleJapan<span class="sc">$</span>PV1MATH)</span>
+<span id="cb29-32"><a href="#cb29-32"></a><span class="fu">qqline</span>(MaleJapan<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb29-33"><a href="#cb29-33"></a></span>
+<span id="cb29-34"><a href="#cb29-34"></a><span class="fu">qqnorm</span>(FemaleJapan<span class="sc">$</span>PV1MATH)</span>
+<span id="cb29-35"><a href="#cb29-35"></a><span class="fu">qqline</span>(FemaleJapan<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb29-36"><a href="#cb29-36"></a></span>
+<span id="cb29-37"><a href="#cb29-37"></a></span>
+<span id="cb29-38"><a href="#cb29-38"></a><span class="co"># The plots produces relatively straight lines so the distributions can be # assumed to be normal</span></span>
+<span id="cb29-39"><a href="#cb29-39"></a><span class="co">#</span></span>
+<span id="cb29-40"><a href="#cb29-40"></a><span class="co"># We will then check the variances of the two data sets</span></span>
+<span id="cb29-41"><a href="#cb29-41"></a></span>
+<span id="cb29-42"><a href="#cb29-42"></a>VarM<span class="ot">&lt;-</span><span class="fu">var</span>(MaleJapan<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb29-43"><a href="#cb29-43"></a>VarF<span class="ot">&lt;-</span><span class="fu">var</span>(FemaleJapan<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb29-44"><a href="#cb29-44"></a>VarM<span class="sc">/</span>VarF</span>
 <span id="cb29-45"><a href="#cb29-45"></a></span>
-<span id="cb29-46"><a href="#cb29-46"></a><span class="fu">cohen.d</span>(MaleJapan<span class="sc">$</span>PV1MATH, FemaleJapan<span class="sc">$</span>PV1MATH)</span>
-<span id="cb29-47"><a href="#cb29-47"></a></span>
-<span id="cb29-48"><a href="#cb29-48"></a><span class="co"># The effect size is 0.11 which is negligible in Cohen's terms (&lt;0.2) and medium in Kraft and colleagues' terms (&lt;0.05)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb29-46"><a href="#cb29-46"></a><span class="co"># The variance ratio is close to 1 (1.14)</span></span>
+<span id="cb29-47"><a href="#cb29-47"></a><span class="co"># So our two conditions are met and can we can perform the t-test</span></span>
+<span id="cb29-48"><a href="#cb29-48"></a></span>
+<span id="cb29-49"><a href="#cb29-49"></a><span class="co"># Create a Japan Math subset</span></span>
+<span id="cb29-50"><a href="#cb29-50"></a>CHIMATH <span class="ot">&lt;-</span> PISA_2022 <span class="sc">%&gt;%</span></span>
+<span id="cb29-51"><a href="#cb29-51"></a>  <span class="fu">select</span>(CNT, PV1MATH, ST004D01T) <span class="sc">%&gt;%</span></span>
+<span id="cb29-52"><a href="#cb29-52"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">"Japan"</span>)</span>
+<span id="cb29-53"><a href="#cb29-53"></a><span class="co"># Plot a two-sided, unpaired t-test</span></span>
+<span id="cb29-54"><a href="#cb29-54"></a><span class="fu">t.test</span>(MaleJapan<span class="sc">$</span>PV1MATH, FemaleJapan<span class="sc">$</span>PV1MATH,  </span>
+<span id="cb29-55"><a href="#cb29-55"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
+<span id="cb29-56"><a href="#cb29-56"></a></span>
+<span id="cb29-57"><a href="#cb29-57"></a><span class="co"># The p-value is &lt;0.05 (2.39e-10) suggesting there are statistically</span></span>
+<span id="cb29-58"><a href="#cb29-58"></a><span class="co"># differences between boys and girls in mathematics in Japan</span></span>
+<span id="cb29-59"><a href="#cb29-59"></a></span>
+<span id="cb29-60"><a href="#cb29-60"></a><span class="co"># Calculate the effect size using Cohen's d</span></span>
+<span id="cb29-61"><a href="#cb29-61"></a></span>
+<span id="cb29-62"><a href="#cb29-62"></a><span class="fu">cohen.d</span>(MaleJapan<span class="sc">$</span>PV1MATH, FemaleJapan<span class="sc">$</span>PV1MATH)</span>
+<span id="cb29-63"><a href="#cb29-63"></a></span>
+<span id="cb29-64"><a href="#cb29-64"></a><span class="co"># The effect size is 0.11 which is negligible in Cohen's terms (&lt;0.2) and medium in Kraft and colleagues' terms (&lt;0.05)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1555,46 +1586,58 @@ Note
 <div class="cell">
 <details class="code-fold">
 <summary>Answer</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>MaleOECD <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">select</span>(OECD, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
-<span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">filter</span>(OECD <span class="sc">==</span> <span class="st">'Yes'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Male'</span>)</span>
-<span id="cb30-4"><a href="#cb30-4"></a></span>
-<span id="cb30-5"><a href="#cb30-5"></a>FemaleOECD <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
-<span id="cb30-6"><a href="#cb30-6"></a>  <span class="fu">select</span>(OECD, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
-<span id="cb30-7"><a href="#cb30-7"></a>  <span class="fu">filter</span>(OECD <span class="sc">==</span> <span class="st">'Yes'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Female'</span>)</span>
-<span id="cb30-8"><a href="#cb30-8"></a></span>
-<span id="cb30-9"><a href="#cb30-9"></a><span class="fu">qqnorm</span>(MaleOECD<span class="sc">$</span>PV1MATH)</span>
-<span id="cb30-10"><a href="#cb30-10"></a><span class="fu">qqline</span>(MaleOECD<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Create an OECD data set</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a></span>
+<span id="cb30-3"><a href="#cb30-3"></a>OECD_data <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a>  <span class="fu">filter</span>(OECD <span class="sc">==</span> <span class="st">"Yes"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a>  <span class="fu">select</span>(ST004D01T, PV1MATH)</span>
+<span id="cb30-6"><a href="#cb30-6"></a></span>
+<span id="cb30-7"><a href="#cb30-7"></a><span class="co"># perform the test</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a><span class="fu">t.test</span>(<span class="at">data =</span> OECD_data, PV1MATH <span class="sc">~</span> ST004D01T)</span>
+<span id="cb30-9"><a href="#cb30-9"></a></span>
+<span id="cb30-10"><a href="#cb30-10"></a><span class="fu">cohen.d</span>(<span class="at">data =</span> OECD_data, PV1MATH <span class="sc">~</span> ST004D01T)</span>
 <span id="cb30-11"><a href="#cb30-11"></a></span>
-<span id="cb30-12"><a href="#cb30-12"></a><span class="fu">qqnorm</span>(FemaleOECD<span class="sc">$</span>PV1MATH)</span>
-<span id="cb30-13"><a href="#cb30-13"></a><span class="fu">qqline</span>(FemaleOECD<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
-<span id="cb30-14"><a href="#cb30-14"></a></span>
-<span id="cb30-15"><a href="#cb30-15"></a><span class="co"># The plots produces relatively straight lines so the distributions can be assumed to be normal</span></span>
+<span id="cb30-12"><a href="#cb30-12"></a><span class="co"># check distribution of data</span></span>
+<span id="cb30-13"><a href="#cb30-13"></a>MaleOECD <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
+<span id="cb30-14"><a href="#cb30-14"></a>  <span class="fu">select</span>(OECD, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb30-15"><a href="#cb30-15"></a>  <span class="fu">filter</span>(OECD <span class="sc">==</span> <span class="st">'Yes'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Male'</span>)</span>
 <span id="cb30-16"><a href="#cb30-16"></a></span>
-<span id="cb30-17"><a href="#cb30-17"></a><span class="co"># We will then check the variances of the two data sets</span></span>
-<span id="cb30-18"><a href="#cb30-18"></a></span>
-<span id="cb30-19"><a href="#cb30-19"></a>VarM <span class="ot">&lt;-</span> <span class="fu">var</span>(MaleOECD<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb30-20"><a href="#cb30-20"></a>VarF <span class="ot">&lt;-</span> <span class="fu">var</span>(FemaleOECD<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb30-21"><a href="#cb30-21"></a>VarM <span class="sc">/</span> VarF</span>
-<span id="cb30-22"><a href="#cb30-22"></a></span>
-<span id="cb30-23"><a href="#cb30-23"></a><span class="co"># The variance ratio is close to 1 (1.16)</span></span>
-<span id="cb30-24"><a href="#cb30-24"></a><span class="co"># So our two conditions are met and can we can perform the t-test</span></span>
-<span id="cb30-25"><a href="#cb30-25"></a></span>
-<span id="cb30-26"><a href="#cb30-26"></a><span class="co"># The p-value is &lt;0.05 (&lt;2.2e-16) suggesting there are statistically</span></span>
-<span id="cb30-27"><a href="#cb30-27"></a><span class="co"># differences between boys and girls</span></span>
+<span id="cb30-17"><a href="#cb30-17"></a>FemaleOECD <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
+<span id="cb30-18"><a href="#cb30-18"></a>  <span class="fu">select</span>(OECD, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb30-19"><a href="#cb30-19"></a>  <span class="fu">filter</span>(OECD <span class="sc">==</span> <span class="st">'Yes'</span>, ST004D01T <span class="sc">==</span> <span class="st">'Female'</span>)</span>
+<span id="cb30-20"><a href="#cb30-20"></a></span>
+<span id="cb30-21"><a href="#cb30-21"></a><span class="fu">qqnorm</span>(MaleOECD<span class="sc">$</span>PV1MATH)</span>
+<span id="cb30-22"><a href="#cb30-22"></a><span class="fu">qqline</span>(MaleOECD<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb30-23"><a href="#cb30-23"></a></span>
+<span id="cb30-24"><a href="#cb30-24"></a><span class="fu">qqnorm</span>(FemaleOECD<span class="sc">$</span>PV1MATH)</span>
+<span id="cb30-25"><a href="#cb30-25"></a><span class="fu">qqline</span>(FemaleOECD<span class="sc">$</span>PV1MATH, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb30-26"><a href="#cb30-26"></a></span>
+<span id="cb30-27"><a href="#cb30-27"></a><span class="co"># The plots produces relatively straight lines so the distributions can be assumed to be normal</span></span>
 <span id="cb30-28"><a href="#cb30-28"></a></span>
-<span id="cb30-29"><a href="#cb30-29"></a>OECD <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
-<span id="cb30-30"><a href="#cb30-30"></a>  <span class="fu">select</span>(OECD, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
-<span id="cb30-31"><a href="#cb30-31"></a>  <span class="fu">filter</span>(OECD <span class="sc">==</span> <span class="st">'Yes'</span>)</span>
-<span id="cb30-32"><a href="#cb30-32"></a></span>
-<span id="cb30-33"><a href="#cb30-33"></a><span class="fu">t.test</span>(MaleOECD<span class="sc">$</span>PV1MATH, FemaleOECD<span class="sc">$</span>PV1MATH, </span>
-<span id="cb30-34"><a href="#cb30-34"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
-<span id="cb30-35"><a href="#cb30-35"></a></span>
-<span id="cb30-36"><a href="#cb30-36"></a><span class="co"># Calculate the effect size using Cohen's d</span></span>
+<span id="cb30-29"><a href="#cb30-29"></a><span class="co"># We will then check the variances of the two data sets</span></span>
+<span id="cb30-30"><a href="#cb30-30"></a></span>
+<span id="cb30-31"><a href="#cb30-31"></a>VarM <span class="ot">&lt;-</span> <span class="fu">var</span>(MaleOECD<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb30-32"><a href="#cb30-32"></a>VarF <span class="ot">&lt;-</span> <span class="fu">var</span>(FemaleOECD<span class="sc">$</span>PV1MATH, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb30-33"><a href="#cb30-33"></a>VarM <span class="sc">/</span> VarF</span>
+<span id="cb30-34"><a href="#cb30-34"></a></span>
+<span id="cb30-35"><a href="#cb30-35"></a><span class="co"># The variance ratio is close to 1 (1.16)</span></span>
+<span id="cb30-36"><a href="#cb30-36"></a><span class="co"># So our two conditions are met and can we can perform the t-test</span></span>
 <span id="cb30-37"><a href="#cb30-37"></a></span>
-<span id="cb30-38"><a href="#cb30-38"></a><span class="fu">cohen.d</span>(MaleOECD<span class="sc">$</span>PV1MATH, FemaleOECD<span class="sc">$</span>PV1MATH)</span>
-<span id="cb30-39"><a href="#cb30-39"></a></span>
-<span id="cb30-40"><a href="#cb30-40"></a><span class="co"># The effect size is 0.13 which is negligible in Cohen's terms (&lt;0.2) and medium in Kraft and colleagues' terms (&gt;0.05 and &lt;0.2)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb30-38"><a href="#cb30-38"></a><span class="co"># The p-value is &lt;0.05 (&lt;2.2e-16) suggesting there are statistically</span></span>
+<span id="cb30-39"><a href="#cb30-39"></a><span class="co"># differences between boys and girls</span></span>
+<span id="cb30-40"><a href="#cb30-40"></a></span>
+<span id="cb30-41"><a href="#cb30-41"></a>OECD <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
+<span id="cb30-42"><a href="#cb30-42"></a>  <span class="fu">select</span>(OECD, ST004D01T, PV1MATH) <span class="sc">%&gt;%</span></span>
+<span id="cb30-43"><a href="#cb30-43"></a>  <span class="fu">filter</span>(OECD <span class="sc">==</span> <span class="st">'Yes'</span>)</span>
+<span id="cb30-44"><a href="#cb30-44"></a></span>
+<span id="cb30-45"><a href="#cb30-45"></a><span class="fu">t.test</span>(MaleOECD<span class="sc">$</span>PV1MATH, FemaleOECD<span class="sc">$</span>PV1MATH, </span>
+<span id="cb30-46"><a href="#cb30-46"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
+<span id="cb30-47"><a href="#cb30-47"></a></span>
+<span id="cb30-48"><a href="#cb30-48"></a><span class="co"># Calculate the effect size using Cohen's d</span></span>
+<span id="cb30-49"><a href="#cb30-49"></a></span>
+<span id="cb30-50"><a href="#cb30-50"></a><span class="fu">cohen.d</span>(MaleOECD<span class="sc">$</span>PV1MATH, FemaleOECD<span class="sc">$</span>PV1MATH)</span>
+<span id="cb30-51"><a href="#cb30-51"></a></span>
+<span id="cb30-52"><a href="#cb30-52"></a><span class="co"># The effect size is 0.13 which is negligible in Cohen's terms (&lt;0.2) and medium in Kraft and colleagues' terms (&gt;0.05 and &lt;0.2)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1631,18 +1674,17 @@ Note
 <span id="cb31-24"><a href="#cb31-24"></a><span class="co"># The variance ratio is close to 1 (1.0)</span></span>
 <span id="cb31-25"><a href="#cb31-25"></a><span class="co"># So our two conditions are met and can we can perform the t-test</span></span>
 <span id="cb31-26"><a href="#cb31-26"></a></span>
-<span id="cb31-27"><a href="#cb31-27"></a>HOMEPOS <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
+<span id="cb31-27"><a href="#cb31-27"></a>UK_HOMEPOS <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
 <span id="cb31-28"><a href="#cb31-28"></a>  <span class="fu">select</span>(HOMEPOS, ST004D01T, CNT) <span class="sc">%&gt;%</span></span>
 <span id="cb31-29"><a href="#cb31-29"></a>  <span class="fu">filter</span>(CNT <span class="sc">==</span> <span class="st">'United Kingdom'</span>)</span>
 <span id="cb31-30"><a href="#cb31-30"></a></span>
-<span id="cb31-31"><a href="#cb31-31"></a><span class="fu">t.test</span>(MaleUK<span class="sc">$</span>HOMEPOS, FemaleUK<span class="sc">$</span>HOMEPOS, </span>
-<span id="cb31-32"><a href="#cb31-32"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
-<span id="cb31-33"><a href="#cb31-33"></a></span>
-<span id="cb31-34"><a href="#cb31-34"></a><span class="co"># p-value &lt; 2.2e-16 so there are statistically significant differences between boys' and girls' reported wealth in the UK</span></span>
-<span id="cb31-35"><a href="#cb31-35"></a></span>
-<span id="cb31-36"><a href="#cb31-36"></a><span class="co"># Calculate the effect size using Cohen's d</span></span>
-<span id="cb31-37"><a href="#cb31-37"></a><span class="fu">cohen.d</span>(MaleUK<span class="sc">$</span>HOMEPOS, FemaleUK<span class="sc">$</span>HOMEPOS)</span>
-<span id="cb31-38"><a href="#cb31-38"></a><span class="co"># The effect size is 0.04 which is negligible in Cohen's terms (&lt;0.2) and small in Kraft and colleagues' terms (&lt;0.05)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb31-31"><a href="#cb31-31"></a><span class="fu">t.test</span>(<span class="at">data =</span> UK_HOMEPOS, HOMEPOS <span class="sc">~</span> ST004D01T,  <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
+<span id="cb31-32"><a href="#cb31-32"></a></span>
+<span id="cb31-33"><a href="#cb31-33"></a><span class="co"># p-value &lt; 2.2e-16 so there are statistically significant differences between boys' and girls' reported wealth in the UK</span></span>
+<span id="cb31-34"><a href="#cb31-34"></a></span>
+<span id="cb31-35"><a href="#cb31-35"></a><span class="co"># Calculate the effect size using Cohen's d</span></span>
+<span id="cb31-36"><a href="#cb31-36"></a><span class="fu">cohen.d</span>(<span class="at">data =</span> UK_HOMEPOS, HOMEPOS <span class="sc">~</span> ST004D01T)</span>
+<span id="cb31-37"><a href="#cb31-37"></a><span class="co"># The effect size is 0.04 which is negligible in Cohen's terms (&lt;0.2) and small in Kraft and colleagues' terms (&lt;0.05)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
