@@ -903,17 +903,15 @@ Tip
 <section id="plotting-the-chi-square-relationships" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="plotting-the-chi-square-relationships"><span class="header-section-number">4.1</span> Plotting the chi-square relationships</h2>
 <p>The numbers in the contingency table are hard to interpret - it is challenging to see how far out the numbers for each row are from each other. Alternatively, we can visualise the data from the contingency table by building a mosaic plot, a form of stacked bar chart. Mosaic plots can be a useful visualisation before running a chi-squared test.</p>
-<p>To create a mosaic plot, you are going to need to install and load the <code>ggmosaic</code> package. The code below will install the package:</p>
+<p>To create a mosaic plot, you are going to need to install and load the <code>ggmosaic2</code> package.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">install_github</span>(<span class="st">"haleyjeppson/ggmosaic"</span>)</span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">library</span>(ggmosaic) <span class="co"># load the ggmosaic package</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">install.packages</span>(<span class="st">"ggmosaic2"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(ggmosaic2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Imagine we want to plot the parental expectation of science career (<code>PA032Q03TA</code>) from the previous section for Ireland, Italy and Korea.</p>
 <p>To create the mosaic plot we use ggplot, as we used for previous graphs. As before, we first pass the data (in this case <code>Accomp</code>) to ggplot. Then, to create the graph, <code>geom_mosaic</code> is used. <code>geom_mosaic does</code> not have a direct mapping of input to x and y variable so we need to pass it what we want plotted on the y-axis (<code>PA032Q03TA</code>) and x-axis (<code>CNT</code>) within the product function (<code>product(PA032Q03TA, CNT)</code>). We can also specify how we want the rectangles to be coloured (in our case, by <code>CNT</code>).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a><span class="fu">library</span>(ggmosaic) <span class="co"># load the ggmosaic package</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a><span class="fu">library</span>(ggmosaic2) <span class="co"># load the ggmosaic package</span></span>
 <span id="annotated-cell-9-2"><a href="#annotated-cell-9-2"></a></span>
 <span id="annotated-cell-9-3"><a href="#annotated-cell-9-3"></a><span class="co"># Create a data frame of parental exp data for the 3 countries</span></span>
 <span id="annotated-cell-9-4"><a href="#annotated-cell-9-4"></a>parental_exp <span class="ot">&lt;-</span> PISA_2025 <span class="sc">%&gt;%</span></span>
@@ -1022,7 +1020,7 @@ X-squared = 36.456, df = 1, p-value = 1.561e-09</code></pre>
 <span id="cb10-3"><a href="#cb10-3"></a><span class="fu">library</span>(lsr)</span>
 <span id="cb10-4"><a href="#cb10-4"></a><span class="fu">cramersV</span>(parental_exp_tab)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.05331374</code></pre>
+<pre><code>[1] 0.05347789</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Cramer's V = 0.05, a very small effect size</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
